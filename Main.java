@@ -132,13 +132,31 @@ public class Main {
         // }
 
         // PSEUDOCODE Menampilkan Bilangan dari 1 sampai N
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nilai N: ");
-        int N = input.nextInt();
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan nilai N: ");
+        // int N = input.nextInt();
 
-        for (int i = 1; i <= N; i++) {
-            System.out.print(i + " ");
+        // for (int i = 1; i <= N; i++) {
+        // System.out.print(i + " ");
+        // }
+
+        // PSEUDOCODE Menghitung Total Belanja dengan Diskon
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan jumlah barang: ");
+        int jumlahBarang = inputUser.nextInt();
+
+        double total = 0;
+        for (int i = 1; i <= jumlahBarang; i++) {
+            System.out.print("Masukkan harga barang ke-" + i + ": ");
+            double harga = inputUser.nextDouble();
+            total += harga;
         }
 
+        if (total > 100000) {
+            double diskon = total * 0.10;
+            total -= diskon;
+        }
+
+        System.out.println("Total yang harus dibayar = Rp " + total);
     }
 }
