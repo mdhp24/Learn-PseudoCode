@@ -141,22 +141,45 @@ public class Main {
         // }
 
         // PSEUDOCODE Menghitung Total Belanja dengan Diskon
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jumlah barang: ");
-        int jumlahBarang = inputUser.nextInt();
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah barang: ");
+        // int jumlahBarang = inputUser.nextInt();
 
-        double total = 0;
-        for (int i = 1; i <= jumlahBarang; i++) {
-            System.out.print("Masukkan harga barang ke-" + i + ": ");
-            double harga = inputUser.nextDouble();
-            total += harga;
+        // double total = 0;
+        // for (int i = 1; i <= jumlahBarang; i++) {
+        // System.out.print("Masukkan harga barang ke-" + i + ": ");
+        // double harga = inputUser.nextDouble();
+        // total += harga;
+        // }
+
+        // if (total > 100000) {
+        // double diskon = total * 0.10;
+        // total -= diskon;
+        // }
+
+        // System.out.println("Total yang harus dibayar = Rp " + total);
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan bilangan N: ");
+        int N = input.nextInt();
+
+        boolean prima = true;
+
+        if (N <= 1) {
+            prima = false;
+        } else {
+            for (int i = 2; i < N; i++) {
+                if (N % i == 0) {
+                    prima = false;
+                    break;
+                }
+            }
         }
 
-        if (total > 100000) {
-            double diskon = total * 0.10;
-            total -= diskon;
+        if (prima) {
+            System.out.println(N + " adalah bilangan prima");
+        } else {
+            System.out.println(N + " BUKAN bilangan prima");
         }
-
-        System.out.println("Total yang harus dibayar = Rp " + total);
     }
 }
