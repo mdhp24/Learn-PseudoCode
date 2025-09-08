@@ -54,14 +54,25 @@ public class Main {
         // System.out.println("Fahrenheit: " + F);
 
         // PSEUDOCODE Menghitung Volume Kubus
-        int sisi;
-        int volume;
+        // int sisi;
+        // int volume;
 
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sisi kubus: ");
+        // sisi = inputUser.nextInt();
+
+        // volume = sisi * sisi * sisi;
+        // System.out.println("Volume kubus: " + volume);
+
+        // PSEUDOCODE Menghitung Luas Lingkaran
+        double phi = 3.14;
+        int r;
+        double luas;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sisi kubus: ");
-        sisi = inputUser.nextInt();
+        System.out.print("Masukkan jari-jari lingkaran: ");
+        r = inputUser.nextInt();
 
-        volume = sisi * sisi * sisi;
-        System.out.println("Volume kubus: " + volume);
+        luas = phi * r * r;
+        System.out.println("Luas lingkaran: " + luas);
     }
 }
