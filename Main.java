@@ -75,17 +75,41 @@ public class Main {
         // luas = phi * r * r;
         // System.out.println("Luas lingkaran: " + luas);
 
-        int nilai;
+        // int nilai;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan nilai (0-100): ");
+        // nilai = inputUser.nextInt();
+
+        // if (nilai >= 60) {
+        // System.out.println("Lulus");
+        // System.out.println("Selamat Anda lulus!");
+
+        // } else {
+        // System.out.println("Tidak Lulus");
+        // }
+
+        // PSEUDOCODE Menentukan Bilangan Positif, Negatif, atau Nol
+        // int number;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah bilangan: ");
+        // number = inputUser.nextInt();
+        // if (number > 0) {
+        // System.out.println(number + " adalah bilangan positif.");
+        // } else if (number < 0) {
+        // System.out.println(number + " adalah bilangan negatif.");
+        // } else {
+        // System.out.println("Bilangan yang dimasukkan adalah nol.");
+        // }
+
+        // PSEUDOCODE Menentukan Tahun Kabisat
+        int year;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan nilai (0-100): ");
-        nilai = inputUser.nextInt();
-
-        if (nilai >= 60) {
-            System.out.println("Lulus");
-            System.out.println("Selamat Anda lulus!");
-
+        System.out.print("Masukkan tahun: ");
+        year = inputUser.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " adalah tahun kabisat.");
         } else {
-            System.out.println("Tidak Lulus");
+            System.out.println(year + " bukan tahun kabisat.");
         }
     }
 }
