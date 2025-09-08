@@ -1,4 +1,5 @@
 // PSEUDOCODE
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,13 +18,28 @@ public class Main {
         // }
 
         // Program dari PSEUDOCODE mencari luas lapangan sepak bola
+        // int panjang, lebar, luas;
+
+        // panjang = 100;
+        // lebar = 64;
+        // luas = panjang * lebar;
+
+        // System.out.println("Luas lapangan sepak bola adalah " + luas);
+
+        // PSEUDOCODE
+        // Program menghitung persegi panjang
+
         int panjang, lebar, luas;
 
-        panjang = 100;
-        lebar = 64;
-        luas = panjang * lebar;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan panjang: ");
+        panjang = inputUser.nextInt();
 
-        System.out.println("Luas lapangan sepak bola adalah " + luas);
+        System.out.print("Masukkan lebar: ");
+        lebar = inputUser.nextInt();
+
+        luas = panjang * lebar;
+        System.out.println("Luas persegi panjang: " + luas);
 
     }
 }
