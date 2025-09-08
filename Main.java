@@ -102,14 +102,26 @@ public class Main {
         // }
 
         // PSEUDOCODE Menentukan Tahun Kabisat
-        int year;
+        // int year;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan tahun: ");
+        // year = inputUser.nextInt();
+        // if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        // System.out.println(year + " adalah tahun kabisat.");
+        // } else {
+        // System.out.println(year + " bukan tahun kabisat.");
+        // }
+
+        // PSEUDOCODE Menjumlahkan 10 angka dari input user
+        int total = 0;
+
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan tahun: ");
-        year = inputUser.nextInt();
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println(year + " adalah tahun kabisat.");
-        } else {
-            System.out.println(year + " bukan tahun kabisat.");
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Masukkan angka ke-" + i + ": ");
+            int angka = inputUser.nextInt();
+            total += angka;
         }
+        System.out.println("Total penjumlahan 10 angka adalah " + total);
+
     }
 }
