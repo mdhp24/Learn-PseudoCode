@@ -113,15 +113,23 @@ public class Main {
         // }
 
         // PSEUDOCODE Menjumlahkan 10 angka dari input user
-        int total = 0;
+        // int total = 0;
 
-        Scanner inputUser = new Scanner(System.in);
-        for (int i = 1; i <= 10; i++) {
-            System.out.print("Masukkan angka ke-" + i + ": ");
-            int angka = inputUser.nextInt();
-            total += angka;
+        // Scanner inputUser = new Scanner(System.in);
+        // for (int i = 1; i <= 10; i++) {
+        // System.out.print("Masukkan angka ke-" + i + ": ");
+        // int angka = inputUser.nextInt();
+        // total += angka;
+        // }
+        // System.out.println("Total penjumlahan 10 angka adalah " + total);
+
+        // PSEUDOCODE Menampilkan Bilangan Genap dari 1 sampai 10000
+        System.out.println("Bilangan genap dari 1 sampai 1000:");
+        for (int i = 1; i <= 1000; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
         }
-        System.out.println("Total penjumlahan 10 angka adalah " + total);
 
     }
 }
