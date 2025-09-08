@@ -124,11 +124,20 @@ public class Main {
         // System.out.println("Total penjumlahan 10 angka adalah " + total);
 
         // PSEUDOCODE Menampilkan Bilangan Genap dari 1 sampai 10000
-        System.out.println("Bilangan genap dari 1 sampai 1000:");
-        for (int i = 1; i <= 1000; i++) {
-            if (i % 2 == 0) {
-                System.out.print(i + " ");
-            }
+        // System.out.println("Bilangan genap dari 1 sampai 1000:");
+        // for (int i = 1; i <= 1000; i++) {
+        // if (i % 2 == 0) {
+        // System.out.print(i + " ");
+        // }
+        // }
+
+        // PSEUDOCODE Menampilkan Bilangan dari 1 sampai N
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai N: ");
+        int N = input.nextInt();
+
+        for (int i = 1; i <= N; i++) {
+            System.out.print(i + " ");
         }
 
     }
