@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        // System.out.println("Hello, World!");
 
         // // Program dari PSEUDOCODE menentukan sebuah bilangan adalah ganjil atau
         // genap
@@ -29,17 +29,28 @@ public class Main {
         // PSEUDOCODE
         // Program menghitung persegi panjang
 
-        int panjang, lebar, luas;
+        // int panjang, lebar, luas;
+
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan panjang: ");
+        // panjang = inputUser.nextInt();
+
+        // System.out.print("Masukkan lebar: ");
+        // lebar = inputUser.nextInt();
+
+        // luas = panjang * lebar;
+        // System.out.println("Luas persegi panjang: " + luas);
+
+
+        int c;
+        double F;
 
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan panjang: ");
-        panjang = inputUser.nextInt();
+        System.out.print("Masukkan suhu (Celcius): ");
+        c = inputUser.nextInt();
 
-        System.out.print("Masukkan lebar: ");
-        lebar = inputUser.nextInt();
-
-        luas = panjang * lebar;
-        System.out.println("Luas persegi panjang: " + luas);
+        F = (c * 9/5) + 32;
+        System.out.println("Fahrenheit: " + F);
 
     }
 }
