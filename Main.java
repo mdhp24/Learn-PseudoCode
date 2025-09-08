@@ -42,15 +42,26 @@ public class Main {
         // System.out.println("Luas persegi panjang: " + luas);
 
 
-        int c;
-        double F;
+        // PSEUDOCODE Konversi Celcius ke Fahrenheit
+        // int c;
+        // double F;
+
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan suhu (Celcius): ");
+        // c = inputUser.nextInt();
+
+        // F = (c * 9/5) + 32;
+        // System.out.println("Fahrenheit: " + F);
+
+        // PSEUDOCODE Menghitung Volume Kubus
+        int sisi;
+        int volume;
 
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan suhu (Celcius): ");
-        c = inputUser.nextInt();
+        System.out.print("Masukkan sisi kubus: ");
+        sisi = inputUser.nextInt();
 
-        F = (c * 9/5) + 32;
-        System.out.println("Fahrenheit: " + F);
-
+        volume = sisi * sisi * sisi;
+        System.out.println("Volume kubus: " + volume);
     }
 }
