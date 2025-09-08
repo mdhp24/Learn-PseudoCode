@@ -1,3 +1,4 @@
+
 // PSEUDOCODE
 import java.util.Scanner;
 
@@ -41,7 +42,6 @@ public class Main {
         // luas = panjang * lebar;
         // System.out.println("Luas persegi panjang: " + luas);
 
-
         // PSEUDOCODE Konversi Celcius ke Fahrenheit
         // int c;
         // double F;
@@ -65,14 +65,27 @@ public class Main {
         // System.out.println("Volume kubus: " + volume);
 
         // PSEUDOCODE Menghitung Luas Lingkaran
-        double phi = 3.14;
-        int r;
-        double luas;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jari-jari lingkaran: ");
-        r = inputUser.nextInt();
+        // double phi = 3.14;
+        // int r;
+        // double luas;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jari-jari lingkaran: ");
+        // r = inputUser.nextInt();
 
-        luas = phi * r * r;
-        System.out.println("Luas lingkaran: " + luas);
+        // luas = phi * r * r;
+        // System.out.println("Luas lingkaran: " + luas);
+
+        int nilai;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan nilai (0-100): ");
+        nilai = inputUser.nextInt();
+
+        if (nilai >= 60) {
+            System.out.println("Lulus");
+            System.out.println("Selamat Anda lulus!");
+
+        } else {
+            System.out.println("Tidak Lulus");
+        }
     }
 }
