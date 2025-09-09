@@ -197,8 +197,15 @@ public class Main {
         // System.out.println("Luas lingkaran: " + luas);
 
         // PSEUDOCODE Konversi Jam ke Menit
-        int jam = 9;
-        int menit = jam * 60;
-        System.out.println(jam + " Jam adalah " + menit + " Menit");
+        // int jam = 9;
+        // int menit = jam * 60;
+        // System.out.println(jam + " Jam adalah " + menit + " Menit");
+
+        // PSEUDOCODE Menghitung Umur
+        int tahun_lahir = 2004;
+        int tahun_sekarang = 2025;
+
+        int umur = tahun_sekarang - tahun_lahir;
+        System.out.println("Umur saya adalah " + umur + " tahun");
     }
 }
