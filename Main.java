@@ -166,29 +166,35 @@ public class Main {
         // boolean prima = true;
 
         // if (N <= 1) {
-        //     prima = false;
+        // prima = false;
         // } else {
-        //     for (int i = 2; i < N; i++) {
-        //         if (N % i == 0) {
-        //             prima = false;
-        //             break;
-        //         }
-        //     }
+        // for (int i = 2; i < N; i++) {
+        // if (N % i == 0) {
+        // prima = false;
+        // break;
+        // }
+        // }
         // }
 
         // if (prima) {
-        //     System.out.println(N + " adalah bilangan prima");
+        // System.out.println(N + " adalah bilangan prima");
         // } else {
-        //     System.out.println(N + " BUKAN bilangan prima");
+        // System.out.println(N + " BUKAN bilangan prima");
         // }
 
         // PSEUDOCODE mengkali dua bilangan
-        int a = 100;
-        int b = 200;
+        // int a = 100;
+        // int b = 200;
 
-        int hasil = a * b;
-        System.out.println("Hasil perkalian: " + hasil);
+        // int hasil = a * b;
+        // System.out.println("Hasil perkalian: " + hasil);
 
+        // PSEUDOCODE menghitung luas lingkaran
+        int r = 100;
+        double phi = 3.14;
+
+        double luas = phi * r * r;
+        System.out.println("Luas lingkaran: " + luas);
 
     }
 }
