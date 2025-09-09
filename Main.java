@@ -159,27 +159,36 @@ public class Main {
 
         // System.out.println("Total yang harus dibayar = Rp " + total);
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan bilangan N: ");
-        int N = input.nextInt();
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan bilangan N: ");
+        // int N = input.nextInt();
 
-        boolean prima = true;
+        // boolean prima = true;
 
-        if (N <= 1) {
-            prima = false;
-        } else {
-            for (int i = 2; i < N; i++) {
-                if (N % i == 0) {
-                    prima = false;
-                    break;
-                }
-            }
-        }
+        // if (N <= 1) {
+        //     prima = false;
+        // } else {
+        //     for (int i = 2; i < N; i++) {
+        //         if (N % i == 0) {
+        //             prima = false;
+        //             break;
+        //         }
+        //     }
+        // }
 
-        if (prima) {
-            System.out.println(N + " adalah bilangan prima");
-        } else {
-            System.out.println(N + " BUKAN bilangan prima");
-        }
+        // if (prima) {
+        //     System.out.println(N + " adalah bilangan prima");
+        // } else {
+        //     System.out.println(N + " BUKAN bilangan prima");
+        // }
+
+        // PSEUDOCODE mengkali dua bilangan
+        int a = 100;
+        int b = 200;
+
+        int hasil = a * b;
+        System.out.println("Hasil perkalian: " + hasil);
+
+
     }
 }
