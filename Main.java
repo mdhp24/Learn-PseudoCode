@@ -190,11 +190,15 @@ public class Main {
         // System.out.println("Hasil perkalian: " + hasil);
 
         // PSEUDOCODE menghitung luas lingkaran
-        int r = 100;
-        double phi = 3.14;
+        // int r = 100;
+        // double phi = 3.14;
 
-        double luas = phi * r * r;
-        System.out.println("Luas lingkaran: " + luas);
+        // double luas = phi * r * r;
+        // System.out.println("Luas lingkaran: " + luas);
 
+        // PSEUDOCODE Konversi Jam ke Menit
+        int jam = 9;
+        int menit = jam * 60;
+        System.out.println(jam + " Jam adalah " + menit + " Menit");
     }
 }
