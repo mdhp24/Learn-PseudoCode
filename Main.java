@@ -202,10 +202,22 @@ public class Main {
         // System.out.println(jam + " Jam adalah " + menit + " Menit");
 
         // PSEUDOCODE Menghitung Umur
-        int tahun_lahir = 2004;
-        int tahun_sekarang = 2025;
+        // int tahun_lahir = 2004;
+        // int tahun_sekarang = 2025;
 
-        int umur = tahun_sekarang - tahun_lahir;
-        System.out.println("Umur saya adalah " + umur + " tahun");
+        // int umur = tahun_sekarang - tahun_lahir;
+        // System.out.println("Umur saya adalah " + umur + " tahun");
+
+
+        //
+        int a = 10;
+        int b = 50;
+        System.out.println("Sebelum swap adalah a = " + a + " dan b =" + b);
+
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("Setelah swap adalah a = " + a + " dan b =" + b);
     }
 }
