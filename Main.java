@@ -220,15 +220,26 @@ public class Main {
         // System.out.println("Setelah swap adalah a = " + a + " dan b =" + b);
 
         // PSEUDOCODE menghitung rata-rata nilai
-        int total = 0;
-        for (int i = 1; i <= 5; i++) {
-            System.out.print("Masukkan nilai: " + i + " : ");
-            int nilai = new Scanner(System.in).nextInt();
-            total += nilai;
+        // int total = 0;
+        // for (int i = 1; i <= 5; i++) {
+        // System.out.print("Masukkan nilai: " + i + " : ");
+        // int nilai = new Scanner(System.in).nextInt();
+        // total += nilai;
+        // }
+        // double rataRata = total / 5.0;
+        // System.out.print("Rata-rata nilai adalah: " + rataRata);
+
+        // PSEUDOCODE Menentukan bilangan positif, negatif, atau nol
+        int number;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan sebuah bilangan: ");
+        number = inputUser.nextInt();
+        if (number > 0) {
+            System.out.println(number + " adalah bilangan positif.");
+        } else if (number < 0) {
+            System.out.println(number + " adalah bilangan negatif.");
+        } else {
+            System.out.println("Bilangan yang dimasukkan adalah nol.");
         }
-        double rataRata = total / 5.0;
-        System.out.print("Rata-rata nilai adalah: " + rataRata);
-
     }
-
 }
