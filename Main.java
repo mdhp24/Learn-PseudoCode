@@ -230,16 +230,28 @@ public class Main {
         // System.out.print("Rata-rata nilai adalah: " + rataRata);
 
         // PSEUDOCODE Menentukan bilangan positif, negatif, atau nol
-        int number;
+        // int number;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah bilangan: ");
+        // number = inputUser.nextInt();
+        // if (number > 0) {
+        //     System.out.println(number + " adalah bilangan positif.");
+        // } else if (number < 0) {
+        //     System.out.println(number + " adalah bilangan negatif.");
+        // } else {
+        //     System.out.println("Bilangan yang dimasukkan adalah nol.");
+        // }
+
+
+        int nilai;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah bilangan: ");
-        number = inputUser.nextInt();
-        if (number > 0) {
-            System.out.println(number + " adalah bilangan positif.");
-        } else if (number < 0) {
-            System.out.println(number + " adalah bilangan negatif.");
+        System.out.print("Masukkan nilai (0-100): ");
+        nilai = inputUser.nextInt();
+        if (nilai >= 60) {
+            System.out.println("Selamat BOS Anda lulus!");
+
         } else {
-            System.out.println("Bilangan yang dimasukkan adalah nol.");
+            System.out.println("Tidak Lulus BOS");
         }
     }
 }
