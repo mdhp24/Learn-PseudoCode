@@ -255,16 +255,29 @@ public class Main {
         // }
 
         // PSEUDOCODE Menghitung jumlah digit dalam sebuah bilangan
-        int number;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah bilangan: ");
-        number = inputUser.nextInt();
-        int count = 0;
-        int temp = number;
-        while (temp != 0) {
-            temp /= 10;
-            count++;
+        // int number;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah bilangan: ");
+        // number = inputUser.nextInt();
+        // int count = 0;
+        // int temp = number;
+        // while (temp != 0) {
+        // temp /= 10;
+        // count++;
+        // }
+        // System.out.println("Jumlah digit dalam bilangan " + number + " adalah: " +
+        // count);
+
+        // PSEUDOCODE Menampilkan bilangan ganjil dari 1 sampai N
+        int N;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai N: ");
+        N = input.nextInt();
+        System.out.println("Bilangan ganjil dari 1 sampai " + N + ":");
+        for (int i = 1; i <= N; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
         }
-        System.out.println("Jumlah digit dalam bilangan " + number + " adalah: " + count);
     }
 }
