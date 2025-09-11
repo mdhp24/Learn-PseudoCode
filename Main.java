@@ -304,11 +304,24 @@ public class Main {
         // System.out.println("Keliling persegi adalah: " + keliling);
 
         // PSEUDOCODE Menghitung Konversi Menit ke Detik
-        int menit;
+        // int menit;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah menit: ");
+        // menit = inputUser.nextInt();
+        // int detik = menit * 60;
+        // System.out.println(menit + " menit = " + detik + " detik");
+
+        // PSEUDOCODE Menghitung diskon belanja
+        int total;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jumlah menit: ");
-        menit = inputUser.nextInt();
-        int detik = menit * 60;
-        System.out.println(menit + " menit = " + detik + " detik");
+        System.out.print("Masukkan total belanja: ");
+        total = inputUser.nextInt();
+        double diskon = 0;
+        if (total > 100000) {
+            diskon = total * 0.1;
+        }
+        System.out.println("Total belanja setelah diskon: " + (total - diskon));
+        double totalbayar = total - diskon;
+        System.out.println("Total yang harus dibayar = Rp " + totalbayar);
     }
 }
