@@ -318,23 +318,37 @@ public class Main {
         // total = inputUser.nextInt();
         // double diskon = 0;
         // if (total > 100000) {
-        //     diskon = total * 0.1;
+        // diskon = total * 0.1;
         // }
         // System.out.println("Total belanja setelah diskon: " + (total - diskon));
         // double totalbayar = total - diskon;
         // System.out.println("Total yang harus dibayar = Rp " + totalbayar);
 
         // PSEUDOCODE menghitung pangkat a dan b
-        int a, b;
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Masukkan angka pertama: ");
-        a = inputScanner.nextInt();
-        System.out.print("Masukkan angka kedua: ");
-        b = inputScanner.nextInt();
-        int hasil = 1;
-        for (int i = 0; i < b; i++) {
-            hasil *= a;
+        // int a, b;
+        // Scanner inputScanner = new Scanner(System.in);
+        // System.out.print("Masukkan angka pertama: ");
+        // a = inputScanner.nextInt();
+        // System.out.print("Masukkan angka kedua: ");
+        // b = inputScanner.nextInt();
+        // int hasil = 1;
+        // for (int i = 0; i < b; i++) {
+        // hasil *= a;
+        // }
+        // System.out.println("Hasil " + a + " pangkat " + b + " adalah: " + hasil);
+
+        // PSEUDOCODE Menghitung jumlah huruf vokal dalam sebuah string
+        String inputString;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan sebuah kalimat: ");
+        inputString = inputUser.nextLine();
+        int count = 0;
+        for (int i = 0; i < inputString.length(); i++) {
+            char ch = Character.toLowerCase(inputString.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                count++;
+            }
         }
-        System.out.println("Hasil " + a + " pangkat " + b + " adalah: " + hasil);
+        System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\" adalah: " + count);
     }
 }
