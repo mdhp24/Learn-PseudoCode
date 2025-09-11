@@ -293,13 +293,22 @@ public class Main {
         // int hasil = a + b * c;
         // System.out.print("Hasil penjumlahan adalah: " + hasil);
 
-        int sisi;
+        // PSEUDOCODE Menghitung Keliling Persegi
+        // int sisi;
+        // Scanner inputUser = new Scanner(System.in);
+
+        // System.out.print("Masukkan sisi persegi: ");
+        // sisi = inputUser.nextInt();
+
+        // int keliling = 4 * sisi;
+        // System.out.println("Keliling persegi adalah: " + keliling);
+
+        // PSEUDOCODE Menghitung Konversi Menit ke Detik
+        int menit;
         Scanner inputUser = new Scanner(System.in);
-
-        System.out.print("Masukkan sisi persegi: ");
-        sisi = inputUser.nextInt();
-
-        int keliling = 4 * sisi;
-        System.out.println("Keliling persegi adalah: " + keliling);
+        System.out.print("Masukkan jumlah menit: ");
+        menit = inputUser.nextInt();
+        int detik = menit * 60;
+        System.out.println(menit + " menit = " + detik + " detik");
     }
 }
