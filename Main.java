@@ -280,16 +280,26 @@ public class Main {
         // }
         // }
 
-        int a, b, c;
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Masukkan angka pertama: ");
-        a = inputScanner.nextInt();
-        System.out.print("Masukkan angka kedua: ");
-        b = inputScanner.nextInt();
-        System.out.print("Masukkan angka ketiga: ");
-        c = inputScanner.nextInt();
+        // PSEUDOCODE menghitung a + b * c
+        // int a, b, c;
+        // Scanner inputScanner = new Scanner(System.in);
+        // System.out.print("Masukkan angka pertama: ");
+        // a = inputScanner.nextInt();
+        // System.out.print("Masukkan angka kedua: ");
+        // b = inputScanner.nextInt();
+        // System.out.print("Masukkan angka ketiga: ");
+        // c = inputScanner.nextInt();
 
-        int hasil = a + b * c;
-        System.out.print("Hasil penjumlahan adalah: " + hasil);
+        // int hasil = a + b * c;
+        // System.out.print("Hasil penjumlahan adalah: " + hasil);
+
+        int sisi;
+        Scanner inputUser = new Scanner(System.in);
+
+        System.out.print("Masukkan sisi persegi: ");
+        sisi = inputUser.nextInt();
+
+        int keliling = 4 * sisi;
+        System.out.println("Keliling persegi adalah: " + keliling);
     }
 }
