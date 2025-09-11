@@ -269,15 +269,27 @@ public class Main {
         // count);
 
         // PSEUDOCODE Menampilkan bilangan ganjil dari 1 sampai N
-        int N;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nilai N: ");
-        N = input.nextInt();
-        System.out.println("Bilangan ganjil dari 1 sampai " + N + ":");
-        for (int i = 1; i <= N; i++) {
-            if (i % 2 != 0) {
-                System.out.print(i + " ");
-            }
-        }
+        // int N;
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan nilai N: ");
+        // N = input.nextInt();
+        // System.out.println("Bilangan ganjil dari 1 sampai " + N + ":");
+        // for (int i = 1; i <= N; i++) {
+        // if (i % 2 != 0) {
+        // System.out.print(i + " ");
+        // }
+        // }
+
+        int a, b, c;
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.print("Masukkan angka pertama: ");
+        a = inputScanner.nextInt();
+        System.out.print("Masukkan angka kedua: ");
+        b = inputScanner.nextInt();
+        System.out.print("Masukkan angka ketiga: ");
+        c = inputScanner.nextInt();
+
+        int hasil = a + b * c;
+        System.out.print("Hasil penjumlahan adalah: " + hasil);
     }
 }
