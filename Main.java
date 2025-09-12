@@ -415,15 +415,38 @@ public class Main {
         // }
 
         //PSEUDOCODE Menentukan Palindrom
-        String inputString;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kata atau kalimat: ");
-        inputString = inputUser.nextLine();
-        String reversedString = new StringBuilder(inputString).reverse().toString();
-        if (inputString.equalsIgnoreCase(reversedString)) {
-            System.out.println("\"" + inputString + "\" adalah palindrom.");
-        } else {
-            System.out.println("\"" + inputString + "\" bukan palindrom.");
+        // String inputString;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kata atau kalimat: ");
+        // inputString = inputUser.nextLine();
+        // String reversedString = new StringBuilder(inputString).reverse().toString();
+        // if (inputString.equalsIgnoreCase(reversedString)) {
+        //     System.out.println("\"" + inputString + "\" adalah palindrom.");
+        // } else {
+        //     System.out.println("\"" + inputString + "\" bukan palindrom.");
+        // }
+
+        //PSEUDOCODE Menentukan Nilai Minimun dari 4 angka
+        int a, b, c, d;
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.print("Masukkan angka pertama: ");
+        a = inputScanner.nextInt();
+        System.out.print("Masukkan angka kedua: ");
+        b = inputScanner.nextInt();
+        System.out.print("Masukkan angka ketiga: ");
+        c = inputScanner.nextInt();
+        System.out.print("Masukkan angka keempat: ");
+        d = inputScanner.nextInt();
+        int min = a;
+        if (b < min) {
+            min = b;
         }
+        if (c < min) {
+            min = c;
+        }
+        if (d < min) {
+            min = d;
+        }
+        System.out.println("Nilai minimum dari keempat angka adalah: " + min);
     }
 }
