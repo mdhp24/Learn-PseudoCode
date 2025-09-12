@@ -387,17 +387,31 @@ public class Main {
         // System.out.println("Nilai huruf Anda adalah: " + tingkat);
 
         //PSEUDOCODE Menghitung gaji karyawan dengan bonus
-        double gajiPokok;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan gaji pokok: ");
-        gajiPokok = inputUser.nextDouble();
-        double bonus = 0;
-        if (gajiPokok > 5000000) {
-            bonus = gajiPokok * 0.1;
-        } else {
-            bonus = gajiPokok * 0.05;
+        // double gajiPokok;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan gaji pokok: ");
+        // gajiPokok = inputUser.nextDouble();
+        // double bonus = 0;
+        // if (gajiPokok > 5000000) {
+        //     bonus = gajiPokok * 0.1;
+        // } else {
+        //     bonus = gajiPokok * 0.05;
+        // }
+        // double totalGaji = gajiPokok + bonus;
+        // System.out.println("Total gaji yang diterima: " + totalGaji);
+
+        //PSEUDOCODE Menhitung bilangan fibonaci hingga N
+        int N;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai N: ");
+        N = input.nextInt();
+        int a = 0, b = 1;
+        System.out.println("Deret Fibonacci hingga " + N + ":");
+        while (a <= N) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
         }
-        double totalGaji = gajiPokok + bonus;
-        System.out.println("Total gaji yang diterima: " + totalGaji);
     }
 }
