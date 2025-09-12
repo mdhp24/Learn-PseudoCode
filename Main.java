@@ -360,11 +360,30 @@ public class Main {
         // System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " + volume);
 
         //PSEUDOCODE Konversi dollar ke rupiah
-        double dollar;
+        // double dollar;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah dollar: ");
+        // dollar = inputUser.nextDouble();
+        // double rupiah = dollar * 16405.22;
+        // System.out.println(dollar + " dollar = " + rupiah + " rupiah");
+
+        //PSEUDOCODE Menentukan nilai huruf dari nilai angka
+        int nilai;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jumlah dollar: ");
-        dollar = inputUser.nextDouble();
-        double rupiah = dollar * 16405.22;
-        System.out.println(dollar + " dollar = " + rupiah + " rupiah");
+        System.out.print("Masukkan nilai (0-100): ");
+        nilai = inputUser.nextInt();
+        char tingkat;
+        if (nilai >= 90) {
+            tingkat = 'A';
+        } else if (nilai >= 81) {
+            tingkat = 'B';
+        } else if (nilai >= 71) {
+            tingkat = 'C';
+        } else if (nilai >= 61) {
+            tingkat = 'D';
+        } else {
+            tingkat = 'E';
+        }
+        System.out.println("Nilai huruf Anda adalah: " + tingkat);
     }
 }
