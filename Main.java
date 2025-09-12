@@ -352,12 +352,19 @@ public class Main {
         // System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\" adalah: " + count);
 
         // PSEUDOCODE Menghitung Volume Kubus
-        int sisi;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan panjang sisi kubus: ");
-        sisi = input.nextInt();
-        int volume = sisi * sisi * sisi;
-        System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " + volume);
+        // int sisi;
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan panjang sisi kubus: ");
+        // sisi = input.nextInt();
+        // int volume = sisi * sisi * sisi;
+        // System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " + volume);
 
+        //PSEUDOCODE Konversi dollar ke rupiah
+        double dollar;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan jumlah dollar: ");
+        dollar = inputUser.nextDouble();
+        double rupiah = dollar * 16405.22;
+        System.out.println(dollar + " dollar = " + rupiah + " rupiah");
     }
 }
