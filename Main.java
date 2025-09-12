@@ -338,17 +338,26 @@ public class Main {
         // System.out.println("Hasil " + a + " pangkat " + b + " adalah: " + hasil);
 
         // PSEUDOCODE Menghitung jumlah huruf vokal dalam sebuah string
-        String inputString;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kalimat: ");
-        inputString = inputUser.nextLine();
-        int count = 0;
-        for (int i = 0; i < inputString.length(); i++) {
-            char ch = Character.toLowerCase(inputString.charAt(i));
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                count++;
-            }
-        }
-        System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\" adalah: " + count);
+        // String inputString;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kalimat: ");
+        // inputString = inputUser.nextLine();
+        // int count = 0;
+        // for (int i = 0; i < inputString.length(); i++) {
+        //     char ch = Character.toLowerCase(inputString.charAt(i));
+        //     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+        //         count++;
+        //     }
+        // }
+        // System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\" adalah: " + count);
+
+        // PSEUDOCODE Menghitung Volume Kubus
+        int sisi;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan panjang sisi kubus: ");
+        sisi = input.nextInt();
+        int volume = sisi * sisi * sisi;
+        System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " + volume);
+
     }
 }
