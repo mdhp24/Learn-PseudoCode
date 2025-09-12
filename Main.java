@@ -401,17 +401,29 @@ public class Main {
         // System.out.println("Total gaji yang diterima: " + totalGaji);
 
         //PSEUDOCODE Menhitung bilangan fibonaci hingga N
-        int N;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nilai N: ");
-        N = input.nextInt();
-        int a = 0, b = 1;
-        System.out.println("Deret Fibonacci hingga " + N + ":");
-        while (a <= N) {
-            System.out.print(a + " ");
-            int next = a + b;
-            a = b;
-            b = next;
+        // int N;
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan nilai N: ");
+        // N = input.nextInt();
+        // int a = 0, b = 1;
+        // System.out.println("Deret Fibonacci hingga " + N + ":");
+        // while (a <= N) {
+        //     System.out.print(a + " ");
+        //     int next = a + b;
+        //     a = b;
+        //     b = next;
+        // }
+
+        //PSEUDOCODE Menentukan Palindrom
+        String inputString;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan sebuah kata atau kalimat: ");
+        inputString = inputUser.nextLine();
+        String reversedString = new StringBuilder(inputString).reverse().toString();
+        if (inputString.equalsIgnoreCase(reversedString)) {
+            System.out.println("\"" + inputString + "\" adalah palindrom.");
+        } else {
+            System.out.println("\"" + inputString + "\" bukan palindrom.");
         }
     }
 }
