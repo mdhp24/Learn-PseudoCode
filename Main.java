@@ -368,22 +368,36 @@ public class Main {
         // System.out.println(dollar + " dollar = " + rupiah + " rupiah");
 
         //PSEUDOCODE Menentukan nilai huruf dari nilai angka
-        int nilai;
+        // int nilai;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan nilai (0-100): ");
+        // nilai = inputUser.nextInt();
+        // char tingkat;
+        // if (nilai >= 90) {
+        //     tingkat = 'A';
+        // } else if (nilai >= 81) {
+        //     tingkat = 'B';
+        // } else if (nilai >= 71) {
+        //     tingkat = 'C';
+        // } else if (nilai >= 61) {
+        //     tingkat = 'D';
+        // } else {
+        //     tingkat = 'E';
+        // }
+        // System.out.println("Nilai huruf Anda adalah: " + tingkat);
+
+        //PSEUDOCODE Menghitung gaji karyawan dengan bonus
+        double gajiPokok;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan nilai (0-100): ");
-        nilai = inputUser.nextInt();
-        char tingkat;
-        if (nilai >= 90) {
-            tingkat = 'A';
-        } else if (nilai >= 81) {
-            tingkat = 'B';
-        } else if (nilai >= 71) {
-            tingkat = 'C';
-        } else if (nilai >= 61) {
-            tingkat = 'D';
+        System.out.print("Masukkan gaji pokok: ");
+        gajiPokok = inputUser.nextDouble();
+        double bonus = 0;
+        if (gajiPokok > 5000000) {
+            bonus = gajiPokok * 0.1;
         } else {
-            tingkat = 'E';
+            bonus = gajiPokok * 0.05;
         }
-        System.out.println("Nilai huruf Anda adalah: " + tingkat);
+        double totalGaji = gajiPokok + bonus;
+        System.out.println("Total gaji yang diterima: " + totalGaji);
     }
 }
