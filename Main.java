@@ -484,13 +484,24 @@ public class Main {
         // System.out.println("Setelah swap adalah a = " + a + " dan b = " + b);
 
         // PSEUDOCODE Cari nilai maksimum dari array
-        int[] numbers = { 45, 22, 71, 11, 56 };
-        int max = numbers[0];
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > max) {
-                max = numbers[i];
-            }
+        // int[] numbers = { 45, 22, 71, 11, 56 };
+        // int max = numbers[0];
+        // for (int i = 1; i < numbers.length; i++) {
+        // if (numbers[i] > max) {
+        // max = numbers[i];
+        // }
+        // }
+        // System.out.println("Nilai maksimum dari array adalah: " + max);
+
+        // PSEUDOCODE Menghitung faktorial dari sebuah bilangan
+        int N;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai N: ");
+        N = input.nextInt();
+        int faktorial = 1;
+        for (int i = 1; i <= N; i++) {
+            faktorial *= i;
         }
-        System.out.println("Nilai maksimum dari array adalah: " + max);
+        System.out.println("Faktorial dari " + N + " adalah: " + faktorial);
     }
 }
