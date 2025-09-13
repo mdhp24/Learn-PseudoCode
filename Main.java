@@ -494,14 +494,32 @@ public class Main {
         // System.out.println("Nilai maksimum dari array adalah: " + max);
 
         // PSEUDOCODE Menghitung faktorial dari sebuah bilangan
-        int N;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nilai N: ");
-        N = input.nextInt();
-        int faktorial = 1;
-        for (int i = 1; i <= N; i++) {
-            faktorial *= i;
+        // int N;
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan nilai N: ");
+        // N = input.nextInt();
+        // int faktorial = 1;
+        // for (int i = 1; i <= N; i++) {
+        // faktorial *= i;
+        // }
+        // System.out.println("Faktorial dari " + N + " adalah: " + faktorial);
+
+        // PSEUDOCODE Menentukan Nilai Terbesar dari 3 angka
+        int a = 10;
+        int b = 20;
+        int c = 30;
+
+        for(int i = 1; i <= 3; i++) {
+            if (a > b && a > c) {
+                System.out.println("Nilai terbesar adalah: " + a);
+                break;
+            } else if (b > a && b > c) {
+                System.out.println("Nilai terbesar adalah: " + b);
+                break;
+            } else {
+                System.out.println("Nilai terbesar adalah: " + c);
+                break;
+            }
         }
-        System.out.println("Faktorial dari " + N + " adalah: " + faktorial);
     }
 }
