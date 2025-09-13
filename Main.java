@@ -509,17 +509,13 @@ public class Main {
         int b = 20;
         int c = 30;
 
-        for(int i = 1; i <= 3; i++) {
-            if (a > b && a > c) {
-                System.out.println("Nilai terbesar adalah: " + a);
-                break;
-            } else if (b > a && b > c) {
-                System.out.println("Nilai terbesar adalah: " + b);
-                break;
-            } else {
-                System.out.println("Nilai terbesar adalah: " + c);
-                break;
-            }
+        int max = a;
+        if (b > max) {
+            max = b;
         }
+        if (c > max) {
+            max = c;
+        }
+        System.out.println("Nilai terbesar dari ketiga angka adalah: " + max);
     }
 }
