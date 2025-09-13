@@ -474,13 +474,23 @@ public class Main {
         // }
 
         // PSEUDOCODE Tukar nilai dua variabel
-        int a = 10;
-        int b = 30;
-        System.out.println("Sebelum swap adalah a = " + a + " dan b = " + b);
-        // Proses tukar nilai
-        int temp = a;
-        a = b;
-        b = temp;
-        System.out.println("Setelah swap adalah a = " + a + " dan b = " + b);
+        // int a = 10;
+        // int b = 30;
+        // System.out.println("Sebelum swap adalah a = " + a + " dan b = " + b);
+        // // Proses tukar nilai
+        // int temp = a;
+        // a = b;
+        // b = temp;
+        // System.out.println("Setelah swap adalah a = " + a + " dan b = " + b);
+
+        // PSEUDOCODE Cari nilai maksimum dari array
+        int[] numbers = { 45, 22, 71, 11, 56 };
+        int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        System.out.println("Nilai maksimum dari array adalah: " + max);
     }
 }
