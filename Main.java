@@ -452,25 +452,35 @@ public class Main {
         // System.out.println("Nilai minimum dari keempat angka adalah: " + min);
 
         // PSEUDOCODE Menghitung bilangan prima
-        int N;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nilai N: ");
-        N = input.nextInt();
-        boolean isPrime = true;
-        if (N <= 1) {
-            isPrime = false;
-        } else {
-            for (int i = 2; i <= Math.sqrt(N); i++) {
-                if (N % i == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-        }
-        if (isPrime) {
-            System.out.println(N + " adalah bilangan prima.");
-        } else {
-            System.out.println(N + " bukan bilangan prima.");
-        }
+        // int N;
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Masukkan nilai N: ");
+        // N = input.nextInt();
+        // boolean isPrime = true;
+        // if (N <= 1) {
+        // isPrime = false;
+        // } else {
+        // for (int i = 2; i <= Math.sqrt(N); i++) {
+        // if (N % i == 0) {
+        // isPrime = false;
+        // break;
+        // }
+        // }
+        // }
+        // if (isPrime) {
+        // System.out.println(N + " adalah bilangan prima.");
+        // } else {
+        // System.out.println(N + " bukan bilangan prima.");
+        // }
+
+        // PSEUDOCODE Tukar nilai dua variabel
+        int a = 10;
+        int b = 30;
+        System.out.println("Sebelum swap adalah a = " + a + " dan b = " + b);
+        // Proses tukar nilai
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("Setelah swap adalah a = " + a + " dan b = " + b);
     }
 }
