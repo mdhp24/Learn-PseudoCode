@@ -344,12 +344,13 @@ public class Main {
         // inputString = inputUser.nextLine();
         // int count = 0;
         // for (int i = 0; i < inputString.length(); i++) {
-        //     char ch = Character.toLowerCase(inputString.charAt(i));
-        //     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-        //         count++;
-        //     }
+        // char ch = Character.toLowerCase(inputString.charAt(i));
+        // if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+        // count++;
         // }
-        // System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\" adalah: " + count);
+        // }
+        // System.out.println("Jumlah huruf vokal dalam kalimat \"" + inputString + "\"
+        // adalah: " + count);
 
         // PSEUDOCODE Menghitung Volume Kubus
         // int sisi;
@@ -357,9 +358,10 @@ public class Main {
         // System.out.print("Masukkan panjang sisi kubus: ");
         // sisi = input.nextInt();
         // int volume = sisi * sisi * sisi;
-        // System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " + volume);
+        // System.out.println("Volume kubus dengan sisi " + sisi + " adalah: " +
+        // volume);
 
-        //PSEUDOCODE Konversi dollar ke rupiah
+        // PSEUDOCODE Konversi dollar ke rupiah
         // double dollar;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan jumlah dollar: ");
@@ -367,40 +369,40 @@ public class Main {
         // double rupiah = dollar * 16405.22;
         // System.out.println(dollar + " dollar = " + rupiah + " rupiah");
 
-        //PSEUDOCODE Menentukan nilai huruf dari nilai angka
+        // PSEUDOCODE Menentukan nilai huruf dari nilai angka
         // int nilai;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan nilai (0-100): ");
         // nilai = inputUser.nextInt();
         // char tingkat;
         // if (nilai >= 90) {
-        //     tingkat = 'A';
+        // tingkat = 'A';
         // } else if (nilai >= 81) {
-        //     tingkat = 'B';
+        // tingkat = 'B';
         // } else if (nilai >= 71) {
-        //     tingkat = 'C';
+        // tingkat = 'C';
         // } else if (nilai >= 61) {
-        //     tingkat = 'D';
+        // tingkat = 'D';
         // } else {
-        //     tingkat = 'E';
+        // tingkat = 'E';
         // }
         // System.out.println("Nilai huruf Anda adalah: " + tingkat);
 
-        //PSEUDOCODE Menghitung gaji karyawan dengan bonus
+        // PSEUDOCODE Menghitung gaji karyawan dengan bonus
         // double gajiPokok;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan gaji pokok: ");
         // gajiPokok = inputUser.nextDouble();
         // double bonus = 0;
         // if (gajiPokok > 5000000) {
-        //     bonus = gajiPokok * 0.1;
+        // bonus = gajiPokok * 0.1;
         // } else {
-        //     bonus = gajiPokok * 0.05;
+        // bonus = gajiPokok * 0.05;
         // }
         // double totalGaji = gajiPokok + bonus;
         // System.out.println("Total gaji yang diterima: " + totalGaji);
 
-        //PSEUDOCODE Menhitung bilangan fibonaci hingga N
+        // PSEUDOCODE Menhitung bilangan fibonaci hingga N
         // int N;
         // Scanner input = new Scanner(System.in);
         // System.out.print("Masukkan nilai N: ");
@@ -408,45 +410,67 @@ public class Main {
         // int a = 0, b = 1;
         // System.out.println("Deret Fibonacci hingga " + N + ":");
         // while (a <= N) {
-        //     System.out.print(a + " ");
-        //     int next = a + b;
-        //     a = b;
-        //     b = next;
+        // System.out.print(a + " ");
+        // int next = a + b;
+        // a = b;
+        // b = next;
         // }
 
-        //PSEUDOCODE Menentukan Palindrom
+        // PSEUDOCODE Menentukan Palindrom
         // String inputString;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan sebuah kata atau kalimat: ");
         // inputString = inputUser.nextLine();
         // String reversedString = new StringBuilder(inputString).reverse().toString();
         // if (inputString.equalsIgnoreCase(reversedString)) {
-        //     System.out.println("\"" + inputString + "\" adalah palindrom.");
+        // System.out.println("\"" + inputString + "\" adalah palindrom.");
         // } else {
-        //     System.out.println("\"" + inputString + "\" bukan palindrom.");
+        // System.out.println("\"" + inputString + "\" bukan palindrom.");
         // }
 
-        //PSEUDOCODE Menentukan Nilai Minimun dari 4 angka
-        int a, b, c, d;
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Masukkan angka pertama: ");
-        a = inputScanner.nextInt();
-        System.out.print("Masukkan angka kedua: ");
-        b = inputScanner.nextInt();
-        System.out.print("Masukkan angka ketiga: ");
-        c = inputScanner.nextInt();
-        System.out.print("Masukkan angka keempat: ");
-        d = inputScanner.nextInt();
-        int min = a;
-        if (b < min) {
-            min = b;
+        // PSEUDOCODE Menentukan Nilai Minimun dari 4 angka
+        // int a, b, c, d;
+        // Scanner inputScanner = new Scanner(System.in);
+        // System.out.print("Masukkan angka pertama: ");
+        // a = inputScanner.nextInt();
+        // System.out.print("Masukkan angka kedua: ");
+        // b = inputScanner.nextInt();
+        // System.out.print("Masukkan angka ketiga: ");
+        // c = inputScanner.nextInt();
+        // System.out.print("Masukkan angka keempat: ");
+        // d = inputScanner.nextInt();
+        // int min = a;
+        // if (b < min) {
+        // min = b;
+        // }
+        // if (c < min) {
+        // min = c;
+        // }
+        // if (d < min) {
+        // min = d;
+        // }
+        // System.out.println("Nilai minimum dari keempat angka adalah: " + min);
+
+        // PSEUDOCODE Menghitung bilangan prima
+        int N;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai N: ");
+        N = input.nextInt();
+        boolean isPrime = true;
+        if (N <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
         }
-        if (c < min) {
-            min = c;
+        if (isPrime) {
+            System.out.println(N + " adalah bilangan prima.");
+        } else {
+            System.out.println(N + " bukan bilangan prima.");
         }
-        if (d < min) {
-            min = d;
-        }
-        System.out.println("Nilai minimum dari keempat angka adalah: " + min);
     }
 }
