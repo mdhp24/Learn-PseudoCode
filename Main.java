@@ -527,16 +527,27 @@ public class Main {
         // System.out.println(kilometer + " kilometer = " + meter + " meter");
 
         // PSEUDOCODE INPUT diskon harga barang
-        double hargaBarang;
-        double diskon;
+        // double hargaBarang;
+        // double diskon;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan harga barang: ");
+        // hargaBarang = inputUser.nextDouble();
+        // System.out.print("Masukkan persentase diskon (misal 10 untuk 10%): ");
+        // diskon = inputUser.nextDouble();
+        // double totalDiskon = (diskon / 100) * hargaBarang;
+        // double hargaSetelahDiskon = hargaBarang - totalDiskon;
+        // System.out.println("Harga setelah diskon: " + hargaSetelahDiskon);
+
+        //PSEUDOCODE hitung tahun kabisat
+        int year;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan harga barang: ");
-        hargaBarang = inputUser.nextDouble();
-        System.out.print("Masukkan persentase diskon (misal 10 untuk 10%): ");
-        diskon = inputUser.nextDouble();
-        double totalDiskon = (diskon / 100) * hargaBarang;
-        double hargaSetelahDiskon = hargaBarang - totalDiskon;
-        System.out.println("Harga setelah diskon: " + hargaSetelahDiskon);
+        System.out.print("Masukkan tahun: ");
+        year = inputUser.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " adalah tahun kabisat.");
+        } else {
+            System.out.println(year + " bukan tahun kabisat.");
+        }
 
     }
 
