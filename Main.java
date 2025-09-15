@@ -505,17 +505,26 @@ public class Main {
         // System.out.println("Faktorial dari " + N + " adalah: " + faktorial);
 
         // PSEUDOCODE Menentukan Nilai Terbesar dari 3 angka
-        int a = 10;
-        int b = 20;
-        int c = 30;
+        // int a = 10;
+        // int b = 20;
+        // int c = 30;
 
-        int max = a;
-        if (b > max) {
-            max = b;
-        }
-        if (c > max) {
-            max = c;
-        }
-        System.out.println("Nilai terbesar dari ketiga angka adalah: " + max);
+        // int max = a;
+        // if (b > max) {
+        // max = b;
+        // }
+        // if (c > max) {
+        // max = c;
+        // }
+        // System.out.println("Nilai terbesar dari ketiga angka adalah: " + max);
+
+        // PSEUDOCODE Konversi Kilometer ke Meter
+        double kilometer;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan jarak dalam kilometer: ");
+        kilometer = inputUser.nextDouble();
+        double meter = kilometer * 1000;
+        System.out.println(kilometer + " kilometer = " + meter + " meter");
     }
+
 }
