@@ -519,12 +519,25 @@ public class Main {
         // System.out.println("Nilai terbesar dari ketiga angka adalah: " + max);
 
         // PSEUDOCODE Konversi Kilometer ke Meter
-        double kilometer;
+        // double kilometer;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jarak dalam kilometer: ");
+        // kilometer = inputUser.nextDouble();
+        // double meter = kilometer * 1000;
+        // System.out.println(kilometer + " kilometer = " + meter + " meter");
+
+        // PSEUDOCODE INPUT diskon harga barang
+        double hargaBarang;
+        double diskon;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jarak dalam kilometer: ");
-        kilometer = inputUser.nextDouble();
-        double meter = kilometer * 1000;
-        System.out.println(kilometer + " kilometer = " + meter + " meter");
+        System.out.print("Masukkan harga barang: ");
+        hargaBarang = inputUser.nextDouble();
+        System.out.print("Masukkan persentase diskon (misal 10 untuk 10%): ");
+        diskon = inputUser.nextDouble();
+        double totalDiskon = (diskon / 100) * hargaBarang;
+        double hargaSetelahDiskon = hargaBarang - totalDiskon;
+        System.out.println("Harga setelah diskon: " + hargaSetelahDiskon);
+
     }
 
 }
