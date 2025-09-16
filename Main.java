@@ -538,16 +538,26 @@ public class Main {
         // double hargaSetelahDiskon = hargaBarang - totalDiskon;
         // System.out.println("Harga setelah diskon: " + hargaSetelahDiskon);
 
-        //PSEUDOCODE hitung tahun kabisat
-        int year;
+        // PSEUDOCODE hitung tahun kabisat
+        // int year;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan tahun: ");
+        // year = inputUser.nextInt();
+        // if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        // System.out.println(year + " adalah tahun kabisat.");
+        // } else {
+        // System.out.println(year + " bukan tahun kabisat.");
+        // }
+
+        // PSEUDOCODE menghitung luas segitiga
+        double alas, tinggi, luas;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan tahun: ");
-        year = inputUser.nextInt();
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println(year + " adalah tahun kabisat.");
-        } else {
-            System.out.println(year + " bukan tahun kabisat.");
-        }
+        System.out.print("Masukkan alas segitiga: ");
+        alas = inputUser.nextDouble();
+        System.out.print("Masukkan tinggi segitiga: ");
+        tinggi = inputUser.nextDouble();
+        luas = 0.5 * alas * tinggi;
+        System.out.println("Luas segitiga adalah: " + luas);
 
     }
 
