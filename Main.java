@@ -550,14 +550,28 @@ public class Main {
         // }
 
         // PSEUDOCODE menghitung luas segitiga
-        double alas, tinggi, luas;
+        // double alas, tinggi, luas;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan alas segitiga: ");
+        // alas = inputUser.nextDouble();
+        // System.out.print("Masukkan tinggi segitiga: ");
+        // tinggi = inputUser.nextDouble();
+        // luas = 0.5 * alas * tinggi;
+        // System.out.println("Luas segitiga adalah: " + luas);
+
+        // PSEUDOCODE Cek apakah sebuah huruf adalah vokal atau konsonan
+        char huruf;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan alas segitiga: ");
-        alas = inputUser.nextDouble();
-        System.out.print("Masukkan tinggi segitiga: ");
-        tinggi = inputUser.nextDouble();
-        luas = 0.5 * alas * tinggi;
-        System.out.println("Luas segitiga adalah: " + luas);
+        System.out.print("Masukkan sebuah huruf: ");
+        huruf = inputUser.next().charAt(0);
+        huruf = Character.toLowerCase(huruf);
+        if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf == 'u') {
+            System.out.println(huruf + " adalah huruf vokal.");
+        } else if ((huruf >= 'a' && huruf <= 'z')) {
+            System.out.println(huruf + " adalah huruf konsonan.");
+        } else {
+            System.out.println("Input bukan huruf.");
+        }
 
     }
 
