@@ -575,16 +575,31 @@ public class Main {
         // }
 
         // PSEUDOCODE Hitung rata-rata nilai siswa
-        int total = 0;
-        int jumlahSiswa = 5;
+        // int total = 0;
+        // int jumlahSiswa = 5;
+        // Scanner inputUser = new Scanner(System.in);
+        // for (int i = 1; i <= jumlahSiswa; i++) {
+        // System.out.print("Masukkan nilai siswa ke-" + i + ": ");
+        // int nilai = inputUser.nextInt();
+        // total += nilai;
+        // }
+        // double rataRata = (double) total / jumlahSiswa;
+        // System.out.println("Rata-rata nilai siswa adalah: " + rataRata);
+
+        // PSEUDOCODE Balik urutan kata dalam string
+        String inputString;
         Scanner inputUser = new Scanner(System.in);
-        for (int i = 1; i <= jumlahSiswa; i++) {
-            System.out.print("Masukkan nilai siswa ke-" + i + ": ");
-            int nilai = inputUser.nextInt();
-            total += nilai;
+        System.out.print("Masukkan sebuah kalimat: ");
+        inputString = inputUser.nextLine();
+        String[] words = inputString.split(" ");
+        StringBuilder reversedString = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedString.append(words[i]);
+            if (i != 0) {
+                reversedString.append(" ");
+            }
         }
-        double rataRata = (double) total / jumlahSiswa;
-        System.out.println("Rata-rata nilai siswa adalah: " + rataRata);
+        System.out.println("Kalimat terbalik: " + reversedString.toString());
     }
 
 }
