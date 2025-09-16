@@ -560,19 +560,31 @@ public class Main {
         // System.out.println("Luas segitiga adalah: " + luas);
 
         // PSEUDOCODE Cek apakah sebuah huruf adalah vokal atau konsonan
-        char huruf;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah huruf: ");
-        huruf = inputUser.next().charAt(0);
-        huruf = Character.toLowerCase(huruf);
-        if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf == 'u') {
-            System.out.println(huruf + " adalah huruf vokal.");
-        } else if ((huruf >= 'a' && huruf <= 'z')) {
-            System.out.println(huruf + " adalah huruf konsonan.");
-        } else {
-            System.out.println("Input bukan huruf.");
-        }
+        // char huruf;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah huruf: ");
+        // huruf = inputUser.next().charAt(0);
+        // huruf = Character.toLowerCase(huruf);
+        // if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf ==
+        // 'u') {
+        // System.out.println(huruf + " adalah huruf vokal.");
+        // } else if ((huruf >= 'a' && huruf <= 'z')) {
+        // System.out.println(huruf + " adalah huruf konsonan.");
+        // } else {
+        // System.out.println("Input bukan huruf.");
+        // }
 
+        // PSEUDOCODE Hitung rata-rata nilai siswa
+        int total = 0;
+        int jumlahSiswa = 5;
+        Scanner inputUser = new Scanner(System.in);
+        for (int i = 1; i <= jumlahSiswa; i++) {
+            System.out.print("Masukkan nilai siswa ke-" + i + ": ");
+            int nilai = inputUser.nextInt();
+            total += nilai;
+        }
+        double rataRata = (double) total / jumlahSiswa;
+        System.out.println("Rata-rata nilai siswa adalah: " + rataRata);
     }
 
 }
