@@ -594,25 +594,38 @@ public class Main {
         // String[] words = inputString.split(" ");
         // StringBuilder reversedString = new StringBuilder();
         // for (int i = words.length - 1; i >= 0; i--) {
-        //     reversedString.append(words[i]);
-        //     if (i != 0) {
-        //         reversedString.append(" ");
-        //     }
+        // reversedString.append(words[i]);
+        // if (i != 0) {
+        // reversedString.append(" ");
+        // }
         // }
         // System.out.println("Kalimat terbalik: " + reversedString.toString());
 
-        //PSEUDOCODE Jumlah digit bilangan
-        int number;
+        // PSEUDOCODE Jumlah digit bilangan
+        // int number;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah bilangan: ");
+        // number = inputUser.nextInt();
+        // int count = 0;
+        // int temp = number;
+        // while (temp != 0) {
+        // temp /= 10;
+        // count++;
+        // }
+        // System.out.println("Jumlah digit bilangan " + number + " adalah: " + count);
+
+        // PSEUDOCODE paliddrom kata
+        String inputString;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah bilangan: ");
-        number = inputUser.nextInt();
-        int count = 0;
-        int temp = number;
-        while (temp != 0) {
-            temp /= 10;
-            count++;
+        System.out.print("Masukkan sebuah kata atau kalimat: ");
+        inputString = inputUser.nextLine();
+        String reversedString = new StringBuilder(inputString).reverse().toString();
+        if (inputString.equalsIgnoreCase(reversedString)) {
+            System.out.println("\"" + inputString + "\" adalah palindrom.");
+        } else {
+            System.out.println("\"" + inputString + "\" bukan palindrom.");
         }
-        System.out.println("Jumlah digit bilangan " + number + " adalah: " + count);
+
     }
 
 }
