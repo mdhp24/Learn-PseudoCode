@@ -1,4 +1,3 @@
-
 // PSEUDOCODE
 import java.util.Scanner;
 
@@ -615,17 +614,41 @@ public class Main {
         // System.out.println("Jumlah digit bilangan " + number + " adalah: " + count);
 
         // PSEUDOCODE paliddrom kata
-        String inputString;
+        // String inputString;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kata atau kalimat: ");
+        // inputString = inputUser.nextLine();
+        // String reversedString = new StringBuilder(inputString).reverse().toString();
+        // if (inputString.equalsIgnoreCase(reversedString)) {
+        // System.out.println("\"" + inputString + "\" adalah palindrom.");
+        // } else {
+        // System.out.println("\"" + inputString + "\" bukan palindrom.");
+        // }
+
+        // PSEUDOCODE Konversi suhu farenhiet ke celcius
+        // System.out.println("Konversi suhu dari Farenheit ke Celcius");
+        // double F;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan suhu dalam Farenheit: ");
+        // F = inputUser.nextDouble();
+        // double C = (F - 32) * 5 / 9;
+        // System.out.println(F + " Farenheit = " + C + " Celcius");
+
+        // PSEUDOCODE Ganjil atau genap di rentang angka
+        int start, end;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kata atau kalimat: ");
-        inputString = inputUser.nextLine();
-        String reversedString = new StringBuilder(inputString).reverse().toString();
-        if (inputString.equalsIgnoreCase(reversedString)) {
-            System.out.println("\"" + inputString + "\" adalah palindrom.");
-        } else {
-            System.out.println("\"" + inputString + "\" bukan palindrom.");
+        System.out.print("Masukkan angka awal: ");
+        start = inputUser.nextInt();
+        System.out.print("Masukkan angka akhir: ");
+        end = inputUser.nextInt();
+        System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
+        for (int i = start; i <= end; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
         }
 
     }
-
 }
+
+
