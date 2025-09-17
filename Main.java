@@ -1,3 +1,4 @@
+
 // PSEUDOCODE
 import java.util.Scanner;
 
@@ -635,20 +636,45 @@ public class Main {
         // System.out.println(F + " Farenheit = " + C + " Celcius");
 
         // PSEUDOCODE Ganjil atau genap di rentang angka
-        int start, end;
+        // int start, end;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan angka awal: ");
+        // start = inputUser.nextInt();
+        // System.out.print("Masukkan angka akhir: ");
+        // end = inputUser.nextInt();
+        // System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
+        // for (int i = start; i <= end; i++) {
+        // if (i % 2 != 0) {
+        // System.out.print(i + " ");
+        // }
+        // }
+
+        // PSEUDOCODE Mencari nilai maksimum dan minimum dalam input user
+        int n;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan angka awal: ");
-        start = inputUser.nextInt();
-        System.out.print("Masukkan angka akhir: ");
-        end = inputUser.nextInt();
-        System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
-        for (int i = start; i <= end; i++) {
-            if (i % 2 != 0) {
-                System.out.print(i + " ");
+        System.out.print("Masukkan jumlah bilangan: ");
+        n = inputUser.nextInt();
+        if (n <= 0) {
+            System.out.println("Jumlah bilangan harus lebih dari 0.");
+            return;
+        }
+        int max, min;
+        System.out.print("Masukkan bilangan ke-1: ");
+        int number = inputUser.nextInt();
+        max = number;
+        min = number;
+        for (int i = 2; i <= n; i++) {
+            System.out.print("Masukkan bilangan ke-" + i + ": ");
+            number = inputUser.nextInt();
+            if (number > max) {
+                max = number;
+            }
+            if (number < min) {
+                min = number;
             }
         }
+        System.out.println("Nilai maksimum adalah: " + max);
+        System.out.println("Nilai minimum adalah: " + min);
 
     }
 }
-
-
