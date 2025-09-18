@@ -677,34 +677,89 @@ public class Main {
         // System.out.println("Nilai minimum adalah: " + min);
 
         // PSEUDOCODE sistem hewan (inhetitance & polymorphisme)
-        Animal myAnimal = new Animal();
-        Dog myDog = new Dog();
-        Cat myCat = new Cat();
-        myAnimal.makeSound(); // Output: Some generic animal sound
-        myDog.makeSound(); // Output: Woof
-        myCat.makeSound(); // Output: Meow
+        // Animal myAnimal = new Animal();
+        // Dog myDog = new Dog();
+        // Cat myCat = new Cat();
+        // myAnimal.makeSound(); // Output: Some generic animal sound
+        // myDog.makeSound(); // Output: Woof
+        // myCat.makeSound(); // Output: Meow
 
-        System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
+        // System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " +
+        // myCat);
+
+        // PSEUDOCODE Sistem pegawai (Interface)
+        Employee emp1 = new FullTimeEmployee("Aku", 5000);
+        Employee emp2 = new PartTimeEmployee("Dia", 20, 80); //
+        System.out.println("Gaji " + emp1.getName() + ": $" + emp1.calculateSalary());
+        System.out.println("Gaji " + emp2.getName() + ": $" + emp2.calculateSalary());
 
     }
 }
 
-class Animal {
-    void makeSound() {
-        System.out.println("Some generic animal sound");
-    }
+interface Employee {
+    String getName();
+
+    double calculateSalary();
 }
 
-class Dog extends Animal {
+class FullTimeEmployee implements Employee {
+    private String name;
+    private double monthlySalary;
+
+    public FullTimeEmployee(String name, double monthlySalary) {
+        this.name = name;
+        this.monthlySalary = monthlySalary;
+    }
+
     @Override
-    void makeSound() {
-        System.out.println("Woof");
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return monthlySalary;
     }
 }
 
-class Cat extends Animal {
+class PartTimeEmployee implements Employee {
+    private String name;
+    private double hourlyRate;
+    private int hoursWorked;
+
+    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+        this.name = name;
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
     @Override
-    void makeSound() {
-        System.out.println("Meow");
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return hourlyRate * hoursWorked;
     }
 }
+
+// class Animal {
+// void makeSound() {
+// System.out.println("Some generic animal sound");
+// }
+// }
+
+// class Dog extends Animal {
+// @Override
+// void makeSound() {
+// System.out.println("Woof");
+// }
+// }
+
+// class Cat extends Animal {
+// @Override
+// void makeSound() {
+// System.out.println("Meow");
+// }
+// }
