@@ -650,31 +650,61 @@ public class Main {
         // }
 
         // PSEUDOCODE Mencari nilai maksimum dan minimum dalam input user
-        int n;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jumlah bilangan: ");
-        n = inputUser.nextInt();
-        if (n <= 0) {
-            System.out.println("Jumlah bilangan harus lebih dari 0.");
-            return;
-        }
-        int max, min;
-        System.out.print("Masukkan bilangan ke-1: ");
-        int number = inputUser.nextInt();
-        max = number;
-        min = number;
-        for (int i = 2; i <= n; i++) {
-            System.out.print("Masukkan bilangan ke-" + i + ": ");
-            number = inputUser.nextInt();
-            if (number > max) {
-                max = number;
-            }
-            if (number < min) {
-                min = number;
-            }
-        }
-        System.out.println("Nilai maksimum adalah: " + max);
-        System.out.println("Nilai minimum adalah: " + min);
+        // int n;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah bilangan: ");
+        // n = inputUser.nextInt();
+        // if (n <= 0) {
+        // System.out.println("Jumlah bilangan harus lebih dari 0.");
+        // return;
+        // }
+        // int max, min;
+        // System.out.print("Masukkan bilangan ke-1: ");
+        // int number = inputUser.nextInt();
+        // max = number;
+        // min = number;
+        // for (int i = 2; i <= n; i++) {
+        // System.out.print("Masukkan bilangan ke-" + i + ": ");
+        // number = inputUser.nextInt();
+        // if (number > max) {
+        // max = number;
+        // }
+        // if (number < min) {
+        // min = number;
+        // }
+        // }
+        // System.out.println("Nilai maksimum adalah: " + max);
+        // System.out.println("Nilai minimum adalah: " + min);
 
+        // PSEUDOCODE sistem hewan (inhetitance & polymorphisme)
+        Animal myAnimal = new Animal();
+        Dog myDog = new Dog();
+        Cat myCat = new Cat();
+        myAnimal.makeSound(); // Output: Some generic animal sound
+        myDog.makeSound(); // Output: Woof
+        myCat.makeSound(); // Output: Meow
+
+        System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
+
+    }
+}
+
+class Animal {
+    void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
     }
 }
