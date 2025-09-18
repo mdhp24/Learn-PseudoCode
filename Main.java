@@ -688,61 +688,113 @@ public class Main {
         // myCat);
 
         // PSEUDOCODE Sistem pegawai (Interface)
-        Employee emp1 = new FullTimeEmployee("Aku", 5000);
-        Employee emp2 = new PartTimeEmployee("Dia", 20, 80); //
-        System.out.println("Gaji " + emp1.getName() + ": $" + emp1.calculateSalary());
-        System.out.println("Gaji " + emp2.getName() + ": $" + emp2.calculateSalary());
+        // Employee emp1 = new FullTimeEmployee("Aku", 5000);
+        // Employee emp2 = new PartTimeEmployee("Dia", 20, 80); //
+        // System.out.println("Gaji " + emp1.getName() + ": $" +
+        // emp1.calculateSalary());
+        // System.out.println("Gaji " + emp2.getName() + ": $" +
+        // emp2.calculateSalary());
+
+        // PSEUDOCODE Sistem Perpustakaan (Encapsulation + Array of Object)
+        Library library = new Library();
+        library.addBook(new Book("2024", "Aku dan dia"));
+        library.addBook(new Book("2025", "Tapi dia sama orang lain"));
+        library.listBooks();
 
     }
 }
 
-interface Employee {
-    String getName();
+class Book {
+    private String title;
+    private String author;
 
-    double calculateSalary();
-}
-
-class FullTimeEmployee implements Employee {
-    private String name;
-    private double monthlySalary;
-
-    public FullTimeEmployee(String name, double monthlySalary) {
-        this.name = name;
-        this.monthlySalary = monthlySalary;
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    @Override
-    public double calculateSalary() {
-        return monthlySalary;
+    public String getAuthor() {
+        return author;
     }
 }
 
-class PartTimeEmployee implements Employee {
-    private String name;
-    private double hourlyRate;
-    private int hoursWorked;
+class Library {
+    private Book[] books;
+    private int count;
 
-    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
-        this.name = name;
-        this.hourlyRate = hourlyRate;
-        this.hoursWorked = hoursWorked;
+    public Library() {
+        books = new Book[100]; // Maksimal 100 buku
+        count = 0;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public void addBook(Book book) {
+        if (count < books.length) {
+            books[count] = book;
+            count++;
+        } else {
+            System.out.println("Perpustakaan penuh, tidak bisa menambah buku.");
+        }
     }
 
-    @Override
-    public double calculateSalary() {
-        return hourlyRate * hoursWorked;
+    public void listBooks() {
+        System.out.println("Daftar Buku di Perpustakaan:");
+        for (int i = 0; i < count; i++) {
+            System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " + books[i].getAuthor());
+        }
     }
 }
+
+// interface Employee {
+// String getName();
+
+// double calculateSalary();
+// }
+
+// class FullTimeEmployee implements Employee {
+// private String name;
+// private double monthlySalary;
+
+// public FullTimeEmployee(String name, double monthlySalary) {
+// this.name = name;
+// this.monthlySalary = monthlySalary;
+// }
+
+// @Override
+// public String getName() {
+// return name;
+// }
+
+// @Override
+// public double calculateSalary() {
+// return monthlySalary;
+// }
+// }
+
+// class PartTimeEmployee implements Employee {
+// private String name;
+// private double hourlyRate;
+// private int hoursWorked;
+
+// public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+// this.name = name;
+// this.hourlyRate = hourlyRate;
+// this.hoursWorked = hoursWorked;
+// }
+
+// @Override
+// public String getName() {
+// return name;
+// }
+
+// @Override
+// public double calculateSalary() {
+// return hourlyRate * hoursWorked;
+// }
+// }
 
 // class Animal {
 // void makeSound() {
