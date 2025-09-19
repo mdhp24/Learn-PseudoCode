@@ -696,10 +696,19 @@ public class Main {
         // emp2.calculateSalary());
 
         // PSEUDOCODE Sistem Perpustakaan (Encapsulation + Array of Object)
-        Library library = new Library();
-        library.addBook(new Book("2024", "Aku dan dia"));
-        library.addBook(new Book("2025", "Tapi dia sama orang lain"));
-        library.listBooks();
+        // Library library = new Library();
+        // library.addBook(new Book("2024", "Aku dan dia"));
+        // library.addBook(new Book("2025", "Tapi dia sama orang lain"));
+        // library.listBooks();
+
+        // PSEUDOCODE OOP class buku dan diskon
+        Book book1 = new Book("Buku From zero to action", "Pengarang A", 100 );
+        Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
+        book1.applyDiscount(10); // Diskon 10%
+        book2.applyDiscount(20); // Diskon 20%
+        System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
+        System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
+        System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
 
     }
 }
@@ -707,10 +716,12 @@ public class Main {
 class Book {
     private String title;
     private String author;
+    private double price;
 
-    public Book(String title, String author) {
+    public Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
+        this.price = price;
     }
 
     public String getTitle() {
@@ -720,33 +731,62 @@ class Book {
     public String getAuthor() {
         return author;
     }
-}
 
-class Library {
-    private Book[] books;
-    private int count;
-
-    public Library() {
-        books = new Book[100]; // Maksimal 100 buku
-        count = 0;
+    public double getPrice() {
+        return price;
     }
 
-    public void addBook(Book book) {
-        if (count < books.length) {
-            books[count] = book;
-            count++;
-        } else {
-            System.out.println("Perpustakaan penuh, tidak bisa menambah buku.");
-        }
-    }
-
-    public void listBooks() {
-        System.out.println("Daftar Buku di Perpustakaan:");
-        for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " + books[i].getAuthor());
+    public void applyDiscount(double percentage) {
+        if (percentage > 0 && percentage <= 100) {
+            price -= (price * (percentage / 100));
         }
     }
 }
+
+// class Book {
+// private String title;
+// private String author;
+
+// public Book(String title, String author) {
+// this.title = title;
+// this.author = author;
+// }
+
+// public String getTitle() {
+// return title;
+// }
+
+// public String getAuthor() {
+// return author;
+// }
+// }
+
+// class Library {
+// private Book[] books;
+// private int count;
+
+// public Library() {
+// books = new Book[100]; // Maksimal 100 buku
+// count = 0;
+// }
+
+// public void addBook(Book book) {
+// if (count < books.length) {
+// books[count] = book;
+// count++;
+// } else {
+// System.out.println("Perpustakaan penuh, tidak bisa menambah buku.");
+// }
+// }
+
+// public void listBooks() {
+// System.out.println("Daftar Buku di Perpustakaan:");
+// for (int i = 0; i < count; i++) {
+// System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " +
+// books[i].getAuthor());
+// }
+// }
+// }
 
 // interface Employee {
 // String getName();
