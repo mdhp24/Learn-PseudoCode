@@ -702,46 +702,94 @@ public class Main {
         // library.listBooks();
 
         // PSEUDOCODE OOP class buku dan diskon
-        Book book1 = new Book("Buku From zero to action", "Pengarang A", 100 );
-        Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
-        book1.applyDiscount(10); // Diskon 10%
-        book2.applyDiscount(20); // Diskon 20%
-        System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
-        System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
-        System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
+        // Book book1 = new Book("Buku From zero to action", "Pengarang A", 100 );
+        // Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
+        // book1.applyDiscount(10); // Diskon 10%
+        // book2.applyDiscount(20); // Diskon 20%
+        // System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
+        // System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
+        // System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
 
+        // PSEUDOCODE OOP akun bank dengan setor dan tarik tunai
+        BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
+        account.deposit(500);
+        account.withdraw(200);
+        System.out.println("Saldo saat ini: $" + account.getBalance());
     }
 }
+class BankAccount {
+    private String accountNumber;
+    private String accountHolder;
+    private double balance;
 
-class Book {
-    private String title;
-    private String author;
-    private double price;
-
-    public Book(String title, String author, double price) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
+    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = initialBalance;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAccountHolder() {
+        return accountHolder;
     }
 
-    public double getPrice() {
-        return price;
+    public double getBalance() {
+        return balance;
     }
 
-    public void applyDiscount(double percentage) {
-        if (percentage > 0 && percentage <= 100) {
-            price -= (price * (percentage / 100));
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: $" + amount);
+        } else if (amount > balance) {
+            System.out.println("Insufficient funds for withdrawal.");
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
         }
     }
 }
+
+// class Book {
+//     private String title;
+//     private String author;
+//     private double price;
+
+//     public Book(String title, String author, double price) {
+//         this.title = title;
+//         this.author = author;
+//         this.price = price;
+//     }
+
+//     public String getTitle() {
+//         return title;
+//     }
+
+//     public String getAuthor() {
+//         return author;
+//     }
+
+//     public double getPrice() {
+//         return price;
+//     }
+
+//     public void applyDiscount(double percentage) {
+//         if (percentage > 0 && percentage <= 100) {
+//             price -= (price * (percentage / 100));
+//         }
+//     }
+// }
 
 // class Book {
 // private String title;
