@@ -731,60 +731,113 @@ public class Main {
         // System.out.println("Rata-rata nilai: " + student.calculateAverage());
 
         // PSEUDOCODE oop produk dengan stok dan harga
-        Product product = new Product("Laptop", 1500.00, 10);
-        System.out.println("Nama Produk: " + product.getName());
-        System.out.println("Harga Produk: $" + product.getPrice());
-        System.out.println("Stok Produk: " + product.getStock());
-        product.restock(5);
-        product.sell(3);
-        System.out.println("Stok Produk setelah penjualan: " + product.getStock());
+        // Product product = new Product("Laptop", 1500.00, 10);
+        // System.out.println("Nama Produk: " + product.getName());
+        // System.out.println("Harga Produk: $" + product.getPrice());
+        // System.out.println("Stok Produk: " + product.getStock());
+        // product.restock(5);
+        // product.sell(3);
+        // System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
+        // PSEUDOCODE Pegawai dengan gaji dan bonus jika gaji di atas 5 juta
+        Employee emp1 = new FullTimeEmployee("Aku", 6000000);
+        Employee emp2 = new PartTimeEmployee("Dia", 30000, 100); // 30rb per jam, 100 jam kerja
+        System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
+        System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
     }
 }
 
-class Product {
-    private String name;
-    private double price;
-    private int stock;
+// Abstract class Employee
+abstract class Employee {
+    protected String name;
 
-    public Product(String name, double price, int stock) {
+    public Employee(String name) {
         this.name = name;
-        this.price = price;
-        this.stock = stock;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
-        return price;
+    // Method abstrak, wajib diimplementasikan subclass
+    public abstract double calculateSalary();
+}
+
+// Full-time employee
+class FullTimeEmployee extends Employee {
+    private double monthlySalary;
+
+    public FullTimeEmployee(String name, double monthlySalary) {
+        super(name);
+        this.monthlySalary = monthlySalary;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void restock(int amount) {
-        if (amount > 0) {
-            stock += amount;
-            System.out.println("Restocked: " + amount + " units.");
-        } else {
-            System.out.println("Restock amount must be positive.");
-        }
-    }
-
-    public void sell(int amount) {
-        if (amount > 0 && amount <= stock) {
-            stock -= amount;
-            System.out.println("Sold: " + amount + " units.");
-        } else if (amount > stock) {
-            System.out.println("Insufficient stock for sale.");
-        } else {
-            System.out.println("Sale amount must be positive.");
-        }
+    @Override
+    public double calculateSalary() {
+        return monthlySalary;
     }
 }
+
+// Part-time employee
+class PartTimeEmployee extends Employee {
+    private double hourlyRate;
+    private int hoursWorked;
+
+    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+        super(name);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return hourlyRate * hoursWorked;
+    }
+}
+
+// class Product {
+// private String name;
+// private double price;
+// private int stock;
+
+// public Product(String name, double price, int stock) {
+// this.name = name;
+// this.price = price;
+// this.stock = stock;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double getPrice() {
+// return price;
+// }
+
+// public int getStock() {
+// return stock;
+// }
+
+// public void restock(int amount) {
+// if (amount > 0) {
+// stock += amount;
+// System.out.println("Restocked: " + amount + " units.");
+// } else {
+// System.out.println("Restock amount must be positive.");
+// }
+// }
+
+// public void sell(int amount) {
+// if (amount > 0 && amount <= stock) {
+// stock -= amount;
+// System.out.println("Sold: " + amount + " units.");
+// } else if (amount > stock) {
+// System.out.println("Insufficient stock for sale.");
+// } else {
+// System.out.println("Sale amount must be positive.");
+// }
+// }
+// }
 
 // class Student {
 // private String name;
