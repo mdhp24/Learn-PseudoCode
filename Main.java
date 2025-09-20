@@ -706,89 +706,157 @@ public class Main {
         // Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
         // book1.applyDiscount(10); // Diskon 10%
         // book2.applyDiscount(20); // Diskon 20%
-        // System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
-        // System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
-        // System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
+        // System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $"
+        // + book1.getPrice());
+        // System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $"
+        // + book2.getPrice());
+        // System.out.println("Total harga setelah diskon: $" + (book1.getPrice() +
+        // book2.getPrice()));
 
         // PSEUDOCODE OOP akun bank dengan setor dan tarik tunai
-        BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
-        account.deposit(500);
-        account.withdraw(200);
-        System.out.println("Saldo saat ini: $" + account.getBalance());
+        // BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
+        // account.deposit(500);
+        // account.withdraw(200);
+        // System.out.println("Saldo saat ini: $" + account.getBalance());
+
+        // PSEUDOCODE OOP Mahasiswa nilai rata-rata array
+        Student student = new Student("Aku dan Dia", "123456789", new int[] { 80, 90, 85, 70, 95 });
+        System.out.println("Nama: " + student.getName());
+        System.out.println("NIM: " + student.getNim());
+        System.out.println("Rata-rata nilai: " + student.calculateAverage());
+        System.out.println("Nilai tertinggi: " + student.getHighestGrade());
+        System.out.println("Nilai terendah: " + student.getLowestGrade());
+        System.out.println("Jumlah nilai: " + student.getTotalGrades());
+        System.out.println("Rata-rata nilai: " + student.calculateAverage());
+
     }
 }
-class BankAccount {
-    private String accountNumber;
-    private String accountHolder;
-    private double balance;
 
-    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
-        this.balance = initialBalance;
+class Student {
+    private String name;
+    private String nim;
+    private int[] grades;
+
+    public Student(String name, String nim, int[] grades) {
+        this.name = name;
+        this.nim = nim;
+        this.grades = grades;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getName() {
+        return name;
     }
 
-    public String getAccountHolder() {
-        return accountHolder;
+    public String getNim() {
+        return nim;
     }
 
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: $" + amount);
-        } else {
-            System.out.println("Deposit amount must be positive.");
+    public int getTotalGrades() {
+        int total = 0;
+        for (int grade : grades) {
+            total += grade;
         }
+        return total;
     }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrew: $" + amount);
-        } else if (amount > balance) {
-            System.out.println("Insufficient funds for withdrawal.");
-        } else {
-            System.out.println("Withdrawal amount must be positive.");
+    public double calculateAverage() {
+        return (double) getTotalGrades() / grades.length;
+    }
+
+    public int getHighestGrade() {
+        int max = grades[0];
+        for (int grade : grades) {
+            if (grade > max) {
+                max = grade;
+            }
         }
+        return max;
+    }
+
+    public int getLowestGrade() {
+        int min = grades[0];
+        for (int grade : grades) {
+            if (grade < min) {
+                min = grade;
+            }
+        }
+        return min;
     }
 }
+
+// class BankAccount {
+// private String accountNumber;
+// private String accountHolder;
+// private double balance;
+
+// public BankAccount(String accountNumber, String accountHolder, double
+// initialBalance) {
+// this.accountNumber = accountNumber;
+// this.accountHolder = accountHolder;
+// this.balance = initialBalance;
+// }
+
+// public String getAccountNumber() {
+// return accountNumber;
+// }
+
+// public String getAccountHolder() {
+// return accountHolder;
+// }
+
+// public double getBalance() {
+// return balance;
+// }
+
+// public void deposit(double amount) {
+// if (amount > 0) {
+// balance += amount;
+// System.out.println("Deposited: $" + amount);
+// } else {
+// System.out.println("Deposit amount must be positive.");
+// }
+// }
+
+// public void withdraw(double amount) {
+// if (amount > 0 && amount <= balance) {
+// balance -= amount;
+// System.out.println("Withdrew: $" + amount);
+// } else if (amount > balance) {
+// System.out.println("Insufficient funds for withdrawal.");
+// } else {
+// System.out.println("Withdrawal amount must be positive.");
+// }
+// }
+// }
 
 // class Book {
-//     private String title;
-//     private String author;
-//     private double price;
+// private String title;
+// private String author;
+// private double price;
 
-//     public Book(String title, String author, double price) {
-//         this.title = title;
-//         this.author = author;
-//         this.price = price;
-//     }
+// public Book(String title, String author, double price) {
+// this.title = title;
+// this.author = author;
+// this.price = price;
+// }
 
-//     public String getTitle() {
-//         return title;
-//     }
+// public String getTitle() {
+// return title;
+// }
 
-//     public String getAuthor() {
-//         return author;
-//     }
+// public String getAuthor() {
+// return author;
+// }
 
-//     public double getPrice() {
-//         return price;
-//     }
+// public double getPrice() {
+// return price;
+// }
 
-//     public void applyDiscount(double percentage) {
-//         if (percentage > 0 && percentage <= 100) {
-//             price -= (price * (percentage / 100));
-//         }
-//     }
+// public void applyDiscount(double percentage) {
+// if (percentage > 0 && percentage <= 100) {
+// price -= (price * (percentage / 100));
+// }
+// }
 // }
 
 // class Book {
