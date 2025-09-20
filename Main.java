@@ -720,69 +720,123 @@ public class Main {
         // System.out.println("Saldo saat ini: $" + account.getBalance());
 
         // PSEUDOCODE OOP Mahasiswa nilai rata-rata array
-        Student student = new Student("Aku dan Dia", "123456789", new int[] { 80, 90, 85, 70, 95 });
-        System.out.println("Nama: " + student.getName());
-        System.out.println("NIM: " + student.getNim());
-        System.out.println("Rata-rata nilai: " + student.calculateAverage());
-        System.out.println("Nilai tertinggi: " + student.getHighestGrade());
-        System.out.println("Nilai terendah: " + student.getLowestGrade());
-        System.out.println("Jumlah nilai: " + student.getTotalGrades());
-        System.out.println("Rata-rata nilai: " + student.calculateAverage());
+        // Student student = new Student("Aku dan Dia", "123456789", new int[] { 80, 90,
+        // 85, 70, 95 });
+        // System.out.println("Nama: " + student.getName());
+        // System.out.println("NIM: " + student.getNim());
+        // System.out.println("Rata-rata nilai: " + student.calculateAverage());
+        // System.out.println("Nilai tertinggi: " + student.getHighestGrade());
+        // System.out.println("Nilai terendah: " + student.getLowestGrade());
+        // System.out.println("Jumlah nilai: " + student.getTotalGrades());
+        // System.out.println("Rata-rata nilai: " + student.calculateAverage());
+
+        // PSEUDOCODE oop produk dengan stok dan harga
+        Product product = new Product("Laptop", 1500.00, 10);
+        System.out.println("Nama Produk: " + product.getName());
+        System.out.println("Harga Produk: $" + product.getPrice());
+        System.out.println("Stok Produk: " + product.getStock());
+        product.restock(5);
+        product.sell(3);
+        System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
     }
 }
 
-class Student {
+class Product {
     private String name;
-    private String nim;
-    private int[] grades;
+    private double price;
+    private int stock;
 
-    public Student(String name, String nim, int[] grades) {
+    public Product(String name, double price, int stock) {
         this.name = name;
-        this.nim = nim;
-        this.grades = grades;
+        this.price = price;
+        this.stock = stock;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getNim() {
-        return nim;
+    public double getPrice() {
+        return price;
     }
 
-    public int getTotalGrades() {
-        int total = 0;
-        for (int grade : grades) {
-            total += grade;
+    public int getStock() {
+        return stock;
+    }
+
+    public void restock(int amount) {
+        if (amount > 0) {
+            stock += amount;
+            System.out.println("Restocked: " + amount + " units.");
+        } else {
+            System.out.println("Restock amount must be positive.");
         }
-        return total;
     }
 
-    public double calculateAverage() {
-        return (double) getTotalGrades() / grades.length;
-    }
-
-    public int getHighestGrade() {
-        int max = grades[0];
-        for (int grade : grades) {
-            if (grade > max) {
-                max = grade;
-            }
+    public void sell(int amount) {
+        if (amount > 0 && amount <= stock) {
+            stock -= amount;
+            System.out.println("Sold: " + amount + " units.");
+        } else if (amount > stock) {
+            System.out.println("Insufficient stock for sale.");
+        } else {
+            System.out.println("Sale amount must be positive.");
         }
-        return max;
-    }
-
-    public int getLowestGrade() {
-        int min = grades[0];
-        for (int grade : grades) {
-            if (grade < min) {
-                min = grade;
-            }
-        }
-        return min;
     }
 }
+
+// class Student {
+// private String name;
+// private String nim;
+// private int[] grades;
+
+// public Student(String name, String nim, int[] grades) {
+// this.name = name;
+// this.nim = nim;
+// this.grades = grades;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public String getNim() {
+// return nim;
+// }
+
+// public int getTotalGrades() {
+// int total = 0;
+// for (int grade : grades) {
+// total += grade;
+// }
+// return total;
+// }
+
+// public double calculateAverage() {
+// return (double) getTotalGrades() / grades.length;
+// }
+
+// public int getHighestGrade() {
+// int max = grades[0];
+// for (int grade : grades) {
+// if (grade > max) {
+// max = grade;
+// }
+// }
+// return max;
+// }
+
+// public int getLowestGrade() {
+// int min = grades[0];
+// for (int grade : grades) {
+// if (grade < min) {
+// min = grade;
+// }
+// }
+// return min;
+// }
+// }
 
 // class BankAccount {
 // private String accountNumber;
