@@ -740,60 +740,119 @@ public class Main {
         // System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
         // PSEUDOCODE Pegawai dengan gaji dan bonus jika gaji di atas 5 juta
-        Employee emp1 = new FullTimeEmployee("Aku", 6000000);
-        Employee emp2 = new PartTimeEmployee("Dia", 30000, 100); // 30rb per jam, 100 jam kerja
-        System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
-        System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
+        // Employee emp1 = new FullTimeEmployee("Aku", 6000000);
+        // Employee emp2 = new PartTimeEmployee("Dia", 30000, 100); // 30rb per jam, 100
+        // jam kerja
+        // System.out.println("Gaji " + emp1.getName() + ": Rp" +
+        // emp1.calculateSalary());
+        // System.out.println("Gaji " + emp2.getName() + ": Rp" +
+        // emp2.calculateSalary());
+
+        // PSEUDOCODE Sistem BANK (Encapsulation + Array of Object)
+        BankAccount account1 = new BankAccount("123456789", "Aku", 1000);
+        BankAccount account2 = new BankAccount("987654321", "Dia", 2000);
+        BankAccount[] accounts = { account1, account2 };
+        for (BankAccount account : accounts) {
+            System.out.println("No. Rekening: " + account.getAccountNumber());
+            System.out.println("Nama Pemilik: " + account.getAccountHolder());
+            System.out.println("Saldo: $" + account.getBalance());
+        }
+
+    }
+}
+
+// class bank
+class BankAccount {
+    private String accountNumber;
+    private String accountHolder;
+    private double balance;
+
+    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = initialBalance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: $" + amount);
+        } else if (amount > balance) {
+            System.out.println("Insufficient funds for withdrawal.");
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
+        }
     }
 }
 
 // Abstract class Employee
-abstract class Employee {
-    protected String name;
+// abstract class Employee {
+// protected String name;
 
-    public Employee(String name) {
-        this.name = name;
-    }
+// public Employee(String name) {
+// this.name = name;
+// }
 
-    public String getName() {
-        return name;
-    }
+// public String getName() {
+// return name;
+// }
 
-    // Method abstrak, wajib diimplementasikan subclass
-    public abstract double calculateSalary();
-}
+// // Method abstrak, wajib diimplementasikan subclass
+// public abstract double calculateSalary();
+// }
 
-// Full-time employee
-class FullTimeEmployee extends Employee {
-    private double monthlySalary;
+// // Full-time employee
+// class FullTimeEmployee extends Employee {
+// private double monthlySalary;
 
-    public FullTimeEmployee(String name, double monthlySalary) {
-        super(name);
-        this.monthlySalary = monthlySalary;
-    }
+// public FullTimeEmployee(String name, double monthlySalary) {
+// super(name);
+// this.monthlySalary = monthlySalary;
+// }
 
-    @Override
-    public double calculateSalary() {
-        return monthlySalary;
-    }
-}
+// @Override
+// public double calculateSalary() {
+// return monthlySalary;
+// }
+// }
 
-// Part-time employee
-class PartTimeEmployee extends Employee {
-    private double hourlyRate;
-    private int hoursWorked;
+// // Part-time employee
+// class PartTimeEmployee extends Employee {
+// private double hourlyRate;
+// private int hoursWorked;
 
-    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
-        super(name);
-        this.hourlyRate = hourlyRate;
-        this.hoursWorked = hoursWorked;
-    }
+// public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+// super(name);
+// this.hourlyRate = hourlyRate;
+// this.hoursWorked = hoursWorked;
+// }
 
-    @Override
-    public double calculateSalary() {
-        return hourlyRate * hoursWorked;
-    }
-}
+// @Override
+// public double calculateSalary() {
+// return hourlyRate * hoursWorked;
+// }
+// }
 
 // class Product {
 // private String name;
