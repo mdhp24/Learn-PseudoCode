@@ -764,111 +764,150 @@ public class Main {
         // library.addBook(new Book("2025", "Tapi dia sama orang lain"));
         // library.listBooks();
 
-        //PSEUDOCODE Sistem sewa mobil (Encapsulation + Array of Object)
-        CarRental carRental = new CarRental();
-        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
-        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
-        carRental.listCars();
+        // PSEUDOCODE Sistem sewa mobil (Encapsulation + Array of Object)
+        // CarRental carRental = new CarRental();
+        // carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        // carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        // carRental.listCars();
+
+        // PSEUDUCODE Sistem manajemen sekolah OOP (Encapsulation + Array of Object)
+        Student student1 = new Student("12345", "Aku", new int[] { 85, 90, 78 });
+        Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
+        System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
+                + student1.calculateAverage());
+        System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
+                + student2.calculateAverage());
 
     }
 }
 
-class CarRental {
-    private Car[] cars;
-    private int count;
+class Student {
+    private String nim;
+    private String name;
+    private int[] grades;
 
-    public CarRental() {
-        cars = new Car[100]; // Maksimal 100 mobil
-        count = 0;
+    public Student(String nim, String name, int[] grades) {
+        this.nim = nim;
+        this.name = name;
+        this.grades = grades;
     }
 
-    public void addCar(Car car) {
-        if (count < cars.length) {
-            cars[count++] = car;
-        } else {
-            System.out.println("Kapasitas rental mobil penuh.");
+    public String getNim() {
+        return nim;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double calculateAverage() {
+        int total = 0;
+        for (int grade : grades) {
+            total += grade;
         }
-    }
-
-    public void listCars() {
-        System.out.println("Daftar Mobil di Rental:");
-        for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + ". " + cars[i].getMake() + " " + cars[i].getModel() + " (" + cars[i].getYear() + ") - Harga Sewa: Rp " + cars[i].getRentalPrice());
-        }
+        return (double) total / grades.length;
     }
 }
 
-class Car {
-    private String make;
-    private String model;
-    private int year;
-    private double rentalPrice;
+// class CarRental {
+// private Car[] cars;
+// private int count;
 
-    public Car(String make, String model, int year, double rentalPrice) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.rentalPrice = rentalPrice;
-    }
+// public CarRental() {
+// cars = new Car[100]; // Maksimal 100 mobil
+// count = 0;
+// }
 
-    public String getMake() {
-        return make;
-    }
+// public void addCar(Car car) {
+// if (count < cars.length) {
+// cars[count++] = car;
+// } else {
+// System.out.println("Kapasitas rental mobil penuh.");
+// }
+// }
 
-    public String getModel() {
-        return model;
-    }
+// public void listCars() {
+// System.out.println("Daftar Mobil di Rental:");
+// for (int i = 0; i < count; i++) {
+// System.out.println((i + 1) + ". " + cars[i].getMake() + " " +
+// cars[i].getModel() + " (" + cars[i].getYear() + ") - Harga Sewa: Rp " +
+// cars[i].getRentalPrice());
+// }
+// }
+// }
 
-    public int getYear() {
-        return year;
-    }
+// class Car {
+// private String make;
+// private String model;
+// private int year;
+// private double rentalPrice;
 
-    public double getRentalPrice() {
-        return rentalPrice;
-    }
-}
+// public Car(String make, String model, int year, double rentalPrice) {
+// this.make = make;
+// this.model = model;
+// this.year = year;
+// this.rentalPrice = rentalPrice;
+// }
+
+// public String getMake() {
+// return make;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public int getYear() {
+// return year;
+// }
+
+// public double getRentalPrice() {
+// return rentalPrice;
+// }
+// }
 
 // class Library {
-//     private Book[] books;
-//     private int count;
+// private Book[] books;
+// private int count;
 
-//     public Library() {
-//         books = new Book[100]; // Maksimal 100 buku
-//         count = 0;
-//     }
+// public Library() {
+// books = new Book[100]; // Maksimal 100 buku
+// count = 0;
+// }
 
-//     public void addBook(Book book) {
-//         if (count < books.length) {
-//             books[count++] = book;
-//         } else {
-//             System.out.println("Kapasitas perpustakaan penuh.");
-//         }
-//     }
+// public void addBook(Book book) {
+// if (count < books.length) {
+// books[count++] = book;
+// } else {
+// System.out.println("Kapasitas perpustakaan penuh.");
+// }
+// }
 
-//     public void listBooks() {
-//         System.out.println("Daftar Buku di Perpustakaan:");
-//         for (int i = 0; i < count; i++) {
-//             System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " + books[i].getAuthor());
-//         }
-//     }
+// public void listBooks() {
+// System.out.println("Daftar Buku di Perpustakaan:");
+// for (int i = 0; i < count; i++) {
+// System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " +
+// books[i].getAuthor());
+// }
+// }
 // }
 
 // class Book {
-//     private String title;
-//     private String author;
+// private String title;
+// private String author;
 
-//     public Book(String title, String author) {
-//         this.title = title;
-//         this.author = author;
-//     }
+// public Book(String title, String author) {
+// this.title = title;
+// this.author = author;
+// }
 
-//     public String getTitle() {
-//         return title;
-//     }
+// public String getTitle() {
+// return title;
+// }
 
-//     public String getAuthor() {
-//         return author;
-//     }
+// public String getAuthor() {
+// return author;
+// }
 // }
 
 // class bank
