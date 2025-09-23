@@ -749,62 +749,112 @@ public class Main {
         // emp2.calculateSalary());
 
         // PSEUDOCODE Sistem BANK (Encapsulation + Array of Object)
-        BankAccount account1 = new BankAccount("123456789", "Aku", 1000);
-        BankAccount account2 = new BankAccount("987654321", "Dia", 2000);
-        BankAccount[] accounts = { account1, account2 };
-        for (BankAccount account : accounts) {
-            System.out.println("No. Rekening: " + account.getAccountNumber());
-            System.out.println("Nama Pemilik: " + account.getAccountHolder());
-            System.out.println("Saldo: $" + account.getBalance());
-        }
+        // BankAccount account1 = new BankAccount("123456789", "Aku", 1000);
+        // BankAccount account2 = new BankAccount("987654321", "Dia", 2000);
+        // BankAccount[] accounts = { account1, account2 };
+        // for (BankAccount account : accounts) {
+        // System.out.println("No. Rekening: " + account.getAccountNumber());
+        // System.out.println("Nama Pemilik: " + account.getAccountHolder());
+        // System.out.println("Saldo: $" + account.getBalance());
+        // }
 
+        // PSEUDOCODE Sistem Perpustakaan (Encapsulation + Array of Object)
+        Library library = new Library();
+        library.addBook(new Book("2024", "Aku dan dia"));
+        library.addBook(new Book("2025", "Tapi dia sama orang lain"));
+        library.listBooks();
+
+    }
+}
+
+class Library {
+    private Book[] books;
+    private int count;
+
+    public Library() {
+        books = new Book[100]; // Maksimal 100 buku
+        count = 0;
+    }
+
+    public void addBook(Book book) {
+        if (count < books.length) {
+            books[count++] = book;
+        } else {
+            System.out.println("Kapasitas perpustakaan penuh.");
+        }
+    }
+
+    public void listBooks() {
+        System.out.println("Daftar Buku di Perpustakaan:");
+        for (int i = 0; i < count; i++) {
+            System.out.println((i + 1) + ". " + books[i].getTitle() + " oleh " + books[i].getAuthor());
+        }
+    }
+}
+
+class Book {
+    private String title;
+    private String author;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 }
 
 // class bank
-class BankAccount {
-    private String accountNumber;
-    private String accountHolder;
-    private double balance;
+// class BankAccount {
+// private String accountNumber;
+// private String accountHolder;
+// private double balance;
 
-    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
-        this.balance = initialBalance;
-    }
+// public BankAccount(String accountNumber, String accountHolder, double
+// initialBalance) {
+// this.accountNumber = accountNumber;
+// this.accountHolder = accountHolder;
+// this.balance = initialBalance;
+// }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+// public String getAccountNumber() {
+// return accountNumber;
+// }
 
-    public String getAccountHolder() {
-        return accountHolder;
-    }
+// public String getAccountHolder() {
+// return accountHolder;
+// }
 
-    public double getBalance() {
-        return balance;
-    }
+// public double getBalance() {
+// return balance;
+// }
 
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: $" + amount);
-        } else {
-            System.out.println("Deposit amount must be positive.");
-        }
-    }
+// public void deposit(double amount) {
+// if (amount > 0) {
+// balance += amount;
+// System.out.println("Deposited: $" + amount);
+// } else {
+// System.out.println("Deposit amount must be positive.");
+// }
+// }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrew: $" + amount);
-        } else if (amount > balance) {
-            System.out.println("Insufficient funds for withdrawal.");
-        } else {
-            System.out.println("Withdrawal amount must be positive.");
-        }
-    }
-}
+// public void withdraw(double amount) {
+// if (amount > 0 && amount <= balance) {
+// balance -= amount;
+// System.out.println("Withdrew: $" + amount);
+// } else if (amount > balance) {
+// System.out.println("Insufficient funds for withdrawal.");
+// } else {
+// System.out.println("Withdrawal amount must be positive.");
+// }
+// }
+// }
 
 // Abstract class Employee
 // abstract class Employee {
