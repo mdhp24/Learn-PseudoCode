@@ -771,43 +771,55 @@ public class Main {
         // carRental.listCars();
 
         // PSEUDUCODE Sistem manajemen sekolah OOP (Encapsulation + Array of Object)
-        Student student1 = new Student("12345", "Aku", new int[] { 85, 90, 78 });
-        Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
-        System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
-                + student1.calculateAverage());
-        System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
-                + student2.calculateAverage());
+        // Student student1 = new Student("12345", "Aku", new int[] { 85, 90, 78 });
+        // Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
+        // System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
+        //         + student1.calculateAverage());
+        // System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
+        //         + student2.calculateAverage());
+
+        //PSEUDOCODE Menghitung luas dan keliling persegi panjang
+        int length, width;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan panjang persegi panjang: ");
+        length = inputUser.nextInt();
+        System.out.print("Masukkan lebar persegi panjang: ");
+        width = inputUser.nextInt();
+        int area = length * width;
+        int perimeter = 2 * (length + width);
+        System.out.println("Luas persegi panjang adalah: " + area);
+        System.out.println("Keliling persegi panjang adalah: " + perimeter);
 
     }
 }
 
-class Student {
-    private String nim;
-    private String name;
-    private int[] grades;
+// class Student {
+//     private String nim;
+//     private String name;
+//     private int[] grades;
 
-    public Student(String nim, String name, int[] grades) {
-        this.nim = nim;
-        this.name = name;
-        this.grades = grades;
-    }
+//     public Student(String nim, String name, int[] grades) {
+//         this.nim = nim;
+//         this.name = name;
+//         this.grades = grades;
+//     }
 
-    public String getNim() {
-        return nim;
-    }
+//     public String getNim() {
+//         return nim;
+//     }
 
-    public String getName() {
-        return name;
-    }
+//     public String getName() {
+//         return name;
+//     }
 
-    public double calculateAverage() {
-        int total = 0;
-        for (int grade : grades) {
-            total += grade;
-        }
-        return (double) total / grades.length;
-    }
-}
+//     public double calculateAverage() {
+//         int total = 0;
+//         for (int grade : grades) {
+//             total += grade;
+//         }
+//         return (double) total / grades.length;
+//     }
+// }
 
 // class CarRental {
 // private Car[] cars;
