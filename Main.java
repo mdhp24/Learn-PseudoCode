@@ -791,23 +791,35 @@ public class Main {
         // System.out.println("Keliling persegi panjang adalah: " + perimeter);
 
         // PSEUDOCODE Menghitung jumlah dan rata-rata dari N bilangan
-        int N;
+        // int N;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah bilangan (N): ");
+        // N = inputUser.nextInt();
+        // if (N <= 0) {
+        //     System.out.println("Jumlah bilangan harus lebih dari 0.");
+        //     return;
+        // }
+        // int sum = 0;
+        // for (int i = 1; i <= N; i++) {
+        //     System.out.print("Masukkan bilangan ke-" + i + ": ");
+        //     int number = inputUser.nextInt();
+        //     sum += number;
+        // }
+        // double average = (double) sum / N;
+        // System.out.println("Jumlah dari " + N + " bilangan adalah: " + sum);
+        // System.out.println("Rata-rata dari " + N + " bilangan adalah: " + average);
+
+        //pseudocode menghitung luas lingkaran
+        double radius;
+        final double PI = 3.14159;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jumlah bilangan (N): ");
-        N = inputUser.nextInt();
-        if (N <= 0) {
-            System.out.println("Jumlah bilangan harus lebih dari 0.");
-            return;
-        }
-        int sum = 0;
-        for (int i = 1; i <= N; i++) {
-            System.out.print("Masukkan bilangan ke-" + i + ": ");
-            int number = inputUser.nextInt();
-            sum += number;
-        }
-        double average = (double) sum / N;
-        System.out.println("Jumlah dari " + N + " bilangan adalah: " + sum);
-        System.out.println("Rata-rata dari " + N + " bilangan adalah: " + average);
+        System.out.print("Masukkan jari-jari lingkaran: ");
+        radius = inputUser.nextDouble();
+        double area = PI * radius * radius;
+        double circumference = 2 * PI * radius;
+        System.out.println("Luas lingkaran adalah: " + area);
+        System.out.println("Keliling lingkaran adalah: " + circumference);
+        inputUser.close();
 
     }
 }
