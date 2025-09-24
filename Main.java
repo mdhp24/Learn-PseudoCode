@@ -779,16 +779,35 @@ public class Main {
         //         + student2.calculateAverage());
 
         //PSEUDOCODE Menghitung luas dan keliling persegi panjang
-        int length, width;
+        // int length, width;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan panjang persegi panjang: ");
+        // length = inputUser.nextInt();
+        // System.out.print("Masukkan lebar persegi panjang: ");
+        // width = inputUser.nextInt();
+        // int area = length * width;
+        // int perimeter = 2 * (length + width);
+        // System.out.println("Luas persegi panjang adalah: " + area);
+        // System.out.println("Keliling persegi panjang adalah: " + perimeter);
+
+        // PSEUDOCODE Menghitung jumlah dan rata-rata dari N bilangan
+        int N;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan panjang persegi panjang: ");
-        length = inputUser.nextInt();
-        System.out.print("Masukkan lebar persegi panjang: ");
-        width = inputUser.nextInt();
-        int area = length * width;
-        int perimeter = 2 * (length + width);
-        System.out.println("Luas persegi panjang adalah: " + area);
-        System.out.println("Keliling persegi panjang adalah: " + perimeter);
+        System.out.print("Masukkan jumlah bilangan (N): ");
+        N = inputUser.nextInt();
+        if (N <= 0) {
+            System.out.println("Jumlah bilangan harus lebih dari 0.");
+            return;
+        }
+        int sum = 0;
+        for (int i = 1; i <= N; i++) {
+            System.out.print("Masukkan bilangan ke-" + i + ": ");
+            int number = inputUser.nextInt();
+            sum += number;
+        }
+        double average = (double) sum / N;
+        System.out.println("Jumlah dari " + N + " bilangan adalah: " + sum);
+        System.out.println("Rata-rata dari " + N + " bilangan adalah: " + average);
 
     }
 }
