@@ -861,37 +861,89 @@ public class Main {
         // System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
         // PSEUDOCODE OOP animal (inheritance & polymorphism)
-        Animal myAnimal = new Animal();
-        Dog myDog = new Dog();
-        Cat myCat = new Cat();
-        myAnimal.makeSound();
-        myDog.makeSound(); 
-        myCat.makeSound();
-        System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
-        System.out.println(
-                "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan " + myCat.makeSound());
+        // Animal myAnimal = new Animal();
+        // Dog myDog = new Dog();
+        // Cat myCat = new Cat();
+        // myAnimal.makeSound();
+        // myDog.makeSound(); 
+        // myCat.makeSound();
+        // System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
+        // System.out.println(
+        //         "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan " + myCat.makeSound());
+
+        //PSEUDOCODE oop Sistem pegawai dengan bonus gaji (Interface)
+        Employee emp1 = new FullTimeEmployee("Aku", 6000000);
+        Employee emp2 = new PartTimeEmployee("Dia", 30000, 100);
+        System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
+        System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
     }
 }
 
-class Animal {
-    public String makeSound() {
-        return "Some generic animal sound";
-    }
+interface Employee {
+    String getName();
+    double calculateSalary();
 }
+class FullTimeEmployee implements Employee {
+    private String name;
+    private double salary;
 
-class Dog extends Animal {
+    public FullTimeEmployee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
     @Override
-    public String makeSound() {
-        return "Woof";
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double calculateSalary() {
+        double bonus = (salary > 5000000) ? salary * 0.1 : 0;
+        return salary + bonus;
+    }
+}
+class PartTimeEmployee implements Employee {
+    private String name;
+    private double hourlyRate;
+    private int hoursWorked;
+
+    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+        this.name = name;
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return hourlyRate * hoursWorked;
     }
 }
 
-class Cat extends Animal {
-    @Override
-    public String makeSound() {
-        return "Meow";
-    }
-}
+// class Animal {
+//     public String makeSound() {
+//         return "Some generic animal sound";
+//     }
+// }
+
+// class Dog extends Animal {
+//     @Override
+//     public String makeSound() {
+//         return "Woof";
+//     }
+// }
+
+// class Cat extends Animal {
+//     @Override
+//     public String makeSound() {
+//         return "Meow";
+//     }
+// }
 
 // class Product {
 // private String name;
