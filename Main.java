@@ -852,60 +852,90 @@ public class Main {
         // System.out.println("Jumlah nilai: " + student.getTotalGrades());
 
         // PSEUDOCODE OOP Produk dengan stok dan harga
-        Product product = new Product("Laptop", 1500.00, 10);
-        System.out.println("Nama Produk: " + product.getName());
-        System.out.println("Harga Produk: $" + product.getPrice());
-        System.out.println("Stok Produk: " + product.getStock());
-        product.restock(5);
-        product.sell(3);
-        System.out.println("Stok Produk setelah penjualan: " + product.getStock());
+        // Product product = new Product("Laptop", 1500.00, 10);
+        // System.out.println("Nama Produk: " + product.getName());
+        // System.out.println("Harga Produk: $" + product.getPrice());
+        // System.out.println("Stok Produk: " + product.getStock());
+        // product.restock(5);
+        // product.sell(3);
+        // System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
+        // PSEUDOCODE OOP animal (inheritance & polymorphism)
+        Animal myAnimal = new Animal();
+        Dog myDog = new Dog();
+        Cat myCat = new Cat();
+        myAnimal.makeSound();
+        myDog.makeSound(); 
+        myCat.makeSound();
+        System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
+        System.out.println(
+                "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan " + myCat.makeSound());
     }
 }
 
-class Product {
-    private String name;
-    private double price;
-    private int stock;
-
-    public Product(String name, double price, int stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void restock(int amount) {
-        if (amount > 0) {
-            stock += amount;
-            System.out.println("Restocked " + amount + " units. New stock: " + stock);
-        } else {
-            System.out.println("Restock amount must be positive.");
-        }
-    }
-
-    public void sell(int amount) {
-        if (amount > 0 && amount <= stock) {
-            stock -= amount;
-            System.out.println("Sold " + amount + " units. Remaining stock: " + stock);
-        } else if (amount > stock) {
-            System.out.println("Insufficient stock for sale.");
-        } else {
-            System.out.println("Sale amount must be positive.");
-        }
+class Animal {
+    public String makeSound() {
+        return "Some generic animal sound";
     }
 }
+
+class Dog extends Animal {
+    @Override
+    public String makeSound() {
+        return "Woof";
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public String makeSound() {
+        return "Meow";
+    }
+}
+
+// class Product {
+// private String name;
+// private double price;
+// private int stock;
+
+// public Product(String name, double price, int stock) {
+// this.name = name;
+// this.price = price;
+// this.stock = stock;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double getPrice() {
+// return price;
+// }
+
+// public int getStock() {
+// return stock;
+// }
+
+// public void restock(int amount) {
+// if (amount > 0) {
+// stock += amount;
+// System.out.println("Restocked " + amount + " units. New stock: " + stock);
+// } else {
+// System.out.println("Restock amount must be positive.");
+// }
+// }
+
+// public void sell(int amount) {
+// if (amount > 0 && amount <= stock) {
+// stock -= amount;
+// System.out.println("Sold " + amount + " units. Remaining stock: " + stock);
+// } else if (amount > stock) {
+// System.out.println("Insufficient stock for sale.");
+// } else {
+// System.out.println("Sale amount must be positive.");
+// }
+// }
+// }
 
 // class Student {
 // private String nim;
