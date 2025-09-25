@@ -834,57 +834,123 @@ public class Main {
 
 
         // PSEUDOCODE OOP akun bank dengan setor dan tarik tunai
-        BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
-        account.deposit(500);
-        account.withdraw(200);
-        System.out.println("Saldo saat ini: $" + account.getBalance());
+        // BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
+        // account.deposit(500);
+        // account.withdraw(200);
+        // System.out.println("Saldo saat ini: $" + account.getBalance());
+
+
+        // PSEUDOCODE OOP Mahasiswa nilai rata-rata array
+        Student student = new Student("2251762021", "Aku dan Dia", new int[] { 80, 90, 85, 70, 95 });
+        System.out.println("Nama: " + student.getName());
+        System.out.println("NIM: " + student.getNim());
+        System.out.println("Rata-rata: " + student.calculateAverage());
+        System.out.println("Nilai tertinggi: " + student.getHighestGrade());
+        System.out.println("Nilai terendah: " + student.getLowestGrade());
+        System.out.println("Jumlah nilai: " + student.getTotalGrades());
 
     }
 }
 
-class BankAccount {
-    private String accountNumber;
-    private String accountHolder;
-    private double balance;
+class Student {
+    private String nim;
+    private String name;
+    private int[] grades;
 
-    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
-        this.balance = initialBalance;
+    public Student(String nim, String name, int[] grades) {
+        this.nim = nim;
+        this.name = name;
+        this.grades = grades;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getNim() {
+        return nim;
     }
 
-    public String getAccountHolder() {
-        return accountHolder;
+    public String getName() {
+        return name;
     }
 
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: $" + amount);
-        } else {
-            System.out.println("Deposit amount must be positive.");
+    public double calculateAverage() {
+        int total = 0;
+        for (int grade : grades) {
+            total += grade;
         }
+        return (double) total / grades.length;
     }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrew: $" + amount);
-        } else if (amount > balance) {
-            System.out.println("Insufficient funds for withdrawal.");
-        } else {
-            System.out.println("Withdrawal amount must be positive.");
+    public int getHighestGrade() {
+        int max = grades[0];
+        for (int grade : grades) {
+            if (grade > max) {
+                max = grade;
+            }
         }
+        return max;
+    }
+
+    public int getLowestGrade() {
+        int min = grades[0];
+        for (int grade : grades) {
+            if (grade < min) {
+                min = grade;
+            }
+        }
+        return min;
+    }
+
+    public int getTotalGrades() {
+        int total = 0;
+        for (int grade : grades) {
+            total += grade;
+        }
+        return total;
     }
 }
+
+// class BankAccount {
+//     private String accountNumber;
+//     private String accountHolder;
+//     private double balance;
+
+//     public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
+//         this.accountNumber = accountNumber;
+//         this.accountHolder = accountHolder;
+//         this.balance = initialBalance;
+//     }
+
+//     public String getAccountNumber() {
+//         return accountNumber;
+//     }
+
+//     public String getAccountHolder() {
+//         return accountHolder;
+//     }
+
+//     public double getBalance() {
+//         return balance;
+//     }
+
+//     public void deposit(double amount) {
+//         if (amount > 0) {
+//             balance += amount;
+//             System.out.println("Deposited: $" + amount);
+//         } else {
+//             System.out.println("Deposit amount must be positive.");
+//         }
+//     }
+
+//     public void withdraw(double amount) {
+//         if (amount > 0 && amount <= balance) {
+//             balance -= amount;
+//             System.out.println("Withdrew: $" + amount);
+//         } else if (amount > balance) {
+//             System.out.println("Insufficient funds for withdrawal.");
+//         } else {
+//             System.out.println("Withdrawal amount must be positive.");
+//         }
+//     }
+// }
 
 // class Book {
 //     private String title;
