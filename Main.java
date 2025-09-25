@@ -872,58 +872,126 @@ public class Main {
         //         "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan " + myCat.makeSound());
 
         //PSEUDOCODE oop Sistem pegawai dengan bonus gaji (Interface)
-        Employee emp1 = new FullTimeEmployee("Aku", 6000000);
-        Employee emp2 = new PartTimeEmployee("Dia", 30000, 100);
-        System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
-        System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
+        // Employee emp1 = new FullTimeEmployee("Aku", 6000000);
+        // Employee emp2 = new PartTimeEmployee("Dia", 30000, 100);
+        // System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
+        // System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
+
+        //PSEUDOCODE OOP Sistem sewa mobil (Encapsulation + Array of Object)
+        CarRental carRental = new CarRental();
+        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        carRental.listCars();
+        System.out.println("Total cars available: " + carRental.getTotalCars());
     }
 }
 
-interface Employee {
-    String getName();
-    double calculateSalary();
-}
-class FullTimeEmployee implements Employee {
-    private String name;
-    private double salary;
+class Car {
+    private String make;
+    private String model;
+    private int year;
+    private double rentalPricePerDay;
 
-    public FullTimeEmployee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
+    public Car(String make, String model, int year, double rentalPricePerDay) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.rentalPricePerDay = rentalPricePerDay;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public String getMake() {
+        return make;
     }
 
-    @Override
-    public double calculateSalary() {
-        double bonus = (salary > 5000000) ? salary * 0.1 : 0;
-        return salary + bonus;
-    }
-}
-class PartTimeEmployee implements Employee {
-    private String name;
-    private double hourlyRate;
-    private int hoursWorked;
-
-    public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
-        this.name = name;
-        this.hourlyRate = hourlyRate;
-        this.hoursWorked = hoursWorked;
+    public String getModel() {
+        return model;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public int getYear() {
+        return year;
     }
 
-    @Override
-    public double calculateSalary() {
-        return hourlyRate * hoursWorked;
+    public double getRentalPricePerDay() {
+        return rentalPricePerDay;
     }
 }
+
+class CarRental {
+    private Car[] cars;
+    private int carCount;
+
+    public CarRental() {
+        cars = new Car[100]; // Maksimal 100 mobil
+        carCount = 0;
+    }
+
+    public void addCar(Car car) {
+        if (carCount < cars.length) {
+            cars[carCount++] = car;
+        } else {
+            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+        }
+    }
+
+    public void listCars() {
+        System.out.println("Daftar Mobil Tersedia:");
+        for (int i = 0; i < carCount; i++) {
+            Car car = cars[i];
+            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
+                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+        }
+    }
+
+    public int getTotalCars() {
+        return carCount;
+    }
+}
+
+// interface Employee {
+//     String getName();
+//     double calculateSalary();
+// }
+// class FullTimeEmployee implements Employee {
+//     private String name;
+//     private double salary;
+
+//     public FullTimeEmployee(String name, double salary) {
+//         this.name = name;
+//         this.salary = salary;
+//     }
+
+//     @Override
+//     public String getName() {
+//         return name;
+//     }
+
+//     @Override
+//     public double calculateSalary() {
+//         double bonus = (salary > 5000000) ? salary * 0.1 : 0;
+//         return salary + bonus;
+//     }
+// }
+// class PartTimeEmployee implements Employee {
+//     private String name;
+//     private double hourlyRate;
+//     private int hoursWorked;
+
+//     public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+//         this.name = name;
+//         this.hourlyRate = hourlyRate;
+//         this.hoursWorked = hoursWorked;
+//     }
+
+//     @Override
+//     public String getName() {
+//         return name;
+//     }
+
+//     @Override
+//     public double calculateSalary() {
+//         return hourlyRate * hoursWorked;
+//     }
+// }
 
 // class Animal {
 //     public String makeSound() {
