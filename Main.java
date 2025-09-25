@@ -773,12 +773,14 @@ public class Main {
         // PSEUDUCODE Sistem manajemen sekolah OOP (Encapsulation + Array of Object)
         // Student student1 = new Student("12345", "Aku", new int[] { 85, 90, 78 });
         // Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
-        // System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
-        //         + student1.calculateAverage());
-        // System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
-        //         + student2.calculateAverage());
+        // System.out.println("Nama: " + student1.getName() + ", NIM: " +
+        // student1.getNim() + ", Rata-rata: "
+        // + student1.calculateAverage());
+        // System.out.println("Nama: " + student2.getName() + ", NIM: " +
+        // student2.getNim() + ", Rata-rata: "
+        // + student2.calculateAverage());
 
-        //PSEUDOCODE Menghitung luas dan keliling persegi panjang
+        // PSEUDOCODE Menghitung luas dan keliling persegi panjang
         // int length, width;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan panjang persegi panjang: ");
@@ -796,60 +798,101 @@ public class Main {
         // System.out.print("Masukkan jumlah bilangan (N): ");
         // N = inputUser.nextInt();
         // if (N <= 0) {
-        //     System.out.println("Jumlah bilangan harus lebih dari 0.");
-        //     return;
+        // System.out.println("Jumlah bilangan harus lebih dari 0.");
+        // return;
         // }
         // int sum = 0;
         // for (int i = 1; i <= N; i++) {
-        //     System.out.print("Masukkan bilangan ke-" + i + ": ");
-        //     int number = inputUser.nextInt();
-        //     sum += number;
+        // System.out.print("Masukkan bilangan ke-" + i + ": ");
+        // int number = inputUser.nextInt();
+        // sum += number;
         // }
         // double average = (double) sum / N;
         // System.out.println("Jumlah dari " + N + " bilangan adalah: " + sum);
         // System.out.println("Rata-rata dari " + N + " bilangan adalah: " + average);
 
-        //pseudocode menghitung luas lingkaran
-        double radius;
-        final double PI = 3.14159;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan jari-jari lingkaran: ");
-        radius = inputUser.nextDouble();
-        double area = PI * radius * radius;
-        double circumference = 2 * PI * radius;
-        System.out.println("Luas lingkaran adalah: " + area);
-        System.out.println("Keliling lingkaran adalah: " + circumference);
-        inputUser.close();
+        // pseudocode menghitung luas lingkaran
+        // double radius;
+        // final double PI = 3.14159;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan jari-jari lingkaran: ");
+        // radius = inputUser.nextDouble();
+        // double area = PI * radius * radius;
+        // double circumference = 2 * PI * radius;
+        // System.out.println("Luas lingkaran adalah: " + area);
+        // System.out.println("Keliling lingkaran adalah: " + circumference);
+        // inputUser.close();
+
+        // PSEUDOCODE OOP class buku dan diskon
+        Book book1 = new Book("Buku From zero to action", "Pengarang A", 100);
+        Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
+        book1.applyDiscount(10); // Diskon 10%
+        book2.applyDiscount(20); // Diskon 20%
+        System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
+        System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
+        System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
 
     }
 }
 
+class Book {
+    private String title;
+    private String author;
+    private double price;
+
+    public Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void applyDiscount(double percentage) {
+        if (percentage > 0 && percentage <= 100) {
+            price -= (percentage / 100) * price;
+        } else {
+            System.out.println("Persentase diskon tidak valid.");
+        }
+    }
+}
+
 // class Student {
-//     private String nim;
-//     private String name;
-//     private int[] grades;
+// private String nim;
+// private String name;
+// private int[] grades;
 
-//     public Student(String nim, String name, int[] grades) {
-//         this.nim = nim;
-//         this.name = name;
-//         this.grades = grades;
-//     }
+// public Student(String nim, String name, int[] grades) {
+// this.nim = nim;
+// this.name = name;
+// this.grades = grades;
+// }
 
-//     public String getNim() {
-//         return nim;
-//     }
+// public String getNim() {
+// return nim;
+// }
 
-//     public String getName() {
-//         return name;
-//     }
+// public String getName() {
+// return name;
+// }
 
-//     public double calculateAverage() {
-//         int total = 0;
-//         for (int grade : grades) {
-//             total += grade;
-//         }
-//         return (double) total / grades.length;
-//     }
+// public double calculateAverage() {
+// int total = 0;
+// for (int grade : grades) {
+// total += grade;
+// }
+// return (double) total / grades.length;
+// }
 // }
 
 // class CarRental {
