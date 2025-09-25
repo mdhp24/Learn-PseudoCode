@@ -828,10 +828,12 @@ public class Main {
         // Book book2 = new Book("Buku From zero to hero", "Pengarang B", 150);
         // book1.applyDiscount(10); // Diskon 10%
         // book2.applyDiscount(20); // Diskon 20%
-        // System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $" + book1.getPrice());
-        // System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $" + book2.getPrice());
-        // System.out.println("Total harga setelah diskon: $" + (book1.getPrice() + book2.getPrice()));
-
+        // System.out.println("Judul: " + book1.getTitle() + ", Harga setelah diskon: $"
+        // + book1.getPrice());
+        // System.out.println("Judul: " + book2.getTitle() + ", Harga setelah diskon: $"
+        // + book2.getPrice());
+        // System.out.println("Total harga setelah diskon: $" + (book1.getPrice() +
+        // book2.getPrice()));
 
         // PSEUDOCODE OOP akun bank dengan setor dan tarik tunai
         // BankAccount account = new BankAccount("123456789", "Aku dan Dia", 1000);
@@ -839,149 +841,203 @@ public class Main {
         // account.withdraw(200);
         // System.out.println("Saldo saat ini: $" + account.getBalance());
 
-
         // PSEUDOCODE OOP Mahasiswa nilai rata-rata array
-        Student student = new Student("2251762021", "Aku dan Dia", new int[] { 80, 90, 85, 70, 95 });
-        System.out.println("Nama: " + student.getName());
-        System.out.println("NIM: " + student.getNim());
-        System.out.println("Rata-rata: " + student.calculateAverage());
-        System.out.println("Nilai tertinggi: " + student.getHighestGrade());
-        System.out.println("Nilai terendah: " + student.getLowestGrade());
-        System.out.println("Jumlah nilai: " + student.getTotalGrades());
+        // Student student = new Student("2251762021", "Aku dan Dia", new int[] { 80,
+        // 90, 85, 70, 95 });
+        // System.out.println("Nama: " + student.getName());
+        // System.out.println("NIM: " + student.getNim());
+        // System.out.println("Rata-rata: " + student.calculateAverage());
+        // System.out.println("Nilai tertinggi: " + student.getHighestGrade());
+        // System.out.println("Nilai terendah: " + student.getLowestGrade());
+        // System.out.println("Jumlah nilai: " + student.getTotalGrades());
+
+        // PSEUDOCODE OOP Produk dengan stok dan harga
+        Product product = new Product("Laptop", 1500.00, 10);
+        System.out.println("Nama Produk: " + product.getName());
+        System.out.println("Harga Produk: $" + product.getPrice());
+        System.out.println("Stok Produk: " + product.getStock());
+        product.restock(5);
+        product.sell(3);
+        System.out.println("Stok Produk setelah penjualan: " + product.getStock());
 
     }
 }
 
-class Student {
-    private String nim;
+class Product {
     private String name;
-    private int[] grades;
+    private double price;
+    private int stock;
 
-    public Student(String nim, String name, int[] grades) {
-        this.nim = nim;
+    public Product(String name, double price, int stock) {
         this.name = name;
-        this.grades = grades;
-    }
-
-    public String getNim() {
-        return nim;
+        this.price = price;
+        this.stock = stock;
     }
 
     public String getName() {
         return name;
     }
 
-    public double calculateAverage() {
-        int total = 0;
-        for (int grade : grades) {
-            total += grade;
-        }
-        return (double) total / grades.length;
+    public double getPrice() {
+        return price;
     }
 
-    public int getHighestGrade() {
-        int max = grades[0];
-        for (int grade : grades) {
-            if (grade > max) {
-                max = grade;
-            }
-        }
-        return max;
+    public int getStock() {
+        return stock;
     }
 
-    public int getLowestGrade() {
-        int min = grades[0];
-        for (int grade : grades) {
-            if (grade < min) {
-                min = grade;
-            }
+    public void restock(int amount) {
+        if (amount > 0) {
+            stock += amount;
+            System.out.println("Restocked " + amount + " units. New stock: " + stock);
+        } else {
+            System.out.println("Restock amount must be positive.");
         }
-        return min;
     }
 
-    public int getTotalGrades() {
-        int total = 0;
-        for (int grade : grades) {
-            total += grade;
+    public void sell(int amount) {
+        if (amount > 0 && amount <= stock) {
+            stock -= amount;
+            System.out.println("Sold " + amount + " units. Remaining stock: " + stock);
+        } else if (amount > stock) {
+            System.out.println("Insufficient stock for sale.");
+        } else {
+            System.out.println("Sale amount must be positive.");
         }
-        return total;
     }
 }
 
+// class Student {
+// private String nim;
+// private String name;
+// private int[] grades;
+
+// public Student(String nim, String name, int[] grades) {
+// this.nim = nim;
+// this.name = name;
+// this.grades = grades;
+// }
+
+// public String getNim() {
+// return nim;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double calculateAverage() {
+// int total = 0;
+// for (int grade : grades) {
+// total += grade;
+// }
+// return (double) total / grades.length;
+// }
+
+// public int getHighestGrade() {
+// int max = grades[0];
+// for (int grade : grades) {
+// if (grade > max) {
+// max = grade;
+// }
+// }
+// return max;
+// }
+
+// public int getLowestGrade() {
+// int min = grades[0];
+// for (int grade : grades) {
+// if (grade < min) {
+// min = grade;
+// }
+// }
+// return min;
+// }
+
+// public int getTotalGrades() {
+// int total = 0;
+// for (int grade : grades) {
+// total += grade;
+// }
+// return total;
+// }
+// }
+
 // class BankAccount {
-//     private String accountNumber;
-//     private String accountHolder;
-//     private double balance;
+// private String accountNumber;
+// private String accountHolder;
+// private double balance;
 
-//     public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
-//         this.accountNumber = accountNumber;
-//         this.accountHolder = accountHolder;
-//         this.balance = initialBalance;
-//     }
+// public BankAccount(String accountNumber, String accountHolder, double
+// initialBalance) {
+// this.accountNumber = accountNumber;
+// this.accountHolder = accountHolder;
+// this.balance = initialBalance;
+// }
 
-//     public String getAccountNumber() {
-//         return accountNumber;
-//     }
+// public String getAccountNumber() {
+// return accountNumber;
+// }
 
-//     public String getAccountHolder() {
-//         return accountHolder;
-//     }
+// public String getAccountHolder() {
+// return accountHolder;
+// }
 
-//     public double getBalance() {
-//         return balance;
-//     }
+// public double getBalance() {
+// return balance;
+// }
 
-//     public void deposit(double amount) {
-//         if (amount > 0) {
-//             balance += amount;
-//             System.out.println("Deposited: $" + amount);
-//         } else {
-//             System.out.println("Deposit amount must be positive.");
-//         }
-//     }
+// public void deposit(double amount) {
+// if (amount > 0) {
+// balance += amount;
+// System.out.println("Deposited: $" + amount);
+// } else {
+// System.out.println("Deposit amount must be positive.");
+// }
+// }
 
-//     public void withdraw(double amount) {
-//         if (amount > 0 && amount <= balance) {
-//             balance -= amount;
-//             System.out.println("Withdrew: $" + amount);
-//         } else if (amount > balance) {
-//             System.out.println("Insufficient funds for withdrawal.");
-//         } else {
-//             System.out.println("Withdrawal amount must be positive.");
-//         }
-//     }
+// public void withdraw(double amount) {
+// if (amount > 0 && amount <= balance) {
+// balance -= amount;
+// System.out.println("Withdrew: $" + amount);
+// } else if (amount > balance) {
+// System.out.println("Insufficient funds for withdrawal.");
+// } else {
+// System.out.println("Withdrawal amount must be positive.");
+// }
+// }
 // }
 
 // class Book {
-//     private String title;
-//     private String author;
-//     private double price;
+// private String title;
+// private String author;
+// private double price;
 
-//     public Book(String title, String author, double price) {
-//         this.title = title;
-//         this.author = author;
-//         this.price = price;
-//     }
+// public Book(String title, String author, double price) {
+// this.title = title;
+// this.author = author;
+// this.price = price;
+// }
 
-//     public String getTitle() {
-//         return title;
-//     }
+// public String getTitle() {
+// return title;
+// }
 
-//     public String getAuthor() {
-//         return author;
-//     }
+// public String getAuthor() {
+// return author;
+// }
 
-//     public double getPrice() {
-//         return price;
-//     }
+// public double getPrice() {
+// return price;
+// }
 
-//     public void applyDiscount(double percentage) {
-//         if (percentage > 0 && percentage <= 100) {
-//             price -= (percentage / 100) * price;
-//         } else {
-//             System.out.println("Persentase diskon tidak valid.");
-//         }
-//     }
+// public void applyDiscount(double percentage) {
+// if (percentage > 0 && percentage <= 100) {
+// price -= (percentage / 100) * price;
+// } else {
+// System.out.println("Persentase diskon tidak valid.");
+// }
+// }
 // }
 
 // class Student {
