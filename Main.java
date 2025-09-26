@@ -865,152 +865,226 @@ public class Main {
         // Dog myDog = new Dog();
         // Cat myCat = new Cat();
         // myAnimal.makeSound();
-        // myDog.makeSound(); 
+        // myDog.makeSound();
         // myCat.makeSound();
-        // System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " + myCat);
+        // System.out.println("Suara hewan:" + myAnimal + " dan " + myDog + " dan " +
+        // myCat);
         // System.out.println(
-        //         "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan " + myCat.makeSound());
+        // "Suara hewan:" + myAnimal.makeSound() + " dan " + myDog.makeSound() + " dan "
+        // + myCat.makeSound());
 
-        //PSEUDOCODE oop Sistem pegawai dengan bonus gaji (Interface)
+        // PSEUDOCODE oop Sistem pegawai dengan bonus gaji (Interface)
         // Employee emp1 = new FullTimeEmployee("Aku", 6000000);
         // Employee emp2 = new PartTimeEmployee("Dia", 30000, 100);
-        // System.out.println("Gaji " + emp1.getName() + ": Rp" + emp1.calculateSalary());
-        // System.out.println("Gaji " + emp2.getName() + ": Rp" + emp2.calculateSalary());
+        // System.out.println("Gaji " + emp1.getName() + ": Rp" +
+        // emp1.calculateSalary());
+        // System.out.println("Gaji " + emp2.getName() + ": Rp" +
+        // emp2.calculateSalary());
 
-        //PSEUDOCODE OOP Sistem sewa mobil (Encapsulation + Array of Object)
-        CarRental carRental = new CarRental();
-        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
-        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
-        carRental.listCars();
-        System.out.println("Total cars available: " + carRental.getTotalCars());
+        // PSEUDOCODE OOP Sistem sewa mobil (Encapsulation + Array of Object)
+        // CarRental carRental = new CarRental();
+        // carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        // carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        // carRental.listCars();
+        // System.out.println("Total cars available: " + carRental.getTotalCars());
+
+        // PSEUDOCODE OOP Sistem inputan pembelian barang (Encapsulation + Array of
+        // Object)
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan jumlah barang yang akan dibeli: ");
+        int jumlahBarang = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan newline
+        Product[] products = new Product[jumlahBarang];
+        for (int i = 0; i < jumlahBarang; i++) {
+            System.out.println("Masukkan detail barang ke-" + (i + 1) + ":");
+            System.out.print("Nama: ");
+            String name = scanner.nextLine();
+            System.out.print("Harga: ");
+            double price = scanner.nextDouble();
+            System.out.print("Stok: ");
+            int stock = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan newline
+            products[i] = new Product(name, price, stock);
+        }
+        System.out.println("\nDetail barang yang dibeli:");
+        for (Product product : products) {
+            System.out.println(
+                    "Nama: " + product.getName() + ", Harga: $" + product.getPrice() + ", Stok: " + product.getStock());
+        }
+        scanner.close();
     }
 }
 
-class Car {
-    private String make;
-    private String model;
-    private int year;
-    private double rentalPricePerDay;
+class Product {
+    private String name;
+    private double price;
+    private int stock;
 
-    public Car(String make, String model, int year, double rentalPricePerDay) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.rentalPricePerDay = rentalPricePerDay;
+    public Product(String name, double price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
-    public String getMake() {
-        return make;
+    public String getName() {
+        return name;
     }
 
-    public String getModel() {
-        return model;
+    public double getPrice() {
+        return price;
     }
 
-    public int getYear() {
-        return year;
+    public int getStock() {
+        return stock;
     }
 
-    public double getRentalPricePerDay() {
-        return rentalPricePerDay;
-    }
-}
-
-class CarRental {
-    private Car[] cars;
-    private int carCount;
-
-    public CarRental() {
-        cars = new Car[100]; // Maksimal 100 mobil
-        carCount = 0;
-    }
-
-    public void addCar(Car car) {
-        if (carCount < cars.length) {
-            cars[carCount++] = car;
+    public void restock(int amount) {
+        if (amount > 0) {
+            stock += amount;
+            System.out.println("Restocked " + amount + " units. New stock: " + stock);
         } else {
-            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+            System.out.println("Restock amount must be positive.");
         }
     }
 
-    public void listCars() {
-        System.out.println("Daftar Mobil Tersedia:");
-        for (int i = 0; i < carCount; i++) {
-            Car car = cars[i];
-            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
-                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+    public void sell(int amount) {
+        if (amount > 0 && amount <= stock) {
+            stock -= amount;
+            System.out.println("Sold " + amount + " units. Remaining stock: " + stock);
+        } else if (amount > stock) {
+            System.out.println("Insufficient stock for sale.");
+        } else {
+            System.out.println("Sale amount must be positive.");
         }
-    }
-
-    public int getTotalCars() {
-        return carCount;
     }
 }
+
+// class Car {
+// private String make;
+// private String model;
+// private int year;
+// private double rentalPricePerDay;
+
+// public Car(String make, String model, int year, double rentalPricePerDay) {
+// this.make = make;
+// this.model = model;
+// this.year = year;
+// this.rentalPricePerDay = rentalPricePerDay;
+// }
+
+// public String getMake() {
+// return make;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public int getYear() {
+// return year;
+// }
+
+// public double getRentalPricePerDay() {
+// return rentalPricePerDay;
+// }
+// }
+
+// class CarRental {
+// private Car[] cars;
+// private int carCount;
+
+// public CarRental() {
+// cars = new Car[100]; // Maksimal 100 mobil
+// carCount = 0;
+// }
+
+// public void addCar(Car car) {
+// if (carCount < cars.length) {
+// cars[carCount++] = car;
+// } else {
+// System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+// }
+// }
+
+// public void listCars() {
+// System.out.println("Daftar Mobil Tersedia:");
+// for (int i = 0; i < carCount; i++) {
+// Car car = cars[i];
+// System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + "
+// (" + car.getYear()
+// + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+// }
+// }
+
+// public int getTotalCars() {
+// return carCount;
+// }
+// }
 
 // interface Employee {
-//     String getName();
-//     double calculateSalary();
+// String getName();
+// double calculateSalary();
 // }
 // class FullTimeEmployee implements Employee {
-//     private String name;
-//     private double salary;
+// private String name;
+// private double salary;
 
-//     public FullTimeEmployee(String name, double salary) {
-//         this.name = name;
-//         this.salary = salary;
-//     }
+// public FullTimeEmployee(String name, double salary) {
+// this.name = name;
+// this.salary = salary;
+// }
 
-//     @Override
-//     public String getName() {
-//         return name;
-//     }
+// @Override
+// public String getName() {
+// return name;
+// }
 
-//     @Override
-//     public double calculateSalary() {
-//         double bonus = (salary > 5000000) ? salary * 0.1 : 0;
-//         return salary + bonus;
-//     }
+// @Override
+// public double calculateSalary() {
+// double bonus = (salary > 5000000) ? salary * 0.1 : 0;
+// return salary + bonus;
+// }
 // }
 // class PartTimeEmployee implements Employee {
-//     private String name;
-//     private double hourlyRate;
-//     private int hoursWorked;
+// private String name;
+// private double hourlyRate;
+// private int hoursWorked;
 
-//     public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
-//         this.name = name;
-//         this.hourlyRate = hourlyRate;
-//         this.hoursWorked = hoursWorked;
-//     }
+// public PartTimeEmployee(String name, double hourlyRate, int hoursWorked) {
+// this.name = name;
+// this.hourlyRate = hourlyRate;
+// this.hoursWorked = hoursWorked;
+// }
 
-//     @Override
-//     public String getName() {
-//         return name;
-//     }
+// @Override
+// public String getName() {
+// return name;
+// }
 
-//     @Override
-//     public double calculateSalary() {
-//         return hourlyRate * hoursWorked;
-//     }
+// @Override
+// public double calculateSalary() {
+// return hourlyRate * hoursWorked;
+// }
 // }
 
 // class Animal {
-//     public String makeSound() {
-//         return "Some generic animal sound";
-//     }
+// public String makeSound() {
+// return "Some generic animal sound";
+// }
 // }
 
 // class Dog extends Animal {
-//     @Override
-//     public String makeSound() {
-//         return "Woof";
-//     }
+// @Override
+// public String makeSound() {
+// return "Woof";
+// }
 // }
 
 // class Cat extends Animal {
-//     @Override
-//     public String makeSound() {
-//         return "Meow";
-//     }
+// @Override
+// public String makeSound() {
+// return "Meow";
+// }
 // }
 
 // class Product {
