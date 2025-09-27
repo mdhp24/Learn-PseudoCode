@@ -976,35 +976,57 @@ public class Main {
         // scanner.close();
 
         //PSEUDOCODE OOP cari nilai maksimum dan minimum dalam input user (Encapsulation + Method)
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah bilangan: ");
-        int n = scanner.nextInt();
-        if (n <= 0) {
-            System.out.println("Jumlah bilangan harus lebih dari 0.");
-            return;
-        }
-        int max, min;
-        System.out.print("Masukkan bilangan ke-1: ");
-        int number = scanner.nextInt();
-        max = number;
-        min = number;
-        for (int i = 2; i <= n; i++) {
-            System.out.print("Masukkan bilangan ke-" + i + ": ");
-            number = scanner.nextInt();
-            if (number > max) {
-                max = number;
-            }
-            if (number < min) {
-                min = number;
-            }
-        }
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah bilangan: ");
+        // int n = scanner.nextInt();
+        // if (n <= 0) {
+        //     System.out.println("Jumlah bilangan harus lebih dari 0.");
+        //     return;
+        // }
+        // int max, min;
+        // System.out.print("Masukkan bilangan ke-1: ");
+        // int number = scanner.nextInt();
+        // max = number;
+        // min = number;
+        // for (int i = 2; i <= n; i++) {
+        //     System.out.print("Masukkan bilangan ke-" + i + ": ");
+        //     number = scanner.nextInt();
+        //     if (number > max) {
+        //         max = number;
+        //     }
+        //     if (number < min) {
+        //         min = number;
+        //     }
+        // }
 
-        System.out.println("Nilai maksimum adalah: " + max);
-        System.out.println("Nilai minimum adalah: " + min);
+        // System.out.println("Nilai maksimum adalah: " + max);
+        // System.out.println("Nilai minimum adalah: " + min);
+
+        //PSEUDOCODE OOP jumlah bilangan genap dan ganjil dalam array (Encapsulation + Method)
+        int[] numbers = { 12, 7, 9, 20, 33, 42, 55, 60 };
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        System.out.println("Jumlah bilangan genap: " + evenCount);
+        System.out.println("Jumlah bilangan ganjil: " + oddCount);
     }
 }
 
-
+class PowerCalculator {
+    public static int calculatePower(int base, int exponent) {
+        int result = 1;
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+}
 
 // class PowerCalculator {
 //     public static int calculatePower(int base, int exponent) {
