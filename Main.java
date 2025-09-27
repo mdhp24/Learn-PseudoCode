@@ -957,7 +957,7 @@ public class Main {
         // OddNumberFinder.findOddNumbersInRange(start, end);
         // scanner.close();
 
-        //PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
+        // PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
         // Scanner scanner = new Scanner(System.in);
         // System.out.print("Masukkan sebuah kalimat: ");
         // String inputString = scanner.nextLine();
@@ -965,7 +965,7 @@ public class Main {
         // System.out.println("Kalimat terbalik: " + reversedString);
         // scanner.close();
 
-        //PSEUDOCODE OOP Hitung pangkat a pangkat b (Encapsulation + Method)
+        // PSEUDOCODE OOP Hitung pangkat a pangkat b (Encapsulation + Method)
         // Scanner scanner = new Scanner(System.in);
         // System.out.print("Masukkan basis (a): ");
         // int a = scanner.nextInt();
@@ -975,13 +975,14 @@ public class Main {
         // System.out.println(a + " pangkat " + b + " adalah: " + result);
         // scanner.close();
 
-        //PSEUDOCODE OOP cari nilai maksimum dan minimum dalam input user (Encapsulation + Method)
+        // PSEUDOCODE OOP cari nilai maksimum dan minimum dalam input user
+        // (Encapsulation + Method)
         // Scanner scanner = new Scanner(System.in);
         // System.out.print("Masukkan jumlah bilangan: ");
         // int n = scanner.nextInt();
         // if (n <= 0) {
-        //     System.out.println("Jumlah bilangan harus lebih dari 0.");
-        //     return;
+        // System.out.println("Jumlah bilangan harus lebih dari 0.");
+        // return;
         // }
         // int max, min;
         // System.out.print("Masukkan bilangan ke-1: ");
@@ -989,78 +990,89 @@ public class Main {
         // max = number;
         // min = number;
         // for (int i = 2; i <= n; i++) {
-        //     System.out.print("Masukkan bilangan ke-" + i + ": ");
-        //     number = scanner.nextInt();
-        //     if (number > max) {
-        //         max = number;
-        //     }
-        //     if (number < min) {
-        //         min = number;
-        //     }
+        // System.out.print("Masukkan bilangan ke-" + i + ": ");
+        // number = scanner.nextInt();
+        // if (number > max) {
+        // max = number;
+        // }
+        // if (number < min) {
+        // min = number;
+        // }
         // }
 
         // System.out.println("Nilai maksimum adalah: " + max);
         // System.out.println("Nilai minimum adalah: " + min);
 
-        //PSEUDOCODE OOP jumlah bilangan genap dan ganjil dalam array (Encapsulation + Method)
-        int[] numbers = { 12, 7, 9, 20, 33, 42, 55, 60 };
-        int evenCount = 0;
-        int oddCount = 0;
-        for (int number : numbers) {
-            if (number % 2 == 0) {
-                evenCount++;
-            } else {
-                oddCount++;
-            }
-        }
-        System.out.println("Jumlah bilangan genap: " + evenCount);
-        System.out.println("Jumlah bilangan ganjil: " + oddCount);
-    }
-}
+        // PSEUDOCODE OOP jumlah bilangan genap dan ganjil dalam array (Encapsulation +
+        // Method)
+        // int[] numbers = { 12, 7, 9, 20, 33, 42, 55, 60 };
+        // int evenCount = 0;
+        // int oddCount = 0;
+        // for (int number : numbers) {
+        // if (number % 2 == 0) {
+        // evenCount++;
+        // } else {
+        // oddCount++;
+        // }
+        // }
+        // System.out.println("Jumlah bilangan genap: " + evenCount);
+        // System.out.println("Jumlah bilangan ganjil: " + oddCount);
 
-class PowerCalculator {
-    public static int calculatePower(int base, int exponent) {
-        int result = 1;
-        for (int i = 1; i <= exponent; i++) {
-            result *= base;
-        }
-        return result;
+        // PSUDOCODE konversi suhu dari celcius ke farenhiet (Encapsulation + Method)
+        double celsius;
+        Scanner inputUser = new Scanner(System.in);
+        System.out.print("Masukkan suhu dalam Celcius: ");
+        celsius = inputUser.nextDouble();
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        System.out.println(celsius + " Celcius = " + fahrenheit + " Farenheit");
+        inputUser.close();
     }
 }
 
 // class PowerCalculator {
-//     public static int calculatePower(int base, int exponent) {
-//         int result = 1;
-//         for (int i = 1; i <= exponent; i++) {
-//             result *= base;
-//         }
-//         return result;
-//     }
+// public static int calculatePower(int base, int exponent) {
+// int result = 1;
+// for (int i = 1; i <= exponent; i++) {
+// result *= base;
+// }
+// return result;
+// }
+// }
+
+// class PowerCalculator {
+// public static int calculatePower(int base, int exponent) {
+// int result = 1;
+// for (int i = 1; i <= exponent; i++) {
+// result *= base;
+// }
+// return result;
+// }
 // }
 
 // class StringReverser {
-//     public static String reverseWords(String input) {
-//         String[] words = input.split(" ");
-//         StringBuilder reversedString = new StringBuilder();
-//         for (int i = words.length - 1; i >= 0; i--) {
-//             reversedString.append(words[i]);
-//             if (i != 0) {
-//                 reversedString.append(" ");
-//             }
-//         }
-//         return reversedString.toString();
-//     }
+// public static String reverseWords(String input) {
+// String[] words = input.split(" ");
+// StringBuilder reversedString = new StringBuilder();
+// for (int i = words.length - 1; i >= 0; i--) {
+// reversedString.append(words[i]);
+// if (i != 0) {
+// reversedString.append(" ");
+// }
+// }
+// return reversedString.toString();
+// }
 // }
 
 // class OddNumberFinder {
-//     public static void findOddNumbersInRange(int start, int end) {
-//         for (int i = start; i <= end; i++) {
-//             if (i % 2 != 0) {
-//                 System.out.print(i + " ");
-//             }
-//         }
-//         System.out.println(); // Untuk baris baru setelah mencetak semua bilangan ganjil
-//     }
+// public static void findOddNumbersInRange(int start, int end) {
+// for (int i = start; i <= end; i++) {
+// if (i % 2 != 0) {
+// System.out.print(i + " ");
+// }
+// }
+// System.out.println(); // Untuk baris baru setelah mencetak semua bilangan
+// ganjil
+// }
 // }
 // class DigitCounter {
 // public static int countDigits(int number) {
