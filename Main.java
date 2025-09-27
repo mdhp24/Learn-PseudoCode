@@ -948,27 +948,49 @@ public class Main {
         // digitCount);
 
         // PSEUDOCODE OOP Cari bilangan dalam rentang (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan angka awal: ");
+        // int start = scanner.nextInt();
+        // System.out.print("Masukkan angka akhir: ");
+        // int end = scanner.nextInt();
+        // System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
+        // OddNumberFinder.findOddNumbersInRange(start, end);
+        // scanner.close();
+
+        //PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan angka awal: ");
-        int start = scanner.nextInt();
-        System.out.print("Masukkan angka akhir: ");
-        int end = scanner.nextInt();
-        System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
-        OddNumberFinder.findOddNumbersInRange(start, end);
+        System.out.print("Masukkan sebuah kalimat: ");
+        String inputString = scanner.nextLine();
+        String reversedString = StringReverser.reverseWords(inputString);
+        System.out.println("Kalimat terbalik: " + reversedString);
         scanner.close();
     }
 }
 
-class OddNumberFinder {
-    public static void findOddNumbersInRange(int start, int end) {
-        for (int i = start; i <= end; i++) {
-            if (i % 2 != 0) {
-                System.out.print(i + " ");
+class StringReverser {
+    public static String reverseWords(String input) {
+        String[] words = input.split(" ");
+        StringBuilder reversedString = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedString.append(words[i]);
+            if (i != 0) {
+                reversedString.append(" ");
             }
         }
-        System.out.println(); // Untuk baris baru setelah mencetak semua bilangan ganjil
+        return reversedString.toString();
     }
 }
+
+// class OddNumberFinder {
+//     public static void findOddNumbersInRange(int start, int end) {
+//         for (int i = start; i <= end; i++) {
+//             if (i % 2 != 0) {
+//                 System.out.print(i + " ");
+//             }
+//         }
+//         System.out.println(); // Untuk baris baru setelah mencetak semua bilangan ganjil
+//     }
+// }
 // class DigitCounter {
 // public static int countDigits(int number) {
 // if (number == 0) {
