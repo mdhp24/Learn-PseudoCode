@@ -958,28 +958,48 @@ public class Main {
         // scanner.close();
 
         //PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kalimat: ");
+        // String inputString = scanner.nextLine();
+        // String reversedString = StringReverser.reverseWords(inputString);
+        // System.out.println("Kalimat terbalik: " + reversedString);
+        // scanner.close();
+
+        //PSEUDOCODE OOP Hitung pangkat a pangkat b (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kalimat: ");
-        String inputString = scanner.nextLine();
-        String reversedString = StringReverser.reverseWords(inputString);
-        System.out.println("Kalimat terbalik: " + reversedString);
+        System.out.print("Masukkan basis (a): ");
+        int a = scanner.nextInt();
+        System.out.print("Masukkan eksponen (b): ");
+        int b = scanner.nextInt();
+        int result = PowerCalculator.calculatePower(a, b);
+        System.out.println(a + " pangkat " + b + " adalah: " + result);
         scanner.close();
     }
 }
 
-class StringReverser {
-    public static String reverseWords(String input) {
-        String[] words = input.split(" ");
-        StringBuilder reversedString = new StringBuilder();
-        for (int i = words.length - 1; i >= 0; i--) {
-            reversedString.append(words[i]);
-            if (i != 0) {
-                reversedString.append(" ");
-            }
+class PowerCalculator {
+    public static int calculatePower(int base, int exponent) {
+        int result = 1;
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
         }
-        return reversedString.toString();
+        return result;
     }
 }
+
+// class StringReverser {
+//     public static String reverseWords(String input) {
+//         String[] words = input.split(" ");
+//         StringBuilder reversedString = new StringBuilder();
+//         for (int i = words.length - 1; i >= 0; i--) {
+//             reversedString.append(words[i]);
+//             if (i != 0) {
+//                 reversedString.append(" ");
+//             }
+//         }
+//         return reversedString.toString();
+//     }
+// }
 
 // class OddNumberFinder {
 //     public static void findOddNumbersInRange(int start, int end) {
