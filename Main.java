@@ -940,30 +940,50 @@ public class Main {
         // scanner.close();
 
         // PSEUDOCODE OOP Hitung jumlah digit bilangan (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah bilangan: ");
+        // int number = scanner.nextInt();
+        // int digitCount = DigitCounter.countDigits(number);
+        // System.out.println("Jumlah digit bilangan " + number + " adalah: " +
+        // digitCount);
+
+        // PSEUDOCODE OOP Cari bilangan dalam rentang (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan sebuah bilangan: ");
-        int number = scanner.nextInt();
-        int digitCount = DigitCounter.countDigits(number);
-        System.out.println("Jumlah digit bilangan " + number + " adalah: " + digitCount);
-
-    }
-
-}
-
-class DigitCounter {
-    public static int countDigits(int number) {
-        if (number == 0) {
-            return 1; // Bilangan 0 memiliki 1 digit
-        }
-        int count = 0;
-        int temp = Math.abs(number); // Menggunakan nilai absolut untuk menangani bilangan negatif
-        while (temp != 0) {
-            temp /= 10;
-            count++;
-        }
-        return count;
+        System.out.print("Masukkan angka awal: ");
+        int start = scanner.nextInt();
+        System.out.print("Masukkan angka akhir: ");
+        int end = scanner.nextInt();
+        System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
+        OddNumberFinder.findOddNumbersInRange(start, end);
+        scanner.close();
     }
 }
+
+class OddNumberFinder {
+    public static void findOddNumbersInRange(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println(); // Untuk baris baru setelah mencetak semua bilangan ganjil
+    }
+}
+// class DigitCounter {
+// public static int countDigits(int number) {
+// if (number == 0) {
+// return 1; // Bilangan 0 memiliki 1 digit
+// }
+// int count = 0;
+// int temp = Math.abs(number); // Menggunakan nilai absolut untuk menangani
+// bilangan negatif
+// while (temp != 0) {
+// temp /= 10;
+// count++;
+// }
+// return count;
+// }
+// }
 
 // class Mahasiswa {
 // private String nama;
