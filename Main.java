@@ -915,54 +915,79 @@ public class Main {
         // scanner.close();
 
         // PSEUDOCODE OOP inputan data mahasiswa (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah mahasiswa: ");
+        // int jumlahMahasiswa = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+
+        // Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
+        // for (int i = 0; i < jumlahMahasiswa; i++) {
+        // System.out.println("Masukkan detail mahasiswa ke-" + (i + 1) + ":");
+        // System.out.print("Nama: ");
+        // String nama = scanner.nextLine();
+        // System.out.print("NIM: ");
+        // String nim = scanner.nextLine();
+        // System.out.print("Jurusan: ");
+        // String jurusan = scanner.nextLine();
+        // mahasiswaArray[i] = new Mahasiswa(nama, nim, jurusan);
+        // }
+
+        // System.out.println("\nDetail mahasiswa yang dimasukkan:");
+        // for (Mahasiswa mhs : mahasiswaArray) {
+        // System.out.println("Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ",
+        // Jurusan: " + mhs.getJurusan());
+        // }
+        // scanner.close();
+
+        // PSEUDOCODE OOP Hitung jumlah digit bilangan (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah mahasiswa: ");
-        int jumlahMahasiswa = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline
+        System.out.print("Masukkan sebuah bilangan: ");
+        int number = scanner.nextInt();
+        int digitCount = DigitCounter.countDigits(number);
+        System.out.println("Jumlah digit bilangan " + number + " adalah: " + digitCount);
 
-        Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
-        for (int i = 0; i < jumlahMahasiswa; i++) {
-            System.out.println("Masukkan detail mahasiswa ke-" + (i + 1) + ":");
-            System.out.print("Nama: ");
-            String nama = scanner.nextLine();
-            System.out.print("NIM: ");
-            String nim = scanner.nextLine();
-            System.out.print("Jurusan: ");
-            String jurusan = scanner.nextLine();
-            mahasiswaArray[i] = new Mahasiswa(nama, nim, jurusan);
-        }
+    }
 
-        System.out.println("\nDetail mahasiswa yang dimasukkan:");
-        for (Mahasiswa mhs : mahasiswaArray) {
-            System.out.println("Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Jurusan: " + mhs.getJurusan());
+}
+
+class DigitCounter {
+    public static int countDigits(int number) {
+        if (number == 0) {
+            return 1; // Bilangan 0 memiliki 1 digit
         }
-        scanner.close();
+        int count = 0;
+        int temp = Math.abs(number); // Menggunakan nilai absolut untuk menangani bilangan negatif
+        while (temp != 0) {
+            temp /= 10;
+            count++;
+        }
+        return count;
     }
 }
 
-class Mahasiswa {
-    private String nama;
-    private String nim;
-    private String jurusan;
+// class Mahasiswa {
+// private String nama;
+// private String nim;
+// private String jurusan;
 
-    public Mahasiswa(String nama, String nim, String jurusan) {
-        this.nama = nama;
-        this.nim = nim;
-        this.jurusan = jurusan;
-    }
+// public Mahasiswa(String nama, String nim, String jurusan) {
+// this.nama = nama;
+// this.nim = nim;
+// this.jurusan = jurusan;
+// }
 
-    public String getNama() {
-        return nama;
-    }
+// public String getNama() {
+// return nama;
+// }
 
-    public String getNim() {
-        return nim;
-    }
+// public String getNim() {
+// return nim;
+// }
 
-    public String getJurusan() {
-        return jurusan;
-    }
-}
+// public String getJurusan() {
+// return jurusan;
+// }
+// }
 
 // class Product {
 // private String name;
