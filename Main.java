@@ -1028,15 +1028,28 @@ public class Main {
         // inputUser.close();
 
         //PSEUDOCODE Hitung luas segitiga (Encapsulation + Method)
-        double alas, tinggi;
+        // double alas, tinggi;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan alas segitiga: ");
+        // alas = inputUser.nextDouble();
+        // System.out.print("Masukkan tinggi segitiga: ");
+        // tinggi = inputUser.nextDouble();
+        // double luas = 0.5 * alas * tinggi;
+        // System.out.println("Luas segitiga adalah: " + luas);
+        // inputUser.close();
+
+        //PSEUDOCODE Cek apakah sebuah huruf adalah vokal atau konsonan (Encapsulation + Method)
+        char huruf;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan alas segitiga: ");
-        alas = inputUser.nextDouble();
-        System.out.print("Masukkan tinggi segitiga: ");
-        tinggi = inputUser.nextDouble();
-        double luas = 0.5 * alas * tinggi;
-        System.out.println("Luas segitiga adalah: " + luas);
-        inputUser.close();
+        System.out.print("Masukkan sebuah huruf: ");
+        huruf = inputUser.next().charAt(0);
+        huruf = Character.toLowerCase(huruf);
+        if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf == 'u') {
+            System.out.println(huruf + " adalah huruf vokal.");
+        } else {
+            System.out.println(huruf + " adalah huruf konsonan.");
+        }
+
     }
 }
 
