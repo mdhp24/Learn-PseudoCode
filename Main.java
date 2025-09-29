@@ -1019,15 +1019,27 @@ public class Main {
         // System.out.println("Jumlah bilangan ganjil: " + oddCount);
 
         // PSUDOCODE konversi suhu dari celcius ke farenhiet (Encapsulation + Method)
-        double celsius;
+        // double celsius;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan suhu dalam Celcius: ");
+        // celsius = inputUser.nextDouble();
+        // double fahrenheit = (celsius * 9 / 5) + 32;
+        // System.out.println(celsius + " Celcius = " + fahrenheit + " Farenheit");
+        // inputUser.close();
+
+        //PSEUDOCODE Hitung luas segitiga (Encapsulation + Method)
+        double alas, tinggi;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan suhu dalam Celcius: ");
-        celsius = inputUser.nextDouble();
-        double fahrenheit = (celsius * 9 / 5) + 32;
-        System.out.println(celsius + " Celcius = " + fahrenheit + " Farenheit");
+        System.out.print("Masukkan alas segitiga: ");
+        alas = inputUser.nextDouble();
+        System.out.print("Masukkan tinggi segitiga: ");
+        tinggi = inputUser.nextDouble();
+        double luas = 0.5 * alas * tinggi;
+        System.out.println("Luas segitiga adalah: " + luas);
         inputUser.close();
     }
 }
+
 
 // class PowerCalculator {
 // public static int calculatePower(int base, int exponent) {
