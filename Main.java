@@ -1067,17 +1067,56 @@ public class Main {
 
         // PSEUDOCODE Cek apakah sebuah kata atau kalimat adalah palindrom
         // (Encapsulation + Method)
-        String inputString;
-        Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kata atau kalimat: ");
-        inputString = inputUser.nextLine();
-        String reversedString = new StringBuilder(inputString).reverse().toString();
-        if (inputString.equalsIgnoreCase(reversedString)) {
-            System.out.println("\"" + inputString + "\" adalah palindrom.");
-        } else {
-            System.out.println("\"" + inputString + "\" bukan palindrom.");
-        }
+        // String inputString;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kata atau kalimat: ");
+        // inputString = inputUser.nextLine();
+        // String reversedString = new StringBuilder(inputString).reverse().toString();
+        // if (inputString.equalsIgnoreCase(reversedString)) {
+        // System.out.println("\"" + inputString + "\" adalah palindrom.");
+        // } else {
+        // System.out.println("\"" + inputString + "\" bukan palindrom.");
+        // }
 
+        // pseudocode OOP Sistem manajemen sekolah (Encapsulation + Array of Object)
+        Student student1 = new Student("2251762021", "Aku", new int[] { 85, 90, 78 });
+        Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
+        System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
+                + student1.calculateAverage());
+        System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
+                + student2.calculateAverage());
+
+    }
+}
+
+class Student {
+    private String nim;
+    private String name;
+    private int[] grades;
+
+    public Student(String nim, String name, int[] grades) {
+        this.nim = nim;
+        this.name = name;
+        this.grades = grades;
+    }
+
+    public String getNim() {
+        return nim;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double calculateAverage() {
+        if (grades.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        return (double) sum / grades.length;
     }
 }
 
