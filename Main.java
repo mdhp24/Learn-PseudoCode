@@ -1079,46 +1079,104 @@ public class Main {
         // }
 
         // pseudocode OOP Sistem manajemen sekolah (Encapsulation + Array of Object)
-        Student student1 = new Student("2251762021", "Aku", new int[] { 85, 90, 78 });
-        Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
-        System.out.println("Nama: " + student1.getName() + ", NIM: " + student1.getNim() + ", Rata-rata: "
-                + student1.calculateAverage());
-        System.out.println("Nama: " + student2.getName() + ", NIM: " + student2.getNim() + ", Rata-rata: "
-                + student2.calculateAverage());
+        // Student student1 = new Student("2251762021", "Aku", new int[] { 85, 90, 78
+        // });
+        // Student student2 = new Student("67890", "Dia", new int[] { 88, 76, 92 });
+        // System.out.println("Nama: " + student1.getName() + ", NIM: " +
+        // student1.getNim() + ", Rata-rata: "
+        // + student1.calculateAverage());
+        // System.out.println("Nama: " + student2.getName() + ", NIM: " +
+        // student2.getNim() + ", Rata-rata: "
+        // + student2.calculateAverage());
+
+        // PSEUDOCODE OOP Sistem Perpustakaan (Encapsulation + Array of Object)
+        Library library = new Library();
+        library.addBook(new Book("2024", "Aku dan dia"));
+        library.addBook(new Book("2025", "Tapi dia sama orang lain"));
+        library.listBooks();
+        System.out.println("Total buku di perpustakaan: " + library.getTotalBooks());
 
     }
 }
 
-class Student {
-    private String nim;
-    private String name;
-    private int[] grades;
+class Library {
+    private Book[] books;
+    private int bookCount;
 
-    public Student(String nim, String name, int[] grades) {
-        this.nim = nim;
-        this.name = name;
-        this.grades = grades;
+    public Library() {
+        books = new Book[100]; // Maksimal 100 buku
+        bookCount = 0;
     }
 
-    public String getNim() {
-        return nim;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double calculateAverage() {
-        if (grades.length == 0) {
-            return 0;
+    public void addBook(Book book) {
+        if (bookCount < books.length) {
+            books[bookCount++] = book;
+        } else {
+            System.out.println("Tidak bisa menambah buku, kapasitas penuh.");
         }
-        int sum = 0;
-        for (int grade : grades) {
-            sum += grade;
+    }
+
+    public void listBooks() {
+        System.out.println("Daftar Buku di Perpustakaan:");
+        for (int i = 0; i < bookCount; i++) {
+            Book book = books[i];
+            System.out.println((i + 1) + ". " + book.getTitle() + " (ID: " + book.getId() + ")");
         }
-        return (double) sum / grades.length;
+    }
+
+    public int getTotalBooks() {
+        return bookCount;
     }
 }
+
+class Book {
+    private String id;
+    private String title;
+
+    public Book(String id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+}
+
+// class Student {
+// private String nim;
+// private String name;
+// private int[] grades;
+
+// public Student(String nim, String name, int[] grades) {
+// this.nim = nim;
+// this.name = name;
+// this.grades = grades;
+// }
+
+// public String getNim() {
+// return nim;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double calculateAverage() {
+// if (grades.length == 0) {
+// return 0;
+// }
+// int sum = 0;
+// for (int grade : grades) {
+// sum += grade;
+// }
+// return (double) sum / grades.length;
+// }
+// }
 
 // class PowerCalculator {
 // public static int calculatePower(int base, int exponent) {
