@@ -1053,17 +1053,30 @@ public class Main {
         // }
 
         // PSEUDOCODE Hitung rata-rata nilai siswa (Encapsulation + Method)
-        int total = 0;
-        int jumlahSiswa = 5;
+        // int total = 0;
+        // int jumlahSiswa = 5;
+        // Scanner inputUser = new Scanner(System.in);
+        // for (int i = 1; i <= jumlahSiswa; i++) {
+        // System.out.print("Masukkan nilai siswa ke-" + i + ": ");
+        // int nilai = inputUser.nextInt();
+        // total += nilai;
+        // }
+        // double rataRata = (double) total / jumlahSiswa;
+        // System.out.println("Rata-rata nilai siswa: " + rataRata);
+        // inputUser.close();
+
+        // PSEUDOCODE Cek apakah sebuah kata atau kalimat adalah palindrom
+        // (Encapsulation + Method)
+        String inputString;
         Scanner inputUser = new Scanner(System.in);
-        for (int i = 1; i <= jumlahSiswa; i++) {
-            System.out.print("Masukkan nilai siswa ke-" + i + ": ");
-            int nilai = inputUser.nextInt();
-            total += nilai;
+        System.out.print("Masukkan sebuah kata atau kalimat: ");
+        inputString = inputUser.nextLine();
+        String reversedString = new StringBuilder(inputString).reverse().toString();
+        if (inputString.equalsIgnoreCase(reversedString)) {
+            System.out.println("\"" + inputString + "\" adalah palindrom.");
+        } else {
+            System.out.println("\"" + inputString + "\" bukan palindrom.");
         }
-        double rataRata = (double) total / jumlahSiswa;
-        System.out.println("Rata-rata nilai siswa: " + rataRata);
-        inputUser.close();
 
     }
 }
