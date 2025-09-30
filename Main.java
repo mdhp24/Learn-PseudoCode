@@ -1090,62 +1090,131 @@ public class Main {
         // + student2.calculateAverage());
 
         // PSEUDOCODE OOP Sistem Perpustakaan (Encapsulation + Array of Object)
-        Library library = new Library();
-        library.addBook(new Book("2024", "Aku dan dia"));
-        library.addBook(new Book("2025", "Tapi dia sama orang lain"));
-        library.listBooks();
-        System.out.println("Total buku di perpustakaan: " + library.getTotalBooks());
+        // Library library = new Library();
+        // library.addBook(new Book("2024", "Aku dan dia"));
+        // library.addBook(new Book("2025", "Tapi dia sama orang lain"));
+        // library.listBooks();
+        // System.out.println("Total buku di perpustakaan: " + library.getTotalBooks());
+
+        // PSEUDOCODE OOP Sistem sewa mobil (Encapsulation + Array of Object)
+        CarRental carRental = new CarRental();
+        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        carRental.listCars();
+        System.out.println("Total cars available: " + carRental.getTotalCars());
 
     }
 }
 
-class Library {
-    private Book[] books;
-    private int bookCount;
+class CarRental {
+    private Car[] cars;
+    private int carCount;
 
-    public Library() {
-        books = new Book[100]; // Maksimal 100 buku
-        bookCount = 0;
+    public CarRental() {
+        cars = new Car[100]; // Maksimal 100 mobil
+        carCount = 0;
     }
 
-    public void addBook(Book book) {
-        if (bookCount < books.length) {
-            books[bookCount++] = book;
+    public void addCar(Car car) {
+        if (carCount < cars.length) {
+            cars[carCount++] = car;
         } else {
-            System.out.println("Tidak bisa menambah buku, kapasitas penuh.");
+            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
         }
     }
 
-    public void listBooks() {
-        System.out.println("Daftar Buku di Perpustakaan:");
-        for (int i = 0; i < bookCount; i++) {
-            Book book = books[i];
-            System.out.println((i + 1) + ". " + book.getTitle() + " (ID: " + book.getId() + ")");
+    public void listCars() {
+        System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
+        for (int i = 0; i < carCount; i++) {
+            Car car = cars[i];
+            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
+                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
         }
     }
 
-    public int getTotalBooks() {
-        return bookCount;
+    public int getTotalCars() {
+        return carCount;
     }
 }
 
-class Book {
-    private String id;
-    private String title;
+class Car {
+    private String make;
+    private String model;
+    private int year;
+    private double rentalPricePerDay;
 
-    public Book(String id, String title) {
-        this.id = id;
-        this.title = title;
+    public Car(String make, String model, int year, double rentalPricePerDay) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.rentalPricePerDay = rentalPricePerDay;
     }
 
-    public String getId() {
-        return id;
+    public String getMake() {
+        return make;
     }
 
-    public String getTitle() {
-        return title;
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public double getRentalPricePerDay() {
+        return rentalPricePerDay;
     }
 }
+
+// class Library {
+// private Book[] books;
+// private int bookCount;
+
+// public Library() {
+// books = new Book[100]; // Maksimal 100 buku
+// bookCount = 0;
+// }
+
+// public void addBook(Book book) {
+// if (bookCount < books.length) {
+// books[bookCount++] = book;
+// } else {
+// System.out.println("Tidak bisa menambah buku, kapasitas penuh.");
+// }
+// }
+
+// public void listBooks() {
+// System.out.println("Daftar Buku di Perpustakaan:");
+// for (int i = 0; i < bookCount; i++) {
+// Book book = books[i];
+// System.out.println((i + 1) + ". " + book.getTitle() + " (ID: " + book.getId()
+// + ")");
+// }
+// }
+
+// public int getTotalBooks() {
+// return bookCount;
+// }
+// }
+
+// class Book {
+// private String id;
+// private String title;
+
+// public Book(String id, String title) {
+// this.id = id;
+// this.title = title;
+// }
+
+// public String getId() {
+// return id;
+// }
+
+// public String getTitle() {
+// return title;
+// }
+// }
 
 // class Student {
 // private String nim;
