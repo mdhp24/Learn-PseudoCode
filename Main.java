@@ -1027,7 +1027,7 @@ public class Main {
         // System.out.println(celsius + " Celcius = " + fahrenheit + " Farenheit");
         // inputUser.close();
 
-        //PSEUDOCODE Hitung luas segitiga (Encapsulation + Method)
+        // PSEUDOCODE Hitung luas segitiga (Encapsulation + Method)
         // double alas, tinggi;
         // Scanner inputUser = new Scanner(System.in);
         // System.out.print("Masukkan alas segitiga: ");
@@ -1038,21 +1038,35 @@ public class Main {
         // System.out.println("Luas segitiga adalah: " + luas);
         // inputUser.close();
 
-        //PSEUDOCODE Cek apakah sebuah huruf adalah vokal atau konsonan (Encapsulation + Method)
-        char huruf;
+        // PSEUDOCODE Cek apakah sebuah huruf adalah vokal atau konsonan (Encapsulation
+        // + Method)
+        // char huruf;
+        // Scanner inputUser = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah huruf: ");
+        // huruf = inputUser.next().charAt(0);
+        // huruf = Character.toLowerCase(huruf);
+        // if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf ==
+        // 'u') {
+        // System.out.println(huruf + " adalah huruf vokal.");
+        // } else {
+        // System.out.println(huruf + " adalah huruf konsonan.");
+        // }
+
+        // PSEUDOCODE Hitung rata-rata nilai siswa (Encapsulation + Method)
+        int total = 0;
+        int jumlahSiswa = 5;
         Scanner inputUser = new Scanner(System.in);
-        System.out.print("Masukkan sebuah huruf: ");
-        huruf = inputUser.next().charAt(0);
-        huruf = Character.toLowerCase(huruf);
-        if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf == 'u') {
-            System.out.println(huruf + " adalah huruf vokal.");
-        } else {
-            System.out.println(huruf + " adalah huruf konsonan.");
+        for (int i = 1; i <= jumlahSiswa; i++) {
+            System.out.print("Masukkan nilai siswa ke-" + i + ": ");
+            int nilai = inputUser.nextInt();
+            total += nilai;
         }
+        double rataRata = (double) total / jumlahSiswa;
+        System.out.println("Rata-rata nilai siswa: " + rataRata);
+        inputUser.close();
 
     }
 }
-
 
 // class PowerCalculator {
 // public static int calculatePower(int base, int exponent) {
