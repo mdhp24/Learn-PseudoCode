@@ -1097,75 +1097,113 @@ public class Main {
         // System.out.println("Total buku di perpustakaan: " + library.getTotalBooks());
 
         // PSEUDOCODE OOP Sistem sewa mobil (Encapsulation + Array of Object)
-        CarRental carRental = new CarRental();
-        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
-        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
-        carRental.listCars();
-        System.out.println("Total cars available: " + carRental.getTotalCars());
+        // CarRental carRental = new CarRental();
+        // carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        // carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        // carRental.listCars();
+        // System.out.println("Total cars available: " + carRental.getTotalCars());
 
-    }
-}
+        // PSEUDOCODE Sistem Bank (Abstraction + Encapsulation + Array of Object)
+        Rekening[] daftar = { new Tabungan(10000000), new Deposito(20000000) };
+        for (Rekening r : daftar) {
+            System.out.println("Bunga: Rp " + r.hitungBunga());
 
-class CarRental {
-    private Car[] cars;
-    private int carCount;
-
-    public CarRental() {
-        cars = new Car[100]; // Maksimal 100 mobil
-        carCount = 0;
-    }
-
-    public void addCar(Car car) {
-        if (carCount < cars.length) {
-            cars[carCount++] = car;
-        } else {
-            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
         }
-    }
-
-    public void listCars() {
-        System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
-        for (int i = 0; i < carCount; i++) {
-            Car car = cars[i];
-            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
-                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
-        }
-    }
-
-    public int getTotalCars() {
-        return carCount;
+        
     }
 }
 
-class Car {
-    private String make;
-    private String model;
-    private int year;
-    private double rentalPricePerDay;
+abstract class Rekening {
+    protected double saldo;
 
-    public Car(String make, String model, int year, double rentalPricePerDay) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.rentalPricePerDay = rentalPricePerDay;
+    public Rekening(double saldo) {
+        this.saldo = saldo;
     }
 
-    public String getMake() {
-        return make;
+    public abstract double hitungBunga();
+}
+
+class Tabungan extends Rekening {
+    public Tabungan(double saldo) {
+        super(saldo);
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public double getRentalPricePerDay() {
-        return rentalPricePerDay;
+    public double hitungBunga() {
+        return saldo * 0.02;
     }
 }
+
+class Deposito extends Rekening {
+    public Deposito(double saldo) {
+        super(saldo);
+    }
+
+    public double hitungBunga() {
+        return saldo * 0.05;
+    }
+}
+
+// class CarRental {
+// private Car[] cars;
+// private int carCount;
+
+// public CarRental() {
+// cars = new Car[100]; // Maksimal 100 mobil
+// carCount = 0;
+// }
+
+// public void addCar(Car car) {
+// if (carCount < cars.length) {
+// cars[carCount++] = car;
+// } else {
+// System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+// }
+// }
+
+// public void listCars() {
+// System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
+// for (int i = 0; i < carCount; i++) {
+// Car car = cars[i];
+// System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + "
+// (" + car.getYear()
+// + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+// }
+// }
+
+// public int getTotalCars() {
+// return carCount;
+// }
+// }
+
+// class Car {
+// private String make;
+// private String model;
+// private int year;
+// private double rentalPricePerDay;
+
+// public Car(String make, String model, int year, double rentalPricePerDay) {
+// this.make = make;
+// this.model = model;
+// this.year = year;
+// this.rentalPricePerDay = rentalPricePerDay;
+// }
+
+// public String getMake() {
+// return make;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public int getYear() {
+// return year;
+// }
+
+// public double getRentalPricePerDay() {
+// return rentalPricePerDay;
+// }
+// }
 
 // class Library {
 // private Book[] books;
