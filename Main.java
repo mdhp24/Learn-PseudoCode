@@ -1104,44 +1104,68 @@ public class Main {
         // System.out.println("Total cars available: " + carRental.getTotalCars());
 
         // PSEUDOCODE Sistem Bank (Abstraction + Encapsulation + Array of Object)
-        Rekening[] daftar = { new Tabungan(10000000), new Deposito(20000000) };
-        for (Rekening r : daftar) {
-            System.out.println("Bunga: Rp " + r.hitungBunga());
+        // Rekening[] daftar = { new Tabungan(10000000), new Deposito(20000000) };
+        // for (Rekening r : daftar) {
+        // System.out.println("Bunga: Rp " + r.hitungBunga());
 
+        // }
+
+        // PSEUDOCODE Sistem Tiket (Interface + Encapsulation + Array of Object)
+        Tiket[] daftarTiket = { new Bus(), new Kereta() };
+        int jarak = 10; // Contoh jarak dalam kilometer
+        for (Tiket t : daftarTiket) {
+            System.out.println("Harga tiket untuk jarak " + jarak + " km: Rp " + t.hitungHarga(jarak));
         }
         
+
     }
 }
 
-abstract class Rekening {
-    protected double saldo;
-
-    public Rekening(double saldo) {
-        this.saldo = saldo;
-    }
-
-    public abstract double hitungBunga();
+interface Tiket {
+    int hitungHarga(int jarak);
 }
 
-class Tabungan extends Rekening {
-    public Tabungan(double saldo) {
-        super(saldo);
-    }
-
-    public double hitungBunga() {
-        return saldo * 0.02;
+class Bus implements Tiket {
+    public int hitungHarga(int jarak) {
+        return jarak * 2000;
     }
 }
 
-class Deposito extends Rekening {
-    public Deposito(double saldo) {
-        super(saldo);
-    }
-
-    public double hitungBunga() {
-        return saldo * 0.05;
+class Kereta implements Tiket {
+    public int hitungHarga(int jarak) {
+        return jarak * 1500;
     }
 }
+
+// abstract class Rekening {
+// protected double saldo;
+
+// public Rekening(double saldo) {
+// this.saldo = saldo;
+// }
+
+// public abstract double hitungBunga();
+// }
+
+// class Tabungan extends Rekening {
+// public Tabungan(double saldo) {
+// super(saldo);
+// }
+
+// public double hitungBunga() {
+// return saldo * 0.02;
+// }
+// }
+
+// class Deposito extends Rekening {
+// public Deposito(double saldo) {
+// super(saldo);
+// }
+
+// public double hitungBunga() {
+// return saldo * 0.05;
+// }
+// }
 
 // class CarRental {
 // private Car[] cars;
