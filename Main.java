@@ -1119,32 +1119,53 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP Sistem kursus online (Encapsulation + Array of Object)
-        Kursus[] kursusArray = { new Kursus("Java Programming", 40), new Kursus("Web Development", 30),
-                new Kursus("Data Science", 50) };
-        System.out.println("Daftar Kursus Online:");
-        for (Kursus kursus : kursusArray) {
-            System.out.println("Judul: " + kursus.getJudul() + ", Durasi: " + kursus.getDurasi() + " jam");
-        }
+        // Kursus[] kursusArray = { new Kursus("Java Programming", 40), new Kursus("Web Development", 30),
+        //         new Kursus("Data Science", 50) };
+        // System.out.println("Daftar Kursus Online:");
+        // for (Kursus kursus : kursusArray) {
+        //     System.out.println("Judul: " + kursus.getJudul() + ", Durasi: " + kursus.getDurasi() + " jam");
+        // }
+
+        // PSEUDOCODE OOP Sistem mahasiswa aktif dengan nilai akhir (Inheritance +
+        // Encapsulation + Method)
+        MahasiswaAktif mhsAktif = new MahasiswaAktif("Aku dan Dia", 99);
+        System.out.println("Nama Mahasiswa: " + mhsAktif.nama);
+        System.out.println("Nilai Akhir: " + mhsAktif.hitungNilaiAkhir());
+
     }
 }
 
-class Kursus {
-    private String judul;
-    private int durasi;
-
-    public Kursus(String judul, int durasi) {
-        this.judul = judul;
-        this.durasi = durasi;
-    }
-
-    public String getJudul() {
-        return judul;
-    }
-
-    public int getDurasi() {
-        return durasi;
-    }
+class Mahasiswa {
+    protected String nama;
+    public Mahasiswa(String nama) { this.nama = nama; }
 }
+
+class MahasiswaAktif extends Mahasiswa {
+    private int nilaiUas;
+    public MahasiswaAktif(String nama, int nilaiUas) {
+        super(nama);
+        this.nilaiUas = nilaiUas;
+    }
+    public double hitungNilaiAkhir() { return nilaiUas * 0.6; }
+}
+
+// class Kursus {
+//     private String judul;
+//     private int durasi;
+
+//     public Kursus(String judul, int durasi) {
+//         this.judul = judul;
+//         this.durasi = durasi;
+//     }
+
+//     public String getJudul() {
+//         return judul;
+//     }
+
+//     public int getDurasi() {
+//         return durasi;
+//     }
+// }
 
 // interface Tiket {
 // int hitungHarga(int jarak);
