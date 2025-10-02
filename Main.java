@@ -1119,52 +1119,92 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP Sistem kursus online (Encapsulation + Array of Object)
-        // Kursus[] kursusArray = { new Kursus("Java Programming", 40), new Kursus("Web Development", 30),
-        //         new Kursus("Data Science", 50) };
+        // Kursus[] kursusArray = { new Kursus("Java Programming", 40), new Kursus("Web
+        // Development", 30),
+        // new Kursus("Data Science", 50) };
         // System.out.println("Daftar Kursus Online:");
         // for (Kursus kursus : kursusArray) {
-        //     System.out.println("Judul: " + kursus.getJudul() + ", Durasi: " + kursus.getDurasi() + " jam");
+        // System.out.println("Judul: " + kursus.getJudul() + ", Durasi: " +
+        // kursus.getDurasi() + " jam");
         // }
 
         // PSEUDOCODE OOP Sistem mahasiswa aktif dengan nilai akhir (Inheritance +
         // Encapsulation + Method)
-        MahasiswaAktif mhsAktif = new MahasiswaAktif("Aku dan Dia", 99);
-        System.out.println("Nama Mahasiswa: " + mhsAktif.nama);
-        System.out.println("Nilai Akhir: " + mhsAktif.hitungNilaiAkhir());
+        // MahasiswaAktif mhsAktif = new MahasiswaAktif("Aku dan Dia", 99);
+        // System.out.println("Nama Mahasiswa: " + mhsAktif.nama);
+        // System.out.println("Nilai Akhir: " + mhsAktif.hitungNilaiAkhir());
 
+        // PSEUDOCODE OOP Sistem produk dengan diskon (Abstraction + Encapsulation +
+        // Method)
+        System.out.println("Nama Produk dan Harga setelah diskon:");
+        System.out.println("Nama Produk: Elektronik, Harga: Rp 2000, Diskon: 10%");
+        Produk[] produkArray = { new Elektronik(2000), new Pakaian(1000) };
+        for (Produk p : produkArray) {
+            System.out.println("Harga setelah diskon: Rp " + p.hitungDiskon());
+        }
     }
 }
 
-class Mahasiswa {
-    protected String nama;
-    public Mahasiswa(String nama) { this.nama = nama; }
+abstract class Produk {
+    protected double harga;
+
+    public Produk(double harga) {
+        this.harga = harga;
+    }
+
+    public abstract double hitungDiskon();
 }
 
-class MahasiswaAktif extends Mahasiswa {
-    private int nilaiUas;
-    public MahasiswaAktif(String nama, int nilaiUas) {
-        super(nama);
-        this.nilaiUas = nilaiUas;
+class Elektronik extends Produk {
+    public Elektronik(double harga) {
+        super(harga);
     }
-    public double hitungNilaiAkhir() { return nilaiUas * 0.6; }
+
+    public double hitungDiskon() {
+        return harga * 0.9;
+    }
 }
+
+class Pakaian extends Produk {
+    public Pakaian(double harga) {
+        super(harga);
+    }
+
+    public double hitungDiskon() {
+        return harga * 0.8;
+    }
+}
+
+// class Mahasiswa {
+// protected String nama;
+// public Mahasiswa(String nama) { this.nama = nama; }
+// }
+
+// class MahasiswaAktif extends Mahasiswa {
+// private int nilaiUas;
+// public MahasiswaAktif(String nama, int nilaiUas) {
+// super(nama);
+// this.nilaiUas = nilaiUas;
+// }
+// public double hitungNilaiAkhir() { return nilaiUas * 0.6; }
+// }
 
 // class Kursus {
-//     private String judul;
-//     private int durasi;
+// private String judul;
+// private int durasi;
 
-//     public Kursus(String judul, int durasi) {
-//         this.judul = judul;
-//         this.durasi = durasi;
-//     }
+// public Kursus(String judul, int durasi) {
+// this.judul = judul;
+// this.durasi = durasi;
+// }
 
-//     public String getJudul() {
-//         return judul;
-//     }
+// public String getJudul() {
+// return judul;
+// }
 
-//     public int getDurasi() {
-//         return durasi;
-//     }
+// public int getDurasi() {
+// return durasi;
+// }
 // }
 
 // interface Tiket {
