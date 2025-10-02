@@ -1145,37 +1145,62 @@ public class Main {
 
         // PSEUDOCODE OOP Sistem rumah sakit dengan dokter dan spesialis (Association +
         // Encapsulation + Method)
-        Spesialis spesialis1 = new Spesialis("Kardiologi");
-        Spesialis spesialis2 = new Spesialis("Neurologi");
-        Dokter dokter1 = new Dokter("Dr. Andi", spesialis1);
-        Dokter dokter2 = new Dokter("Dr. Budi", spesialis2);
-        dokter1.info();
-        dokter2.info();
+        // Spesialis spesialis1 = new Spesialis("Kardiologi");
+        // Spesialis spesialis2 = new Spesialis("Neurologi");
+        // Dokter dokter1 = new Dokter("Dr. Andi", spesialis1);
+        // Dokter dokter2 = new Dokter("Dr. Budi", spesialis2);
+        // dokter1.info();
+        // dokter2.info();
 
+        // PSEUDOCODE OOP Sistem olahraga dengan aturan (Abstraction + Encapsulation +
+        // Method)
+        Olahraga[] olahragaArray = { new SepakBola(), new Basket() };
+        for (Olahraga o : olahragaArray) {
+            o.aturan();
+        }
+        System.out.println("Total jenis olahraga: " + olahragaArray.length
+                + ", yaitu Sepak Bola dan Basket.");
+        System.out.println(
+                "Sepak Bola dimainkan oleh 11 pemain per tim, sedangkan Basket dimainkan oleh 5 pemain per tim.");
 
     }
 }
 
-
-class Spesialis {
-private String namaSpesialis;
-public Spesialis(String namaSpesialis) { this.namaSpesialis = namaSpesialis;
-}
-public String getNamaSpesialis() { return namaSpesialis; }
+abstract class Olahraga {
+    public abstract void aturan();
 }
 
-class Dokter {
-private String nama;
-private Spesialis spesialis;
-public Dokter(String nama, Spesialis spesialis) {
-this.nama = nama;
-this.spesialis = spesialis;
+class SepakBola extends Olahraga {
+    public void aturan() {
+        System.out.println("Sepak Bola: 11 pemain per tim.");
+    }
 }
-public void info() {
-System.out.println("Dokter " + nama + " - Spesialis " +
-spesialis.getNamaSpesialis());
+
+class Basket extends Olahraga {
+    public void aturan() {
+        System.out.println("Basket: 5 pemain per tim.");
+    }
 }
-}
+
+// class Spesialis {
+// private String namaSpesialis;
+// public Spesialis(String namaSpesialis) { this.namaSpesialis = namaSpesialis;
+// }
+// public String getNamaSpesialis() { return namaSpesialis; }
+// }
+
+// class Dokter {
+// private String nama;
+// private Spesialis spesialis;
+// public Dokter(String nama, Spesialis spesialis) {
+// this.nama = nama;
+// this.spesialis = spesialis;
+// }
+// public void info() {
+// System.out.println("Dokter " + nama + " - Spesialis " +
+// spesialis.getNamaSpesialis());
+// }
+// }
 // abstract class Produk {
 // protected double harga;
 
