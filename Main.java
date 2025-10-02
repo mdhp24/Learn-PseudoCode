@@ -1111,31 +1111,56 @@ public class Main {
         // }
 
         // PSEUDOCODE Sistem Tiket (Interface + Encapsulation + Array of Object)
-        Tiket[] daftarTiket = { new Bus(), new Kereta() };
-        int jarak = 10; // Contoh jarak dalam kilometer
-        for (Tiket t : daftarTiket) {
-            System.out.println("Harga tiket untuk jarak " + jarak + " km: Rp " + t.hitungHarga(jarak));
+        // Tiket[] daftarTiket = { new Bus(), new Kereta() };
+        // int jarak = 10; // Contoh jarak dalam kilometer
+        // for (Tiket t : daftarTiket) {
+        // System.out.println("Harga tiket untuk jarak " + jarak + " km: Rp " +
+        // t.hitungHarga(jarak));
+        // }
+
+        // PSEUDOCODE OOP Sistem kursus online (Encapsulation + Array of Object)
+        Kursus[] kursusArray = { new Kursus("Java Programming", 40), new Kursus("Web Development", 30),
+                new Kursus("Data Science", 50) };
+        System.out.println("Daftar Kursus Online:");
+        for (Kursus kursus : kursusArray) {
+            System.out.println("Judul: " + kursus.getJudul() + ", Durasi: " + kursus.getDurasi() + " jam");
         }
-        
-
     }
 }
 
-interface Tiket {
-    int hitungHarga(int jarak);
-}
+class Kursus {
+    private String judul;
+    private int durasi;
 
-class Bus implements Tiket {
-    public int hitungHarga(int jarak) {
-        return jarak * 2000;
+    public Kursus(String judul, int durasi) {
+        this.judul = judul;
+        this.durasi = durasi;
+    }
+
+    public String getJudul() {
+        return judul;
+    }
+
+    public int getDurasi() {
+        return durasi;
     }
 }
 
-class Kereta implements Tiket {
-    public int hitungHarga(int jarak) {
-        return jarak * 1500;
-    }
-}
+// interface Tiket {
+// int hitungHarga(int jarak);
+// }
+
+// class Bus implements Tiket {
+// public int hitungHarga(int jarak) {
+// return jarak * 2000;
+// }
+// }
+
+// class Kereta implements Tiket {
+// public int hitungHarga(int jarak) {
+// return jarak * 1500;
+// }
+// }
 
 // abstract class Rekening {
 // protected double saldo;
