@@ -1136,44 +1136,75 @@ public class Main {
 
         // PSEUDOCODE OOP Sistem produk dengan diskon (Abstraction + Encapsulation +
         // Method)
-        System.out.println("Nama Produk dan Harga setelah diskon:");
-        System.out.println("Nama Produk: Elektronik, Harga: Rp 2000, Diskon: 10%");
-        Produk[] produkArray = { new Elektronik(2000), new Pakaian(1000) };
-        for (Produk p : produkArray) {
-            System.out.println("Harga setelah diskon: Rp " + p.hitungDiskon());
-        }
+        // System.out.println("Nama Produk dan Harga setelah diskon:");
+        // System.out.println("Nama Produk: Elektronik, Harga: Rp 2000, Diskon: 10%");
+        // Produk[] produkArray = { new Elektronik(2000), new Pakaian(1000) };
+        // for (Produk p : produkArray) {
+        // System.out.println("Harga setelah diskon: Rp " + p.hitungDiskon());
+        // }
+
+        // PSEUDOCODE OOP Sistem rumah sakit dengan dokter dan spesialis (Association +
+        // Encapsulation + Method)
+        Spesialis spesialis1 = new Spesialis("Kardiologi");
+        Spesialis spesialis2 = new Spesialis("Neurologi");
+        Dokter dokter1 = new Dokter("Dr. Andi", spesialis1);
+        Dokter dokter2 = new Dokter("Dr. Budi", spesialis2);
+        dokter1.info();
+        dokter2.info();
+
+
     }
 }
 
-abstract class Produk {
-    protected double harga;
 
-    public Produk(double harga) {
-        this.harga = harga;
-    }
-
-    public abstract double hitungDiskon();
+class Spesialis {
+private String namaSpesialis;
+public Spesialis(String namaSpesialis) { this.namaSpesialis = namaSpesialis;
+}
+public String getNamaSpesialis() { return namaSpesialis; }
 }
 
-class Elektronik extends Produk {
-    public Elektronik(double harga) {
-        super(harga);
-    }
-
-    public double hitungDiskon() {
-        return harga * 0.9;
-    }
+class Dokter {
+private String nama;
+private Spesialis spesialis;
+public Dokter(String nama, Spesialis spesialis) {
+this.nama = nama;
+this.spesialis = spesialis;
 }
-
-class Pakaian extends Produk {
-    public Pakaian(double harga) {
-        super(harga);
-    }
-
-    public double hitungDiskon() {
-        return harga * 0.8;
-    }
+public void info() {
+System.out.println("Dokter " + nama + " - Spesialis " +
+spesialis.getNamaSpesialis());
 }
+}
+// abstract class Produk {
+// protected double harga;
+
+// public Produk(double harga) {
+// this.harga = harga;
+// }
+
+// public abstract double hitungDiskon();
+// }
+
+// class Elektronik extends Produk {
+// public Elektronik(double harga) {
+// super(harga);
+// }
+
+// public double hitungDiskon() {
+// return harga * 0.9;
+// }
+// }
+
+// class Pakaian extends Produk {
+// public Pakaian(double harga) {
+// super(harga);
+// }
+
+// public double hitungDiskon() {
+// return harga * 0.8;
+// }
+// }
 
 // class Mahasiswa {
 // protected String nama;
