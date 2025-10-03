@@ -1154,33 +1154,58 @@ public class Main {
 
         // PSEUDOCODE OOP Sistem olahraga dengan aturan (Abstraction + Encapsulation +
         // Method)
-        Olahraga[] olahragaArray = { new SepakBola(), new Basket() };
-        for (Olahraga o : olahragaArray) {
-            o.aturan();
+        // Olahraga[] olahragaArray = { new SepakBola(), new Basket() };
+        // for (Olahraga o : olahragaArray) {
+        // o.aturan();
+        // }
+        // System.out.println("Total jenis olahraga: " + olahragaArray.length
+        // + ", yaitu Sepak Bola dan Basket.");
+        // System.out.println(
+        // "Sepak Bola dimainkan oleh 11 pemain per tim, sedangkan Basket dimainkan oleh
+        // 5 pemain per tim.");
+
+        // PSEUDOCODE OOP Sistem makanan dengan harga (Abstraction + Encapsulation +
+        // Method)
+        Makanan[] makananArray = { new NasiGoreng(), new MieAyam() };
+        for (Makanan m : makananArray) {
+            System.out.println("Harga makanan: Rp " + m.harga());
         }
-        System.out.println("Total jenis olahraga: " + olahragaArray.length
-                + ", yaitu Sepak Bola dan Basket.");
-        System.out.println(
-                "Sepak Bola dimainkan oleh 11 pemain per tim, sedangkan Basket dimainkan oleh 5 pemain per tim.");
+        System.out.println("Total jenis makanan: " + makananArray.length + ", yaitu Nasi Goreng dan Mie Ayam.");
 
     }
 }
 
-abstract class Olahraga {
-    public abstract void aturan();
+abstract class Makanan {
+    public abstract int harga();
 }
 
-class SepakBola extends Olahraga {
-    public void aturan() {
-        System.out.println("Sepak Bola: 11 pemain per tim.");
+class NasiGoreng extends Makanan {
+    public int harga() {
+        return 15000;
     }
 }
 
-class Basket extends Olahraga {
-    public void aturan() {
-        System.out.println("Basket: 5 pemain per tim.");
+class MieAyam extends Makanan {
+    public int harga() {
+        return 12000;
     }
 }
+
+// abstract class Olahraga {
+// public abstract void aturan();
+// }
+
+// class SepakBola extends Olahraga {
+// public void aturan() {
+// System.out.println("Sepak Bola: 11 pemain per tim.");
+// }
+// }
+
+// class Basket extends Olahraga {
+// public void aturan() {
+// System.out.println("Basket: 5 pemain per tim.");
+// }
+// }
 
 // class Spesialis {
 // private String namaSpesialis;
