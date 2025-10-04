@@ -1168,58 +1168,135 @@ public class Main {
         // Method)
         // Makanan[] makananArray = { new NasiGoreng(), new MieAyam() };
         // for (Makanan m : makananArray) {
-        //     System.out.println("Harga makanan: Rp " + m.harga());
+        // System.out.println("Harga makanan: Rp " + m.harga());
         // }
-        // System.out.println("Total jenis makanan: " + makananArray.length + ", yaitu Nasi Goreng dan Mie Ayam.");
+        // System.out.println("Total jenis makanan: " + makananArray.length + ", yaitu
+        // Nasi Goreng dan Mie Ayam.");
 
-        //PSEDOCODE OOP Sistem perpustakaan dengan daftar buku (Encapsulation + Array of Object)
-        Perpustakaan perpustakaan = new Perpustakaan();
-        perpustakaan.tambahBuku(new Buku("From Zero to Action", "Pengarang A", 2024));  
-        perpustakaan.tambahBuku(new Buku("From Zero to Hero", "Pengarang B", 2025));
-        perpustakaan.tampilkanBuku();
-        System.out.println("Total buku di perpustakaan: 2, yaitu From Zero to Action dan From Zero to Hero.");
-        System.out.println("From Zero to Action diterbitkan pada tahun 2024, sedangkan From Zero to Hero diterbitkan pada tahun 2025.");
+        // PSEDOCODE OOP Sistem perpustakaan dengan daftar buku (Encapsulation + Array
+        // of Object)
+        // Perpustakaan perpustakaan = new Perpustakaan();
+        // perpustakaan.tambahBuku(new Buku("From Zero to Action", "Pengarang A",
+        // 2024));
+        // perpustakaan.tambahBuku(new Buku("From Zero to Hero", "Pengarang B", 2025));
+        // perpustakaan.tampilkanBuku();
+        // System.out.println("Total buku di perpustakaan: 2, yaitu From Zero to Action
+        // dan From Zero to Hero.");
+        // System.out.println("From Zero to Action diterbitkan pada tahun 2024,
+        // sedangkan From Zero to Hero diterbitkan pada tahun 2025.");
+
+        // PSEUDOCODE OOP Mobil dengan spesifikasi dan harga sewa (Encapsulation + Array
+        // of Object)
+        CarRental carRental = new CarRental();
+        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        carRental.listCars();
+        System.out.println("Total cars available: " + carRental.getTotalCars());
+        System.out.println(
+                "Toyota Avanza tahun 2020 memiliki harga sewa Rp 500000 per hari, sedangkan Honda Civic tahun 2019 memiliki harga sewa Rp 700000 per hari.");
 
     }
 }
 
-class Buku {
-    String judul, penulis;
-    int tahun;
-    public Buku(String judul, String penulis, int tahun) {
-        this.judul = judul; this.penulis = penulis; this.tahun = tahun;
-    }
-}
+class CarRental {
+    private Car[] cars;
+    private int carCount;
 
-class Perpustakaan {
-    private Buku[] daftar = new Buku[10];
-    private int count = 0;
-
-    public void tambahBuku(Buku b) {
-        if (count < daftar.length) daftar[count++] = b;
+    public CarRental() {
+        cars = new Car[100]; // Maksimal 100 mobil
+        carCount = 0;
     }
 
-    public void tampilkanBuku() {
-        for (int i = 0; i < count; i++) {
-            System.out.println(daftar[i].judul + " - " + daftar[i].penulis + " (" + daftar[i].tahun + ")");
+    public void addCar(Car car) {
+        if (carCount < cars.length) {
+            cars[carCount++] = car;
+        } else {
+            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
         }
     }
+
+    public void listCars() {
+        System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
+        for (int i = 0; i < carCount; i++) {
+            Car car = cars[i];
+            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
+                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+        }
+    }
+
+    public int getTotalCars() {
+        return carCount;
+    }
 }
 
+class Car {
+    private String make;
+    private String model;
+    private int year;
+    private double rentalPricePerDay;
+
+    public Car(String make, String model, int year, double rentalPricePerDay) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.rentalPricePerDay = rentalPricePerDay;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public double getRentalPricePerDay() {
+        return rentalPricePerDay;
+    }
+}
+
+// class Buku {
+// String judul, penulis;
+// int tahun;
+// public Buku(String judul, String penulis, int tahun) {
+// this.judul = judul; this.penulis = penulis; this.tahun = tahun;
+// }
+// }
+
+// class Perpustakaan {
+// private Buku[] daftar = new Buku[10];
+// private int count = 0;
+
+// public void tambahBuku(Buku b) {
+// if (count < daftar.length) daftar[count++] = b;
+// }
+
+// public void tampilkanBuku() {
+// for (int i = 0; i < count; i++) {
+// System.out.println(daftar[i].judul + " - " + daftar[i].penulis + " (" +
+// daftar[i].tahun + ")");
+// }
+// }
+// }
+
 // abstract class Makanan {
-//     public abstract int harga();
+// public abstract int harga();
 // }
 
 // class NasiGoreng extends Makanan {
-//     public int harga() {
-//         return 15000;
-//     }
+// public int harga() {
+// return 15000;
+// }
 // }
 
 // class MieAyam extends Makanan {
-//     public int harga() {
-//         return 12000;
-//     }
+// public int harga() {
+// return 12000;
+// }
 // }
 
 // abstract class Olahraga {
