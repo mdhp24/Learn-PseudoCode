@@ -1292,69 +1292,106 @@ public class Main {
         // }
 
         // PSEUEDOCODE OOP Sistem manajemen inventaris (Encapsulation + Array of Object)
-        Inventory inventory = new Inventory();
-        inventory.addItem(new Item("Laptop", 10, 1500.00));
-        inventory.addItem(new Item("Mouse", 50, 20.00));
-        inventory.addItem(new Item("Keyboard", 30, 45.00));
-        inventory.listItems();
-        System.out.println("Total items in inventory: " + inventory.getTotalItems());
+        // Inventory inventory = new Inventory();
+        // inventory.addItem(new Item("Laptop", 10, 1500.00));
+        // inventory.addItem(new Item("Mouse", 50, 20.00));
+        // inventory.addItem(new Item("Keyboard", 30, 45.00));
+        // inventory.listItems();
+        // System.out.println("Total items in inventory: " + inventory.getTotalItems());
+
+        // PSEUDOCODE OOP Sistem kabel televisi (Encapsulation + Method)
+        CableTV cableTV = new CableTV();
+        cableTV.addChannel("HBO");
+        cableTV.addChannel("ESPN");
+        cableTV.addChannel("National Geographic");
+        cableTV.listChannels();
+        System.out.println("Total channels available: " + cableTV.getTotalChannels());
     }
 }
 
-class Inventory {
-    private Item[] items;
-    private int itemCount;
+class CableTV {
+    private String[] channels;
+    private int channelCount;
 
-    public Inventory() {
-        items = new Item[100]; // Maksimal 100 item
-        itemCount = 0;
+    public CableTV() {
+        channels = new String[100]; // Maksimal 100 saluran
+        channelCount = 0;
     }
 
-    public void addItem(Item item) {
-        if (itemCount < items.length) {
-            items[itemCount++] = item;
+    public void addChannel(String channel) {
+        if (channelCount < channels.length) {
+            channels[channelCount++] = channel;
         } else {
-            System.out.println("Tidak bisa menambah item, kapasitas penuh.");
+            System.out.println("Tidak bisa menambah saluran, kapasitas penuh.");
         }
     }
 
-    public void listItems() {
-        System.out.println("Daftar Item dalam Inventaris:");
-        for (int i = 0; i < itemCount; i++) {
-            Item item = items[i];
-            System.out.println(
-                    (i + 1) + ". " + item.getName() + " - Stok: " + item.getStock() + ", Harga: $" + item.getPrice());
+    public void listChannels() {
+        System.out.println("Daftar Saluran TV:");
+        for (int i = 0; i < channelCount; i++) {
+            System.out.println((i + 1) + ". " + channels[i]);
         }
     }
 
-    public int getTotalItems() {
-        return itemCount;
+    public int getTotalChannels() {
+        return channelCount;    
     }
 }
 
-class Item {
-    private String name;
-    private int stock;
-    private double price;
+// class Inventory {
+//     private Item[] items;
+//     private int itemCount;
 
-    public Item(String name, int stock, double price) {
-        this.name = name;
-        this.stock = stock;
-        this.price = price;
-    }
+//     public Inventory() {
+//         items = new Item[100]; // Maksimal 100 item
+//         itemCount = 0;
+//     }
 
-    public String getName() {
-        return name;
-    }
+//     public void addItem(Item item) {
+//         if (itemCount < items.length) {
+//             items[itemCount++] = item;
+//         } else {
+//             System.out.println("Tidak bisa menambah item, kapasitas penuh.");
+//         }
+//     }
 
-    public int getStock() {
-        return stock;
-    }
+//     public void listItems() {
+//         System.out.println("Daftar Item dalam Inventaris:");
+//         for (int i = 0; i < itemCount; i++) {
+//             Item item = items[i];
+//             System.out.println(
+//                     (i + 1) + ". " + item.getName() + " - Stok: " + item.getStock() + ", Harga: $" + item.getPrice());
+//         }
+//     }
 
-    public double getPrice() {
-        return price;
-    }
-}
+//     public int getTotalItems() {
+//         return itemCount;
+//     }
+// }
+
+// class Item {
+//     private String name;
+//     private int stock;
+//     private double price;
+
+//     public Item(String name, int stock, double price) {
+//         this.name = name;
+//         this.stock = stock;
+//         this.price = price;
+//     }
+
+//     public String getName() {
+//         return name;
+//     }
+
+//     public int getStock() {
+//         return stock;
+//     }
+
+//     public double getPrice() {
+//         return price;
+//     }
+// }
 
 // class Laptop {
 // private String merek;
