@@ -1222,6 +1222,28 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP inputan data mahasiswa (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah mahasiswa: ");
+        // int jumlahMahasiswa = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
+        // for (int i = 0; i < jumlahMahasiswa; i++) {
+        //     System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
+        //     System.out.print("Nama: ");
+        //     String nama = scanner.nextLine();
+        //     System.out.print("NIM: ");
+        //     String nim = scanner.nextLine();
+        //     System.out.print("Program Studi: ");
+        //     String prodi = scanner.nextLine();
+        //     mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
+        // }
+        // System.out.println("\nData mahasiswa yang dimasukkan:");
+        // for (Mahasiswa mhs : mahasiswaArray) {
+        //     System.out.println(
+        //             "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " + mhs.getProdi());
+        // }
+
+        //PSEUDOCODE OOP Pembayaran ukt mahasiswa (Encapsulation + Array of Object)
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan jumlah mahasiswa: ");
         int jumlahMahasiswa = scanner.nextInt();
@@ -1268,6 +1290,31 @@ class Mahasiswa {
         return prodi;
     }
 }
+
+
+// class Mahasiswa {
+//     private String nama;
+//     private String nim;
+//     private String prodi;
+
+//     public Mahasiswa(String nama, String nim, String prodi) {
+//         this.nama = nama;
+//         this.nim = nim;
+//         this.prodi = prodi;
+//     }
+
+//     public String getNama() {
+//         return nama;
+//     }
+
+//     public String getNim() {
+//         return nim;
+//     }
+
+//     public String getProdi() {
+//         return prodi;
+//     }
+// }
 
 // class Product {
 // private String name;
