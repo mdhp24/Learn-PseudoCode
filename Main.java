@@ -1228,92 +1228,140 @@ public class Main {
         // scanner.nextLine(); // Membersihkan newline
         // Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
         // for (int i = 0; i < jumlahMahasiswa; i++) {
-        //     System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
-        //     System.out.print("Nama: ");
-        //     String nama = scanner.nextLine();
-        //     System.out.print("NIM: ");
-        //     String nim = scanner.nextLine();
-        //     System.out.print("Program Studi: ");
-        //     String prodi = scanner.nextLine();
-        //     mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
+        // System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
+        // System.out.print("Nama: ");
+        // String nama = scanner.nextLine();
+        // System.out.print("NIM: ");
+        // String nim = scanner.nextLine();
+        // System.out.print("Program Studi: ");
+        // String prodi = scanner.nextLine();
+        // mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
         // }
         // System.out.println("\nData mahasiswa yang dimasukkan:");
         // for (Mahasiswa mhs : mahasiswaArray) {
-        //     System.out.println(
-        //             "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " + mhs.getProdi());
+        // System.out.println(
+        // "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " +
+        // mhs.getProdi());
         // }
 
-        //PSEUDOCODE OOP Pembayaran ukt mahasiswa (Encapsulation + Array of Object)
+        // PSEUDOCODE OOP Pembayaran ukt mahasiswa (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah mahasiswa: ");
+        // int jumlahMahasiswa = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
+        // for (int i = 0; i < jumlahMahasiswa; i++) {
+        // System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
+        // System.out.print("Nama: ");
+        // String nama = scanner.nextLine();
+        // System.out.print("NIM: ");
+        // String nim = scanner.nextLine();
+        // System.out.print("Program Studi: ");
+        // String prodi = scanner.nextLine();
+        // mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
+        // }
+        // System.out.println("\nData mahasiswa yang dimasukkan:");
+        // for (Mahasiswa mhs : mahasiswaArray) {
+        // System.out.println(
+        // "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " +
+        // mhs.getProdi());
+        // }
+
+        // PSEUDOCODE OOP Sistem pembelian laptop (Encapsulation + Array of Object)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah mahasiswa: ");
-        int jumlahMahasiswa = scanner.nextInt();
+        System.out.print("Masukkan jumlah laptop yang akan dibeli: ");
+        int jumlahLaptop = scanner.nextInt();
         scanner.nextLine(); // Membersihkan newline
-        Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
-        for (int i = 0; i < jumlahMahasiswa; i++) {
-            System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
-            System.out.print("Nama: ");
-            String nama = scanner.nextLine();
-            System.out.print("NIM: ");
-            String nim = scanner.nextLine();
-            System.out.print("Program Studi: ");
-            String prodi = scanner.nextLine();
-            mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
+        Laptop[] laptopArray = new Laptop[jumlahLaptop];
+        for (int i = 0; i < jumlahLaptop; i++) {
+            System.out.println("Masukkan detail laptop ke-" + (i + 1) + ":");
+            System.out.print("Merek: ");
+            String merek = scanner.nextLine();
+            System.out.print("Model: ");
+            String model = scanner.nextLine();
+            System.out.print("Harga: ");
+            double harga = scanner.nextDouble();
+            scanner.nextLine(); // Membersihkan newline
+            laptopArray[i] = new Laptop(merek, model, harga);
         }
-        System.out.println("\nData mahasiswa yang dimasukkan:");
-        for (Mahasiswa mhs : mahasiswaArray) {
+        System.out.println("\nDetail laptop yang dibeli:");
+        for (Laptop laptop : laptopArray) {
             System.out.println(
-                    "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " + mhs.getProdi());
+                    "Merek: " + laptop.getMerek() + ", Model: " + laptop.getModel() + ", Harga: $" + laptop.getHarga());
         }
     }
 }
 
-class Mahasiswa {
-    private String nama;
-    private String nim;
-    private String prodi;
+class Laptop {
+    private String merek;
+    private String model;
+    private double harga;
 
-    public Mahasiswa(String nama, String nim, String prodi) {
-        this.nama = nama;
-        this.nim = nim;
-        this.prodi = prodi;
+    public Laptop(String merek, String model, double harga) {
+        this.merek = merek;
+        this.model = model;
+        this.harga = harga;
     }
 
-    public String getNama() {
-        return nama;
+    public String getMerek() {
+        return merek;
     }
 
-    public String getNim() {
-        return nim;
+    public String getModel() {
+        return model;
     }
 
-    public String getProdi() {
-        return prodi;
+    public double getHarga() {
+        return harga;
     }
 }
-
 
 // class Mahasiswa {
-//     private String nama;
-//     private String nim;
-//     private String prodi;
+// private String nama;
+// private String nim;
+// private String prodi;
 
-//     public Mahasiswa(String nama, String nim, String prodi) {
-//         this.nama = nama;
-//         this.nim = nim;
-//         this.prodi = prodi;
-//     }
+// public Mahasiswa(String nama, String nim, String prodi) {
+// this.nama = nama;
+// this.nim = nim;
+// this.prodi = prodi;
+// }
 
-//     public String getNama() {
-//         return nama;
-//     }
+// public String getNama() {
+// return nama;
+// }
 
-//     public String getNim() {
-//         return nim;
-//     }
+// public String getNim() {
+// return nim;
+// }
 
-//     public String getProdi() {
-//         return prodi;
-//     }
+// public String getProdi() {
+// return prodi;
+// }
+// }
+
+// class Mahasiswa {
+// private String nama;
+// private String nim;
+// private String prodi;
+
+// public Mahasiswa(String nama, String nim, String prodi) {
+// this.nama = nama;
+// this.nim = nim;
+// this.prodi = prodi;
+// }
+
+// public String getNama() {
+// return nama;
+// }
+
+// public String getNim() {
+// return nim;
+// }
+
+// public String getProdi() {
+// return prodi;
+// }
 // }
 
 // class Product {
