@@ -1187,77 +1187,140 @@ public class Main {
 
         // PSEUDOCODE OOP Mobil dengan spesifikasi dan harga sewa (Encapsulation + Array
         // of Object)
-        CarRental carRental = new CarRental();
-        carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
-        carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
-        carRental.listCars();
-        System.out.println("Total cars available: " + carRental.getTotalCars());
-        System.out.println(
-                "Toyota Avanza tahun 2020 memiliki harga sewa Rp 500000 per hari, sedangkan Honda Civic tahun 2019 memiliki harga sewa Rp 700000 per hari.");
+        // CarRental carRental = new CarRental();
+        // carRental.addCar(new Car("Toyota", "Avanza", 2020, 500000));
+        // carRental.addCar(new Car("Honda", "Civic", 2019, 700000));
+        // carRental.listCars();
+        // System.out.println("Total cars available: " + carRental.getTotalCars());
+        // System.out.println(
+        // "Toyota Avanza tahun 2020 memiliki harga sewa Rp 500000 per hari, sedangkan
+        // Honda Civic tahun 2019 memiliki harga sewa Rp 700000 per hari.");
 
+        // PSEUDOCODE OOP Sistem inputan pembelian barang (Encapsulation + Array of
+        // Object)
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan jumlah barang yang akan dibeli: ");
+        int jumlahBarang = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan newline
+        Product[] products = new Product[jumlahBarang];
+        for (int i = 0; i < jumlahBarang; i++) {
+            System.out.println("Masukkan detail barang ke-" + (i + 1) + ":");
+            System.out.print("Nama: ");
+            String name = scanner.nextLine();
+            System.out.print("Harga: ");
+            double price = scanner.nextDouble();
+            System.out.print("Stok: ");
+            int stock = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan newline
+            products[i] = new Product(name, price, stock);
+        }
+        System.out.println("\nDetail barang yang dibeli:");
+        for (Product product : products) {
+            System.out.println(
+                    "Nama: " + product.getName() + ", Harga: $" + product.getPrice() + ", Stok: " + product.getStock());
+        }
     }
 }
 
-class CarRental {
-    private Car[] cars;
-    private int carCount;
+class Product {
+    private String name;
+    private double price;
+    private int stock;
 
-    public CarRental() {
-        cars = new Car[100]; // Maksimal 100 mobil
-        carCount = 0;
+    public Product(String name, double price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
-    public void addCar(Car car) {
-        if (carCount < cars.length) {
-            cars[carCount++] = car;
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void restock(int amount) {
+        if (amount > 0) {
+            stock += amount;
+        }
+    }
+
+    public void sell(int amount) {
+        if (amount > 0 && amount <= stock) {
+            stock -= amount;
         } else {
-            System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+            System.out.println("Stok tidak cukup untuk penjualan.");
         }
-    }
-
-    public void listCars() {
-        System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
-        for (int i = 0; i < carCount; i++) {
-            Car car = cars[i];
-            System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + " (" + car.getYear()
-                    + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
-        }
-    }
-
-    public int getTotalCars() {
-        return carCount;
     }
 }
 
-class Car {
-    private String make;
-    private String model;
-    private int year;
-    private double rentalPricePerDay;
+// class CarRental {
+// private Car[] cars;
+// private int carCount;
 
-    public Car(String make, String model, int year, double rentalPricePerDay) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.rentalPricePerDay = rentalPricePerDay;
-    }
+// public CarRental() {
+// cars = new Car[100]; // Maksimal 100 mobil
+// carCount = 0;
+// }
 
-    public String getMake() {
-        return make;
-    }
+// public void addCar(Car car) {
+// if (carCount < cars.length) {
+// cars[carCount++] = car;
+// } else {
+// System.out.println("Tidak bisa menambah mobil, kapasitas penuh.");
+// }
+// }
 
-    public String getModel() {
-        return model;
-    }
+// public void listCars() {
+// System.out.println("Daftar Mobil yang Tersedia untuk Disewa:");
+// for (int i = 0; i < carCount; i++) {
+// Car car = cars[i];
+// System.out.println((i + 1) + ". " + car.getMake() + " " + car.getModel() + "
+// (" + car.getYear()
+// + ") - Harga Sewa per Hari: Rp" + car.getRentalPricePerDay());
+// }
+// }
 
-    public int getYear() {
-        return year;
-    }
+// public int getTotalCars() {
+// return carCount;
+// }
+// }
 
-    public double getRentalPricePerDay() {
-        return rentalPricePerDay;
-    }
-}
+// class Car {
+// private String make;
+// private String model;
+// private int year;
+// private double rentalPricePerDay;
+
+// public Car(String make, String model, int year, double rentalPricePerDay) {
+// this.make = make;
+// this.model = model;
+// this.year = year;
+// this.rentalPricePerDay = rentalPricePerDay;
+// }
+
+// public String getMake() {
+// return make;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public int getYear() {
+// return year;
+// }
+
+// public double getRentalPricePerDay() {
+// return rentalPricePerDay;
+// }
+// }
 
 // class Buku {
 // String judul, penulis;
