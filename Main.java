@@ -1198,67 +1198,114 @@ public class Main {
 
         // PSEUDOCODE OOP Sistem inputan pembelian barang (Encapsulation + Array of
         // Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah barang yang akan dibeli: ");
+        // int jumlahBarang = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Product[] products = new Product[jumlahBarang];
+        // for (int i = 0; i < jumlahBarang; i++) {
+        // System.out.println("Masukkan detail barang ke-" + (i + 1) + ":");
+        // System.out.print("Nama: ");
+        // String name = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double price = scanner.nextDouble();
+        // System.out.print("Stok: ");
+        // int stock = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // products[i] = new Product(name, price, stock);
+        // }
+        // System.out.println("\nDetail barang yang dibeli:");
+        // for (Product product : products) {
+        // System.out.println(
+        // "Nama: " + product.getName() + ", Harga: $" + product.getPrice() + ", Stok: "
+        // + product.getStock());
+        // }
+
+        // PSEUDOCODE OOP inputan data mahasiswa (Encapsulation + Array of Object)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah barang yang akan dibeli: ");
-        int jumlahBarang = scanner.nextInt();
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = scanner.nextInt();
         scanner.nextLine(); // Membersihkan newline
-        Product[] products = new Product[jumlahBarang];
-        for (int i = 0; i < jumlahBarang; i++) {
-            System.out.println("Masukkan detail barang ke-" + (i + 1) + ":");
+        Mahasiswa[] mahasiswaArray = new Mahasiswa[jumlahMahasiswa];
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
             System.out.print("Nama: ");
-            String name = scanner.nextLine();
-            System.out.print("Harga: ");
-            double price = scanner.nextDouble();
-            System.out.print("Stok: ");
-            int stock = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline
-            products[i] = new Product(name, price, stock);
+            String nama = scanner.nextLine();
+            System.out.print("NIM: ");
+            String nim = scanner.nextLine();
+            System.out.print("Program Studi: ");
+            String prodi = scanner.nextLine();
+            mahasiswaArray[i] = new Mahasiswa(nama, nim, prodi);
         }
-        System.out.println("\nDetail barang yang dibeli:");
-        for (Product product : products) {
+        System.out.println("\nData mahasiswa yang dimasukkan:");
+        for (Mahasiswa mhs : mahasiswaArray) {
             System.out.println(
-                    "Nama: " + product.getName() + ", Harga: $" + product.getPrice() + ", Stok: " + product.getStock());
+                    "Nama: " + mhs.getNama() + ", NIM: " + mhs.getNim() + ", Program Studi: " + mhs.getProdi());
         }
     }
 }
 
-class Product {
-    private String name;
-    private double price;
-    private int stock;
+class Mahasiswa {
+    private String nama;
+    private String nim;
+    private String prodi;
 
-    public Product(String name, double price, int stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
+    public Mahasiswa(String nama, String nim, String prodi) {
+        this.nama = nama;
+        this.nim = nim;
+        this.prodi = prodi;
     }
 
-    public String getName() {
-        return name;
+    public String getNama() {
+        return nama;
     }
 
-    public double getPrice() {
-        return price;
+    public String getNim() {
+        return nim;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void restock(int amount) {
-        if (amount > 0) {
-            stock += amount;
-        }
-    }
-
-    public void sell(int amount) {
-        if (amount > 0 && amount <= stock) {
-            stock -= amount;
-        } else {
-            System.out.println("Stok tidak cukup untuk penjualan.");
-        }
+    public String getProdi() {
+        return prodi;
     }
 }
+
+// class Product {
+// private String name;
+// private double price;
+// private int stock;
+
+// public Product(String name, double price, int stock) {
+// this.name = name;
+// this.price = price;
+// this.stock = stock;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double getPrice() {
+// return price;
+// }
+
+// public int getStock() {
+// return stock;
+// }
+
+// public void restock(int amount) {
+// if (amount > 0) {
+// stock += amount;
+// }
+// }
+
+// public void sell(int amount) {
+// if (amount > 0 && amount <= stock) {
+// stock -= amount;
+// } else {
+// System.out.println("Stok tidak cukup untuk penjualan.");
+// }
+// }
+// }
 
 // class CarRental {
 // private Car[] cars;
