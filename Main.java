@@ -1310,31 +1310,75 @@ public class Main {
 
         // PSEUDOCODE OOP Sistem pembayaran gaji pegawai (Encapsulation + Array of
         // Object)
-        Employee[] employees = { new Employee("Aku", 5000000), new Employee("Dia", 3000000) };
-        for (Employee emp : employees) {
-            System.out.println("Gaji " + emp.getName() + ": Rp " + emp.calculateSalary());
+        // Employee[] employees = { new Employee("Aku", 5000000), new Employee("Dia",
+        // 3000000) };
+        // for (Employee emp : employees) {
+        // System.out.println("Gaji " + emp.getName() + ": Rp " +
+        // emp.calculateSalary());
+        // }
+
+        // PSEUDOCODE OOP input sistem pembelian tiket bioskop (Encapsulation + Array of
+        // Object)
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan jumlah tiket yang akan dibeli: ");
+        int jumlahTiket = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan newline
+        Ticket[] tiketArray = new Ticket[jumlahTiket];
+        for (int i = 0; i < jumlahTiket; i++) {
+            System.out.println("Masukkan detail tiket ke-" + (i + 1) + ":");
+            System.out.print("Nama Film: ");
+            String namaFilm = scanner.nextLine();
+            System.out.print("Waktu Tayang: ");
+            String waktuTayang = scanner.nextLine();
+            System.out.print("Harga: ");
+            double harga = scanner.nextDouble();
+            scanner.nextLine(); // Membersihkan newline
+            tiketArray[i] = new Ticket(namaFilm, waktuTayang, harga);
         }
-
     }
 }
 
-class Employee {
-    private String name;
-    private double monthlySalary;
+class Ticket {
+    private String namaFilm;
+    private String waktuTayang;
+    private double harga;
 
-    public Employee(String name, double monthlySalary) {
-        this.name = name;
-        this.monthlySalary = monthlySalary;
+    public Ticket(String namaFilm, String waktuTayang, double harga) {
+        this.namaFilm = namaFilm;
+        this.waktuTayang = waktuTayang;
+        this.harga = harga;
     }
 
-    public String getName() {
-        return name;
+    public String getNamaFilm() {
+        return namaFilm;
     }
 
-    public double calculateSalary() {
-        return monthlySalary;
+    public String getWaktuTayang() {
+        return waktuTayang;
+    }
+
+    public double getHarga() {
+        return harga;
     }
 }
+
+// class Employee {
+// private String name;
+// private double monthlySalary;
+
+// public Employee(String name, double monthlySalary) {
+// this.name = name;
+// this.monthlySalary = monthlySalary;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public double calculateSalary() {
+// return monthlySalary;
+// }
+// }
 
 // class CableTV {
 // private String[] channels;
