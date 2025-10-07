@@ -1325,79 +1325,102 @@ public class Main {
         // scanner.nextLine(); // Membersihkan newline
         // Ticket[] tiketArray = new Ticket[jumlahTiket];
         // for (int i = 0; i < jumlahTiket; i++) {
-        //     System.out.println("Masukkan detail tiket ke-" + (i + 1) + ":");
-        //     System.out.print("Nama Film: ");
-        //     String namaFilm = scanner.nextLine();
-        //     System.out.print("Waktu Tayang: ");
-        //     String waktuTayang = scanner.nextLine();
-        //     System.out.print("Harga: ");
-        //     double harga = scanner.nextDouble();
-        //     scanner.nextLine(); // Membersihkan newline
-        //     tiketArray[i] = new Ticket(namaFilm, waktuTayang, harga);
-        
-        //PSEUDOCODE OOP simulasi kesadaran makhluk hidup (Encapsulation + Method)
-        ConsciousEntity entity = new ConsciousEntity("Makhluk Hidup", 1);
-        for (int i = 0; i < 5; i++) {
-            entity.evolve();
-        }
-        System.out.println("Proses evolusi selesai.");
+        // System.out.println("Masukkan detail tiket ke-" + (i + 1) + ":");
+        // System.out.print("Nama Film: ");
+        // String namaFilm = scanner.nextLine();
+        // System.out.print("Waktu Tayang: ");
+        // String waktuTayang = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double harga = scanner.nextDouble();
+        // scanner.nextLine(); // Membersihkan newline
+        // tiketArray[i] = new Ticket(namaFilm, waktuTayang, harga);
+
+        // PSEUDOCODE OOP simulasi kesadaran makhluk hidup (Encapsulation + Method)
+        // ConsciousEntity entity = new ConsciousEntity("Makhluk Hidup", 1);
+        // for (int i = 0; i < 5; i++) {
+        // entity.evolve();
+        // }
+        // System.out.println("Proses evolusi selesai.");
+
+        RealityGuardian guardian = new RealityGuardian("Dimension-X");
+        guardian.protect();
+        System.out.println("Dimensi aman dan stabil.");
     }
 }
 
-class ConsciousEntity {
-    private String name;
-    private int awarenessLevel;
+interface Guardian {
+    void protect();
+}
+
+class RealityGuardian implements Guardian {
+    private String dimension;
 
     // Constructor
-    public ConsciousEntity(String name, int awarenessLevel) {
-        this.name = name;
-        this.awarenessLevel = awarenessLevel;
+    public RealityGuardian(String dimension) {
+        this.dimension = dimension;
     }
 
-    // Method evolve
-    public void evolve() {
-        Random rand = new Random();
-        int evolution = rand.nextInt(5) + 1; // angka acak antara 1–5
-        awarenessLevel += evolution;
-        System.out.println(name + " berevolusi menjadi level kesadaran " + awarenessLevel);
+    @Override
+    public void protect() {
+        System.out.println("Menstabilkan dimensi " + dimension + " dari kehancuran eksistensial...");
     }
 }
 
-class Random {
-    private long seed;
+// class ConsciousEntity {
+// private String name;
+// private int awarenessLevel;
 
-    public Random() {
-        this.seed = System.currentTimeMillis();
-    }
+// // Constructor
+// public ConsciousEntity(String name, int awarenessLevel) {
+// this.name = name;
+// this.awarenessLevel = awarenessLevel;
+// }
 
-    public int nextInt(int bound) {
-        seed = (seed * 48271) % 2147483647;
-        return (int) (seed % bound);
-    }
-}
+// // Method evolve
+// public void evolve() {
+// Random rand = new Random();
+// int evolution = rand.nextInt(5) + 1; // angka acak antara 1–5
+// awarenessLevel += evolution;
+// System.out.println(name + " berevolusi menjadi level kesadaran " +
+// awarenessLevel);
+// }
+// }
+
+// class Random {
+// private long seed;
+
+// public Random() {
+// this.seed = System.currentTimeMillis();
+// }
+
+// public int nextInt(int bound) {
+// seed = (seed * 48271) % 2147483647;
+// return (int) (seed % bound);
+// }
+// }
 
 // class Ticket {
-//     private String namaFilm;
-//     private String waktuTayang;
-//     private double harga;
+// private String namaFilm;
+// private String waktuTayang;
+// private double harga;
 
-//     public Ticket(String namaFilm, String waktuTayang, double harga) {
-//         this.namaFilm = namaFilm;
-//         this.waktuTayang = waktuTayang;
-//         this.harga = harga;
-//     }
+// public Ticket(String namaFilm, String waktuTayang, double harga) {
+// this.namaFilm = namaFilm;
+// this.waktuTayang = waktuTayang;
+// this.harga = harga;
+// }
 
-//     public String getNamaFilm() {
-//         return namaFilm;
-//     }
+// public String getNamaFilm() {
+// return namaFilm;
+// }
 
-//     public String getWaktuTayang() {
-//         return waktuTayang;
-//     }
+// public String getWaktuTayang() {
+// return waktuTayang;
+// }
 
-//     public double getHarga() {
-//         return harga;
-//     }
+// public double getHarga() {
+// return harga;
+// }
 // }
 
 // class Employee {
