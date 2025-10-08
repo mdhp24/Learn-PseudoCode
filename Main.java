@@ -1372,54 +1372,119 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP Sistem pembelian laptop (Encapsulation + Array of Object)
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah laptop yang akan dibeli: ");
-        int jumlahLaptop = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline
-        Laptop[] laptopArray = new Laptop[jumlahLaptop];
-        for (int i = 0; i < jumlahLaptop; i++) {
-            System.out.println("Masukkan detail laptop ke-" + (i + 1) + ":");
-            System.out.print("Merek: ");
-            String merek = scanner.nextLine();
-            System.out.print("Model: ");
-            String model = scanner.nextLine();
-            System.out.print("Harga: ");
-            double harga = scanner.nextDouble();
-            scanner.nextLine(); // Membersihkan newline
-            laptopArray[i] = new Laptop(merek, model, harga);
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah laptop yang akan dibeli: ");
+        // int jumlahLaptop = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Laptop[] laptopArray = new Laptop[jumlahLaptop];
+        // for (int i = 0; i < jumlahLaptop; i++) {
+        // System.out.println("Masukkan detail laptop ke-" + (i + 1) + ":");
+        // System.out.print("Merek: ");
+        // String merek = scanner.nextLine();
+        // System.out.print("Model: ");
+        // String model = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double harga = scanner.nextDouble();
+        // scanner.nextLine(); // Membersihkan newline
+        // laptopArray[i] = new Laptop(merek, model, harga);
+        // }
+        // System.out.println("\nDetail laptop yang dibeli:");
+        // for (Laptop laptop : laptopArray) {
+        // System.out.println(
+        // "Merek: " + laptop.getMerek() + ", Model: " + laptop.getModel() + ", Harga:
+        // Rp. "
+        // + laptop.getHarga());
+        // }
+
+        // PSEUDOCODE OOP Sistem manajemen inventaris (Encapsulation + Array of Object)
+        Inventory inventory = new Inventory();
+        inventory.addItem(new Item("Laptop", 10, 1500.00));
+        inventory.addItem(new Item("Mouse", 50, 20.00));
+        inventory.addItem(new Item("Keyboard", 30, 45.00));
+        inventory.listItems();
+        System.out.println("Total items in inventory: " + inventory.getTotalItems());
+
+    }
+}
+
+class Inventory {
+    private Item[] items;
+    private int itemCount;
+
+    public Inventory() {
+        items = new Item[100]; // Maksimal 100 item
+        itemCount = 0;
+    }
+
+    public void addItem(Item item) {
+        if (itemCount < items.length) {
+            items[itemCount++] = item;
+        } else {
+            System.out.println("Tidak bisa menambah item, kapasitas penuh.");
         }
-        System.out.println("\nDetail laptop yang dibeli:");
-        for (Laptop laptop : laptopArray) {
+    }
+
+    public void listItems() {
+        System.out.println("Daftar Item dalam Inventaris:");
+        for (int i = 0; i < itemCount; i++) {
+            Item item = items[i];
             System.out.println(
-                    "Merek: " + laptop.getMerek() + ", Model: " + laptop.getModel() + ", Harga: Rp. "
-                            + laptop.getHarga());
+                    (i + 1) + ". " + item.getName() + " - Stok: " + item.getStock() + ", Harga: $" + item.getPrice());
         }
     }
-}
 
-class Laptop {
-    private String merek;
-    private String model;
-    private double harga;
-
-    public Laptop(String merek, String model, double harga) {
-        this.merek = merek;
-        this.model = model;
-        this.harga = harga;
-    }
-
-    public String getMerek() {
-        return merek;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public double getHarga() {
-        return harga;
+    public int getTotalItems() {
+        return itemCount;
     }
 }
+
+class Item {
+    private String name;
+    private int stock;
+    private double price;
+
+    public Item(String name, int stock, double price) {
+        this.name = name;
+        this.stock = stock;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+
+// class Laptop {
+// private String merek;
+// private String model;
+// private double harga;
+
+// public Laptop(String merek, String model, double harga) {
+// this.merek = merek;
+// this.model = model;
+// this.harga = harga;
+// }
+
+// public String getMerek() {
+// return merek;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public double getHarga() {
+// return harga;
+// }
+// }
 
 // class Iphone {
 // private String model;
