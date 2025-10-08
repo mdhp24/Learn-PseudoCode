@@ -1397,70 +1397,93 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP Sistem manajemen inventaris (Encapsulation + Array of Object)
-        Inventory inventory = new Inventory();
-        inventory.addItem(new Item("Laptop", 10, 1500.00));
-        inventory.addItem(new Item("Mouse", 50, 20.00));
-        inventory.addItem(new Item("Keyboard", 30, 45.00));
-        inventory.listItems();
-        System.out.println("Total items in inventory: " + inventory.getTotalItems());
+        // Inventory inventory = new Inventory();
+        // inventory.addItem(new Item("Laptop", 10, 1500.00));
+        // inventory.addItem(new Item("Mouse", 50, 20.00));
+        // inventory.addItem(new Item("Keyboard", 30, 45.00));
+        // inventory.listItems();
+        // System.out.println("Total items in inventory: " + inventory.getTotalItems());
 
+        // PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
+        String inputString;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan sebuah kalimat: ");
+        inputString = scanner.nextLine();
+        String reversedString = StringReverser.reverseWords(inputString);
+        System.out.println("Kalimat terbalik: " + reversedString);
+        scanner.close();
     }
 }
 
-class Inventory {
-    private Item[] items;
-    private int itemCount;
-
-    public Inventory() {
-        items = new Item[100]; // Maksimal 100 item
-        itemCount = 0;
-    }
-
-    public void addItem(Item item) {
-        if (itemCount < items.length) {
-            items[itemCount++] = item;
-        } else {
-            System.out.println("Tidak bisa menambah item, kapasitas penuh.");
+class StringReverser {
+    public static String reverseWords(String input) {
+        String[] words = input.split(" ");
+        StringBuilder reversed = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversed.append(words[i]);
+            if (i != 0) {
+                reversed.append(" ");
+            }
         }
-    }
-
-    public void listItems() {
-        System.out.println("Daftar Item dalam Inventaris:");
-        for (int i = 0; i < itemCount; i++) {
-            Item item = items[i];
-            System.out.println(
-                    (i + 1) + ". " + item.getName() + " - Stok: " + item.getStock() + ", Harga: $" + item.getPrice());
-        }
-    }
-
-    public int getTotalItems() {
-        return itemCount;
+        return reversed.toString();
     }
 }
 
-class Item {
-    private String name;
-    private int stock;
-    private double price;
+// class Inventory {
+// private Item[] items;
+// private int itemCount;
 
-    public Item(String name, int stock, double price) {
-        this.name = name;
-        this.stock = stock;
-        this.price = price;
-    }
+// public Inventory() {
+// items = new Item[100]; // Maksimal 100 item
+// itemCount = 0;
+// }
 
-    public String getName() {
-        return name;
-    }
+// public void addItem(Item item) {
+// if (itemCount < items.length) {
+// items[itemCount++] = item;
+// } else {
+// System.out.println("Tidak bisa menambah item, kapasitas penuh.");
+// }
+// }
 
-    public int getStock() {
-        return stock;
-    }
+// public void listItems() {
+// System.out.println("Daftar Item dalam Inventaris:");
+// for (int i = 0; i < itemCount; i++) {
+// Item item = items[i];
+// System.out.println(
+// (i + 1) + ". " + item.getName() + " - Stok: " + item.getStock() + ", Harga:
+// $" + item.getPrice());
+// }
+// }
 
-    public double getPrice() {
-        return price;
-    }
-}
+// public int getTotalItems() {
+// return itemCount;
+// }
+// }
+
+// class Item {
+// private String name;
+// private int stock;
+// private double price;
+
+// public Item(String name, int stock, double price) {
+// this.name = name;
+// this.stock = stock;
+// this.price = price;
+// }
+
+// public String getName() {
+// return name;
+// }
+
+// public int getStock() {
+// return stock;
+// }
+
+// public double getPrice() {
+// return price;
+// }
+// }
 
 // class Laptop {
 // private String merek;
