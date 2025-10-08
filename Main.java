@@ -1405,29 +1405,72 @@ public class Main {
         // System.out.println("Total items in inventory: " + inventory.getTotalItems());
 
         // PSUEODOCE OOP Balik urutan kata dalam string (Encapsulation + Method)
-        String inputString;
+        // String inputString;
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan sebuah kalimat: ");
+        // inputString = scanner.nextLine();
+        // String reversedString = StringReverser.reverseWords(inputString);
+        // System.out.println("Kalimat terbalik: " + reversedString);
+        // scanner.close();
+
+        // PSUEDOCODE OOP Hitung pangkat a pangkat b (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan basis (a): ");
+        // int a = scanner.nextInt();
+        // System.out.print("Masukkan eksponen (b): ");
+        // int b = scanner.nextInt();
+        // int result = PowerCalculator.calculatePower(a, b);
+        // System.out.println(a + " pangkat " + b + " adalah: " + result);
+        // scanner.close();
+
+        // PSEUDOCODE OOP Hitung jumlah digit bilangan (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan sebuah kalimat: ");
-        inputString = scanner.nextLine();
-        String reversedString = StringReverser.reverseWords(inputString);
-        System.out.println("Kalimat terbalik: " + reversedString);
+        System.out.print("Masukkan sebuah bilangan: ");
+        int number = scanner.nextInt();
+        int digitCount = DigitCounter.countDigits(number);
+        System.out.println("Jumlah digit bilangan " + number + " adalah: " + digitCount);
         scanner.close();
     }
 }
 
-class StringReverser {
-    public static String reverseWords(String input) {
-        String[] words = input.split(" ");
-        StringBuilder reversed = new StringBuilder();
-        for (int i = words.length - 1; i >= 0; i--) {
-            reversed.append(words[i]);
-            if (i != 0) {
-                reversed.append(" ");
-            }
+class DigitCounter {
+    public static int countDigits(int number) {
+        if (number == 0) {
+            return 1; // Bilangan 0 memiliki 1 digit
         }
-        return reversed.toString();
+        int count = 0;
+        number = Math.abs(number); // Mengatasi bilangan negatif
+        while (number > 0) {
+            number /= 10;
+            count++;
+        }
+        return count;
     }
 }
+
+// class PowerCalculator {
+// public static int calculatePower(int a, int b) {
+// int result = 1;
+// for (int i = 0; i < b; i++) {
+// result *= a;
+// }
+// return result;
+// }
+// }
+
+// class StringReverser {
+// public static String reverseWords(String input) {
+// String[] words = input.split(" ");
+// StringBuilder reversed = new StringBuilder();
+// for (int i = words.length - 1; i >= 0; i--) {
+// reversed.append(words[i]);
+// if (i != 0) {
+// reversed.append(" ");
+// }
+// }
+// return reversed.toString();
+// }
+// }
 
 // class Inventory {
 // private Item[] items;
