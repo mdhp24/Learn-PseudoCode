@@ -1347,55 +1347,103 @@ public class Main {
         // System.out.println("Dimensi aman dan stabil.");
 
         // PSEUDOCODE OOP inputan pembelian hp iphone (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah iPhone yang akan dibeli: ");
+        // int jumlahIphone = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Iphone[] iphoneArray = new Iphone[jumlahIphone];
+        // for (int i = 0; i < jumlahIphone; i++) {
+        // System.out.println("Masukkan detail iPhone ke-" + (i + 1) + ":");
+        // System.out.print("Model: ");
+        // String model = scanner.nextLine();
+        // System.out.print("Warna: ");
+        // String color = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double price = scanner.nextDouble();
+        // scanner.nextLine(); // Membersihkan newline
+        // iphoneArray[i] = new Iphone(model, color, price);
+        // }
+        // System.out.println("\nDetail iPhone yang dibeli:");
+        // for (Iphone iphone : iphoneArray) {
+        // System.out.println(
+        // "Model: " + iphone.getModel() + ", Warna: " + iphone.getColor() + ", Harga:
+        // Rp. "
+        // + iphone.getPrice());
+        // }
+
+        // PSEUDOCODE OOP Sistem pembelian laptop (Encapsulation + Array of Object)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah iPhone yang akan dibeli: ");
-        int jumlahIphone = scanner.nextInt();
+        System.out.print("Masukkan jumlah laptop yang akan dibeli: ");
+        int jumlahLaptop = scanner.nextInt();
         scanner.nextLine(); // Membersihkan newline
-        Iphone[] iphoneArray = new Iphone[jumlahIphone];
-        for (int i = 0; i < jumlahIphone; i++) {
-            System.out.println("Masukkan detail iPhone ke-" + (i + 1) + ":");
+        Laptop[] laptopArray = new Laptop[jumlahLaptop];
+        for (int i = 0; i < jumlahLaptop; i++) {
+            System.out.println("Masukkan detail laptop ke-" + (i + 1) + ":");
+            System.out.print("Merek: ");
+            String merek = scanner.nextLine();
             System.out.print("Model: ");
             String model = scanner.nextLine();
-            System.out.print("Warna: ");
-            String color = scanner.nextLine();
             System.out.print("Harga: ");
-            double price = scanner.nextDouble();
+            double harga = scanner.nextDouble();
             scanner.nextLine(); // Membersihkan newline
-            iphoneArray[i] = new Iphone(model, color, price);
+            laptopArray[i] = new Laptop(merek, model, harga);
         }
-        System.out.println("\nDetail iPhone yang dibeli:");
-        for (Iphone iphone : iphoneArray) {
+        System.out.println("\nDetail laptop yang dibeli:");
+        for (Laptop laptop : laptopArray) {
             System.out.println(
-                    "Model: " + iphone.getModel() + ", Warna: " + iphone.getColor() + ", Harga: Rp. "
-                            + iphone.getPrice());
+                    "Merek: " + laptop.getMerek() + ", Model: " + laptop.getModel() + ", Harga: Rp. "
+                            + laptop.getHarga());
         }
-
     }
 }
 
-class Iphone {
+class Laptop {
+    private String merek;
     private String model;
-    private String color;
-    private double price;
+    private double harga;
 
-    public Iphone(String model, String color, double price) {
+    public Laptop(String merek, String model, double harga) {
+        this.merek = merek;
         this.model = model;
-        this.color = color;
-        this.price = price;
+        this.harga = harga;
+    }
+
+    public String getMerek() {
+        return merek;
     }
 
     public String getModel() {
         return model;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public double getPrice() {
-        return price;
+    public double getHarga() {
+        return harga;
     }
 }
+
+// class Iphone {
+// private String model;
+// private String color;
+// private double price;
+
+// public Iphone(String model, String color, double price) {
+// this.model = model;
+// this.color = color;
+// this.price = price;
+// }
+
+// public String getModel() {
+// return model;
+// }
+
+// public String getColor() {
+// return color;
+// }
+
+// public double getPrice() {
+// return price;
+// }
+// }
 
 // interface Guardian {
 // void protect();
