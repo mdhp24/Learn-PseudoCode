@@ -1342,29 +1342,79 @@ public class Main {
         // }
         // System.out.println("Proses evolusi selesai.");
 
-        RealityGuardian guardian = new RealityGuardian("Dimension-X");
-        guardian.protect();
-        System.out.println("Dimensi aman dan stabil.");
+        // RealityGuardian guardian = new RealityGuardian("Dimension-X");
+        // guardian.protect();
+        // System.out.println("Dimensi aman dan stabil.");
+
+        // PSEUDOCODE OOP inputan pembelian hp iphone (Encapsulation + Array of Object)
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan jumlah iPhone yang akan dibeli: ");
+        int jumlahIphone = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan newline
+        Iphone[] iphoneArray = new Iphone[jumlahIphone];
+        for (int i = 0; i < jumlahIphone; i++) {
+            System.out.println("Masukkan detail iPhone ke-" + (i + 1) + ":");
+            System.out.print("Model: ");
+            String model = scanner.nextLine();
+            System.out.print("Warna: ");
+            String color = scanner.nextLine();
+            System.out.print("Harga: ");
+            double price = scanner.nextDouble();
+            scanner.nextLine(); // Membersihkan newline
+            iphoneArray[i] = new Iphone(model, color, price);
+        }
+        System.out.println("\nDetail iPhone yang dibeli:");
+        for (Iphone iphone : iphoneArray) {
+            System.out.println(
+                    "Model: " + iphone.getModel() + ", Warna: " + iphone.getColor() + ", Harga: Rp. "
+                            + iphone.getPrice());
+        }
+
     }
 }
 
-interface Guardian {
-    void protect();
-}
+class Iphone {
+    private String model;
+    private String color;
+    private double price;
 
-class RealityGuardian implements Guardian {
-    private String dimension;
-
-    // Constructor
-    public RealityGuardian(String dimension) {
-        this.dimension = dimension;
+    public Iphone(String model, String color, double price) {
+        this.model = model;
+        this.color = color;
+        this.price = price;
     }
 
-    @Override
-    public void protect() {
-        System.out.println("Menstabilkan dimensi " + dimension + " dari kehancuran eksistensial...");
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
+
+// interface Guardian {
+// void protect();
+// }
+
+// class RealityGuardian implements Guardian {
+// private String dimension;
+
+// // Constructor
+// public RealityGuardian(String dimension) {
+// this.dimension = dimension;
+// }
+
+// @Override
+// public void protect() {
+// System.out.println("Menstabilkan dimensi " + dimension + " dari kehancuran
+// eksistensial...");
+// }
+// }
 
 // class ConsciousEntity {
 // private String name;
