@@ -1441,7 +1441,31 @@ public class Main {
         // System.out.println("Bilangan ganjil dari " + start + " sampai " + end + ":");
         // OddNumberFinder.findOddNumbersInRange(start, end);
 
-        //PSEUDOCODE OOP Pembelian baju (Encapsulation + Array of Object)
+        // PSEUDOCODE OOP Pembelian baju (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah baju yang akan dibeli: ");
+        // int jumlahBaju = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Baju[] bajuArray = new Baju[jumlahBaju];
+        // for (int i = 0; i < jumlahBaju; i++) {
+        // System.out.println("Masukkan detail baju ke-" + (i + 1) + ":");
+        // System.out.print("Merk: ");
+        // String merk = scanner.nextLine();
+        // System.out.print("Ukuran: ");
+        // String ukuran = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double harga = scanner.nextDouble();
+        // scanner.nextLine(); // Membersihkan newline
+        // bajuArray[i] = new Baju(merk, ukuran, harga);
+        // }
+        // System.out.println("\nDetail baju yang dibeli:");
+        // for (Baju baju : bajuArray) {
+        // System.out.println(
+        // "Merk: " + baju.getMerk() + ", Ukuran: " + baju.getUkuran() + ", Harga: Rp. "
+        // + baju.getHarga());
+        // }
+
+        // PSEUDOCODE OOP Sistem pembelian baju (Encapsulation + Array of Object)
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan jumlah baju yang akan dibeli: ");
         int jumlahBaju = scanner.nextInt();
@@ -1489,17 +1513,43 @@ class Baju {
     public double getHarga() {
         return harga;
     }
+
 }
 
+
+// class Baju {
+// private String merk;
+// private String ukuran;
+// private double harga;
+
+// public Baju(String merk, String ukuran, double harga) {
+// this.merk = merk;
+// this.ukuran = ukuran;
+// this.harga = harga;
+// }
+
+// public String getMerk() {
+// return merk;
+// }
+
+// public String getUkuran() {
+// return ukuran;
+// }
+
+// public double getHarga() {
+// return harga;
+// }
+// }
+
 // class OddNumberFinder {
-//     public static void findOddNumbersInRange(int start, int end) {
-//         for (int i = start; i <= end; i++) {
-//             if (i % 2 != 0) {
-//                 System.out.print(i + " ");
-//             }
-//         }
-//         System.out.println("");
-//     }
+// public static void findOddNumbersInRange(int start, int end) {
+// for (int i = start; i <= end; i++) {
+// if (i % 2 != 0) {
+// System.out.print(i + " ");
+// }
+// }
+// System.out.println("");
+// }
 // }
 
 // class DigitCounter {
