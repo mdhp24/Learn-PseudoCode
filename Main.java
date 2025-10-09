@@ -1514,40 +1514,48 @@ public class Main {
         // }
 
         //PSEUDOCODE OOP Kalkulator sederhana (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan angka pertama: ");
+        // double num1 = scanner.nextDouble();
+        // System.out.print("Masukkan angka kedua: ");
+        // double num2 = scanner.nextDouble();
+        // System.out.print("Masukkan operator (+, -, *, /): ");
+        // char operator = scanner.next().charAt(0);
+        // double result;
+        // switch (operator) {
+        //     case '+':
+        //         result = num1 + num2;
+        //         break;
+        //     case '-':
+        //         result = num1 - num2;
+        //         break;
+        //     case '*':
+        //         result = num1 * num2;
+        //         break;
+        //     case '/':
+        //         if (num2 != 0) {
+        //             result = num1 / num2;
+        //         } else {
+        //             System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
+        //             scanner.close();
+        //             return;
+        //         }
+        //         break;
+        //     default:
+        //         System.out.println("Error: Operator tidak valid.");
+        //         scanner.close();
+        //         return;
+        // }
+        // System.out.println("Hasil: " + result);
+        // scanner.close();
+
+        //PSEUDOCODE Sistem konversi mata uang rupiah ke dollar (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan angka pertama: ");
-        double num1 = scanner.nextDouble();
-        System.out.print("Masukkan angka kedua: ");
-        double num2 = scanner.nextDouble();
-        System.out.print("Masukkan operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-        double result;
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
-                    scanner.close();
-                    return;
-                }
-                break;
-            default:
-                System.out.println("Error: Operator tidak valid.");
-                scanner.close();
-                return;
-        }
-        System.out.println("Hasil: " + result);
-        scanner.close();
+        System.out.print("Masukkan jumlah uang dalam Rupiah: ");
+        double rupiah = scanner.nextDouble();
+        double exchangeRate = 0.000067; // Contoh kurs Rupiah ke Dollar
+        double dollar = rupiah * exchangeRate;
+        System.out.println("Jumlah uang dalam Dollar: $" + dollar);
     }
 }
 
