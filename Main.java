@@ -1550,12 +1550,20 @@ public class Main {
         // scanner.close();
 
         //PSEUDOCODE Sistem konversi mata uang rupiah ke dollar (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah uang dalam Rupiah: ");
+        // double rupiah = scanner.nextDouble();
+        // double exchangeRate = 0.000067; // Contoh kurs Rupiah ke Dollar
+        // double dollar = rupiah * exchangeRate;
+        // System.out.println("Jumlah uang dalam Dollar: $" + dollar);
+
+        //PSEUDOCODE mengukur tinggi badan (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah uang dalam Rupiah: ");
-        double rupiah = scanner.nextDouble();
-        double exchangeRate = 0.000067; // Contoh kurs Rupiah ke Dollar
-        double dollar = rupiah * exchangeRate;
-        System.out.println("Jumlah uang dalam Dollar: $" + dollar);
+        System.out.print("Masukkan tinggi badan dalam cm: ");
+        double tinggiCm = scanner.nextDouble();
+        double tinggiM = tinggiCm / 100;
+        System.out.println("Tinggi badan dalam meter: " + tinggiM);
+
     }
 }
 
