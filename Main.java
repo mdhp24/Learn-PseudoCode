@@ -1490,54 +1490,92 @@ public class Main {
         // }
 
         // PSEUDOCODE OOP Keranjang belanja (Encapsulation + Array of Object)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah item yang akan dibeli: ");
+        // int jumlahItem = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // Item[] itemArray = new Item[jumlahItem];
+        // for (int i = 0; i < jumlahItem; i++) {
+        //     System.out.println("Masukkan detail item ke-" + (i + 1) + ":");
+        //     System.out.print("Nama: ");
+        //     String name = scanner.nextLine();
+        //     System.out.print("Harga: ");
+        //     double price = scanner.nextDouble();
+        //     System.out.print("Stok: ");
+        //     int stock = scanner.nextInt();
+        //     scanner.nextLine(); // Membersihkan newline
+        //     itemArray[i] = new Item(name, price, stock);
+        // }
+        // System.out.println("\nDetail item yang dibeli:");
+        // for (Item item : itemArray) {
+        //     System.out.println(
+        //             "Nama: " + item.getName() + ", Harga: Rp. " + item.getPrice() + ", Stok: "
+        //                     + item.getStock());
+        // }
+
+        //PSEUDOCODE OOP Kalkulator sederhana (Encapsulation + Method)
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah item yang akan dibeli: ");
-        int jumlahItem = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline
-        Item[] itemArray = new Item[jumlahItem];
-        for (int i = 0; i < jumlahItem; i++) {
-            System.out.println("Masukkan detail item ke-" + (i + 1) + ":");
-            System.out.print("Nama: ");
-            String name = scanner.nextLine();
-            System.out.print("Harga: ");
-            double price = scanner.nextDouble();
-            System.out.print("Stok: ");
-            int stock = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline
-            itemArray[i] = new Item(name, price, stock);
+        System.out.print("Masukkan angka pertama: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Masukkan angka kedua: ");
+        double num2 = scanner.nextDouble();
+        System.out.print("Masukkan operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+        double result;
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
+                    scanner.close();
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Error: Operator tidak valid.");
+                scanner.close();
+                return;
         }
-        System.out.println("\nDetail item yang dibeli:");
-        for (Item item : itemArray) {
-            System.out.println(
-                    "Nama: " + item.getName() + ", Harga: Rp. " + item.getPrice() + ", Stok: "
-                            + item.getStock());
-        }
+        System.out.println("Hasil: " + result);
+        scanner.close();
     }
 }
 
-class Item {
-    private String name;
-    private double price;
-    private int stock;
 
-    public Item(String name, double price, int stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-    }
 
-    public String getName() {
-        return name;
-    }
+// class Item {
+//     private String name;
+//     private double price;
+//     private int stock;
 
-    public double getPrice() {
-        return price;
-    }
+//     public Item(String name, double price, int stock) {
+//         this.name = name;
+//         this.price = price;
+//         this.stock = stock;
+//     }
 
-    public int getStock() {
-        return stock;
-    }
-}
+//     public String getName() {
+//         return name;
+//     }
+
+//     public double getPrice() {
+//         return price;
+//     }
+
+//     public int getStock() {
+//         return stock;
+//     }
+// }
 
 // class Baju {
 // private String merk;
