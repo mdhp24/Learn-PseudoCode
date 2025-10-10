@@ -1496,24 +1496,24 @@ public class Main {
         // scanner.nextLine(); // Membersihkan newline
         // Item[] itemArray = new Item[jumlahItem];
         // for (int i = 0; i < jumlahItem; i++) {
-        //     System.out.println("Masukkan detail item ke-" + (i + 1) + ":");
-        //     System.out.print("Nama: ");
-        //     String name = scanner.nextLine();
-        //     System.out.print("Harga: ");
-        //     double price = scanner.nextDouble();
-        //     System.out.print("Stok: ");
-        //     int stock = scanner.nextInt();
-        //     scanner.nextLine(); // Membersihkan newline
-        //     itemArray[i] = new Item(name, price, stock);
+        // System.out.println("Masukkan detail item ke-" + (i + 1) + ":");
+        // System.out.print("Nama: ");
+        // String name = scanner.nextLine();
+        // System.out.print("Harga: ");
+        // double price = scanner.nextDouble();
+        // System.out.print("Stok: ");
+        // int stock = scanner.nextInt();
+        // scanner.nextLine(); // Membersihkan newline
+        // itemArray[i] = new Item(name, price, stock);
         // }
         // System.out.println("\nDetail item yang dibeli:");
         // for (Item item : itemArray) {
-        //     System.out.println(
-        //             "Nama: " + item.getName() + ", Harga: Rp. " + item.getPrice() + ", Stok: "
-        //                     + item.getStock());
+        // System.out.println(
+        // "Nama: " + item.getName() + ", Harga: Rp. " + item.getPrice() + ", Stok: "
+        // + item.getStock());
         // }
 
-        //PSEUDOCODE OOP Kalkulator sederhana (Encapsulation + Method)
+        // PSEUDOCODE OOP Kalkulator sederhana (Encapsulation + Method)
         // Scanner scanner = new Scanner(System.in);
         // System.out.print("Masukkan angka pertama: ");
         // double num1 = scanner.nextDouble();
@@ -1523,33 +1523,34 @@ public class Main {
         // char operator = scanner.next().charAt(0);
         // double result;
         // switch (operator) {
-        //     case '+':
-        //         result = num1 + num2;
-        //         break;
-        //     case '-':
-        //         result = num1 - num2;
-        //         break;
-        //     case '*':
-        //         result = num1 * num2;
-        //         break;
-        //     case '/':
-        //         if (num2 != 0) {
-        //             result = num1 / num2;
-        //         } else {
-        //             System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
-        //             scanner.close();
-        //             return;
-        //         }
-        //         break;
-        //     default:
-        //         System.out.println("Error: Operator tidak valid.");
-        //         scanner.close();
-        //         return;
+        // case '+':
+        // result = num1 + num2;
+        // break;
+        // case '-':
+        // result = num1 - num2;
+        // break;
+        // case '*':
+        // result = num1 * num2;
+        // break;
+        // case '/':
+        // if (num2 != 0) {
+        // result = num1 / num2;
+        // } else {
+        // System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
+        // scanner.close();
+        // return;
+        // }
+        // break;
+        // default:
+        // System.out.println("Error: Operator tidak valid.");
+        // scanner.close();
+        // return;
         // }
         // System.out.println("Hasil: " + result);
         // scanner.close();
 
-        //PSEUDOCODE Sistem konversi mata uang rupiah ke dollar (Encapsulation + Method)
+        // PSEUDOCODE Sistem konversi mata uang rupiah ke dollar (Encapsulation +
+        // Method)
         // Scanner scanner = new Scanner(System.in);
         // System.out.print("Masukkan jumlah uang dalam Rupiah: ");
         // double rupiah = scanner.nextDouble();
@@ -1557,40 +1558,51 @@ public class Main {
         // double dollar = rupiah * exchangeRate;
         // System.out.println("Jumlah uang dalam Dollar: $" + dollar);
 
-        //PSEUDOCODE mengukur tinggi badan (Encapsulation + Method)
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan tinggi badan dalam cm: ");
-        double tinggiCm = scanner.nextDouble();
-        double tinggiM = tinggiCm / 100;
-        System.out.println("Tinggi badan dalam meter: " + tinggiM);
+        // PSEUDOCODE mengukur tinggi badan (Encapsulation + Method)
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Masukkan tinggi badan dalam cm: ");
+        // double tinggiCm = scanner.nextDouble();
+        // double tinggiM = tinggiCm / 100;
+        // System.out.println("Tinggi badan dalam meter: " + tinggiM);
+
+        //PSEUDOCODE deret fibonacci 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah digit Fibonacci: ");
+        int n = sc.nextInt();
+        int a = 0, b = 1;
+        System.out.print("Fibonacci: " + a + " " + b);
+        for (int i = 3; i <= n; i++) {
+            int c = a + b;
+            System.out.print(" " + c);
+            a = b;
+            b = c;
+        }
 
     }
 }
 
-
-
 // class Item {
-//     private String name;
-//     private double price;
-//     private int stock;
+// private String name;
+// private double price;
+// private int stock;
 
-//     public Item(String name, double price, int stock) {
-//         this.name = name;
-//         this.price = price;
-//         this.stock = stock;
-//     }
+// public Item(String name, double price, int stock) {
+// this.name = name;
+// this.price = price;
+// this.stock = stock;
+// }
 
-//     public String getName() {
-//         return name;
-//     }
+// public String getName() {
+// return name;
+// }
 
-//     public double getPrice() {
-//         return price;
-//     }
+// public double getPrice() {
+// return price;
+// }
 
-//     public int getStock() {
-//         return stock;
-//     }
+// public int getStock() {
+// return stock;
+// }
 // }
 
 // class Baju {
