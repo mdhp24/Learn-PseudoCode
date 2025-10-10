@@ -1565,18 +1565,31 @@ public class Main {
         // double tinggiM = tinggiCm / 100;
         // System.out.println("Tinggi badan dalam meter: " + tinggiM);
 
-        //PSEUDOCODE deret fibonacci 
+        // PSEUDOCODE deret fibonacci
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("Masukkan jumlah digit Fibonacci: ");
+        // int n = sc.nextInt();
+        // int a = 0, b = 1;
+        // System.out.print("Fibonacci: " + a + " " + b);
+        // for (int i = 3; i <= n; i++) {
+        // int c = a + b;
+        // System.out.print(" " + c);
+        // a = b;
+        // b = c;
+        // }
+
+        // PSEUDOCODE jumlah digit bilangan
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah digit Fibonacci: ");
-        int n = sc.nextInt();
-        int a = 0, b = 1;
-        System.out.print("Fibonacci: " + a + " " + b);
-        for (int i = 3; i <= n; i++) {
-            int c = a + b;
-            System.out.print(" " + c);
-            a = b;
-            b = c;
+        System.out.print("Masukkan angka: ");
+        int angka = sc.nextInt();
+        int total = 0;
+
+        while (angka > 0) {
+            total += angka % 10;
+            angka /= 10;
         }
+
+        System.out.println("Jumlah digit = " + total);
 
     }
 }
