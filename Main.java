@@ -1592,27 +1592,48 @@ public class Main {
 
         // System.out.println("Jumlah digit = " + total);
 
-        ConsciousEntity entity = new ConsciousEntity("Zyncron", 1);
-        entity.evolve();
+        // ConsciousEntity entity = new ConsciousEntity("Zyncron", 1);
+        // entity.evolve();
+
+        Guardian guardian = new RealityGuardian("Dimensi Omega");
+        guardian.protect();
 
     }
 }
 
-class ConsciousEntity {
-    private String name;
-    private int awarenessLevel;
+interface Guardian {
+    void protect();
+}
 
-    public ConsciousEntity(String name, int awarenessLevel) {
-        this.name = name;
-        this.awarenessLevel = awarenessLevel;
+class RealityGuardian implements Guardian {
+    private String dimension;
+
+    public RealityGuardian(String dimension) {
+        this.dimension = dimension;
     }
 
-    public void evolve() {
-        Random rand = new Random();
-        awarenessLevel += rand.nextInt(5) + 1;
-        System.out.println(name + " berevolusi ke level kesadaran " + awarenessLevel);
+    @Override
+    public void protect() {
+        System.out.println("Menstabilkan dimensi " + dimension);
     }
 }
+
+// class ConsciousEntity {
+// private String name;
+// private int awarenessLevel;
+
+// public ConsciousEntity(String name, int awarenessLevel) {
+// this.name = name;
+// this.awarenessLevel = awarenessLevel;
+// }
+
+// public void evolve() {
+// Random rand = new Random();
+// awarenessLevel += rand.nextInt(5) + 1;
+// System.out.println(name + " berevolusi ke level kesadaran " +
+// awarenessLevel);
+// }
+// }
 
 // class Item {
 // private String name;
