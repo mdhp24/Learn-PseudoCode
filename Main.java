@@ -1,5 +1,6 @@
 
 // PSEUDOCODE
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -1579,18 +1580,37 @@ public class Main {
         // }
 
         // PSEUDOCODE jumlah digit bilangan
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan angka: ");
-        int angka = sc.nextInt();
-        int total = 0;
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("Masukkan angka: ");
+        // int angka = sc.nextInt();
+        // int total = 0;
 
-        while (angka > 0) {
-            total += angka % 10;
-            angka /= 10;
-        }
+        // while (angka > 0) {
+        // total += angka % 10;
+        // angka /= 10;
+        // }
 
-        System.out.println("Jumlah digit = " + total);
+        // System.out.println("Jumlah digit = " + total);
 
+        ConsciousEntity entity = new ConsciousEntity("Zyncron", 1);
+        entity.evolve();
+
+    }
+}
+
+class ConsciousEntity {
+    private String name;
+    private int awarenessLevel;
+
+    public ConsciousEntity(String name, int awarenessLevel) {
+        this.name = name;
+        this.awarenessLevel = awarenessLevel;
+    }
+
+    public void evolve() {
+        Random rand = new Random();
+        awarenessLevel += rand.nextInt(5) + 1;
+        System.out.println(name + " berevolusi ke level kesadaran " + awarenessLevel);
     }
 }
 
