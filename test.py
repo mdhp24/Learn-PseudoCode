@@ -59,22 +59,32 @@
 #     a, b = b, a + b
 
 # Menyimpan dan Menampilkan Data Mahasiswa (List + Dictionary)
-mahasiswa = []
+# mahasiswa = []
 
-for i in range(3):  # Misalnya, kita akan memasukkan data untuk 3 mahasiswa
-    nama = input("Masukkan nama mahasiswa: ")
-    umur = int(input("Masukkan umur mahasiswa: "))
-    jurusan = input("Masukkan jurusan mahasiswa: ")
+# for i in range(3):  # Misalnya, kita akan memasukkan data untuk 3 mahasiswa
+#     nama = input("Masukkan nama mahasiswa: ")
+#     umur = int(input("Masukkan umur mahasiswa: "))
+#     jurusan = input("Masukkan jurusan mahasiswa: ")
     
-    data_mahasiswa = {
-        "nama": nama,
-        "umur": umur,
-        "jurusan": jurusan
-    }
+#     data_mahasiswa = {
+#         "nama": nama,
+#         "umur": umur,
+#         "jurusan": jurusan
+#     }
     
-    mahasiswa.append(data_mahasiswa)
+#     mahasiswa.append(data_mahasiswa)
 
-# Menampilkan Data Mahasiswa
-print("\nData Mahasiswa:")
-for mhs in mahasiswa:
-    print(f"Nama: {mhs['nama']}, Umur: {mhs['umur']}, Jurusan: {mhs['jurusan']}")
+# # Menampilkan Data Mahasiswa
+# print("\nData Mahasiswa:")
+# for mhs in mahasiswa:
+#     print(f"Nama: {mhs['nama']}, Umur: {mhs['umur']}, Jurusan: {mhs['jurusan']}")
+
+# Program deteksi lulus atau tidak lulus
+nilai = float(input("Masukkan nilai mahasiswa: "))
+
+if nilai >= 70:
+    status = "Lulus"
+else:
+    status = "Tidak Lulus"
+
+print("Status Mahasiswa:", status)
