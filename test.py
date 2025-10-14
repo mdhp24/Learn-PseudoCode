@@ -21,23 +21,31 @@
 #     print("Rata-rata nilai: ", rata_rata)
 
 #Program kalkulator sederhana
-a = float(input("Masukkan angka pertama: "))
-b = float(input("Masukkan angka kedua: "))
+# a = float(input("Masukkan angka pertama: "))
+# b = float(input("Masukkan angka kedua: "))
 
-operasi = input("Masukkan operasi (+, -, *, /): ")
+# operasi = input("Masukkan operasi (+, -, *, /): ")
 
-if operasi == "+":
-    hasil = a + b
-elif operasi == "-":
-    hasil = a - b
-elif operasi == "*":
-    hasil = a * b
-elif operasi == "/":
-    hasil = a / b
-else:
-    hasil = None
+# if operasi == "+":
+#     hasil = a + b
+# elif operasi == "-":
+#     hasil = a - b
+# elif operasi == "*":
+#     hasil = a * b
+# elif operasi == "/":
+#     hasil = a / b
+# else:
+#     hasil = None
 
-if hasil is not None:
-    print("Hasil: ", hasil)
-else:
-    print("Operasi tidak valid.")
+# if hasil is not None:
+#     print("Hasil: ", hasil)
+# else:
+#     print("Operasi tidak valid.")
+
+# Deteksi bilangan ganjil atau genap
+angka = int(input("Masukkan angkanya bos: "))
+
+if angka % 2 == 0:
+    print("Angka ini genap cuy")
+else: 
+    print("Angka ini ganjil bro")
