@@ -105,12 +105,32 @@
 # print(mhs1.nama, "-", mhs1.status())
 
 # Program menghitung rata-rata nilai mahasiswa
-jumlah = int(input("Masukkan jumlah nilai: "))
-total = 0
+# jumlah = int(input("Masukkan jumlah nilai: "))
+# total = 0
 
-for i in range(jumlah):
-    nilai = float(input(f"Nilai ke-{i+1}: "))
-    total += nilai
+# for i in range(jumlah):
+#     nilai = float(input(f"Nilai ke-{i+1}: "))
+#     total += nilai
 
-rata = total / jumlah
-print("Rata-rata nilai:", rata)
+# rata = total / jumlah
+# print("Rata-rata nilai:", rata)
+
+
+# Program membaca dan menulis file CSV
+import csv
+
+with open("nilai.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Nama", "Nilai"])
+    writer.writerow(["Dicky", 85])
+    writer.writerow(["Rina", 90])
+    writer.writerow(["Adi", 65])
+
+total, count = 0, 0
+with open("nilai.csv") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        total += int(row["Nilai"])
+        count += 1
+
+print("Rata-rata nilai:", total / count)
