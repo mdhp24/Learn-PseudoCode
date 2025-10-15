@@ -136,13 +136,32 @@
 # print("Rata-rata nilai:", total / count)
 
 # Program menentukan kategori performa mahasiswa
-nilai = float(input("Masukkan nilai mahasiswa: "))
+# nilai = float(input("Masukkan nilai mahasiswa: "))
 
-if nilai < 60:
-    kategori = "Struggling"
-elif nilai < 75:
-    kategori = "Normal"
-else:
-    kategori = "Ideal"
+# if nilai < 60:
+#     kategori = "Struggling"
+# elif nilai < 75:
+#     kategori = "Normal"
+# else:
+#     kategori = "Ideal"
 
-print("Kategori performa:", kategori)
+# print("Kategori performa:", kategori)
+
+# Program kelas untuk menentukan kategori performa mahasiswa
+class PerformaMahasiswa:
+    def __init__(self, nama, skor):
+        self.nama = nama
+        self.skor = skor
+
+    def deteksi(self):
+        if self.skor < 50:
+            return "Struggling"
+        elif self.skor < 70:
+            return "Gaming the System"
+        elif self.skor < 85:
+            return "Normal"
+        else:
+            return "Ideal"
+
+mhs = PerformaMahasiswa("Zyncron", 78)
+print(mhs.nama, "berada pada kategori:", mhs.deteksi())
