@@ -148,20 +148,25 @@
 # print("Kategori performa:", kategori)
 
 # Program kelas untuk menentukan kategori performa mahasiswa
-class PerformaMahasiswa:
-    def __init__(self, nama, skor):
-        self.nama = nama
-        self.skor = skor
+# class PerformaMahasiswa:
+#     def __init__(self, nama, skor):
+#         self.nama = nama
+#         self.skor = skor
 
-    def deteksi(self):
-        if self.skor < 50:
-            return "Struggling"
-        elif self.skor < 70:
-            return "Gaming the System"
-        elif self.skor < 85:
-            return "Normal"
-        else:
-            return "Ideal"
+#     def deteksi(self):
+#         if self.skor < 50:
+#             return "Struggling"
+#         elif self.skor < 70:
+#             return "Gaming the System"
+#         elif self.skor < 85:
+#             return "Normal"
+#         else:
+#             return "Ideal"
 
-mhs = PerformaMahasiswa("Zyncron", 78)
-print(mhs.nama, "berada pada kategori:", mhs.deteksi())
+# mhs = PerformaMahasiswa("Zyncron", 78)
+# print(mhs.nama, "berada pada kategori:", mhs.deteksi())
+
+# Program menggunakan list comprehension untuk memfilter nilai lulus
+nilai = [45, 67, 88, 92, 55, 73]
+lulus = [n for n in nilai if n >= 70]
+print("Nilai yang lulus:", lulus)
