@@ -117,20 +117,32 @@
 
 
 # Program membaca dan menulis file CSV
-import csv
+# import csv
 
-with open("nilai.csv", "w", newline="") as file:
-    writer = csv.writer(file)
-    writer.writerow(["Nama", "Nilai"])
-    writer.writerow(["Dicky", 85])
-    writer.writerow(["Rina", 90])
-    writer.writerow(["Adi", 65])
+# with open("nilai.csv", "w", newline="") as file:
+#     writer = csv.writer(file)
+#     writer.writerow(["Nama", "Nilai"])
+#     writer.writerow(["Dicky", 85])
+#     writer.writerow(["Rina", 90])
+#     writer.writerow(["Adi", 65])
 
-total, count = 0, 0
-with open("nilai.csv") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        total += int(row["Nilai"])
-        count += 1
+# total, count = 0, 0
+# with open("nilai.csv") as file:
+#     reader = csv.DictReader(file)
+#     for row in reader:
+#         total += int(row["Nilai"])
+#         count += 1
 
-print("Rata-rata nilai:", total / count)
+# print("Rata-rata nilai:", total / count)
+
+# Program menentukan kategori performa mahasiswa
+nilai = float(input("Masukkan nilai mahasiswa: "))
+
+if nilai < 60:
+    kategori = "Struggling"
+elif nilai < 75:
+    kategori = "Normal"
+else:
+    kategori = "Ideal"
+
+print("Kategori performa:", kategori)
