@@ -167,6 +167,22 @@
 # print(mhs.nama, "berada pada kategori:", mhs.deteksi())
 
 # Program menggunakan list comprehension untuk memfilter nilai lulus
-nilai = [45, 67, 88, 92, 55, 73]
-lulus = [n for n in nilai if n >= 70]
-print("Nilai yang lulus:", lulus)
+# nilai = [45, 67, 88, 92, 55, 73]
+# lulus = [n for n in nilai if n >= 70]
+# print("Nilai yang lulus:", lulus)
+
+
+# Program chatbot sederhana
+def chatbot(respon):
+    if "array" in respon.lower():
+        return "Array adalah struktur data untuk menyimpan sekumpulan elemen dengan tipe data yang sama."
+    elif "loop" in respon.lower():
+        return "Loop digunakan untuk melakukan perulangan dalam program."
+    else:
+        return "Saya tidak mengerti, bisa jelaskan lebih spesifik?"
+
+while True:
+    tanya = input("Kamu: ")
+    if tanya.lower() == "exit":
+        break
+    print("Bot:", chatbot(tanya))
