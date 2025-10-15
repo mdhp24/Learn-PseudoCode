@@ -80,11 +80,26 @@
 #     print(f"Nama: {mhs['nama']}, Umur: {mhs['umur']}, Jurusan: {mhs['jurusan']}")
 
 # Program deteksi lulus atau tidak lulus
-nilai = float(input("Masukkan nilai mahasiswa: "))
+# nilai = float(input("Masukkan nilai mahasiswa: "))
 
-if nilai >= 70:
-    status = "Lulus"
-else:
-    status = "Tidak Lulus"
+# if nilai >= 70:
+#     status = "Lulus"
+# else:
+#     status = "Tidak Lulus"
 
-print("Status Mahasiswa:", status)
+# print("Status Mahasiswa:", status)
+
+#Program kelas mahasiswa lulus atau tidak lulus
+class Mahasiswa:
+    def __init__(self, nama, nilai):
+        self.nama = nama
+        self.nilai = nilai
+
+    def status(self):
+        if self.nilai >= 70:
+            return "Lulus"
+        else:
+            return "Tidak Lulus"
+
+mhs1 = Mahasiswa("Dicky", 85)
+print(mhs1.nama, "-", mhs1.status())
