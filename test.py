@@ -90,16 +90,27 @@
 # print("Status Mahasiswa:", status)
 
 #Program kelas mahasiswa lulus atau tidak lulus
-class Mahasiswa:
-    def __init__(self, nama, nilai):
-        self.nama = nama
-        self.nilai = nilai
+# class Mahasiswa:
+#     def __init__(self, nama, nilai):
+#         self.nama = nama
+#         self.nilai = nilai
 
-    def status(self):
-        if self.nilai >= 70:
-            return "Lulus"
-        else:
-            return "Tidak Lulus"
+#     def status(self):
+#         if self.nilai >= 70:
+#             return "Lulus"
+#         else:
+#             return "Tidak Lulus"
 
-mhs1 = Mahasiswa("Dicky", 85)
-print(mhs1.nama, "-", mhs1.status())
+# mhs1 = Mahasiswa("Dicky", 85)
+# print(mhs1.nama, "-", mhs1.status())
+
+# Program menghitung rata-rata nilai mahasiswa
+jumlah = int(input("Masukkan jumlah nilai: "))
+total = 0
+
+for i in range(jumlah):
+    nilai = float(input(f"Nilai ke-{i+1}: "))
+    total += nilai
+
+rata = total / jumlah
+print("Rata-rata nilai:", rata)
