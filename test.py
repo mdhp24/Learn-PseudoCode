@@ -189,7 +189,14 @@
 
 
 # Program untuk menghitung jumlah kata dalam sebuah kalimat
-kalimat = input("Masukkan sebuah kalimat: ")
-jumlah_kata = len(kalimat.split())
-print("Jumlah kata dalam kalimat:", jumlah_kata)
+# kalimat = input("Masukkan sebuah kalimat: ")
+# jumlah_kata = len(kalimat.split())
+# print("Jumlah kata dalam kalimat:", jumlah_kata)
 
+# Program untuk memeriksa apakah sebuah kata adalah palindrom
+kata = input("Masukkan sebuah kata: ")
+if kata == kata[::-1]:
+    print(f"{kata} adalah palindrom")
+else:
+    print(f"{kata} bukan palindrom")
+    
