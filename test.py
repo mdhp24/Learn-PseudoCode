@@ -231,7 +231,14 @@
 #         print()
         
 # Program untuk mengurutkan daftar angka
-angka = [34, 12, 5, 67, 23, 89, 1]
-angka.sort()
-print("Daftar angka yang diurutkan:", angka)
+# angka = [34, 12, 5, 67, 23, 89, 1]
+# angka.sort()
+# print("Daftar angka yang diurutkan:", angka)
 
+
+# Program untuk mencari nilai maksimum dan minimum dalam sebuah daftar
+angka = [34, 12, 5, 67, 23, 89, 1]
+maksimum = max(angka)
+minimum = min(angka)
+print(f"Nilai maksimum: {maksimum}")
+print(f"Nilai minimum: {minimum}")
