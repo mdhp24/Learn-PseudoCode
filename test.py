@@ -206,11 +206,27 @@
 # print(f"Suhu dalam Fahrenheit: {fahrenheit}")
 
 # Program untuk menghitung faktorial dari sebuah angka
-def faktorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * faktorial(n - 1)
-angka = int(input("Masukkan sebuah angka: "))
-print(f"Faktorial dari {angka} adalah {faktorial(angka)}")
+# def faktorial(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     else:
+#         return n * faktorial(n - 1)
+# angka = int(input("Masukkan sebuah angka: "))
+# print(f"Faktorial dari {angka} adalah {faktorial(angka)}")
 
+# Program untuk menampilkan bilangan prima dalam rentang tertentu
+def is_prima(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+start = int(input("Masukkan angka awal: "))
+end = int(input("Masukkan angka akhir: "))
+print(f"Bilangan prima antara {start} dan {end}:")
+for n in range(start, end + 1):
+    if is_prima(n):
+        print(n, end=' ')
+        print()
+        
