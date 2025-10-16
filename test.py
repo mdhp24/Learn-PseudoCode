@@ -201,6 +201,16 @@
 #     print(f"{kata} bukan palindrom")
     
 # Program untuk mengonversi suhu dari Celsius ke Fahrenheit
-celsius = float(input("Masukkan suhu dalam Celsius: "))
-fahrenheit = (celsius * 9/5) + 32
-print(f"Suhu dalam Fahrenheit: {fahrenheit}")
+# celsius = float(input("Masukkan suhu dalam Celsius: "))
+# fahrenheit = (celsius * 9/5) + 32
+# print(f"Suhu dalam Fahrenheit: {fahrenheit}")
+
+# Program untuk menghitung faktorial dari sebuah angka
+def faktorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * faktorial(n - 1)
+angka = int(input("Masukkan sebuah angka: "))
+print(f"Faktorial dari {angka} adalah {faktorial(angka)}")
+
