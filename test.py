@@ -194,9 +194,13 @@
 # print("Jumlah kata dalam kalimat:", jumlah_kata)
 
 # Program untuk memeriksa apakah sebuah kata adalah palindrom
-kata = input("Masukkan sebuah kata: ")
-if kata == kata[::-1]:
-    print(f"{kata} adalah palindrom")
-else:
-    print(f"{kata} bukan palindrom")
+# kata = input("Masukkan sebuah kata: ")
+# if kata == kata[::-1]:
+#     print(f"{kata} adalah palindrom")
+# else:
+#     print(f"{kata} bukan palindrom")
     
+# Program untuk mengonversi suhu dari Celsius ke Fahrenheit
+celsius = float(input("Masukkan suhu dalam Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print(f"Suhu dalam Fahrenheit: {fahrenheit}")
