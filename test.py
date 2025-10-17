@@ -262,7 +262,13 @@
 # print(f"Luas lingkaran dengan jari-jari {radius} adalah {luas}")
 
 # Program untuk menghitung luas segitiga
-alas = float(input("Masukkan alas segitiga: "))
-tinggi = float(input("Masukkan tinggi segitiga: "))
-luas = 0.5 * alas * tinggi
-print(f"Luas segitiga dengan alas {alas} dan tinggi {tinggi} adalah {luas}")
+# alas = float(input("Masukkan alas segitiga: "))
+# tinggi = float(input("Masukkan tinggi segitiga: "))
+# luas = 0.5 * alas * tinggi
+# print(f"Luas segitiga dengan alas {alas} dan tinggi {tinggi} adalah {luas}")
+
+
+# Program untuk mengonversi bilangan desimal ke biner
+desimal = int(input("Masukkan bilangan desimal: "))
+biner = bin(desimal).replace("0b", "")
+print(f"Bilangan biner dari {desimal} adalah {biner}")
