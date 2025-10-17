@@ -269,6 +269,12 @@
 
 
 # Program untuk mengonversi bilangan desimal ke biner
-desimal = int(input("Masukkan bilangan desimal: "))
-biner = bin(desimal).replace("0b", "")
-print(f"Bilangan biner dari {desimal} adalah {biner}")
+# desimal = int(input("Masukkan bilangan desimal: "))
+# biner = bin(desimal).replace("0b", "")
+# print(f"Bilangan biner dari {desimal} adalah {biner}")
+
+
+# Program untuk mengonversi bilangan biner ke desimal
+biner = input("Masukkan bilangan biner: ")
+desimal = int(biner, 2)
+print(f"Bilangan desimal dari {biner} adalah {desimal}")
