@@ -244,7 +244,13 @@
 # print(f"Nilai minimum: {minimum}")
 
 # Program untuk menghitung jumlah digit dalam sebuah angka
-angka = input("Masukkan sebuah angka: ")
-jumlah_digit = len(angka)
-print("Jumlah digit dalam angka:", jumlah_digit)
+# angka = input("Masukkan sebuah angka: ")
+# jumlah_digit = len(angka)
+# print("Jumlah digit dalam angka:", jumlah_digit)
 
+# Program untuk memeriksa apakah sebuah tahun adalah tahun kabisat
+tahun = int(input("Masukkan sebuah tahun: "))
+if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+    print(f"{tahun} adalah tahun kabisat")
+else:
+    print(f"{tahun} bukan tahun kabisat")
