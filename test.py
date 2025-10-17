@@ -237,8 +237,14 @@
 
 
 # Program untuk mencari nilai maksimum dan minimum dalam sebuah daftar
-angka = [34, 12, 5, 67, 23, 89, 1]
-maksimum = max(angka)
-minimum = min(angka)
-print(f"Nilai maksimum: {maksimum}")
-print(f"Nilai minimum: {minimum}")
+# angka = [34, 12, 5, 67, 23, 89, 1]
+# maksimum = max(angka)
+# minimum = min(angka)
+# print(f"Nilai maksimum: {maksimum}")
+# print(f"Nilai minimum: {minimum}")
+
+# Program untuk menghitung jumlah digit dalam sebuah angka
+angka = input("Masukkan sebuah angka: ")
+jumlah_digit = len(angka)
+print("Jumlah digit dalam angka:", jumlah_digit)
+
