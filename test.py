@@ -275,6 +275,12 @@
 
 
 # Program untuk mengonversi bilangan biner ke desimal
-biner = input("Masukkan bilangan biner: ")
-desimal = int(biner, 2)
-print(f"Bilangan desimal dari {biner} adalah {desimal}")
+# biner = input("Masukkan bilangan biner: ")
+# desimal = int(biner, 2)
+# print(f"Bilangan desimal dari {biner} adalah {desimal}")
+
+# Program untuk menghitung jumlah huruf vokal dalam sebuah kalimat
+kalimat = input("Masukkan sebuah kalimat: ")
+vokal = "aeiouAEIOU"
+jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
