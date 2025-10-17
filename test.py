@@ -249,8 +249,14 @@
 # print("Jumlah digit dalam angka:", jumlah_digit)
 
 # Program untuk memeriksa apakah sebuah tahun adalah tahun kabisat
-tahun = int(input("Masukkan sebuah tahun: "))
-if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
-    print(f"{tahun} adalah tahun kabisat")
-else:
-    print(f"{tahun} bukan tahun kabisat")
+# tahun = int(input("Masukkan sebuah tahun: "))
+# if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+#     print(f"{tahun} adalah tahun kabisat")
+# else:
+#     print(f"{tahun} bukan tahun kabisat")
+
+# Program untuk menghitung luas lingkaran
+import math
+radius = float(input("Masukkan jari-jari lingkaran: "))
+luas = math.pi * radius ** 2
+print(f"Luas lingkaran dengan jari-jari {radius} adalah {luas}")
