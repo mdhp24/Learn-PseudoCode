@@ -280,7 +280,21 @@
 # print(f"Bilangan desimal dari {biner} adalah {desimal}")
 
 # Program untuk menghitung jumlah huruf vokal dalam sebuah kalimat
-kalimat = input("Masukkan sebuah kalimat: ")
-vokal = "aeiouAEIOU"
-jumlah_vokal = sum(1 for char in kalimat if char in vokal)
-print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+# kalimat = input("Masukkan sebuah kalimat: ")
+# vokal = "aeiouAEIOU"
+# jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+# print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+
+# Program untuk mencari nilai maksimum dan minimum dalam sebuah daftar tanpa menggunakan fungsi bawaan
+data = [23, 56, 12, 89, 34, 67]
+maks = data[0]
+minn = data[0]
+
+for i in data:
+    if i > maks:
+        maks = i
+    if i < minn:
+        minn = i
+
+print("Nilai maksimum:", maks)
+print("Nilai minimum:", minn)
