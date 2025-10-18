@@ -349,17 +349,38 @@
 # print(bot.respon("Apa itu array?"))
 
 # Program menentukan kategori performa mahasiswa dengan nilai acak
-import random
+# import random
 
-mahasiswa = ["Dicky", "Rina", "Adi", "Budi", "Tina"]
-for m in mahasiswa:
-    nilai = random.randint(40, 100)
-    if nilai < 60:
-        kategori = "Struggling"
-    elif nilai < 75:
-        kategori = "Gaming the System"
-    elif nilai < 90:
-        kategori = "Normal"
+# mahasiswa = ["Dicky", "Rina", "Adi", "Budi", "Tina"]
+# for m in mahasiswa:
+#     nilai = random.randint(40, 100)
+#     if nilai < 60:
+#         kategori = "Struggling"
+#     elif nilai < 75:
+#         kategori = "Gaming the System"
+#     elif nilai < 90:
+#         kategori = "Normal"
+#     else:
+#         kategori = "Ideal"
+#     print(f"{m}: Nilai {nilai} → {kategori}")
+
+# Program menentukan kategori performa mahasiswa berdasarkan nilai, waktu, dan percobaan
+def deteksi_kesulitan(nilai, waktu, percobaan):
+    if nilai < 50 or percobaan > 5:
+        return "Struggling"
+    elif nilai < 70:
+        return "Gaming the System"
+    elif nilai < 85:
+        return "Normal"
     else:
-        kategori = "Ideal"
-    print(f"{m}: Nilai {nilai} → {kategori}")
+        return "Ideal"
+
+mahasiswa = [
+    {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
+    {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
+    {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
+]
+
+for m in mahasiswa:
+    hasil = deteksi_kesulitan(m["nilai"], m["waktu"], m["percobaan"])
+    print(f"{m['nama']} → Kategori: {hasil}")
