@@ -286,15 +286,28 @@
 # print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
 
 # Program untuk mencari nilai maksimum dan minimum dalam sebuah daftar tanpa menggunakan fungsi bawaan
-data = [23, 56, 12, 89, 34, 67]
-maks = data[0]
-minn = data[0]
+# data = [23, 56, 12, 89, 34, 67]
+# maks = data[0]
+# minn = data[0]
 
-for i in data:
-    if i > maks:
-        maks = i
-    if i < minn:
-        minn = i
+# for i in data:
+#     if i > maks:
+#         maks = i
+#     if i < minn:
+#         minn = i
 
-print("Nilai maksimum:", maks)
-print("Nilai minimum:", minn)
+# print("Nilai maksimum:", maks)
+# print("Nilai minimum:", minn)
+
+# Program untuk menentukan kategori performa berdasarkan nilai dan waktu pengerjaan
+def prediksi_performa(nilai, waktu_pengerjaan):
+    if nilai < 60 and waktu_pengerjaan > 30:
+        return "Struggling"
+    elif nilai < 70:
+        return "Gaming the System"
+    elif nilai < 85:
+        return "Normal"
+    else:
+        return "Ideal"
+
+print(prediksi_performa(78, 20))
