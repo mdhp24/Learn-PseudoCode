@@ -333,17 +333,33 @@
 # print("Terendah:", minn)
 
 # Program chatbot edukasi sederhana
-class EduChatbot:
-    def __init__(self, nama):
-        self.nama = nama
+# class EduChatbot:
+#     def __init__(self, nama):
+#         self.nama = nama
 
-    def respon(self, pertanyaan):
-        if "array" in pertanyaan.lower():
-            return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
-        elif "loop" in pertanyaan.lower():
-            return "Loop digunakan untuk perulangan di program."
-        else:
-            return "Saya tidak yakin, coba pertanyaan lain ya!"
+#     def respon(self, pertanyaan):
+#         if "array" in pertanyaan.lower():
+#             return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
+#         elif "loop" in pertanyaan.lower():
+#             return "Loop digunakan untuk perulangan di program."
+#         else:
+#             return "Saya tidak yakin, coba pertanyaan lain ya!"
 
-bot = EduChatbot("TutorAI")
-print(bot.respon("Apa itu array?"))
+# bot = EduChatbot("TutorAI")
+# print(bot.respon("Apa itu array?"))
+
+# Program menentukan kategori performa mahasiswa dengan nilai acak
+import random
+
+mahasiswa = ["Dicky", "Rina", "Adi", "Budi", "Tina"]
+for m in mahasiswa:
+    nilai = random.randint(40, 100)
+    if nilai < 60:
+        kategori = "Struggling"
+    elif nilai < 75:
+        kategori = "Gaming the System"
+    elif nilai < 90:
+        kategori = "Normal"
+    else:
+        kategori = "Ideal"
+    print(f"{m}: Nilai {nilai} → {kategori}")
