@@ -300,14 +300,24 @@
 # print("Nilai minimum:", minn)
 
 # Program untuk menentukan kategori performa berdasarkan nilai dan waktu pengerjaan
-def prediksi_performa(nilai, waktu_pengerjaan):
-    if nilai < 60 and waktu_pengerjaan > 30:
-        return "Struggling"
-    elif nilai < 70:
-        return "Gaming the System"
-    elif nilai < 85:
-        return "Normal"
-    else:
-        return "Ideal"
+# def prediksi_performa(nilai, waktu_pengerjaan):
+#     if nilai < 60 and waktu_pengerjaan > 30:
+#         return "Struggling"
+#     elif nilai < 70:
+#         return "Gaming the System"
+#     elif nilai < 85:
+#         return "Normal"
+#     else:
+#         return "Ideal"
 
-print(prediksi_performa(78, 20))
+# print(prediksi_performa(78, 20))
+
+# Program untuk menampilkan deret Fibonacci hingga n angka
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+n = int(input("Masukkan jumlah angka Fibonacci: "))
+for i in range(n):
+    print(fibonacci(i), end=" ")
