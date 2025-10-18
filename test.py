@@ -323,11 +323,27 @@
 #     print(fibonacci(i), end=" ")
 
 # Program untuk menghitung rata-rata, nilai tertinggi, dan nilai terendah dari sebuah daftar nilai
-nilai = [70, 85, 60, 90, 75, 88, 92]
+# nilai = [70, 85, 60, 90, 75, 88, 92]
 
-rata = sum(nilai) / len(nilai)
-maks = max(nilai)
-minn = min(nilai)
-print("Rata-rata:", rata)
-print("Tertinggi:", maks)
-print("Terendah:", minn)
+# rata = sum(nilai) / len(nilai)
+# maks = max(nilai)
+# minn = min(nilai)
+# print("Rata-rata:", rata)
+# print("Tertinggi:", maks)
+# print("Terendah:", minn)
+
+# Program chatbot edukasi sederhana
+class EduChatbot:
+    def __init__(self, nama):
+        self.nama = nama
+
+    def respon(self, pertanyaan):
+        if "array" in pertanyaan.lower():
+            return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
+        elif "loop" in pertanyaan.lower():
+            return "Loop digunakan untuk perulangan di program."
+        else:
+            return "Saya tidak yakin, coba pertanyaan lain ya!"
+
+bot = EduChatbot("TutorAI")
+print(bot.respon("Apa itu array?"))
