@@ -313,11 +313,21 @@
 # print(prediksi_performa(78, 20))
 
 # Program untuk menampilkan deret Fibonacci hingga n angka
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
+# def fibonacci(n):
+#     if n <= 1:
+#         return n
+#     return fibonacci(n-1) + fibonacci(n-2)
 
-n = int(input("Masukkan jumlah angka Fibonacci: "))
-for i in range(n):
-    print(fibonacci(i), end=" ")
+# n = int(input("Masukkan jumlah angka Fibonacci: "))
+# for i in range(n):
+#     print(fibonacci(i), end=" ")
+
+# Program untuk menghitung rata-rata, nilai tertinggi, dan nilai terendah dari sebuah daftar nilai
+nilai = [70, 85, 60, 90, 75, 88, 92]
+
+rata = sum(nilai) / len(nilai)
+maks = max(nilai)
+minn = min(nilai)
+print("Rata-rata:", rata)
+print("Tertinggi:", maks)
+print("Terendah:", minn)
