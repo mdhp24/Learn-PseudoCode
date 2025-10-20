@@ -434,14 +434,26 @@
 #     print(f"Nilai {n} → {kategori}")
 
 # Program untuk membandingkan kemiripan jawaban mahasiswa dengan jawaban benar
-from difflib import SequenceMatcher
+# from difflib import SequenceMatcher
 
-def similarity(jawaban1, jawaban2):
-    return SequenceMatcher(None, jawaban1, jawaban2).ratio()
+# def similarity(jawaban1, jawaban2):
+#     return SequenceMatcher(None, jawaban1, jawaban2).ratio()
 
-mhs_answer = "Array adalah kumpulan elemen dengan tipe data yang sama"
-correct_answer = "Array menyimpan beberapa elemen bertipe data sama"
+# mhs_answer = "Array adalah kumpulan elemen dengan tipe data yang sama"
+# correct_answer = "Array menyimpan beberapa elemen bertipe data sama"
 
-sim = similarity(mhs_answer.lower(), correct_answer.lower())
-print(f"Tingkat kemiripan jawaban: {sim*100:.2f}%")
+# sim = similarity(mhs_answer.lower(), correct_answer.lower())
+# print(f"Tingkat kemiripan jawaban: {sim*100:.2f}%")
+
+# Program login sederhana dengan username dan password
+akun = {"admin": "12345", "user": "abcd"}
+
+username = input("Masukkan username: ")
+password = input("Masukkan password: ")
+
+if username in akun and akun[username] == password:
+    print("Login berhasil!")
+else:
+    print("Username atau password salah!")
+
 
