@@ -457,16 +457,29 @@
 #     print("Username atau password salah!")
 
 # Program menghitung rata-rata nilai mahasiswa dan menentukan lulus atau remedial
-mahasiswa = {
-    "Dicky": [85, 90, 88],
-    "Rina": [70, 75, 72],
-    "Budi": [60, 65, 63]
-}
+# mahasiswa = {
+#     "Dicky": [85, 90, 88],
+#     "Rina": [70, 75, 72],
+#     "Budi": [60, 65, 63]
+# }
 
-for nama, nilai in mahasiswa.items():
-    rata = sum(nilai) / len(nilai)
-    status = "Lulus" if rata >= 70 else "Remedial"
-    print(f"{nama} → Rata-rata: {rata:.2f} → {status}")
+# for nama, nilai in mahasiswa.items():
+#     rata = sum(nilai) / len(nilai)
+#     status = "Lulus" if rata >= 70 else "Remedial"
+#     print(f"{nama} → Rata-rata: {rata:.2f} → {status}")
+
+# Program untuk memeriksa apakah sebuah angka adalah bilangan prima
+def is_prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+angka = int(input("Masukkan angka: "))
+print(f"{angka} adalah bilangan prima" if is_prima(angka) else f"{angka} bukan bilangan prima")
+
 
 
 
