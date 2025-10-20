@@ -446,14 +446,27 @@
 # print(f"Tingkat kemiripan jawaban: {sim*100:.2f}%")
 
 # Program login sederhana dengan username dan password
-akun = {"admin": "12345", "user": "abcd"}
+# akun = {"admin": "12345", "user": "abcd"}
 
-username = input("Masukkan username: ")
-password = input("Masukkan password: ")
+# username = input("Masukkan username: ")
+# password = input("Masukkan password: ")
 
-if username in akun and akun[username] == password:
-    print("Login berhasil!")
-else:
-    print("Username atau password salah!")
+# if username in akun and akun[username] == password:
+#     print("Login berhasil!")
+# else:
+#     print("Username atau password salah!")
+
+# Program menghitung rata-rata nilai mahasiswa dan menentukan lulus atau remedial
+mahasiswa = {
+    "Dicky": [85, 90, 88],
+    "Rina": [70, 75, 72],
+    "Budi": [60, 65, 63]
+}
+
+for nama, nilai in mahasiswa.items():
+    rata = sum(nilai) / len(nilai)
+    status = "Lulus" if rata >= 70 else "Remedial"
+    print(f"{nama} → Rata-rata: {rata:.2f} → {status}")
+
 
 
