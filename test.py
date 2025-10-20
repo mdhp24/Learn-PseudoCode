@@ -421,14 +421,27 @@
 
 
 # Program menentukan kategori performa berdasarkan daftar nilai
-nilai = [55, 68, 72, 84, 90, 45, 78]
-for n in nilai:
-    if n < 60:
-        kategori = "Struggling"
-    elif n < 75:
-        kategori = "Gaming the System"
-    elif n < 90:
-        kategori = "Normal"
-    else:
-        kategori = "Ideal"
-    print(f"Nilai {n} → {kategori}")
+# nilai = [55, 68, 72, 84, 90, 45, 78]
+# for n in nilai:
+#     if n < 60:
+#         kategori = "Struggling"
+#     elif n < 75:
+#         kategori = "Gaming the System"
+#     elif n < 90:
+#         kategori = "Normal"
+#     else:
+#         kategori = "Ideal"
+#     print(f"Nilai {n} → {kategori}")
+
+# Program untuk membandingkan kemiripan jawaban mahasiswa dengan jawaban benar
+from difflib import SequenceMatcher
+
+def similarity(jawaban1, jawaban2):
+    return SequenceMatcher(None, jawaban1, jawaban2).ratio()
+
+mhs_answer = "Array adalah kumpulan elemen dengan tipe data yang sama"
+correct_answer = "Array menyimpan beberapa elemen bertipe data sama"
+
+sim = similarity(mhs_answer.lower(), correct_answer.lower())
+print(f"Tingkat kemiripan jawaban: {sim*100:.2f}%")
+
