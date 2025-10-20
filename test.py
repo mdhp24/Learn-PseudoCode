@@ -365,22 +365,38 @@
 #     print(f"{m}: Nilai {nilai} → {kategori}")
 
 # Program menentukan kategori performa mahasiswa berdasarkan nilai, waktu, dan percobaan
-def deteksi_kesulitan(nilai, waktu, percobaan):
-    if nilai < 50 or percobaan > 5:
-        return "Struggling"
-    elif nilai < 70:
-        return "Gaming the System"
-    elif nilai < 85:
-        return "Normal"
-    else:
-        return "Ideal"
+# def deteksi_kesulitan(nilai, waktu, percobaan):
+#     if nilai < 50 or percobaan > 5:
+#         return "Struggling"
+#     elif nilai < 70:
+#         return "Gaming the System"
+#     elif nilai < 85:
+#         return "Normal"
+#     else:
+#         return "Ideal"
 
-mahasiswa = [
-    {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
-    {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
-    {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
-]
+# mahasiswa = [
+#     {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
+#     {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
+#     {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
+# ]
 
-for m in mahasiswa:
-    hasil = deteksi_kesulitan(m["nilai"], m["waktu"], m["percobaan"])
-    print(f"{m['nama']} → Kategori: {hasil}")
+# for m in mahasiswa:
+#     hasil = deteksi_kesulitan(m["nilai"], m["waktu"], m["percobaan"])
+#     print(f"{m['nama']} → Kategori: {hasil}")
+
+# Program menghasilkan data mahasiswa acak dan menampilkannya
+import random
+
+jurusan = ["TI", "RPL", "SI"]
+data_mahasiswa = []
+
+for i in range(10):
+    nama = f"Mahasiswa_{i+1}"
+    nilai = random.randint(40, 100)
+    waktu = random.randint(10, 40)
+    jur = random.choice(jurusan)
+    data_mahasiswa.append({"nama": nama, "jurusan": jur, "nilai": nilai, "waktu": waktu})
+
+for m in data_mahasiswa:
+    print(m)
