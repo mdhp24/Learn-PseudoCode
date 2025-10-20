@@ -402,19 +402,33 @@
 #     print(m)
 
 # Program chatbot memberikan feedback berdasarkan nilai dan percobaan
-def chatbot_feedback(nilai, percobaan):
-    if nilai < 60 and percobaan > 3:
-        return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
-    elif nilai < 80:
-        return "Bagus! Tapi coba perkuat logika kodingmu."
+# def chatbot_feedback(nilai, percobaan):
+#     if nilai < 60 and percobaan > 3:
+#         return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
+#     elif nilai < 80:
+#         return "Bagus! Tapi coba perkuat logika kodingmu."
+#     else:
+#         return "Hebat! Kamu berada di level ideal."
+
+# mhs = [
+#     {"nama": "Dicky", "nilai": 55, "percobaan": 5},
+#     {"nama": "Rina", "nilai": 77, "percobaan": 2},
+#     {"nama": "Adi", "nilai": 91, "percobaan": 1}
+# ]
+
+# for m in mhs:
+#     print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
+
+
+# Program menentukan kategori performa berdasarkan daftar nilai
+nilai = [55, 68, 72, 84, 90, 45, 78]
+for n in nilai:
+    if n < 60:
+        kategori = "Struggling"
+    elif n < 75:
+        kategori = "Gaming the System"
+    elif n < 90:
+        kategori = "Normal"
     else:
-        return "Hebat! Kamu berada di level ideal."
-
-mhs = [
-    {"nama": "Dicky", "nilai": 55, "percobaan": 5},
-    {"nama": "Rina", "nilai": 77, "percobaan": 2},
-    {"nama": "Adi", "nilai": 91, "percobaan": 1}
-]
-
-for m in mhs:
-    print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
+        kategori = "Ideal"
+    print(f"Nilai {n} → {kategori}")
