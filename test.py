@@ -386,17 +386,35 @@
 #     print(f"{m['nama']} → Kategori: {hasil}")
 
 # Program menghasilkan data mahasiswa acak dan menampilkannya
-import random
+# import random
 
-jurusan = ["TI", "RPL", "SI"]
-data_mahasiswa = []
+# jurusan = ["TI", "RPL", "SI"]
+# data_mahasiswa = []
 
-for i in range(10):
-    nama = f"Mahasiswa_{i+1}"
-    nilai = random.randint(40, 100)
-    waktu = random.randint(10, 40)
-    jur = random.choice(jurusan)
-    data_mahasiswa.append({"nama": nama, "jurusan": jur, "nilai": nilai, "waktu": waktu})
+# for i in range(10):
+#     nama = f"Mahasiswa_{i+1}"
+#     nilai = random.randint(40, 100)
+#     waktu = random.randint(10, 40)
+#     jur = random.choice(jurusan)
+#     data_mahasiswa.append({"nama": nama, "jurusan": jur, "nilai": nilai, "waktu": waktu})
 
-for m in data_mahasiswa:
-    print(m)
+# for m in data_mahasiswa:
+#     print(m)
+
+# Program chatbot memberikan feedback berdasarkan nilai dan percobaan
+def chatbot_feedback(nilai, percobaan):
+    if nilai < 60 and percobaan > 3:
+        return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
+    elif nilai < 80:
+        return "Bagus! Tapi coba perkuat logika kodingmu."
+    else:
+        return "Hebat! Kamu berada di level ideal."
+
+mhs = [
+    {"nama": "Dicky", "nilai": 55, "percobaan": 5},
+    {"nama": "Rina", "nilai": 77, "percobaan": 2},
+    {"nama": "Adi", "nilai": 91, "percobaan": 1}
+]
+
+for m in mhs:
+    print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
