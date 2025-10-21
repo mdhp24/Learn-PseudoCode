@@ -469,17 +469,21 @@
 #     print(f"{nama} → Rata-rata: {rata:.2f} → {status}")
 
 # Program untuk memeriksa apakah sebuah angka adalah bilangan prima
-def is_prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def is_prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-angka = int(input("Masukkan angka: "))
-print(f"{angka} adalah bilangan prima" if is_prima(angka) else f"{angka} bukan bilangan prima")
+# angka = int(input("Masukkan angka: "))
+# print(f"{angka} adalah bilangan prima" if is_prima(angka) else f"{angka} bukan bilangan prima")
 
-
-
-
+# Program untuk menghitung jumlah huruf vokal dan konsonan dalam sebuah kalimat
+kalimat = input("Masukkan sebuah kalimat: ")
+vokal = "aeiouAEIOU"
+jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
+print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
