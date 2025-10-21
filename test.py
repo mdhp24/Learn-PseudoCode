@@ -516,9 +516,16 @@
 #     print(f"{kata1} dan {kata2} bukan anagram")
 
 # Program untuk menghitung keliling dan luas persegi panjang
-panjang = float(input("Masukkan panjang persegi panjang: "))
-lebar = float(input("Masukkan lebar persegi panjang: "))
-keliling = 2 * (panjang + lebar)
-luas = panjang * lebar
-print(f"Keliling persegi panjang: {keliling}")
-print(f"Luas persegi panjang: {luas}")
+# panjang = float(input("Masukkan panjang persegi panjang: "))
+# lebar = float(input("Masukkan lebar persegi panjang: "))
+# keliling = 2 * (panjang + lebar)
+# luas = panjang * lebar
+# print(f"Keliling persegi panjang: {keliling}")
+# print(f"Luas persegi panjang: {luas}")
+
+# Program untuk menghitung jumlah digit ganjil dan genap dalam sebuah angka
+angka = input("Masukkan sebuah angka: ")
+jumlah_ganjil = sum(1 for digit in angka if int(digit) % 2 != 0)
+jumlah_genap = sum(1 for digit in angka if int(digit) % 2 == 0)
+print("Jumlah digit ganjil dalam angka:", jumlah_ganjil)
+print("Jumlah digit genap dalam angka:", jumlah_genap)
