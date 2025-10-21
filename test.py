@@ -490,6 +490,11 @@
 
 
 # Program untuk mengonversi bilangan desimal ke heksadesimal
-desimal = int(input("Masukkan bilangan desimal: "))
-heksadesimal = hex(desimal).replace("0x", "").upper()
-print(f"Bilangan heksadesimal dari {desimal} adalah {heksadesimal}")
+# desimal = int(input("Masukkan bilangan desimal: "))
+# heksadesimal = hex(desimal).replace("0x", "").upper()
+# print(f"Bilangan heksadesimal dari {desimal} adalah {heksadesimal}")
+
+# Program untuk mengonversi bilangan heksadesimal ke desimal
+heksadesimal = input("Masukkan bilangan heksadesimal: ")
+desimal = int(heksadesimal, 16)
+print(f"Bilangan desimal dari {heksadesimal} adalah {desimal}")
