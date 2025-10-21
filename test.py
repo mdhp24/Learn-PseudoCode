@@ -481,9 +481,15 @@
 # print(f"{angka} adalah bilangan prima" if is_prima(angka) else f"{angka} bukan bilangan prima")
 
 # Program untuk menghitung jumlah huruf vokal dan konsonan dalam sebuah kalimat
-kalimat = input("Masukkan sebuah kalimat: ")
-vokal = "aeiouAEIOU"
-jumlah_vokal = sum(1 for char in kalimat if char in vokal)
-jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
-print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
-print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
+# kalimat = input("Masukkan sebuah kalimat: ")
+# vokal = "aeiouAEIOU"
+# jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+# jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
+# print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+# print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
+
+
+# Program untuk mengonversi bilangan desimal ke heksadesimal
+desimal = int(input("Masukkan bilangan desimal: "))
+heksadesimal = hex(desimal).replace("0x", "").upper()
+print(f"Bilangan heksadesimal dari {desimal} adalah {heksadesimal}")
