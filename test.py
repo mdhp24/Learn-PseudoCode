@@ -495,6 +495,12 @@
 # print(f"Bilangan heksadesimal dari {desimal} adalah {heksadesimal}")
 
 # Program untuk mengonversi bilangan heksadesimal ke desimal
-heksadesimal = input("Masukkan bilangan heksadesimal: ")
-desimal = int(heksadesimal, 16)
-print(f"Bilangan desimal dari {heksadesimal} adalah {desimal}")
+# heksadesimal = input("Masukkan bilangan heksadesimal: ")
+# desimal = int(heksadesimal, 16)
+# print(f"Bilangan desimal dari {heksadesimal} adalah {desimal}")
+
+# Program untuk menghitung jumlah kata unik dalam sebuah kalimat
+kalimat = input("Masukkan sebuah kalimat: ")
+kata = kalimat.split()
+kata_unik = set(kata)
+print("Jumlah kata unik dalam kalimat:", len(kata_unik))
