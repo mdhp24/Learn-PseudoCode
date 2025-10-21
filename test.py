@@ -506,11 +506,19 @@
 # print("Jumlah kata unik dalam kalimat:", len(kata_unik))
 
 # Program untuk memeriksa apakah sebuah string adalah anagram
-def is_anagram(str1, str2):
-    return sorted(str1.replace(" ", "").lower()) == sorted(str2.replace(" ", "").lower())
-kata1 = input("Masukkan kata pertama: ")
-kata2 = input("Masukkan kata kedua: ")
-if is_anagram(kata1, kata2):
-    print(f"{kata1} dan {kata2} adalah anagram")
-else:
-    print(f"{kata1} dan {kata2} bukan anagram")
+# def is_anagram(str1, str2):
+#     return sorted(str1.replace(" ", "").lower()) == sorted(str2.replace(" ", "").lower())
+# kata1 = input("Masukkan kata pertama: ")
+# kata2 = input("Masukkan kata kedua: ")
+# if is_anagram(kata1, kata2):
+#     print(f"{kata1} dan {kata2} adalah anagram")
+# else:
+#     print(f"{kata1} dan {kata2} bukan anagram")
+
+# Program untuk menghitung keliling dan luas persegi panjang
+panjang = float(input("Masukkan panjang persegi panjang: "))
+lebar = float(input("Masukkan lebar persegi panjang: "))
+keliling = 2 * (panjang + lebar)
+luas = panjang * lebar
+print(f"Keliling persegi panjang: {keliling}")
+print(f"Luas persegi panjang: {luas}")
