@@ -500,7 +500,17 @@
 # print(f"Bilangan desimal dari {heksadesimal} adalah {desimal}")
 
 # Program untuk menghitung jumlah kata unik dalam sebuah kalimat
-kalimat = input("Masukkan sebuah kalimat: ")
-kata = kalimat.split()
-kata_unik = set(kata)
-print("Jumlah kata unik dalam kalimat:", len(kata_unik))
+# kalimat = input("Masukkan sebuah kalimat: ")
+# kata = kalimat.split()
+# kata_unik = set(kata)
+# print("Jumlah kata unik dalam kalimat:", len(kata_unik))
+
+# Program untuk memeriksa apakah sebuah string adalah anagram
+def is_anagram(str1, str2):
+    return sorted(str1.replace(" ", "").lower()) == sorted(str2.replace(" ", "").lower())
+kata1 = input("Masukkan kata pertama: ")
+kata2 = input("Masukkan kata kedua: ")
+if is_anagram(kata1, kata2):
+    print(f"{kata1} dan {kata2} adalah anagram")
+else:
+    print(f"{kata1} dan {kata2} bukan anagram")
