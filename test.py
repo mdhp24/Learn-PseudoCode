@@ -546,9 +546,16 @@
 # print(f"Keliling lingkaran dengan jari-jari {radius} adalah {keliling}")
 
 # Program untuk menghitung jumlah huruf vokal dalam sebuah kalimat
-kalimat = input("Masukkan sebuah kalimat: ")
-vokal = "aeiouAEIOU"
-jumlah_vokal = sum(1 for char in kalimat if char in vokal)
-jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
-print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
-print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
+# kalimat = input("Masukkan sebuah kalimat: ")
+# vokal = "aeiouAEIOU"
+# jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+# jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
+# print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+# print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
+
+# Program untuk memeriksa apakah sebuah tahun adalah tahun kabisat
+tahun = int(input("Masukkan sebuah tahun: "))
+if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+    print(f"{tahun} adalah tahun kabisat")
+else:
+    print(f"{tahun} bukan tahun kabisat")
