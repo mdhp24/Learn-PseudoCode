@@ -524,8 +524,15 @@
 # print(f"Luas persegi panjang: {luas}")
 
 # Program untuk menghitung jumlah digit ganjil dan genap dalam sebuah angka
-angka = input("Masukkan sebuah angka: ")
-jumlah_ganjil = sum(1 for digit in angka if int(digit) % 2 != 0)
-jumlah_genap = sum(1 for digit in angka if int(digit) % 2 == 0)
-print("Jumlah digit ganjil dalam angka:", jumlah_ganjil)
-print("Jumlah digit genap dalam angka:", jumlah_genap)
+# angka = input("Masukkan sebuah angka: ")
+# jumlah_ganjil = sum(1 for digit in angka if int(digit) % 2 != 0)
+# jumlah_genap = sum(1 for digit in angka if int(digit) % 2 == 0)
+# print("Jumlah digit ganjil dalam angka:", jumlah_ganjil)
+# print("Jumlah digit genap dalam angka:", jumlah_genap)
+
+# program untuk menentukan apakah sebuah kata adalah palindrom atau bukan
+kata = input("Masukkan sebuah kata: ")
+if kata == kata[::-1]:
+    print(f"{kata} adalah palindrom")
+else:
+    print(f"{kata} bukan palindrom")
