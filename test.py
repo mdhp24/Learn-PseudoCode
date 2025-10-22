@@ -531,8 +531,16 @@
 # print("Jumlah digit genap dalam angka:", jumlah_genap)
 
 # program untuk menentukan apakah sebuah kata adalah palindrom atau bukan
-kata = input("Masukkan sebuah kata: ")
-if kata == kata[::-1]:
-    print(f"{kata} adalah palindrom")
-else:
-    print(f"{kata} bukan palindrom")
+# kata = input("Masukkan sebuah kata: ")
+# if kata == kata[::-1]:
+#     print(f"{kata} adalah palindrom")
+# else:
+#     print(f"{kata} bukan palindrom")
+
+# Program untuk menghitung luas dan keliling lingkaran
+import math
+radius = float(input("Masukkan jari-jari lingkaran: "))
+luas = math.pi * radius ** 2
+keliling = 2 * math.pi * radius
+print(f"Luas lingkaran dengan jari-jari {radius} adalah {luas}")
+print(f"Keliling lingkaran dengan jari-jari {radius} adalah {keliling}")
