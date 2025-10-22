@@ -570,19 +570,25 @@
 # print(f"Faktorial dari {angka} adalah {faktorial(angka)}")
 
 # Program untuk menampilkan bilangan prima dalam rentang tertentu
-def is_prima(num):
-    if num < 2:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
-start = int(input("Masukkan angka awal: "))
-end = int(input("Masukkan angka akhir: "))
-print(f"Bilangan prima antara {start} dan {end}:")
-for n in range(start, end + 1):
-    if is_prima(n):
-        print(n, end=' ')
-        print()
-    else:
-        print("Bukan bilangan prima")
+# def is_prima(num):
+#     if num < 2:
+#         return False
+#     for i in range(2, int(num**0.5) + 1):
+#         if num % i == 0:
+#             return False
+#     return True
+# start = int(input("Masukkan angka awal: "))
+# end = int(input("Masukkan angka akhir: "))
+# print(f"Bilangan prima antara {start} dan {end}:")
+# for n in range(start, end + 1):
+#     if is_prima(n):
+#         print(n, end=' ')
+#         print()
+#     else:
+#         print("Bukan bilangan prima")
+
+# Program untuk mengurutkan daftar angka
+angka = [34, 12, 5, 67, 23, 89, 1]
+angka.sort()
+print("Daftar angka setelah diurutkan:", angka)
+
