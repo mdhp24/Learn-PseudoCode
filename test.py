@@ -538,9 +538,17 @@
 #     print(f"{kata} bukan palindrom")
 
 # Program untuk menghitung luas dan keliling lingkaran
-import math
-radius = float(input("Masukkan jari-jari lingkaran: "))
-luas = math.pi * radius ** 2
-keliling = 2 * math.pi * radius
-print(f"Luas lingkaran dengan jari-jari {radius} adalah {luas}")
-print(f"Keliling lingkaran dengan jari-jari {radius} adalah {keliling}")
+# import math
+# radius = float(input("Masukkan jari-jari lingkaran: "))
+# luas = math.pi * radius ** 2
+# keliling = 2 * math.pi * radius
+# print(f"Luas lingkaran dengan jari-jari {radius} adalah {luas}")
+# print(f"Keliling lingkaran dengan jari-jari {radius} adalah {keliling}")
+
+# Program untuk menghitung jumlah huruf vokal dalam sebuah kalimat
+kalimat = input("Masukkan sebuah kalimat: ")
+vokal = "aeiouAEIOU"
+jumlah_vokal = sum(1 for char in kalimat if char in vokal)
+jumlah_konsonan = sum(1 for char in kalimat if char.isalpha() and char not in vokal)
+print("Jumlah huruf vokal dalam kalimat:", jumlah_vokal)
+print("Jumlah huruf konsonan dalam kalimat:", jumlah_konsonan)
