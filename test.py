@@ -620,11 +620,29 @@
 # print(deteksi_performa(68, 25, 4))
 
 # Analisis Statistik Nilai Otomatis
-nilai = [78, 85, 67, 90, 88, 74, 56, 80]
-rata = sum(nilai) / len(nilai)
-maks = max(nilai)
-minn = min(nilai)
+# nilai = [78, 85, 67, 90, 88, 74, 56, 80]
+# rata = sum(nilai) / len(nilai)
+# maks = max(nilai)
+# minn = min(nilai)
 
-print(f"Rata-rata: {rata:.2f}")
-print(f"Nilai Tertinggi: {maks}")
-print(f"Nilai Terendah: {minn}")
+# print(f"Rata-rata: {rata:.2f}")
+# print(f"Nilai Tertinggi: {maks}")
+# print(f"Nilai Terendah: {minn}")
+
+#Sistem Chatbot Adaptif
+def chatbot_input(pesan):
+    pesan = pesan.lower()
+    if "array" in pesan:
+        return "Array adalah struktur data untuk menyimpan elemen dengan tipe data sama."
+    elif "loop" in pesan:
+        return "Loop digunakan untuk mengulang perintah."
+    elif "if" in pesan:
+        return "If adalah kondisi logika untuk pengambilan keputusan."
+    else:
+        return "Maaf, saya belum memahami topik itu."
+
+while True:
+    teks = input("Kamu: ")
+    if teks.lower() == "keluar":
+        break
+    print("Bot:", chatbot_input(teks))
