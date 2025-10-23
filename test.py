@@ -607,14 +607,24 @@
 # print(hasil)
 
 # Sistem Deteksi Performa Mahasiswa Berdasarkan Waktu dan Percobaan
-def deteksi_performa(nilai, waktu, percobaan):
-    if nilai < 50 or percobaan > 5:
-        return "Struggling"
-    elif nilai < 70:
-        return "Gaming the System"
-    elif nilai < 85:
-        return "Normal"
-    else:
-        return "Ideal"
+# def deteksi_performa(nilai, waktu, percobaan):
+#     if nilai < 50 or percobaan > 5:
+#         return "Struggling"
+#     elif nilai < 70:
+#         return "Gaming the System"
+#     elif nilai < 85:
+#         return "Normal"
+#     else:
+#         return "Ideal"
 
-print(deteksi_performa(68, 25, 4))
+# print(deteksi_performa(68, 25, 4))
+
+# Analisis Statistik Nilai Otomatis
+nilai = [78, 85, 67, 90, 88, 74, 56, 80]
+rata = sum(nilai) / len(nilai)
+maks = max(nilai)
+minn = min(nilai)
+
+print(f"Rata-rata: {rata:.2f}")
+print(f"Nilai Tertinggi: {maks}")
+print(f"Nilai Terendah: {minn}")
