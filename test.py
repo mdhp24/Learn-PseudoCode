@@ -630,19 +630,30 @@
 # print(f"Nilai Terendah: {minn}")
 
 #Sistem Chatbot Adaptif
-def chatbot_input(pesan):
-    pesan = pesan.lower()
-    if "array" in pesan:
-        return "Array adalah struktur data untuk menyimpan elemen dengan tipe data sama."
-    elif "loop" in pesan:
-        return "Loop digunakan untuk mengulang perintah."
-    elif "if" in pesan:
-        return "If adalah kondisi logika untuk pengambilan keputusan."
-    else:
-        return "Maaf, saya belum memahami topik itu."
+# def chatbot_input(pesan):
+#     pesan = pesan.lower()
+#     if "array" in pesan:
+#         return "Array adalah struktur data untuk menyimpan elemen dengan tipe data sama."
+#     elif "loop" in pesan:
+#         return "Loop digunakan untuk mengulang perintah."
+#     elif "if" in pesan:
+#         return "If adalah kondisi logika untuk pengambilan keputusan."
+#     else:
+#         return "Maaf, saya belum memahami topik itu."
 
-while True:
-    teks = input("Kamu: ")
-    if teks.lower() == "keluar":
-        break
-    print("Bot:", chatbot_input(teks))
+# while True:
+#     teks = input("Kamu: ")
+#     if teks.lower() == "keluar":
+#         break
+#     print("Bot:", chatbot_input(teks))
+
+# sistem konversi desimal ke biner 
+def konversi_biner(angka):
+    biner = ""
+    while angka > 0:
+        biner = str(angka % 2) + biner
+        angka //= 2
+    return biner
+
+angka = int(input("Masukkan angka desimal: "))
+print("Biner:", konversi_biner(angka))
