@@ -659,22 +659,34 @@
 # print("Biner:", konversi_biner(angka))
 
 #Simulasi Dataset & Klasifikasi Manual
-import random
+# import random
 
-def klasifikasi(nilai):
-    if nilai < 60:
-        return "Struggling"
-    elif nilai < 75:
-        return "Gaming"
-    elif nilai < 90:
-        return "Normal"
-    else:
-        return "Ideal"
+# def klasifikasi(nilai):
+#     if nilai < 60:
+#         return "Struggling"
+#     elif nilai < 75:
+#         return "Gaming"
+#     elif nilai < 90:
+#         return "Normal"
+#     else:
+#         return "Ideal"
 
-data = []
-for i in range(10):
-    nilai = random.randint(40, 100)
-    data.append((f"Mahasiswa_{i+1}", nilai, klasifikasi(nilai)))
+# data = []
+# for i in range(10):
+#     nilai = random.randint(40, 100)
+#     data.append((f"Mahasiswa_{i+1}", nilai, klasifikasi(nilai)))
 
-for m in data:
-    print(f"{m[0]} → Nilai: {m[1]} → Kategori: {m[2]}")
+# for m in data:
+#     print(f"{m[0]} → Nilai: {m[1]} → Kategori: {m[2]}")
+
+# Menyimpan dan Menampilkan Data Mahasiswa (List + Dictionary)
+mahasiswa = []
+
+for i in range(3):
+    nama = input("Masukkan nama mahasiswa: ")
+    nilai = int(input("Masukkan nilai: "))
+    mahasiswa.append({"nama": nama, "nilai": nilai})
+
+print("\nData Mahasiswa:")
+for m in mahasiswa:
+    print(f"{m['nama']} - Nilai: {m['nilai']}")
