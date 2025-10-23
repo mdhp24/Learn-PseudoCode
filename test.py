@@ -648,12 +648,33 @@
 #     print("Bot:", chatbot_input(teks))
 
 # sistem konversi desimal ke biner 
-def konversi_biner(angka):
-    biner = ""
-    while angka > 0:
-        biner = str(angka % 2) + biner
-        angka //= 2
-    return biner
+# def konversi_biner(angka):
+#     biner = ""
+#     while angka > 0:
+#         biner = str(angka % 2) + biner
+#         angka //= 2
+#     return biner
 
-angka = int(input("Masukkan angka desimal: "))
-print("Biner:", konversi_biner(angka))
+# angka = int(input("Masukkan angka desimal: "))
+# print("Biner:", konversi_biner(angka))
+
+#Simulasi Dataset & Klasifikasi Manual
+import random
+
+def klasifikasi(nilai):
+    if nilai < 60:
+        return "Struggling"
+    elif nilai < 75:
+        return "Gaming"
+    elif nilai < 90:
+        return "Normal"
+    else:
+        return "Ideal"
+
+data = []
+for i in range(10):
+    nilai = random.randint(40, 100)
+    data.append((f"Mahasiswa_{i+1}", nilai, klasifikasi(nilai)))
+
+for m in data:
+    print(f"{m[0]} → Nilai: {m[1]} → Kategori: {m[2]}")
