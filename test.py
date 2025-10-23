@@ -588,7 +588,20 @@
 #         print("Bukan bilangan prima")
 
 # Program untuk mengurutkan daftar angka
-angka = [34, 12, 5, 67, 23, 89, 1]
-angka.sort()
-print("Daftar angka setelah diurutkan:", angka)
+# angka = [34, 12, 5, 67, 23, 89, 1]
+# angka.sort()
+# print("Daftar angka setelah diurutkan:", angka)
 
+# Sistem Rekomendasi Lomba Berdasarkan Nilai
+def rekomendasi_lomba(nilai_web, nilai_jaringan, nilai_ai):
+    if nilai_ai > nilai_web and nilai_ai > nilai_jaringan:
+        return "Rekomendasi: Lomba AI & Data Science"
+    elif nilai_web > nilai_ai and nilai_web > nilai_jaringan:
+        return "Rekomendasi: Lomba Web Programming"
+    elif nilai_jaringan > nilai_ai:
+        return "Rekomendasi: Lomba Jaringan Komputer"
+    else:
+        return "Rekomendasi: Lomba Umum"
+
+hasil = rekomendasi_lomba(78, 65, 92)
+print(hasil)
