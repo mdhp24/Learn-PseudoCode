@@ -748,19 +748,32 @@
 
 
 # sistem penilaian ujian
-def penilaian_ujian():
-    nilai = float(input("Masukkan nilai ujian: "))
+# def penilaian_ujian():
+#     nilai = float(input("Masukkan nilai ujian: "))
 
-    if nilai >= 85:
-        grade = "A"
-    elif nilai >= 70:
-        grade = "B"
-    elif nilai >= 55:
-        grade = "C"
-    elif nilai >= 40:
-        grade = "D"
+#     if nilai >= 85:
+#         grade = "A"
+#     elif nilai >= 70:
+#         grade = "B"
+#     elif nilai >= 55:
+#         grade = "C"
+#     elif nilai >= 40:
+#         grade = "D"
+#     else:
+#         grade = "E"
+
+#     print(f"Grade Anda: {grade}")
+# penilaian_ujian()
+
+# sistem rekomendasi film
+def rekomendasi_film(genre):
+    if genre.lower() == "aksi":
+        return "Rekomendasi: Avengers, John Wick"
+    elif genre.lower() == "komedi":
+        return "Rekomendasi: The Hangover, Superbad"
+    elif genre.lower() == "drama":
+        return "Rekomendasi: The Shawshank Redemption, Forrest Gump"
     else:
-        grade = "E"
-
-    print(f"Grade Anda: {grade}")
-penilaian_ujian()
+        return "Rekomendasi: Film genre lain seperti horor atau sci-fi"
+genre_input = input("Masukkan genre film favorit Anda (aksi, komedi, drama): ")
+print(rekomendasi_film(genre_input))
