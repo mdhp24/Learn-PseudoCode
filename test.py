@@ -705,22 +705,43 @@
 # print(hasil)
 
 # sistem deteksi performa mahasiswa berdasarkan waktu dan percobaan
-def deteksi_performa(nilai, waktu, percobaan):
-    if nilai < 50 or percobaan > 5:
-        return "Struggling"
-    elif nilai < 70:
-        return "Gaming the System"
-    elif nilai < 85:
-        return "Normal"
-    else:
-        return "Ideal"
-print(deteksi_performa(68, 25, 4))
+# def deteksi_performa(nilai, waktu, percobaan):
+#     if nilai < 50 or percobaan > 5:
+#         return "Struggling"
+#     elif nilai < 70:
+#         return "Gaming the System"
+#     elif nilai < 85:
+#         return "Normal"
+#     else:
+#         return "Ideal"
+# print(deteksi_performa(68, 25, 4))
 
 # sistem analisis statistik nilai otomatis
-nilai = [78, 85, 67, 90, 88, 74, 56, 80]
-rata = sum(nilai) / len(nilai)
-maks = max(nilai)
-minn = min(nilai)
-print(f"Rata-rata: {rata:.2f}")
-print(f"Nilai Tertinggi: {maks}")
-print(f"Nilai Terendah: {minn}")
+# nilai = [78, 85, 67, 90, 88, 74, 56, 80]
+# rata = sum(nilai) / len(nilai)
+# maks = max(nilai)
+# minn = min(nilai)
+# print(f"Rata-rata: {rata:.2f}")
+# print(f"Nilai Tertinggi: {maks}")
+# print(f"Nilai Terendah: {minn}")
+
+
+# sistem pembelian sederhana
+def pembelian_sederhana():
+    harga_barang = float(input("Masukkan harga barang: "))
+    jumlah_barang = int(input("Masukkan jumlah barang: "))
+    total_harga = harga_barang * jumlah_barang
+
+    print(f"Total harga sebelum diskon: {total_harga}")
+
+    if total_harga > 500000:
+        diskon = 0.1 * total_harga
+    elif total_harga > 200000:
+        diskon = 0.05 * total_harga
+    else:
+        diskon = 0
+
+    total_bayar = total_harga - diskon
+    print(f"Diskon: {diskon}")
+    print(f"Total yang harus dibayar: {total_bayar}")
+pembelian_sederhana()
