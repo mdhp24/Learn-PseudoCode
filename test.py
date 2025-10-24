@@ -680,13 +680,26 @@
 #     print(f"{m[0]} → Nilai: {m[1]} → Kategori: {m[2]}")
 
 # Menyimpan dan Menampilkan Data Mahasiswa (List + Dictionary)
-mahasiswa = []
+# mahasiswa = []
 
-for i in range(3):
-    nama = input("Masukkan nama mahasiswa: ")
-    nilai = int(input("Masukkan nilai: "))
-    mahasiswa.append({"nama": nama, "nilai": nilai})
+# for i in range(3):
+#     nama = input("Masukkan nama mahasiswa: ")
+#     nilai = int(input("Masukkan nilai: "))
+#     mahasiswa.append({"nama": nama, "nilai": nilai})
 
-print("\nData Mahasiswa:")
-for m in mahasiswa:
-    print(f"{m['nama']} - Nilai: {m['nilai']}")
+# print("\nData Mahasiswa:")
+# for m in mahasiswa:
+#     print(f"{m['nama']} - Nilai: {m['nilai']}")
+
+# sistem rekomendasi lomba berdasarkan nilai
+def rekomendasi_lomba(nilai_web, nilai_jaringan, nilai_ai):
+    if nilai_ai > nilai_web and nilai_ai > nilai_jaringan:
+        return "Rekomendasi: Lomba AI & Data Science"
+    elif nilai_web > nilai_ai and nilai_web > nilai_jaringan:
+        return "Rekomendasi: Lomba Web Programming"
+    elif nilai_jaringan > nilai_ai:
+        return "Rekomendasi: Lomba Jaringan Komputer"
+    else:
+        return "Rekomendasi: Lomba Umum"
+hasil = rekomendasi_lomba(78, 65, 92)
+print(hasil)
