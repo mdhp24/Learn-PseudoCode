@@ -715,3 +715,12 @@ def deteksi_performa(nilai, waktu, percobaan):
     else:
         return "Ideal"
 print(deteksi_performa(68, 25, 4))
+
+# sistem analisis statistik nilai otomatis
+nilai = [78, 85, 67, 90, 88, 74, 56, 80]
+rata = sum(nilai) / len(nilai)
+maks = max(nilai)
+minn = min(nilai)
+print(f"Rata-rata: {rata:.2f}")
+print(f"Nilai Tertinggi: {maks}")
+print(f"Nilai Terendah: {minn}")
