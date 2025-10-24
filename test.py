@@ -727,21 +727,40 @@
 
 
 # sistem pembelian sederhana
-def pembelian_sederhana():
-    harga_barang = float(input("Masukkan harga barang: "))
-    jumlah_barang = int(input("Masukkan jumlah barang: "))
-    total_harga = harga_barang * jumlah_barang
+# def pembelian_sederhana():
+#     harga_barang = float(input("Masukkan harga barang: "))
+#     jumlah_barang = int(input("Masukkan jumlah barang: "))
+#     total_harga = harga_barang * jumlah_barang
 
-    print(f"Total harga sebelum diskon: {total_harga}")
+#     print(f"Total harga sebelum diskon: {total_harga}")
 
-    if total_harga > 500000:
-        diskon = 0.1 * total_harga
-    elif total_harga > 200000:
-        diskon = 0.05 * total_harga
+#     if total_harga > 500000:
+#         diskon = 0.1 * total_harga
+#     elif total_harga > 200000:
+#         diskon = 0.05 * total_harga
+#     else:
+#         diskon = 0
+
+#     total_bayar = total_harga - diskon
+#     print(f"Diskon: {diskon}")
+#     print(f"Total yang harus dibayar: {total_bayar}")
+# pembelian_sederhana()
+
+
+# sistem penilaian ujian
+def penilaian_ujian():
+    nilai = float(input("Masukkan nilai ujian: "))
+
+    if nilai >= 85:
+        grade = "A"
+    elif nilai >= 70:
+        grade = "B"
+    elif nilai >= 55:
+        grade = "C"
+    elif nilai >= 40:
+        grade = "D"
     else:
-        diskon = 0
+        grade = "E"
 
-    total_bayar = total_harga - diskon
-    print(f"Diskon: {diskon}")
-    print(f"Total yang harus dibayar: {total_bayar}")
-pembelian_sederhana()
+    print(f"Grade Anda: {grade}")
+penilaian_ujian()
