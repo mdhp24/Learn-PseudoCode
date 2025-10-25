@@ -791,12 +791,19 @@
 
 
 # Sistem palidrom deteksi
-def is_palindrome(text):
-    text = text.replace(" ", "").lower()
-    return text == text[::-1]
+# def is_palindrome(text):
+#     text = text.replace(" ", "").lower()
+#     return text == text[::-1]
 
-kata = input("Masukkan kata: ")
-if is_palindrome(kata):
-    print("✅ Kata ini palindrome!")
-else:
-    print("❌ Bukan palindrome.")
+# kata = input("Masukkan kata: ")
+# if is_palindrome(kata):
+#     print("✅ Kata ini palindrome!")
+# else:
+#     print("❌ Bukan palindrome.")
+
+
+# KONVERSI DESIMAL KE BINNER, OKTAL, HEKSADESIMAL
+angka = int(input("Masukkan bilangan desimal: "))
+print(f"Biner: {bin(angka)[2:]}")
+print(f"Oktal: {oct(angka)[2:]}")
+print(f"Heksadesimal: {hex(angka)[2:].upper()}")
