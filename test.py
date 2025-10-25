@@ -858,10 +858,28 @@
 # fibonacci(n)
 
 # Hitung Jumlah Huruf Vokal dan Konsonan
-teks = input("Masukkan teks: ").lower()
-vokal = "aiueo"
-jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
-jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
+# teks = input("Masukkan teks: ").lower()
+# vokal = "aiueo"
+# jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
+# jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
 
-print(f"Jumlah huruf vokal: {jumlah_vokal}")
-print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
+# print(f"Jumlah huruf vokal: {jumlah_vokal}")
+# print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
+
+# Simulasi Dataset & Klasifikasi Manual
+import random
+
+mahasiswa = []
+for i in range(10):
+    nilai = random.randint(40, 100)
+    waktu = random.randint(10, 50)
+    kategori = (
+        "Struggling" if nilai < 60 else
+        "Gaming" if nilai < 75 else
+        "Normal" if nilai < 90 else
+        "Ideal"
+    )
+    mahasiswa.append({"nama": f"Mahasiswa_{i+1}", "nilai": nilai, "waktu": waktu, "kategori": kategori})
+
+for m in mahasiswa:
+    print(m)
