@@ -826,10 +826,22 @@
 #         break
 
 # Hitung Umur Berdasarkan Tahun Lahir
-from datetime import date
+# from datetime import date
 
-tahun_lahir = int(input("Masukkan tahun lahir: "))
-tahun_sekarang = date.today().year
-umur = tahun_sekarang - tahun_lahir
+# tahun_lahir = int(input("Masukkan tahun lahir: "))
+# tahun_sekarang = date.today().year
+# umur = tahun_sekarang - tahun_lahir
 
-print(f"Umur kamu adalah {umur} tahun.")
+# print(f"Umur kamu adalah {umur} tahun.")
+
+
+# Sistem Pembelian Sederhana
+total = 0
+while True:
+    nama = input("Masukkan nama barang (atau 'selesai'): ")
+    if nama.lower() == "selesai":
+        break
+    harga = float(input("Masukkan harga barang: "))
+    total += harga
+
+print(f"Total belanja: Rp{total:,.2f}")
