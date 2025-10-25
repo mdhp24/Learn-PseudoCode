@@ -836,12 +836,23 @@
 
 
 # Sistem Pembelian Sederhana
-total = 0
-while True:
-    nama = input("Masukkan nama barang (atau 'selesai'): ")
-    if nama.lower() == "selesai":
-        break
-    harga = float(input("Masukkan harga barang: "))
-    total += harga
+# total = 0
+# while True:
+#     nama = input("Masukkan nama barang (atau 'selesai'): ")
+#     if nama.lower() == "selesai":
+#         break
+#     harga = float(input("Masukkan harga barang: "))
+#     total += harga
 
-print(f"Total belanja: Rp{total:,.2f}")
+# print(f"Total belanja: Rp{total:,.2f}")
+
+
+# Menampilkan Deret Fibonacci
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+n = int(input("Masukkan jumlah deret Fibonacci: "))
+fibonacci(n)
