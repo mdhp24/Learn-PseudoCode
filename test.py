@@ -779,12 +779,24 @@
 # print(rekomendasi_film(genre_input))
 
 # sistem deteksi kecepatan internet
-def deteksi_kecepatan(kecepatan):
-    if kecepatan < 5:
-        return "Kecepatan internet Anda lambat."
-    elif kecepatan < 20:
-        return "Kecepatan internet Anda sedang."
-    else:
-        return "Kecepatan internet Anda cepat."
-kecepatan_input = float(input("Masukkan kecepatan internet Anda (Mbps): "))
-print(deteksi_kecepatan(kecepatan_input))
+# def deteksi_kecepatan(kecepatan):
+#     if kecepatan < 5:
+#         return "Kecepatan internet Anda lambat."
+#     elif kecepatan < 20:
+#         return "Kecepatan internet Anda sedang."
+#     else:
+#         return "Kecepatan internet Anda cepat."
+# kecepatan_input = float(input("Masukkan kecepatan internet Anda (Mbps): "))
+# print(deteksi_kecepatan(kecepatan_input))
+
+
+# Sistem palidrom deteksi
+def is_palindrome(text):
+    text = text.replace(" ", "").lower()
+    return text == text[::-1]
+
+kata = input("Masukkan kata: ")
+if is_palindrome(kata):
+    print("✅ Kata ini palindrome!")
+else:
+    print("❌ Bukan palindrome.")
