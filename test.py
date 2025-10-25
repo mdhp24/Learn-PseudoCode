@@ -803,7 +803,33 @@
 
 
 # KONVERSI DESIMAL KE BINNER, OKTAL, HEKSADESIMAL
-angka = int(input("Masukkan bilangan desimal: "))
-print(f"Biner: {bin(angka)[2:]}")
-print(f"Oktal: {oct(angka)[2:]}")
-print(f"Heksadesimal: {hex(angka)[2:].upper()}")
+# angka = int(input("Masukkan bilangan desimal: "))
+# print(f"Biner: {bin(angka)[2:]}")
+# print(f"Oktal: {oct(angka)[2:]}")
+# print(f"Heksadesimal: {hex(angka)[2:].upper()}")
+
+# Permainan Tebak Angka
+# import random
+
+# angka_rahasia = random.randint(1, 20)
+# percobaan = 0
+
+# while True:
+#     tebakan = int(input("Tebak angka (1-20): "))
+#     percobaan += 1
+#     if tebakan < angka_rahasia:
+#         print("Terlalu kecil!")
+#     elif tebakan > angka_rahasia:
+#         print("Terlalu besar!")
+#     else:
+#         print(f"🎉 Benar! Angka {angka_rahasia} ditemukan dalam {percobaan} percobaan.")
+#         break
+
+# Hitung Umur Berdasarkan Tahun Lahir
+from datetime import date
+
+tahun_lahir = int(input("Masukkan tahun lahir: "))
+tahun_sekarang = date.today().year
+umur = tahun_sekarang - tahun_lahir
+
+print(f"Umur kamu adalah {umur} tahun.")
