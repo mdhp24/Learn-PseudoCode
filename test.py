@@ -848,11 +848,20 @@
 
 
 # Menampilkan Deret Fibonacci
-def fibonacci(n):
-    a, b = 0, 1
-    for _ in range(n):
-        print(a, end=" ")
-        a, b = b, a + b
+# def fibonacci(n):
+#     a, b = 0, 1
+#     for _ in range(n):
+#         print(a, end=" ")
+#         a, b = b, a + b
 
-n = int(input("Masukkan jumlah deret Fibonacci: "))
-fibonacci(n)
+# n = int(input("Masukkan jumlah deret Fibonacci: "))
+# fibonacci(n)
+
+# Hitung Jumlah Huruf Vokal dan Konsonan
+teks = input("Masukkan teks: ").lower()
+vokal = "aiueo"
+jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
+jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
+
+print(f"Jumlah huruf vokal: {jumlah_vokal}")
+print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
