@@ -885,15 +885,25 @@
 #     print(m)
     
 # Sistem Rekomendasi Film
-def rekomendasi_film(genre):
-    if genre.lower() == "aksi":
-        return "Rekomendasi: Avengers, John Wick"
-    elif genre.lower() == "komedi":
-        return "Rekomendasi: The Hangover, Superbad"
-    elif genre.lower() == "drama":
-        return "Rekomendasi: The Shawshank Redemption, Forrest Gump"
-    else:
-        return "Rekomendasi: Film genre lain seperti horor atau sci-fi"
-genre_input = input("Masukkan genre film favorit Anda (aksi, komedi, drama): ")
-print(rekomendasi_film(genre_input))
+# def rekomendasi_film(genre):
+#     if genre.lower() == "aksi":
+#         return "Rekomendasi: Avengers, John Wick"
+#     elif genre.lower() == "komedi":
+#         return "Rekomendasi: The Hangover, Superbad"
+#     elif genre.lower() == "drama":
+#         return "Rekomendasi: The Shawshank Redemption, Forrest Gump"
+#     else:
+#         return "Rekomendasi: Film genre lain seperti horor atau sci-fi"
+# genre_input = input("Masukkan genre film favorit Anda (aksi, komedi, drama): ")
+# print(rekomendasi_film(genre_input))
 
+# Sistem Deteksi Kecepatan Internet
+def deteksi_kecepatan(kecepatan):
+    if kecepatan < 5:
+        return "Kecepatan internet Anda lambat."
+    elif kecepatan < 20:
+        return "Kecepatan internet Anda sedang."
+    else:
+        return "Kecepatan internet Anda cepat."
+kecepatan_input = float(input("Masukkan kecepatan internet Anda (Mbps): "))
+print(deteksi_kecepatan(kecepatan_input))
