@@ -936,9 +936,27 @@
 # print(f"Jumlah dalam dollar: ${dollar_output:.2f}")
 
 # Sistem konversi suhu derajat celsius ke fahrenheit
-def konversi_celsius_ke_fahrenheit(celsius):
-    fahrenheit = (celsius * 9/5) + 32
-    return fahrenheit
-celsius_input = float(input("Masukkan suhu dalam Celsius: "))
-fahrenheit_output = konversi_celsius_ke_fahrenheit(celsius_input)
-print(f"Jumlah dalam Fahrenheit: {fahrenheit_output:.2f}")
+# def konversi_celsius_ke_fahrenheit(celsius):
+#     fahrenheit = (celsius * 9/5) + 32
+#     return fahrenheit
+# celsius_input = float(input("Masukkan suhu dalam Celsius: "))
+# fahrenheit_output = konversi_celsius_ke_fahrenheit(celsius_input)
+# print(f"Jumlah dalam Fahrenheit: {fahrenheit_output:.2f}")
+
+# Sistem kalkulator sederhana
+def kalkulator(angka1, angka2, operasi):
+    if operasi == "+":
+        return angka1 + angka2
+    elif operasi == "-":
+        return angka1 - angka2
+    elif operasi == "*":
+        return angka1 * angka2
+    elif operasi == "/":
+        return angka1 / angka2
+    else:
+        return "Operasi tidak dikenali."
+angka1_input = float(input("Masukkan angka pertama: "))
+angka2_input = float(input("Masukkan angka kedua: "))
+operasi_input = input("Masukkan operasi (+, -, *, /): ")
+hasil = kalkulator(angka1_input, angka2_input, operasi_input)
+print(f"Hasil: {hasil}")
