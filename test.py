@@ -867,19 +867,33 @@
 # print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
 
 # Simulasi Dataset & Klasifikasi Manual
-import random
+# import random
 
-mahasiswa = []
-for i in range(10):
-    nilai = random.randint(40, 100)
-    waktu = random.randint(10, 50)
-    kategori = (
-        "Struggling" if nilai < 60 else
-        "Gaming" if nilai < 75 else
-        "Normal" if nilai < 90 else
-        "Ideal"
-    )
-    mahasiswa.append({"nama": f"Mahasiswa_{i+1}", "nilai": nilai, "waktu": waktu, "kategori": kategori})
+# mahasiswa = []
+# for i in range(10):
+#     nilai = random.randint(40, 100)
+#     waktu = random.randint(10, 50)
+#     kategori = (
+#         "Struggling" if nilai < 60 else
+#         "Gaming" if nilai < 75 else
+#         "Normal" if nilai < 90 else
+#         "Ideal"
+#     )
+#     mahasiswa.append({"nama": f"Mahasiswa_{i+1}", "nilai": nilai, "waktu": waktu, "kategori": kategori})
 
-for m in mahasiswa:
-    print(m)
+# for m in mahasiswa:
+#     print(m)
+    
+# Sistem Rekomendasi Film
+def rekomendasi_film(genre):
+    if genre.lower() == "aksi":
+        return "Rekomendasi: Avengers, John Wick"
+    elif genre.lower() == "komedi":
+        return "Rekomendasi: The Hangover, Superbad"
+    elif genre.lower() == "drama":
+        return "Rekomendasi: The Shawshank Redemption, Forrest Gump"
+    else:
+        return "Rekomendasi: Film genre lain seperti horor atau sci-fi"
+genre_input = input("Masukkan genre film favorit Anda (aksi, komedi, drama): ")
+print(rekomendasi_film(genre_input))
+
