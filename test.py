@@ -898,12 +898,30 @@
 # print(rekomendasi_film(genre_input))
 
 # Sistem Deteksi Kecepatan Internet
-def deteksi_kecepatan(kecepatan):
-    if kecepatan < 5:
-        return "Kecepatan internet Anda lambat."
-    elif kecepatan < 20:
-        return "Kecepatan internet Anda sedang."
+# def deteksi_kecepatan(kecepatan):
+#     if kecepatan < 5:
+#         return "Kecepatan internet Anda lambat."
+#     elif kecepatan < 20:
+#         return "Kecepatan internet Anda sedang."
+#     else:
+#         return "Kecepatan internet Anda cepat."
+# kecepatan_input = float(input("Masukkan kecepatan internet Anda (Mbps): "))
+# print(deteksi_kecepatan(kecepatan_input))
+
+# Sistem Penilaian Ujian
+def penilaian_ujian():
+    nilai = float(input("Masukkan nilai ujian: "))
+
+    if nilai >= 85:
+        grade = "A"
+    elif nilai >= 70:
+        grade = "B"
+    elif nilai >= 55:
+        grade = "C"
+    elif nilai >= 40:
+        grade = "D"
     else:
-        return "Kecepatan internet Anda cepat."
-kecepatan_input = float(input("Masukkan kecepatan internet Anda (Mbps): "))
-print(deteksi_kecepatan(kecepatan_input))
+        grade = "E"
+
+    print(f"Grade Anda: {grade}")
+penilaian_ujian()
