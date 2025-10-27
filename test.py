@@ -944,19 +944,44 @@
 # print(f"Jumlah dalam Fahrenheit: {fahrenheit_output:.2f}")
 
 # Sistem kalkulator sederhana
-def kalkulator(angka1, angka2, operasi):
-    if operasi == "+":
-        return angka1 + angka2
-    elif operasi == "-":
-        return angka1 - angka2
-    elif operasi == "*":
-        return angka1 * angka2
-    elif operasi == "/":
-        return angka1 / angka2
-    else:
-        return "Operasi tidak dikenali."
-angka1_input = float(input("Masukkan angka pertama: "))
-angka2_input = float(input("Masukkan angka kedua: "))
-operasi_input = input("Masukkan operasi (+, -, *, /): ")
-hasil = kalkulator(angka1_input, angka2_input, operasi_input)
-print(f"Hasil: {hasil}")
+# def kalkulator(angka1, angka2, operasi):
+#     if operasi == "+":
+#         return angka1 + angka2
+#     elif operasi == "-":
+#         return angka1 - angka2
+#     elif operasi == "*":
+#         return angka1 * angka2
+#     elif operasi == "/":
+#         return angka1 / angka2
+#     else:
+#         return "Operasi tidak dikenali."
+# angka1_input = float(input("Masukkan angka pertama: "))
+# angka2_input = float(input("Masukkan angka kedua: "))
+# operasi_input = input("Masukkan operasi (+, -, *, /): ")
+# hasil = kalkulator(angka1_input, angka2_input, operasi_input)
+# print(f"Hasil: {hasil}")
+
+# Sistem deteksi performa mahasiswa menggunakan kelas
+class PerformaMahasiswa:
+    def __init__(self, nama, skor):
+        self.nama = nama
+        self.skor = skor
+
+    def deteksi(self):
+        if self.skor < 50:
+            return "Struggling"
+        elif self.skor < 70:
+            return "Gaming the System"
+        elif self.skor < 85:
+            return "Normal"
+        else:
+            return "Ideal"
+        
+mahasiswa1 = PerformaMahasiswa("Dicky", 45)
+print(f"{mahasiswa1.nama} → Kategori: {mahasiswa1.deteksi()}")
+
+mahasiswa2 = PerformaMahasiswa("Rina", 78)
+print(f"{mahasiswa2.nama} → Kategori: {mahasiswa2.deteksi()}")
+
+mahasiswa3 = PerformaMahasiswa("Adi", 92)
+print(f"{mahasiswa3.nama} → Kategori: {mahasiswa3.deteksi()}")
