@@ -909,19 +909,28 @@
 # print(deteksi_kecepatan(kecepatan_input))
 
 # Sistem Penilaian Ujian
-def penilaian_ujian():
-    nilai = float(input("Masukkan nilai ujian: "))
+# def penilaian_ujian():
+#     nilai = float(input("Masukkan nilai ujian: "))
 
-    if nilai >= 85:
-        grade = "A"
-    elif nilai >= 70:
-        grade = "B"
-    elif nilai >= 55:
-        grade = "C"
-    elif nilai >= 40:
-        grade = "D"
-    else:
-        grade = "E"
+#     if nilai >= 85:
+#         grade = "A"
+#     elif nilai >= 70:
+#         grade = "B"
+#     elif nilai >= 55:
+#         grade = "C"
+#     elif nilai >= 40:
+#         grade = "D"
+#     else:
+#         grade = "E"
 
-    print(f"Grade Anda: {grade}")
-penilaian_ujian()
+#     print(f"Grade Anda: {grade}")
+# penilaian_ujian()
+
+
+# Sistem conversi rupiah ke dollar
+def konversi_rupiah_ke_dollar(rupiah, kurs=15000):
+    dollar = rupiah / kurs
+    return dollar
+rupiah_input = float(input("Masukkan jumlah rupiah: "))
+dollar_output = konversi_rupiah_ke_dollar(rupiah_input)
+print(f"Jumlah dalam dollar: ${dollar_output:.2f}")
