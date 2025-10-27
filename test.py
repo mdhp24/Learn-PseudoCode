@@ -928,9 +928,17 @@
 
 
 # Sistem conversi rupiah ke dollar
-def konversi_rupiah_ke_dollar(rupiah, kurs=15000):
-    dollar = rupiah / kurs
-    return dollar
-rupiah_input = float(input("Masukkan jumlah rupiah: "))
-dollar_output = konversi_rupiah_ke_dollar(rupiah_input)
-print(f"Jumlah dalam dollar: ${dollar_output:.2f}")
+# def konversi_rupiah_ke_dollar(rupiah, kurs=15000):
+#     dollar = rupiah / kurs
+#     return dollar
+# rupiah_input = float(input("Masukkan jumlah rupiah: "))
+# dollar_output = konversi_rupiah_ke_dollar(rupiah_input)
+# print(f"Jumlah dalam dollar: ${dollar_output:.2f}")
+
+# Sistem konversi suhu derajat celsius ke fahrenheit
+def konversi_celsius_ke_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+celsius_input = float(input("Masukkan suhu dalam Celsius: "))
+fahrenheit_output = konversi_celsius_ke_fahrenheit(celsius_input)
+print(f"Jumlah dalam Fahrenheit: {fahrenheit_output:.2f}")
