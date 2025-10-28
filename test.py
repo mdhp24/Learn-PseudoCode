@@ -1074,17 +1074,23 @@
 # print(f"Heksadesimal: {heksadesimal_output}")
 
 # Sistem permainan tebak angka
-import random
-angka_rahasia = random.randint(1, 20)
-percobaan = 0
-while True:
-    tebakan = int(input("Tebak angka (1-20): "))
-    percobaan += 1
-    if tebakan == angka_rahasia:
-        print(f"Selamat! Anda berhasil menebak angka {angka_rahasia} dalam {percobaan} percobaan.")
-        break
-    elif tebakan < angka_rahasia:
-        print("Tebakan Anda terlalu rendah.")
-    else:
-        print("Tebakan Anda terlalu tinggi.")
+# import random
+# angka_rahasia = random.randint(1, 20)
+# percobaan = 0
+# while True:
+#     tebakan = int(input("Tebak angka (1-20): "))
+#     percobaan += 1
+#     if tebakan == angka_rahasia:
+#         print(f"Selamat! Anda berhasil menebak angka {angka_rahasia} dalam {percobaan} percobaan.")
+#         break
+#     elif tebakan < angka_rahasia:
+#         print("Tebakan Anda terlalu rendah.")
+#     else:
+#         print("Tebakan Anda terlalu tinggi.")
         
+# Sistem hitung umur berdasarkan tahun lahir
+from datetime import date
+tahun_lahir = int(input("Masukkan tahun lahir Anda: "))
+tahun_sekarang = date.today().year
+umur = tahun_sekarang - tahun_lahir
+print(f"Umur Anda: {umur} tahun")
