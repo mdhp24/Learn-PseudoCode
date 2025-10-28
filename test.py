@@ -1014,14 +1014,34 @@
 # chatbot_interaktif()
 
 # Sistem rekomendasi lomba berdasarkan nilai 
-def rekomendasi_lomba(nilai_web, nilai_jaringan, nilai_ai):
-    if nilai_ai > nilai_web and nilai_ai > nilai_jaringan:
-        return "Rekomendasi: Lomba AI & Data Science"
-    elif nilai_web > nilai_ai and nilai_web > nilai_jaringan:
-        return "Rekomendasi: Lomba Web Programming"
-    elif nilai_jaringan > nilai_ai:
-        return "Rekomendasi: Lomba Jaringan Komputer"
+# def rekomendasi_lomba(nilai_web, nilai_jaringan, nilai_ai):
+#     if nilai_ai > nilai_web and nilai_ai > nilai_jaringan:
+#         return "Rekomendasi: Lomba AI & Data Science"
+#     elif nilai_web > nilai_ai and nilai_web > nilai_jaringan:
+#         return "Rekomendasi: Lomba Web Programming"
+#     elif nilai_jaringan > nilai_ai:
+#         return "Rekomendasi: Lomba Jaringan Komputer"
+#     else:
+#         return "Rekomendasi: Lomba Umum"
+# hasil = rekomendasi_lomba(78, 65, 92)
+# print(hasil)
+
+# Sistem deteksi performa mahasiswa berdasarkan nilai, waktu, dan percobaan
+def deteksi_kesulitan(nilai, waktu, percobaan):
+    if nilai < 50 or percobaan > 5:
+        return "Struggling"
+    elif nilai < 70:
+        return "Gaming the System"
+    elif nilai < 85:
+        return "Normal"
     else:
-        return "Rekomendasi: Lomba Umum"
-hasil = rekomendasi_lomba(78, 65, 92)
-print(hasil)
+        return "Ideal"
+mahasiswa = [
+    {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
+    {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
+    {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
+]
+for mhs in mahasiswa:
+    kategori = deteksi_kesulitan(mhs["nilai"], mhs["waktu"], mhs["percobaan"])
+    print(f"{mhs['nama']} → Kategori: {kategori}")
+    
