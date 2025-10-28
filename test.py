@@ -987,28 +987,41 @@
 # print(f"{mahasiswa3.nama} → Kategori: {mahasiswa3.deteksi()}")
 
 # Sistem chatbot edukasi sederhana menggunakan kelas
-class EduChatbot:
-    def __init__(self, nama):
-        self.nama = nama
+# class EduChatbot:
+#     def __init__(self, nama):
+#         self.nama = nama
 
-    def respon(self, pertanyaan):
-        if "array" in pertanyaan.lower():
-            return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
-        elif "loop" in pertanyaan.lower():
-            return "Loop digunakan untuk perulangan di program."
-        else:
-            return "Saya tidak yakin, coba pertanyaan lain ya!"
-bot = EduChatbot("TutorAI")
-print(bot.respon("Apa itu array?"))
-print(bot.respon("Jelaskan tentang loop."))
-print(bot.respon("Apa itu fungsi?"))
-def chatbot_interaktif():
-    bot = EduChatbot("TutorAI")
-    while True:
-        pertanyaan = input("Kamu: ")
-        if pertanyaan.lower() == "keluar":
-            print("Bot: Sampai jumpa!")
-            break
-        jawaban = bot.respon(pertanyaan)
-        print(f"Bot: {jawaban}")
-chatbot_interaktif()
+#     def respon(self, pertanyaan):
+#         if "array" in pertanyaan.lower():
+#             return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
+#         elif "loop" in pertanyaan.lower():
+#             return "Loop digunakan untuk perulangan di program."
+#         else:
+#             return "Saya tidak yakin, coba pertanyaan lain ya!"
+# bot = EduChatbot("TutorAI")
+# print(bot.respon("Apa itu array?"))
+# print(bot.respon("Jelaskan tentang loop."))
+# print(bot.respon("Apa itu fungsi?"))
+# def chatbot_interaktif():
+#     bot = EduChatbot("TutorAI")
+#     while True:
+#         pertanyaan = input("Kamu: ")
+#         if pertanyaan.lower() == "keluar":
+#             print("Bot: Sampai jumpa!")
+#             break
+#         jawaban = bot.respon(pertanyaan)
+#         print(f"Bot: {jawaban}")
+# chatbot_interaktif()
+
+# Sistem rekomendasi lomba berdasarkan nilai 
+def rekomendasi_lomba(nilai_web, nilai_jaringan, nilai_ai):
+    if nilai_ai > nilai_web and nilai_ai > nilai_jaringan:
+        return "Rekomendasi: Lomba AI & Data Science"
+    elif nilai_web > nilai_ai and nilai_web > nilai_jaringan:
+        return "Rekomendasi: Lomba Web Programming"
+    elif nilai_jaringan > nilai_ai:
+        return "Rekomendasi: Lomba Jaringan Komputer"
+    else:
+        return "Rekomendasi: Lomba Umum"
+hasil = rekomendasi_lomba(78, 65, 92)
+print(hasil)
