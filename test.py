@@ -1062,13 +1062,29 @@
 #     print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
     
 # Sistem konversi desimal ke biner, oktal, heksadesimal
-def konversi_bilangan(desimal):
-    biner = bin(desimal).replace("0b", "")
-    oktal = oct(desimal).replace("0o", "")
-    heksadesimal = hex(desimal).replace("0x", "").upper()
-    return biner, oktal, heksadesimal
-desimal_input = int(input("Masukkan bilangan desimal: "))
-biner_output, oktal_output, heksadesimal_output = konversi_bilangan(desimal_input)
-print(f"Biner: {biner_output}")
-print(f"Oktal: {oktal_output}")
-print(f"Heksadesimal: {heksadesimal_output}")
+# def konversi_bilangan(desimal):
+#     biner = bin(desimal).replace("0b", "")
+#     oktal = oct(desimal).replace("0o", "")
+#     heksadesimal = hex(desimal).replace("0x", "").upper()
+#     return biner, oktal, heksadesimal
+# desimal_input = int(input("Masukkan bilangan desimal: "))
+# biner_output, oktal_output, heksadesimal_output = konversi_bilangan(desimal_input)
+# print(f"Biner: {biner_output}")
+# print(f"Oktal: {oktal_output}")
+# print(f"Heksadesimal: {heksadesimal_output}")
+
+# Sistem permainan tebak angka
+import random
+angka_rahasia = random.randint(1, 20)
+percobaan = 0
+while True:
+    tebakan = int(input("Tebak angka (1-20): "))
+    percobaan += 1
+    if tebakan == angka_rahasia:
+        print(f"Selamat! Anda berhasil menebak angka {angka_rahasia} dalam {percobaan} percobaan.")
+        break
+    elif tebakan < angka_rahasia:
+        print("Tebakan Anda terlalu rendah.")
+    else:
+        print("Tebakan Anda terlalu tinggi.")
+        
