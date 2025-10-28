@@ -1046,18 +1046,29 @@
 #     print(f"{mhs['nama']} → Kategori: {kategori}")
     
 # Sistem chatbot memberikan feedback berdasarkan nilai dan percobaan
-def chatbot_feedback(nilai, percobaan):
-    if nilai < 60 and percobaan > 3:
-        return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
-    elif nilai < 80:
-        return "Bagus! Tapi coba perkuat logika kodingmu."
-    else:
-        return "Hebat! Kamu berada di level ideal."
-mhs = [
-    {"nama": "Dicky", "nilai": 55, "percobaan": 5},
-    {"nama": "Rina", "nilai": 77, "percobaan": 2},
-    {"nama": "Adi", "nilai": 91, "percobaan": 1}
-]
-for m in mhs:
-    print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
+# def chatbot_feedback(nilai, percobaan):
+#     if nilai < 60 and percobaan > 3:
+#         return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
+#     elif nilai < 80:
+#         return "Bagus! Tapi coba perkuat logika kodingmu."
+#     else:
+#         return "Hebat! Kamu berada di level ideal."
+# mhs = [
+#     {"nama": "Dicky", "nilai": 55, "percobaan": 5},
+#     {"nama": "Rina", "nilai": 77, "percobaan": 2},
+#     {"nama": "Adi", "nilai": 91, "percobaan": 1}
+# ]
+# for m in mhs:
+#     print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
     
+# Sistem konversi desimal ke biner, oktal, heksadesimal
+def konversi_bilangan(desimal):
+    biner = bin(desimal).replace("0b", "")
+    oktal = oct(desimal).replace("0o", "")
+    heksadesimal = hex(desimal).replace("0x", "").upper()
+    return biner, oktal, heksadesimal
+desimal_input = int(input("Masukkan bilangan desimal: "))
+biner_output, oktal_output, heksadesimal_output = konversi_bilangan(desimal_input)
+print(f"Biner: {biner_output}")
+print(f"Oktal: {oktal_output}")
+print(f"Heksadesimal: {heksadesimal_output}")
