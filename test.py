@@ -962,26 +962,53 @@
 # print(f"Hasil: {hasil}")
 
 # Sistem deteksi performa mahasiswa menggunakan kelas
-class PerformaMahasiswa:
-    def __init__(self, nama, skor):
-        self.nama = nama
-        self.skor = skor
+# class PerformaMahasiswa:
+#     def __init__(self, nama, skor):
+#         self.nama = nama
+#         self.skor = skor
 
-    def deteksi(self):
-        if self.skor < 50:
-            return "Struggling"
-        elif self.skor < 70:
-            return "Gaming the System"
-        elif self.skor < 85:
-            return "Normal"
-        else:
-            return "Ideal"
+#     def deteksi(self):
+#         if self.skor < 50:
+#             return "Struggling"
+#         elif self.skor < 70:
+#             return "Gaming the System"
+#         elif self.skor < 85:
+#             return "Normal"
+#         else:
+#             return "Ideal"
         
-mahasiswa1 = PerformaMahasiswa("Dicky", 45)
-print(f"{mahasiswa1.nama} → Kategori: {mahasiswa1.deteksi()}")
+# mahasiswa1 = PerformaMahasiswa("Dicky", 45)
+# print(f"{mahasiswa1.nama} → Kategori: {mahasiswa1.deteksi()}")
 
-mahasiswa2 = PerformaMahasiswa("Rina", 78)
-print(f"{mahasiswa2.nama} → Kategori: {mahasiswa2.deteksi()}")
+# mahasiswa2 = PerformaMahasiswa("Rina", 78)
+# print(f"{mahasiswa2.nama} → Kategori: {mahasiswa2.deteksi()}")
 
-mahasiswa3 = PerformaMahasiswa("Adi", 92)
-print(f"{mahasiswa3.nama} → Kategori: {mahasiswa3.deteksi()}")
+# mahasiswa3 = PerformaMahasiswa("Adi", 92)
+# print(f"{mahasiswa3.nama} → Kategori: {mahasiswa3.deteksi()}")
+
+# Sistem chatbot edukasi sederhana menggunakan kelas
+class EduChatbot:
+    def __init__(self, nama):
+        self.nama = nama
+
+    def respon(self, pertanyaan):
+        if "array" in pertanyaan.lower():
+            return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel."
+        elif "loop" in pertanyaan.lower():
+            return "Loop digunakan untuk perulangan di program."
+        else:
+            return "Saya tidak yakin, coba pertanyaan lain ya!"
+bot = EduChatbot("TutorAI")
+print(bot.respon("Apa itu array?"))
+print(bot.respon("Jelaskan tentang loop."))
+print(bot.respon("Apa itu fungsi?"))
+def chatbot_interaktif():
+    bot = EduChatbot("TutorAI")
+    while True:
+        pertanyaan = input("Kamu: ")
+        if pertanyaan.lower() == "keluar":
+            print("Bot: Sampai jumpa!")
+            break
+        jawaban = bot.respon(pertanyaan)
+        print(f"Bot: {jawaban}")
+chatbot_interaktif()
