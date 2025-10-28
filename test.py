@@ -1027,21 +1027,37 @@
 # print(hasil)
 
 # Sistem deteksi performa mahasiswa berdasarkan nilai, waktu, dan percobaan
-def deteksi_kesulitan(nilai, waktu, percobaan):
-    if nilai < 50 or percobaan > 5:
-        return "Struggling"
-    elif nilai < 70:
-        return "Gaming the System"
-    elif nilai < 85:
-        return "Normal"
+# def deteksi_kesulitan(nilai, waktu, percobaan):
+#     if nilai < 50 or percobaan > 5:
+#         return "Struggling"
+#     elif nilai < 70:
+#         return "Gaming the System"
+#     elif nilai < 85:
+#         return "Normal"
+#     else:
+#         return "Ideal"
+# mahasiswa = [
+#     {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
+#     {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
+#     {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
+# ]
+# for mhs in mahasiswa:
+#     kategori = deteksi_kesulitan(mhs["nilai"], mhs["waktu"], mhs["percobaan"])
+#     print(f"{mhs['nama']} → Kategori: {kategori}")
+    
+# Sistem chatbot memberikan feedback berdasarkan nilai dan percobaan
+def chatbot_feedback(nilai, percobaan):
+    if nilai < 60 and percobaan > 3:
+        return "Kamu tampaknya kesulitan. Coba pelajari ulang konsep dasar materi ini."
+    elif nilai < 80:
+        return "Bagus! Tapi coba perkuat logika kodingmu."
     else:
-        return "Ideal"
-mahasiswa = [
-    {"nama": "Dicky", "nilai": 45, "waktu": 35, "percobaan": 6},
-    {"nama": "Tina", "nilai": 80, "waktu": 20, "percobaan": 2},
-    {"nama": "Rina", "nilai": 92, "waktu": 15, "percobaan": 1}
+        return "Hebat! Kamu berada di level ideal."
+mhs = [
+    {"nama": "Dicky", "nilai": 55, "percobaan": 5},
+    {"nama": "Rina", "nilai": 77, "percobaan": 2},
+    {"nama": "Adi", "nilai": 91, "percobaan": 1}
 ]
-for mhs in mahasiswa:
-    kategori = deteksi_kesulitan(mhs["nilai"], mhs["waktu"], mhs["percobaan"])
-    print(f"{mhs['nama']} → Kategori: {kategori}")
+for m in mhs:
+    print(f"{m['nama']} → {chatbot_feedback(m['nilai'], m['percobaan'])}")
     
