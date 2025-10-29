@@ -1142,6 +1142,18 @@
 #     print("❌ Username atau password salah!")
 
 # Sistem hitung jumlah kata dalam sebuah kalimat
-kalimat = input("Masukkan kalimat: ")
-jumlah_kata = len(kalimat.split())
-print(f"Jumlah kata: {jumlah_kata}")
+# kalimat = input("Masukkan kalimat: ")
+# jumlah_kata = len(kalimat.split())
+# print(f"Jumlah kata: {jumlah_kata}")
+
+# Sistem memeriksa bilangan prima
+def prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+angka = int(input("Masukkan angka: "))
+print("Prima" if prima(angka) else "Bukan prima")
