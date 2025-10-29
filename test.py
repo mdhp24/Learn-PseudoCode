@@ -1131,12 +1131,17 @@
 # print(f"Rata-rata: {sum(data) / len(data)}")
 
 # Sistem login sederhana dengan username dan password
-akun = {"dicky": "12345", "admin": "admin123"}
+# akun = {"dicky": "12345", "admin": "admin123"}
 
-user = input("Masukkan username: ")
-pwd = input("Masukkan password: ")
+# user = input("Masukkan username: ")
+# pwd = input("Masukkan password: ")
 
-if user in akun and akun[user] == pwd:
-    print("✅ Login berhasil!")
-else:
-    print("❌ Username atau password salah!")
+# if user in akun and akun[user] == pwd:
+#     print("✅ Login berhasil!")
+# else:
+#     print("❌ Username atau password salah!")
+
+# Sistem hitung jumlah kata dalam sebuah kalimat
+kalimat = input("Masukkan kalimat: ")
+jumlah_kata = len(kalimat.split())
+print(f"Jumlah kata: {jumlah_kata}")
