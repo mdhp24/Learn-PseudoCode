@@ -1089,8 +1089,27 @@
 #         print("Tebakan Anda terlalu tinggi.")
         
 # Sistem hitung umur berdasarkan tahun lahir
-from datetime import date
-tahun_lahir = int(input("Masukkan tahun lahir Anda: "))
-tahun_sekarang = date.today().year
-umur = tahun_sekarang - tahun_lahir
-print(f"Umur Anda: {umur} tahun")
+# from datetime import date
+# tahun_lahir = int(input("Masukkan tahun lahir Anda: "))
+# tahun_sekarang = date.today().year
+# umur = tahun_sekarang - tahun_lahir
+# print(f"Umur Anda: {umur} tahun")
+
+# Sistem kalkulator sederhana
+def kalkulator(a, b, operasi):
+    if operasi == '+':
+        return a + b
+    elif operasi == '-':
+        return a - b
+    elif operasi == '*':
+        return a * b
+    elif operasi == '/':
+        return a / b
+    else:
+        return "Operasi tidak dikenal"
+
+a = float(input("Masukkan angka pertama: "))
+b = float(input("Masukkan angka kedua: "))
+op = input("Masukkan operasi (+, -, *, /): ")
+
+print("Hasil:", kalkulator(a, b, op))
