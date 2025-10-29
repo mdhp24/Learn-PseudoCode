@@ -1125,7 +1125,18 @@
 # print(f"Faktorial dari {n} adalah {faktorial(n)}")
 
 # Sistem analisis statistik nilai otomatis
-data = [int(x) for x in input("Masukkan angka (pisahkan dengan spasi): ").split()]
-print(f"Nilai maksimum: {max(data)}")
-print(f"Nilai minimum: {min(data)}")
-print(f"Rata-rata: {sum(data) / len(data)}")
+# data = [int(x) for x in input("Masukkan angka (pisahkan dengan spasi): ").split()]
+# print(f"Nilai maksimum: {max(data)}")
+# print(f"Nilai minimum: {min(data)}")
+# print(f"Rata-rata: {sum(data) / len(data)}")
+
+# Sistem login sederhana dengan username dan password
+akun = {"dicky": "12345", "admin": "admin123"}
+
+user = input("Masukkan username: ")
+pwd = input("Masukkan password: ")
+
+if user in akun and akun[user] == pwd:
+    print("✅ Login berhasil!")
+else:
+    print("❌ Username atau password salah!")
