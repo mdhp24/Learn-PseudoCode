@@ -1115,11 +1115,17 @@
 # print("Hasil:", kalkulator(a, b, op))
 
 # Sistem hitung faktorial dari sebuah angka
-def faktorial(n):
-    if n == 1:
-        return 1
-    else:
-        return n * faktorial(n - 1)
+# def faktorial(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return n * faktorial(n - 1)
 
-n = int(input("Masukkan angka: "))
-print(f"Faktorial dari {n} adalah {faktorial(n)}")
+# n = int(input("Masukkan angka: "))
+# print(f"Faktorial dari {n} adalah {faktorial(n)}")
+
+# Sistem analisis statistik nilai otomatis
+data = [int(x) for x in input("Masukkan angka (pisahkan dengan spasi): ").split()]
+print(f"Nilai maksimum: {max(data)}")
+print(f"Nilai minimum: {min(data)}")
+print(f"Rata-rata: {sum(data) / len(data)}")
