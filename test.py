@@ -1147,13 +1147,31 @@
 # print(f"Jumlah kata: {jumlah_kata}")
 
 # Sistem memeriksa bilangan prima
-def prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-angka = int(input("Masukkan angka: "))
-print("Prima" if prima(angka) else "Bukan prima")
+# angka = int(input("Masukkan angka: "))
+# print("Prima" if prima(angka) else "Bukan prima")
+
+# Sistem kuis sederhana
+soal = {
+    "Apa ibukota Indonesia?": "jakarta",
+    "Berapa hasil 5 * 6?": "30",
+    "Bahasa pemrograman yang digunakan untuk AI?": "python"
+}
+
+skor = 0
+for pertanyaan, jawaban in soal.items():
+    user_jawab = input(pertanyaan + " ").lower()
+    if user_jawab == jawaban:
+        print("Benar ✅")
+        skor += 1
+    else:
+        print("Salah ❌")
+
+print(f"Skor akhir kamu: {skor}/{len(soal)}")
