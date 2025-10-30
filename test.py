@@ -1231,15 +1231,26 @@
 # print(f"Nilai akhir: {rata:.2f} ({kategori})")
 
 # Sistem permainan tebak angka
-import random
-angka_rahasia = random.randint(1, 10)
+# import random
+# angka_rahasia = random.randint(1, 10)
 
-while True:
-    tebak = int(input("Tebak angka (1-10): "))
-    if tebak == angka_rahasia:
-        print("🎉 Tebakan kamu benar!")
-        break
-    elif tebak < angka_rahasia:
-        print("Terlalu kecil!")
-    else:
-        print("Terlalu besar!")
+# while True:
+#     tebak = int(input("Tebak angka (1-10): "))
+#     if tebak == angka_rahasia:
+#         print("🎉 Tebakan kamu benar!")
+#         break
+#     elif tebak < angka_rahasia:
+#         print("Terlalu kecil!")
+#     else:
+#         print("Terlalu besar!")
+
+# Sistem kamus sederhana
+kamus = {
+    "apple": "apel",
+    "car": "mobil",
+    "house": "rumah",
+    "book": "buku"
+}
+
+kata = input("Masukkan kata (inggris): ").lower()
+print(f"Terjemahan: {kamus.get(kata, 'Tidak ditemukan dalam kamus.')}")
