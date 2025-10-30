@@ -1159,19 +1159,28 @@
 # print("Prima" if prima(angka) else "Bukan prima")
 
 # Sistem kuis sederhana
-soal = {
-    "Apa ibukota Indonesia?": "jakarta",
-    "Berapa hasil 5 * 6?": "30",
-    "Bahasa pemrograman yang digunakan untuk AI?": "python"
-}
+# soal = {
+#     "Apa ibukota Indonesia?": "jakarta",
+#     "Berapa hasil 5 * 6?": "30",
+#     "Bahasa pemrograman yang digunakan untuk AI?": "python"
+# }
 
-skor = 0
-for pertanyaan, jawaban in soal.items():
-    user_jawab = input(pertanyaan + " ").lower()
-    if user_jawab == jawaban:
-        print("Benar ✅")
-        skor += 1
-    else:
-        print("Salah ❌")
+# skor = 0
+# for pertanyaan, jawaban in soal.items():
+#     user_jawab = input(pertanyaan + " ").lower()
+#     if user_jawab == jawaban:
+#         print("Benar ✅")
+#         skor += 1
+#     else:
+#         print("Salah ❌")
 
-print(f"Skor akhir kamu: {skor}/{len(soal)}")
+# print(f"Skor akhir kamu: {skor}/{len(soal)}")
+
+# Sistem hitung jumlah huruf vokal dan konsonan
+teks = input("Masukkan kata: ").lower()
+vokal = "aiueo"
+jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
+jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
+
+print(f"Jumlah huruf vokal: {jumlah_vokal}")
+print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
