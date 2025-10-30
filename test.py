@@ -1177,10 +1177,30 @@
 # print(f"Skor akhir kamu: {skor}/{len(soal)}")
 
 # Sistem hitung jumlah huruf vokal dan konsonan
-teks = input("Masukkan kata: ").lower()
-vokal = "aiueo"
-jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
-jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
+# teks = input("Masukkan kata: ").lower()
+# vokal = "aiueo"
+# jumlah_vokal = sum(1 for huruf in teks if huruf in vokal)
+# jumlah_konsonan = sum(1 for huruf in teks if huruf.isalpha() and huruf not in vokal)
 
-print(f"Jumlah huruf vokal: {jumlah_vokal}")
-print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
+# print(f"Jumlah huruf vokal: {jumlah_vokal}")
+# print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
+
+# Sistem stack sederhana menggunakan list
+stack = []
+
+while True:
+    print("\n1. Push\n2. Pop\n3. Lihat Stack\n4. Keluar")
+    pilihan = input("Pilih: ")
+
+    if pilihan == '1':
+        data = input("Masukkan data: ")
+        stack.append(data)
+    elif pilihan == '2':
+        if stack:
+            print("Data dihapus:", stack.pop())
+        else:
+            print("Stack kosong!")
+    elif pilihan == '3':
+        print("Isi stack:", stack)
+    elif pilihan == '4':
+        break
