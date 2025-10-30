@@ -1186,21 +1186,28 @@
 # print(f"Jumlah huruf konsonan: {jumlah_konsonan}")
 
 # Sistem stack sederhana menggunakan list
-stack = []
+# stack = []
 
-while True:
-    print("\n1. Push\n2. Pop\n3. Lihat Stack\n4. Keluar")
-    pilihan = input("Pilih: ")
+# while True:
+#     print("\n1. Push\n2. Pop\n3. Lihat Stack\n4. Keluar")
+#     pilihan = input("Pilih: ")
 
-    if pilihan == '1':
-        data = input("Masukkan data: ")
-        stack.append(data)
-    elif pilihan == '2':
-        if stack:
-            print("Data dihapus:", stack.pop())
-        else:
-            print("Stack kosong!")
-    elif pilihan == '3':
-        print("Isi stack:", stack)
-    elif pilihan == '4':
-        break
+#     if pilihan == '1':
+#         data = input("Masukkan data: ")
+#         stack.append(data)
+#     elif pilihan == '2':
+#         if stack:
+#             print("Data dihapus:", stack.pop())
+#         else:
+#             print("Stack kosong!")
+#     elif pilihan == '3':
+#         print("Isi stack:", stack)
+#     elif pilihan == '4':
+#         break
+
+# konversi desimal ke biner
+def desimal_ke_biner(angka):
+    return bin(angka)[2:]
+
+n = int(input("Masukkan bilangan desimal: "))
+print(f"Bentuk biner: {desimal_ke_biner(n)}")
