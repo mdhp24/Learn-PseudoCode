@@ -1213,19 +1213,33 @@
 # print(f"Bentuk biner: {desimal_ke_biner(n)}")
 
 # sistem penilaian ujian
-uts = float(input("Masukkan nilai UTS: "))
-uas = float(input("Masukkan nilai UAS: "))
-tugas = float(input("Masukkan nilai Tugas: "))
+# uts = float(input("Masukkan nilai UTS: "))
+# uas = float(input("Masukkan nilai UAS: "))
+# tugas = float(input("Masukkan nilai Tugas: "))
 
-rata = (uts + uas + tugas) / 3
+# rata = (uts + uas + tugas) / 3
 
-if rata >= 85:
-    kategori = "Sangat Baik"
-elif rata >= 70:
-    kategori = "Baik"
-elif rata >= 60:
-    kategori = "Cukup"
-else:
-    kategori = "Kurang"
+# if rata >= 85:
+#     kategori = "Sangat Baik"
+# elif rata >= 70:
+#     kategori = "Baik"
+# elif rata >= 60:
+#     kategori = "Cukup"
+# else:
+#     kategori = "Kurang"
 
-print(f"Nilai akhir: {rata:.2f} ({kategori})")
+# print(f"Nilai akhir: {rata:.2f} ({kategori})")
+
+# Sistem permainan tebak angka
+import random
+angka_rahasia = random.randint(1, 10)
+
+while True:
+    tebak = int(input("Tebak angka (1-10): "))
+    if tebak == angka_rahasia:
+        print("🎉 Tebakan kamu benar!")
+        break
+    elif tebak < angka_rahasia:
+        print("Terlalu kecil!")
+    else:
+        print("Terlalu besar!")
