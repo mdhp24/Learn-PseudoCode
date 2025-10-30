@@ -1245,12 +1245,21 @@
 #         print("Terlalu besar!")
 
 # Sistem kamus sederhana
-kamus = {
-    "apple": "apel",
-    "car": "mobil",
-    "house": "rumah",
-    "book": "buku"
-}
+# kamus = {
+#     "apple": "apel",
+#     "car": "mobil",
+#     "house": "rumah",
+#     "book": "buku"
+# }
 
-kata = input("Masukkan kata (inggris): ").lower()
-print(f"Terjemahan: {kamus.get(kata, 'Tidak ditemukan dalam kamus.')}")
+# kata = input("Masukkan kata (inggris): ").lower()
+# print(f"Terjemahan: {kamus.get(kata, 'Tidak ditemukan dalam kamus.')}")
+
+# Sistem penjumlahan matriks
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+
+hasil = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+print("Hasil penjumlahan matriks:")
+for baris in hasil:
+    print(baris)
