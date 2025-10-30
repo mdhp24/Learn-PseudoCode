@@ -1206,8 +1206,26 @@
 #         break
 
 # konversi desimal ke biner
-def desimal_ke_biner(angka):
-    return bin(angka)[2:]
+# def desimal_ke_biner(angka):
+#     return bin(angka)[2:]
 
-n = int(input("Masukkan bilangan desimal: "))
-print(f"Bentuk biner: {desimal_ke_biner(n)}")
+# n = int(input("Masukkan bilangan desimal: "))
+# print(f"Bentuk biner: {desimal_ke_biner(n)}")
+
+# sistem penilaian ujian
+uts = float(input("Masukkan nilai UTS: "))
+uas = float(input("Masukkan nilai UAS: "))
+tugas = float(input("Masukkan nilai Tugas: "))
+
+rata = (uts + uas + tugas) / 3
+
+if rata >= 85:
+    kategori = "Sangat Baik"
+elif rata >= 70:
+    kategori = "Baik"
+elif rata >= 60:
+    kategori = "Cukup"
+else:
+    kategori = "Kurang"
+
+print(f"Nilai akhir: {rata:.2f} ({kategori})")
