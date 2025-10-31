@@ -1288,20 +1288,40 @@
 #         print(i, end=" ")
        
 # Sistem simulasi ATM sederhana 
-saldo = 100000
-while True:
-    print("\nSaldo Anda:", saldo)
-    print("1. Tambah Saldo\n2. Tarik Saldo\n3. Keluar")
-    pilih = input("Pilih menu: ")
+# saldo = 100000
+# while True:
+#     print("\nSaldo Anda:", saldo)
+#     print("1. Tambah Saldo\n2. Tarik Saldo\n3. Keluar")
+#     pilih = input("Pilih menu: ")
 
-    if pilih == "1":
-        jumlah = int(input("Masukkan jumlah: "))
-        saldo += jumlah
-    elif pilih == "2":
-        jumlah = int(input("Masukkan jumlah: "))
-        if jumlah <= saldo:
-            saldo -= jumlah
-        else:
-            print("Saldo tidak cukup!")
-    elif pilih == "3":
-        break
+#     if pilih == "1":
+#         jumlah = int(input("Masukkan jumlah: "))
+#         saldo += jumlah
+#     elif pilih == "2":
+#         jumlah = int(input("Masukkan jumlah: "))
+#         if jumlah <= saldo:
+#             saldo -= jumlah
+#         else:
+#             print("Saldo tidak cukup!")
+#     elif pilih == "3":
+#         break
+
+# Sistem hitung volume bangun ruang
+import math
+
+print("Pilih bangun ruang:")
+print("1. Kubus\n2. Balok\n3. Tabung")
+pilih = input("Pilih: ")
+
+if pilih == "1":
+    sisi = float(input("Masukkan sisi: "))
+    print("Volume Kubus =", sisi ** 3)
+elif pilih == "2":
+    p = float(input("Panjang: "))
+    l = float(input("Lebar: "))
+    t = float(input("Tinggi: "))
+    print("Volume Balok =", p * l * t)
+elif pilih == "3":
+    r = float(input("Jari-jari: "))
+    t = float(input("Tinggi: "))
+    print("Volume Tabung =", math.pi * r**2 * t)
