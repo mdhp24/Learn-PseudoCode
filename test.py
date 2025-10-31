@@ -1338,12 +1338,30 @@
 # print("Angka terbalik:", reversed_num)
 
 # Sistem analisis statistik nilai otomatis
-data = [int(x) for x in input("Masukkan deret angka (pisahkan spasi): ").split()]
+# data = [int(x) for x in input("Masukkan deret angka (pisahkan spasi): ").split()]
 
-rata = sum(data) / len(data)
-maks = max(data)
-minim = min(data)
+# rata = sum(data) / len(data)
+# maks = max(data)
+# minim = min(data)
 
-print(f"Rata-rata: {rata:.2f}")
-print(f"Nilai maksimum: {maks}")
-print(f"Nilai minimum: {minim}")
+# print(f"Rata-rata: {rata:.2f}")
+# print(f"Nilai maksimum: {maks}")
+# print(f"Nilai minimum: {minim}")
+
+# Sistem permainan pertarungan sederhana
+monster_hp = 50
+player_hp = 40
+
+while monster_hp > 0 and player_hp > 0:
+    print(f"\nPlayer HP: {player_hp} | Monster HP: {monster_hp}")
+    serangan = int(input("Masukkan kekuatan serangan (1-10): "))
+    monster_hp -= serangan
+
+    if monster_hp <= 0:
+        print("🎉 Monster dikalahkan!")
+        break
+
+    player_hp -= 5
+    if player_hp <= 0:
+        print("💀 Kamu kalah!")
+        break
