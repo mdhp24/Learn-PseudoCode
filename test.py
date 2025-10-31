@@ -1327,12 +1327,23 @@
 #     print("Volume Tabung =", math.pi * r**2 * t)
 
 # Sistem membalik angka
-angka = int(input("Masukkan angka: "))
-reversed_num = 0
+# angka = int(input("Masukkan angka: "))
+# reversed_num = 0
 
-while angka > 0:
-    sisa = angka % 10
-    reversed_num = reversed_num * 10 + sisa
-    angka //= 10
+# while angka > 0:
+#     sisa = angka % 10
+#     reversed_num = reversed_num * 10 + sisa
+#     angka //= 10
 
-print("Angka terbalik:", reversed_num)
+# print("Angka terbalik:", reversed_num)
+
+# Sistem analisis statistik nilai otomatis
+data = [int(x) for x in input("Masukkan deret angka (pisahkan spasi): ").split()]
+
+rata = sum(data) / len(data)
+maks = max(data)
+minim = min(data)
+
+print(f"Rata-rata: {rata:.2f}")
+print(f"Nilai maksimum: {maks}")
+print(f"Nilai minimum: {minim}")
