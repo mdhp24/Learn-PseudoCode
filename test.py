@@ -1273,16 +1273,35 @@
 # print(f"Jumlah angka: {angka}")
 
 # Sistem menampilkan bilangan prima dalam rentang tertentu
-def prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-batas = int(input("Masukkan batas angka: "))
-print("Bilangan prima dari 1 sampai", batas, "adalah:")
-for i in range(1, batas + 1):
-    if prima(i):
-        print(i, end=" ")
+# batas = int(input("Masukkan batas angka: "))
+# print("Bilangan prima dari 1 sampai", batas, "adalah:")
+# for i in range(1, batas + 1):
+#     if prima(i):
+#         print(i, end=" ")
+       
+# Sistem simulasi ATM sederhana 
+saldo = 100000
+while True:
+    print("\nSaldo Anda:", saldo)
+    print("1. Tambah Saldo\n2. Tarik Saldo\n3. Keluar")
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        jumlah = int(input("Masukkan jumlah: "))
+        saldo += jumlah
+    elif pilih == "2":
+        jumlah = int(input("Masukkan jumlah: "))
+        if jumlah <= saldo:
+            saldo -= jumlah
+        else:
+            print("Saldo tidak cukup!")
+    elif pilih == "3":
+        break
