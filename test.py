@@ -1307,21 +1307,32 @@
 #         break
 
 # Sistem hitung volume bangun ruang
-import math
+# import math
 
-print("Pilih bangun ruang:")
-print("1. Kubus\n2. Balok\n3. Tabung")
-pilih = input("Pilih: ")
+# print("Pilih bangun ruang:")
+# print("1. Kubus\n2. Balok\n3. Tabung")
+# pilih = input("Pilih: ")
 
-if pilih == "1":
-    sisi = float(input("Masukkan sisi: "))
-    print("Volume Kubus =", sisi ** 3)
-elif pilih == "2":
-    p = float(input("Panjang: "))
-    l = float(input("Lebar: "))
-    t = float(input("Tinggi: "))
-    print("Volume Balok =", p * l * t)
-elif pilih == "3":
-    r = float(input("Jari-jari: "))
-    t = float(input("Tinggi: "))
-    print("Volume Tabung =", math.pi * r**2 * t)
+# if pilih == "1":
+#     sisi = float(input("Masukkan sisi: "))
+#     print("Volume Kubus =", sisi ** 3)
+# elif pilih == "2":
+#     p = float(input("Panjang: "))
+#     l = float(input("Lebar: "))
+#     t = float(input("Tinggi: "))
+#     print("Volume Balok =", p * l * t)
+# elif pilih == "3":
+#     r = float(input("Jari-jari: "))
+#     t = float(input("Tinggi: "))
+#     print("Volume Tabung =", math.pi * r**2 * t)
+
+# Sistem membalik angka
+angka = int(input("Masukkan angka: "))
+reversed_num = 0
+
+while angka > 0:
+    sisa = angka % 10
+    reversed_num = reversed_num * 10 + sisa
+    angka //= 10
+
+print("Angka terbalik:", reversed_num)
