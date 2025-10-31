@@ -1265,9 +1265,24 @@
 #     print(baris)
 
 # Sistem hitung jumlah huruf dan angka dalam teks
-teks = input("Masukkan teks campuran: ")
-huruf = sum(1 for c in teks if c.isalpha())
-angka = sum(1 for c in teks if c.isdigit())
+# teks = input("Masukkan teks campuran: ")
+# huruf = sum(1 for c in teks if c.isalpha())
+# angka = sum(1 for c in teks if c.isdigit())
 
-print(f"Jumlah huruf: {huruf}")
-print(f"Jumlah angka: {angka}")
+# print(f"Jumlah huruf: {huruf}")
+# print(f"Jumlah angka: {angka}")
+
+# Sistem menampilkan bilangan prima dalam rentang tertentu
+def prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+batas = int(input("Masukkan batas angka: "))
+print("Bilangan prima dari 1 sampai", batas, "adalah:")
+for i in range(1, batas + 1):
+    if prima(i):
+        print(i, end=" ")
