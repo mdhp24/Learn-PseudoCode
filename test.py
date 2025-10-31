@@ -1256,10 +1256,18 @@
 # print(f"Terjemahan: {kamus.get(kata, 'Tidak ditemukan dalam kamus.')}")
 
 # Sistem penjumlahan matriks
-A = [[1, 2], [3, 4]]
-B = [[5, 6], [7, 8]]
+# A = [[1, 2], [3, 4]]
+# B = [[5, 6], [7, 8]]
 
-hasil = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
-print("Hasil penjumlahan matriks:")
-for baris in hasil:
-    print(baris)
+# hasil = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+# print("Hasil penjumlahan matriks:")
+# for baris in hasil:
+#     print(baris)
+
+# Sistem hitung jumlah huruf dan angka dalam teks
+teks = input("Masukkan teks campuran: ")
+huruf = sum(1 for c in teks if c.isalpha())
+angka = sum(1 for c in teks if c.isdigit())
+
+print(f"Jumlah huruf: {huruf}")
+print(f"Jumlah angka: {angka}")
