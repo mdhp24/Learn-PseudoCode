@@ -1406,11 +1406,22 @@
 #     print(fibonacci(i), end=" ")
 
 # Simulasi Lempar Dadu
-import random
+# import random
 
-while True:
-    roll = random.randint(1, 6)
-    print("🎲 Kamu mendapatkan angka:", roll)
-    lagi = input("Lempar lagi? (y/n): ")
-    if lagi.lower() != 'y':
-        break
+# while True:
+#     roll = random.randint(1, 6)
+#     print("🎲 Kamu mendapatkan angka:", roll)
+#     lagi = input("Lempar lagi? (y/n): ")
+#     if lagi.lower() != 'y':
+#         break
+    
+ # Sistem login sederhana dengan username dan password   
+akun = {"user1": "1234", "admin": "adminpass"}
+
+username = input("Masukkan username: ")
+password = input("Masukkan password: ")
+
+if username in akun and akun[username] == password:
+    print("✅ Login berhasil! Selamat datang,", username)
+else:
+    print("❌ Username atau password salah!")
