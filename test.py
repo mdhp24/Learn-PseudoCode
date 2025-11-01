@@ -1396,11 +1396,21 @@
 #     print(file.read())
 
 # Menampilkan Deret Fibonacci
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+# def fibonacci(n):
+#     if n <= 1:
+#         return n
+#     return fibonacci(n - 1) + fibonacci(n - 2)
 
-batas = int(input("Masukkan jumlah deret Fibonacci: "))
-for i in range(batas):
-    print(fibonacci(i), end=" ")
+# batas = int(input("Masukkan jumlah deret Fibonacci: "))
+# for i in range(batas):
+#     print(fibonacci(i), end=" ")
+
+# Simulasi Lempar Dadu
+import random
+
+while True:
+    roll = random.randint(1, 6)
+    print("🎲 Kamu mendapatkan angka:", roll)
+    lagi = input("Lempar lagi? (y/n): ")
+    if lagi.lower() != 'y':
+        break
