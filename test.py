@@ -1385,12 +1385,22 @@
 #     print(f"{k}: {v} kali")
 
 # Sistem menyimpan dan menampilkan data dari file
-nama_file = "catatan.txt"
-tulis = input("Tulis sesuatu untuk disimpan di file: ")
+# nama_file = "catatan.txt"
+# tulis = input("Tulis sesuatu untuk disimpan di file: ")
 
-with open(nama_file, "w") as file:
-    file.write(tulis)
+# with open(nama_file, "w") as file:
+#     file.write(tulis)
 
-print("Isi file:")
-with open(nama_file, "r") as file:
-    print(file.read())
+# print("Isi file:")
+# with open(nama_file, "r") as file:
+#     print(file.read())
+
+# Menampilkan Deret Fibonacci
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+batas = int(input("Masukkan jumlah deret Fibonacci: "))
+for i in range(batas):
+    print(fibonacci(i), end=" ")
