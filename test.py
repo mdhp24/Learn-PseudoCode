@@ -1416,12 +1416,33 @@
 #         break
     
  # Sistem login sederhana dengan username dan password   
-akun = {"user1": "1234", "admin": "adminpass"}
+# akun = {"user1": "1234", "admin": "adminpass"}
 
-username = input("Masukkan username: ")
-password = input("Masukkan password: ")
+# username = input("Masukkan username: ")
+# password = input("Masukkan password: ")
 
-if username in akun and akun[username] == password:
-    print("✅ Login berhasil! Selamat datang,", username)
-else:
-    print("❌ Username atau password salah!")
+# if username in akun and akun[username] == password:
+#     print("✅ Login berhasil! Selamat datang,", username)
+# else:
+#     print("❌ Username atau password salah!")
+
+# Sistem to-do list sederhana
+tugas = []
+
+while True:
+    print("\n1. Tambah Tugas\n2. Lihat Tugas\n3. Hapus Tugas\n4. Keluar")
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        isi = input("Masukkan nama tugas: ")
+        tugas.append(isi)
+    elif pilih == "2":
+        print("Daftar tugas:")
+        for i, t in enumerate(tugas, 1):
+            print(f"{i}. {t}")
+    elif pilih == "3":
+        no = int(input("Nomor tugas yang dihapus: "))
+        if 0 < no <= len(tugas):
+            del tugas[no - 1]
+    elif pilih == "4":
+        break
