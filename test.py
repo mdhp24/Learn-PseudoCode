@@ -1367,8 +1367,19 @@
 #         
 
 # Sistem palindrom deteksi
-kata = input("Masukkan kata: ").lower().replace(" ", "")
-if kata == kata[::-1]:
-    print("Kata ini adalah palindrom!")
-else:
-    print("Bukan palindrom.")
+# kata = input("Masukkan kata: ").lower().replace(" ", "")
+# if kata == kata[::-1]:
+#     print("Kata ini adalah palindrom!")
+# else:
+#     print("Bukan palindrom.")
+    
+# Sistem hitung frekuensi kata dalam kalimat
+teks = input("Masukkan kalimat: ").lower().split()
+frekuensi = {}
+
+for kata in teks:
+    frekuensi[kata] = frekuensi.get(kata, 0) + 1
+
+print("Frekuensi tiap kata:")
+for k, v in frekuensi.items():
+    print(f"{k}: {v} kali")
