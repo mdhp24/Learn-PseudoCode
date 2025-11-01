@@ -1374,12 +1374,23 @@
 #     print("Bukan palindrom.")
     
 # Sistem hitung frekuensi kata dalam kalimat
-teks = input("Masukkan kalimat: ").lower().split()
-frekuensi = {}
+# teks = input("Masukkan kalimat: ").lower().split()
+# frekuensi = {}
 
-for kata in teks:
-    frekuensi[kata] = frekuensi.get(kata, 0) + 1
+# for kata in teks:
+#     frekuensi[kata] = frekuensi.get(kata, 0) + 1
 
-print("Frekuensi tiap kata:")
-for k, v in frekuensi.items():
-    print(f"{k}: {v} kali")
+# print("Frekuensi tiap kata:")
+# for k, v in frekuensi.items():
+#     print(f"{k}: {v} kali")
+
+# Sistem menyimpan dan menampilkan data dari file
+nama_file = "catatan.txt"
+tulis = input("Tulis sesuatu untuk disimpan di file: ")
+
+with open(nama_file, "w") as file:
+    file.write(tulis)
+
+print("Isi file:")
+with open(nama_file, "r") as file:
+    print(file.read())
