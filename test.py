@@ -1457,14 +1457,23 @@
 # print(f"Faktorial dari {n} adalah {hasil}")
 
 # sistem menampilkan bilangan prima dalam rentang tertentu
-batas = int(input("Masukkan batas angka: "))
-print(f"Bilangan prima dari 1 sampai {batas} adalah:")
-for num in range(2, batas + 1):
-    is_prima = True
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            is_prima = False
-            break
-    if is_prima:
-        print(num, end=" ")
+# batas = int(input("Masukkan batas angka: "))
+# print(f"Bilangan prima dari 1 sampai {batas} adalah:")
+# for num in range(2, batas + 1):
+#     is_prima = True
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num % i == 0:
+#             is_prima = False
+#             break
+#     if is_prima:
+#         print(num, end=" ")
+
+# sistem membalik kalimat
+kalimat = input("Masukkan kalimat: ")
+reversed_text = ""
+for char in kalimat:
+    reversed_text = char + reversed_text
+
+print("Kalimat terbalik:", reversed_text)
+
         
