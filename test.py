@@ -1469,11 +1469,21 @@
 #         print(num, end=" ")
 
 # sistem membalik kalimat
-kalimat = input("Masukkan kalimat: ")
-reversed_text = ""
-for char in kalimat:
-    reversed_text = char + reversed_text
+# kalimat = input("Masukkan kalimat: ")
+# reversed_text = ""
+# for char in kalimat:
+#     reversed_text = char + reversed_text
 
-print("Kalimat terbalik:", reversed_text)
+# print("Kalimat terbalik:", reversed_text)
 
+# Sistem operasi pecahan dasar
+from fractions import Fraction
+
+a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+
+print("Hasil penjumlahan:", a + b)
+print("Hasil pengurangan:", a - b)
+print("Hasil perkalian:", a * b)
+print("Hasil pembagian:", a / b)
         
