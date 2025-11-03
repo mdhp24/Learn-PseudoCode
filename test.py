@@ -1427,22 +1427,31 @@
 #     print("❌ Username atau password salah!")
 
 # Sistem to-do list sederhana
-tugas = []
+# tugas = []
 
-while True:
-    print("\n1. Tambah Tugas\n2. Lihat Tugas\n3. Hapus Tugas\n4. Keluar")
-    pilih = input("Pilih menu: ")
+# while True:
+#     print("\n1. Tambah Tugas\n2. Lihat Tugas\n3. Hapus Tugas\n4. Keluar")
+#     pilih = input("Pilih menu: ")
 
-    if pilih == "1":
-        isi = input("Masukkan nama tugas: ")
-        tugas.append(isi)
-    elif pilih == "2":
-        print("Daftar tugas:")
-        for i, t in enumerate(tugas, 1):
-            print(f"{i}. {t}")
-    elif pilih == "3":
-        no = int(input("Nomor tugas yang dihapus: "))
-        if 0 < no <= len(tugas):
-            del tugas[no - 1]
-    elif pilih == "4":
-        break
+#     if pilih == "1":
+#         isi = input("Masukkan nama tugas: ")
+#         tugas.append(isi)
+#     elif pilih == "2":
+#         print("Daftar tugas:")
+#         for i, t in enumerate(tugas, 1):
+#             print(f"{i}. {t}")
+#     elif pilih == "3":
+#         no = int(input("Nomor tugas yang dihapus: "))
+#         if 0 < no <= len(tugas):
+#             del tugas[no - 1]
+#     elif pilih == "4":
+#         break
+
+# sistem hitung faktorial dari sebuah angka
+n = int(input("Masukkan angka: "))
+hasil = 1
+
+for i in range(1, n + 1):
+    hasil *= i
+
+print(f"Faktorial dari {n} adalah {hasil}")
