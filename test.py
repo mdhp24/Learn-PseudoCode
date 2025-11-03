@@ -1448,10 +1448,23 @@
 #         break
 
 # sistem hitung faktorial dari sebuah angka
-n = int(input("Masukkan angka: "))
-hasil = 1
+# n = int(input("Masukkan angka: "))
+# hasil = 1
 
-for i in range(1, n + 1):
-    hasil *= i
+# for i in range(1, n + 1):
+#     hasil *= i
 
-print(f"Faktorial dari {n} adalah {hasil}")
+# print(f"Faktorial dari {n} adalah {hasil}")
+
+# sistem menampilkan bilangan prima dalam rentang tertentu
+batas = int(input("Masukkan batas angka: "))
+print(f"Bilangan prima dari 1 sampai {batas} adalah:")
+for num in range(2, batas + 1):
+    is_prima = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prima = False
+            break
+    if is_prima:
+        print(num, end=" ")
+        
