@@ -1477,13 +1477,29 @@
 # print("Kalimat terbalik:", reversed_text)
 
 # Sistem operasi pecahan dasar
-from fractions import Fraction
+# from fractions import Fraction
 
-a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
-b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+# a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+# b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
 
-print("Hasil penjumlahan:", a + b)
-print("Hasil pengurangan:", a - b)
-print("Hasil perkalian:", a * b)
-print("Hasil pembagian:", a / b)
+# print("Hasil penjumlahan:", a + b)
+# print("Hasil pengurangan:", a - b)
+# print("Hasil perkalian:", a * b)
+# print("Hasil pembagian:", a / b)
         
+# Sistem konversi suhu derajat Celsius ke Fahrenheit dan Kelvin
+print("1. Celsius ke Fahrenheit")
+print("2. Fahrenheit ke Celsius")
+print("3. Celsius ke Kelvin")
+
+pilihan = input("Pilih konversi: ")
+
+if pilihan == "1":
+    c = float(input("Masukkan suhu (°C): "))
+    print(f"Hasil: {c * 9/5 + 32} °F")
+elif pilihan == "2":
+    f = float(input("Masukkan suhu (°F): "))
+    print(f"Hasil: {(f - 32) * 5/9} °C")
+elif pilihan == "3":
+    c = float(input("Masukkan suhu (°C): "))
+    print(f"Hasil: {c + 273.15} K")
