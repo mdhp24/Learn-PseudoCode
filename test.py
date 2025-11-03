@@ -1505,17 +1505,31 @@
 #     print(f"Hasil: {c + 273.15} K")
 
 # Sistem enkripsi teks menggunakan metode Caesar Cipher
-def caesar_cipher(teks, shift):
-    hasil = ""
-    for huruf in teks:
-        if huruf.isalpha():
-            ascii_offset = 65 if huruf.isupper() else 97
-            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
-        else:
-            hasil += huruf
-    return hasil
+# def caesar_cipher(teks, shift):
+#     hasil = ""
+#     for huruf in teks:
+#         if huruf.isalpha():
+#             ascii_offset = 65 if huruf.isupper() else 97
+#             hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+#         else:
+#             hasil += huruf
+#     return hasil
 
-pesan = input("Masukkan teks: ")
-geser = int(input("Geser berapa huruf: "))
-print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+# pesan = input("Masukkan teks: ")
+# geser = int(input("Geser berapa huruf: "))
+# print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+
+# Sistem chatbot sederhana
+while True:
+    tanya = input("Kamu: ").lower()
+    if "halo" in tanya:
+        print("Bot: Hai juga! Apa kabar?")
+    elif "kabarmu" in tanya:
+        print("Bot: Aku baik, terima kasih sudah bertanya 😊")
+    elif "bye" in tanya:
+        print("Bot: Sampai jumpa lagi!")
+        break
+    else:
+        print("Bot: Aku belum paham maksudmu.")
+
 
