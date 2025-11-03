@@ -1488,18 +1488,34 @@
 # print("Hasil pembagian:", a / b)
         
 # Sistem konversi suhu derajat Celsius ke Fahrenheit dan Kelvin
-print("1. Celsius ke Fahrenheit")
-print("2. Fahrenheit ke Celsius")
-print("3. Celsius ke Kelvin")
+# print("1. Celsius ke Fahrenheit")
+# print("2. Fahrenheit ke Celsius")
+# print("3. Celsius ke Kelvin")
 
-pilihan = input("Pilih konversi: ")
+# pilihan = input("Pilih konversi: ")
 
-if pilihan == "1":
-    c = float(input("Masukkan suhu (°C): "))
-    print(f"Hasil: {c * 9/5 + 32} °F")
-elif pilihan == "2":
-    f = float(input("Masukkan suhu (°F): "))
-    print(f"Hasil: {(f - 32) * 5/9} °C")
-elif pilihan == "3":
-    c = float(input("Masukkan suhu (°C): "))
-    print(f"Hasil: {c + 273.15} K")
+# if pilihan == "1":
+#     c = float(input("Masukkan suhu (°C): "))
+#     print(f"Hasil: {c * 9/5 + 32} °F")
+# elif pilihan == "2":
+#     f = float(input("Masukkan suhu (°F): "))
+#     print(f"Hasil: {(f - 32) * 5/9} °C")
+# elif pilihan == "3":
+#     c = float(input("Masukkan suhu (°C): "))
+#     print(f"Hasil: {c + 273.15} K")
+
+# Sistem enkripsi teks menggunakan metode Caesar Cipher
+def caesar_cipher(teks, shift):
+    hasil = ""
+    for huruf in teks:
+        if huruf.isalpha():
+            ascii_offset = 65 if huruf.isupper() else 97
+            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+        else:
+            hasil += huruf
+    return hasil
+
+pesan = input("Masukkan teks: ")
+geser = int(input("Geser berapa huruf: "))
+print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+
