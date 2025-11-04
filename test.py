@@ -1596,10 +1596,34 @@
 #     print("Produk tidak ditemukan.")
 
 # Sistem kembalian pembayaran di toko gym
-harga = int(input("Masukkan total harga belanja: "))
-bayar = int(input("Masukkan uang yang dibayarkan: "))
+# harga = int(input("Masukkan total harga belanja: "))
+# bayar = int(input("Masukkan uang yang dibayarkan: "))
 
-if bayar < harga:
-    print("⚠️ Uang tidak cukup!")
-else:
-    print(f"Kembalian Anda: Rp{bayar - harga}")
+# if bayar < harga:
+#     print("⚠️ Uang tidak cukup!")
+# else:
+#     print(f"Kembalian Anda: Rp{bayar - harga}")
+
+# Sistem member dengan diskon di toko gym
+class Member:
+    def __init__(self, nama, level):
+        self.nama = nama
+        self.level = level
+
+    def get_diskon(self):
+        if self.level == "gold":
+            return 0.2
+        elif self.level == "silver":
+            return 0.1
+        else:
+            return 0
+
+nama = input("Masukkan nama Anda: ")
+level = input("Masukkan level member (gold/silver/reguler): ").lower()
+
+member = Member(nama, level)
+total = int(input("Masukkan total belanja: "))
+total_bayar = total - (total * member.get_diskon())
+
+print(f"\nMember {member.nama} ({member.level}) mendapat diskon {member.get_diskon()*100:.0f}%")
+print(f"Total bayar akhir: Rp{total_bayar:.0f}")
