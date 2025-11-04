@@ -1569,12 +1569,29 @@
 #     print(f"{nama:15} : Rp. {harga}")
 
 # Sistem pembelian produk toko gym
-produk = {"Dumbbell": 150000, "Yoga Mat": 100000, "Pull Up Bar": 250000, "Protein Shake": 300000}
+# produk = {"Dumbbell": 150000, "Yoga Mat": 100000, "Pull Up Bar": 250000, "Protein Shake": 300000}
 
-pilihan = input("Pilih produk yang ingin dibeli: ")
+# pilihan = input("Pilih produk yang ingin dibeli: ")
+# if pilihan in produk:
+#     jumlah = int(input("Masukkan jumlah barang: "))
+#     total = produk[pilihan] * jumlah
+#     print(f"Total harga: Rp{total}")
+# else:
+#     print("Produk tidak tersedia.")
+
+# Sistem pembelian dengan diskon di toko gym
+produk = {"Treadmill": 3000000, "Sepeda Statis": 2500000, "Kettlebell": 200000}
+
+pilihan = input("Masukkan produk yang dibeli: ")
+jumlah = int(input("Masukkan jumlah: "))
+
 if pilihan in produk:
-    jumlah = int(input("Masukkan jumlah barang: "))
     total = produk[pilihan] * jumlah
-    print(f"Total harga: Rp{total}")
+    if total > 1000000:
+        diskon = total * 0.1
+        total -= diskon
+        print(f"Dapat diskon Rp{diskon:.0f}!")
+    print(f"Total bayar: Rp{total:.0f}")
 else:
-    print("Produk tidak tersedia.")
+    print("Produk tidak ditemukan.")
+
