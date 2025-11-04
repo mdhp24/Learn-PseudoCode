@@ -1520,16 +1520,39 @@
 # print("Teks terenkripsi:", caesar_cipher(pesan, geser))
 
 # Sistem chatbot sederhana
+# while True:
+#     tanya = input("Kamu: ").lower()
+#     if "halo" in tanya:
+#         print("Bot: Hai juga! Apa kabar?")
+#     elif "kabarmu" in tanya:
+#         print("Bot: Aku baik, terima kasih sudah bertanya 😊")
+#     elif "bye" in tanya:
+#         print("Bot: Sampai jumpa lagi!")
+#         break
+#     else:
+#         print("Bot: Aku belum paham maksudmu.")
+
+# sistem antrian toko sederhana
+from collections import deque
+antrian = deque()
 while True:
-    tanya = input("Kamu: ").lower()
-    if "halo" in tanya:
-        print("Bot: Hai juga! Apa kabar?")
-    elif "kabarmu" in tanya:
-        print("Bot: Aku baik, terima kasih sudah bertanya 😊")
-    elif "bye" in tanya:
-        print("Bot: Sampai jumpa lagi!")
+    print("\n1. Tambah Antrian\n2. Layani Antrian\n3. Lihat Antrian\n4. Keluar")
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        nama = input("Masukkan nama pelanggan: ")
+        antrian.append(nama)
+        print(f"{nama} ditambahkan ke antrian.")
+    elif pilih == "2":
+        if antrian:
+            dilayani = antrian.popleft()
+            print(f"{dilayani} telah dilayani.")
+        else:
+            print("Antrian kosong!")
+    elif pilih == "3":
+        print("Daftar antrian saat ini:")
+        for i, nama in enumerate(antrian, 1):
+            print(f"{i}. {nama}")
+    elif pilih == "4":
         break
-    else:
-        print("Bot: Aku belum paham maksudmu.")
-
-
+    
