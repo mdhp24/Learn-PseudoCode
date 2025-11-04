@@ -1557,15 +1557,24 @@
 #         break
 
 # Sistem daftar produk toko gym
-produk = {
-    "Dumbbell": 150000,
-    "Yoga Mat": 100000,
-    "Pull Up Bar": 250000,
-    "Protein Shake": 300000
-}
+# produk = {
+#     "Dumbbell": 150000,
+#     "Yoga Mat": 100000,
+#     "Pull Up Bar": 250000,
+#     "Protein Shake": 300000
+# }
 
-print("=== DAFTAR PRODUK TOKO GYM ===")
-for nama, harga in produk.items():
-    print(f"{nama:15} : Rp. {harga}")
+# print("=== DAFTAR PRODUK TOKO GYM ===")
+# for nama, harga in produk.items():
+#     print(f"{nama:15} : Rp. {harga}")
 
-    
+# Sistem pembelian produk toko gym
+produk = {"Dumbbell": 150000, "Yoga Mat": 100000, "Pull Up Bar": 250000, "Protein Shake": 300000}
+
+pilihan = input("Pilih produk yang ingin dibeli: ")
+if pilihan in produk:
+    jumlah = int(input("Masukkan jumlah barang: "))
+    total = produk[pilihan] * jumlah
+    print(f"Total harga: Rp{total}")
+else:
+    print("Produk tidak tersedia.")
