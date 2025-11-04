@@ -1605,25 +1605,46 @@
 #     print(f"Kembalian Anda: Rp{bayar - harga}")
 
 # Sistem member dengan diskon di toko gym
-class Member:
-    def __init__(self, nama, level):
-        self.nama = nama
-        self.level = level
+# class Member:
+#     def __init__(self, nama, level):
+#         self.nama = nama
+#         self.level = level
 
-    def get_diskon(self):
-        if self.level == "gold":
-            return 0.2
-        elif self.level == "silver":
-            return 0.1
-        else:
-            return 0
+#     def get_diskon(self):
+#         if self.level == "gold":
+#             return 0.2
+#         elif self.level == "silver":
+#             return 0.1
+#         else:
+#             return 0
 
-nama = input("Masukkan nama Anda: ")
-level = input("Masukkan level member (gold/silver/reguler): ").lower()
+# nama = input("Masukkan nama Anda: ")
+# level = input("Masukkan level member (gold/silver/reguler): ").lower()
 
-member = Member(nama, level)
-total = int(input("Masukkan total belanja: "))
-total_bayar = total - (total * member.get_diskon())
+# member = Member(nama, level)
+# total = int(input("Masukkan total belanja: "))
+# total_bayar = total - (total * member.get_diskon())
 
-print(f"\nMember {member.nama} ({member.level}) mendapat diskon {member.get_diskon()*100:.0f}%")
-print(f"Total bayar akhir: Rp{total_bayar:.0f}")
+# print(f"\nMember {member.nama} ({member.level}) mendapat diskon {member.get_diskon()*100:.0f}%")
+# print(f"Total bayar akhir: Rp{total_bayar:.0f}")
+
+# Sistem pembelian produk dengan keranjang di toko gym
+produk = {"Gloves": 75000, "Jump Rope": 50000, "Whey Protein": 350000}
+keranjang = []
+total = 0
+
+while True:
+    print("\nProduk tersedia:", list(produk.keys()))
+    pilih = input("Pilih produk (atau ketik 'selesai'): ")
+
+    if pilih == "selesai":
+        break
+    elif pilih in produk:
+        keranjang.append(pilih)
+        total += produk[pilih]
+        print(f"{pilih} ditambahkan ke keranjang.")
+    else:
+        print("Produk tidak tersedia.")
+
+print("\n🧾 Daftar belanja:", keranjang)
+print(f"Total bayar: Rp{total}")
