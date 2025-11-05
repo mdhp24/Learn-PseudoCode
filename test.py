@@ -1629,22 +1629,30 @@
 # print(f"Total bayar akhir: Rp{total_bayar:.0f}")
 
 # Sistem pembelian produk dengan keranjang di toko gym
-produk = {"Gloves": 75000, "Jump Rope": 50000, "Whey Protein": 350000}
-keranjang = []
-total = 0
+# produk = {"Gloves": 75000, "Jump Rope": 50000, "Whey Protein": 350000}
+# keranjang = []
+# total = 0
 
-while True:
-    print("\nProduk tersedia:", list(produk.keys()))
-    pilih = input("Pilih produk (atau ketik 'selesai'): ")
+# while True:
+#     print("\nProduk tersedia:", list(produk.keys()))
+#     pilih = input("Pilih produk (atau ketik 'selesai'): ")
 
-    if pilih == "selesai":
-        break
-    elif pilih in produk:
-        keranjang.append(pilih)
-        total += produk[pilih]
-        print(f"{pilih} ditambahkan ke keranjang.")
-    else:
-        print("Produk tidak tersedia.")
+#     if pilih == "selesai":
+#         break
+#     elif pilih in produk:
+#         keranjang.append(pilih)
+#         total += produk[pilih]
+#         print(f"{pilih} ditambahkan ke keranjang.")
+#     else:
+#         print("Produk tidak tersedia.")
 
-print("\n🧾 Daftar belanja:", keranjang)
-print(f"Total bayar: Rp{total}")
+# print("\n🧾 Daftar belanja:", keranjang)
+# print(f"Total bayar: Rp{total}")
+
+
+# sistem hitung volume bola
+import math
+radius = float(input("Masukkan jari-jari bola: "))
+volume = (4/3) * math.pi * radius**3
+print(f"Volume bola dengan jari-jari {radius} adalah {volume}")
+
