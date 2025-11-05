@@ -1673,16 +1673,40 @@
 # print("Hasil pembagian:", a / b)
 
 # sistem enkripsi teks menggunakan metode Caesar Cipher
-def caesar_cipher(teks, shift):
-    hasil = ""
-    for huruf in teks:
-        if huruf.isalpha():
-            ascii_offset = 65 if huruf.isupper() else 97
-            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
-        else:
-            hasil += huruf
-    return hasil
-pesan = input("Masukkan teks: ")
-geser = int(input("Geser berapa huruf: "))
-print("Hasil enkripsi:", caesar_cipher(pesan, geser))
+# def caesar_cipher(teks, shift):
+#     hasil = ""
+#     for huruf in teks:
+#         if huruf.isalpha():
+#             ascii_offset = 65 if huruf.isupper() else 97
+#             hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+#         else:
+#             hasil += huruf
+#     return hasil
+# pesan = input("Masukkan teks: ")
+# geser = int(input("Geser berapa huruf: "))
+# print("Hasil enkripsi:", caesar_cipher(pesan, geser))
 
+# sistem antrian toko sederhana
+from collections import deque
+antrian = deque()
+while True:
+    print("\n1. Tambah Antrian\n2. Layani Antrian\n3. Lihat Antrian\n4. Keluar")
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        nama = input("Masukkan nama pelanggan: ")
+        antrian.append(nama)
+        print(f"{nama} ditambahkan ke antrian.")
+    elif pilih == "2":
+        if antrian:
+            dilayani = antrian.popleft()
+            print(f"{dilayani} telah dilayani.")
+        else:
+            print("Antrian kosong!")
+    elif pilih == "3":
+        print("Daftar antrian saat ini:")
+        for i, nama in enumerate(antrian, 1):
+            print(f"{i}. {nama}")
+    elif pilih == "4":
+        break
+    print("Terima kasih telah menggunakan sistem antrian kami!")
