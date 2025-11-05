@@ -1687,26 +1687,37 @@
 # print("Hasil enkripsi:", caesar_cipher(pesan, geser))
 
 # sistem antrian toko sederhana
-from collections import deque
-antrian = deque()
-while True:
-    print("\n1. Tambah Antrian\n2. Layani Antrian\n3. Lihat Antrian\n4. Keluar")
-    pilih = input("Pilih menu: ")
+# from collections import deque
+# antrian = deque()
+# while True:
+#     print("\n1. Tambah Antrian\n2. Layani Antrian\n3. Lihat Antrian\n4. Keluar")
+#     pilih = input("Pilih menu: ")
 
-    if pilih == "1":
-        nama = input("Masukkan nama pelanggan: ")
-        antrian.append(nama)
-        print(f"{nama} ditambahkan ke antrian.")
-    elif pilih == "2":
-        if antrian:
-            dilayani = antrian.popleft()
-            print(f"{dilayani} telah dilayani.")
-        else:
-            print("Antrian kosong!")
-    elif pilih == "3":
-        print("Daftar antrian saat ini:")
-        for i, nama in enumerate(antrian, 1):
-            print(f"{i}. {nama}")
-    elif pilih == "4":
-        break
-    print("Terima kasih telah menggunakan sistem antrian kami!")
+#     if pilih == "1":
+#         nama = input("Masukkan nama pelanggan: ")
+#         antrian.append(nama)
+#         print(f"{nama} ditambahkan ke antrian.")
+#     elif pilih == "2":
+#         if antrian:
+#             dilayani = antrian.popleft()
+#             print(f"{dilayani} telah dilayani.")
+#         else:
+#             print("Antrian kosong!")
+#     elif pilih == "3":
+#         print("Daftar antrian saat ini:")
+#         for i, nama in enumerate(antrian, 1):
+#             print(f"{i}. {nama}")
+#     elif pilih == "4":
+#         break
+#     print("Terima kasih telah menggunakan sistem antrian kami!")
+
+# Sistem daftar produk toko gym
+data_produk = {
+    "Dumbbell": 150000,
+    "Yoga Mat": 100000,
+    "Pull Up Bar": 250000,
+    "Protein Shake": 300000
+}
+print("=== DAFTAR PRODUK TOKO GYM ===")
+for nama, harga in data_produk.items():
+    print(f"{nama:15} : Rp. {harga}")
