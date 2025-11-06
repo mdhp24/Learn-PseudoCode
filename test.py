@@ -1804,9 +1804,18 @@
 # print(f"Volume bola dengan jari-jari {radius} adalah {volume}")
 
 # sistem palindrom deteksi
-kata = input("Masukkan kata: ").lower().replace(" ", "")
-if kata == kata[::-1]:
-    print("Kata ini adalah palindrom!")
-else:
-    print("Bukan palindrom")
+# kata = input("Masukkan kata: ").lower().replace(" ", "")
+# if kata == kata[::-1]:
+#     print("Kata ini adalah palindrom!")
+# else:
+#     print("Bukan palindrom")
     
+# sistem operasi pecahan dasar
+from fractions import Fraction
+a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+print(f"Jumlah: {a + b}")
+print(f"Selisih: {a - b}")
+print(f"Perkalian: {a * b}")
+print(f"Pembagian: {a / b}")
+
