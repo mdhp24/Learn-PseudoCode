@@ -1811,11 +1811,24 @@
 #     print("Bukan palindrom")
     
 # sistem operasi pecahan dasar
-from fractions import Fraction
-a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
-b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
-print(f"Jumlah: {a + b}")
-print(f"Selisih: {a - b}")
-print(f"Perkalian: {a * b}")
-print(f"Pembagian: {a / b}")
+# from fractions import Fraction
+# a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+# b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+# print(f"Jumlah: {a + b}")
+# print(f"Selisih: {a - b}")
+# print(f"Perkalian: {a * b}")
+# print(f"Pembagian: {a / b}")
 
+# sistem enkripsi teks menggunakan metode Caesar Cipher
+def caesar_cipher(teks, shift):
+    hasil = ""
+    for huruf in teks:
+        if huruf.isalpha():
+            ascii_offset = 65 if huruf.isupper() else 97
+            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+        else:
+            hasil += huruf
+    return hasil
+pesan = input("Masukkan teks: ")
+geser = int(input("Geser berapa huruf: "))
+print("Hasil enkripsi:", caesar_cipher(pesan, geser))
