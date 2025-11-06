@@ -1798,8 +1798,15 @@
 # print(f"Total belanja: Rp{total}")
 
 # sistem hitung volume bola
-import math
-radius = float(input("Masukkan jari-jari bola: "))
-volume = (4/3) * math.pi * radius**3
-print(f"Volume bola dengan jari-jari {radius} adalah {volume}")
+# import math
+# radius = float(input("Masukkan jari-jari bola: "))
+# volume = (4/3) * math.pi * radius**3
+# print(f"Volume bola dengan jari-jari {radius} adalah {volume}")
 
+# sistem palindrom deteksi
+kata = input("Masukkan kata: ").lower().replace(" ", "")
+if kata == kata[::-1]:
+    print("Kata ini adalah palindrom!")
+else:
+    print("Bukan palindrom")
+    
