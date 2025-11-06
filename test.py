@@ -1747,13 +1747,52 @@
 #     print("Produk tidak ditemukan.")
 
 
-# sistem kembalian pembayaran di toko gym
-produk = {"Dumbbell": 150000, "Yoga Mat": 100000, "Pull Up Bar": 250000, "Protein Shake": 300000}
-harga = int(input("Masukkan total harga belanja: "))
-bayar = int(input("Masukkan uang yang dibayarkan: "))
-if bayar < harga:
-    print("⚠️ Uang tidak cukup!")
-else:
-    print(f"Kembalian Anda: Rp{bayar - harga}")
+# # sistem kembalian pembayaran di toko gym
+# produk = {"Dumbbell": 150000, "Yoga Mat": 100000, "Pull Up Bar": 250000, "Protein Shake": 300000}
+# harga = int(input("Masukkan total harga belanja: "))
+# bayar = int(input("Masukkan uang yang dibayarkan: "))
+# if bayar < harga:
+#     print("⚠️ Uang tidak cukup!")
+# else:
+#     print(f"Kembalian Anda: Rp{bayar - harga}")
     
     
+# sistem member dengan diskon di toko gym
+# class member:
+#     def __init__(self, nama, level):
+#         self.nama = nama
+#         self.level = level
+
+#     def get_diskon(self):
+#         if self.level == "gold":
+#             return 0.2
+#         elif self.level == "silver":
+#             return 0.1
+#         else:
+#             return 0
+# nama = input("Masukkan nama Anda: ")
+# level = input("Masukkan level member (gold/silver/reguler): ").lower()
+# member = member(nama, level)
+# total = int(input("Masukkan total belanja: "))
+# total_bayar = total - (total * member.get_diskon())
+# print(f"\nMember {member.nama} ({member.level}) mendapat diskon {member.get_diskon()*100:.0f}%")
+# print(f"Total yang harus dibayar: Rp{total_bayar}")
+
+# sistem pembelian produk dengan keranjang di toko gym
+produk = {"Gloves": 75000, "Jump Rope": 50000, "Whey Protein": 350000}
+keranjang = []
+total = 0
+while True:
+    print("\nProduk tersedia:", list(produk.keys()))
+    pilih = input("Pilih produk (atau ketik 'selesai'): ")
+
+    if pilih == "selesai":
+        break
+    elif pilih in produk:
+        keranjang.append(pilih)
+        total += produk[pilih]
+        print(f"{pilih} ditambahkan ke keranjang.")
+    else:
+        print("Produk tidak tersedia.")
+print("\n🧾 Daftar belanja:", keranjang)
+print(f"Total belanja: Rp{total}")
