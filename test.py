@@ -1886,14 +1886,31 @@
 # print(f"Bayar per bulan: Rp{per_bulan:.0f}")
 
 # Sistem daftar pelanggan gym
-pelanggan = []
+# pelanggan = []
 
-while True:
-    nama = input("Masukkan nama pelanggan (atau ketik 'selesai'): ")
-    if nama.lower() == "selesai":
-        break
-    pelanggan.append(nama)
+# while True:
+#     nama = input("Masukkan nama pelanggan (atau ketik 'selesai'): ")
+#     if nama.lower() == "selesai":
+#         break
+#     pelanggan.append(nama)
 
-print("\n=== DAFTAR PELANGGAN GYM ===")
-for i, p in enumerate(pelanggan, 1):
-    print(f"{i}. {p}")
+# print("\n=== DAFTAR PELANGGAN GYM ===")
+# for i, p in enumerate(pelanggan, 1):
+#     print(f"{i}. {p}")
+
+# Sistem laporan penjualan harian di toko gym
+penjualan = {
+    "Dumbbell": 5,
+    "Yoga Mat": 3,
+    "Pull Up Bar": 2,
+    "Gloves": 6
+}
+
+total_item = sum(penjualan.values())
+barang_terlaris = max(penjualan, key=penjualan.get)
+
+print("=== LAPORAN PENJUALAN HARIAN ===")
+for barang, jumlah in penjualan.items():
+    print(f"{barang:15}: {jumlah} terjual")
+print(f"\nTotal item terjual: {total_item}")
+print(f"Barang terlaris: {barang_terlaris}")
