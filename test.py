@@ -1834,20 +1834,42 @@
 # print("Hasil enkripsi:", caesar_cipher(pesan, geser))
 
 # sistem antrian toko sederhana
-stok = {"Dumbbell": 10, "Yoga Mat": 15, "Pull Up Bar": 5}
+# stok = {"Dumbbell": 10, "Yoga Mat": 15, "Pull Up Bar": 5}
 
-print("=== CEK STOK TOKO GYM ===")
-for barang, jumlah in stok.items():
-    print(f"{barang:15} : {jumlah} unit")
+# print("=== CEK STOK TOKO GYM ===")
+# for barang, jumlah in stok.items():
+#     print(f"{barang:15} : {jumlah} unit")
 
-barang = input("\nMasukkan nama barang yang ingin dibeli: ")
-jumlah = int(input("Masukkan jumlah pembelian: "))
+# barang = input("\nMasukkan nama barang yang ingin dibeli: ")
+# jumlah = int(input("Masukkan jumlah pembelian: "))
 
-if barang in stok:
-    if jumlah <= stok[barang]:
-        stok[barang] -= jumlah
-        print(f"Berhasil membeli {jumlah} {barang}. Sisa stok: {stok[barang]}")
+# if barang in stok:
+#     if jumlah <= stok[barang]:
+#         stok[barang] -= jumlah
+#         print(f"Berhasil membeli {jumlah} {barang}. Sisa stok: {stok[barang]}")
+#     else:
+#         print("⚠️ Stok tidak mencukupi.")
+# else:
+#     print("Barang tidak ditemukan.")
+
+# sistem keranjang belanja di toko gym
+produk = {"Whey Protein": 350000, "Sarung Tangan": 80000, "Skipping Rope": 60000}
+keranjang = []
+total = 0
+
+while True:
+    print("\nProduk:", list(produk.keys()))
+    pilih = input("Pilih produk (atau ketik 'selesai'): ")
+    if pilih == "selesai":
+        break
+    elif pilih in produk:
+        keranjang.append(pilih)
+        total += produk[pilih]
     else:
-        print("⚠️ Stok tidak mencukupi.")
-else:
-    print("Barang tidak ditemukan.")
+        print("Produk tidak tersedia.")
+
+print("\n=== STRUK PEMBELIAN ===")
+for item in keranjang:
+    print("-", item, "Rp", produk[item])
+print("Total Bayar: Rp", total)
+print("Terima kasih telah berbelanja di GymFit Store 💪")
