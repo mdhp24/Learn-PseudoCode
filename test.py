@@ -1899,18 +1899,35 @@
 #     print(f"{i}. {p}")
 
 # Sistem laporan penjualan harian di toko gym
-penjualan = {
-    "Dumbbell": 5,
-    "Yoga Mat": 3,
-    "Pull Up Bar": 2,
-    "Gloves": 6
-}
+# penjualan = {
+#     "Dumbbell": 5,
+#     "Yoga Mat": 3,
+#     "Pull Up Bar": 2,
+#     "Gloves": 6
+# }
 
-total_item = sum(penjualan.values())
-barang_terlaris = max(penjualan, key=penjualan.get)
+# total_item = sum(penjualan.values())
+# barang_terlaris = max(penjualan, key=penjualan.get)
 
-print("=== LAPORAN PENJUALAN HARIAN ===")
-for barang, jumlah in penjualan.items():
-    print(f"{barang:15}: {jumlah} terjual")
-print(f"\nTotal item terjual: {total_item}")
-print(f"Barang terlaris: {barang_terlaris}")
+# print("=== LAPORAN PENJUALAN HARIAN ===")
+# for barang, jumlah in penjualan.items():
+#     print(f"{barang:15}: {jumlah} terjual")
+# print(f"\nTotal item terjual: {total_item}")
+# print(f"Barang terlaris: {barang_terlaris}")
+
+# Sistem pembelian produk dengan pajak dan diskon di toko gym
+produk = {"Treadmill": 3000000, "Bench Press": 2500000, "Elliptical": 2700000}
+pilih = input("Pilih produk: ")
+
+if pilih in produk:
+    harga = produk[pilih]
+    diskon = 0.1 if harga > 2500000 else 0
+    pajak = 0.05 * harga
+    total = harga - (harga * diskon) + pajak
+
+    print(f"\nHarga Asli: Rp{harga}")
+    print(f"Diskon: {diskon*100:.0f}%")
+    print(f"Pajak: Rp{pajak}")
+    print(f"Total Bayar: Rp{total}")
+else:
+    print("Produk tidak ditemukan.")
