@@ -1875,12 +1875,25 @@
 # print("Terima kasih telah berbelanja di GymFit Store 💪")
 
 # sistem cicilan pembelian di toko gym
-harga = int(input("Masukkan harga alat gym: Rp"))
-cicilan = int(input("Ingin dicicil berapa bulan? "))
+# harga = int(input("Masukkan harga alat gym: Rp"))
+# cicilan = int(input("Ingin dicicil berapa bulan? "))
 
-bunga = 0.05 * harga
-total = harga + bunga
-per_bulan = total / cicilan
+# bunga = 0.05 * harga
+# total = harga + bunga
+# per_bulan = total / cicilan
 
-print(f"\nTotal dengan bunga: Rp{total:.0f}")
-print(f"Bayar per bulan: Rp{per_bulan:.0f}")
+# print(f"\nTotal dengan bunga: Rp{total:.0f}")
+# print(f"Bayar per bulan: Rp{per_bulan:.0f}")
+
+# Sistem daftar pelanggan gym
+pelanggan = []
+
+while True:
+    nama = input("Masukkan nama pelanggan (atau ketik 'selesai'): ")
+    if nama.lower() == "selesai":
+        break
+    pelanggan.append(nama)
+
+print("\n=== DAFTAR PELANGGAN GYM ===")
+for i, p in enumerate(pelanggan, 1):
+    print(f"{i}. {p}")
