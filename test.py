@@ -1853,23 +1853,34 @@
 #     print("Barang tidak ditemukan.")
 
 # sistem keranjang belanja di toko gym
-produk = {"Whey Protein": 350000, "Sarung Tangan": 80000, "Skipping Rope": 60000}
-keranjang = []
-total = 0
+# produk = {"Whey Protein": 350000, "Sarung Tangan": 80000, "Skipping Rope": 60000}
+# keranjang = []
+# total = 0
 
-while True:
-    print("\nProduk:", list(produk.keys()))
-    pilih = input("Pilih produk (atau ketik 'selesai'): ")
-    if pilih == "selesai":
-        break
-    elif pilih in produk:
-        keranjang.append(pilih)
-        total += produk[pilih]
-    else:
-        print("Produk tidak tersedia.")
+# while True:
+#     print("\nProduk:", list(produk.keys()))
+#     pilih = input("Pilih produk (atau ketik 'selesai'): ")
+#     if pilih == "selesai":
+#         break
+#     elif pilih in produk:
+#         keranjang.append(pilih)
+#         total += produk[pilih]
+#     else:
+#         print("Produk tidak tersedia.")
 
-print("\n=== STRUK PEMBELIAN ===")
-for item in keranjang:
-    print("-", item, "Rp", produk[item])
-print("Total Bayar: Rp", total)
-print("Terima kasih telah berbelanja di GymFit Store 💪")
+# print("\n=== STRUK PEMBELIAN ===")
+# for item in keranjang:
+#     print("-", item, "Rp", produk[item])
+# print("Total Bayar: Rp", total)
+# print("Terima kasih telah berbelanja di GymFit Store 💪")
+
+# sistem cicilan pembelian di toko gym
+harga = int(input("Masukkan harga alat gym: Rp"))
+cicilan = int(input("Ingin dicicil berapa bulan? "))
+
+bunga = 0.05 * harga
+total = harga + bunga
+per_bulan = total / cicilan
+
+print(f"\nTotal dengan bunga: Rp{total:.0f}")
+print(f"Bayar per bulan: Rp{per_bulan:.0f}")
