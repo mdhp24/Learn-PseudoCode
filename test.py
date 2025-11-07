@@ -1916,18 +1916,55 @@
 # print(f"Barang terlaris: {barang_terlaris}")
 
 # Sistem pembelian produk dengan pajak dan diskon di toko gym
-produk = {"Treadmill": 3000000, "Bench Press": 2500000, "Elliptical": 2700000}
-pilih = input("Pilih produk: ")
+# produk = {"Treadmill": 3000000, "Bench Press": 2500000, "Elliptical": 2700000}
+# pilih = input("Pilih produk: ")
 
-if pilih in produk:
-    harga = produk[pilih]
-    diskon = 0.1 if harga > 2500000 else 0
-    pajak = 0.05 * harga
-    total = harga - (harga * diskon) + pajak
+# if pilih in produk:
+#     harga = produk[pilih]
+#     diskon = 0.1 if harga > 2500000 else 0
+#     pajak = 0.05 * harga
+#     total = harga - (harga * diskon) + pajak
 
-    print(f"\nHarga Asli: Rp{harga}")
-    print(f"Diskon: {diskon*100:.0f}%")
-    print(f"Pajak: Rp{pajak}")
-    print(f"Total Bayar: Rp{total}")
-else:
-    print("Produk tidak ditemukan.")
+#     print(f"\nHarga Asli: Rp{harga}")
+#     print(f"Diskon: {diskon*100:.0f}%")
+#     print(f"Pajak: Rp{pajak}")
+#     print(f"Total Bayar: Rp{total}")
+# else:
+#     print("Produk tidak ditemukan.")
+
+# Sistem pembelian produk dengan kelas di toko gym
+class Produk:
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        self.harga = harga
+        self.stok = stok
+
+    def kurangi_stok(self, jumlah):
+        if jumlah <= self.stok:
+            self.stok -= jumlah
+            return True
+        return False
+
+class Transaksi:
+    def __init__(self):
+        self.total = 0
+
+    def beli(self, produk, jumlah):
+        if produk.kurangi_stok(jumlah):
+            subtotal = produk.harga * jumlah
+            self.total += subtotal
+            print(f"{jumlah}x {produk.nama} dibeli. Subtotal: Rp{subtotal}")
+        else:
+            print(f"Stok {produk.nama} tidak mencukupi.")
+
+    def tampilkan_total(self):
+        print(f"\nTotal Pembayaran: Rp{self.total}")
+
+# --- Eksekusi Program ---
+dumbbell = Produk("Dumbbell", 150000, 10)
+mat = Produk("Yoga Mat", 100000, 5)
+
+trx = Transaksi()
+trx.beli(dumbbell, 2)
+trx.beli(mat, 3)
+trx.tampilkan_total()
