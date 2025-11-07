@@ -1820,15 +1820,34 @@
 # print(f"Pembagian: {a / b}")
 
 # sistem enkripsi teks menggunakan metode Caesar Cipher
-def caesar_cipher(teks, shift):
-    hasil = ""
-    for huruf in teks:
-        if huruf.isalpha():
-            ascii_offset = 65 if huruf.isupper() else 97
-            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
-        else:
-            hasil += huruf
-    return hasil
-pesan = input("Masukkan teks: ")
-geser = int(input("Geser berapa huruf: "))
-print("Hasil enkripsi:", caesar_cipher(pesan, geser))
+# def caesar_cipher(teks, shift):
+#     hasil = ""
+#     for huruf in teks:
+#         if huruf.isalpha():
+#             ascii_offset = 65 if huruf.isupper() else 97
+#             hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+#         else:
+#             hasil += huruf
+#     return hasil
+# pesan = input("Masukkan teks: ")
+# geser = int(input("Geser berapa huruf: "))
+# print("Hasil enkripsi:", caesar_cipher(pesan, geser))
+
+# sistem antrian toko sederhana
+stok = {"Dumbbell": 10, "Yoga Mat": 15, "Pull Up Bar": 5}
+
+print("=== CEK STOK TOKO GYM ===")
+for barang, jumlah in stok.items():
+    print(f"{barang:15} : {jumlah} unit")
+
+barang = input("\nMasukkan nama barang yang ingin dibeli: ")
+jumlah = int(input("Masukkan jumlah pembelian: "))
+
+if barang in stok:
+    if jumlah <= stok[barang]:
+        stok[barang] -= jumlah
+        print(f"Berhasil membeli {jumlah} {barang}. Sisa stok: {stok[barang]}")
+    else:
+        print("⚠️ Stok tidak mencukupi.")
+else:
+    print("Barang tidak ditemukan.")
