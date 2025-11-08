@@ -2029,23 +2029,38 @@
 #     print(f"❌ Saldo tidak cukup. Kurang Rp{tagihan - saldo}")
 
 # Sistem laporan penjualan mingguan di toko gym
-penjualan = {
-    "Senin": 5,
-    "Selasa": 8,
-    "Rabu": 3,
-    "Kamis": 7,
-    "Jumat": 6,
-    "Sabtu": 10,
-    "Minggu": 9
+# penjualan = {
+#     "Senin": 5,
+#     "Selasa": 8,
+#     "Rabu": 3,
+#     "Kamis": 7,
+#     "Jumat": 6,
+#     "Sabtu": 10,
+#     "Minggu": 9
+# }
+
+# total = sum(penjualan.values())
+# rata = total / len(penjualan)
+# hari_tertinggi = max(penjualan, key=penjualan.get)
+
+# print("=== LAPORAN PENJUALAN MINGGUAN ===")
+# for hari, jml in penjualan.items():
+#     print(f"{hari:8} : {jml} transaksi")
+# print(f"\nTotal transaksi: {total}")
+# print(f"Rata-rata per hari: {rata:.2f}")
+# print(f"Hari tertinggi: {hari_tertinggi}")
+
+# Sistem chatbot sederhana untuk toko gym
+data = {
+    "dumbbell": "Alat untuk latihan kekuatan otot lengan dan bahu.",
+    "treadmill": "Mesin untuk latihan kardio dengan berjalan atau berlari.",
+    "protein": "Zat penting untuk pembentukan otot setelah latihan."
 }
 
-total = sum(penjualan.values())
-rata = total / len(penjualan)
-hari_tertinggi = max(penjualan, key=penjualan.get)
+print("🤖 Selamat datang di GymBot!")
+tanya = input("Tanya tentang alat gym apa: ").lower()
 
-print("=== LAPORAN PENJUALAN MINGGUAN ===")
-for hari, jml in penjualan.items():
-    print(f"{hari:8} : {jml} transaksi")
-print(f"\nTotal transaksi: {total}")
-print(f"Rata-rata per hari: {rata:.2f}")
-print(f"Hari tertinggi: {hari_tertinggi}")
+if tanya in data:
+    print("💡", data[tanya])
+else:
+    print("Maaf, data tidak ditemukan.")
