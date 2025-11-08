@@ -1933,38 +1933,50 @@
 #     print("Produk tidak ditemukan.")
 
 # Sistem pembelian produk dengan kelas di toko gym
-class Produk:
-    def __init__(self, nama, harga, stok):
-        self.nama = nama
-        self.harga = harga
-        self.stok = stok
+# class Produk:
+#     def __init__(self, nama, harga, stok):
+#         self.nama = nama
+#         self.harga = harga
+#         self.stok = stok
 
-    def kurangi_stok(self, jumlah):
-        if jumlah <= self.stok:
-            self.stok -= jumlah
-            return True
-        return False
+#     def kurangi_stok(self, jumlah):
+#         if jumlah <= self.stok:
+#             self.stok -= jumlah
+#             return True
+#         return False
 
-class Transaksi:
-    def __init__(self):
-        self.total = 0
+# class Transaksi:
+#     def __init__(self):
+#         self.total = 0
 
-    def beli(self, produk, jumlah):
-        if produk.kurangi_stok(jumlah):
-            subtotal = produk.harga * jumlah
-            self.total += subtotal
-            print(f"{jumlah}x {produk.nama} dibeli. Subtotal: Rp{subtotal}")
-        else:
-            print(f"Stok {produk.nama} tidak mencukupi.")
+#     def beli(self, produk, jumlah):
+#         if produk.kurangi_stok(jumlah):
+#             subtotal = produk.harga * jumlah
+#             self.total += subtotal
+#             print(f"{jumlah}x {produk.nama} dibeli. Subtotal: Rp{subtotal}")
+#         else:
+#             print(f"Stok {produk.nama} tidak mencukupi.")
 
-    def tampilkan_total(self):
-        print(f"\nTotal Pembayaran: Rp{self.total}")
+#     def tampilkan_total(self):
+#         print(f"\nTotal Pembayaran: Rp{self.total}")
 
-# --- Eksekusi Program ---
-dumbbell = Produk("Dumbbell", 150000, 10)
-mat = Produk("Yoga Mat", 100000, 5)
+# # --- Eksekusi Program ---
+# dumbbell = Produk("Dumbbell", 150000, 10)
+# mat = Produk("Yoga Mat", 100000, 5)
 
-trx = Transaksi()
-trx.beli(dumbbell, 2)
-trx.beli(mat, 3)
-trx.tampilkan_total()
+# trx = Transaksi()
+# trx.beli(dumbbell, 2)
+# trx.beli(mat, 3)
+# trx.tampilkan_total()
+
+# Sistem login sederhana dengan username dan password di toko gym
+akun = {"admin": "12345", "kasir": "gymfit"}
+
+print("=== LOGIN SISTEM TOKO GYM ===")
+user = input("Username: ")
+pw = input("Password: ")
+
+if user in akun and akun[user] == pw:
+    print(f"✅ Selamat datang, {user}!")
+else:
+    print("❌ Username atau password salah.")
