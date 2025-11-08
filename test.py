@@ -1982,24 +1982,38 @@
 #     print("❌ Username atau password salah.")
 
 # Sistem pembelian produk dengan keranjang di toko gym
-produk = {"Dumbbell": 200000, "Matras Yoga": 150000, "Sarung Tangan": 80000}
-keranjang = {}
-total = 0
+# produk = {"Dumbbell": 200000, "Matras Yoga": 150000, "Sarung Tangan": 80000}
+# keranjang = {}
+# total = 0
 
-while True:
-    print("\nProduk tersedia:", list(produk.keys()))
-    pilih = input("Masukkan produk (atau 'selesai'): ")
-    if pilih == "selesai":
-        break
-    elif pilih in produk:
-        qty = int(input("Jumlah: "))
-        keranjang[pilih] = keranjang.get(pilih, 0) + qty
-    else:
-        print("Produk tidak ada.")
+# while True:
+#     print("\nProduk tersedia:", list(produk.keys()))
+#     pilih = input("Masukkan produk (atau 'selesai'): ")
+#     if pilih == "selesai":
+#         break
+#     elif pilih in produk:
+#         qty = int(input("Jumlah: "))
+#         keranjang[pilih] = keranjang.get(pilih, 0) + qty
+#     else:
+#         print("Produk tidak ada.")
 
-print("\n=== STRUK PEMBELIAN ===")
-for item, jml in keranjang.items():
-    subtotal = produk[item] * jml
-    total += subtotal
-    print(f"{item:15} x{jml} = Rp{subtotal}")
-print("Total Bayar: Rp", total)
+# print("\n=== STRUK PEMBELIAN ===")
+# for item, jml in keranjang.items():
+#     subtotal = produk[item] * jml
+#     total += subtotal
+#     print(f"{item:15} x{jml} = Rp{subtotal}")
+# print("Total Bayar: Rp", total)
+
+# Sistem pendaftaran member gym dengan tipe membership
+nama = input("Masukkan nama member: ")
+tipe = input("Pilih tipe membership (Silver/Gold/Platinum): ").lower()
+
+biaya = {"silver": 200000, "gold": 350000, "platinum": 500000}
+bonus = {"silver": "Free 1 day pass", "gold": "Free 3 day pass", "platinum": "Free personal trainer 2 sesi"}
+
+if tipe in biaya:
+    print(f"\nMember {nama} berhasil didaftarkan.")
+    print(f"Biaya bulanan: Rp{biaya[tipe]}")
+    print(f"Bonus: {bonus[tipe]}")
+else:
+    print("Tipe tidak tersedia.")
