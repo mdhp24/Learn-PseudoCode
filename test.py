@@ -2019,11 +2019,33 @@
 #     print("Tipe tidak tersedia.")
 
 # Sistem pembayaran dengan saldo di toko gym
-saldo = 1000000
-tagihan = int(input("Masukkan total belanja: Rp"))
+# saldo = 1000000
+# tagihan = int(input("Masukkan total belanja: Rp"))
 
-if saldo >= tagihan:
-    saldo -= tagihan
-    print(f"✅ Pembayaran berhasil! Sisa saldo: Rp{saldo}")
-else:
-    print(f"❌ Saldo tidak cukup. Kurang Rp{tagihan - saldo}")
+# if saldo >= tagihan:
+#     saldo -= tagihan
+#     print(f"✅ Pembayaran berhasil! Sisa saldo: Rp{saldo}")
+# else:
+#     print(f"❌ Saldo tidak cukup. Kurang Rp{tagihan - saldo}")
+
+# Sistem laporan penjualan mingguan di toko gym
+penjualan = {
+    "Senin": 5,
+    "Selasa": 8,
+    "Rabu": 3,
+    "Kamis": 7,
+    "Jumat": 6,
+    "Sabtu": 10,
+    "Minggu": 9
+}
+
+total = sum(penjualan.values())
+rata = total / len(penjualan)
+hari_tertinggi = max(penjualan, key=penjualan.get)
+
+print("=== LAPORAN PENJUALAN MINGGUAN ===")
+for hari, jml in penjualan.items():
+    print(f"{hari:8} : {jml} transaksi")
+print(f"\nTotal transaksi: {total}")
+print(f"Rata-rata per hari: {rata:.2f}")
+print(f"Hari tertinggi: {hari_tertinggi}")
