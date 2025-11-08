@@ -2005,15 +2005,25 @@
 # print("Total Bayar: Rp", total)
 
 # Sistem pendaftaran member gym dengan tipe membership
-nama = input("Masukkan nama member: ")
-tipe = input("Pilih tipe membership (Silver/Gold/Platinum): ").lower()
+# nama = input("Masukkan nama member: ")
+# tipe = input("Pilih tipe membership (Silver/Gold/Platinum): ").lower()
 
-biaya = {"silver": 200000, "gold": 350000, "platinum": 500000}
-bonus = {"silver": "Free 1 day pass", "gold": "Free 3 day pass", "platinum": "Free personal trainer 2 sesi"}
+# biaya = {"silver": 200000, "gold": 350000, "platinum": 500000}
+# bonus = {"silver": "Free 1 day pass", "gold": "Free 3 day pass", "platinum": "Free personal trainer 2 sesi"}
 
-if tipe in biaya:
-    print(f"\nMember {nama} berhasil didaftarkan.")
-    print(f"Biaya bulanan: Rp{biaya[tipe]}")
-    print(f"Bonus: {bonus[tipe]}")
+# if tipe in biaya:
+#     print(f"\nMember {nama} berhasil didaftarkan.")
+#     print(f"Biaya bulanan: Rp{biaya[tipe]}")
+#     print(f"Bonus: {bonus[tipe]}")
+# else:
+#     print("Tipe tidak tersedia.")
+
+# Sistem pembayaran dengan saldo di toko gym
+saldo = 1000000
+tagihan = int(input("Masukkan total belanja: Rp"))
+
+if saldo >= tagihan:
+    saldo -= tagihan
+    print(f"✅ Pembayaran berhasil! Sisa saldo: Rp{saldo}")
 else:
-    print("Tipe tidak tersedia.")
+    print(f"❌ Saldo tidak cukup. Kurang Rp{tagihan - saldo}")
