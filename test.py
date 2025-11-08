@@ -1970,13 +1970,36 @@
 # trx.tampilkan_total()
 
 # Sistem login sederhana dengan username dan password di toko gym
-akun = {"admin": "12345", "kasir": "gymfit"}
+# akun = {"admin": "12345", "kasir": "gymfit"}
 
-print("=== LOGIN SISTEM TOKO GYM ===")
-user = input("Username: ")
-pw = input("Password: ")
+# print("=== LOGIN SISTEM TOKO GYM ===")
+# user = input("Username: ")
+# pw = input("Password: ")
 
-if user in akun and akun[user] == pw:
-    print(f"✅ Selamat datang, {user}!")
-else:
-    print("❌ Username atau password salah.")
+# if user in akun and akun[user] == pw:
+#     print(f"✅ Selamat datang, {user}!")
+# else:
+#     print("❌ Username atau password salah.")
+
+# Sistem pembelian produk dengan keranjang di toko gym
+produk = {"Dumbbell": 200000, "Matras Yoga": 150000, "Sarung Tangan": 80000}
+keranjang = {}
+total = 0
+
+while True:
+    print("\nProduk tersedia:", list(produk.keys()))
+    pilih = input("Masukkan produk (atau 'selesai'): ")
+    if pilih == "selesai":
+        break
+    elif pilih in produk:
+        qty = int(input("Jumlah: "))
+        keranjang[pilih] = keranjang.get(pilih, 0) + qty
+    else:
+        print("Produk tidak ada.")
+
+print("\n=== STRUK PEMBELIAN ===")
+for item, jml in keranjang.items():
+    subtotal = produk[item] * jml
+    total += subtotal
+    print(f"{item:15} x{jml} = Rp{subtotal}")
+print("Total Bayar: Rp", total)
