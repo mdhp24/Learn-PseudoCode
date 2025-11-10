@@ -2143,37 +2143,50 @@
 # print(f"Total bayar: Rp{bayar:.0f}")
 
 # Sistem pembelian produk dengan kelas di toko gym
-class Produk:
-    def __init__(self, nama, harga, stok):
-        self.nama = nama
-        self.harga = harga
-        self.stok = stok
+# class Produk:
+#     def __init__(self, nama, harga, stok):
+#         self.nama = nama
+#         self.harga = harga
+#         self.stok = stok
 
-    def jual(self, jumlah):
-        if jumlah <= self.stok:
-            self.stok -= jumlah
-            return self.harga * jumlah
-        else:
-            print(f"❌ Stok {self.nama} tidak cukup.")
-            return 0
+#     def jual(self, jumlah):
+#         if jumlah <= self.stok:
+#             self.stok -= jumlah
+#             return self.harga * jumlah
+#         else:
+#             print(f"❌ Stok {self.nama} tidak cukup.")
+#             return 0
 
-class Transaksi:
-    def __init__(self):
-        self.total = 0
+# class Transaksi:
+#     def __init__(self):
+#         self.total = 0
 
-    def beli(self, produk, jumlah):
-        subtotal = produk.jual(jumlah)
-        self.total += subtotal
-        print(f"{produk.nama} x{jumlah} = Rp{subtotal}")
+#     def beli(self, produk, jumlah):
+#         subtotal = produk.jual(jumlah)
+#         self.total += subtotal
+#         print(f"{produk.nama} x{jumlah} = Rp{subtotal}")
 
-    def tampilkan_total(self):
-        print(f"\n💰 Total Pembayaran: Rp{self.total}")
+#     def tampilkan_total(self):
+#         print(f"\n💰 Total Pembayaran: Rp{self.total}")
 
-# Main program
-p1 = Produk("Dumbbell", 200000, 5)
-p2 = Produk("Treadmill", 1500000, 2)
+# # Main program
+# p1 = Produk("Dumbbell", 200000, 5)
+# p2 = Produk("Treadmill", 1500000, 2)
 
-t = Transaksi()
-t.beli(p1, 2)
-t.beli(p2, 1)
-t.tampilkan_total()
+# t = Transaksi()
+# t.beli(p1, 2)
+# t.beli(p2, 1)
+# t.tampilkan_total()
+
+# Sistem laporan keuangan bulanan di toko gym
+pemasukan = [500000, 750000, 300000, 400000, 1000000]
+pengeluaran = [200000, 150000, 250000, 100000, 300000]
+
+total_masuk = sum(pemasukan)
+total_keluar = sum(pengeluaran)
+saldo = total_masuk - total_keluar
+
+print("=== LAPORAN KEUANGAN TOKO GYM ===")
+print(f"Total Pemasukan: Rp{total_masuk}")
+print(f"Total Pengeluaran: Rp{total_keluar}")
+print(f"Saldo Akhir: Rp{saldo}")
