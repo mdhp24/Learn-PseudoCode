@@ -2066,50 +2066,63 @@
 #     print("Maaf, data tidak ditemukan.")
 
 # Sistem pembelian produk dengan kelas di toko gym
-class Produk:
-    def __init__(self, nama, harga, stok):
-        self.nama = nama
-        self.harga = harga
-        self.stok = stok
+# class Produk:
+#     def __init__(self, nama, harga, stok):
+#         self.nama = nama
+#         self.harga = harga
+#         self.stok = stok
 
-    def beli(self, jumlah):
-        if jumlah <= self.stok:
-            self.stok -= jumlah
-            return jumlah * self.harga
-        else:
-            print("⚠️ Stok tidak mencukupi!")
-            return 0
+#     def beli(self, jumlah):
+#         if jumlah <= self.stok:
+#             self.stok -= jumlah
+#             return jumlah * self.harga
+#         else:
+#             print("⚠️ Stok tidak mencukupi!")
+#             return 0
 
-class TokoGym:
-    def __init__(self):
-        self.daftar_produk = [
-            Produk("Dumbbell", 150000, 10),
-            Produk("Yoga Mat", 80000, 5),
-            Produk("Gloves", 50000, 7)
-        ]
-        self.total = 0
+# class TokoGym:
+#     def __init__(self):
+#         self.daftar_produk = [
+#             Produk("Dumbbell", 150000, 10),
+#             Produk("Yoga Mat", 80000, 5),
+#             Produk("Gloves", 50000, 7)
+#         ]
+#         self.total = 0
 
-    def tampilkan_produk(self):
-        print("\n=== PRODUK GYM ===")
-        for p in self.daftar_produk:
-            print(f"{p.nama:10} Rp{p.harga} | Stok: {p.stok}")
+#     def tampilkan_produk(self):
+#         print("\n=== PRODUK GYM ===")
+#         for p in self.daftar_produk:
+#             print(f"{p.nama:10} Rp{p.harga} | Stok: {p.stok}")
 
-    def transaksi(self):
-        while True:
-            self.tampilkan_produk()
-            nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
-            if nama.lower() == "selesai":
-                break
-            for p in self.daftar_produk:
-                if p.nama.lower() == nama.lower():
-                    qty = int(input("Masukkan jumlah: "))
-                    self.total += p.beli(qty)
-                    break
-            else:
-                print("Produk tidak ditemukan.")
+#     def transaksi(self):
+#         while True:
+#             self.tampilkan_produk()
+#             nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
+#             if nama.lower() == "selesai":
+#                 break
+#             for p in self.daftar_produk:
+#                 if p.nama.lower() == nama.lower():
+#                     qty = int(input("Masukkan jumlah: "))
+#                     self.total += p.beli(qty)
+#                     break
+#             else:
+#                 print("Produk tidak ditemukan.")
 
-        print(f"\n💰 Total Pembayaran: Rp{self.total}")
+#         print(f"\n💰 Total Pembayaran: Rp{self.total}")
 
-# Jalankan Program
-gym = TokoGym()
-gym.transaksi()
+# # Jalankan Program
+# gym = TokoGym()
+# gym.transaksi()
+
+# Sistem cek stok produk di toko gym
+stok = {
+    "Dumbbell": 10,
+    "Yoga Mat": 5,
+    "Protein Shake": 8,
+    "Sarung Tangan": 3
+}
+
+print("=== CEK STOK GYM ===")
+for item, jumlah in stok.items():
+    status = "AMAN" if jumlah > 5 else "PERINGATAN: Stok menipis!"
+    print(f"{item:15}: {jumlah} unit ({status})")
