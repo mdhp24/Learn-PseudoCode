@@ -2211,11 +2211,30 @@
 #         print("Maaf, topik tidak tersedia.")
 
 # Sistem restock produk di toko gym
-produk = {"Treadmill": 0, "Dumbbell": 2, "Protein": 5}
+# produk = {"Treadmill": 0, "Dumbbell": 2, "Protein": 5}
 
-for item, stok in produk.items():
-    if stok == 0:
-        produk[item] = 10
-        print(f"🔁 Produk {item} di-restock menjadi 10 unit.")
+# for item, stok in produk.items():
+#     if stok == 0:
+#         produk[item] = 10
+#         print(f"🔁 Produk {item} di-restock menjadi 10 unit.")
+#     else:
+#         print(f"{item} masih tersedia {stok} unit.")
+
+# Sistem pendaftaran kelas gym dengan kuota terbatas
+kelas = {
+    "Yoga": 10,
+    "Zumba": 8,
+    "Weight Training": 12
+}
+
+nama = input("Masukkan nama Anda: ")
+pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
+
+if pilih in kelas:
+    if kelas[pilih] > 0:
+        kelas[pilih] -= 1
+        print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
     else:
-        print(f"{item} masih tersedia {stok} unit.")
+        print("❌ Kelas sudah penuh.")
+else:
+    print("Kelas tidak tersedia.")
