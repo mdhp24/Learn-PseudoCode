@@ -2115,14 +2115,29 @@
 # gym.transaksi()
 
 # Sistem cek stok produk di toko gym
-stok = {
-    "Dumbbell": 10,
-    "Yoga Mat": 5,
-    "Protein Shake": 8,
-    "Sarung Tangan": 3
-}
+# stok = {
+#     "Dumbbell": 10,
+#     "Yoga Mat": 5,
+#     "Protein Shake": 8,
+#     "Sarung Tangan": 3
+# }
 
-print("=== CEK STOK GYM ===")
-for item, jumlah in stok.items():
-    status = "AMAN" if jumlah > 5 else "PERINGATAN: Stok menipis!"
-    print(f"{item:15}: {jumlah} unit ({status})")
+# print("=== CEK STOK GYM ===")
+# for item, jumlah in stok.items():
+#     status = "AMAN" if jumlah > 5 else "PERINGATAN: Stok menipis!"
+#     print(f"{item:15}: {jumlah} unit ({status})")
+
+# Sistem pembelian dengan diskon berdasarkan total belanja di toko gym
+total = int(input("Masukkan total belanja: Rp "))
+diskon = 0
+
+if total >= 500000:
+    diskon = 0.2
+elif total >= 300000:
+    diskon = 0.1
+elif total >= 100000:
+    diskon = 0.05
+
+bayar = total - (total * diskon)
+print(f"Diskon: {diskon*100:.0f}%")
+print(f"Total bayar: Rp{bayar:.0f}")
