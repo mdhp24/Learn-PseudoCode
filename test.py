@@ -2192,20 +2192,30 @@
 # print(f"Saldo Akhir: Rp{saldo}")
 
 # Sistem chatbot sederhana untuk toko gym dengan topik latihan, makan, dan istirahat
-import random
+# import random
 
-respon = {
-    "latihan": ["Lakukan pemanasan 10 menit sebelum latihan!", "Fokus pada teknik, bukan beratnya."],
-    "makan": ["Konsumsi protein setelah latihan.", "Jaga hidrasi, minum air cukup!"],
-    "istirahat": ["Tidur minimal 7 jam agar otot pulih.", "Istirahat adalah bagian dari progres."]
-}
+# respon = {
+#     "latihan": ["Lakukan pemanasan 10 menit sebelum latihan!", "Fokus pada teknik, bukan beratnya."],
+#     "makan": ["Konsumsi protein setelah latihan.", "Jaga hidrasi, minum air cukup!"],
+#     "istirahat": ["Tidur minimal 7 jam agar otot pulih.", "Istirahat adalah bagian dari progres."]
+# }
 
-while True:
-    tanya = input("\nTanya seputar (latihan/makan/istirahat) atau 'exit': ").lower()
-    if tanya == "exit":
-        print("🤖 Terima kasih sudah berbicara dengan GymBot!")
-        break
-    elif tanya in respon:
-        print("💡", random.choice(respon[tanya]))
+# while True:
+#     tanya = input("\nTanya seputar (latihan/makan/istirahat) atau 'exit': ").lower()
+#     if tanya == "exit":
+#         print("🤖 Terima kasih sudah berbicara dengan GymBot!")
+#         break
+#     elif tanya in respon:
+#         print("💡", random.choice(respon[tanya]))
+#     else:
+#         print("Maaf, topik tidak tersedia.")
+
+# Sistem restock produk di toko gym
+produk = {"Treadmill": 0, "Dumbbell": 2, "Protein": 5}
+
+for item, stok in produk.items():
+    if stok == 0:
+        produk[item] = 10
+        print(f"🔁 Produk {item} di-restock menjadi 10 unit.")
     else:
-        print("Maaf, topik tidak tersedia.")
+        print(f"{item} masih tersedia {stok} unit.")
