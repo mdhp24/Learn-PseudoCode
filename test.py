@@ -2252,23 +2252,38 @@
 #     print("Tidak ada jadwal latihan pada hari tersebut.")
 
 # Sistem pembelian produk dengan metode pembayaran di toko gym
-produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
-pilih = input("Pilih produk yang ingin dibeli: ")
-if pilih in produk:
-    jumlah = int(input("Masukkan jumlah: "))
-    total = produk[pilih] * jumlah
-    print(f"\nTotal harga: Rp{total}")
+# produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
+# pilih = input("Pilih produk yang ingin dibeli: ")
+# if pilih in produk:
+#     jumlah = int(input("Masukkan jumlah: "))
+#     total = produk[pilih] * jumlah
+#     print(f"\nTotal harga: Rp{total}")
 
-    metode = input("Pilih metode pembayaran (cash/kartu): ").lower()
-    if metode == "cash":
-        bayar = int(input("Masukkan jumlah uang yang dibayarkan: Rp"))
-        if bayar >= total:
-            print(f"✅ Pembayaran berhasil! Kembalian: Rp{bayar - total}")
-        else:
-            print("❌ Uang tidak cukup.")
-    elif metode == "kartu":
-        print("✅ Pembayaran dengan kartu berhasil!")
-    else:
-        print("Metode pembayaran tidak dikenali.")
-else:
-    print("Produk tidak tersedia.")
+#     metode = input("Pilih metode pembayaran (cash/kartu): ").lower()
+#     if metode == "cash":
+#         bayar = int(input("Masukkan jumlah uang yang dibayarkan: Rp"))
+#         if bayar >= total:
+#             print(f"✅ Pembayaran berhasil! Kembalian: Rp{bayar - total}")
+#         else:
+#             print("❌ Uang tidak cukup.")
+#     elif metode == "kartu":
+#         print("✅ Pembayaran dengan kartu berhasil!")
+#     else:
+#         print("Metode pembayaran tidak dikenali.")
+# else:
+#     print("Produk tidak tersedia.")
+
+# Sistem pengingat jadwal latihan gym dengan notifikasi sederhana
+import time
+jadwal = {
+    "07:00": "Waktu untuk latihan pagi! Jangan lupa pemanasan.",
+    "12:00": "Saatnya istirahat dan makan siang sehat.",
+    "18:00": "Waktunya latihan sore! Fokus pada teknik."
+}
+while True:
+    sekarang = time.strftime("%H:%M")
+    if sekarang in jadwal:
+        print(f"🔔 Pemberitahuan: {jadwal[sekarang]}")
+        time.sleep(60)  # Tunggu 1 menit untuk menghindari notifikasi berulang
+    time.sleep(10)  # Cek setiap 10 detik
+    print("Program berjalan... Tekan Ctrl+C untuk berhenti.")
