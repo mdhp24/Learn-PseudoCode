@@ -2311,29 +2311,48 @@
 
 
 # sistem rekap masa otot gym
-import datetime
-class MemberGym:
-    def __init__(self, nama, tanggal_lahir):
-        self.nama = nama
-        self.tanggal_lahir = datetime.datetime.strptime(tanggal_lahir, "%d-%m-%Y")
+# import datetime
+# class MemberGym:
+#     def __init__(self, nama, tanggal_lahir):
+#         self.nama = nama
+#         self.tanggal_lahir = datetime.datetime.strptime(tanggal_lahir, "%d-%m-%Y")
 
-    def hitung_usia(self):
-        hari_ini = datetime.datetime.now()
-        usia = hari_ini.year - self.tanggal_lahir.year
-        if (hari_ini.month, hari_ini.day) < (self.tanggal_lahir.month, self.tanggal_lahir.day):
-            usia -= 1
-        return usia
+#     def hitung_usia(self):
+#         hari_ini = datetime.datetime.now()
+#         usia = hari_ini.year - self.tanggal_lahir.year
+#         if (hari_ini.month, hari_ini.day) < (self.tanggal_lahir.month, self.tanggal_lahir.day):
+#             usia -= 1
+#         return usia
 
-    def rekap_masa_otot(self):
-        usia = self.hitung_usia()
-        if usia < 25:
-            return "Masa otot optimal untuk latihan intensif."
-        elif 25 <= usia < 40:
-            return "Masa otot stabil, pertahankan latihan rutin."
-        else:
-            return "Perlunya perhatian ekstra pada pemulihan otot."
-nama = input("Masukkan nama member: ")
-tanggal_lahir = input("Masukkan tanggal lahir (dd-mm-yyyy): ")
-member = MemberGym(nama, tanggal_lahir)
-print(f"Usia {member.nama}: {member.hitung_usia()} tahun")
-print(member.rekap_masa_otot())
+#     def rekap_masa_otot(self):
+#         usia = self.hitung_usia()
+#         if usia < 25:
+#             return "Masa otot optimal untuk latihan intensif."
+#         elif 25 <= usia < 40:
+#             return "Masa otot stabil, pertahankan latihan rutin."
+#         else:
+#             return "Perlunya perhatian ekstra pada pemulihan otot."
+# nama = input("Masukkan nama member: ")
+# tanggal_lahir = input("Masukkan tanggal lahir (dd-mm-yyyy): ")
+# member = MemberGym(nama, tanggal_lahir)
+# print(f"Usia {member.nama}: {member.hitung_usia()} tahun")
+# print(member.rekap_masa_otot())
+
+
+# sistem chatbot sederhana untuk toko gym dengan topik latihan, makan, dan istirahat
+import random
+respon = {
+    "latihan": ["Lakukan pemanasan 10 menit sebelum latihan!", "Fokus pada teknik, bukan beratnya."],
+    "makan": ["Konsumsi protein setelah latihan.", "Jaga hidrasi, minum air cukup!"],
+    "istirahat": ["Tidur minimal 7 jam agar otot pulih.", "Istirahat adalah bagian dari progres."]
+}
+while True:
+    tanya = input("\nTanya seputar (latihan/makan/istirahat) atau 'exit': ").lower()
+    if tanya == "exit":
+        print("🤖 Terima kasih sudah berbicara dengan GymBot!")
+        break
+    elif tanya in respon:
+        print("💡", random.choice(respon[tanya]))
+    else:
+        print("Maaf, topik tidak tersedia.")
+        
