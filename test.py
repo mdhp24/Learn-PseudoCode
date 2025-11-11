@@ -2240,13 +2240,35 @@
 #     print("Kelas tidak tersedia.")
 
 # Sistem pengingat jadwal latihan gym
-jadwal = {
-    "Senin": "Cardio dan Abs",
-    "Rabu": "Upper Body Strength",
-    "Jumat": "Lower Body Strength"
-}
-hari = input("Masukkan hari (Senin/Rabu/Jumat): ")
-if hari in jadwal:
-    print(f"🏋️ Jadwal latihan hari {hari}: {jadwal[hari]}")
+# jadwal = {
+#     "Senin": "Cardio dan Abs",
+#     "Rabu": "Upper Body Strength",
+#     "Jumat": "Lower Body Strength"
+# }
+# hari = input("Masukkan hari (Senin/Rabu/Jumat): ")
+# if hari in jadwal:
+#     print(f"🏋️ Jadwal latihan hari {hari}: {jadwal[hari]}")
+# else:
+#     print("Tidak ada jadwal latihan pada hari tersebut.")
+
+# Sistem pembelian produk dengan metode pembayaran di toko gym
+produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
+pilih = input("Pilih produk yang ingin dibeli: ")
+if pilih in produk:
+    jumlah = int(input("Masukkan jumlah: "))
+    total = produk[pilih] * jumlah
+    print(f"\nTotal harga: Rp{total}")
+
+    metode = input("Pilih metode pembayaran (cash/kartu): ").lower()
+    if metode == "cash":
+        bayar = int(input("Masukkan jumlah uang yang dibayarkan: Rp"))
+        if bayar >= total:
+            print(f"✅ Pembayaran berhasil! Kembalian: Rp{bayar - total}")
+        else:
+            print("❌ Uang tidak cukup.")
+    elif metode == "kartu":
+        print("✅ Pembayaran dengan kartu berhasil!")
+    else:
+        print("Metode pembayaran tidak dikenali.")
 else:
-    print("Tidak ada jadwal latihan pada hari tersebut.")
+    print("Produk tidak tersedia.")
