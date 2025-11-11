@@ -2289,12 +2289,22 @@
 #     print("Program berjalan... Tekan Ctrl+C untuk berhenti.")
 
 # Sistem pendaftaran member gym dengan validasi usia
-nama = input("Masukkan nama Anda: ")
-usia = int(input("Masukkan usia Anda: "))
+# nama = input("Masukkan nama Anda: ")
+# usia = int(input("Masukkan usia Anda: "))
 
-if usia >= 18:
-    print(f"✅ {nama}, Anda berhasil mendaftar sebagai member gym.")
-else:
-    print("❌ Maaf, usia Anda belum memenuhi syarat untuk mendaftar.")
+# if usia >= 18:
+#     print(f"✅ {nama}, Anda berhasil mendaftar sebagai member gym.")
+# else:
+#     print("❌ Maaf, usia Anda belum memenuhi syarat untuk mendaftar.")
     
     
+# Sistem laporan keuangan bulanan di toko gym
+pemasukan = [500000, 750000, 300000, 400000, 1000000]
+pengeluaran = [200000, 150000, 250000, 100000, 300000]
+total_masuk = sum(pemasukan)
+total_keluar = sum(pengeluaran)
+saldo = total_masuk - total_keluar
+print("=== LAPORAN KEUANGAN TOKO GYM ===")
+print(f"Total Pemasukan: Rp{total_masuk}")
+print(f"Total Pengeluaran: Rp{total_keluar}")
+print(f"Saldo Akhir: Rp{saldo}")
