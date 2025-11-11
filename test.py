@@ -2274,16 +2274,27 @@
 #     print("Produk tidak tersedia.")
 
 # Sistem pengingat jadwal latihan gym dengan notifikasi sederhana
-import time
-jadwal = {
-    "07:00": "Waktu untuk latihan pagi! Jangan lupa pemanasan.",
-    "12:00": "Saatnya istirahat dan makan siang sehat.",
-    "18:00": "Waktunya latihan sore! Fokus pada teknik."
-}
-while True:
-    sekarang = time.strftime("%H:%M")
-    if sekarang in jadwal:
-        print(f"🔔 Pemberitahuan: {jadwal[sekarang]}")
-        time.sleep(60)  # Tunggu 1 menit untuk menghindari notifikasi berulang
-    time.sleep(10)  # Cek setiap 10 detik
-    print("Program berjalan... Tekan Ctrl+C untuk berhenti.")
+# import time
+# jadwal = {
+#     "07:00": "Waktu untuk latihan pagi! Jangan lupa pemanasan.",
+#     "12:00": "Saatnya istirahat dan makan siang sehat.",
+#     "18:00": "Waktunya latihan sore! Fokus pada teknik."
+# }
+# while True:
+#     sekarang = time.strftime("%H:%M")
+#     if sekarang in jadwal:
+#         print(f"🔔 Pemberitahuan: {jadwal[sekarang]}")
+#         time.sleep(60)  # Tunggu 1 menit untuk menghindari notifikasi berulang
+#     time.sleep(10)  # Cek setiap 10 detik
+#     print("Program berjalan... Tekan Ctrl+C untuk berhenti.")
+
+# Sistem pendaftaran member gym dengan validasi usia
+nama = input("Masukkan nama Anda: ")
+usia = int(input("Masukkan usia Anda: "))
+
+if usia >= 18:
+    print(f"✅ {nama}, Anda berhasil mendaftar sebagai member gym.")
+else:
+    print("❌ Maaf, usia Anda belum memenuhi syarat untuk mendaftar.")
+    
+    
