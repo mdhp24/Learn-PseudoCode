@@ -2299,12 +2299,41 @@
     
     
 # Sistem laporan keuangan bulanan di toko gym
-pemasukan = [500000, 750000, 300000, 400000, 1000000]
-pengeluaran = [200000, 150000, 250000, 100000, 300000]
-total_masuk = sum(pemasukan)
-total_keluar = sum(pengeluaran)
-saldo = total_masuk - total_keluar
-print("=== LAPORAN KEUANGAN TOKO GYM ===")
-print(f"Total Pemasukan: Rp{total_masuk}")
-print(f"Total Pengeluaran: Rp{total_keluar}")
-print(f"Saldo Akhir: Rp{saldo}")
+# pemasukan = [500000, 750000, 300000, 400000, 1000000]
+# pengeluaran = [200000, 150000, 250000, 100000, 300000]
+# total_masuk = sum(pemasukan)
+# total_keluar = sum(pengeluaran)
+# saldo = total_masuk - total_keluar
+# print("=== LAPORAN KEUANGAN TOKO GYM ===")
+# print(f"Total Pemasukan: Rp{total_masuk}")
+# print(f"Total Pengeluaran: Rp{total_keluar}")
+# print(f"Saldo Akhir: Rp{saldo}")
+
+
+# sistem rekap masa otot gym
+import datetime
+class MemberGym:
+    def __init__(self, nama, tanggal_lahir):
+        self.nama = nama
+        self.tanggal_lahir = datetime.datetime.strptime(tanggal_lahir, "%d-%m-%Y")
+
+    def hitung_usia(self):
+        hari_ini = datetime.datetime.now()
+        usia = hari_ini.year - self.tanggal_lahir.year
+        if (hari_ini.month, hari_ini.day) < (self.tanggal_lahir.month, self.tanggal_lahir.day):
+            usia -= 1
+        return usia
+
+    def rekap_masa_otot(self):
+        usia = self.hitung_usia()
+        if usia < 25:
+            return "Masa otot optimal untuk latihan intensif."
+        elif 25 <= usia < 40:
+            return "Masa otot stabil, pertahankan latihan rutin."
+        else:
+            return "Perlunya perhatian ekstra pada pemulihan otot."
+nama = input("Masukkan nama member: ")
+tanggal_lahir = input("Masukkan tanggal lahir (dd-mm-yyyy): ")
+member = MemberGym(nama, tanggal_lahir)
+print(f"Usia {member.nama}: {member.hitung_usia()} tahun")
+print(member.rekap_masa_otot())
