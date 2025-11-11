@@ -2221,20 +2221,32 @@
 #         print(f"{item} masih tersedia {stok} unit.")
 
 # Sistem pendaftaran kelas gym dengan kuota terbatas
-kelas = {
-    "Yoga": 10,
-    "Zumba": 8,
-    "Weight Training": 12
+# kelas = {
+#     "Yoga": 10,
+#     "Zumba": 8,
+#     "Weight Training": 12
+# }
+
+# nama = input("Masukkan nama Anda: ")
+# pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
+
+# if pilih in kelas:
+#     if kelas[pilih] > 0:
+#         kelas[pilih] -= 1
+#         print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
+#     else:
+#         print("❌ Kelas sudah penuh.")
+# else:
+#     print("Kelas tidak tersedia.")
+
+# Sistem pengingat jadwal latihan gym
+jadwal = {
+    "Senin": "Cardio dan Abs",
+    "Rabu": "Upper Body Strength",
+    "Jumat": "Lower Body Strength"
 }
-
-nama = input("Masukkan nama Anda: ")
-pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
-
-if pilih in kelas:
-    if kelas[pilih] > 0:
-        kelas[pilih] -= 1
-        print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
-    else:
-        print("❌ Kelas sudah penuh.")
+hari = input("Masukkan hari (Senin/Rabu/Jumat): ")
+if hari in jadwal:
+    print(f"🏋️ Jadwal latihan hari {hari}: {jadwal[hari]}")
 else:
-    print("Kelas tidak tersedia.")
+    print("Tidak ada jadwal latihan pada hari tersebut.")
