@@ -2376,16 +2376,34 @@
 # print(f"Total Bayar : Rp{total}")
 
 # Sistem reward poin untuk pembelian di toko gym
-def hitung_poin(pembelian):
-    if pembelian >= 1000000:
-        return 100
-    elif pembelian >= 500000:
-        return 50
+# def hitung_poin(pembelian):
+#     if pembelian >= 1000000:
+#         return 100
+#     elif pembelian >= 500000:
+#         return 50
+#     else:
+#         return 10
+
+# nama = input("Masukkan nama member: ")
+# belanja = int(input("Masukkan total pembelian: Rp"))
+
+# poin = hitung_poin(belanja)
+# print(f"🎉 Selamat {nama}, Anda mendapat {poin} poin reward!")
+
+# Sistem pendaftaran member gym dengan validasi usia
+anggota = []
+
+while True:
+    nama = input("Nama anggota (ketik 'stop' untuk berhenti): ")
+    if nama.lower() == "stop":
+        break
+    umur = int(input("Umur: "))
+    if umur < 17:
+        print("❌ Minimal umur 17 tahun untuk mendaftar gym.")
     else:
-        return 10
+        anggota.append(nama)
+        print(f"✅ {nama} berhasil didaftarkan.")
 
-nama = input("Masukkan nama member: ")
-belanja = int(input("Masukkan total pembelian: Rp"))
-
-poin = hitung_poin(belanja)
-print(f"🎉 Selamat {nama}, Anda mendapat {poin} poin reward!")
+print("\nDaftar Anggota Terdaftar:")
+for a in anggota:
+    print("-", a)
