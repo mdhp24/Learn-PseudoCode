@@ -2449,8 +2449,56 @@
 #         print("Pilihan tidak valid.")
 
 # Sistem penyimpanan transaksi pembelian di toko gym ke file teks
-with open("transaksi_gym.txt", "a") as file:
-    nama = input("Nama pelanggan: ")
-    total = input("Total belanja: Rp")
-    file.write(f"{nama} - Rp{total}\n")
-    print("🧾 Transaksi berhasil disimpan ke file 'transaksi_gym.txt'")
+# with open("transaksi_gym.txt", "a") as file:
+#     nama = input("Nama pelanggan: ")
+#     total = input("Total belanja: Rp")
+#     file.write(f"{nama} - Rp{total}\n")
+#     print("🧾 Transaksi berhasil disimpan ke file 'transaksi_gym.txt'")
+
+# Sistem pembelian produk dengan kelas di toko gym
+class Produk:
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        self.harga = harga
+        self.stok = stok
+
+    def jual(self, jumlah):
+        if jumlah <= self.stok:
+            self.stok -= jumlah
+            return jumlah * self.harga
+        else:
+            print(f"❌ Stok {self.nama} tidak cukup.")
+            return 0
+
+class TokoGym:
+    def __init__(self):
+        self.produk = [
+            Produk("Dumbbell", 200000, 5),
+            Produk("Matras Yoga", 100000, 10),
+            Produk("Protein Shake", 50000, 15)
+        ]
+        self.total = 0
+
+    def tampilkan(self):
+        print("\n=== PRODUK TOKO GYM ===")
+        for p in self.produk:
+            print(f"{p.nama:15} Rp{p.harga} | Stok: {p.stok}")
+
+    def beli(self):
+        while True:
+            self.tampilkan()
+            nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
+            if nama.lower() == "selesai":
+                break
+            for p in self.produk:
+                if p.nama.lower() == nama.lower():
+                    qty = int(input("Masukkan jumlah: "))
+                    self.total += p.jual(qty)
+                    break
+            else:
+                print("Produk tidak ditemukan.")
+        print(f"\n💰 Total Bayar: Rp{self.total}")
+
+# Jalankan
+toko = TokoGym()
+toko.beli()
