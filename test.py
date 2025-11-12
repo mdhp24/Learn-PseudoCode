@@ -2340,19 +2340,37 @@
 
 
 # sistem chatbot sederhana untuk toko gym dengan topik latihan, makan, dan istirahat
-import random
-respon = {
-    "latihan": ["Lakukan pemanasan 10 menit sebelum latihan!", "Fokus pada teknik, bukan beratnya."],
-    "makan": ["Konsumsi protein setelah latihan.", "Jaga hidrasi, minum air cukup!"],
-    "istirahat": ["Tidur minimal 7 jam agar otot pulih.", "Istirahat adalah bagian dari progres."]
-}
-while True:
-    tanya = input("\nTanya seputar (latihan/makan/istirahat) atau 'exit': ").lower()
-    if tanya == "exit":
-        print("🤖 Terima kasih sudah berbicara dengan GymBot!")
-        break
-    elif tanya in respon:
-        print("💡", random.choice(respon[tanya]))
-    else:
-        print("Maaf, topik tidak tersedia.")
+# import random
+# respon = {
+#     "latihan": ["Lakukan pemanasan 10 menit sebelum latihan!", "Fokus pada teknik, bukan beratnya."],
+#     "makan": ["Konsumsi protein setelah latihan.", "Jaga hidrasi, minum air cukup!"],
+#     "istirahat": ["Tidur minimal 7 jam agar otot pulih.", "Istirahat adalah bagian dari progres."]
+# }
+# while True:
+#     tanya = input("\nTanya seputar (latihan/makan/istirahat) atau 'exit': ").lower()
+#     if tanya == "exit":
+#         print("🤖 Terima kasih sudah berbicara dengan GymBot!")
+#         break
+#     elif tanya in respon:
+#         print("💡", random.choice(respon[tanya]))
+#     else:
+#         print("Maaf, topik tidak tersedia.")
         
+# Sistem pembelian produk dengan keranjang di toko gym        
+def hitung_total(keranjang):
+    total = 0
+    for item, harga in keranjang.items():
+        total += harga
+    return total
+
+keranjang = {
+    "Treadmill": 1500000,
+    "Dumbbell": 250000,
+    "Matras Yoga": 120000
+}
+
+total = hitung_total(keranjang)
+print("=== STRUK PEMBELIAN ===")
+for k, v in keranjang.items():
+    print(f"{k:15} : Rp{v}")
+print(f"Total Bayar : Rp{total}")
