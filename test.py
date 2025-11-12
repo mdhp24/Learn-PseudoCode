@@ -2391,19 +2391,38 @@
 # print(f"🎉 Selamat {nama}, Anda mendapat {poin} poin reward!")
 
 # Sistem pendaftaran member gym dengan validasi usia
-anggota = []
+# anggota = []
 
+# while True:
+#     nama = input("Nama anggota (ketik 'stop' untuk berhenti): ")
+#     if nama.lower() == "stop":
+#         break
+#     umur = int(input("Umur: "))
+#     if umur < 17:
+#         print("❌ Minimal umur 17 tahun untuk mendaftar gym.")
+#     else:
+#         anggota.append(nama)
+#         print(f"✅ {nama} berhasil didaftarkan.")
+
+# print("\nDaftar Anggota Terdaftar:")
+# for a in anggota:
+#     print("-", a)
+
+# Sistem chatbot motivasi latihan di toko gym
+import random
+
+motivasi = [
+    "Latihan hari ini adalah kemenangan besok!",
+    "Kekuatan datang dari kebiasaan, bukan niat.",
+    "Kamu tidak perlu cepat, cukup konsisten!",
+    "Istirahat juga bagian dari progres 💪"
+]
+
+print("=== GymBot Motivasi ===")
 while True:
-    nama = input("Nama anggota (ketik 'stop' untuk berhenti): ")
-    if nama.lower() == "stop":
+    tanya = input("Ketik 'motivasi' untuk mendapatkan semangat atau 'exit': ").lower()
+    if tanya == "exit":
+        print("Sampai jumpa di sesi berikutnya!")
         break
-    umur = int(input("Umur: "))
-    if umur < 17:
-        print("❌ Minimal umur 17 tahun untuk mendaftar gym.")
-    else:
-        anggota.append(nama)
-        print(f"✅ {nama} berhasil didaftarkan.")
-
-print("\nDaftar Anggota Terdaftar:")
-for a in anggota:
-    print("-", a)
+    elif tanya == "motivasi":
+        print(random.choice(motivasi))
