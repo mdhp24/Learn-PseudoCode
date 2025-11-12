@@ -2357,20 +2357,35 @@
 #         print("Maaf, topik tidak tersedia.")
         
 # Sistem pembelian produk dengan keranjang di toko gym        
-def hitung_total(keranjang):
-    total = 0
-    for item, harga in keranjang.items():
-        total += harga
-    return total
+# def hitung_total(keranjang):
+#     total = 0
+#     for item, harga in keranjang.items():
+#         total += harga
+#     return total
 
-keranjang = {
-    "Treadmill": 1500000,
-    "Dumbbell": 250000,
-    "Matras Yoga": 120000
-}
+# keranjang = {
+#     "Treadmill": 1500000,
+#     "Dumbbell": 250000,
+#     "Matras Yoga": 120000
+# }
 
-total = hitung_total(keranjang)
-print("=== STRUK PEMBELIAN ===")
-for k, v in keranjang.items():
-    print(f"{k:15} : Rp{v}")
-print(f"Total Bayar : Rp{total}")
+# total = hitung_total(keranjang)
+# print("=== STRUK PEMBELIAN ===")
+# for k, v in keranjang.items():
+#     print(f"{k:15} : Rp{v}")
+# print(f"Total Bayar : Rp{total}")
+
+# Sistem reward poin untuk pembelian di toko gym
+def hitung_poin(pembelian):
+    if pembelian >= 1000000:
+        return 100
+    elif pembelian >= 500000:
+        return 50
+    else:
+        return 10
+
+nama = input("Masukkan nama member: ")
+belanja = int(input("Masukkan total pembelian: Rp"))
+
+poin = hitung_poin(belanja)
+print(f"🎉 Selamat {nama}, Anda mendapat {poin} poin reward!")
