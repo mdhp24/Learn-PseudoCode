@@ -2428,22 +2428,29 @@
 #         print(random.choice(motivasi))
 
 # Sistem cek dan tambah stok produk di toko gym
-stok = {}
+# stok = {}
 
-while True:
-    print("\n1. Tambah Produk\n2. Lihat Stok\n3. Keluar")
-    menu = input("Pilih menu: ")
+# while True:
+#     print("\n1. Tambah Produk\n2. Lihat Stok\n3. Keluar")
+#     menu = input("Pilih menu: ")
 
-    if menu == "1":
-        nama = input("Nama produk: ")
-        jumlah = int(input("Jumlah stok: "))
-        stok[nama] = stok.get(nama, 0) + jumlah
-        print(f"✅ {nama} ditambahkan ke inventori.")
-    elif menu == "2":
-        print("=== DATA STOK GYM ===")
-        for p, j in stok.items():
-            print(f"{p:15} : {j} unit")
-    elif menu == "3":
-        break
-    else:
-        print("Pilihan tidak valid.")
+#     if menu == "1":
+#         nama = input("Nama produk: ")
+#         jumlah = int(input("Jumlah stok: "))
+#         stok[nama] = stok.get(nama, 0) + jumlah
+#         print(f"✅ {nama} ditambahkan ke inventori.")
+#     elif menu == "2":
+#         print("=== DATA STOK GYM ===")
+#         for p, j in stok.items():
+#             print(f"{p:15} : {j} unit")
+#     elif menu == "3":
+#         break
+#     else:
+#         print("Pilihan tidak valid.")
+
+# Sistem penyimpanan transaksi pembelian di toko gym ke file teks
+with open("transaksi_gym.txt", "a") as file:
+    nama = input("Nama pelanggan: ")
+    total = input("Total belanja: Rp")
+    file.write(f"{nama} - Rp{total}\n")
+    print("🧾 Transaksi berhasil disimpan ke file 'transaksi_gym.txt'")
