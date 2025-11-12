@@ -2409,20 +2409,41 @@
 #     print("-", a)
 
 # Sistem chatbot motivasi latihan di toko gym
-import random
+# import random
 
-motivasi = [
-    "Latihan hari ini adalah kemenangan besok!",
-    "Kekuatan datang dari kebiasaan, bukan niat.",
-    "Kamu tidak perlu cepat, cukup konsisten!",
-    "Istirahat juga bagian dari progres 💪"
-]
+# motivasi = [
+#     "Latihan hari ini adalah kemenangan besok!",
+#     "Kekuatan datang dari kebiasaan, bukan niat.",
+#     "Kamu tidak perlu cepat, cukup konsisten!",
+#     "Istirahat juga bagian dari progres 💪"
+# ]
 
-print("=== GymBot Motivasi ===")
+# print("=== GymBot Motivasi ===")
+# while True:
+#     tanya = input("Ketik 'motivasi' untuk mendapatkan semangat atau 'exit': ").lower()
+#     if tanya == "exit":
+#         print("Sampai jumpa di sesi berikutnya!")
+#         break
+#     elif tanya == "motivasi":
+#         print(random.choice(motivasi))
+
+# Sistem cek dan tambah stok produk di toko gym
+stok = {}
+
 while True:
-    tanya = input("Ketik 'motivasi' untuk mendapatkan semangat atau 'exit': ").lower()
-    if tanya == "exit":
-        print("Sampai jumpa di sesi berikutnya!")
+    print("\n1. Tambah Produk\n2. Lihat Stok\n3. Keluar")
+    menu = input("Pilih menu: ")
+
+    if menu == "1":
+        nama = input("Nama produk: ")
+        jumlah = int(input("Jumlah stok: "))
+        stok[nama] = stok.get(nama, 0) + jumlah
+        print(f"✅ {nama} ditambahkan ke inventori.")
+    elif menu == "2":
+        print("=== DATA STOK GYM ===")
+        for p, j in stok.items():
+            print(f"{p:15} : {j} unit")
+    elif menu == "3":
         break
-    elif tanya == "motivasi":
-        print(random.choice(motivasi))
+    else:
+        print("Pilihan tidak valid.")
