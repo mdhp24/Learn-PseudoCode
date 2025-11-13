@@ -2504,16 +2504,45 @@
 # toko.beli()
 
 # Sistem enkripsi teks menggunakan metode Caesar Cipher
-def caesar_cipher(teks, shift):
-    hasil = ""
-    for huruf in teks:
-        if huruf.isalpha():
-            ascii_offset = 65 if huruf.isupper() else 97
-            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+# def caesar_cipher(teks, shift):
+#     hasil = ""
+#     for huruf in teks:
+#         if huruf.isalpha():
+#             ascii_offset = 65 if huruf.isupper() else 97
+#             hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+#         else:
+#             hasil += huruf
+#     return hasil
+# pesan = input("Masukkan teks: ")
+# geser = int(input("Geser berapa huruf: "))
+# print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+# print("Teks terdekripsi:", caesar_cipher(caesar_cipher(pesan, geser), -geser))
+
+
+# Sistem antrian pelanggan di toko gym
+from collections import deque
+antrian = deque()
+while True:
+    print("\n=== SISTEM ANTRIAN GYM ===")
+    print("1. Tambah Pelanggan")
+    print("2. Layani Pelanggan")
+    print("3. Lihat Antrian")
+    print("4. Keluar")
+    pilih = input("Pilih menu: ")
+    if pilih == "1":
+        nama = input("Masukkan nama pelanggan: ")
+        antrian.append(nama)
+        print(f"{nama} ditambahkan ke antrian.")
+    elif pilih == "2":
+        if antrian:
+            dilayani = antrian.popleft()
+            print(f"{dilayani} sedang dilayani.")
         else:
-            hasil += huruf
-    return hasil
-pesan = input("Masukkan teks: ")
-geser = int(input("Geser berapa huruf: "))
-print("Teks terenkripsi:", caesar_cipher(pesan, geser))
-print("Teks terdekripsi:", caesar_cipher(caesar_cipher(pesan, geser), -geser))
+            print("Antrian kosong.")
+    elif pilih == "3":
+        print("Antrian saat ini:", list(antrian))
+    elif pilih == "4":
+        break
+    else:
+        print("Pilihan tidak valid.")
+        
