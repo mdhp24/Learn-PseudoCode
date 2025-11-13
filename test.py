@@ -2548,7 +2548,21 @@
         
         
 # Sistem hitung volume bola
-import math
-radius = float(input("Masukkan jari-jari bola: "))
-volume = (4/3) * math.pi * radius**3
-print(f"Volume bola dengan jari-jari {radius} adalah {volume:.2f}")
+# import math
+# radius = float(input("Masukkan jari-jari bola: "))
+# volume = (4/3) * math.pi * radius**3
+# print(f"Volume bola dengan jari-jari {radius} adalah {volume:.2f}")
+
+
+# Sistem operasi pecahan dasar
+from fractions import Fraction  
+a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+print(f"Jumlah: {a + b}")
+print(f"Selisih: {a - b}")
+print(f"Perkalian: {a * b}")
+print(f"Pembagian: {a / b}")
+print(f"Pecahan pertama dalam desimal: {float(a)}")
+print(f"Pecahan kedua dalam desimal: {float(b)}")
+print(f"Pecahan pertama dalam persen: {float(a) * 100}%")
+print(f"Pecahan kedua dalam persen: {float(b) * 100}%")
