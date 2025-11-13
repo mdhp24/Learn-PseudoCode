@@ -2569,24 +2569,41 @@
 
 
 # Sistem pembelian produk dengan diskon di toko gym
-produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
-pilih = input("Pilih produk yang ingin dibeli: ")
-if pilih in produk:
-    jumlah = int(input("Masukkan jumlah: "))
-    total = produk[pilih] * jumlah
+# produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
+# pilih = input("Pilih produk yang ingin dibeli: ")
+# if pilih in produk:
+#     jumlah = int(input("Masukkan jumlah: "))
+#     total = produk[pilih] * jumlah
 
-    if total >= 500000:
-        diskon = 0.2
-    elif total >= 300000:
-        diskon = 0.1
-    elif total >= 100000:
-        diskon = 0.05
-    else:
-        diskon = 0
+#     if total >= 500000:
+#         diskon = 0.2
+#     elif total >= 300000:
+#         diskon = 0.1
+#     elif total >= 100000:
+#         diskon = 0.05
+#     else:
+#         diskon = 0
 
-    total -= total * diskon
-    print(f"\nDiskon: {diskon*100:.0f}%")
-    print(f"Total yang harus dibayar: Rp{total:.0f}")
-else:
-    print("Produk tidak tersedia.")
-    
+#     total -= total * diskon
+#     print(f"\nDiskon: {diskon*100:.0f}%")
+#     print(f"Total yang harus dibayar: Rp{total:.0f}")
+# else:
+#     print("Produk tidak tersedia.")
+  
+  
+# Sistem pembelian produk dengan kelas Member di toko gym
+class Member:
+    def __init__(self, nama, level):
+        self.nama = nama  
+        self.level = level
+    def get_diskon(self):
+        if self.level == "gold":
+            return 0.2
+        elif self.level == "silver":
+            return 0.1
+        else:
+            return 0.05
+nama = input("Masukkan nama member: ")
+level = input("Masukkan level member (gold/silver/reguler): ").lower()
+member = Member(nama, level)
+print(f"Diskon untuk {member.nama} dengan level {member.level} adalah {member.get_diskon()*100}%")
