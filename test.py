@@ -2555,14 +2555,38 @@
 
 
 # Sistem operasi pecahan dasar
-from fractions import Fraction  
-a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
-b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
-print(f"Jumlah: {a + b}")
-print(f"Selisih: {a - b}")
-print(f"Perkalian: {a * b}")
-print(f"Pembagian: {a / b}")
-print(f"Pecahan pertama dalam desimal: {float(a)}")
-print(f"Pecahan kedua dalam desimal: {float(b)}")
-print(f"Pecahan pertama dalam persen: {float(a) * 100}%")
-print(f"Pecahan kedua dalam persen: {float(b) * 100}%")
+# from fractions import Fraction  
+# a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+# b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+# print(f"Jumlah: {a + b}")
+# print(f"Selisih: {a - b}")
+# print(f"Perkalian: {a * b}")
+# print(f"Pembagian: {a / b}")
+# print(f"Pecahan pertama dalam desimal: {float(a)}")
+# print(f"Pecahan kedua dalam desimal: {float(b)}")
+# print(f"Pecahan pertama dalam persen: {float(a) * 100}%")
+# print(f"Pecahan kedua dalam persen: {float(b) * 100}%")
+
+
+# Sistem pembelian produk dengan diskon di toko gym
+produk = {"Dumbbell": 200000, "Yoga Mat": 150000, "Gloves": 80000}
+pilih = input("Pilih produk yang ingin dibeli: ")
+if pilih in produk:
+    jumlah = int(input("Masukkan jumlah: "))
+    total = produk[pilih] * jumlah
+
+    if total >= 500000:
+        diskon = 0.2
+    elif total >= 300000:
+        diskon = 0.1
+    elif total >= 100000:
+        diskon = 0.05
+    else:
+        diskon = 0
+
+    total -= total * diskon
+    print(f"\nDiskon: {diskon*100:.0f}%")
+    print(f"Total yang harus dibayar: Rp{total:.0f}")
+else:
+    print("Produk tidak tersedia.")
+    
