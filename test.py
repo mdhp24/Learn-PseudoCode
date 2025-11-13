@@ -2520,29 +2520,35 @@
 
 
 # Sistem antrian pelanggan di toko gym
-from collections import deque
-antrian = deque()
-while True:
-    print("\n=== SISTEM ANTRIAN GYM ===")
-    print("1. Tambah Pelanggan")
-    print("2. Layani Pelanggan")
-    print("3. Lihat Antrian")
-    print("4. Keluar")
-    pilih = input("Pilih menu: ")
-    if pilih == "1":
-        nama = input("Masukkan nama pelanggan: ")
-        antrian.append(nama)
-        print(f"{nama} ditambahkan ke antrian.")
-    elif pilih == "2":
-        if antrian:
-            dilayani = antrian.popleft()
-            print(f"{dilayani} sedang dilayani.")
-        else:
-            print("Antrian kosong.")
-    elif pilih == "3":
-        print("Antrian saat ini:", list(antrian))
-    elif pilih == "4":
-        break
-    else:
-        print("Pilihan tidak valid.")
+# from collections import deque
+# antrian = deque()
+# while True:
+#     print("\n=== SISTEM ANTRIAN GYM ===")
+#     print("1. Tambah Pelanggan")
+#     print("2. Layani Pelanggan")
+#     print("3. Lihat Antrian")
+#     print("4. Keluar")
+#     pilih = input("Pilih menu: ")
+#     if pilih == "1":
+#         nama = input("Masukkan nama pelanggan: ")
+#         antrian.append(nama)
+#         print(f"{nama} ditambahkan ke antrian.")
+#     elif pilih == "2":
+#         if antrian:
+#             dilayani = antrian.popleft()
+#             print(f"{dilayani} sedang dilayani.")
+#         else:
+#             print("Antrian kosong.")
+#     elif pilih == "3":
+#         print("Antrian saat ini:", list(antrian))
+#     elif pilih == "4":
+#         break
+#     else:
+#         print("Pilihan tidak valid.")
         
+        
+# Sistem hitung volume bola
+import math
+radius = float(input("Masukkan jari-jari bola: "))
+volume = (4/3) * math.pi * radius**3
+print(f"Volume bola dengan jari-jari {radius} adalah {volume:.2f}")
