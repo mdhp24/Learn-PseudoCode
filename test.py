@@ -2592,18 +2592,36 @@
   
   
 # Sistem pembelian produk dengan kelas Member di toko gym
-class Member:
-    def __init__(self, nama, level):
-        self.nama = nama  
-        self.level = level
-    def get_diskon(self):
-        if self.level == "gold":
-            return 0.2
-        elif self.level == "silver":
-            return 0.1
-        else:
-            return 0.05
-nama = input("Masukkan nama member: ")
-level = input("Masukkan level member (gold/silver/reguler): ").lower()
-member = Member(nama, level)
-print(f"Diskon untuk {member.nama} dengan level {member.level} adalah {member.get_diskon()*100}%")
+# class Member:
+#     def __init__(self, nama, level):
+#         self.nama = nama  
+#         self.level = level
+#     def get_diskon(self):
+#         if self.level == "gold":
+#             return 0.2
+#         elif self.level == "silver":
+#             return 0.1
+#         else:
+#             return 0.05
+# nama = input("Masukkan nama member: ")
+# level = input("Masukkan level member (gold/silver/reguler): ").lower()
+# member = Member(nama, level)
+# print(f"Diskon untuk {member.nama} dengan level {member.level} adalah {member.get_diskon()*100}%")
+
+# Sistem pendaftaran kelas gym dengan kuota terbatas
+kelas = {
+    "Yoga": 10,
+    "Zumba": 8,
+    "Weight Training": 12
+}
+nama = input("Masukkan nama Anda: ")
+pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
+if pilih in kelas:
+    if kelas[pilih] > 0:
+        kelas[pilih] -= 1
+        print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
+    else:
+        print("❌ Kelas sudah penuh.")
+else:
+    print("Kelas tidak tersedia.")
+    
