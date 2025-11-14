@@ -2608,20 +2608,35 @@
 # member = Member(nama, level)
 # print(f"Diskon untuk {member.nama} dengan level {member.level} adalah {member.get_diskon()*100}%")
 
+
 # Sistem pendaftaran kelas gym dengan kuota terbatas
-kelas = {
-    "Yoga": 10,
-    "Zumba": 8,
-    "Weight Training": 12
+# kelas = {
+#     "Yoga": 10,
+#     "Zumba": 8,
+#     "Weight Training": 12
+# }
+# nama = input("Masukkan nama Anda: ")
+# pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
+# if pilih in kelas:
+#     if kelas[pilih] > 0:
+#         kelas[pilih] -= 1
+#         print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
+#     else:
+#         print("❌ Kelas sudah penuh.")
+# else:
+#     print("Kelas tidak tersedia.")
+
+# Sistem Cek Harga Otomatis (Dictionary Lookup)
+produk = {
+    "Dumbbell 10kg": 250000,
+    "Rope Skipping": 45000,
+    "Gloves Gym": 60000,
+    "Whey Protein": 350000
 }
-nama = input("Masukkan nama Anda: ")
-pilih = input("Pilih kelas (Yoga/Zumba/Weight Training): ")
-if pilih in kelas:
-    if kelas[pilih] > 0:
-        kelas[pilih] -= 1
-        print(f"✅ {nama} berhasil mendaftar kelas {pilih}.")
-    else:
-        print("❌ Kelas sudah penuh.")
+
+item = input("Masukkan nama produk: ")
+
+if item in produk:
+    print(f"Harga {item} adalah Rp{produk[item]}")
 else:
-    print("Kelas tidak tersedia.")
-    
+    print("Produk tidak ditemukan.")
