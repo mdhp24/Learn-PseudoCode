@@ -2642,17 +2642,29 @@
 #     print("Produk tidak ditemukan.")
 
 # Sistem pembelian produk dengan diskon berdasarkan jenis member di toko gym
-harga = int(input("Total harga pembelian: Rp"))
-member = input("Jenis member (silver/gold/non): ").lower()
+# harga = int(input("Total harga pembelian: Rp"))
+# member = input("Jenis member (silver/gold/non): ").lower()
 
-if member == "gold":
-    diskon = harga * 0.20
-elif member == "silver":
-    diskon = harga * 0.10
-else:
-    diskon = 0
+# if member == "gold":
+#     diskon = harga * 0.20
+# elif member == "silver":
+#     diskon = harga * 0.10
+# else:
+#     diskon = 0
 
-bayar = harga - diskon
+# bayar = harga - diskon
 
-print(f"Diskon: Rp{int(diskon)}")
-print(f"Total bayar: Rp{int(bayar)}")
+# print(f"Diskon: Rp{int(diskon)}")
+# print(f"Total bayar: Rp{int(bayar)}")
+
+# Sistem struk pembelian di toko gym
+nama = input("Nama pembeli: ")
+barang = input("Barang dibeli: ")
+harga = int(input("Harga barang: Rp"))
+
+print("\n===== STRUK PEMBELIAN GYM =====")
+print(f"Pembeli : {nama}")
+print(f"Barang  : {barang}")
+print(f"Harga   : Rp{harga}")
+print("================================")
+print("Terima kasih telah berbelanja 💪")
