@@ -2670,13 +2670,24 @@
 # print("Terima kasih telah berbelanja 💪")
 
 # Sistem total pembelian produk di toko gym
-total = 0
+# total = 0
 
-jumlah = int(input("Berapa jenis produk yang ingin dibeli? "))
+# jumlah = int(input("Berapa jenis produk yang ingin dibeli? "))
 
-for i in range(jumlah):
-    nama = input(f"Nama produk ke-{i+1}: ")
-    harga = int(input("Harga produk: Rp"))
-    total += harga
+# for i in range(jumlah):
+#     nama = input(f"Nama produk ke-{i+1}: ")
+#     harga = int(input("Harga produk: Rp"))
+#     total += harga
 
-print(f"\nTotal seluruh pembelian: Rp{total}")
+# print(f"\nTotal seluruh pembelian: Rp{total}")
+
+# Sistem cicilan pembayaran di toko gym
+tagihan = int(input("Total tagihan: Rp"))
+bayar = 0
+
+while bayar < tagihan:
+    cicil = int(input("Masukkan pembayaran: Rp"))
+    bayar += cicil
+    print(f"Total terbayar: Rp{bayar}")
+
+print("🎉 Tagihan lunas!")
