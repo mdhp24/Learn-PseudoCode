@@ -2627,16 +2627,32 @@
 #     print("Kelas tidak tersedia.")
 
 # Sistem Cek Harga Otomatis (Dictionary Lookup)
-produk = {
-    "Dumbbell 10kg": 250000,
-    "Rope Skipping": 45000,
-    "Gloves Gym": 60000,
-    "Whey Protein": 350000
-}
+# produk = {
+#     "Dumbbell 10kg": 250000,
+#     "Rope Skipping": 45000,
+#     "Gloves Gym": 60000,
+#     "Whey Protein": 350000
+# }
 
-item = input("Masukkan nama produk: ")
+# item = input("Masukkan nama produk: ")
 
-if item in produk:
-    print(f"Harga {item} adalah Rp{produk[item]}")
+# if item in produk:
+#     print(f"Harga {item} adalah Rp{produk[item]}")
+# else:
+#     print("Produk tidak ditemukan.")
+
+# Sistem pembelian produk dengan diskon berdasarkan jenis member di toko gym
+harga = int(input("Total harga pembelian: Rp"))
+member = input("Jenis member (silver/gold/non): ").lower()
+
+if member == "gold":
+    diskon = harga * 0.20
+elif member == "silver":
+    diskon = harga * 0.10
 else:
-    print("Produk tidak ditemukan.")
+    diskon = 0
+
+bayar = harga - diskon
+
+print(f"Diskon: Rp{int(diskon)}")
+print(f"Total bayar: Rp{int(bayar)}")
