@@ -2682,12 +2682,27 @@
 # print(f"\nTotal seluruh pembelian: Rp{total}")
 
 # Sistem cicilan pembayaran di toko gym
-tagihan = int(input("Total tagihan: Rp"))
-bayar = 0
+# tagihan = int(input("Total tagihan: Rp"))
+# bayar = 0
 
-while bayar < tagihan:
-    cicil = int(input("Masukkan pembayaran: Rp"))
-    bayar += cicil
-    print(f"Total terbayar: Rp{bayar}")
+# while bayar < tagihan:
+#     cicil = int(input("Masukkan pembayaran: Rp"))
+#     bayar += cicil
+#     print(f"Total terbayar: Rp{bayar}")
 
-print("🎉 Tagihan lunas!")
+# print("🎉 Tagihan lunas!")
+
+# Sistem cek stok produk di toko gym
+stok = {
+    "Barbell": 10,
+    "Kettlebell": 7,
+    "Treadmill": 2,
+    "Resistance Band": 15
+}
+
+barang = input("Cek stok apa: ")
+
+if barang in stok:
+    print(f"Stok {barang}: {stok[barang]} unit")
+else:
+    print("Barang tidak tersedia.")
