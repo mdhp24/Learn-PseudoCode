@@ -2658,13 +2658,25 @@
 # print(f"Total bayar: Rp{int(bayar)}")
 
 # Sistem struk pembelian di toko gym
-nama = input("Nama pembeli: ")
-barang = input("Barang dibeli: ")
-harga = int(input("Harga barang: Rp"))
+# nama = input("Nama pembeli: ")
+# barang = input("Barang dibeli: ")
+# harga = int(input("Harga barang: Rp"))
 
-print("\n===== STRUK PEMBELIAN GYM =====")
-print(f"Pembeli : {nama}")
-print(f"Barang  : {barang}")
-print(f"Harga   : Rp{harga}")
-print("================================")
-print("Terima kasih telah berbelanja 💪")
+# print("\n===== STRUK PEMBELIAN GYM =====")
+# print(f"Pembeli : {nama}")
+# print(f"Barang  : {barang}")
+# print(f"Harga   : Rp{harga}")
+# print("================================")
+# print("Terima kasih telah berbelanja 💪")
+
+# Sistem total pembelian produk di toko gym
+total = 0
+
+jumlah = int(input("Berapa jenis produk yang ingin dibeli? "))
+
+for i in range(jumlah):
+    nama = input(f"Nama produk ke-{i+1}: ")
+    harga = int(input("Harga produk: Rp"))
+    total += harga
+
+print(f"\nTotal seluruh pembelian: Rp{total}")
