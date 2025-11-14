@@ -2693,16 +2693,29 @@
 # print("🎉 Tagihan lunas!")
 
 # Sistem cek stok produk di toko gym
-stok = {
-    "Barbell": 10,
-    "Kettlebell": 7,
-    "Treadmill": 2,
-    "Resistance Band": 15
-}
+# stok = {
+#     "Barbell": 10,
+#     "Kettlebell": 7,
+#     "Treadmill": 2,
+#     "Resistance Band": 15
+# }
 
-barang = input("Cek stok apa: ")
+# barang = input("Cek stok apa: ")
 
-if barang in stok:
-    print(f"Stok {barang}: {stok[barang]} unit")
-else:
-    print("Barang tidak tersedia.")
+# if barang in stok:
+#     print(f"Stok {barang}: {stok[barang]} unit")
+# else:
+#     print("Barang tidak tersedia.")
+
+# sistem keranjang belanja di toko gym
+keranjang = []
+
+while True:
+    barang = input("Tambahkan barang (ketik 'selesai'): ")
+    if barang == "selesai":
+        break
+    keranjang.append(barang)
+
+print("\n=== KERANJANG ANDA ===")
+for item in keranjang:
+    print("-", item)
