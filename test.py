@@ -2775,13 +2775,25 @@
 #     print("Kategori tidak ditemukan.")
 
 # Sistem total pembelian produk di toko gym
-total = 0
+# total = 0
 
-print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
-while True:
-    harga = int(input("Harga item: Rp"))
-    if harga == 0:
-        break
-    total += harga
+# print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
+# while True:
+#     harga = int(input("Harga item: Rp"))
+#     if harga == 0:
+#         break
+#     total += harga
 
-print(f"\nTOTAL AKHIR: Rp{total}")
+# print(f"\nTOTAL AKHIR: Rp{total}")
+
+#
+kode = input("Masukkan kode kupon: ").upper()
+
+if kode == "GYM10":
+    print("Diskon 10% diterapkan!")
+elif kode == "WHEY50":
+    print("Diskon Rp50.000 untuk Whey Protein!")
+elif kode == "FREEBAND":
+    print("Bonus Resistance Band!")
+else:
+    print("Kode kupon tidak valid.")
