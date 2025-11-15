@@ -2786,14 +2786,32 @@
 
 # print(f"\nTOTAL AKHIR: Rp{total}")
 
-#
-kode = input("Masukkan kode kupon: ").upper()
+# Sistem kupon diskon di toko gym
+# kode = input("Masukkan kode kupon: ").upper()
 
-if kode == "GYM10":
-    print("Diskon 10% diterapkan!")
-elif kode == "WHEY50":
-    print("Diskon Rp50.000 untuk Whey Protein!")
-elif kode == "FREEBAND":
-    print("Bonus Resistance Band!")
-else:
-    print("Kode kupon tidak valid.")
+# if kode == "GYM10":
+#     print("Diskon 10% diterapkan!")
+# elif kode == "WHEY50":
+#     print("Diskon Rp50.000 untuk Whey Protein!")
+# elif kode == "FREEBAND":
+#     print("Bonus Resistance Band!")
+# else:
+#     print("Kode kupon tidak valid.")
+
+# Sistem ongkir berdasarkan berat di toko gym
+# berat = float(input("Total berat barang (kg): "))
+# ongkir = 18000 + (berat * 3000)
+
+# print(f"Total ongkir: Rp{int(ongkir)}")
+
+# Sistem total pembelian produk di toko gym
+total = 0
+
+print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
+while True:
+    harga = int(input("Harga item: Rp"))
+    if harga == 0:
+        break
+    total += harga
+
+print(f"\nTOTAL AKHIR: Rp{total}")
