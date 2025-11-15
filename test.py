@@ -2734,20 +2734,26 @@
 # print("🎯 Promo hari ini:", random.choice(promo))
 
 # Sistem pembelian bundling produk di toko gym
-paket = {
-    1: ("Paket Pemula", 150000),
-    2: ("Paket Intermediate", 300000),
-    3: ("Paket Pro", 500000)
-}
+# paket = {
+#     1: ("Paket Pemula", 150000),
+#     2: ("Paket Intermediate", 300000),
+#     3: ("Paket Pro", 500000)
+# }
 
-print("=== DAFTAR BUNDLING ===")
-for k, v in paket.items():
-    print(k, "-", v[0], "Rp", v[1])
+# print("=== DAFTAR BUNDLING ===")
+# for k, v in paket.items():
+#     print(k, "-", v[0], "Rp", v[1])
 
-pilihan = int(input("\nPilih paket : "))
+# pilihan = int(input("\nPilih paket : "))
 
-if pilihan in paket:
-    nama, harga = paket[pilihan]
-    print(f"Anda membeli {nama} seharga Rp{harga}")
-else:
-    print("Paket tidak tersedia.")
+# if pilihan in paket:
+#     nama, harga = paket[pilihan]
+#     print(f"Anda membeli {nama} seharga Rp{harga}")
+# else:
+#     print("Paket tidak tersedia.")
+
+# Sistem reward poin untuk pembelian di toko gym
+total = int(input("Total pembelian: Rp"))
+poin = total // 10000 * 2  # setiap 10k = 2 poin
+
+print(f"Anda mendapatkan {poin} poin reward!")
