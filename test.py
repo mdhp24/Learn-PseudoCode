@@ -2759,17 +2759,29 @@
 # print(f"Anda mendapatkan {poin} poin reward!")
 
 # Sistem cek kategori produk di toko gym
-kategori = {
-    "alat": ["Dumbbell", "Barbell", "Kettlebell", "Rope"],
-    "suplement": ["Whey", "Creatine", "BCAA"],
-    "accessories": ["Gloves", "Matras", "Strap"]
-}
+# kategori = {
+#     "alat": ["Dumbbell", "Barbell", "Kettlebell", "Rope"],
+#     "suplement": ["Whey", "Creatine", "BCAA"],
+#     "accessories": ["Gloves", "Matras", "Strap"]
+# }
 
-pilih = input("Cek kategori (alat/suplement/accessories): ")
+# pilih = input("Cek kategori (alat/suplement/accessories): ")
 
-if pilih in kategori:
-    print("\nBarang tersedia:")
-    for b in kategori[pilih]:
-        print("-", b)
-else:
-    print("Kategori tidak ditemukan.")
+# if pilih in kategori:
+#     print("\nBarang tersedia:")
+#     for b in kategori[pilih]:
+#         print("-", b)
+# else:
+#     print("Kategori tidak ditemukan.")
+
+# Sistem total pembelian produk di toko gym
+total = 0
+
+print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
+while True:
+    harga = int(input("Harga item: Rp"))
+    if harga == 0:
+        break
+    total += harga
+
+print(f"\nTOTAL AKHIR: Rp{total}")
