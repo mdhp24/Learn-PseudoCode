@@ -2708,14 +2708,27 @@
 #     print("Barang tidak tersedia.")
 
 # sistem keranjang belanja di toko gym
-keranjang = []
+# keranjang = []
 
-while True:
-    barang = input("Tambahkan barang (ketik 'selesai'): ")
-    if barang == "selesai":
-        break
-    keranjang.append(barang)
+# while True:
+#     barang = input("Tambahkan barang (ketik 'selesai'): ")
+#     if barang == "selesai":
+#         break
+#     keranjang.append(barang)
 
-print("\n=== KERANJANG ANDA ===")
-for item in keranjang:
-    print("-", item)
+# print("\n=== KERANJANG ANDA ===")
+# for item in keranjang:
+#     print("-", item)
+
+# Sistem promo acak di toko gym
+import random
+
+promo = [
+    "Diskon 10% untuk semua Dumbbell",
+    "Cashback Rp20.000 untuk pembelian Whey Protein",
+    "Buy 1 Get 1 Resistance Band",
+    "Diskon 15% untuk Member Gold",
+    "Gratis Shaker untuk belanja di atas Rp150.000"
+]
+
+print("🎯 Promo hari ini:", random.choice(promo))
