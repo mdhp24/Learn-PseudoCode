@@ -2753,7 +2753,23 @@
 #     print("Paket tidak tersedia.")
 
 # Sistem reward poin untuk pembelian di toko gym
-total = int(input("Total pembelian: Rp"))
-poin = total // 10000 * 2  # setiap 10k = 2 poin
+# total = int(input("Total pembelian: Rp"))
+# poin = total // 10000 * 2  # setiap 10k = 2 poin
 
-print(f"Anda mendapatkan {poin} poin reward!")
+# print(f"Anda mendapatkan {poin} poin reward!")
+
+# Sistem cek kategori produk di toko gym
+kategori = {
+    "alat": ["Dumbbell", "Barbell", "Kettlebell", "Rope"],
+    "suplement": ["Whey", "Creatine", "BCAA"],
+    "accessories": ["Gloves", "Matras", "Strap"]
+}
+
+pilih = input("Cek kategori (alat/suplement/accessories): ")
+
+if pilih in kategori:
+    print("\nBarang tersedia:")
+    for b in kategori[pilih]:
+        print("-", b)
+else:
+    print("Kategori tidak ditemukan.")
