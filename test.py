@@ -2721,14 +2721,33 @@
 #     print("-", item)
 
 # Sistem promo acak di toko gym
-import random
+# import random
 
-promo = [
-    "Diskon 10% untuk semua Dumbbell",
-    "Cashback Rp20.000 untuk pembelian Whey Protein",
-    "Buy 1 Get 1 Resistance Band",
-    "Diskon 15% untuk Member Gold",
-    "Gratis Shaker untuk belanja di atas Rp150.000"
-]
+# promo = [
+#     "Diskon 10% untuk semua Dumbbell",
+#     "Cashback Rp20.000 untuk pembelian Whey Protein",
+#     "Buy 1 Get 1 Resistance Band",
+#     "Diskon 15% untuk Member Gold",
+#     "Gratis Shaker untuk belanja di atas Rp150.000"
+# ]
 
-print("🎯 Promo hari ini:", random.choice(promo))
+# print("🎯 Promo hari ini:", random.choice(promo))
+
+# Sistem pembelian bundling produk di toko gym
+paket = {
+    1: ("Paket Pemula", 150000),
+    2: ("Paket Intermediate", 300000),
+    3: ("Paket Pro", 500000)
+}
+
+print("=== DAFTAR BUNDLING ===")
+for k, v in paket.items():
+    print(k, "-", v[0], "Rp", v[1])
+
+pilihan = int(input("\nPilih paket : "))
+
+if pilihan in paket:
+    nama, harga = paket[pilihan]
+    print(f"Anda membeli {nama} seharga Rp{harga}")
+else:
+    print("Paket tidak tersedia.")
