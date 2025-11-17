@@ -2872,9 +2872,33 @@
 # print(f"Cicilan per bulan: Rp{int(angsuran)}")
 
 # Sistem cek validasi IMEI iPhone di pras_phone.id
-imei = input("Masukkan IMEI iPhone: ")
+# imei = input("Masukkan IMEI iPhone: ")
 
-if len(imei) == 15 and imei.isdigit():
-    print("IMEI valid. iPhone dapat dijual/sewa di pras_phone.id")
+# if len(imei) == 15 and imei.isdigit():
+#     print("IMEI valid. iPhone dapat dijual/sewa di pras_phone.id")
+# else:
+#     print("IMEI tidak valid!")
+
+# kalkulator trade-in iphone
+harga_baru = {
+    "iPhone 12": 6000000,
+    "iPhone 13": 8000000,
+    "iPhone 14": 10000000
+}
+
+tipe = input("Trade-in ke model apa? ")
+
+if tipe in harga_baru:
+    kondisi = input("Kondisi HP lama (mulus/sedang/rusak): ").lower()
+
+    if kondisi == "mulus":
+        potongan = 2500000
+    elif kondisi == "sedang":
+        potongan = 1500000
+    else:
+        potongan = 500000
+
+    total = harga_baru[tipe] - potongan
+    print(f"Harga setelah trade-in: Rp{total}")
 else:
-    print("IMEI tidak valid!")
+    print("Model tidak tersedia.")
