@@ -2832,18 +2832,32 @@
 #     print("Model tidak tersedia di pras_phone.id")
 
 # Sistem sewa iPhone di pras_phone.id
-harga_sewa = {
-    "iPhone 11": 50000,
-    "iPhone 12": 70000,
-    "iPhone 13": 90000,
-    "iPhone 14 Pro": 120000
-}
+# harga_sewa = {
+#     "iPhone 11": 50000,
+#     "iPhone 12": 70000,
+#     "iPhone 13": 90000,
+#     "iPhone 14 Pro": 120000
+# }
 
-tipe = input("Pilih iPhone untuk disewa: ")
-hari = int(input("Berapa hari disewa? "))
+# tipe = input("Pilih iPhone untuk disewa: ")
+# hari = int(input("Berapa hari disewa? "))
 
-if tipe in harga_sewa:
-    total = harga_sewa[tipe] * hari
-    print(f"Total biaya sewa {tipe} selama {hari} hari: Rp{total}")
-else:
-    print("Tipe tidak tersedia.")
+# if tipe in harga_sewa:
+#     total = harga_sewa[tipe] * hari
+#     print(f"Total biaya sewa {tipe} selama {hari} hari: Rp{total}")
+# else:
+#     print("Tipe tidak tersedia.")
+
+# Sistem promo acak di pras_phone.id
+import random
+
+promo = [
+    "Gratis antigores premium",
+    "Bonus casing transparan",
+    "Cashback Rp50.000",
+    "Diskon 5%",
+    "Voucher sewa iPhone 1 hari"
+]
+
+print("🎉 Promo pembelian hari ini di pras_phone.id:")
+print(random.choice(promo))
