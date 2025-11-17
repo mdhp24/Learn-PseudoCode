@@ -2849,15 +2849,24 @@
 #     print("Tipe tidak tersedia.")
 
 # Sistem promo acak di pras_phone.id
-import random
+# import random
 
-promo = [
-    "Gratis antigores premium",
-    "Bonus casing transparan",
-    "Cashback Rp50.000",
-    "Diskon 5%",
-    "Voucher sewa iPhone 1 hari"
-]
+# promo = [
+#     "Gratis antigores premium",
+#     "Bonus casing transparan",
+#     "Cashback Rp50.000",
+#     "Diskon 5%",
+#     "Voucher sewa iPhone 1 hari"
+# ]
 
-print("🎉 Promo pembelian hari ini di pras_phone.id:")
-print(random.choice(promo))
+# print("🎉 Promo pembelian hari ini di pras_phone.id:")
+# print(random.choice(promo))
+
+# sistem kalkukator cicilan iphone
+harga = int(input("Masukkan harga iPhone: Rp"))
+bulan = int(input("Tenor cicilan (bulan): "))
+
+bunga = 0.015  # 1.5% per bulan
+angsuran = (harga / bulan) + (harga * bunga)
+
+print(f"Cicilan per bulan: Rp{int(angsuran)}")
