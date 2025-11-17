@@ -2805,13 +2805,28 @@
 # print(f"Total ongkir: Rp{int(ongkir)}")
 
 # Sistem total pembelian produk di toko gym
-total = 0
+# total = 0
 
-print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
-while True:
-    harga = int(input("Harga item: Rp"))
-    if harga == 0:
-        break
-    total += harga
+# print("=== Masukkan Pembelian (ketik 0 untuk selesai) ===")
+# while True:
+#     harga = int(input("Harga item: Rp"))
+#     if harga == 0:
+#         break
+#     total += harga
 
-print(f"\nTOTAL AKHIR: Rp{total}")
+# print(f"\nTOTAL AKHIR: Rp{total}")
+
+# Sistem cek stok iPhone di pras_phone.id
+iphone_stock = {
+    "iPhone 12": 3,
+    "iPhone 13": 5,
+    "iPhone 14": 2,
+    "iPhone 15 Pro": 1
+}
+
+model = input("Cek stok iPhone apa? ")
+
+if model in iphone_stock:
+    print(f"Stok {model}: {iphone_stock[model]} unit")
+else:
+    print("Model tidak tersedia di pras_phone.id")
