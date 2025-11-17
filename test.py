@@ -2817,16 +2817,33 @@
 # print(f"\nTOTAL AKHIR: Rp{total}")
 
 # Sistem cek stok iPhone di pras_phone.id
-iphone_stock = {
-    "iPhone 12": 3,
-    "iPhone 13": 5,
-    "iPhone 14": 2,
-    "iPhone 15 Pro": 1
+# iphone_stock = {
+#     "iPhone 12": 3,
+#     "iPhone 13": 5,
+#     "iPhone 14": 2,
+#     "iPhone 15 Pro": 1
+# }
+
+# model = input("Cek stok iPhone apa? ")
+
+# if model in iphone_stock:
+#     print(f"Stok {model}: {iphone_stock[model]} unit")
+# else:
+#     print("Model tidak tersedia di pras_phone.id")
+
+# Sistem sewa iPhone di pras_phone.id
+harga_sewa = {
+    "iPhone 11": 50000,
+    "iPhone 12": 70000,
+    "iPhone 13": 90000,
+    "iPhone 14 Pro": 120000
 }
 
-model = input("Cek stok iPhone apa? ")
+tipe = input("Pilih iPhone untuk disewa: ")
+hari = int(input("Berapa hari disewa? "))
 
-if model in iphone_stock:
-    print(f"Stok {model}: {iphone_stock[model]} unit")
+if tipe in harga_sewa:
+    total = harga_sewa[tipe] * hari
+    print(f"Total biaya sewa {tipe} selama {hari} hari: Rp{total}")
 else:
-    print("Model tidak tersedia di pras_phone.id")
+    print("Tipe tidak tersedia.")
