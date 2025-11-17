@@ -2863,10 +2863,18 @@
 # print(random.choice(promo))
 
 # sistem kalkukator cicilan iphone
-harga = int(input("Masukkan harga iPhone: Rp"))
-bulan = int(input("Tenor cicilan (bulan): "))
+# harga = int(input("Masukkan harga iPhone: Rp"))
+# bulan = int(input("Tenor cicilan (bulan): "))
 
-bunga = 0.015  # 1.5% per bulan
-angsuran = (harga / bulan) + (harga * bunga)
+# bunga = 0.015  # 1.5% per bulan
+# angsuran = (harga / bulan) + (harga * bunga)
 
-print(f"Cicilan per bulan: Rp{int(angsuran)}")
+# print(f"Cicilan per bulan: Rp{int(angsuran)}")
+
+# Sistem cek validasi IMEI iPhone di pras_phone.id
+imei = input("Masukkan IMEI iPhone: ")
+
+if len(imei) == 15 and imei.isdigit():
+    print("IMEI valid. iPhone dapat dijual/sewa di pras_phone.id")
+else:
+    print("IMEI tidak valid!")
