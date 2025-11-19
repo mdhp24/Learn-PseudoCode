@@ -2904,16 +2904,24 @@
 #     print("Model tidak tersedia.")
 
 # sistem booking sewa iphone
-import random
+# import random
 
-nama = input("Nama penyewa: ")
-tipe = input("iPhone yang disewa: ")
-durasi = int(input("Durasi sewa (hari): "))
+# nama = input("Nama penyewa: ")
+# tipe = input("iPhone yang disewa: ")
+# durasi = int(input("Durasi sewa (hari): "))
 
-order_id = "PRS-" + str(random.randint(10000, 99999))
+# order_id = "PRS-" + str(random.randint(10000, 99999))
 
-print("\n=== DETAIL BOOKING ===")
-print("Nama:", nama)
-print("Tipe iPhone:", tipe)
-print("Durasi:", durasi, "hari")
-print("Order ID:", order_id)
+# print("\n=== DETAIL BOOKING ===")
+# print("Nama:", nama)
+# print("Tipe iPhone:", tipe)
+# print("Durasi:", durasi, "hari")
+# print("Order ID:", order_id)
+
+# sistem cek garansi iphone di pras_phone.id
+imei = input("Masukkan IMEI iPhone: ")
+if len(imei) == 15 and imei.isdigit():
+    print("Garansi iPhone masih berlaku hingga 1 tahun dari tanggal pembelian.")
+else:
+    print("IMEI tidak valid!")
+    
