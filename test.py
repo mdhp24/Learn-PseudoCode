@@ -2931,48 +2931,77 @@
 # print(f"Total transaksi bulanan: Rp{bulanan}")
 
 # Sistem pembelian produk dengan kelas di pras_phone.id
-class Produk:
-    def __init__(self, nama, harga, stok):
-        self.nama = nama
-        self.harga = harga
-        self.stok = stok
+# class Produk:
+#     def __init__(self, nama, harga, stok):
+#         self.nama = nama
+#         self.harga = harga
+#         self.stok = stok
 
-    def jual(self, jumlah):
-        if jumlah <= self.stok:
-            self.stok -= jumlah
-            return jumlah * self.harga
-        else:
-            print(f"❌ Stok {self.nama} tidak cukup.")
-            return 0
-class TokoPrasPhone:
-    def __init__(self):
-        self.produk = [
-            Produk("iPhone 12", 8000000, 5),
-            Produk("iPhone 13", 10000000, 3),
-            Produk("iPhone 14 Pro", 15000000, 2)
-        ]
-        self.total = 0
+#     def jual(self, jumlah):
+#         if jumlah <= self.stok:
+#             self.stok -= jumlah
+#             return jumlah * self.harga
+#         else:
+#             print(f"❌ Stok {self.nama} tidak cukup.")
+#             return 0
+# class TokoPrasPhone:
+#     def __init__(self):
+#         self.produk = [
+#             Produk("iPhone 12", 8000000, 5),
+#             Produk("iPhone 13", 10000000, 3),
+#             Produk("iPhone 14 Pro", 15000000, 2)
+#         ]
+#         self.total = 0
 
-    def tampilkan(self):
-        print("\n=== PRODUK PRAS_PHONE.ID ===")
-        for p in self.produk:
-            print(f"{p.nama:15} Rp{p.harga} | Stok: {p.stok}")
+#     def tampilkan(self):
+#         print("\n=== PRODUK PRAS_PHONE.ID ===")
+#         for p in self.produk:
+#             print(f"{p.nama:15} Rp{p.harga} | Stok: {p.stok}")
 
-    def beli(self):
-        while True:
-            self.tampilkan()
-            nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
-            if nama.lower() == "selesai":
-                break
-            for p in self.produk:
-                if p.nama.lower() == nama.lower():
-                    qty = int(input("Masukkan jumlah: "))
-                    self.total += p.jual(qty)
-                    break
-            else:
-                print("Produk tidak ditemukan.")
-        print(f"\n💰 Total Bayar: Rp{self.total}")
+#     def beli(self):
+#         while True:
+#             self.tampilkan()
+#             nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
+#             if nama.lower() == "selesai":
+#                 break
+#             for p in self.produk:
+#                 if p.nama.lower() == nama.lower():
+#                     qty = int(input("Masukkan jumlah: "))
+#                     self.total += p.jual(qty)
+#                     break
+#             else:
+#                 print("Produk tidak ditemukan.")
+#         print(f"\n💰 Total Bayar: Rp{self.total}")
         
-print("=== SELAMAT DATANG DI PRAS_PHONE.ID ===")
-toko = TokoPrasPhone()
-toko.beli()
+# print("=== SELAMAT DATANG DI PRAS_PHONE.ID ===")
+# toko = TokoPrasPhone()
+# toko.beli()
+
+# Sistem transaksi pembelian produk di pras_phone.id
+stok = {
+    "iPhone 12": 3,
+    "iPhone 13": 5,
+    "iPhone 14": 2,
+}
+harga = {
+    "iPhone 12": 8000000,
+    "iPhone 13": 10000000,
+    "iPhone 14": 12000000,
+}
+total_belanja = 0
+while True:
+    model = input("Masukkan model iPhone yang ingin dibeli (ketik 'selesai' untuk keluar): ")
+    if model.lower() == "selesai":
+        break
+    if model in stok:
+        jumlah = int(input("Masukkan jumlah yang ingin dibeli: "))
+        if jumlah <= stok[model]:
+            total_harga = harga[model] * jumlah
+            total_belanja += total_harga
+            stok[model] -= jumlah
+            print(f"✅ {jumlah} unit {model} berhasil dibeli seharga Rp{total_harga}")
+        else:
+            print("❌ Stok tidak cukup.")
+    else:
+        print("❌ Model tidak tersedia.")
+print(f"\nTotal belanja: Rp{total_belanja}")
