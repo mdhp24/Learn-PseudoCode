@@ -2926,6 +2926,53 @@
 #     print("IMEI tidak valid!")
   
 # Sistem laporan transaksi bulanan di pras_phone.id 
-transaksi = [1500000, 2500000, 3000000, 2000000, 4000000]
-bulanan = sum(transaksi)
-print(f"Total transaksi bulanan: Rp{bulanan}")
+# transaksi = [1500000, 2500000, 3000000, 2000000, 4000000]
+# bulanan = sum(transaksi)
+# print(f"Total transaksi bulanan: Rp{bulanan}")
+
+# Sistem pembelian produk dengan kelas di pras_phone.id
+class Produk:
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        self.harga = harga
+        self.stok = stok
+
+    def jual(self, jumlah):
+        if jumlah <= self.stok:
+            self.stok -= jumlah
+            return jumlah * self.harga
+        else:
+            print(f"❌ Stok {self.nama} tidak cukup.")
+            return 0
+class TokoPrasPhone:
+    def __init__(self):
+        self.produk = [
+            Produk("iPhone 12", 8000000, 5),
+            Produk("iPhone 13", 10000000, 3),
+            Produk("iPhone 14 Pro", 15000000, 2)
+        ]
+        self.total = 0
+
+    def tampilkan(self):
+        print("\n=== PRODUK PRAS_PHONE.ID ===")
+        for p in self.produk:
+            print(f"{p.nama:15} Rp{p.harga} | Stok: {p.stok}")
+
+    def beli(self):
+        while True:
+            self.tampilkan()
+            nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
+            if nama.lower() == "selesai":
+                break
+            for p in self.produk:
+                if p.nama.lower() == nama.lower():
+                    qty = int(input("Masukkan jumlah: "))
+                    self.total += p.jual(qty)
+                    break
+            else:
+                print("Produk tidak ditemukan.")
+        print(f"\n💰 Total Bayar: Rp{self.total}")
+        
+print("=== SELAMAT DATANG DI PRAS_PHONE.ID ===")
+toko = TokoPrasPhone()
+toko.beli()
