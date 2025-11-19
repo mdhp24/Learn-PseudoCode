@@ -2919,9 +2919,13 @@
 # print("Order ID:", order_id)
 
 # sistem cek garansi iphone di pras_phone.id
-imei = input("Masukkan IMEI iPhone: ")
-if len(imei) == 15 and imei.isdigit():
-    print("Garansi iPhone masih berlaku hingga 1 tahun dari tanggal pembelian.")
-else:
-    print("IMEI tidak valid!")
-    
+# imei = input("Masukkan IMEI iPhone: ")
+# if len(imei) == 15 and imei.isdigit():
+#     print("Garansi iPhone masih berlaku hingga 1 tahun dari tanggal pembelian.")
+# else:
+#     print("IMEI tidak valid!")
+  
+# Sistem laporan transaksi bulanan di pras_phone.id 
+transaksi = [1500000, 2500000, 3000000, 2000000, 4000000]
+bulanan = sum(transaksi)
+print(f"Total transaksi bulanan: Rp{bulanan}")
