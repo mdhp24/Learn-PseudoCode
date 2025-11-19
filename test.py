@@ -3021,11 +3021,25 @@
 # print(f"Total bayar setelah diskon: Rp{total_bayar}")
 
 # Sistem jadwal pengiriman di pras_phone.id
-hari = input("Masukkan hari pemesanan (Senin-Sabtu): ").lower()
-if hari in ["senin", "selasa", "rabu", "kamis", "jumat"]:
-    print("📦 Pesanan akan dikirim dalam 2 hari kerja.")
-elif hari == "sabtu":
-    print("📦 Pesanan akan dikirim pada hari Senin.")
-else:
-    print("❌ Hari tidak valid. Pemesanan hanya bisa dilakukan dari Senin hingga Sabtu.")
+# hari = input("Masukkan hari pemesanan (Senin-Sabtu): ").lower()
+# if hari in ["senin", "selasa", "rabu", "kamis", "jumat"]:
+#     print("📦 Pesanan akan dikirim dalam 2 hari kerja.")
+# elif hari == "sabtu":
+#     print("📦 Pesanan akan dikirim pada hari Senin.")
+# else:
+#     print("❌ Hari tidak valid. Pemesanan hanya bisa dilakukan dari Senin hingga Sabtu.")
     
+    
+# sistem borongan iphone di pras_phone.id
+harha_borongan = {
+    5: 7500000,
+    10: 7000000,
+    20: 6500000
+}
+jumlah = int(input("Masukkan jumlah iPhone yang dibeli: "))
+if jumlah in harha_borongan:
+    harga_per_unit = harha_borongan[jumlah]
+    total_harga = harga_per_unit * jumlah
+    print(f"Total harga untuk {jumlah} iPhone: Rp{total_harga}")
+else:
+    print("Jumlah tidak memenuhi syarat borongan.")
