@@ -3007,15 +3007,25 @@
 # print(f"\nTotal belanja: Rp{total_belanja}")
 
 # Sistem promo diskon di pras_phone.id
-total = int(input("Masukkan total pembelian: Rp"))
-if total >= 5000000:
-    diskon = 0.15
-elif total >= 3000000:
-    diskon = 0.10
-elif total >= 1000000:
-    diskon = 0.05
-else:
-    diskon = 0
+# total = int(input("Masukkan total pembelian: Rp"))
+# if total >= 5000000:
+#     diskon = 0.15
+# elif total >= 3000000:
+#     diskon = 0.10
+# elif total >= 1000000:
+#     diskon = 0.05
+# else:
+#     diskon = 0
 
-total_bayar = total - (total * diskon)
-print(f"Total bayar setelah diskon: Rp{total_bayar}")
+# total_bayar = total - (total * diskon)
+# print(f"Total bayar setelah diskon: Rp{total_bayar}")
+
+# Sistem jadwal pengiriman di pras_phone.id
+hari = input("Masukkan hari pemesanan (Senin-Sabtu): ").lower()
+if hari in ["senin", "selasa", "rabu", "kamis", "jumat"]:
+    print("📦 Pesanan akan dikirim dalam 2 hari kerja.")
+elif hari == "sabtu":
+    print("📦 Pesanan akan dikirim pada hari Senin.")
+else:
+    print("❌ Hari tidak valid. Pemesanan hanya bisa dilakukan dari Senin hingga Sabtu.")
+    
