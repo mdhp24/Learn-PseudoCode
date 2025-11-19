@@ -2978,30 +2978,44 @@
 # toko.beli()
 
 # Sistem transaksi pembelian produk di pras_phone.id
-stok = {
-    "iPhone 12": 3,
-    "iPhone 13": 5,
-    "iPhone 14": 2,
-}
-harga = {
-    "iPhone 12": 8000000,
-    "iPhone 13": 10000000,
-    "iPhone 14": 12000000,
-}
-total_belanja = 0
-while True:
-    model = input("Masukkan model iPhone yang ingin dibeli (ketik 'selesai' untuk keluar): ")
-    if model.lower() == "selesai":
-        break
-    if model in stok:
-        jumlah = int(input("Masukkan jumlah yang ingin dibeli: "))
-        if jumlah <= stok[model]:
-            total_harga = harga[model] * jumlah
-            total_belanja += total_harga
-            stok[model] -= jumlah
-            print(f"✅ {jumlah} unit {model} berhasil dibeli seharga Rp{total_harga}")
-        else:
-            print("❌ Stok tidak cukup.")
-    else:
-        print("❌ Model tidak tersedia.")
-print(f"\nTotal belanja: Rp{total_belanja}")
+# stok = {
+#     "iPhone 12": 3,
+#     "iPhone 13": 5,
+#     "iPhone 14": 2,
+# }
+# harga = {
+#     "iPhone 12": 8000000,
+#     "iPhone 13": 10000000,
+#     "iPhone 14": 12000000,
+# }
+# total_belanja = 0
+# while True:
+#     model = input("Masukkan model iPhone yang ingin dibeli (ketik 'selesai' untuk keluar): ")
+#     if model.lower() == "selesai":
+#         break
+#     if model in stok:
+#         jumlah = int(input("Masukkan jumlah yang ingin dibeli: "))
+#         if jumlah <= stok[model]:
+#             total_harga = harga[model] * jumlah
+#             total_belanja += total_harga
+#             stok[model] -= jumlah
+#             print(f"✅ {jumlah} unit {model} berhasil dibeli seharga Rp{total_harga}")
+#         else:
+#             print("❌ Stok tidak cukup.")
+#     else:
+#         print("❌ Model tidak tersedia.")
+# print(f"\nTotal belanja: Rp{total_belanja}")
+
+# Sistem promo diskon di pras_phone.id
+total = int(input("Masukkan total pembelian: Rp"))
+if total >= 5000000:
+    diskon = 0.15
+elif total >= 3000000:
+    diskon = 0.10
+elif total >= 1000000:
+    diskon = 0.05
+else:
+    diskon = 0
+
+total_bayar = total - (total * diskon)
+print(f"Total bayar setelah diskon: Rp{total_bayar}")
