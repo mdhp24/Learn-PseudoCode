@@ -3045,30 +3045,38 @@
 #     print("Jumlah tidak memenuhi syarat borongan.")
 
 # sistem antrian service iphone pras_phone.id
-queue = []
+# queue = []
 
-while True:
-    print("\n1. Tambah Antrian")
-    print("2. Panggil Antrian")
-    print("3. Lihat Antrian")
-    print("4. Keluar")
+# while True:
+#     print("\n1. Tambah Antrian")
+#     print("2. Panggil Antrian")
+#     print("3. Lihat Antrian")
+#     print("4. Keluar")
 
-    pilihan = input("Pilih menu: ")
+#     pilihan = input("Pilih menu: ")
 
-    if pilihan == "1":
-        nama = input("Masukkan nama pelanggan: ")
-        queue.append(nama)
-        print(f"{nama} ditambahkan ke dalam antrian servis.")
+#     if pilihan == "1":
+#         nama = input("Masukkan nama pelanggan: ")
+#         queue.append(nama)
+#         print(f"{nama} ditambahkan ke dalam antrian servis.")
 
-    elif pilihan == "2":
-        if queue:
-            pelanggan = queue.pop(0)
-            print(f"Memanggil: {pelanggan}")
-        else:
-            print("Antrian kosong.")
+#     elif pilihan == "2":
+#         if queue:
+#             pelanggan = queue.pop(0)
+#             print(f"Memanggil: {pelanggan}")
+#         else:
+#             print("Antrian kosong.")
 
-    elif pilihan == "3":
-        print("Antrian:", queue)
+#     elif pilihan == "3":
+#         print("Antrian:", queue)
 
-    elif pilihan == "4":
-        break
+#     elif pilihan == "4":
+#         break
+
+# selisih harga iphone di pras_phone.id dan online shop
+harga_pras = 10200000
+harga_online = 10400000
+
+selisih = harga_online - harga_pras
+
+print("Harga di pras_phone.id lebih murah Rp", selisih)
