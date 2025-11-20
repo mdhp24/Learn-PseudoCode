@@ -3118,17 +3118,34 @@
 # print("Garansi berlaku sampai:", garansi.date())
 
 # Sistem rekomendasi iPhone berdasarkan budget di pras_phone.id
-iphone = {
-    "iPhone X": 3000000,
-    "iPhone 11": 4500000,
-    "iPhone 12": 6000000,
-    "iPhone 13": 7600000,
-    "iPhone 14 Pro": 14000000
-}
+# iphone = {
+#     "iPhone X": 3000000,
+#     "iPhone 11": 4500000,
+#     "iPhone 12": 6000000,
+#     "iPhone 13": 7600000,
+#     "iPhone 14 Pro": 14000000
+# }
 
-budget = int(input("Budget kamu: Rp"))
+# budget = int(input("Budget kamu: Rp"))
 
-print("\nRekomendasi iPhone di bawah budget:")
-for model, harga in iphone.items():
-    if harga <= budget:
-        print(f"- {model} (Rp{harga})")
+# print("\nRekomendasi iPhone di bawah budget:")
+# for model, harga in iphone.items():
+#     if harga <= budget:
+#         print(f"- {model} (Rp{harga})")
+
+# Sistem flash sale di pras_phone.id
+import random
+import time
+
+harga_normal = 8000000
+diskon = random.randint(5, 40)  # persen diskon acak
+harga_diskon = harga_normal - (harga_normal * diskon / 100)
+
+print("🔥 FLASH SALE pras_phone.id! 🔥")
+for i in range(3, 0, -1):
+    print("Mulai dalam", i)
+    time.sleep(1)
+
+print(f"Harga normal: Rp{harga_normal}")
+print(f"Diskon {diskon}%!")
+print(f"Harga flash sale: Rp{int(harga_diskon)}")
