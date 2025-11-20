@@ -3099,11 +3099,20 @@
 #     print("Pilihan tidak tersedia")
 
 # Sistem metode pembayaran di pras_phone.id
-total = int(input("Total belanja: Rp"))
-print("Metode pembayaran: cash / qris / transfer")
-metode = input("Pilih: ")
+# total = int(input("Total belanja: Rp"))
+# print("Metode pembayaran: cash / qris / transfer")
+# metode = input("Pilih: ")
 
-if metode.lower() in ["cash", "qris", "transfer"]:
-    print(f"Pembayaran dengan {metode} berhasil!")
-else:
-    print("Metode tidak dikenali.")
+# if metode.lower() in ["cash", "qris", "transfer"]:
+#     print(f"Pembayaran dengan {metode} berhasil!")
+# else:
+#     print("Metode tidak dikenali.")
+
+# Sistem cek garansi iPhone di pras_phone.id
+import datetime
+
+pembelian = input("Tanggal pembelian (YYYY-MM-DD): ")
+pembelian_date = datetime.datetime.strptime(pembelian, "%Y-%m-%d")
+garansi = pembelian_date + datetime.timedelta(days=365)
+
+print("Garansi berlaku sampai:", garansi.date())
