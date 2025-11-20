@@ -3082,18 +3082,28 @@
 # print("Harga di pras_phone.id lebih murah Rp", selisih)
 
 # Sistem upgrade storage iPhone di pras_phone.id
-upgrade_cost = {
-    "128GB -> 256GB": 1200000,
-    "256GB -> 512GB": 1800000
-}
+# upgrade_cost = {
+#     "128GB -> 256GB": 1200000,
+#     "256GB -> 512GB": 1800000
+# }
 
-print("Pilihan upgrade storage:")
-for key in upgrade_cost:
-    print("-", key)
+# print("Pilihan upgrade storage:")
+# for key in upgrade_cost:
+#     print("-", key)
 
-pilihan = input("Pilih upgrade: ")
+# pilihan = input("Pilih upgrade: ")
 
-if pilihan in upgrade_cost:
-    print(f"Biaya upgrade: Rp{upgrade_cost[pilihan]}")
+# if pilihan in upgrade_cost:
+#     print(f"Biaya upgrade: Rp{upgrade_cost[pilihan]}")
+# else:
+#     print("Pilihan tidak tersedia")
+
+# Sistem metode pembayaran di pras_phone.id
+total = int(input("Total belanja: Rp"))
+print("Metode pembayaran: cash / qris / transfer")
+metode = input("Pilih: ")
+
+if metode.lower() in ["cash", "qris", "transfer"]:
+    print(f"Pembayaran dengan {metode} berhasil!")
 else:
-    print("Pilihan tidak tersedia")
+    print("Metode tidak dikenali.")
