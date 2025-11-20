@@ -3031,15 +3031,44 @@
     
     
 # sistem borongan iphone di pras_phone.id
-harha_borongan = {
-    5: 7500000,
-    10: 7000000,
-    20: 6500000
-}
-jumlah = int(input("Masukkan jumlah iPhone yang dibeli: "))
-if jumlah in harha_borongan:
-    harga_per_unit = harha_borongan[jumlah]
-    total_harga = harga_per_unit * jumlah
-    print(f"Total harga untuk {jumlah} iPhone: Rp{total_harga}")
-else:
-    print("Jumlah tidak memenuhi syarat borongan.")
+# harha_borongan = {
+#     5: 7500000,
+#     10: 7000000,
+#     20: 6500000
+# }
+# jumlah = int(input("Masukkan jumlah iPhone yang dibeli: "))
+# if jumlah in harha_borongan:
+#     harga_per_unit = harha_borongan[jumlah]
+#     total_harga = harga_per_unit * jumlah
+#     print(f"Total harga untuk {jumlah} iPhone: Rp{total_harga}")
+# else:
+#     print("Jumlah tidak memenuhi syarat borongan.")
+
+# sistem antrian service iphone pras_phone.id
+queue = []
+
+while True:
+    print("\n1. Tambah Antrian")
+    print("2. Panggil Antrian")
+    print("3. Lihat Antrian")
+    print("4. Keluar")
+
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        nama = input("Masukkan nama pelanggan: ")
+        queue.append(nama)
+        print(f"{nama} ditambahkan ke dalam antrian servis.")
+
+    elif pilihan == "2":
+        if queue:
+            pelanggan = queue.pop(0)
+            print(f"Memanggil: {pelanggan}")
+        else:
+            print("Antrian kosong.")
+
+    elif pilihan == "3":
+        print("Antrian:", queue)
+
+    elif pilihan == "4":
+        break
