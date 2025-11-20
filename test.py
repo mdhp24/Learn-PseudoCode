@@ -3074,9 +3074,26 @@
 #         break
 
 # selisih harga iphone di pras_phone.id dan online shop
-harga_pras = 10200000
-harga_online = 10400000
+# harga_pras = 10200000
+# harga_online = 10400000
 
-selisih = harga_online - harga_pras
+# selisih = harga_online - harga_pras
 
-print("Harga di pras_phone.id lebih murah Rp", selisih)
+# print("Harga di pras_phone.id lebih murah Rp", selisih)
+
+# Sistem upgrade storage iPhone di pras_phone.id
+upgrade_cost = {
+    "128GB -> 256GB": 1200000,
+    "256GB -> 512GB": 1800000
+}
+
+print("Pilihan upgrade storage:")
+for key in upgrade_cost:
+    print("-", key)
+
+pilihan = input("Pilih upgrade: ")
+
+if pilihan in upgrade_cost:
+    print(f"Biaya upgrade: Rp{upgrade_cost[pilihan]}")
+else:
+    print("Pilihan tidak tersedia")
