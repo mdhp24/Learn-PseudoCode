@@ -3134,18 +3134,29 @@
 #         print(f"- {model} (Rp{harga})")
 
 # Sistem flash sale di pras_phone.id
-import random
-import time
+# import random
+# import time
 
-harga_normal = 8000000
-diskon = random.randint(5, 40)  # persen diskon acak
-harga_diskon = harga_normal - (harga_normal * diskon / 100)
+# harga_normal = 8000000
+# diskon = random.randint(5, 40)  # persen diskon acak
+# harga_diskon = harga_normal - (harga_normal * diskon / 100)
 
-print("🔥 FLASH SALE pras_phone.id! 🔥")
-for i in range(3, 0, -1):
-    print("Mulai dalam", i)
-    time.sleep(1)
+# print("🔥 FLASH SALE pras_phone.id! 🔥")
+# for i in range(3, 0, -1):
+#     print("Mulai dalam", i)
+#     time.sleep(1)
 
-print(f"Harga normal: Rp{harga_normal}")
-print(f"Diskon {diskon}%!")
-print(f"Harga flash sale: Rp{int(harga_diskon)}")
+# print(f"Harga normal: Rp{harga_normal}")
+# print(f"Diskon {diskon}%!")
+# print(f"Harga flash sale: Rp{int(harga_diskon)}")
+
+inventory = {
+    "iPhone 12": 2,
+    "iPhone 13": 0,
+    "iPhone 14": 1,
+    "iPhone 15 Pro": 5
+}
+
+for model, stock in inventory.items():
+    if stock <= 1:
+        print(f"⚠️ WARNING: {model} needs restock! Only {stock} left.")
