@@ -3207,7 +3207,22 @@
 # print("Price:", supplier[best_supplier])
 
 # Sistem reward poin untuk pembelian di pras_phone.id
-purchase = int(input("Enter purchase amount: Rp"))
-points = purchase // 50000  # 1 point per 50k spending
+# purchase = int(input("Enter purchase amount: Rp"))
+# points = purchase // 50000  # 1 point per 50k spending
 
-print("You earned", points, "loyalty points!")
+# print("You earned", points, "loyalty points!")
+
+# Sistem pembelian produk dengan diskon berdasarkan jumlah di pras_phone.id
+harga = 7500000
+qty = int(input("How many units to order? "))
+
+if qty >= 10:
+    diskon = 0.07
+elif qty >= 5:
+    diskon = 0.05
+else:
+    diskon = 0.02
+
+total = harga * qty * (1 - diskon)
+
+print(f"Total price after discount: Rp{int(total)}")
