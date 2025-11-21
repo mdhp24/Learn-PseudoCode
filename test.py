@@ -3195,13 +3195,19 @@
 #     print("No recommendation available.")
 
 # Sistem pemilihan supplier terbaik di pras_phone.id
-supplier = {
-    "Supplier A": 9500000,
-    "Supplier B": 9700000,
-    "Supplier C": 9400000
-}
+# supplier = {
+#     "Supplier A": 9500000,
+#     "Supplier B": 9700000,
+#     "Supplier C": 9400000
+# }
 
-best_supplier = min(supplier, key=supplier.get)
+# best_supplier = min(supplier, key=supplier.get)
 
-print("Best supplier for stock purchase:", best_supplier)
-print("Price:", supplier[best_supplier])
+# print("Best supplier for stock purchase:", best_supplier)
+# print("Price:", supplier[best_supplier])
+
+# Sistem reward poin untuk pembelian di pras_phone.id
+purchase = int(input("Enter purchase amount: Rp"))
+points = purchase // 50000  # 1 point per 50k spending
+
+print("You earned", points, "loyalty points!")
