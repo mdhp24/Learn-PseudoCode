@@ -3150,13 +3150,25 @@
 # print(f"Diskon {diskon}%!")
 # print(f"Harga flash sale: Rp{int(harga_diskon)}")
 
-inventory = {
-    "iPhone 12": 2,
-    "iPhone 13": 0,
-    "iPhone 14": 1,
-    "iPhone 15 Pro": 5
-}
+# Sistem cek stok iPhone di pras_phone.id
+# inventory = {
+#     "iPhone 12": 2,
+#     "iPhone 13": 0,
+#     "iPhone 14": 1,
+#     "iPhone 15 Pro": 5
+# }
 
-for model, stock in inventory.items():
-    if stock <= 1:
-        print(f"⚠️ WARNING: {model} needs restock! Only {stock} left.")
+# for model, stock in inventory.items():
+#     if stock <= 1:
+#         print(f"⚠️ WARNING: {model} needs restock! Only {stock} left.")
+
+# Sistem rating pelanggan di pras_phone.id
+ratings = []
+print("Rate your experience at pras_phone.id (1–5)")
+
+for i in range(3):
+    rating = int(input(f"Customer {i+1} rating: "))
+    ratings.append(rating)
+
+avg = sum(ratings)/len(ratings)
+print("Average rating:", round(avg, 2))
