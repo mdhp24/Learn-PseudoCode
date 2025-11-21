@@ -3163,12 +3163,21 @@
 #         print(f"⚠️ WARNING: {model} needs restock! Only {stock} left.")
 
 # Sistem rating pelanggan di pras_phone.id
-ratings = []
-print("Rate your experience at pras_phone.id (1–5)")
+# ratings = []
+# print("Rate your experience at pras_phone.id (1–5)")
 
-for i in range(3):
-    rating = int(input(f"Customer {i+1} rating: "))
-    ratings.append(rating)
+# for i in range(3):
+#     rating = int(input(f"Customer {i+1} rating: "))
+#     ratings.append(rating)
 
-avg = sum(ratings)/len(ratings)
-print("Average rating:", round(avg, 2))
+# avg = sum(ratings)/len(ratings)
+# print("Average rating:", round(avg, 2))
+
+# Sistem estimasi harga jual kembali iPhone di pras_phone.id
+iphone_price = 12000000
+age = int(input("Years used: "))
+
+depreciation = 0.15  # 15% loss per year
+resell_value = iphone_price * ((1 - depreciation) ** age)
+
+print("Estimated resell value: Rp", int(resell_value))
