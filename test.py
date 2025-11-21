@@ -3174,10 +3174,22 @@
 # print("Average rating:", round(avg, 2))
 
 # Sistem estimasi harga jual kembali iPhone di pras_phone.id
-iphone_price = 12000000
-age = int(input("Years used: "))
+# iphone_price = 12000000
+# age = int(input("Years used: "))
 
-depreciation = 0.15  # 15% loss per year
-resell_value = iphone_price * ((1 - depreciation) ** age)
+# depreciation = 0.15  # 15% loss per year
+# resell_value = iphone_price * ((1 - depreciation) ** age)
 
-print("Estimated resell value: Rp", int(resell_value))
+# print("Estimated resell value: Rp", int(resell_value))
+
+# Sistem rekomendasi iPhone berdasarkan fitur di pras_phone.id
+user = input("What feature do you need? (camera/battery/performance): ")
+
+if user == "camera":
+    print("Recommended: iPhone 15 Pro Max")
+elif user == "battery":
+    print("Recommended: iPhone 13 or 14 Plus")
+elif user == "performance":
+    print("Recommended: iPhone 15 Pro")
+else:
+    print("No recommendation available.")
