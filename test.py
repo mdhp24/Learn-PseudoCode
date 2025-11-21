@@ -3183,13 +3183,25 @@
 # print("Estimated resell value: Rp", int(resell_value))
 
 # Sistem rekomendasi iPhone berdasarkan fitur di pras_phone.id
-user = input("What feature do you need? (camera/battery/performance): ")
+# user = input("What feature do you need? (camera/battery/performance): ")
 
-if user == "camera":
-    print("Recommended: iPhone 15 Pro Max")
-elif user == "battery":
-    print("Recommended: iPhone 13 or 14 Plus")
-elif user == "performance":
-    print("Recommended: iPhone 15 Pro")
-else:
-    print("No recommendation available.")
+# if user == "camera":
+#     print("Recommended: iPhone 15 Pro Max")
+# elif user == "battery":
+#     print("Recommended: iPhone 13 or 14 Plus")
+# elif user == "performance":
+#     print("Recommended: iPhone 15 Pro")
+# else:
+#     print("No recommendation available.")
+
+# Sistem pemilihan supplier terbaik di pras_phone.id
+supplier = {
+    "Supplier A": 9500000,
+    "Supplier B": 9700000,
+    "Supplier C": 9400000
+}
+
+best_supplier = min(supplier, key=supplier.get)
+
+print("Best supplier for stock purchase:", best_supplier)
+print("Price:", supplier[best_supplier])
