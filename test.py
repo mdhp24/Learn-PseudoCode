@@ -3304,17 +3304,26 @@
 # print("Seller:", random.choice(responses))
 
 # Sistem invoice pembelian iPhone di pras_phone.id
-import random
+# import random
 
-nama = input("Nama pelanggan: ")
-barang = input("Model iPhone: ")
-harga = int(input("Harga: Rp"))
+# nama = input("Nama pelanggan: ")
+# barang = input("Model iPhone: ")
+# harga = int(input("Harga: Rp"))
 
-invoice_id = "INV-" + str(random.randint(1000, 9999))
+# invoice_id = "INV-" + str(random.randint(1000, 9999))
 
-print("\n===== INVOICE =====")
-print("ID:", invoice_id)
-print("Nama:", nama)
-print("Barang:", barang)
-print("Total: Rp", harga)
-print("===================")
+# print("\n===== INVOICE =====")
+# print("ID:", invoice_id)
+# print("Nama:", nama)
+# print("Barang:", barang)
+# print("Total: Rp", harga)
+# print("===================")
+
+# Sistem hitung profit jual dan sewa iPhone di pras_phone.id
+harga_beli = int(input("Modal beli iPhone: Rp"))
+harga_jual = int(input("Harga jual final: Rp"))
+sewa_income = int(input("Total pemasukan dari sewa: Rp"))
+
+profit = (harga_jual + sewa_income) - harga_beli
+
+print("Total profit keseluruhan: Rp", profit)
