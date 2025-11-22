@@ -3244,13 +3244,27 @@
 #     print("Provinsi tidak terdaftar.")
 
 # Sistem denda keterlambatan pengembalian iPhone di pras_phone.id
-hari_sewa = int(input("Hari seharusnya dikembalikan: "))
-hari_kembali = int(input("Hari aktual dikembalikan: "))
+# hari_sewa = int(input("Hari seharusnya dikembalikan: "))
+# hari_kembali = int(input("Hari aktual dikembalikan: "))
 
-late = hari_kembali - hari_sewa
+# late = hari_kembali - hari_sewa
 
-if late <= 0:
-    print("Tidak ada denda")
+# if late <= 0:
+#     print("Tidak ada denda")
+# else:
+#     denda = late * 30000
+#     print(f"Denda keterlambatan: Rp{denda}")
+
+# Sistem cek status garansi iPhone di pras_phone.id
+bulan = int(input("Berapa bulan sejak pembelian? "))
+
+if bulan <= 3:
+    kategori = "Full Warranty"
+elif bulan <= 6:
+    kategori = "Limited Warranty"
+elif bulan <= 12:
+    kategori = "Service-Only Warranty"
 else:
-    denda = late * 30000
-    print(f"Denda keterlambatan: Rp{denda}")
+    kategori = "Warranty Expired"
+
+print("Status garansi:", kategori)
