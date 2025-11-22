@@ -3256,15 +3256,33 @@
 #     print(f"Denda keterlambatan: Rp{denda}")
 
 # Sistem cek status garansi iPhone di pras_phone.id
-bulan = int(input("Berapa bulan sejak pembelian? "))
+# bulan = int(input("Berapa bulan sejak pembelian? "))
 
-if bulan <= 3:
-    kategori = "Full Warranty"
-elif bulan <= 6:
-    kategori = "Limited Warranty"
-elif bulan <= 12:
-    kategori = "Service-Only Warranty"
+# if bulan <= 3:
+#     kategori = "Full Warranty"
+# elif bulan <= 6:
+#     kategori = "Limited Warranty"
+# elif bulan <= 12:
+#     kategori = "Service-Only Warranty"
+# else:
+#     kategori = "Warranty Expired"
+
+# print("Status garansi:", kategori)
+
+# Sistem kategori kondisi iPhone di pras_phone.id
+screen = int(input("Skor layar (1–10): "))
+battery = int(input("Skor baterai (1–10): "))
+body = int(input("Skor body (1–10): "))
+
+avg = (screen + battery + body) / 3
+
+if avg >= 9:
+    kondisi = "Super Mint"
+elif avg >= 7:
+    kondisi = "Mint"
+elif avg >= 5:
+    kondisi = "Normal"
 else:
-    kategori = "Warranty Expired"
+    kondisi = "Below Average"
 
-print("Status garansi:", kategori)
+print("Kategori kondisi iPhone:", kondisi)
