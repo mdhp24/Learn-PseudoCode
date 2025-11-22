@@ -3270,19 +3270,35 @@
 # print("Status garansi:", kategori)
 
 # Sistem kategori kondisi iPhone di pras_phone.id
-screen = int(input("Skor layar (1–10): "))
-battery = int(input("Skor baterai (1–10): "))
-body = int(input("Skor body (1–10): "))
+# screen = int(input("Skor layar (1–10): "))
+# battery = int(input("Skor baterai (1–10): "))
+# body = int(input("Skor body (1–10): "))
 
-avg = (screen + battery + body) / 3
+# avg = (screen + battery + body) / 3
 
-if avg >= 9:
-    kondisi = "Super Mint"
-elif avg >= 7:
-    kondisi = "Mint"
-elif avg >= 5:
-    kondisi = "Normal"
-else:
-    kondisi = "Below Average"
+# if avg >= 9:
+#     kondisi = "Super Mint"
+# elif avg >= 7:
+#     kondisi = "Mint"
+# elif avg >= 5:
+#     kondisi = "Normal"
+# else:
+#     kondisi = "Below Average"
 
-print("Kategori kondisi iPhone:", kondisi)
+# print("Kategori kondisi iPhone:", kondisi)
+
+
+## Sistem tawar-menawar harga iPhone di pras_phone.id
+import random
+
+price = int(input("Your offer: Rp"))
+
+responses = [
+    "Deal!",
+    "Boleh, tapi harga pas ya.",
+    "Tidak bisa, terlalu rendah.",
+    "Tambah dikit lagi boleh.",
+    "Saya cek dulu stok dan kondisi unit."
+]
+
+print("Seller:", random.choice(responses))
