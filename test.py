@@ -3213,16 +3213,32 @@
 # print("You earned", points, "loyalty points!")
 
 # Sistem pembelian produk dengan diskon berdasarkan jumlah di pras_phone.id
-harga = 7500000
-qty = int(input("How many units to order? "))
+# harga = 7500000
+# qty = int(input("How many units to order? "))
 
-if qty >= 10:
-    diskon = 0.07
-elif qty >= 5:
-    diskon = 0.05
+# if qty >= 10:
+#     diskon = 0.07
+# elif qty >= 5:
+#     diskon = 0.05
+# else:
+#     diskon = 0.02
+
+# total = harga * qty * (1 - diskon)
+
+# print(f"Total price after discount: Rp{int(total)}")
+
+# Sistem pajak berdasarkan provinsi di pras_phone.id
+harga = int(input("Harga iPhone: Rp"))
+provinsi = input("Provinsi (Jawa/Bali/Sumatra): ").lower()
+
+pajak = {
+    "jawa": 0.11,
+    "bali": 0.10,
+    "sumatra": 0.12
+}
+
+if provinsi in pajak:
+    total = harga + (harga * pajak[provinsi])
+    print(f"Total setelah pajak: Rp{int(total)}")
 else:
-    diskon = 0.02
-
-total = harga * qty * (1 - diskon)
-
-print(f"Total price after discount: Rp{int(total)}")
+    print("Provinsi tidak terdaftar.")
