@@ -3228,17 +3228,29 @@
 # print(f"Total price after discount: Rp{int(total)}")
 
 # Sistem pajak berdasarkan provinsi di pras_phone.id
-harga = int(input("Harga iPhone: Rp"))
-provinsi = input("Provinsi (Jawa/Bali/Sumatra): ").lower()
+# harga = int(input("Harga iPhone: Rp"))
+# provinsi = input("Provinsi (Jawa/Bali/Sumatra): ").lower()
 
-pajak = {
-    "jawa": 0.11,
-    "bali": 0.10,
-    "sumatra": 0.12
-}
+# pajak = {
+#     "jawa": 0.11,
+#     "bali": 0.10,
+#     "sumatra": 0.12
+# }
 
-if provinsi in pajak:
-    total = harga + (harga * pajak[provinsi])
-    print(f"Total setelah pajak: Rp{int(total)}")
+# if provinsi in pajak:
+#     total = harga + (harga * pajak[provinsi])
+#     print(f"Total setelah pajak: Rp{int(total)}")
+# else:
+#     print("Provinsi tidak terdaftar.")
+
+# Sistem denda keterlambatan pengembalian iPhone di pras_phone.id
+hari_sewa = int(input("Hari seharusnya dikembalikan: "))
+hari_kembali = int(input("Hari aktual dikembalikan: "))
+
+late = hari_kembali - hari_sewa
+
+if late <= 0:
+    print("Tidak ada denda")
 else:
-    print("Provinsi tidak terdaftar.")
+    denda = late * 30000
+    print(f"Denda keterlambatan: Rp{denda}")
