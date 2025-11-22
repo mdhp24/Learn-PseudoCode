@@ -3289,16 +3289,32 @@
 
 
 ## Sistem tawar-menawar harga iPhone di pras_phone.id
+# import random
+
+# price = int(input("Your offer: Rp"))
+
+# responses = [
+#     "Deal!",
+#     "Boleh, tapi harga pas ya.",
+#     "Tidak bisa, terlalu rendah.",
+#     "Tambah dikit lagi boleh.",
+#     "Saya cek dulu stok dan kondisi unit."
+# ]
+
+# print("Seller:", random.choice(responses))
+
+# Sistem invoice pembelian iPhone di pras_phone.id
 import random
 
-price = int(input("Your offer: Rp"))
+nama = input("Nama pelanggan: ")
+barang = input("Model iPhone: ")
+harga = int(input("Harga: Rp"))
 
-responses = [
-    "Deal!",
-    "Boleh, tapi harga pas ya.",
-    "Tidak bisa, terlalu rendah.",
-    "Tambah dikit lagi boleh.",
-    "Saya cek dulu stok dan kondisi unit."
-]
+invoice_id = "INV-" + str(random.randint(1000, 9999))
 
-print("Seller:", random.choice(responses))
+print("\n===== INVOICE =====")
+print("ID:", invoice_id)
+print("Nama:", nama)
+print("Barang:", barang)
+print("Total: Rp", harga)
+print("===================")
