@@ -3320,10 +3320,19 @@
 # print("===================")
 
 # Sistem hitung profit jual dan sewa iPhone di pras_phone.id
-harga_beli = int(input("Modal beli iPhone: Rp"))
-harga_jual = int(input("Harga jual final: Rp"))
-sewa_income = int(input("Total pemasukan dari sewa: Rp"))
+# harga_beli = int(input("Modal beli iPhone: Rp"))
+# harga_jual = int(input("Harga jual final: Rp"))
+# sewa_income = int(input("Total pemasukan dari sewa: Rp"))
 
-profit = (harga_jual + sewa_income) - harga_beli
+# profit = (harga_jual + sewa_income) - harga_beli
 
-print("Total profit keseluruhan: Rp", profit)
+# print("Total profit keseluruhan: Rp", profit)
+
+
+# Sistem pengingat servis iPhone di pras_phone.id
+import datetime
+last_service = input("Tanggal servis terakhir (YYYY-MM-DD): ")
+last_service_date = datetime.datetime.strptime(last_service, "%Y-%m-%d")
+next_service_date = last_service_date + datetime.timedelta(days=180)
+
+print("Tanggal servis berikutnya:", next_service_date.strftime("%Y-%m-%d"))
