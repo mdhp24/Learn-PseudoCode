@@ -3344,16 +3344,30 @@
 # print(f"Volume bola dengan jari-jari {radius} adalah {volume:.2f}")
 
 # Sistem operasi pecahan dasar
-from fractions import Fraction  
-a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
-b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
+# from fractions import Fraction  
+# a = Fraction(input("Masukkan pecahan pertama (misal 1/2): "))
+# b = Fraction(input("Masukkan pecahan kedua (misal 3/4): "))
 
-print("Penjumlahan:", a + b)
-print("Pengurangan:", a - b)
-print("Perkalian:", a * b)
-print("Pembagian:", a / b)
-print("Pecahan pertama dalam desimal:", float(a))
-print("Pecahan kedua dalam desimal:", float(b))
-print("Pecahan pertama dalam persen:", float(a) * 100, "%")
-print("Pecahan kedua dalam persen:", float(b) * 100, "%")
+# print("Penjumlahan:", a + b)
+# print("Pengurangan:", a - b)
+# print("Perkalian:", a * b)
+# print("Pembagian:", a / b)
+# print("Pecahan pertama dalam desimal:", float(a))
+# print("Pecahan kedua dalam desimal:", float(b))
+# print("Pecahan pertama dalam persen:", float(a) * 100, "%")
+# print("Pecahan kedua dalam persen:", float(b) * 100, "%")
 
+# Sistem enkripsi teks menggunakan metode Caesar Cipher
+def caesar_cipher(teks, shift):
+    hasil = ""
+    for huruf in teks:
+        if huruf.isalpha():
+            ascii_offset = 65 if huruf.isupper() else 97
+            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+        else:
+            hasil += huruf
+    return hasil
+pesan = input("Masukkan teks: ")
+geser = int(input("Geser berapa huruf: "))
+print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+print("Teks terdekripsi:", caesar_cipher(caesar_cipher(pesan, geser), -geser))
