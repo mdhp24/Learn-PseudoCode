@@ -3330,9 +3330,15 @@
 
 
 # Sistem pengingat servis iPhone di pras_phone.id
-import datetime
-last_service = input("Tanggal servis terakhir (YYYY-MM-DD): ")
-last_service_date = datetime.datetime.strptime(last_service, "%Y-%m-%d")
-next_service_date = last_service_date + datetime.timedelta(days=180)
+# import datetime
+# last_service = input("Tanggal servis terakhir (YYYY-MM-DD): ")
+# last_service_date = datetime.datetime.strptime(last_service, "%Y-%m-%d")
+# next_service_date = last_service_date + datetime.timedelta(days=180)
 
-print("Tanggal servis berikutnya:", next_service_date.strftime("%Y-%m-%d"))
+# print("Tanggal servis berikutnya:", next_service_date.strftime("%Y-%m-%d"))
+
+# Sistem hitung volume bola
+import math
+radius = float(input("Masukkan jari-jari bola: "))
+volume = (4/3) * math.pi * radius**3
+print(f"Volume bola dengan jari-jari {radius} adalah {volume:.2f}")
