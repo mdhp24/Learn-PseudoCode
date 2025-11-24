@@ -3416,13 +3416,32 @@
 
 
 # sistem pembuatan password kuat
-import random
+# import random
+# import string
+# def generate_password(length):
+#     if length < 8:
+#         return "Panjang password minimal 8 karakter."
+#     characters = string.ascii_letters + string.digits + string.punctuation
+#     password = ''.join(random.choice(characters) for _ in range(length))
+#     return password
+# panjang = int(input("Masukkan panjang password yang diinginkan: "))
+# print("Password kuat yang dihasilkan:", generate_password(panjang))
+
+# Sistem validasi password
 import string
-def generate_password(length):
-    if length < 8:
-        return "Panjang password minimal 8 karakter."
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for _ in range(length))
-    return password
-panjang = int(input("Masukkan panjang password yang diinginkan: "))
-print("Password kuat yang dihasilkan:", generate_password(panjang))
+
+
+def validate_password(password):
+    if len(password) < 8:
+        return "Password harus memiliki minimal 8 karakter."
+    if not any(char.isupper() for char in password):
+        return "Password harus mengandung setidaknya satu huruf kapital."
+    if not any(char.islower() for char in password):
+        return "Password harus mengandung setidaknya satu huruf kecil."
+    if not any(char.isdigit() for char in password):
+        return "Password harus mengandung setidaknya satu angka."
+    if not any(char in string.punctuation for char in password):
+        return "Password harus mengandung setidaknya satu karakter khusus."
+    return "Password valid dan kuat."
+password_input = input("Masukkan password untuk divalidasi: ")
+print(validate_password(password_input))
