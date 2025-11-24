@@ -3358,16 +3358,58 @@
 # print("Pecahan kedua dalam persen:", float(b) * 100, "%")
 
 # Sistem enkripsi teks menggunakan metode Caesar Cipher
-def caesar_cipher(teks, shift):
-    hasil = ""
-    for huruf in teks:
-        if huruf.isalpha():
-            ascii_offset = 65 if huruf.isupper() else 97
-            hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+# def caesar_cipher(teks, shift):
+#     hasil = ""
+#     for huruf in teks:
+#         if huruf.isalpha():
+#             ascii_offset = 65 if huruf.isupper() else 97
+#             hasil += chr((ord(huruf) - ascii_offset + shift) % 26 + ascii_offset)
+#         else:
+#             hasil += huruf
+#     return hasil
+# pesan = input("Masukkan teks: ")
+# geser = int(input("Geser berapa huruf: "))
+# print("Teks terenkripsi:", caesar_cipher(pesan, geser))
+# print("Teks terdekripsi:", caesar_cipher(caesar_cipher(pesan, geser), -geser))
+
+# Sistem pembelian produk dengan kelas di toko gym
+class Produk:
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        self.harga = harga
+        self.stok = stok
+    def jual(self, jumlah):
+        if jumlah <= self.stok:
+            self.stok -= jumlah
+            return jumlah * self.harga
         else:
-            hasil += huruf
-    return hasil
-pesan = input("Masukkan teks: ")
-geser = int(input("Geser berapa huruf: "))
-print("Teks terenkripsi:", caesar_cipher(pesan, geser))
-print("Teks terdekripsi:", caesar_cipher(caesar_cipher(pesan, geser), -geser))
+            print(f"❌ Stok {self.nama} tidak cukup.")
+            return 0
+class TokoGym:
+    def __init__(self):
+        self.produk = [
+            Produk("Dumbbell", 200000, 10),
+            Produk("Yoga Mat", 150000, 8),
+            Produk("Gloves", 80000, 20),]
+        self.total = 0
+    def tampilkan(self):
+        print("\n=== PRODUK TOKO GYM ===")
+        for p in self.produk:
+            print(f"{p.nama:15} Rp{p.harga} | Stok: {p.stok}")
+    def beli(self):
+        while True:
+            self.tampilkan()
+            nama = input("\nMasukkan nama produk ('selesai' untuk keluar): ")
+            if nama.lower() == "selesai":
+                break
+            for p in self.produk:
+                if p.nama.lower() == nama.lower():
+                    qty = int(input("Masukkan jumlah: "))
+                    self.total += p.jual(qty)
+                    break
+            else:
+                print("❌ Produk tidak ditemukan.")
+        print(f"\n💰 Total Bayar: Rp{self.total}")
+print("=== SELAMAT DATANG DI TOKO GYM ===")
+toko = TokoGym()
+toko.beli()
