@@ -3447,10 +3447,31 @@
 # print(validate_password(password_input))
 
 # sistem cek diskon pembelian di toko gym
-harga = float(input("Masukkan harga barang: "))
-diskon = float(input("Masukkan diskon (%): "))
+# harga = float(input("Masukkan harga barang: "))
+# diskon = float(input("Masukkan diskon (%): "))
 
-potongan = harga * (diskon / 100)
-total = harga - potongan
+# potongan = harga * (diskon / 100)
+# total = harga - potongan
 
-print(f"Total setelah diskon: Rp{total}")
+# print(f"Total setelah diskon: Rp{total}")
+
+# Sistem hitung kalori makanan di toko gym
+makanan = {
+    "nasi": 200,
+    "ayam": 250,
+    "telur": 78,
+    "roti": 120
+}
+
+total = 0
+
+while True:
+    pilih = input("Masukkan makanan (ketik 'stop' untuk selesai): ")
+    if pilih == "stop":
+        break
+    if pilih in makanan:
+        total += makanan[pilih]
+    else:
+        print("Makanan tidak ditemukan.")
+
+print("Total kalori:", total)
