@@ -3428,20 +3428,29 @@
 # print("Password kuat yang dihasilkan:", generate_password(panjang))
 
 # Sistem validasi password
-import string
+# import string
 
 
-def validate_password(password):
-    if len(password) < 8:
-        return "Password harus memiliki minimal 8 karakter."
-    if not any(char.isupper() for char in password):
-        return "Password harus mengandung setidaknya satu huruf kapital."
-    if not any(char.islower() for char in password):
-        return "Password harus mengandung setidaknya satu huruf kecil."
-    if not any(char.isdigit() for char in password):
-        return "Password harus mengandung setidaknya satu angka."
-    if not any(char in string.punctuation for char in password):
-        return "Password harus mengandung setidaknya satu karakter khusus."
-    return "Password valid dan kuat."
-password_input = input("Masukkan password untuk divalidasi: ")
-print(validate_password(password_input))
+# def validate_password(password):
+#     if len(password) < 8:
+#         return "Password harus memiliki minimal 8 karakter."
+#     if not any(char.isupper() for char in password):
+#         return "Password harus mengandung setidaknya satu huruf kapital."
+#     if not any(char.islower() for char in password):
+#         return "Password harus mengandung setidaknya satu huruf kecil."
+#     if not any(char.isdigit() for char in password):
+#         return "Password harus mengandung setidaknya satu angka."
+#     if not any(char in string.punctuation for char in password):
+#         return "Password harus mengandung setidaknya satu karakter khusus."
+#     return "Password valid dan kuat."
+# password_input = input("Masukkan password untuk divalidasi: ")
+# print(validate_password(password_input))
+
+# sistem cek diskon pembelian di toko gym
+harga = float(input("Masukkan harga barang: "))
+diskon = float(input("Masukkan diskon (%): "))
+
+potongan = harga * (diskon / 100)
+total = harga - potongan
+
+print(f"Total setelah diskon: Rp{total}")
