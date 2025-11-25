@@ -3456,22 +3456,30 @@
 # print(f"Total setelah diskon: Rp{total}")
 
 # Sistem hitung kalori makanan di toko gym
-makanan = {
-    "nasi": 200,
-    "ayam": 250,
-    "telur": 78,
-    "roti": 120
-}
+# makanan = {
+#     "nasi": 200,
+#     "ayam": 250,
+#     "telur": 78,
+#     "roti": 120
+# }
 
-total = 0
+# total = 0
 
-while True:
-    pilih = input("Masukkan makanan (ketik 'stop' untuk selesai): ")
-    if pilih == "stop":
-        break
-    if pilih in makanan:
-        total += makanan[pilih]
-    else:
-        print("Makanan tidak ditemukan.")
+# while True:
+#     pilih = input("Masukkan makanan (ketik 'stop' untuk selesai): ")
+#     if pilih == "stop":
+#         break
+#     if pilih in makanan:
+#         total += makanan[pilih]
+#     else:
+#         print("Makanan tidak ditemukan.")
 
-print("Total kalori:", total)
+# print("Total kalori:", total)
+
+# Sistem cek angka genap atau ganjil
+angka = int(input("Masukkan angka: "))
+
+if angka % 2 == 0:
+    print("Angka genap")
+else:
+    print("Angka ganjil")
