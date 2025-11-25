@@ -3485,13 +3485,19 @@
 #     print("Angka ganjil")
 
 # Sistem login sederhana    
-username = "admin"
-password = "12345"
+# username = "admin"
+# password = "12345"
 
-u = input("Username: ")
-p = input("Password: ")
+# u = input("Username: ")
+# p = input("Password: ")
 
-if u == username and p == password:
-    print("Login berhasil!")
-else:
-    print("Login gagal!")
+# if u == username and p == password:
+#     print("Login berhasil!")
+# else:
+#     print("Login gagal!")
+
+# Sistem konversi suhu Celsius ke Fahrenheit
+c = float(input("Masukkan suhu Celsius: "))
+f = (c * 9/5) + 32
+
+print("Hasil dalam Fahrenheit:", f)
