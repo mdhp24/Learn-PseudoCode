@@ -3496,8 +3496,21 @@
 # else:
 #     print("Login gagal!")
 
-# Sistem konversi suhu Celsius ke Fahrenheit
-c = float(input("Masukkan suhu Celsius: "))
-f = (c * 9/5) + 32
+# # Sistem konversi suhu Celsius ke Fahrenheit
+# c = float(input("Masukkan suhu Celsius: "))
+# f = (c * 9/5) + 32
 
-print("Hasil dalam Fahrenheit:", f)
+# print("Hasil dalam Fahrenheit:", f)
+
+# Sistem rekomendasi motivasi harian
+import random
+
+motivasi = [
+    "Tetap semangat!",
+    "Kamu pasti bisa!",
+    "Jangan menyerah!",
+    "Fokus dan terus maju!",
+    "Proses tidak akan mengkhianati hasil."
+]
+
+print("Motivasi hari ini:", random.choice(motivasi))
