@@ -3503,14 +3503,22 @@
 # print("Hasil dalam Fahrenheit:", f)
 
 # Sistem rekomendasi motivasi harian
-import random
+# import random
 
-motivasi = [
-    "Tetap semangat!",
-    "Kamu pasti bisa!",
-    "Jangan menyerah!",
-    "Fokus dan terus maju!",
-    "Proses tidak akan mengkhianati hasil."
-]
+# motivasi = [
+#     "Tetap semangat!",
+#     "Kamu pasti bisa!",
+#     "Jangan menyerah!",
+#     "Fokus dan terus maju!",
+#     "Proses tidak akan mengkhianati hasil."
+# ]
 
-print("Motivasi hari ini:", random.choice(motivasi))
+# print("Motivasi hari ini:", random.choice(motivasi))
+
+# Sistem hitung ongkos kirim berdasarkan berat paket
+berat = float(input("Masukkan berat paket (kg): "))
+tarif = 12000 + (berat * 4000)
+
+total = berat * tarif
+
+print(f"Total ongkos kirim: Rp{total}")
