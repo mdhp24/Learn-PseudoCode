@@ -3477,9 +3477,21 @@
 # print("Total kalori:", total)
 
 # Sistem cek angka genap atau ganjil
-angka = int(input("Masukkan angka: "))
+# angka = int(input("Masukkan angka: "))
 
-if angka % 2 == 0:
-    print("Angka genap")
+# if angka % 2 == 0:
+#     print("Angka genap")
+# else:
+#     print("Angka ganjil")
+
+# Sistem login sederhana    
+username = "admin"
+password = "12345"
+
+u = input("Username: ")
+p = input("Password: ")
+
+if u == username and p == password:
+    print("Login berhasil!")
 else:
-    print("Angka ganjil")
+    print("Login gagal!")
