@@ -3582,8 +3582,18 @@
 # print(f"Kebutuhan air harian Anda: {int(kebutuhan_air)} ml")
 
 # Sistem hitung kalori terbakar saat olahraga
-durasi = float(input("Masukkan durasi olahraga (menit): "))
-met = float(input("Masukkan MET aktivitas: "))
-berat = float(input("Masukkan berat badan (kg): "))
-kalori = (met * 3.5 * berat / 200) * durasi
-print(f"Kalori terbakar: {int(kalori)} kkal")
+# durasi = float(input("Masukkan durasi olahraga (menit): "))
+# met = float(input("Masukkan MET aktivitas: "))
+# berat = float(input("Masukkan berat badan (kg): "))
+# kalori = (met * 3.5 * berat / 200) * durasi
+# print(f"Kalori terbakar: {int(kalori)} kkal")
+
+# Sistem cek tingkat stres
+skor = int(input("Masukkan skor stres Anda (1-10): "))
+if skor <= 3:
+    tingkat = "Rendah"
+elif 4 <= skor <= 7:
+    tingkat = "Sedang"
+else:
+    tingkat = "Tinggi"
+print("Tingkat stres Anda:", tingkat)
