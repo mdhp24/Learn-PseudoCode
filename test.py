@@ -3567,11 +3567,16 @@
 #     print("Kelas tidak tersedia.")
     
 # Sistem cek kesehatan jantung
-detak = int(input("Masukkan detak jantung per menit: "))
-if detak < 60:
-    status = "Bradikardia (detak jantung rendah)"
-elif 60 <= detak <= 100:
-    status = "Normal"
-else:
-    status = "Tachikardia (detak jantung tinggi)"
-print("Status kesehatan jantung:", status)
+# detak = int(input("Masukkan detak jantung per menit: "))
+# if detak < 60:
+#     status = "Bradikardia (detak jantung rendah)"
+# elif 60 <= detak <= 100:
+#     status = "Normal"
+# else:
+#     status = "Tachikardia (detak jantung tinggi)"
+# print("Status kesehatan jantung:", status)
+
+# Sistem cek kebutuhan air harian
+berat = float(input("Masukkan berat badan (kg): "))
+kebutuhan_air = berat * 35  # ml per kg
+print(f"Kebutuhan air harian Anda: {int(kebutuhan_air)} ml")
