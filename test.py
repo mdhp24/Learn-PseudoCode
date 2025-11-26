@@ -3551,18 +3551,27 @@
 # print("Kategori BMI:", kategori)
 
 # Sistem pendaftaran kelas gym dengan stok terbatas
-kelas = {
-    "Yoga": 5,
-    "Pilates": 3,
-    "Zumba": 4
-}
-pilih = input("Pilih kelas yang ingin didaftarkan (Yoga/Pilates/Zumba): ")
-if pilih in kelas:
-    if kelas[pilih] > 0:
-        kelas[pilih] -= 1
-        print(f"Pendaftaran kelas {pilih} berhasil! Sisa kuota: {kelas[pilih]}")
-    else:
-        print(f"Maaf, kelas {pilih} sudah penuh.")
-else:
-    print("Kelas tidak tersedia.")
+# kelas = {
+#     "Yoga": 5,
+#     "Pilates": 3,
+#     "Zumba": 4
+# }
+# pilih = input("Pilih kelas yang ingin didaftarkan (Yoga/Pilates/Zumba): ")
+# if pilih in kelas:
+#     if kelas[pilih] > 0:
+#         kelas[pilih] -= 1
+#         print(f"Pendaftaran kelas {pilih} berhasil! Sisa kuota: {kelas[pilih]}")
+#     else:
+#         print(f"Maaf, kelas {pilih} sudah penuh.")
+# else:
+#     print("Kelas tidak tersedia.")
     
+# Sistem cek kesehatan jantung
+detak = int(input("Masukkan detak jantung per menit: "))
+if detak < 60:
+    status = "Bradikardia (detak jantung rendah)"
+elif 60 <= detak <= 100:
+    status = "Normal"
+else:
+    status = "Tachikardia (detak jantung tinggi)"
+print("Status kesehatan jantung:", status)
