@@ -3525,11 +3525,27 @@
 
 
 # sistem cek kesehatan suhu badan
-suhu = float(input("Masukkan suhu badan (°C): "))
-if suhu < 36.5:
-    status = "Suhu badan rendah (hipotermia)"
-elif 36.5 <= suhu <= 37.5:
-    status = "Suhu badan normal"
+# suhu = float(input("Masukkan suhu badan (°C): "))
+# if suhu < 36.5:
+#     status = "Suhu badan rendah (hipotermia)"
+# elif 36.5 <= suhu <= 37.5:
+#     status = "Suhu badan normal"
+# else:
+#     status = "Suhu badan tinggi (demam)"
+# print("Status kesehatan:", status)
+
+
+# sistem kalkulator BMI
+berat = float(input("Masukkan berat badan (kg): "))
+tinggi = float(input("Masukkan tinggi badan (m): "))
+bmi = berat / (tinggi ** 2)
+print(f"Indeks Massa Tubuh (BMI): {bmi:.2f}")
+if bmi < 18.5:
+    kategori = "Kurus"
+elif 18.5 <= bmi < 24.9:
+    kategori = "Normal"
+elif 25 <= bmi < 29.9:
+    kategori = "Kelebihan berat badan"
 else:
-    status = "Suhu badan tinggi (demam)"
-print("Status kesehatan:", status)
+    kategori = "Obesitas"
+print("Kategori BMI:", kategori)
