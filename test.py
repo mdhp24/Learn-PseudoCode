@@ -3516,9 +3516,20 @@
 # print("Motivasi hari ini:", random.choice(motivasi))
 
 # Sistem hitung ongkos kirim berdasarkan berat paket
-berat = float(input("Masukkan berat paket (kg): "))
-tarif = 12000 + (berat * 4000)
+# berat = float(input("Masukkan berat paket (kg): "))
+# tarif = 12000 + (berat * 4000)
 
-total = berat * tarif
+# total = berat * tarif
 
-print(f"Total ongkos kirim: Rp{total}")
+# print(f"Total ongkos kirim: Rp{total}")
+
+
+# sistem cek kesehatan suhu badan
+suhu = float(input("Masukkan suhu badan (°C): "))
+if suhu < 36.5:
+    status = "Suhu badan rendah (hipotermia)"
+elif 36.5 <= suhu <= 37.5:
+    status = "Suhu badan normal"
+else:
+    status = "Suhu badan tinggi (demam)"
+print("Status kesehatan:", status)
