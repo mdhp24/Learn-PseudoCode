@@ -3577,6 +3577,13 @@
 # print("Status kesehatan jantung:", status)
 
 # Sistem cek kebutuhan air harian
+# berat = float(input("Masukkan berat badan (kg): "))
+# kebutuhan_air = berat * 35  # ml per kg
+# print(f"Kebutuhan air harian Anda: {int(kebutuhan_air)} ml")
+
+# Sistem hitung kalori terbakar saat olahraga
+durasi = float(input("Masukkan durasi olahraga (menit): "))
+met = float(input("Masukkan MET aktivitas: "))
 berat = float(input("Masukkan berat badan (kg): "))
-kebutuhan_air = berat * 35  # ml per kg
-print(f"Kebutuhan air harian Anda: {int(kebutuhan_air)} ml")
+kalori = (met * 3.5 * berat / 200) * durasi
+print(f"Kalori terbakar: {int(kalori)} kkal")
