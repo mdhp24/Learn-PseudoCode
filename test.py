@@ -3536,16 +3536,33 @@
 
 
 # sistem kalkulator BMI
-berat = float(input("Masukkan berat badan (kg): "))
-tinggi = float(input("Masukkan tinggi badan (m): "))
-bmi = berat / (tinggi ** 2)
-print(f"Indeks Massa Tubuh (BMI): {bmi:.2f}")
-if bmi < 18.5:
-    kategori = "Kurus"
-elif 18.5 <= bmi < 24.9:
-    kategori = "Normal"
-elif 25 <= bmi < 29.9:
-    kategori = "Kelebihan berat badan"
+# berat = float(input("Masukkan berat badan (kg): "))
+# tinggi = float(input("Masukkan tinggi badan (m): "))
+# bmi = berat / (tinggi ** 2)
+# print(f"Indeks Massa Tubuh (BMI): {bmi:.2f}")
+# if bmi < 18.5:
+#     kategori = "Kurus"
+# elif 18.5 <= bmi < 24.9:
+#     kategori = "Normal"
+# elif 25 <= bmi < 29.9:
+#     kategori = "Kelebihan berat badan"
+# else:
+#     kategori = "Obesitas"
+# print("Kategori BMI:", kategori)
+
+# Sistem pendaftaran kelas gym dengan stok terbatas
+kelas = {
+    "Yoga": 5,
+    "Pilates": 3,
+    "Zumba": 4
+}
+pilih = input("Pilih kelas yang ingin didaftarkan (Yoga/Pilates/Zumba): ")
+if pilih in kelas:
+    if kelas[pilih] > 0:
+        kelas[pilih] -= 1
+        print(f"Pendaftaran kelas {pilih} berhasil! Sisa kuota: {kelas[pilih]}")
+    else:
+        print(f"Maaf, kelas {pilih} sudah penuh.")
 else:
-    kategori = "Obesitas"
-print("Kategori BMI:", kategori)
+    print("Kelas tidak tersedia.")
+    
