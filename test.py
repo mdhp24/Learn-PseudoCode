@@ -3650,11 +3650,27 @@
 #     print("Overweight")
 
 # Sistem penjumlahan angka
-jumlah = int(input("Berapa angka yang ingin dijumlahkan? "))
-total = 0
+# jumlah = int(input("Berapa angka yang ingin dijumlahkan? "))
+# total = 0
 
-for i in range(jumlah):
-    angka = float(input(f"Angka ke-{i+1}: "))
-    total += angka
+# for i in range(jumlah):
+#     angka = float(input(f"Angka ke-{i+1}: "))
+#     total += angka
 
-print("Total:", total)
+# print("Total:", total)
+
+# Sistem pemesanan tiket nonton film
+film = ["Avatar", "Naruto", "One Piece", "Joker 2"]
+
+print("Daftar Film:")
+for i, f in enumerate(film):
+    print(f"{i+1}. {f}")
+
+pilih = int(input("Pilih film (1-4): "))
+tiket = int(input("Jumlah tiket: "))
+
+harga = 35000
+total = harga * tiket
+
+print(f"Kamu memilih film {film[pilih-1]}")
+print(f"Total bayar: Rp{total}")
