@@ -3589,11 +3589,18 @@
 # print(f"Kalori terbakar: {int(kalori)} kkal")
 
 # Sistem cek tingkat stres
-skor = int(input("Masukkan skor stres Anda (1-10): "))
-if skor <= 3:
-    tingkat = "Rendah"
-elif 4 <= skor <= 7:
-    tingkat = "Sedang"
-else:
-    tingkat = "Tinggi"
-print("Tingkat stres Anda:", tingkat)
+# skor = int(input("Masukkan skor stres Anda (1-10): "))
+# if skor <= 3:
+#     tingkat = "Rendah"
+# elif 4 <= skor <= 7:
+#     tingkat = "Sedang"
+# else:
+#     tingkat = "Tinggi"
+# print("Tingkat stres Anda:", tingkat)
+
+# Sistem hitung tarif parkir di toko gym
+jam = int(input("Masukkan durasi parkir (jam): "))
+tarif = 3000
+
+total = jam * tarif
+print(f"Total bayar parkir: Rp{total}")
