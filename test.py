@@ -3636,15 +3636,25 @@
 #     print("Grade D")
 
 # Sistem kalkulator BMI
-berat = float(input("Masukkan berat (kg): "))
-tinggi = float(input("Masukkan tinggi (m): "))
+# berat = float(input("Masukkan berat (kg): "))
+# tinggi = float(input("Masukkan tinggi (m): "))
 
-bmi = berat / (tinggi ** 2)
-print("BMI:", round(bmi, 2))
+# bmi = berat / (tinggi ** 2)
+# print("BMI:", round(bmi, 2))
 
-if bmi < 18.5:
-    print("Kurus")
-elif bmi < 25:
-    print("Normal")
-else:
-    print("Overweight")
+# if bmi < 18.5:
+#     print("Kurus")
+# elif bmi < 25:
+#     print("Normal")
+# else:
+#     print("Overweight")
+
+# Sistem penjumlahan angka
+jumlah = int(input("Berapa angka yang ingin dijumlahkan? "))
+total = 0
+
+for i in range(jumlah):
+    angka = float(input(f"Angka ke-{i+1}: "))
+    total += angka
+
+print("Total:", total)
