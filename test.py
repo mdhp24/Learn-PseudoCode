@@ -3599,8 +3599,15 @@
 # print("Tingkat stres Anda:", tingkat)
 
 # Sistem hitung tarif parkir di toko gym
-jam = int(input("Masukkan durasi parkir (jam): "))
-tarif = 3000
+# jam = int(input("Masukkan durasi parkir (jam): "))
+# tarif = 3000
 
-total = jam * tarif
-print(f"Total bayar parkir: Rp{total}")
+# total = jam * tarif
+# print(f"Total bayar parkir: Rp{total}")
+
+# Sistem hitung luas segitiga
+alas = float(input("Masukkan alas: "))
+tinggi = float(input("Masukkan tinggi: "))
+
+luas = 0.5 * alas * tinggi
+print("Luas segitiga:", luas)
