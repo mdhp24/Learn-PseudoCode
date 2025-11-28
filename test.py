@@ -3613,12 +3613,24 @@
 # print("Luas segitiga:", luas)
 
 # Sistem daftar belanja di toko gym
-belanja = []
+# belanja = []
 
-while True:
-    item = input("Tambah item (ketik 'selesai'): ")
-    if item == "selesai":
-        break
-    belanja.append(item)
+# while True:
+#     item = input("Tambah item (ketik 'selesai'): ")
+#     if item == "selesai":
+#         break
+#     belanja.append(item)
 
-print("Daftar belanja kamu:", belanja)
+# print("Daftar belanja kamu:", belanja)
+
+# Sistem penilaian siswa
+nilai = int(input("Masukkan nilai: "))
+
+if nilai >= 80:
+    print("Grade A")
+elif nilai >= 70:
+    print("Grade B")
+elif nilai >= 60:
+    print("Grade C")
+else:
+    print("Grade D")
