@@ -3606,8 +3606,19 @@
 # print(f"Total bayar parkir: Rp{total}")
 
 # Sistem hitung luas segitiga
-alas = float(input("Masukkan alas: "))
-tinggi = float(input("Masukkan tinggi: "))
+# alas = float(input("Masukkan alas: "))
+# tinggi = float(input("Masukkan tinggi: "))
 
-luas = 0.5 * alas * tinggi
-print("Luas segitiga:", luas)
+# luas = 0.5 * alas * tinggi
+# print("Luas segitiga:", luas)
+
+# Sistem daftar belanja di toko gym
+belanja = []
+
+while True:
+    item = input("Tambah item (ketik 'selesai'): ")
+    if item == "selesai":
+        break
+    belanja.append(item)
+
+print("Daftar belanja kamu:", belanja)
