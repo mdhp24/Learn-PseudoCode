@@ -3624,13 +3624,27 @@
 # print("Daftar belanja kamu:", belanja)
 
 # Sistem penilaian siswa
-nilai = int(input("Masukkan nilai: "))
+# nilai = int(input("Masukkan nilai: "))
 
-if nilai >= 80:
-    print("Grade A")
-elif nilai >= 70:
-    print("Grade B")
-elif nilai >= 60:
-    print("Grade C")
+# if nilai >= 80:
+#     print("Grade A")
+# elif nilai >= 70:
+#     print("Grade B")
+# elif nilai >= 60:
+#     print("Grade C")
+# else:
+#     print("Grade D")
+
+# Sistem kalkulator BMI
+berat = float(input("Masukkan berat (kg): "))
+tinggi = float(input("Masukkan tinggi (m): "))
+
+bmi = berat / (tinggi ** 2)
+print("BMI:", round(bmi, 2))
+
+if bmi < 18.5:
+    print("Kurus")
+elif bmi < 25:
+    print("Normal")
 else:
-    print("Grade D")
+    print("Overweight")
