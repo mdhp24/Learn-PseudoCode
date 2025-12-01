@@ -3676,16 +3676,33 @@
 # print(f"Total bayar: Rp{total}")
 
 # Sistem cek kelayakan kredit berdasarkan rasio hutang
-penghasilan = int(input("Masukkan penghasilan bulanan: "))
-hutang = int(input("Masukkan total hutang bulanan: "))
+# penghasilan = int(input("Masukkan penghasilan bulanan: "))
+# hutang = int(input("Masukkan total hutang bulanan: "))
 
-rasio = hutang / penghasilan
+# rasio = hutang / penghasilan
 
-print("Rasio hutang:", round(rasio, 2))
+# print("Rasio hutang:", round(rasio, 2))
 
-if rasio < 0.3:
-    print("Status: Sangat Layak Kredit")
-elif rasio < 0.5:
-    print("Status: Layak Kredit")
-else:
-    print("Status: Tidak Layak Kredit")
+# if rasio < 0.3:
+#     print("Status: Sangat Layak Kredit")
+# elif rasio < 0.5:
+#     print("Status: Layak Kredit")
+# else:
+#     print("Status: Tidak Layak Kredit")
+
+# Sistem pembelian buku di toko online
+buku = {
+    "Python Dasar": 85000,
+    "Java OOP": 92000,
+    "AI for Beginner": 120000
+}
+
+print("Daftar Buku:")
+for b, h in buku.items():
+    print(b, "- Rp", h)
+
+pilih = input("Pilih judul buku: ")
+jumlah = int(input("Jumlah beli: "))
+
+total = buku.get(pilih, 0) * jumlah
+print("Total pembayaran: Rp", total)
