@@ -3735,9 +3735,17 @@
 #     print(n, "-", s)
 
 # Sistem cek angka genap atau ganjil
-angka = int(input("Masukkan angka: "))
+# angka = int(input("Masukkan angka: "))
 
-if angka % 2 == 0:
-    print("Angka ini GENAP")
-else:
-    print("Angka ini GANJIL")
+# if angka % 2 == 0:
+#     print("Angka ini GENAP")
+# else:
+#     print("Angka ini GANJIL")
+
+# Sistem hitung ongkos kirim paket di pras_phone.id
+berat = float(input("Masukkan berat paket (kg): "))
+jarak = float(input("Masukkan jarak (km): "))
+
+ongkir = (berat * 5000) + (jarak * 1500)
+
+print("Total ongkir: Rp", ongkir)
