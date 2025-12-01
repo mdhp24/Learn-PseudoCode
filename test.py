@@ -3691,18 +3691,33 @@
 #     print("Status: Tidak Layak Kredit")
 
 # Sistem pembelian buku di toko online
-buku = {
-    "Python Dasar": 85000,
-    "Java OOP": 92000,
-    "AI for Beginner": 120000
-}
+# buku = {
+#     "Python Dasar": 85000,
+#     "Java OOP": 92000,
+#     "AI for Beginner": 120000
+# }
 
-print("Daftar Buku:")
-for b, h in buku.items():
-    print(b, "- Rp", h)
+# print("Daftar Buku:")
+# for b, h in buku.items():
+#     print(b, "- Rp", h)
 
-pilih = input("Pilih judul buku: ")
-jumlah = int(input("Jumlah beli: "))
+# pilih = input("Pilih judul buku: ")
+# jumlah = int(input("Jumlah beli: "))
 
-total = buku.get(pilih, 0) * jumlah
-print("Total pembayaran: Rp", total)
+# total = buku.get(pilih, 0) * jumlah
+# print("Total pembayaran: Rp", total)
+
+# Sistem diskon pembelian di toko gym
+harga = float(input("Masukkan total belanja: "))
+
+if harga >= 500000:
+    diskon = 0.25
+elif harga >= 250000:
+    diskon = 0.15
+else:
+    diskon = 0.05
+
+total = harga - (harga * diskon)
+
+print(f"Diskon: {diskon*100}%")
+print(f"Total bayar: Rp{total}")
