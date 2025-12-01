@@ -3743,9 +3743,21 @@
 #     print("Angka ini GANJIL")
 
 # Sistem hitung ongkos kirim paket di pras_phone.id
-berat = float(input("Masukkan berat paket (kg): "))
-jarak = float(input("Masukkan jarak (km): "))
+# berat = float(input("Masukkan berat paket (kg): "))
+# jarak = float(input("Masukkan jarak (km): "))
 
-ongkir = (berat * 5000) + (jarak * 1500)
+# ongkir = (berat * 5000) + (jarak * 1500)
 
-print("Total ongkir: Rp", ongkir)
+# print("Total ongkir: Rp", ongkir)
+
+# Sistem kategori usia di pras_phone.id
+usia = int(input("Masukkan usia: "))
+
+if usia <= 12:
+    print("Kategori: Anak-anak")
+elif usia <= 17:
+    print("Kategori: Remaja")
+elif usia <= 59:
+    print("Kategori: Dewasa")
+else:
+    print("Kategori: Lansia")
