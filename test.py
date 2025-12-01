@@ -3660,17 +3660,32 @@
 # print("Total:", total)
 
 # Sistem pemesanan tiket nonton film
-film = ["Avatar", "Naruto", "One Piece", "Joker 2"]
+# film = ["Avatar", "Naruto", "One Piece", "Joker 2"]
 
-print("Daftar Film:")
-for i, f in enumerate(film):
-    print(f"{i+1}. {f}")
+# print("Daftar Film:")
+# for i, f in enumerate(film):
+#     print(f"{i+1}. {f}")
 
-pilih = int(input("Pilih film (1-4): "))
-tiket = int(input("Jumlah tiket: "))
+# pilih = int(input("Pilih film (1-4): "))
+# tiket = int(input("Jumlah tiket: "))
 
-harga = 35000
-total = harga * tiket
+# harga = 35000
+# total = harga * tiket
 
-print(f"Kamu memilih film {film[pilih-1]}")
-print(f"Total bayar: Rp{total}")
+# print(f"Kamu memilih film {film[pilih-1]}")
+# print(f"Total bayar: Rp{total}")
+
+# Sistem cek kelayakan kredit berdasarkan rasio hutang
+penghasilan = int(input("Masukkan penghasilan bulanan: "))
+hutang = int(input("Masukkan total hutang bulanan: "))
+
+rasio = hutang / penghasilan
+
+print("Rasio hutang:", round(rasio, 2))
+
+if rasio < 0.3:
+    print("Status: Sangat Layak Kredit")
+elif rasio < 0.5:
+    print("Status: Layak Kredit")
+else:
+    print("Status: Tidak Layak Kredit")
