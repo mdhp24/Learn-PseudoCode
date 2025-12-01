@@ -3723,13 +3723,21 @@
 # print(f"Total bayar: Rp{total}")
 
 # Sistem rekap absen mahasiswa
-absen = {}
+# absen = {}
 
-for i in range(3):
-    nama = input("Nama mahasiswa: ")
-    status = input("Status (Hadir/Tidak): ")
-    absen[nama] = status
+# for i in range(3):
+#     nama = input("Nama mahasiswa: ")
+#     status = input("Status (Hadir/Tidak): ")
+#     absen[nama] = status
 
-print("Rekap Absen:")
-for n, s in absen.items():
-    print(n, "-", s)
+# print("Rekap Absen:")
+# for n, s in absen.items():
+#     print(n, "-", s)
+
+# Sistem cek angka genap atau ganjil
+angka = int(input("Masukkan angka: "))
+
+if angka % 2 == 0:
+    print("Angka ini GENAP")
+else:
+    print("Angka ini GANJIL")
