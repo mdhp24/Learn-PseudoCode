@@ -3708,16 +3708,28 @@
 # print("Total pembayaran: Rp", total)
 
 # Sistem diskon pembelian di toko gym
-harga = float(input("Masukkan total belanja: "))
+# harga = float(input("Masukkan total belanja: "))
 
-if harga >= 500000:
-    diskon = 0.25
-elif harga >= 250000:
-    diskon = 0.15
-else:
-    diskon = 0.05
+# if harga >= 500000:
+#     diskon = 0.25
+# elif harga >= 250000:
+#     diskon = 0.15
+# else:
+#     diskon = 0.05
 
-total = harga - (harga * diskon)
+# total = harga - (harga * diskon)
 
-print(f"Diskon: {diskon*100}%")
-print(f"Total bayar: Rp{total}")
+# print(f"Diskon: {diskon*100}%")
+# print(f"Total bayar: Rp{total}")
+
+# Sistem rekap absen mahasiswa
+absen = {}
+
+for i in range(3):
+    nama = input("Nama mahasiswa: ")
+    status = input("Status (Hadir/Tidak): ")
+    absen[nama] = status
+
+print("Rekap Absen:")
+for n, s in absen.items():
+    print(n, "-", s)
