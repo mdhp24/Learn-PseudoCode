@@ -3792,13 +3792,26 @@
 # else:
 #     print("Grade: D - Harus Remedial")
 
-username = "admin"
-password = "12345"
+# username = "admin"
+# password = "12345"
 
-u = input("Masukkan username: ")
-p = input("Masukkan password: ")
+# u = input("Masukkan username: ")
+# p = input("Masukkan password: ")
 
-if u == username and p == password:
-    print("Login Berhasil!")
+# if u == username and p == password:
+#     print("Login Berhasil!")
+# else:
+#     print("Login Gagal!")
+
+# Sistem hitung pajak penghasilan sederhana
+gaji = float(input("Masukkan gaji bulanan: "))
+
+if gaji <= 4000000:
+    pajak = 0.05
+elif gaji <= 8000000:
+    pajak = 0.10
 else:
-    print("Login Gagal!")
+    pajak = 0.15
+
+total_pajak = gaji * pajak
+print("Pajak yang harus dibayar: Rp", total_pajak)
