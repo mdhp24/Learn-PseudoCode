@@ -3817,7 +3817,26 @@
 # print("Pajak yang harus dibayar: Rp", total_pajak)
 
 # Sistem pembuatan username dari nama lengkap
-nama = input("Masukkan nama lengkap: ")
+# nama = input("Masukkan nama lengkap: ")
 
-username = nama.lower().replace(" ", "_")
-print("Username Anda:", username)
+# username = nama.lower().replace(" ", "_")
+# print("Username Anda:", username)
+
+
+# Sistem cek bilangan prima
+n = int(input("Masukkan angka: "))
+
+prima = True
+
+if n < 2:
+    prima = False
+else:
+    for i in range(2, n):
+        if n % i == 0:
+            prima = False
+            break
+
+if prima:
+    print(n, "adalah bilangan prima")
+else:
+    print(n, "bukan bilangan prima")
