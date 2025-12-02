@@ -3824,19 +3824,36 @@
 
 
 # Sistem cek bilangan prima
-n = int(input("Masukkan angka: "))
+# n = int(input("Masukkan angka: "))
 
-prima = True
+# prima = True
 
-if n < 2:
-    prima = False
+# if n < 2:
+#     prima = False
+# else:
+#     for i in range(2, n):
+#         if n % i == 0:
+#             prima = False
+#             break
+
+# if prima:
+#     print(n, "adalah bilangan prima")
+# else:
+#     print(n, "bukan bilangan prima")
+
+
+# Sistem kalkulator BMI
+berat = float(input("Masukkan berat (kg): "))
+tinggi = float(input("Masukkan tinggi (m): "))
+
+bmi = berat / (tinggi ** 2)
+print("BMI:", round(bmi, 2))
+
+if bmi < 18.5:
+    print("Status: Kurang berat badan")
+elif bmi < 25:
+    print("Status: Normal")
+elif bmi < 30:
+    print("Status: Kelebihan berat badan")
 else:
-    for i in range(2, n):
-        if n % i == 0:
-            prima = False
-            break
-
-if prima:
-    print(n, "adalah bilangan prima")
-else:
-    print(n, "bukan bilangan prima")
+    print("Status: Obesitas")
