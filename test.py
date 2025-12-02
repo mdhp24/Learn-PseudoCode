@@ -3763,19 +3763,31 @@
 #     print("Kategori: Lansia")
 
 # Sistem pembelian minuman di toko gym
-menu = {
-    "Es Teh": 5000,
-    "Es Jeruk": 7000,
-    "Kopi Hitam": 8000,
-    "Cappuccino": 12000
-}
+# menu = {
+#     "Es Teh": 5000,
+#     "Es Jeruk": 7000,
+#     "Kopi Hitam": 8000,
+#     "Cappuccino": 12000
+# }
 
-print("=== MENU MINUMAN ===")
-for m, h in menu.items():
-    print(f"{m} - Rp{h}")
+# print("=== MENU MINUMAN ===")
+# for m, h in menu.items():
+#     print(f"{m} - Rp{h}")
 
-pesan = input("Pilih minuman: ")
-jumlah = int(input("Jumlah: "))
+# pesan = input("Pilih minuman: ")
+# jumlah = int(input("Jumlah: "))
 
-total = menu.get(pesan, 0) * jumlah
-print("Total bayar: Rp", total)
+# total = menu.get(pesan, 0) * jumlah
+# print("Total bayar: Rp", total)
+
+# Sistem penilaian akhir siswa
+nilai = int(input("Masukkan nilai akhir: "))
+
+if nilai >= 90:
+    print("Grade: A")
+elif nilai >= 75:
+    print("Grade: B")
+elif nilai >= 60:
+    print("Grade: C")
+else:
+    print("Grade: D - Harus Remedial")
