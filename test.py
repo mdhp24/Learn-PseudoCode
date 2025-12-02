@@ -3751,13 +3751,31 @@
 # print("Total ongkir: Rp", ongkir)
 
 # Sistem kategori usia di pras_phone.id
-usia = int(input("Masukkan usia: "))
+# usia = int(input("Masukkan usia: "))
 
-if usia <= 12:
-    print("Kategori: Anak-anak")
-elif usia <= 17:
-    print("Kategori: Remaja")
-elif usia <= 59:
-    print("Kategori: Dewasa")
-else:
-    print("Kategori: Lansia")
+# if usia <= 12:
+#     print("Kategori: Anak-anak")
+# elif usia <= 17:
+#     print("Kategori: Remaja")
+# elif usia <= 59:
+#     print("Kategori: Dewasa")
+# else:
+#     print("Kategori: Lansia")
+
+# Sistem pembelian minuman di toko gym
+menu = {
+    "Es Teh": 5000,
+    "Es Jeruk": 7000,
+    "Kopi Hitam": 8000,
+    "Cappuccino": 12000
+}
+
+print("=== MENU MINUMAN ===")
+for m, h in menu.items():
+    print(f"{m} - Rp{h}")
+
+pesan = input("Pilih minuman: ")
+jumlah = int(input("Jumlah: "))
+
+total = menu.get(pesan, 0) * jumlah
+print("Total bayar: Rp", total)
