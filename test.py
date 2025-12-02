@@ -3781,13 +3781,24 @@
 # print("Total bayar: Rp", total)
 
 # Sistem penilaian akhir siswa
-nilai = int(input("Masukkan nilai akhir: "))
+# nilai = int(input("Masukkan nilai akhir: "))
 
-if nilai >= 90:
-    print("Grade: A")
-elif nilai >= 75:
-    print("Grade: B")
-elif nilai >= 60:
-    print("Grade: C")
+# if nilai >= 90:
+#     print("Grade: A")
+# elif nilai >= 75:
+#     print("Grade: B")
+# elif nilai >= 60:
+#     print("Grade: C")
+# else:
+#     print("Grade: D - Harus Remedial")
+
+username = "admin"
+password = "12345"
+
+u = input("Masukkan username: ")
+p = input("Masukkan password: ")
+
+if u == username and p == password:
+    print("Login Berhasil!")
 else:
-    print("Grade: D - Harus Remedial")
+    print("Login Gagal!")
