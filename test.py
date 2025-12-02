@@ -3804,14 +3804,20 @@
 #     print("Login Gagal!")
 
 # Sistem hitung pajak penghasilan sederhana
-gaji = float(input("Masukkan gaji bulanan: "))
+# gaji = float(input("Masukkan gaji bulanan: "))
 
-if gaji <= 4000000:
-    pajak = 0.05
-elif gaji <= 8000000:
-    pajak = 0.10
-else:
-    pajak = 0.15
+# if gaji <= 4000000:
+#     pajak = 0.05
+# elif gaji <= 8000000:
+#     pajak = 0.10
+# else:
+#     pajak = 0.15
 
-total_pajak = gaji * pajak
-print("Pajak yang harus dibayar: Rp", total_pajak)
+# total_pajak = gaji * pajak
+# print("Pajak yang harus dibayar: Rp", total_pajak)
+
+# Sistem pembuatan username dari nama lengkap
+nama = input("Masukkan nama lengkap: ")
+
+username = nama.lower().replace(" ", "_")
+print("Username Anda:", username)
