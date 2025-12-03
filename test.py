@@ -3843,17 +3843,29 @@
 
 
 # Sistem kalkulator BMI
-berat = float(input("Masukkan berat (kg): "))
-tinggi = float(input("Masukkan tinggi (m): "))
+# berat = float(input("Masukkan berat (kg): "))
+# tinggi = float(input("Masukkan tinggi (m): "))
 
-bmi = berat / (tinggi ** 2)
-print("BMI:", round(bmi, 2))
+# bmi = berat / (tinggi ** 2)
+# print("BMI:", round(bmi, 2))
 
-if bmi < 18.5:
-    print("Status: Kurang berat badan")
-elif bmi < 25:
-    print("Status: Normal")
-elif bmi < 30:
-    print("Status: Kelebihan berat badan")
-else:
-    print("Status: Obesitas")
+# if bmi < 18.5:
+#     print("Status: Kurang berat badan")
+# elif bmi < 25:
+#     print("Status: Normal")
+# elif bmi < 30:
+#     print("Status: Kelebihan berat badan")
+# else:
+#     print("Status: Obesitas")
+
+
+# Sistem hitung durasi sewa iPhone di pras_phone.id
+hari = int(input("Masukkan durasi sewa (hari): "))
+tarif_harian = 150000
+total_bayar = hari * tarif_harian
+print("Total bayar: Rp", total_bayar)
+if hari >= 7:
+    diskon = 0.10
+    total_bayar -= total_bayar * diskon
+    print(f"Diskon 10% diterapkan! Total bayar setelah diskon: Rp{int(total_bayar)}")
+
