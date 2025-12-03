@@ -3860,12 +3860,21 @@
 
 
 # Sistem hitung durasi sewa iPhone di pras_phone.id
-hari = int(input("Masukkan durasi sewa (hari): "))
-tarif_harian = 150000
-total_bayar = hari * tarif_harian
-print("Total bayar: Rp", total_bayar)
-if hari >= 7:
-    diskon = 0.10
-    total_bayar -= total_bayar * diskon
-    print(f"Diskon 10% diterapkan! Total bayar setelah diskon: Rp{int(total_bayar)}")
+# hari = int(input("Masukkan durasi sewa (hari): "))
+# tarif_harian = 150000
+# total_bayar = hari * tarif_harian
+# print("Total bayar: Rp", total_bayar)
+# if hari >= 7:
+#     diskon = 0.10
+#     total_bayar -= total_bayar * diskon
+#     print(f"Diskon 10% diterapkan! Total bayar setelah diskon: Rp{int(total_bayar)}")
 
+# Sistem hitung gaji karyawan toko gym
+jam_kerja = int(input("Masukkan jam kerja dalam seminggu: "))
+tarif_per_jam = 50000
+if jam_kerja <= 40:
+    gaji = jam_kerja * tarif_per_jam
+else:
+    lembur = jam_kerja - 40
+    gaji = (40 * tarif_per_jam) + (lembur * tarif_per_jam * 1.5)
+print("Total gaji: Rp", int(gaji))
