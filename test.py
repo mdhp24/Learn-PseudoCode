@@ -3941,11 +3941,22 @@
 # print("Total bayar: Rp", total)
 
 # Sistem konversi waktu dari detik ke jam, menit, dan detik
-detik = int(input("Masukkan total detik: "))
+# detik = int(input("Masukkan total detik: "))
 
-jam = detik // 3600
-detik %= 3600
-menit = detik // 60
-detik %= 60
+# jam = detik // 3600
+# detik %= 3600
+# menit = detik // 60
+# detik %= 60
 
-print(f"Hasil: {jam} jam, {menit} menit, {detik} detik")
+# print(f"Hasil: {jam} jam, {menit} menit, {detik} detik")
+
+# Sistem pembuatan password acak
+import random
+import string
+
+panjang = int(input("Masukkan panjang password: "))
+
+karakter = string.ascii_letters + string.digits
+password = "".join(random.choice(karakter) for _ in range(panjang))
+
+print("Password Anda:", password)
