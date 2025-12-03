@@ -3924,18 +3924,28 @@
 # toko.jual(2)
 
 # Sistem pemesanan tiket nonton film di pras_phone.id
-film = {
-    "Avengers": 45000,
-    "Naruto The Movie": 35000,
-    "Transformers": 50000
-}
+# film = {
+#     "Avengers": 45000,
+#     "Naruto The Movie": 35000,
+#     "Transformers": 50000
+# }
 
-print("=== DAFTAR FILM ===")
-for f, h in film.items():
-    print(f"{f} - Rp{h}")
+# print("=== DAFTAR FILM ===")
+# for f, h in film.items():
+#     print(f"{f} - Rp{h}")
 
-pilih = input("Pilih film: ")
-jumlah = int(input("Jumlah tiket: "))
+# pilih = input("Pilih film: ")
+# jumlah = int(input("Jumlah tiket: "))
 
-total = film.get(pilih, 0) * jumlah
-print("Total bayar: Rp", total)
+# total = film.get(pilih, 0) * jumlah
+# print("Total bayar: Rp", total)
+
+# Sistem konversi waktu dari detik ke jam, menit, dan detik
+detik = int(input("Masukkan total detik: "))
+
+jam = detik // 3600
+detik %= 3600
+menit = detik // 60
+detik %= 60
+
+print(f"Hasil: {jam} jam, {menit} menit, {detik} detik")
