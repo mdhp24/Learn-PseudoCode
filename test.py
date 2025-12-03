@@ -3951,12 +3951,22 @@
 # print(f"Hasil: {jam} jam, {menit} menit, {detik} detik")
 
 # Sistem pembuatan password acak
-import random
-import string
+# import random
+# import string
 
-panjang = int(input("Masukkan panjang password: "))
+# panjang = int(input("Masukkan panjang password: "))
 
-karakter = string.ascii_letters + string.digits
-password = "".join(random.choice(karakter) for _ in range(panjang))
+# karakter = string.ascii_letters + string.digits
+# password = "".join(random.choice(karakter) for _ in range(panjang))
 
-print("Password Anda:", password)
+# print("Password Anda:", password)
+
+# Sistem voting sederhana
+votes = {"Andi": 0, "Budi": 0, "Cici": 0}
+
+for i in range(5):
+    pilih = input("Pilih kandidat (Andi/Budi/Cici): ")
+    if pilih in votes:
+        votes[pilih] += 1
+
+print("Hasil voting:", votes)
