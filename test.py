@@ -3972,13 +3972,23 @@
 # print("Hasil voting:", votes)
 
 # Sistem hitung ongkos kirim berdasarkan jarak di pras_phone.id
-jarak = float(input("Masukkan jarak pengiriman (km): "))
+# jarak = float(input("Masukkan jarak pengiriman (km): "))
 
-if jarak <= 5:
-    ongkir = 10000
-elif jarak <= 15:
-    ongkir = 20000
+# if jarak <= 5:
+#     ongkir = 10000
+# elif jarak <= 15:
+#     ongkir = 20000
+# else:
+#     ongkir = 30000
+
+# print("Total ongkir: Rp", ongkir)
+
+# Sistem cek kesehatan berdasarkan suhu tubuh
+suhu = float(input("Masukkan suhu tubuh: "))
+
+if suhu < 36:
+    print("Status: Suhu rendah")
+elif suhu <= 37.5:
+    print("Status: Normal")
 else:
-    ongkir = 30000
-
-print("Total ongkir: Rp", ongkir)
+    print("Status: Demam")
