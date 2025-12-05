@@ -4000,8 +4000,14 @@
 # print("Biaya parkir: Rp", biaya)
 
 #
-nama = input("Masukkan nama lengkap: ")
+# nama = input("Masukkan nama lengkap: ")
 
-bagian = nama.split()
-print("Nama depan:", bagian[0])
-print("Nama belakang:", bagian[-1])
+# bagian = nama.split()
+# print("Nama depan:", bagian[0])
+# print("Nama belakang:", bagian[-1])
+
+# sistem hitung jumlah kata dalam kalimat
+kalimat = input("Masukkan kalimat: ")
+
+jumlah = len(kalimat.split())
+print("Jumlah kata:", jumlah)
