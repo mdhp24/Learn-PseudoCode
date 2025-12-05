@@ -3992,3 +3992,9 @@ elif suhu <= 37.5:
     print("Status: Normal")
 else:
     print("Status: Demam")
+
+# sistem hitung biaya parkir di toko gym
+jam = int(input("Berapa jam parkir? "))
+
+biaya = 5000 + (jam - 1) * 3000 if jam > 1 else 5000
+print("Biaya parkir: Rp", biaya)
