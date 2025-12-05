@@ -4007,7 +4007,13 @@
 # print("Nama belakang:", bagian[-1])
 
 # sistem hitung jumlah kata dalam kalimat
-kalimat = input("Masukkan kalimat: ")
+# kalimat = input("Masukkan kalimat: ")
 
-jumlah = len(kalimat.split())
-print("Jumlah kata:", jumlah)
+# jumlah = len(kalimat.split())
+# print("Jumlah kata:", jumlah)
+
+# Sistem konversi kecepatan dari km/h ke m/s
+kmh = float(input("Masukkan kecepatan (km/h): "))
+
+ms = kmh / 3.6
+print("Kecepatan dalam m/s:", round(ms, 2))
