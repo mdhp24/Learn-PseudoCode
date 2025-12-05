@@ -3962,11 +3962,23 @@
 # print("Password Anda:", password)
 
 # Sistem voting sederhana
-votes = {"Andi": 0, "Budi": 0, "Cici": 0}
+# votes = {"Andi": 0, "Budi": 0, "Cici": 0}
 
-for i in range(5):
-    pilih = input("Pilih kandidat (Andi/Budi/Cici): ")
-    if pilih in votes:
-        votes[pilih] += 1
+# for i in range(5):
+#     pilih = input("Pilih kandidat (Andi/Budi/Cici): ")
+#     if pilih in votes:
+#         votes[pilih] += 1
 
-print("Hasil voting:", votes)
+# print("Hasil voting:", votes)
+
+# Sistem hitung ongkos kirim berdasarkan jarak di pras_phone.id
+jarak = float(input("Masukkan jarak pengiriman (km): "))
+
+if jarak <= 5:
+    ongkir = 10000
+elif jarak <= 15:
+    ongkir = 20000
+else:
+    ongkir = 30000
+
+print("Total ongkir: Rp", ongkir)
