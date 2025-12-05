@@ -3984,17 +3984,24 @@
 # print("Total ongkir: Rp", ongkir)
 
 # Sistem cek kesehatan berdasarkan suhu tubuh
-suhu = float(input("Masukkan suhu tubuh: "))
+# suhu = float(input("Masukkan suhu tubuh: "))
 
-if suhu < 36:
-    print("Status: Suhu rendah")
-elif suhu <= 37.5:
-    print("Status: Normal")
-else:
-    print("Status: Demam")
+# if suhu < 36:
+#     print("Status: Suhu rendah")
+# elif suhu <= 37.5:
+#     print("Status: Normal")
+# else:
+#     print("Status: Demam")
 
 # sistem hitung biaya parkir di toko gym
-jam = int(input("Berapa jam parkir? "))
+# jam = int(input("Berapa jam parkir? "))
 
-biaya = 5000 + (jam - 1) * 3000 if jam > 1 else 5000
-print("Biaya parkir: Rp", biaya)
+# biaya = 5000 + (jam - 1) * 3000 if jam > 1 else 5000
+# print("Biaya parkir: Rp", biaya)
+
+#
+nama = input("Masukkan nama lengkap: ")
+
+bagian = nama.split()
+print("Nama depan:", bagian[0])
+print("Nama belakang:", bagian[-1])
