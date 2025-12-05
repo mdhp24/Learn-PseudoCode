@@ -4013,7 +4013,15 @@
 # print("Jumlah kata:", jumlah)
 
 # Sistem konversi kecepatan dari km/h ke m/s
-kmh = float(input("Masukkan kecepatan (km/h): "))
+# kmh = float(input("Masukkan kecepatan (km/h): "))
 
-ms = kmh / 3.6
-print("Kecepatan dalam m/s:", round(ms, 2))
+# ms = kmh / 3.6
+# print("Kecepatan dalam m/s:", round(ms, 2))
+
+# Sistem pemilihan pemenang giveaway di pras_phone.id
+import random
+
+peserta = ["Andi", "Budi", "Citra", "Doni", "Eka", "Farhan"]
+
+pemenang = random.choice(peserta)
+print("Pemenang giveaway adalah:", pemenang)
