@@ -4069,14 +4069,26 @@
 #     print("Bukan tahun kabisat")
 
 # Sistem tebak warna
-import random
+# import random
 
-warna = ["merah", "biru", "hijau", "kuning"]
-jawaban = random.choice(warna)
+# warna = ["merah", "biru", "hijau", "kuning"]
+# jawaban = random.choice(warna)
 
-tebakan = input("Tebak warna (merah/biru/hijau/kuning): ")
+# tebakan = input("Tebak warna (merah/biru/hijau/kuning): ")
 
-if tebakan == jawaban:
-    print("Benar!")
+# if tebakan == jawaban:
+#     print("Benar!")
+# else:
+#     print("Salah, warna yang benar adalah:", jawaban)
+
+# sistem kategori umur di pras_phone.id
+umur = int(input("Masukkan umur: "))
+
+if umur < 12:
+    print("Kategori: Anak-anak")
+elif umur < 18:
+    print("Kategori: Remaja")
+elif umur < 60:
+    print("Kategori: Dewasa")
 else:
-    print("Salah, warna yang benar adalah:", jawaban)
+    print("Kategori: Lansia")
