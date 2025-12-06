@@ -4019,9 +4019,21 @@
 # print("Kecepatan dalam m/s:", round(ms, 2))
 
 # Sistem pemilihan pemenang giveaway di pras_phone.id
-import random
+# import random
 
-peserta = ["Andi", "Budi", "Citra", "Doni", "Eka", "Farhan"]
+# peserta = ["Andi", "Budi", "Citra", "Doni", "Eka", "Farhan"]
 
-pemenang = random.choice(peserta)
-print("Pemenang giveaway adalah:", pemenang)
+# pemenang = random.choice(peserta)
+# print("Pemenang giveaway adalah:", pemenang)
+
+# Sistem cek promo pembelian di toko gym
+harga = float(input("Masukkan harga barang: Rp "))
+
+if harga >= 2000000:
+    promo = "Gratis Keyboard + Mouse"
+elif harga >= 1000000:
+    promo = "Gratis Mouse"
+else:
+    promo = "Tidak ada promo"
+
+print("Promo yang didapat:", promo)
