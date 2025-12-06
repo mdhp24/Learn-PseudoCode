@@ -4027,13 +4027,22 @@
 # print("Pemenang giveaway adalah:", pemenang)
 
 # Sistem cek promo pembelian di toko gym
-harga = float(input("Masukkan harga barang: Rp "))
+# harga = float(input("Masukkan harga barang: Rp "))
 
-if harga >= 2000000:
-    promo = "Gratis Keyboard + Mouse"
-elif harga >= 1000000:
-    promo = "Gratis Mouse"
-else:
-    promo = "Tidak ada promo"
+# if harga >= 2000000:
+#     promo = "Gratis Keyboard + Mouse"
+# elif harga >= 1000000:
+#     promo = "Gratis Mouse"
+# else:
+#     promo = "Tidak ada promo"
 
-print("Promo yang didapat:", promo)
+# print("Promo yang didapat:", promo)
+
+# Sistem konversi waktu dari jam ke hari dan jam
+# jam = int(input("Masukkan jumlah jam: "))
+
+# hari = jam // 24
+# sisa_jam = jam % 24
+
+# print(f"Hasil: {hari} hari {sisa_jam} jam")
+
