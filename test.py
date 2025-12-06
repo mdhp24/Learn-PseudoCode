@@ -4082,13 +4082,20 @@
 #     print("Salah, warna yang benar adalah:", jawaban)
 
 # sistem kategori umur di pras_phone.id
-umur = int(input("Masukkan umur: "))
+# umur = int(input("Masukkan umur: "))
 
-if umur < 12:
-    print("Kategori: Anak-anak")
-elif umur < 18:
-    print("Kategori: Remaja")
-elif umur < 60:
-    print("Kategori: Dewasa")
-else:
-    print("Kategori: Lansia")
+# if umur < 12:
+#     print("Kategori: Anak-anak")
+# elif umur < 18:
+#     print("Kategori: Remaja")
+# elif umur < 60:
+#     print("Kategori: Dewasa")
+# else:
+#     print("Kategori: Lansia")
+
+# sistem konversi mata uang dari rupiah ke USD
+rupiah = float(input("Masukkan jumlah rupiah: Rp "))
+kurs_usd = 15500
+
+usd = rupiah / kurs_usd
+print("Hasil dalam USD: $", round(usd, 2))
