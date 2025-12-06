@@ -4047,15 +4047,23 @@
 # print(f"Hasil: {hari} hari {sisa_jam} jam")
 
 # Sistem rating pelanggan di pras_phone.id
-rating = int(input("Masukkan rating (1-5): "))
+# rating = int(input("Masukkan rating (1-5): "))
 
-if rating == 5:
-    print("Rating: Sangat Bagus ⭐⭐⭐⭐⭐")
-elif rating == 4:
-    print("Rating: Bagus ⭐⭐⭐⭐")
-elif rating == 3:
-    print("Rating: Cukup ⭐⭐⭐")
-elif rating == 2:
-    print("Rating: Buruk ⭐⭐")
+# if rating == 5:
+#     print("Rating: Sangat Bagus ⭐⭐⭐⭐⭐")
+# elif rating == 4:
+#     print("Rating: Bagus ⭐⭐⭐⭐")
+# elif rating == 3:
+#     print("Rating: Cukup ⭐⭐⭐")
+# elif rating == 2:
+#     print("Rating: Buruk ⭐⭐")
+# else:
+#     print("Rating: Sangat Buruk ⭐")
+
+# Sistem cek tahun kabisat
+tahun = int(input("Masukkan tahun: "))
+
+if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+    print("Tahun kabisat")
 else:
-    print("Rating: Sangat Buruk ⭐")
+    print("Bukan tahun kabisat")
