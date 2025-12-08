@@ -4142,13 +4142,20 @@
 #     print("Input tidak dikenal")
 
 # Sistem tarik tunai sederhana
-saldo = 1200000
+# saldo = 1200000
 
-print("Saldo Anda:", saldo)
-tarik = int(input("Masukkan jumlah penarikan: "))
+# print("Saldo Anda:", saldo)
+# tarik = int(input("Masukkan jumlah penarikan: "))
 
-if tarik <= saldo:
-    saldo -= tarik
-    print("Penarikan berhasil! Sisa saldo:", saldo)
-else:
-    print("Saldo tidak cukup!")
+# if tarik <= saldo:
+#     saldo -= tarik
+#     print("Penarikan berhasil! Sisa saldo:", saldo)
+# else:
+#     print("Saldo tidak cukup!")
+
+# Sistem hitung waktu tempuh berdasarkan jarak dan kecepatan
+jarak = float(input("Masukkan jarak tempuh (km): "))
+kecepatan = float(input("Masukkan kecepatan (km/jam): "))
+
+waktu = jarak / kecepatan
+print("Waktu tempuh:", round(waktu, 2), "jam")
