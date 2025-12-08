@@ -4101,17 +4101,24 @@
 # print("Hasil dalam USD: $", round(usd, 2))
 
 # sistem pembelian paket data di pras_phone.id
-paket = {
-    "1GB": 15000,
-    "5GB": 45000,
-    "10GB": 80000
-}
+# paket = {
+#     "1GB": 15000,
+#     "5GB": 45000,
+#     "10GB": 80000
+# }
 
-print("=== PAKET DATA ===")
-for p, h in paket.items():
-    print(f"{p} - Rp{h}")
+# print("=== PAKET DATA ===")
+# for p, h in paket.items():
+#     print(f"{p} - Rp{h}")
 
-pilih = input("Pilih paket: ")
-total = paket.get(pilih, 0)
+# pilih = input("Pilih paket: ")
+# total = paket.get(pilih, 0)
 
-print("Total bayar: Rp", total)
+# print("Total bayar: Rp", total)
+
+
+# # Sistem hitung luas permukaan kubus
+sisi = float(input("Masukkan panjang sisi kubus: "))
+
+luas = 6 * (sisi ** 2)
+print("Luas permukaan kubus:", luas)
