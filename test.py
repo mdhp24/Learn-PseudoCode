@@ -4132,11 +4132,23 @@
 #     print("Email tidak valid")
 
 # Sistem validasi golongan darah
-gol = input("Masukkan golongan darah (A/B/AB/O): ").upper()
+# gol = input("Masukkan golongan darah (A/B/AB/O): ").upper()
 
-valid = ["A", "B", "AB", "O"]
+# valid = ["A", "B", "AB", "O"]
 
-if gol in valid:
-    print("Golongan darah valid:", gol)
+# if gol in valid:
+#     print("Golongan darah valid:", gol)
+# else:
+#     print("Input tidak dikenal")
+
+# Sistem tarik tunai sederhana
+saldo = 1200000
+
+print("Saldo Anda:", saldo)
+tarik = int(input("Masukkan jumlah penarikan: "))
+
+if tarik <= saldo:
+    saldo -= tarik
+    print("Penarikan berhasil! Sisa saldo:", saldo)
 else:
-    print("Input tidak dikenal")
+    print("Saldo tidak cukup!")
