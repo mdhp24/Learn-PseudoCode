@@ -4154,8 +4154,19 @@
 #     print("Saldo tidak cukup!")
 
 # Sistem hitung waktu tempuh berdasarkan jarak dan kecepatan
-jarak = float(input("Masukkan jarak tempuh (km): "))
-kecepatan = float(input("Masukkan kecepatan (km/jam): "))
+# jarak = float(input("Masukkan jarak tempuh (km): "))
+# kecepatan = float(input("Masukkan kecepatan (km/jam): "))
 
-waktu = jarak / kecepatan
-print("Waktu tempuh:", round(waktu, 2), "jam")
+# waktu = jarak / kecepatan
+# print("Waktu tempuh:", round(waktu, 2), "jam")
+
+# Sistem hitung rata-rata nilai siswa
+nilai = []
+jumlah = int(input("Berapa jumlah siswa? "))
+
+for i in range(jumlah):
+    n = float(input(f"Nilai siswa ke-{i+1}: "))
+    nilai.append(n)
+
+rata = sum(nilai) / len(nilai)
+print("Rata-rata nilai kelas:", round(rata, 2))
