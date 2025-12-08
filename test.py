@@ -4094,8 +4094,24 @@
 #     print("Kategori: Lansia")
 
 # sistem konversi mata uang dari rupiah ke USD
-rupiah = float(input("Masukkan jumlah rupiah: Rp "))
-kurs_usd = 15500
+# rupiah = float(input("Masukkan jumlah rupiah: Rp "))
+# kurs_usd = 15500
 
-usd = rupiah / kurs_usd
-print("Hasil dalam USD: $", round(usd, 2))
+# usd = rupiah / kurs_usd
+# print("Hasil dalam USD: $", round(usd, 2))
+
+# sistem pembelian paket data di pras_phone.id
+paket = {
+    "1GB": 15000,
+    "5GB": 45000,
+    "10GB": 80000
+}
+
+print("=== PAKET DATA ===")
+for p, h in paket.items():
+    print(f"{p} - Rp{h}")
+
+pilih = input("Pilih paket: ")
+total = paket.get(pilih, 0)
+
+print("Total bayar: Rp", total)
