@@ -4118,7 +4118,15 @@
 
 
 # # Sistem hitung luas permukaan kubus
-sisi = float(input("Masukkan panjang sisi kubus: "))
+# sisi = float(input("Masukkan panjang sisi kubus: "))
 
-luas = 6 * (sisi ** 2)
-print("Luas permukaan kubus:", luas)
+# luas = 6 * (sisi ** 2)
+# print("Luas permukaan kubus:", luas)
+
+# Sistem validasi email sederhana
+email = input("Masukkan email: ")
+
+if "@" in email and "." in email:
+    print("Email valid")
+else:
+    print("Email tidak valid")
