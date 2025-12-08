@@ -4124,9 +4124,19 @@
 # print("Luas permukaan kubus:", luas)
 
 # Sistem validasi email sederhana
-email = input("Masukkan email: ")
+# email = input("Masukkan email: ")
 
-if "@" in email and "." in email:
-    print("Email valid")
+# if "@" in email and "." in email:
+#     print("Email valid")
+# else:
+#     print("Email tidak valid")
+
+# Sistem validasi golongan darah
+gol = input("Masukkan golongan darah (A/B/AB/O): ").upper()
+
+valid = ["A", "B", "AB", "O"]
+
+if gol in valid:
+    print("Golongan darah valid:", gol)
 else:
-    print("Email tidak valid")
+    print("Input tidak dikenal")
