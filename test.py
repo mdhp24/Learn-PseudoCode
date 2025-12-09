@@ -4161,12 +4161,26 @@
 # print("Waktu tempuh:", round(waktu, 2), "jam")
 
 # Sistem hitung rata-rata nilai siswa
-nilai = []
-jumlah = int(input("Berapa jumlah siswa? "))
+# nilai = []
+# jumlah = int(input("Berapa jumlah siswa? "))
 
-for i in range(jumlah):
-    n = float(input(f"Nilai siswa ke-{i+1}: "))
-    nilai.append(n)
+# for i in range(jumlah):
+#     n = float(input(f"Nilai siswa ke-{i+1}: "))
+#     nilai.append(n)
 
-rata = sum(nilai) / len(nilai)
-print("Rata-rata nilai kelas:", round(rata, 2))
+# rata = sum(nilai) / len(nilai)
+# print("Rata-rata nilai kelas:", round(rata, 2))
+
+
+# Sistem hitung total belanja dengan pajak
+total = 0
+while True:
+    harga = float(input("Masukkan harga barang (0 untuk selesai): Rp "))
+    if harga == 0:
+        break
+    total += harga
+pajak = total * 0.1
+grand_total = total + pajak
+print(f"Total belanja: Rp{int(total)}")
+print(f"Pajak (10%): Rp{int(pajak)}")
+print(f"Grand Total: Rp{int(grand_total)}")
