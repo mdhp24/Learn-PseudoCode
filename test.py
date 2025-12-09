@@ -4226,9 +4226,21 @@
 # print("Nomor undian Anda:", nomor)
 
 # Sistem cek kelulusan siswa
-nilai = float(input("Masukkan nilai akhir: "))
+# nilai = float(input("Masukkan nilai akhir: "))
 
-if nilai >= 75:
-    print("Status: Lulus")
+# if nilai >= 75:
+#     print("Status: Lulus")
+# else:
+#     print("Status: Tidak Lulus")
+
+# Sistem login sederhana di pras_phone.id
+username = "admin"
+password = "12345"
+
+u = input("Masukkan username: ")
+p = input("Masukkan password: ")
+
+if u == username and p == password:
+    print("Login berhasil!")
 else:
-    print("Status: Tidak Lulus")
+    print("Login gagal!")
