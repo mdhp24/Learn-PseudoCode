@@ -4186,13 +4186,22 @@
 # print(f"Grand Total: Rp{int(grand_total)}")
 
 # Sistem hitung total belanja dengan diskon member
-member = input("Apakah Anda punya kartu member? (y/n): ")
+# member = input("Apakah Anda punya kartu member? (y/n): ")
 
-belanja = float(input("Total belanja: Rp "))
+# belanja = float(input("Total belanja: Rp "))
 
-if member.lower() == "y":
-    total = belanja * 0.90  # diskon 10%
-else:
-    total = belanja
+# if member.lower() == "y":
+#     total = belanja * 0.90  # diskon 10%
+# else:
+#     total = belanja
 
-print("Total bayar: Rp", total)
+# print("Total bayar: Rp", total)
+
+# Sistem cari nilai terbesar dari 5 angka
+angka = []
+
+for i in range(5):
+    x = int(input(f"Masukkan angka ke-{i+1}: "))
+    angka.append(x)
+
+print("Nilai terbesar adalah:", max(angka))
