@@ -4173,14 +4173,26 @@
 
 
 # Sistem hitung total belanja dengan pajak
-total = 0
-while True:
-    harga = float(input("Masukkan harga barang (0 untuk selesai): Rp "))
-    if harga == 0:
-        break
-    total += harga
-pajak = total * 0.1
-grand_total = total + pajak
-print(f"Total belanja: Rp{int(total)}")
-print(f"Pajak (10%): Rp{int(pajak)}")
-print(f"Grand Total: Rp{int(grand_total)}")
+# total = 0
+# while True:
+#     harga = float(input("Masukkan harga barang (0 untuk selesai): Rp "))
+#     if harga == 0:
+#         break
+#     total += harga
+# pajak = total * 0.1
+# grand_total = total + pajak
+# print(f"Total belanja: Rp{int(total)}")
+# print(f"Pajak (10%): Rp{int(pajak)}")
+# print(f"Grand Total: Rp{int(grand_total)}")
+
+# Sistem hitung total belanja dengan diskon member
+member = input("Apakah Anda punya kartu member? (y/n): ")
+
+belanja = float(input("Total belanja: Rp "))
+
+if member.lower() == "y":
+    total = belanja * 0.90  # diskon 10%
+else:
+    total = belanja
+
+print("Total bayar: Rp", total)
