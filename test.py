@@ -4198,10 +4198,20 @@
 # print("Total bayar: Rp", total)
 
 # Sistem cari nilai terbesar dari 5 angka
-angka = []
+# angka = []
 
-for i in range(5):
-    x = int(input(f"Masukkan angka ke-{i+1}: "))
-    angka.append(x)
+# for i in range(5):
+#     x = int(input(f"Masukkan angka ke-{i+1}: "))
+#     angka.append(x)
 
-print("Nilai terbesar adalah:", max(angka))
+# print("Nilai terbesar adalah:", max(angka))
+
+
+# sistem konversi suhu dari Celcius ke Fahrenheit dan Kelvin
+c = float(input("Masukkan suhu dalam Celcius: "))
+
+f = (c * 9/5) + 32
+k = c + 273.15
+
+print("Fahrenheit:", round(f, 2))
+print("Kelvin:", round(k, 2))
