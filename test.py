@@ -4208,10 +4208,19 @@
 
 
 # sistem konversi suhu dari Celcius ke Fahrenheit dan Kelvin
-c = float(input("Masukkan suhu dalam Celcius: "))
+# c = float(input("Masukkan suhu dalam Celcius: "))
 
-f = (c * 9/5) + 32
-k = c + 273.15
+# f = (c * 9/5) + 32
+# k = c + 273.15
 
-print("Fahrenheit:", round(f, 2))
-print("Kelvin:", round(k, 2))
+# print("Fahrenheit:", round(f, 2))
+# print("Kelvin:", round(k, 2))
+
+
+# # Sistem undian nomor di pras_phone.id
+import random
+
+print("Mengundi nomor...")
+
+nomor = random.randint(1000, 9999)
+print("Nomor undian Anda:", nomor)
