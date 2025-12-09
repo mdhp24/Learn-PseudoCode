@@ -4218,9 +4218,17 @@
 
 
 # # Sistem undian nomor di pras_phone.id
-import random
+# import random
 
-print("Mengundi nomor...")
+# print("Mengundi nomor...")
 
-nomor = random.randint(1000, 9999)
-print("Nomor undian Anda:", nomor)
+# nomor = random.randint(1000, 9999)
+# print("Nomor undian Anda:", nomor)
+
+# Sistem cek kelulusan siswa
+nilai = float(input("Masukkan nilai akhir: "))
+
+if nilai >= 75:
+    print("Status: Lulus")
+else:
+    print("Status: Tidak Lulus")
