@@ -4287,10 +4287,22 @@
 # print("Harga setelah diskon:", hitung_diskon(10500000))
 
 # Sistem cek garansi iPhone di pras_phone.id
-import random
+# import random
 
-def cek_garansi(imei):
-    status = ["Aktif", "Kadaluarsa"]
-    return f"IMEI {imei}: Garansi {random.choice(status)}"
+# def cek_garansi(imei):
+#     status = ["Aktif", "Kadaluarsa"]
+#     return f"IMEI {imei}: Garansi {random.choice(status)}"
 
-print(cek_garansi("356789105432100"))
+# print(cek_garansi("356789105432100"))
+
+# Sistem kategori pembelian iPhone di pras_phone.id
+def kategori(model):
+    data = {
+        "iPhone 11": "Bekas",
+        "iPhone 12": "Bekas",
+        "iPhone 13": "Baru",
+        "iPhone 14 Pro": "Sewa & Jual"
+    }
+    return f"{model} tersedia untuk kategori: {data.get(model, 'Tidak ditemukan')}"
+
+print(kategori("iPhone 14 Pro"))
