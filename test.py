@@ -4260,14 +4260,20 @@
 # print(cek_stok("iPhone 12"))
 
 # Sistem hitung biaya sewa iPhone di pras_phone.id
-harga_sewa = {
-    "iPhone 11": 45000,
-    "iPhone 12": 60000,
-    "iPhone 13": 75000,
-    "iPhone 14": 90000
-}
+# harga_sewa = {
+#     "iPhone 11": 45000,
+#     "iPhone 12": 60000,
+#     "iPhone 13": 75000,
+#     "iPhone 14": 90000
+# }
 
-def hitung_sewa(model, hari):
-    return hari * harga_sewa.get(model, 0)
+# def hitung_sewa(model, hari):
+#     return hari * harga_sewa.get(model, 0)
 
-print("Total biaya:", hitung_sewa("iPhone 14", 5))
+# print("Total biaya:", hitung_sewa("iPhone 14", 5))
+
+# Sistem checkout pembelian di pras_phone.id
+def checkout(nama, model, harga):
+    return f"Pesanan atas nama {nama} untuk {model} berhasil! Total pembayaran: Rp{harga:,}"
+
+print(checkout("Dicky", "iPhone 12 128GB", 7999000))
