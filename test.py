@@ -4296,13 +4296,22 @@
 # print(cek_garansi("356789105432100"))
 
 # Sistem kategori pembelian iPhone di pras_phone.id
-def kategori(model):
-    data = {
-        "iPhone 11": "Bekas",
-        "iPhone 12": "Bekas",
-        "iPhone 13": "Baru",
-        "iPhone 14 Pro": "Sewa & Jual"
-    }
-    return f"{model} tersedia untuk kategori: {data.get(model, 'Tidak ditemukan')}"
+# def kategori(model):
+#     data = {
+#         "iPhone 11": "Bekas",
+#         "iPhone 12": "Bekas",
+#         "iPhone 13": "Baru",
+#         "iPhone 14 Pro": "Sewa & Jual"
+#     }
+#     return f"{model} tersedia untuk kategori: {data.get(model, 'Tidak ditemukan')}"
 
-print(kategori("iPhone 14 Pro"))
+# print(kategori("iPhone 14 Pro"))
+
+# Sistem negosiasi harga iPhone di pras_phone.id
+def nego(harga_awal, tawaran):
+    if tawaran >= harga_awal * 0.9:
+        return f"Deal! Harga disetujui: Rp{tawaran:,}"
+    else:
+        return "Maaf, tawaran terlalu rendah."
+
+print(nego(8500000, 8000000))
