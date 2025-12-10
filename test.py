@@ -4273,7 +4273,15 @@
 # print("Total biaya:", hitung_sewa("iPhone 14", 5))
 
 # Sistem checkout pembelian di pras_phone.id
-def checkout(nama, model, harga):
-    return f"Pesanan atas nama {nama} untuk {model} berhasil! Total pembayaran: Rp{harga:,}"
+# def checkout(nama, model, harga):
+#     return f"Pesanan atas nama {nama} untuk {model} berhasil! Total pembayaran: Rp{harga:,}"
 
-print(checkout("Dicky", "iPhone 12 128GB", 7999000))
+# print(checkout("Dicky", "iPhone 12 128GB", 7999000))
+
+# Sistem hitung diskon pembelian di pras_phone.id
+def hitung_diskon(harga):
+    diskon = 0.10  # 10%
+    final = harga - (harga * diskon)
+    return final
+
+print("Harga setelah diskon:", hitung_diskon(10500000))
