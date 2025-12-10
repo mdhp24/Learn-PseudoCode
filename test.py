@@ -4234,13 +4234,27 @@
 #     print("Status: Tidak Lulus")
 
 # Sistem login sederhana di pras_phone.id
-username = "admin"
-password = "12345"
+# username = "admin"
+# password = "12345"
 
-u = input("Masukkan username: ")
-p = input("Masukkan password: ")
+# u = input("Masukkan username: ")
+# p = input("Masukkan password: ")
 
-if u == username and p == password:
-    print("Login berhasil!")
-else:
-    print("Login gagal!")
+# if u == username and p == password:
+#     print("Login berhasil!")
+# else:
+#     print("Login gagal!")
+
+# Sistem cek stok iPhone di pras_phone.id
+iphones = {
+    "iPhone 11": 5,
+    "iPhone 12": 3,
+    "iPhone 13": 0,
+    "iPhone 14 Pro": 2
+}
+
+def cek_stok(model):
+    return f"Stok {model}: {'Tersedia' if iphones.get(model,0) > 0 else 'Habis'}"
+
+print(cek_stok("iPhone 13"))
+print(cek_stok("iPhone 12"))
