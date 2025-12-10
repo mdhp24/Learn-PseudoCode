@@ -4279,9 +4279,18 @@
 # print(checkout("Dicky", "iPhone 12 128GB", 7999000))
 
 # Sistem hitung diskon pembelian di pras_phone.id
-def hitung_diskon(harga):
-    diskon = 0.10  # 10%
-    final = harga - (harga * diskon)
-    return final
+# def hitung_diskon(harga):
+#     diskon = 0.10  # 10%
+#     final = harga - (harga * diskon)
+#     return final
 
-print("Harga setelah diskon:", hitung_diskon(10500000))
+# print("Harga setelah diskon:", hitung_diskon(10500000))
+
+# Sistem cek garansi iPhone di pras_phone.id
+import random
+
+def cek_garansi(imei):
+    status = ["Aktif", "Kadaluarsa"]
+    return f"IMEI {imei}: Garansi {random.choice(status)}"
+
+print(cek_garansi("356789105432100"))
