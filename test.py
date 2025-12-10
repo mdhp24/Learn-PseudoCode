@@ -4246,15 +4246,28 @@
 #     print("Login gagal!")
 
 # Sistem cek stok iPhone di pras_phone.id
-iphones = {
-    "iPhone 11": 5,
-    "iPhone 12": 3,
-    "iPhone 13": 0,
-    "iPhone 14 Pro": 2
+# iphones = {
+#     "iPhone 11": 5,
+#     "iPhone 12": 3,
+#     "iPhone 13": 0,
+#     "iPhone 14 Pro": 2
+# }
+
+# def cek_stok(model):
+#     return f"Stok {model}: {'Tersedia' if iphones.get(model,0) > 0 else 'Habis'}"
+
+# print(cek_stok("iPhone 13"))
+# print(cek_stok("iPhone 12"))
+
+# Sistem hitung biaya sewa iPhone di pras_phone.id
+harga_sewa = {
+    "iPhone 11": 45000,
+    "iPhone 12": 60000,
+    "iPhone 13": 75000,
+    "iPhone 14": 90000
 }
 
-def cek_stok(model):
-    return f"Stok {model}: {'Tersedia' if iphones.get(model,0) > 0 else 'Habis'}"
+def hitung_sewa(model, hari):
+    return hari * harga_sewa.get(model, 0)
 
-print(cek_stok("iPhone 13"))
-print(cek_stok("iPhone 12"))
+print("Total biaya:", hitung_sewa("iPhone 14", 5))
