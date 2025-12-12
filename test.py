@@ -4308,10 +4308,22 @@
 # print(kategori("iPhone 14 Pro"))
 
 # Sistem negosiasi harga iPhone di pras_phone.id
-def nego(harga_awal, tawaran):
-    if tawaran >= harga_awal * 0.9:
-        return f"Deal! Harga disetujui: Rp{tawaran:,}"
-    else:
-        return "Maaf, tawaran terlalu rendah."
+# def nego(harga_awal, tawaran):
+#     if tawaran >= harga_awal * 0.9:
+#         return f"Deal! Harga disetujui: Rp{tawaran:,}"
+#     else:
+#         return "Maaf, tawaran terlalu rendah."
 
-print(nego(8500000, 8000000))
+# print(nego(8500000, 8000000))
+
+# Sistem cek kondisi iPhone di pras_phone.id
+def cek_kondisi(baterai, fisik, lcd):
+    nilai = (baterai + fisik + lcd) / 3
+    if nilai >= 90:
+        return "Kondisi: Excellent"
+    elif nilai >= 75:
+        return "Kondisi: Good"
+    else:
+        return "Kondisi: Fair"
+
+print(cek_kondisi(88, 92, 85))
