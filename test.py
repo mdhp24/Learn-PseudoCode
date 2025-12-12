@@ -4364,12 +4364,23 @@
 # print("Estimasi nilai:", depresiasi(12000000, 2))
 
 # Sistem antrian pembeli di pras_phone.id
-antrian = []
+# antrian = []
 
-def tambah_antrian(nama):
-    antrian.append(nama)
-    return f"{nama} masuk antrian. Nomor antrian: {len(antrian)}"
+# def tambah_antrian(nama):
+#     antrian.append(nama)
+#     return f"{nama} masuk antrian. Nomor antrian: {len(antrian)}"
 
-print(tambah_antrian("Dicky"))
-print(tambah_antrian("Andi"))
-print("Total antrian:", antrian)
+# print(tambah_antrian("Dicky"))
+# print(tambah_antrian("Andi"))
+# print("Total antrian:", antrian)
+
+# Sistem buat order ID unik di pras_phone.id
+import random
+import datetime
+
+def buat_order_id():
+    now = datetime.datetime.now().strftime("%Y%m%d%H%M")
+    rand = random.randint(100, 999)
+    return f"PRS-{now}-{rand}"
+
+print("Order ID:", buat_order_id())
