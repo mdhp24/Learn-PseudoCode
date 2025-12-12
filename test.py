@@ -4329,8 +4329,19 @@
 # print(cek_kondisi(88, 92, 85))
 
 # Sistem hitung poin pembelian di pras_phone.id
-def hitung_poin(total_belanja):
-    poin = total_belanja // 50000
-    return f"Poin yang didapat: {poin}"
+# def hitung_poin(total_belanja):
+#     poin = total_belanja // 50000
+#     return f"Poin yang didapat: {poin}"
 
-print(hitung_poin(1250000))
+# print(hitung_poin(1250000))
+
+# Sistem chat sederhana dengan pembeli di pras_phone.id
+def chat_pembeli(pesan):
+    if "harga" in pesan.lower():
+        return "Harga mulai dari Rp 5.500.000 – Rp 25.000.000 tergantung model."
+    elif "stok" in pesan.lower():
+        return "Stok masih tersedia, silakan pilih model."
+    else:
+        return "Baik, ada yang bisa dibantu terkait iPhone?"
+
+print(chat_pembeli("Bang berapa harga iPhone 12?"))
