@@ -4347,12 +4347,18 @@
 # print(chat_pembeli("Bang berapa harga iPhone 12?"))
 
 # Sistem validasi transfer pembayaran di pras_phone.id
-import random
+# import random
 
-def validasi_transfer(nama, jumlah):
-    if random.choice([True, False]):
-        return f"Pembayaran oleh {nama} sebesar Rp{jumlah:,} telah diterima."
-    else:
-        return "Pembayaran belum terverifikasi, coba cek kembali bukti transfer."
+# def validasi_transfer(nama, jumlah):
+#     if random.choice([True, False]):
+#         return f"Pembayaran oleh {nama} sebesar Rp{jumlah:,} telah diterima."
+#     else:
+#         return "Pembayaran belum terverifikasi, coba cek kembali bukti transfer."
 
-print(validasi_transfer("Dicky", 6500000))
+# print(validasi_transfer("Dicky", 6500000))
+
+# Sistem estimasi depresiasi nilai iPhone di pras_phone.id
+def depresiasi(harga_awal, tahun):
+    return harga_awal * (0.80 ** tahun)
+
+print("Estimasi nilai:", depresiasi(12000000, 2))
