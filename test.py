@@ -4317,13 +4317,20 @@
 # print(nego(8500000, 8000000))
 
 # Sistem cek kondisi iPhone di pras_phone.id
-def cek_kondisi(baterai, fisik, lcd):
-    nilai = (baterai + fisik + lcd) / 3
-    if nilai >= 90:
-        return "Kondisi: Excellent"
-    elif nilai >= 75:
-        return "Kondisi: Good"
-    else:
-        return "Kondisi: Fair"
+# def cek_kondisi(baterai, fisik, lcd):
+#     nilai = (baterai + fisik + lcd) / 3
+#     if nilai >= 90:
+#         return "Kondisi: Excellent"
+#     elif nilai >= 75:
+#         return "Kondisi: Good"
+#     else:
+#         return "Kondisi: Fair"
 
-print(cek_kondisi(88, 92, 85))
+# print(cek_kondisi(88, 92, 85))
+
+# Sistem hitung poin pembelian di pras_phone.id
+def hitung_poin(total_belanja):
+    poin = total_belanja // 50000
+    return f"Poin yang didapat: {poin}"
+
+print(hitung_poin(1250000))
