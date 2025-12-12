@@ -4358,7 +4358,18 @@
 # print(validasi_transfer("Dicky", 6500000))
 
 # Sistem estimasi depresiasi nilai iPhone di pras_phone.id
-def depresiasi(harga_awal, tahun):
-    return harga_awal * (0.80 ** tahun)
+# def depresiasi(harga_awal, tahun):
+#     return harga_awal * (0.80 ** tahun)
 
-print("Estimasi nilai:", depresiasi(12000000, 2))
+# print("Estimasi nilai:", depresiasi(12000000, 2))
+
+# Sistem antrian pembeli di pras_phone.id
+antrian = []
+
+def tambah_antrian(nama):
+    antrian.append(nama)
+    return f"{nama} masuk antrian. Nomor antrian: {len(antrian)}"
+
+print(tambah_antrian("Dicky"))
+print(tambah_antrian("Andi"))
+print("Total antrian:", antrian)
