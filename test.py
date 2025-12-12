@@ -4336,12 +4336,23 @@
 # print(hitung_poin(1250000))
 
 # Sistem chat sederhana dengan pembeli di pras_phone.id
-def chat_pembeli(pesan):
-    if "harga" in pesan.lower():
-        return "Harga mulai dari Rp 5.500.000 – Rp 25.000.000 tergantung model."
-    elif "stok" in pesan.lower():
-        return "Stok masih tersedia, silakan pilih model."
-    else:
-        return "Baik, ada yang bisa dibantu terkait iPhone?"
+# def chat_pembeli(pesan):
+#     if "harga" in pesan.lower():
+#         return "Harga mulai dari Rp 5.500.000 – Rp 25.000.000 tergantung model."
+#     elif "stok" in pesan.lower():
+#         return "Stok masih tersedia, silakan pilih model."
+#     else:
+#         return "Baik, ada yang bisa dibantu terkait iPhone?"
 
-print(chat_pembeli("Bang berapa harga iPhone 12?"))
+# print(chat_pembeli("Bang berapa harga iPhone 12?"))
+
+# Sistem validasi transfer pembayaran di pras_phone.id
+import random
+
+def validasi_transfer(nama, jumlah):
+    if random.choice([True, False]):
+        return f"Pembayaran oleh {nama} sebesar Rp{jumlah:,} telah diterima."
+    else:
+        return "Pembayaran belum terverifikasi, coba cek kembali bukti transfer."
+
+print(validasi_transfer("Dicky", 6500000))
