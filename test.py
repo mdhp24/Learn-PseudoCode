@@ -4399,8 +4399,14 @@
 # print(nilai_huruf(78))
 
 # Sistem hitung IPK dari daftar nilai
-def hitung_ipk(nilai):
-    total = sum(nilai)
-    return round(total / len(nilai), 2)
+# def hitung_ipk(nilai):
+#     total = sum(nilai)
+#     return round(total / len(nilai), 2)
 
-print(hitung_ipk([3.5, 3.7, 3.2, 3.8]))
+# print(hitung_ipk([3.5, 3.7, 3.2, 3.8]))
+
+# Sistem cari kata terpanjang dalam kalimat
+def kata_terpanjang(kalimat):
+    return max(kalimat.split(), key=len)
+
+print(kata_terpanjang("belajar python untuk skripsi"))
