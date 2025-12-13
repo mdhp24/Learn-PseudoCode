@@ -4426,10 +4426,21 @@
 # print(filter_genap([1,2,3,4,5,6,7,8]))
 
 # Sistem hitung frekuensi kemunculan huruf dalam teks
-def frekuensi(teks):
-    hasil = {}
-    for huruf in teks:
-        hasil[huruf] = hasil.get(huruf, 0) + 1
-    return hasil
+# def frekuensi(teks):
+#     hasil = {}
+#     for huruf in teks:
+#         hasil[huruf] = hasil.get(huruf, 0) + 1
+#     return hasil
 
-print(frekuensi("pseudocode"))
+# print(frekuensi("pseudocode"))
+
+# Sistem menu pilihan sederhana
+def menu(pilihan):
+    opsi = {
+        1: "Lihat data",
+        2: "Tambah data",
+        3: "Keluar"
+    }
+    return opsi.get(pilihan, "Pilihan tidak valid")
+
+print(menu(2))
