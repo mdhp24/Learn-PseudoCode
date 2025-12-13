@@ -4406,7 +4406,15 @@
 # print(hitung_ipk([3.5, 3.7, 3.2, 3.8]))
 
 # Sistem cari kata terpanjang dalam kalimat
-def kata_terpanjang(kalimat):
-    return max(kalimat.split(), key=len)
+# def kata_terpanjang(kalimat):
+#     return max(kalimat.split(), key=len)
 
-print(kata_terpanjang("belajar python untuk skripsi"))
+# print(kata_terpanjang("belajar python untuk skripsi"))
+
+# Sistem login sederhana di pras_phone.id
+def login(username, password):
+    if username == "admin" and password == "1234":
+        return "Login berhasil"
+    return "Login gagal"
+
+print(login("admin", "1234"))
