@@ -4412,9 +4412,15 @@
 # print(kata_terpanjang("belajar python untuk skripsi"))
 
 # Sistem login sederhana di pras_phone.id
-def login(username, password):
-    if username == "admin" and password == "1234":
-        return "Login berhasil"
-    return "Login gagal"
+# def login(username, password):
+#     if username == "admin" and password == "1234":
+#         return "Login berhasil"
+#     return "Login gagal"
 
-print(login("admin", "1234"))
+# print(login("admin", "1234"))
+
+# Sistem filter angka genap dari daftar
+def filter_genap(data):
+    return [x for x in data if x % 2 == 0]
+
+print(filter_genap([1,2,3,4,5,6,7,8]))
