@@ -4420,7 +4420,16 @@
 # print(login("admin", "1234"))
 
 # Sistem filter angka genap dari daftar
-def filter_genap(data):
-    return [x for x in data if x % 2 == 0]
+# def filter_genap(data):
+#     return [x for x in data if x % 2 == 0]
 
-print(filter_genap([1,2,3,4,5,6,7,8]))
+# print(filter_genap([1,2,3,4,5,6,7,8]))
+
+# Sistem hitung frekuensi kemunculan huruf dalam teks
+def frekuensi(teks):
+    hasil = {}
+    for huruf in teks:
+        hasil[huruf] = hasil.get(huruf, 0) + 1
+    return hasil
+
+print(frekuensi("pseudocode"))
