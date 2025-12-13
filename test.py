@@ -4375,12 +4375,25 @@
 # print("Total antrian:", antrian)
 
 # Sistem buat order ID unik di pras_phone.id
-import random
-import datetime
+# import random
+# import datetime
 
-def buat_order_id():
-    now = datetime.datetime.now().strftime("%Y%m%d%H%M")
-    rand = random.randint(100, 999)
-    return f"PRS-{now}-{rand}"
+# def buat_order_id():
+#     now = datetime.datetime.now().strftime("%Y%m%d%H%M")
+#     rand = random.randint(100, 999)
+#     return f"PRS-{now}-{rand}"
 
-print("Order ID:", buat_order_id())
+# print("Order ID:", buat_order_id())
+
+# Sistem konversi nilai angka ke huruf
+def nilai_huruf(nilai):
+    if nilai >= 85:
+        return "A"
+    elif nilai >= 70:
+        return "B"
+    elif nilai >= 55:
+        return "C"
+    else:
+        return "D"
+
+print(nilai_huruf(78))
