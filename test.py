@@ -4386,14 +4386,21 @@
 # print("Order ID:", buat_order_id())
 
 # Sistem konversi nilai angka ke huruf
-def nilai_huruf(nilai):
-    if nilai >= 85:
-        return "A"
-    elif nilai >= 70:
-        return "B"
-    elif nilai >= 55:
-        return "C"
-    else:
-        return "D"
+# def nilai_huruf(nilai):
+#     if nilai >= 85:
+#         return "A"
+#     elif nilai >= 70:
+#         return "B"
+#     elif nilai >= 55:
+#         return "C"
+#     else:
+#         return "D"
 
-print(nilai_huruf(78))
+# print(nilai_huruf(78))
+
+# Sistem hitung IPK dari daftar nilai
+def hitung_ipk(nilai):
+    total = sum(nilai)
+    return round(total / len(nilai), 2)
+
+print(hitung_ipk([3.5, 3.7, 3.2, 3.8]))
