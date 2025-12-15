@@ -4453,7 +4453,13 @@
 # print(total_belanja([50000, 75000, 120000]))
 
 # Sistem cek umur dewasa atau belum
-def cek_umur(umur):
-    return "Dewasa" if umur >= 18 else "Belum Dewasa"
+# def cek_umur(umur):
+#     return "Dewasa" if umur >= 18 else "Belum Dewasa"
 
-print(cek_umur(17))
+# print(cek_umur(17))
+
+# Sistem cari angka terbesar dalam daftar
+def angka_terbesar(data):
+    return max(data)
+
+print(angka_terbesar([10, 45, 23, 89, 12]))
