@@ -4471,9 +4471,15 @@
 # print(jumlah_kata("belajar python setiap hari"))
 
 # Sistem konversi menit ke jam dan menit
-def menit_ke_jam(menit):
-    jam = menit // 60
-    sisa = menit % 60
-    return f"{jam} jam {sisa} menit"
+# def menit_ke_jam(menit):
+#     jam = menit // 60
+#     sisa = menit % 60
+#     return f"{jam} jam {sisa} menit"
 
-print(menit_ke_jam(135))
+# print(menit_ke_jam(135))
+
+# Sistem validasi password minimal 8 karakter
+def valid_password(password):
+    return len(password) >= 8
+
+print(valid_password("belajar123"))
