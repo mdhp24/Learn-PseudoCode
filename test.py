@@ -4459,7 +4459,13 @@
 # print(cek_umur(17))
 
 # Sistem cari angka terbesar dalam daftar
-def angka_terbesar(data):
-    return max(data)
+# def angka_terbesar(data):
+#     return max(data)
 
-print(angka_terbesar([10, 45, 23, 89, 12]))
+# print(angka_terbesar([10, 45, 23, 89, 12]))
+
+# Sistem hitung jumlah kata dalam teks
+def jumlah_kata(teks):
+    return len(teks.split())
+
+print(jumlah_kata("belajar python setiap hari"))
