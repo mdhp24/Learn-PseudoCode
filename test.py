@@ -4465,7 +4465,15 @@
 # print(angka_terbesar([10, 45, 23, 89, 12]))
 
 # Sistem hitung jumlah kata dalam teks
-def jumlah_kata(teks):
-    return len(teks.split())
+# def jumlah_kata(teks):
+#     return len(teks.split())
 
-print(jumlah_kata("belajar python setiap hari"))
+# print(jumlah_kata("belajar python setiap hari"))
+
+# Sistem konversi menit ke jam dan menit
+def menit_ke_jam(menit):
+    jam = menit // 60
+    sisa = menit % 60
+    return f"{jam} jam {sisa} menit"
+
+print(menit_ke_jam(135))
