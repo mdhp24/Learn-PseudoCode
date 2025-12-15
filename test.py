@@ -4479,7 +4479,14 @@
 # print(menit_ke_jam(135))
 
 # Sistem validasi password minimal 8 karakter
-def valid_password(password):
-    return len(password) >= 8
+# def valid_password(password):
+#     return len(password) >= 8
 
-print(valid_password("belajar123"))
+# print(valid_password("belajar123"))
+
+# Sistem cek status kelulusan berdasarkan rata-rata nilai
+def status_lulus(nilai):
+    rata = sum(nilai) / len(nilai)
+    return "Lulus" if rata >= 70 else "Tidak Lulus"
+
+print(status_lulus([80, 75, 60, 90]))
