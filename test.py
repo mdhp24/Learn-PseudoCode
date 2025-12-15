@@ -4435,12 +4435,19 @@
 # print(frekuensi("pseudocode"))
 
 # Sistem menu pilihan sederhana
-def menu(pilihan):
-    opsi = {
-        1: "Lihat data",
-        2: "Tambah data",
-        3: "Keluar"
-    }
-    return opsi.get(pilihan, "Pilihan tidak valid")
+# def menu(pilihan):
+#     opsi = {
+#         1: "Lihat data",
+#         2: "Tambah data",
+#         3: "Keluar"
+#     }
+#     return opsi.get(pilihan, "Pilihan tidak valid")
 
-print(menu(2))
+# print(menu(2))
+
+# Sistem hitung total belanja dengan pajak di pras_phone.id
+def total_belanja(harga_list, pajak=0.1):
+    subtotal = sum(harga_list)
+    return subtotal + (subtotal * pajak)
+
+print(total_belanja([50000, 75000, 120000]))
