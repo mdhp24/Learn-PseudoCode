@@ -4446,8 +4446,14 @@
 # print(menu(2))
 
 # Sistem hitung total belanja dengan pajak di pras_phone.id
-def total_belanja(harga_list, pajak=0.1):
-    subtotal = sum(harga_list)
-    return subtotal + (subtotal * pajak)
+# def total_belanja(harga_list, pajak=0.1):
+#     subtotal = sum(harga_list)
+#     return subtotal + (subtotal * pajak)
 
-print(total_belanja([50000, 75000, 120000]))
+# print(total_belanja([50000, 75000, 120000]))
+
+# Sistem cek umur dewasa atau belum
+def cek_umur(umur):
+    return "Dewasa" if umur >= 18 else "Belum Dewasa"
+
+print(cek_umur(17))
