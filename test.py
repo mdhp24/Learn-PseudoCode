@@ -4498,7 +4498,14 @@
 # print(tahun_kabisat(2024))
 
 # Sistem urutkan daftar nilai siswa
-def urutkan_nilai(nilai):
-    return sorted(nilai)
+# def urutkan_nilai(nilai):
+#     return sorted(nilai)
 
-print(urutkan_nilai([78, 90, 65, 88, 70]))
+# print(urutkan_nilai([78, 90, 65, 88, 70]))
+
+# Sistem hitung jumlah vokal dalam teks
+def hitung_vokal(teks):
+    vokal = "aiueo"
+    return sum(1 for huruf in teks.lower() if huruf in vokal)
+
+print(hitung_vokal("Belajar Python"))
