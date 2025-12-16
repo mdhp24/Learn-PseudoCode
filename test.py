@@ -4511,9 +4511,16 @@
 # print(hitung_vokal("Belajar Python"))
 
 # Sistem hitung saldo akhir setelah transaksi
-def saldo_akhir(saldo, transaksi):
-    for t in transaksi:
-        saldo += t
-    return saldo
+# def saldo_akhir(saldo, transaksi):
+#     for t in transaksi:
+#         saldo += t
+#     return saldo
 
-print(saldo_akhir(100000, [-20000, 50000, -15000]))
+# print(saldo_akhir(100000, [-20000, 50000, -15000]))
+
+# Sistem cari angka hilang dalam deret
+def angka_hilang(data):
+    n = len(data) + 1
+    return (n * (n + 1)) // 2 - sum(data)
+
+print(angka_hilang([1, 2, 3, 5]))
