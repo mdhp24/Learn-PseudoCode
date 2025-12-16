@@ -4492,7 +4492,13 @@
 # print(status_lulus([80, 75, 60, 90]))
 
 # Sistem cek tahun kabisat
-def tahun_kabisat(tahun):
-    return tahun % 4 == 0 and (tahun % 100 != 0 or tahun % 400 == 0)
+# def tahun_kabisat(tahun):
+#     return tahun % 4 == 0 and (tahun % 100 != 0 or tahun % 400 == 0)
 
-print(tahun_kabisat(2024))
+# print(tahun_kabisat(2024))
+
+# Sistem urutkan daftar nilai siswa
+def urutkan_nilai(nilai):
+    return sorted(nilai)
+
+print(urutkan_nilai([78, 90, 65, 88, 70]))
