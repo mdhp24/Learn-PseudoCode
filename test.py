@@ -4526,7 +4526,13 @@
 # print(angka_hilang([1, 2, 3, 5]))
 
 # Sistem hitung total jam dari daftar durasi
-def total_jam(data_jam):
-    return sum(data_jam)
+# def total_jam(data_jam):
+#     return sum(data_jam)
 
-print(total_jam([2, 3, 1.5, 2.5]))
+# print(total_jam([2, 3, 1.5, 2.5]))
+
+# Sistem validasi email sederhana
+def valid_email(email):
+    return "@" in email and "." in email
+
+print(valid_email("user@gmail.com"))
