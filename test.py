@@ -4504,8 +4504,16 @@
 # print(urutkan_nilai([78, 90, 65, 88, 70]))
 
 # Sistem hitung jumlah vokal dalam teks
-def hitung_vokal(teks):
-    vokal = "aiueo"
-    return sum(1 for huruf in teks.lower() if huruf in vokal)
+# def hitung_vokal(teks):
+#     vokal = "aiueo"
+#     return sum(1 for huruf in teks.lower() if huruf in vokal)
 
-print(hitung_vokal("Belajar Python"))
+# print(hitung_vokal("Belajar Python"))
+
+# Sistem hitung saldo akhir setelah transaksi
+def saldo_akhir(saldo, transaksi):
+    for t in transaksi:
+        saldo += t
+    return saldo
+
+print(saldo_akhir(100000, [-20000, 50000, -15000]))
