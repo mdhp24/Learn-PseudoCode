@@ -4519,8 +4519,14 @@
 # print(saldo_akhir(100000, [-20000, 50000, -15000]))
 
 # Sistem cari angka hilang dalam deret
-def angka_hilang(data):
-    n = len(data) + 1
-    return (n * (n + 1)) // 2 - sum(data)
+# def angka_hilang(data):
+#     n = len(data) + 1
+#     return (n * (n + 1)) // 2 - sum(data)
 
-print(angka_hilang([1, 2, 3, 5]))
+# print(angka_hilang([1, 2, 3, 5]))
+
+# Sistem hitung total jam dari daftar durasi
+def total_jam(data_jam):
+    return sum(data_jam)
+
+print(total_jam([2, 3, 1.5, 2.5]))
