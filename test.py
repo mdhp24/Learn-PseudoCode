@@ -4485,8 +4485,14 @@
 # print(valid_password("belajar123"))
 
 # Sistem cek status kelulusan berdasarkan rata-rata nilai
-def status_lulus(nilai):
-    rata = sum(nilai) / len(nilai)
-    return "Lulus" if rata >= 70 else "Tidak Lulus"
+# def status_lulus(nilai):
+#     rata = sum(nilai) / len(nilai)
+#     return "Lulus" if rata >= 70 else "Tidak Lulus"
 
-print(status_lulus([80, 75, 60, 90]))
+# print(status_lulus([80, 75, 60, 90]))
+
+# Sistem cek tahun kabisat
+def tahun_kabisat(tahun):
+    return tahun % 4 == 0 and (tahun % 100 != 0 or tahun % 400 == 0)
+
+print(tahun_kabisat(2024))
