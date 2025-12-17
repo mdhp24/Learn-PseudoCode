@@ -4555,7 +4555,21 @@
 # print(diskon(750000))
 
 # Sistem cek palindrome
-def palindrome(kata):
-    return kata == kata[::-1]
+# def palindrome(kata):
+#     return kata == kata[::-1]
 
-print(palindrome("katak"))
+# print(palindrome("katak"))
+
+# Sistem antrian pembeli di pras_phone.id
+antrian = []
+
+def masuk(nama):
+    antrian.append(nama)
+    return antrian
+
+def keluar():
+    return antrian.pop(0) if antrian else "Antrian kosong"
+
+masuk("Dicky")
+masuk("Andi")
+print(keluar())
