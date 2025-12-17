@@ -4589,7 +4589,13 @@
 # print(skala_empat(78))
 
 # Sistem filter kata yang mengandung huruf tertentu
-def filter_kata(kata_list, huruf):
-    return [k for k in kata_list if huruf.lower() in k.lower()]
+# def filter_kata(kata_list, huruf):
+#     return [k for k in kata_list if huruf.lower() in k.lower()]
 
-print(filter_kata(["python", "java", "pseudocode"], "o"))
+# print(filter_kata(["python", "java", "pseudocode"], "o"))
+
+# Sistem hitung persentase kehadiran siswa
+def persentase_hadir(hadir, total):
+    return round((hadir / total) * 100, 2)
+
+print(persentase_hadir(12, 14))
