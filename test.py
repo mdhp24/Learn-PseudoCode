@@ -4532,7 +4532,14 @@
 # print(total_jam([2, 3, 1.5, 2.5]))
 
 # Sistem validasi email sederhana
-def valid_email(email):
-    return "@" in email and "." in email
+# def valid_email(email):
+#     return "@" in email and "." in email
 
-print(valid_email("user@gmail.com"))
+# print(valid_email("user@gmail.com"))
+
+# Sistem hitung rata-rata nilai tanpa nilai terendah
+def rata_tanpa_terendah(nilai):
+    nilai.remove(min(nilai))
+    return sum(nilai) / len(nilai)
+
+print(rata_tanpa_terendah([60, 75, 80, 90]))
