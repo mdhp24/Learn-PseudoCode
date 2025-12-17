@@ -4561,15 +4561,29 @@
 # print(palindrome("katak"))
 
 # Sistem antrian pembeli di pras_phone.id
-antrian = []
+# antrian = []
 
-def masuk(nama):
-    antrian.append(nama)
-    return antrian
+# def masuk(nama):
+#     antrian.append(nama)
+#     return antrian
 
-def keluar():
-    return antrian.pop(0) if antrian else "Antrian kosong"
+# def keluar():
+#     return antrian.pop(0) if antrian else "Antrian kosong"
 
-masuk("Dicky")
-masuk("Andi")
-print(keluar())
+# masuk("Dicky")
+# masuk("Andi")
+# print(keluar())
+
+
+# Sistem konversi nilai ke skala 4.0
+def skala_empat(nilai):
+    if nilai >= 85:
+        return 4.0
+    elif nilai >= 75:
+        return 3.5
+    elif nilai >= 65:
+        return 3.0
+    else:
+        return 2.0
+
+print(skala_empat(78))
