@@ -4576,14 +4576,20 @@
 
 
 # Sistem konversi nilai ke skala 4.0
-def skala_empat(nilai):
-    if nilai >= 85:
-        return 4.0
-    elif nilai >= 75:
-        return 3.5
-    elif nilai >= 65:
-        return 3.0
-    else:
-        return 2.0
+# def skala_empat(nilai):
+#     if nilai >= 85:
+#         return 4.0
+#     elif nilai >= 75:
+#         return 3.5
+#     elif nilai >= 65:
+#         return 3.0
+#     else:
+#         return 2.0
 
-print(skala_empat(78))
+# print(skala_empat(78))
+
+# Sistem filter kata yang mengandung huruf tertentu
+def filter_kata(kata_list, huruf):
+    return [k for k in kata_list if huruf.lower() in k.lower()]
+
+print(filter_kata(["python", "java", "pseudocode"], "o"))
