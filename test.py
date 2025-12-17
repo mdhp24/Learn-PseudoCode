@@ -4545,11 +4545,17 @@
 # print(rata_tanpa_terendah([60, 75, 80, 90]))
 
 # Sistem hitung diskon berdasarkan total belanja di pras_phone.id
-def diskon(total):
-    if total > 1000000:
-        return total * 0.8
-    elif total > 500000:
-        return total * 0.9
-    return total
+# def diskon(total):
+#     if total > 1000000:
+#         return total * 0.8
+#     elif total > 500000:
+#         return total * 0.9
+#     return total
 
-print(diskon(750000))
+# print(diskon(750000))
+
+# Sistem cek palindrome
+def palindrome(kata):
+    return kata == kata[::-1]
+
+print(palindrome("katak"))
