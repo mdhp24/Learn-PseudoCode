@@ -4601,11 +4601,22 @@
 # print(persentase_hadir(12, 14))
 
 # Sistem konversi detik ke jam, menit, dan detik
-def konversi_detik(detik):
-    jam = detik // 3600
-    detik %= 3600
-    menit = detik // 60
-    detik %= 60
-    return f"{jam} jam {menit} menit {detik} detik"
+# def konversi_detik(detik):
+#     jam = detik // 3600
+#     detik %= 3600
+#     menit = detik // 60
+#     detik %= 60
+#     return f"{jam} jam {menit} menit {detik} detik"
 
-print(konversi_detik(3671))
+# print(konversi_detik(3671))
+
+# Sistem cek bilangan prima
+def prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+print(prima(29))
