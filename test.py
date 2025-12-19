@@ -4611,12 +4611,19 @@
 # print(konversi_detik(3671))
 
 # Sistem cek bilangan prima
-def prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-print(prima(29))
+# print(prima(29))
+
+# Sistem hitung total setelah cashback di pras_phone.id
+def total_setelah_cashback(total):
+    cashback = 50000 if total >= 500000 else 0
+    return total - cashback
+
+print(total_setelah_cashback(650000))
