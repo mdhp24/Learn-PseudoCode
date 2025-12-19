@@ -4635,8 +4635,15 @@
 # print(ambil_ganjil([1,2,3,4,5,6,7]))
 
 # Sistem cek kata unik dalam kalimat
-def kata_unik(teks):
-    kata = teks.split()
-    return len(kata) == len(set(kata))
+# def kata_unik(teks):
+#     kata = teks.split()
+#     return len(kata) == len(set(kata))
 
-print(kata_unik("belajar python itu menyenangkan"))
+# print(kata_unik("belajar python itu menyenangkan"))
+
+# Sistem hitung jumlah nilai di atas rata-rata
+def di_atas_rata(nilai):
+    rata = sum(nilai) / len(nilai)
+    return len([n for n in nilai if n > rata])
+
+print(di_atas_rata([60, 70, 80, 90]))
