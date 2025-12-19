@@ -4642,8 +4642,17 @@
 # print(kata_unik("belajar python itu menyenangkan"))
 
 # Sistem hitung jumlah nilai di atas rata-rata
-def di_atas_rata(nilai):
-    rata = sum(nilai) / len(nilai)
-    return len([n for n in nilai if n > rata])
+# def di_atas_rata(nilai):
+#     rata = sum(nilai) / len(nilai)
+#     return len([n for n in nilai if n > rata])
 
-print(di_atas_rata([60, 70, 80, 90]))
+# print(di_atas_rata([60, 70, 80, 90]))
+
+# Sistem voting sederhana
+def voting(data):
+    hasil = {}
+    for vote in data:
+        hasil[vote] = hasil.get(vote, 0) + 1
+    return hasil
+
+print(voting(["A", "B", "A", "C", "B", "A"]))
