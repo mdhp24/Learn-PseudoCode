@@ -4622,8 +4622,14 @@
 # print(prima(29))
 
 # Sistem hitung total setelah cashback di pras_phone.id
-def total_setelah_cashback(total):
-    cashback = 50000 if total >= 500000 else 0
-    return total - cashback
+# def total_setelah_cashback(total):
+#     cashback = 50000 if total >= 500000 else 0
+#     return total - cashback
 
-print(total_setelah_cashback(650000))
+# print(total_setelah_cashback(650000))
+
+# Sistem ambil angka ganjil dari daftar
+def ambil_ganjil(data):
+    return [x for x in data if x % 2 != 0]
+
+print(ambil_ganjil([1,2,3,4,5,6,7]))
