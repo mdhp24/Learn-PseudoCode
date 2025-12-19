@@ -4629,7 +4629,14 @@
 # print(total_setelah_cashback(650000))
 
 # Sistem ambil angka ganjil dari daftar
-def ambil_ganjil(data):
-    return [x for x in data if x % 2 != 0]
+# def ambil_ganjil(data):
+#     return [x for x in data if x % 2 != 0]
 
-print(ambil_ganjil([1,2,3,4,5,6,7]))
+# print(ambil_ganjil([1,2,3,4,5,6,7]))
+
+# Sistem cek kata unik dalam kalimat
+def kata_unik(teks):
+    kata = teks.split()
+    return len(kata) == len(set(kata))
+
+print(kata_unik("belajar python itu menyenangkan"))
