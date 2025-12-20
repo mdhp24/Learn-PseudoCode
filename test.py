@@ -4657,12 +4657,19 @@
 
 # print(voting(["A", "B", "A", "C", "B", "A"]))
 
-def selisih_waktu(w1, w2):
-    j1, m1 = map(int, w1.split(":"))
-    j2, m2 = map(int, w2.split(":"))
-    total1 = j1 * 60 + m1
-    total2 = j2 * 60 + m2
-    selisih = abs(total2 - total1)
-    return f"{selisih // 60} jam {selisih % 60} menit"
+# Sistem hitung selisih waktu dalam jam dan menit
+# def selisih_waktu(w1, w2):
+#     j1, m1 = map(int, w1.split(":"))
+#     j2, m2 = map(int, w2.split(":"))
+#     total1 = j1 * 60 + m1
+#     total2 = j2 * 60 + m2
+#     selisih = abs(total2 - total1)
+#     return f"{selisih // 60} jam {selisih % 60} menit"
 
-print(selisih_waktu("08:30", "10:00"))
+# print(selisih_waktu("08:30", "10:00"))
+
+# Sistem filter kata yang mengandung huruf tertentu
+def filter_kata(kata_list, huruf):
+    return [k for k in kata_list if huruf.lower() in k.lower()]
+
+print(filter_kata(["python", "java", "pseudocode"], "o"))
