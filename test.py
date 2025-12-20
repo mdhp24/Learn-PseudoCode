@@ -4649,10 +4649,20 @@
 # print(di_atas_rata([60, 70, 80, 90]))
 
 # Sistem voting sederhana
-def voting(data):
-    hasil = {}
-    for vote in data:
-        hasil[vote] = hasil.get(vote, 0) + 1
-    return hasil
+# def voting(data):
+#     hasil = {}
+#     for vote in data:
+#         hasil[vote] = hasil.get(vote, 0) + 1
+#     return hasil
 
-print(voting(["A", "B", "A", "C", "B", "A"]))
+# print(voting(["A", "B", "A", "C", "B", "A"]))
+
+def selisih_waktu(w1, w2):
+    j1, m1 = map(int, w1.split(":"))
+    j2, m2 = map(int, w2.split(":"))
+    total1 = j1 * 60 + m1
+    total2 = j2 * 60 + m2
+    selisih = abs(total2 - total1)
+    return f"{selisih // 60} jam {selisih % 60} menit"
+
+print(selisih_waktu("08:30", "10:00"))
