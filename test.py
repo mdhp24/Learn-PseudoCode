@@ -4681,6 +4681,21 @@
 # print(filter_kata(["python", "java", "pseudocode"], "o"))
 
 # Sistem antrian pembeli di pras_phone.id
+# antrian = []
+
+# def masuk(nama):
+#     antrian.append(nama)
+#     return antrian
+
+# def keluar():
+#     return antrian.pop(0) if antrian else "Antrian kosong"
+
+# masuk("Dicky")
+# masuk("Andi")
+# print(keluar())
+
+
+# Sistem antrian pembeli di pras_phone.id
 antrian = []
 
 def masuk(nama):
