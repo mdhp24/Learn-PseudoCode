@@ -4710,7 +4710,14 @@
 # print(keluar())
 
 # Sistem cek palindrome
-def palindrome(kata):
-    return kata == kata[::-1]
+# def palindrome(kata):
+#     return kata == kata[::-1]
 
-print(palindrome("katak"))
+# print(palindrome("katak"))
+
+# Sistem hitung rata-rata nilai tanpa nilai terendah
+def rata_tanpa_terendah(nilai):
+    nilai.remove(min(nilai))
+    return sum(nilai) / len(nilai)
+
+print(rata_tanpa_terendah([60, 75, 80, 90]))
