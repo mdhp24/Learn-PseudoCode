@@ -4669,6 +4669,12 @@
 # print(selisih_waktu("08:30", "10:00"))
 
 # Sistem filter kata yang mengandung huruf tertentu
+# def filter_kata(kata_list, huruf):
+#     return [k for k in kata_list if huruf.lower() in k.lower()]
+
+# print(filter_kata(["python", "java", "pseudocode"], "o"))
+
+# Sistem filter kata yang mengandung huruf tertentu
 def filter_kata(kata_list, huruf):
     return [k for k in kata_list if huruf.lower() in k.lower()]
 
