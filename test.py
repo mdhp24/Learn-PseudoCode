@@ -4696,15 +4696,21 @@
 
 
 # Sistem antrian pembeli di pras_phone.id
-antrian = []
+# antrian = []
 
-def masuk(nama):
-    antrian.append(nama)
-    return antrian
+# def masuk(nama):
+#     antrian.append(nama)
+#     return antrian
 
-def keluar():
-    return antrian.pop(0) if antrian else "Antrian kosong"
+# def keluar():
+#     return antrian.pop(0) if antrian else "Antrian kosong"
 
-masuk("Dicky")
-masuk("Andi")
-print(keluar())
+# masuk("Dicky")
+# masuk("Andi")
+# print(keluar())
+
+# Sistem cek palindrome
+def palindrome(kata):
+    return kata == kata[::-1]
+
+print(palindrome("katak"))
