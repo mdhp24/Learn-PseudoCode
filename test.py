@@ -4724,7 +4724,17 @@
 
 
 # Sistem validasi nomor HP Indonesia
-def valid_hp(no):
-    return no.startswith("08") and no.isdigit() and len(no) >= 10
+# def valid_hp(no):
+#     return no.startswith("08") and no.isdigit() and len(no) >= 10
 
-print(valid_hp("08123456789"))
+# print(valid_hp("08123456789"))
+
+# Sistem hitung jumlah kata dalam teks dengan mengabaikan tanda baca
+import string
+
+def hitung_kata(teks):
+    for p in string.punctuation:
+        teks = teks.replace(p, "")
+    return len(teks.split())
+
+print(hitung_kata("Belajar, python itu seru!"))
