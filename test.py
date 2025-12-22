@@ -4730,11 +4730,18 @@
 # print(valid_hp("08123456789"))
 
 # Sistem hitung jumlah kata dalam teks dengan mengabaikan tanda baca
-import string
+# import string
 
-def hitung_kata(teks):
-    for p in string.punctuation:
-        teks = teks.replace(p, "")
-    return len(teks.split())
+# def hitung_kata(teks):
+#     for p in string.punctuation:
+#         teks = teks.replace(p, "")
+#     return len(teks.split())
 
-print(hitung_kata("Belajar, python itu seru!"))
+# print(hitung_kata("Belajar, python itu seru!"))
+
+
+# Sistem cek tahun kabisat
+def kabisat(tahun):
+    return tahun % 400 == 0 or (tahun % 4 == 0 and tahun % 100 != 0)
+
+print(kabisat(2024))
