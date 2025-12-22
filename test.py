@@ -4716,8 +4716,15 @@
 # print(palindrome("katak"))
 
 # Sistem hitung rata-rata nilai tanpa nilai terendah
-def rata_tanpa_terendah(nilai):
-    nilai.remove(min(nilai))
-    return sum(nilai) / len(nilai)
+# def rata_tanpa_terendah(nilai):
+#     nilai.remove(min(nilai))
+#     return sum(nilai) / len(nilai)
 
-print(rata_tanpa_terendah([60, 75, 80, 90]))
+# print(rata_tanpa_terendah([60, 75, 80, 90]))
+
+
+# Sistem validasi nomor HP Indonesia
+def valid_hp(no):
+    return no.startswith("08") and no.isdigit() and len(no) >= 10
+
+print(valid_hp("08123456789"))
