@@ -4760,13 +4760,19 @@
 # print(top_tiga([60, 90, 75, 85, 70]))
 
 # Sistem bayar dengan saldo di pras_phone.id
-saldo = 100000
+# saldo = 100000
 
-def bayar(jumlah):
-    global saldo
-    if saldo >= jumlah:
-        saldo -= jumlah
-        return "Pembayaran berhasil"
-    return "Saldo tidak cukup"
+# def bayar(jumlah):
+#     global saldo
+#     if saldo >= jumlah:
+#         saldo -= jumlah
+#         return "Pembayaran berhasil"
+#     return "Saldo tidak cukup"
 
-print(bayar(25000))
+# print(bayar(25000))
+
+# Sistem predikat kelulusan siswa
+def predikat(nilai):
+    return "Lulus" if nilai >= 70 else "Tidak Lulus"
+
+print(predikat(68))
