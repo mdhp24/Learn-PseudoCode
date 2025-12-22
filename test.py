@@ -4741,6 +4741,13 @@
 
 
 # Sistem cek tahun kabisat
+# def kabisat(tahun):
+#     return tahun % 400 == 0 or (tahun % 4 == 0 and tahun % 100 != 0)
+
+# print(kabisat(2024))
+
+
+# Sistem cek tahun kabisat
 def kabisat(tahun):
     return tahun % 400 == 0 or (tahun % 4 == 0 and tahun % 100 != 0)
 
