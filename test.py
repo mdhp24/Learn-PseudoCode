@@ -4748,7 +4748,13 @@
 
 
 # Sistem cek tahun kabisat
-def kabisat(tahun):
-    return tahun % 400 == 0 or (tahun % 4 == 0 and tahun % 100 != 0)
+# def kabisat(tahun):
+#     return tahun % 400 == 0 or (tahun % 4 == 0 and tahun % 100 != 0)
 
-print(kabisat(2024))
+# print(kabisat(2024))
+
+# Sistem ambil tiga nilai terbesar dari daftar
+def top_tiga(data):
+    return sorted(data, reverse=True)[:3]
+
+print(top_tiga([60, 90, 75, 85, 70]))
