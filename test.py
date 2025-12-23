@@ -4802,7 +4802,13 @@
 # print(rata_tanpa_terendah([60, 70, 80, 90]))
 
 # Sistem konversi teks ke snake_case
-def snake_case(teks):
-    return teks.lower().replace(" ", "_")
+# def snake_case(teks):
+#     return teks.lower().replace(" ", "_")
 
-print(snake_case("Belajar Python Dasar"))
+# print(snake_case("Belajar Python Dasar"))
+
+#   Sistem hitung jumlah digit genap dalam angka
+def hitung_genap(angka):
+    return sum(1 for d in str(angka) if int(d) % 2 == 0)
+
+print(hitung_genap(123456))
