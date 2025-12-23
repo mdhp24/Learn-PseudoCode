@@ -4772,7 +4772,17 @@
 # print(bayar(25000))
 
 # Sistem predikat kelulusan siswa
-def predikat(nilai):
-    return "Lulus" if nilai >= 70 else "Tidak Lulus"
+# def predikat(nilai):
+#     return "Lulus" if nilai >= 70 else "Tidak Lulus"
 
-print(predikat(68))
+# print(predikat(68))
+
+# Sistem cek kekuatan password
+def password_kuat(pw):
+    return (
+        len(pw) >= 8 and
+        any(c.isupper() for c in pw) and
+        any(c.isdigit() for c in pw)
+    )
+
+print(password_kuat("Python123"))
