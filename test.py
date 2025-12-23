@@ -4808,6 +4808,12 @@
 # print(snake_case("Belajar Python Dasar"))
 
 #   Sistem hitung jumlah digit genap dalam angka
+# def hitung_genap(angka):
+#     return sum(1 for d in str(angka) if int(d) % 2 == 0)
+
+# print(hitung_genap(123456))
+
+# Sistem hitung jumlah digit genap dalam angka
 def hitung_genap(angka):
     return sum(1 for d in str(angka) if int(d) % 2 == 0)
 
