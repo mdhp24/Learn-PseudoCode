@@ -4788,6 +4788,13 @@
 # print(password_kuat("Python123"))
 
 # Sistem hitung rata-rata nilai tanpa nilai terendah
+# def rata_tanpa_terendah(nilai):
+#     nilai.remove(min(nilai))
+#     return sum(nilai) / len(nilai)
+
+# print(rata_tanpa_terendah([60, 70, 80, 90]))
+
+# Sistem hitung rata-rata nilai tanpa nilai terendah
 def rata_tanpa_terendah(nilai):
     nilai.remove(min(nilai))
     return sum(nilai) / len(nilai)
