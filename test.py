@@ -4814,7 +4814,14 @@
 # print(hitung_genap(123456))
 
 # Sistem hitung jumlah digit genap dalam angka
-def hitung_genap(angka):
-    return sum(1 for d in str(angka) if int(d) % 2 == 0)
+# def hitung_genap(angka):
+#     return sum(1 for d in str(angka) if int(d) % 2 == 0)
 
-print(hitung_genap(123456))
+# print(hitung_genap(123456))
+
+# Sistem cek palindrome
+def palindrom(teks):
+    teks = teks.replace(" ", "").lower()
+    return teks == teks[::-1]
+
+print(palindrom("Kasur ini rusak"))
