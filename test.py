@@ -4778,11 +4778,18 @@
 # print(predikat(68))
 
 # Sistem cek kekuatan password
-def password_kuat(pw):
-    return (
-        len(pw) >= 8 and
-        any(c.isupper() for c in pw) and
-        any(c.isdigit() for c in pw)
-    )
+# def password_kuat(pw):
+#     return (
+#         len(pw) >= 8 and
+#         any(c.isupper() for c in pw) and
+#         any(c.isdigit() for c in pw)
+#     )
 
-print(password_kuat("Python123"))
+# print(password_kuat("Python123"))
+
+# Sistem hitung rata-rata nilai tanpa nilai terendah
+def rata_tanpa_terendah(nilai):
+    nilai.remove(min(nilai))
+    return sum(nilai) / len(nilai)
+
+print(rata_tanpa_terendah([60, 70, 80, 90]))
