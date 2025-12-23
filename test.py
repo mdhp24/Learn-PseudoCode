@@ -4795,8 +4795,14 @@
 # print(rata_tanpa_terendah([60, 70, 80, 90]))
 
 # Sistem hitung rata-rata nilai tanpa nilai terendah
-def rata_tanpa_terendah(nilai):
-    nilai.remove(min(nilai))
-    return sum(nilai) / len(nilai)
+# def rata_tanpa_terendah(nilai):
+#     nilai.remove(min(nilai))
+#     return sum(nilai) / len(nilai)
 
-print(rata_tanpa_terendah([60, 70, 80, 90]))
+# print(rata_tanpa_terendah([60, 70, 80, 90]))
+
+# Sistem konversi teks ke snake_case
+def snake_case(teks):
+    return teks.lower().replace(" ", "_")
+
+print(snake_case("Belajar Python Dasar"))
