@@ -4827,6 +4827,12 @@
 # print(palindrom("Kasur ini rusak"))
 
 # Sistem validasi email sederhana
+# def valid_email(email):
+#     return "@" in email and "." in email.split("@")[-1]
+
+# print(valid_email("user@gmail.com"))
+
+# Sistem validasi email sederhana
 def valid_email(email):
     return "@" in email and "." in email.split("@")[-1]
 
