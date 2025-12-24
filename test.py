@@ -4849,19 +4849,28 @@
 # print(hitung_diskon(300000))
 
 # Sistem login dengan batas percobaan di pras_phone.id
-def login(max_coba):
-    while max_coba > 0:
-        pw = input("Password: ")
-        if pw == "admin123":
-            return "Login sukses"
-        max_coba -= 1
-    return "Akun terkunci"
+# def login(max_coba):
+#     while max_coba > 0:
+#         pw = input("Password: ")
+#         if pw == "admin123":
+#             return "Login sukses"
+#         max_coba -= 1
+#     return "Akun terkunci"
 
-# sistem login dengan batas percobaan di pras_phone.id
-def login(max_coba):
-    while max_coba > 0:
-        pw = input("Password: ")
-        if pw == "admin123":
-            return "Login sukses"
-        max_coba -= 1
-    return "Akun terkunci"
+# # sistem login dengan batas percobaan di pras_phone.id
+# def login(max_coba):
+#     while max_coba > 0:
+#         pw = input("Password: ")
+#         if pw == "admin123":
+#             return "Login sukses"
+#         max_coba -= 1
+#     return "Akun terkunci"
+
+# sistemkelompokkan angka genap dan ganjil dari daftar
+def kelompokkan(data):
+    return {
+        "genap": [x for x in data if x % 2 == 0],
+        "ganjil": [x for x in data if x % 2 != 0]
+    }
+
+print(kelompokkan([1,2,3,4,5,6]))
