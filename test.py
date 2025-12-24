@@ -4839,11 +4839,22 @@
 # print(valid_email("user@gmail.com"))
 
 # Sistem hitung diskon berdasarkan total belanja di pras_phone.id
-def hitung_diskon(total):
-    if total >= 500000:
-        return total * 0.8
-    elif total >= 250000:
-        return total * 0.9
-    return total
+# def hitung_diskon(total):
+#     if total >= 500000:
+#         return total * 0.8
+#     elif total >= 250000:
+#         return total * 0.9
+#     return total
 
-print(hitung_diskon(300000))
+# print(hitung_diskon(300000))
+
+# Sistem login dengan batas percobaan di pras_phone.id
+def login(max_coba):
+    while max_coba > 0:
+        pw = input("Password: ")
+        if pw == "admin123":
+            return "Login sukses"
+        max_coba -= 1
+    return "Akun terkunci"
+
+# print(login(3))
