@@ -4833,7 +4833,17 @@
 # print(valid_email("user@gmail.com"))
 
 # Sistem validasi email sederhana
-def valid_email(email):
-    return "@" in email and "." in email.split("@")[-1]
+# def valid_email(email):
+#     return "@" in email and "." in email.split("@")[-1]
 
-print(valid_email("user@gmail.com"))
+# print(valid_email("user@gmail.com"))
+
+# Sistem hitung diskon berdasarkan total belanja di pras_phone.id
+def hitung_diskon(total):
+    if total >= 500000:
+        return total * 0.8
+    elif total >= 250000:
+        return total * 0.9
+    return total
+
+print(hitung_diskon(300000))
