@@ -4867,10 +4867,16 @@
 #     return "Akun terkunci"
 
 # sistemkelompokkan angka genap dan ganjil dari daftar
-def kelompokkan(data):
-    return {
-        "genap": [x for x in data if x % 2 == 0],
-        "ganjil": [x for x in data if x % 2 != 0]
-    }
+# def kelompokkan(data):
+#     return {
+#         "genap": [x for x in data if x % 2 == 0],
+#         "ganjil": [x for x in data if x % 2 != 0]
+#     }
 
-print(kelompokkan([1,2,3,4,5,6]))
+# print(kelompokkan([1,2,3,4,5,6]))
+
+# Sistem hitung skor jawaban ujian
+def skor(jawaban, kunci):
+    return sum(1 for j, k in zip(jawaban, kunci) if j == k)
+
+print(skor(["A","B","C"], ["A","C","C"]))
