@@ -4857,4 +4857,11 @@ def login(max_coba):
         max_coba -= 1
     return "Akun terkunci"
 
-# print(login(3))
+# sistem login dengan batas percobaan di pras_phone.id
+def login(max_coba):
+    while max_coba > 0:
+        pw = input("Password: ")
+        if pw == "admin123":
+            return "Login sukses"
+        max_coba -= 1
+    return "Akun terkunci"
