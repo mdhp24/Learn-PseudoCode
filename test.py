@@ -4890,13 +4890,23 @@
 # print(deteksi_gaming(20, 0.3))
 
 # Sistem klasifikasi siswa berdasarkan nilai dan percobaan
-def klasifikasi(nilai, percobaan):
-    if nilai < 60 and percobaan > 3:
-        return "Struggling"
-    if nilai < 60 and percobaan <= 3:
-        return "Gaming the System"
-    if nilai >= 60 and nilai < 85:
-        return "Normal"
-    return "Ideal"
+# def klasifikasi(nilai, percobaan):
+#     if nilai < 60 and percobaan > 3:
+#         return "Struggling"
+#     if nilai < 60 and percobaan <= 3:
+#         return "Gaming the System"
+#     if nilai >= 60 and nilai < 85:
+#         return "Normal"
+#     return "Ideal"
 
-print(klasifikasi(55, 5))
+# print(klasifikasi(55, 5))
+
+# Sistem evaluasi jawaban ujian dengan bobot
+def evaluasi(jawaban, kunci, bobot):
+    skor = 0
+    for j, k, b in zip(jawaban, kunci, bobot):
+        if j == k:
+            skor += b
+    return skor
+
+print(evaluasi(["A","B","C"], ["A","C","C"], [10,20,30]))
