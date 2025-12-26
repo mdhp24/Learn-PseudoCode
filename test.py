@@ -4912,10 +4912,20 @@
 # print(evaluasi(["A","B","C"], ["A","C","C"], [10,20,30]))
 
 # Sistem deteksi penurunan performa siswa
-def deteksi_penurunan(nilai):
-    for i in range(len(nilai)-2):
-        if nilai[i] > nilai[i+1] > nilai[i+2]:
-            return "Performa menurun"
-    return "Stabil"
+# def deteksi_penurunan(nilai):
+#     for i in range(len(nilai)-2):
+#         if nilai[i] > nilai[i+1] > nilai[i+2]:
+#             return "Performa menurun"
+#     return "Stabil"
 
-print(deteksi_penurunan([85, 80, 70, 72]))
+# print(deteksi_penurunan([85, 80, 70, 72]))
+
+# Sistem berikan hint berdasarkan status
+def hint_system(status):
+    hints = {
+        "Array": ["Array menyimpan data sejenis", "Index dimulai dari 0"],
+        "Loop": ["Loop digunakan untuk pengulangan"]
+    }
+    return hints.get(status, [])
+
+print(hint_system("Array"))
