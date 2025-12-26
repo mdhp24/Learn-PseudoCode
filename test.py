@@ -4921,11 +4921,18 @@
 # print(deteksi_penurunan([85, 80, 70, 72]))
 
 # Sistem berikan hint berdasarkan status
-def hint_system(status):
-    hints = {
-        "Array": ["Array menyimpan data sejenis", "Index dimulai dari 0"],
-        "Loop": ["Loop digunakan untuk pengulangan"]
-    }
-    return hints.get(status, [])
+# def hint_system(status):
+#     hints = {
+#         "Array": ["Array menyimpan data sejenis", "Index dimulai dari 0"],
+#         "Loop": ["Loop digunakan untuk pengulangan"]
+#     }
+#     return hints.get(status, [])
 
-print(hint_system("Array"))
+# print(hint_system("Array"))
+
+# Sistem deteksi anomali waktu penyelesaian tugas
+def anomali(waktu):
+    rata = sum(waktu) / len(waktu)
+    return [w for w in waktu if w < rata * 0.3]
+
+print(anomali([120, 130, 15, 140]))
