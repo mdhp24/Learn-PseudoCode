@@ -4876,7 +4876,15 @@
 # print(kelompokkan([1,2,3,4,5,6]))
 
 # Sistem hitung skor jawaban ujian
-def skor(jawaban, kunci):
-    return sum(1 for j, k in zip(jawaban, kunci) if j == k)
+# def skor(jawaban, kunci):
+#     return sum(1 for j, k in zip(jawaban, kunci) if j == k)
 
-print(skor(["A","B","C"], ["A","C","C"]))
+# print(skor(["A","B","C"], ["A","C","C"]))
+
+# Sistem deteksi gaming the system
+def deteksi_gaming(waktu, benar):
+    if waktu < 30 and benar < 0.4:
+        return "Gaming the System"
+    return "Normal"
+
+print(deteksi_gaming(20, 0.3))
