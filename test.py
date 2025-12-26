@@ -4902,11 +4902,20 @@
 # print(klasifikasi(55, 5))
 
 # Sistem evaluasi jawaban ujian dengan bobot
-def evaluasi(jawaban, kunci, bobot):
-    skor = 0
-    for j, k, b in zip(jawaban, kunci, bobot):
-        if j == k:
-            skor += b
-    return skor
+# def evaluasi(jawaban, kunci, bobot):
+#     skor = 0
+#     for j, k, b in zip(jawaban, kunci, bobot):
+#         if j == k:
+#             skor += b
+#     return skor
 
-print(evaluasi(["A","B","C"], ["A","C","C"], [10,20,30]))
+# print(evaluasi(["A","B","C"], ["A","C","C"], [10,20,30]))
+
+# Sistem deteksi penurunan performa siswa
+def deteksi_penurunan(nilai):
+    for i in range(len(nilai)-2):
+        if nilai[i] > nilai[i+1] > nilai[i+2]:
+            return "Performa menurun"
+    return "Stabil"
+
+print(deteksi_penurunan([85, 80, 70, 72]))
