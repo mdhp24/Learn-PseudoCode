@@ -4882,9 +4882,21 @@
 # print(skor(["A","B","C"], ["A","C","C"]))
 
 # Sistem deteksi gaming the system
-def deteksi_gaming(waktu, benar):
-    if waktu < 30 and benar < 0.4:
-        return "Gaming the System"
-    return "Normal"
+# def deteksi_gaming(waktu, benar):
+#     if waktu < 30 and benar < 0.4:
+#         return "Gaming the System"
+#     return "Normal"
 
-print(deteksi_gaming(20, 0.3))
+# print(deteksi_gaming(20, 0.3))
+
+# Sistem klasifikasi siswa berdasarkan nilai dan percobaan
+def klasifikasi(nilai, percobaan):
+    if nilai < 60 and percobaan > 3:
+        return "Struggling"
+    if nilai < 60 and percobaan <= 3:
+        return "Gaming the System"
+    if nilai >= 60 and nilai < 85:
+        return "Normal"
+    return "Ideal"
+
+print(klasifikasi(55, 5))
