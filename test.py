@@ -4931,8 +4931,18 @@
 # print(hint_system("Array"))
 
 # Sistem deteksi anomali waktu penyelesaian tugas
-def anomali(waktu):
-    rata = sum(waktu) / len(waktu)
-    return [w for w in waktu if w < rata * 0.3]
+# def anomali(waktu):
+#     rata = sum(waktu) / len(waktu)
+#     return [w for w in waktu if w < rata * 0.3]
 
-print(anomali([120, 130, 15, 140]))
+# print(anomali([120, 130, 15, 140]))
+
+# Sistem chatbot sederhana dengan state dan performa
+def chatbot_state(state, performa):
+    if state == "QUESTION" and performa == "Low":
+        return "EXPLANATION"
+    if state == "EXPLANATION":
+        return "QUESTION"
+    return state
+
+print(chatbot_state("QUESTION", "Low"))
