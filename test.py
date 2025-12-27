@@ -4976,8 +4976,14 @@
 # print(hint_limit(4))
 
 # Sistem prediksi performa siswa berdasarkan nilai
-def prediksi_performa(nilai):
-    peluang = min(nilai / 100, 1)
-    return round(peluang, 2)
+# def prediksi_performa(nilai):
+#     peluang = min(nilai / 100, 1)
+#     return round(peluang, 2)
 
-print(prediksi_performa(78))
+# print(prediksi_performa(78))
+
+# Sistem identifikasi topik dengan performa rendah
+def gap(topik, benar):
+    return [t for t, b in zip(topik, benar) if b < 0.5]
+
+print(gap(["Array","Loop","Function"], [0.3,0.8,0.4]))
