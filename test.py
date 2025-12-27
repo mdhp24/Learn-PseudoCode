@@ -4938,11 +4938,17 @@
 # print(anomali([120, 130, 15, 140]))
 
 # Sistem chatbot sederhana dengan state dan performa
-def chatbot_state(state, performa):
-    if state == "QUESTION" and performa == "Low":
-        return "EXPLANATION"
-    if state == "EXPLANATION":
-        return "QUESTION"
-    return state
+# def chatbot_state(state, performa):
+#     if state == "QUESTION" and performa == "Low":
+#         return "EXPLANATION"
+#     if state == "EXPLANATION":
+#         return "QUESTION"
+#     return state
 
-print(chatbot_state("QUESTION", "Low"))
+# print(chatbot_state("QUESTION", "Low"))
+
+# Sistem hitung skor performa siswa
+def skor_performa(nilai, waktu, percobaan):
+    return (nilai * 0.6) + ((1 / waktu) * 20) - (percobaan * 5)
+
+print(skor_performa(70, 120, 2))
