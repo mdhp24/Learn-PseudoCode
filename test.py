@@ -4983,7 +4983,19 @@
 # print(prediksi_performa(78))
 
 # Sistem identifikasi topik dengan performa rendah
-def gap(topik, benar):
-    return [t for t, b in zip(topik, benar) if b < 0.5]
+# def gap(topik, benar):
+#     return [t for t, b in zip(topik, benar) if b < 0.5]
 
-print(gap(["Array","Loop","Function"], [0.3,0.8,0.4]))
+# print(gap(["Array","Loop","Function"], [0.3,0.8,0.4]))
+
+# Sistem routing mode pembelajaran berdasarkan performa siswa
+def router(performa):
+    routes = {
+        "Struggling": "Explanation Mode",
+        "Gaming": "Restriction Mode",
+        "Normal": "Practice Mode",
+        "Ideal": "Challenge Mode"
+    }
+    return routes.get(performa)
+
+print(router("Struggling"))
