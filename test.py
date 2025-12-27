@@ -4954,11 +4954,17 @@
 # print(skor_performa(70, 120, 2))
 
 # Sistem adaptif tingkat kesulitan soal
-def adaptif(skor):
-    if skor < 40:
-        return "Easy"
-    elif skor < 70:
-        return "Medium"
-    return "Hard"
+# def adaptif(skor):
+#     if skor < 40:
+#         return "Easy"
+#     elif skor < 70:
+#         return "Medium"
+#     return "Hard"
 
-print(adaptif(65))
+# print(adaptif(65))
+
+# Sistem deteksi siswa yang kesulitan
+def struggling(history):
+    return sum(history[-3:]) / 3 < 60
+
+print(struggling([80, 55, 50, 45]))
