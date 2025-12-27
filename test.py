@@ -4970,7 +4970,14 @@
 # print(struggling([80, 55, 50, 45]))
 
 # Sistem batasi jumlah hint yang ditampilkan
-def hint_limit(jumlah_hint):
-    return "Hint ditampilkan" if jumlah_hint < 3 else "Hint dibatasi"
+# def hint_limit(jumlah_hint):
+#     return "Hint ditampilkan" if jumlah_hint < 3 else "Hint dibatasi"
 
-print(hint_limit(4))
+# print(hint_limit(4))
+
+# Sistem prediksi performa siswa berdasarkan nilai
+def prediksi_performa(nilai):
+    peluang = min(nilai / 100, 1)
+    return round(peluang, 2)
+
+print(prediksi_performa(78))
