@@ -4964,7 +4964,13 @@
 # print(adaptif(65))
 
 # Sistem deteksi siswa yang kesulitan
-def struggling(history):
-    return sum(history[-3:]) / 3 < 60
+# def struggling(history):
+#     return sum(history[-3:]) / 3 < 60
 
-print(struggling([80, 55, 50, 45]))
+# print(struggling([80, 55, 50, 45]))
+
+# Sistem batasi jumlah hint yang ditampilkan
+def hint_limit(jumlah_hint):
+    return "Hint ditampilkan" if jumlah_hint < 3 else "Hint dibatasi"
+
+print(hint_limit(4))
