@@ -4948,7 +4948,17 @@
 # print(chatbot_state("QUESTION", "Low"))
 
 # Sistem hitung skor performa siswa
-def skor_performa(nilai, waktu, percobaan):
-    return (nilai * 0.6) + ((1 / waktu) * 20) - (percobaan * 5)
+# def skor_performa(nilai, waktu, percobaan):
+#     return (nilai * 0.6) + ((1 / waktu) * 20) - (percobaan * 5)
 
-print(skor_performa(70, 120, 2))
+# print(skor_performa(70, 120, 2))
+
+# Sistem adaptif tingkat kesulitan soal
+def adaptif(skor):
+    if skor < 40:
+        return "Easy"
+    elif skor < 70:
+        return "Medium"
+    return "Hard"
+
+print(adaptif(65))
