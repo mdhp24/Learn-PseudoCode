@@ -5049,3 +5049,17 @@ def suggest_mode(classification):
         "Ideal": "Challenge Mode"
     }
     return modes.get(classification)
+
+def chatbot_response(status, materi):
+    konsep = {
+        "Array": [
+            "Array adalah struktur data linear",
+            "Menyimpan data bertipe sama",
+            "Index dimulai dari 0"
+        ]
+    }
+    if status in ["Struggling", "Gaming the System"]:
+        return konsep.get(materi)
+    return "Silakan lanjutkan pengerjaan soal"
+
+print(chatbot_response("Struggling", "Array"))
