@@ -5071,3 +5071,13 @@ def hint_controller(jumlah_hint, status):
     return "Hint ditunda"
 
 print(hint_controller(1, "Struggling"))
+
+
+def learning_state(state, status):
+    if state == "QUESTION" and status in ["Struggling", "Gaming the System"]:
+        return "EXPLANATION"
+    if state == "EXPLANATION":
+        return "QUESTION"
+    return state
+
+print(learning_state("QUESTION", "Struggling"))
