@@ -5063,3 +5063,11 @@ def chatbot_response(status, materi):
     return "Silakan lanjutkan pengerjaan soal"
 
 print(chatbot_response("Struggling", "Array"))
+
+
+def hint_controller(jumlah_hint, status):
+    if status in ["Struggling", "Gaming the System"] and jumlah_hint < 2:
+        return "Hint diizinkan"
+    return "Hint ditunda"
+
+print(hint_controller(1, "Struggling"))
