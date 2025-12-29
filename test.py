@@ -5019,13 +5019,13 @@ def performance_index(event):
 print(performance_index(event))
 
 
-# def classify(index, event):
-#     if index < 40 and event["attempts"] > 3:
-#         return "Struggling"
-#     if index < 40 and event["time"] < 30:
-#         return "Gaming the System"
-#     if index < 70:
-#         return "Normal"
-#     return "Ideal"
+def classify(index, event):
+    if index < 40 and event["attempts"] > 3:
+        return "Struggling"
+    if index < 40 and event["time"] < 30:
+        return "Gaming the System"
+    if index < 70:
+        return "Normal"
+    return "Ideal"
 
-# print(classify(performance_index(event), event))
+print(classify(performance_index(event), event))
