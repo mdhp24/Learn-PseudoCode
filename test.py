@@ -5041,3 +5041,11 @@ def classify(index, event):
     return "Ideal"
 
 print(classify(performance_index(event), event))
+def suggest_mode(classification):
+    modes = {
+        "Struggling": "Explanation Mode",
+        "Gaming the System": "Restriction Mode",
+        "Normal": "Practice Mode",
+        "Ideal": "Challenge Mode"
+    }
+    return modes.get(classification)
