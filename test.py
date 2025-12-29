@@ -4989,13 +4989,25 @@
 # print(gap(["Array","Loop","Function"], [0.3,0.8,0.4]))
 
 # Sistem routing mode pembelajaran berdasarkan performa siswa
-def router(performa):
-    routes = {
-        "Struggling": "Explanation Mode",
-        "Gaming": "Restriction Mode",
-        "Normal": "Practice Mode",
-        "Ideal": "Challenge Mode"
-    }
-    return routes.get(performa)
+# def router(performa):
+#     routes = {
+#         "Struggling": "Explanation Mode",
+#         "Gaming": "Restriction Mode",
+#         "Normal": "Practice Mode",
+#         "Ideal": "Challenge Mode"
+#     }
+#     return routes.get(performa)
 
-print(router("Struggling"))
+# print(router("Struggling"))
+
+
+# Sistem kumpulkan data event pembelajaran
+def collect_event(waktu, benar, percobaan):
+    return {
+        "time": waktu,
+        "accuracy": benar,
+        "attempts": percobaan
+    }
+
+event = collect_event(120, 0.6, 3)
+print(event)
