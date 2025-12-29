@@ -5002,12 +5002,18 @@
 
 
 # Sistem kumpulkan data event pembelajaran
-def collect_event(waktu, benar, percobaan):
-    return {
-        "time": waktu,
-        "accuracy": benar,
-        "attempts": percobaan
-    }
+# def collect_event(waktu, benar, percobaan):
+#     return {
+#         "time": waktu,
+#         "accuracy": benar,
+#         "attempts": percobaan
+#     }
 
-event = collect_event(120, 0.6, 3)
-print(event)
+# event = collect_event(120, 0.6, 3)
+# print(event)
+
+# Sistem hitung performance index dari event pembelajaran
+def performance_index(event):
+    return (event["accuracy"] * 100) - (event["time"] / 10) - (event["attempts"] * 5)
+
+print(performance_index(event=not None))
