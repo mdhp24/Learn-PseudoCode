@@ -5110,8 +5110,22 @@
 # print(mastery_tracker([1, 0, 1, 1, 0]))
 
 
-def mastery_tracker(correct_history):
-    mastery = sum(correct_history) / len(correct_history)
-    return round(mastery, 2)
+# def mastery_tracker(correct_history):
+#     mastery = sum(correct_history) / len(correct_history)
+#     return round(mastery, 2)
 
-print(mastery_tracker([1, 0, 1, 1, 0]))
+# print(mastery_tracker([1, 0, 1, 1, 0]))
+
+
+def select_material(status, topic):
+    materials = {
+        "Array": {
+            "basic": "Pengertian array dan index",
+            "example": "Contoh array satu dimensi"
+        }
+    }
+    if status in ["Struggling", "Gaming the System"]:
+        return materials[topic]["basic"]
+    return materials[topic]["example"]
+
+print(select_material("Struggling", "Array"))
