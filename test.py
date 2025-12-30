@@ -5002,82 +5002,92 @@
 
 
 # Sistem kumpulkan data event pembelajaran
-def collect_event(waktu, benar, percobaan):
-    return {
-        "time": waktu,
-        "accuracy": benar,
-        "attempts": percobaan
-    }
+# def collect_event(waktu, benar, percobaan):
+#     return {
+#         "time": waktu,
+#         "accuracy": benar,
+#         "attempts": percobaan
+#     }
 
-event = collect_event(120, 0.6, 3)
-print(event)
+# event = collect_event(120, 0.6, 3)
+# print(event)
 
-# Sistem hitung performance index dari event pembelajaran
-def performance_index(event):
-    return (event["accuracy"] * 100) - (event["time"] / 10) - (event["attempts"] * 5)
+# # Sistem hitung performance index dari event pembelajaran
+# def performance_index(event):
+#     return (event["accuracy"] * 100) - (event["time"] / 10) - (event["attempts"] * 5)
 
-print(performance_index(event))
-
-
-def classify(index, event):
-    if index < 40 and event["attempts"] > 3:
-        return "Struggling"
-    if index < 40 and event["time"] < 30:
-        return "Gaming the System"
-    if index < 70:
-        return "Normal"
-    return "Ideal"
-
-print(classify(performance_index(event), event))
+# print(performance_index(event))
 
 
-def classify(index, event):
-    if index < 40 and event["attempts"] > 3:
-        return "Struggling"
-    if index < 40 and event["time"] < 30:
-        return "Gaming the System"
-    if index < 70:
-        return "Normal"
-    return "Ideal"
+# def classify(index, event):
+#     if index < 40 and event["attempts"] > 3:
+#         return "Struggling"
+#     if index < 40 and event["time"] < 30:
+#         return "Gaming the System"
+#     if index < 70:
+#         return "Normal"
+#     return "Ideal"
 
-print(classify(performance_index(event), event))
-def suggest_mode(classification):
-    modes = {
-        "Struggling": "Explanation Mode",
-        "Gaming the System": "Restriction Mode",
-        "Normal": "Practice Mode",
-        "Ideal": "Challenge Mode"
-    }
-    return modes.get(classification)
-
-def chatbot_response(status, materi):
-    konsep = {
-        "Array": [
-            "Array adalah struktur data linear",
-            "Menyimpan data bertipe sama",
-            "Index dimulai dari 0"
-        ]
-    }
-    if status in ["Struggling", "Gaming the System"]:
-        return konsep.get(materi)
-    return "Silakan lanjutkan pengerjaan soal"
-
-print(chatbot_response("Struggling", "Array"))
+# print(classify(performance_index(event), event))
 
 
-def hint_controller(jumlah_hint, status):
-    if status in ["Struggling", "Gaming the System"] and jumlah_hint < 2:
-        return "Hint diizinkan"
-    return "Hint ditunda"
+# def classify(index, event):
+#     if index < 40 and event["attempts"] > 3:
+#         return "Struggling"
+#     if index < 40 and event["time"] < 30:
+#         return "Gaming the System"
+#     if index < 70:
+#         return "Normal"
+#     return "Ideal"
 
-print(hint_controller(1, "Struggling"))
+# print(classify(performance_index(event), event))
+# def suggest_mode(classification):
+#     modes = {
+#         "Struggling": "Explanation Mode",
+#         "Gaming the System": "Restriction Mode",
+#         "Normal": "Practice Mode",
+#         "Ideal": "Challenge Mode"
+#     }
+#     return modes.get(classification)
+
+# def chatbot_response(status, materi):
+#     konsep = {
+#         "Array": [
+#             "Array adalah struktur data linear",
+#             "Menyimpan data bertipe sama",
+#             "Index dimulai dari 0"
+#         ]
+#     }
+#     if status in ["Struggling", "Gaming the System"]:
+#         return konsep.get(materi)
+#     return "Silakan lanjutkan pengerjaan soal"
+
+# print(chatbot_response("Struggling", "Array"))
 
 
-def learning_state(state, status):
-    if state == "QUESTION" and status in ["Struggling", "Gaming the System"]:
-        return "EXPLANATION"
-    if state == "EXPLANATION":
-        return "QUESTION"
-    return state
+# def hint_controller(jumlah_hint, status):
+#     if status in ["Struggling", "Gaming the System"] and jumlah_hint < 2:
+#         return "Hint diizinkan"
+#     return "Hint ditunda"
 
-print(learning_state("QUESTION", "Struggling"))
+# print(hint_controller(1, "Struggling"))
+
+
+# def learning_state(state, status):
+#     if state == "QUESTION" and status in ["Struggling", "Gaming the System"]:
+#         return "EXPLANATION"
+#     if state == "EXPLANATION":
+#         return "QUESTION"
+#     return state
+
+# print(learning_state("QUESTION", "Struggling"))
+
+
+def estimate_difficulty(avg_time, error_rate):
+    if avg_time > 180 and error_rate > 0.6:
+        return "Hard"
+    elif avg_time > 90:
+        return "Medium"
+    return "Easy"
+
+print(estimate_difficulty(200, 0.7))
