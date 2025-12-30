@@ -5103,6 +5103,13 @@
 # print(effort_analysis(20, 5))
 
 
+# def mastery_tracker(correct_history):
+#     mastery = sum(correct_history) / len(correct_history)
+#     return round(mastery, 2)
+
+# print(mastery_tracker([1, 0, 1, 1, 0]))
+
+
 def mastery_tracker(correct_history):
     mastery = sum(correct_history) / len(correct_history)
     return round(mastery, 2)
