@@ -5131,9 +5131,19 @@
 # print(select_material("Struggling", "Array"))
 
 # system keputusan intervensi berdasarkan status dan mastery
-def intervention_decision(status, mastery):
-    if status in ["Struggling", "Gaming the System"] and mastery < 0.6:
-        return "Intervensi diperlukan"
-    return "Tidak perlu intervensi"
+# def intervention_decision(status, mastery):
+#     if status in ["Struggling", "Gaming the System"] and mastery < 0.6:
+#         return "Intervensi diperlukan"
+#     return "Tidak perlu intervensi"
 
-print(intervention_decision("Struggling", 0.5))
+# print(intervention_decision("Struggling", 0.5))
+
+
+def generate_report(name, mastery, status):
+    return {
+        "student": name,
+        "mastery_level": mastery,
+        "performance_status": status
+    }
+
+print(generate_report("Mahasiswa A", 0.58, "Struggling"))
