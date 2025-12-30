@@ -5083,11 +5083,21 @@
 # print(learning_state("QUESTION", "Struggling"))
 
 
-def estimate_difficulty(avg_time, error_rate):
-    if avg_time > 180 and error_rate > 0.6:
-        return "Hard"
-    elif avg_time > 90:
-        return "Medium"
-    return "Easy"
+# def estimate_difficulty(avg_time, error_rate):
+#     if avg_time > 180 and error_rate > 0.6:
+#         return "Hard"
+#     elif avg_time > 90:
+#         return "Medium"
+#     return "Easy"
 
-print(estimate_difficulty(200, 0.7))
+# print(estimate_difficulty(200, 0.7))
+
+
+def effort_analysis(time_spent, attempts):
+    if time_spent > 180 and attempts > 4:
+        return "High Effort"
+    if time_spent < 30 and attempts > 3:
+        return "Low Effort (Gaming)"
+    return "Normal Effort"
+
+print(effort_analysis(20, 5))
