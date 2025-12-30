@@ -5093,11 +5093,18 @@
 # print(estimate_difficulty(200, 0.7))
 
 
-def effort_analysis(time_spent, attempts):
-    if time_spent > 180 and attempts > 4:
-        return "High Effort"
-    if time_spent < 30 and attempts > 3:
-        return "Low Effort (Gaming)"
-    return "Normal Effort"
+# def effort_analysis(time_spent, attempts):
+#     if time_spent > 180 and attempts > 4:
+#         return "High Effort"
+#     if time_spent < 30 and attempts > 3:
+#         return "Low Effort (Gaming)"
+#     return "Normal Effort"
 
-print(effort_analysis(20, 5))
+# print(effort_analysis(20, 5))
+
+
+def mastery_tracker(correct_history):
+    mastery = sum(correct_history) / len(correct_history)
+    return round(mastery, 2)
+
+print(mastery_tracker([1, 0, 1, 1, 0]))
