@@ -5117,15 +5117,23 @@
 # print(mastery_tracker([1, 0, 1, 1, 0]))
 
 
-def select_material(status, topic):
-    materials = {
-        "Array": {
-            "basic": "Pengertian array dan index",
-            "example": "Contoh array satu dimensi"
-        }
-    }
-    if status in ["Struggling", "Gaming the System"]:
-        return materials[topic]["basic"]
-    return materials[topic]["example"]
+# def select_material(status, topic):
+#     materials = {
+#         "Array": {
+#             "basic": "Pengertian array dan index",
+#             "example": "Contoh array satu dimensi"
+#         }
+#     }
+#     if status in ["Struggling", "Gaming the System"]:
+#         return materials[topic]["basic"]
+#     return materials[topic]["example"]
 
-print(select_material("Struggling", "Array"))
+# print(select_material("Struggling", "Array"))
+
+# system keputusan intervensi berdasarkan status dan mastery
+def intervention_decision(status, mastery):
+    if status in ["Struggling", "Gaming the System"] and mastery < 0.6:
+        return "Intervensi diperlukan"
+    return "Tidak perlu intervensi"
+
+print(intervention_decision("Struggling", 0.5))
