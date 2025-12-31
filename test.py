@@ -5185,3 +5185,8 @@ def intervention_type(status, load):
     return "No Intervention"
 
 print(intervention_type("Struggling", 6))
+
+def concept_coverage(concepts):
+    return [c for c, score in concepts.items() if score < 0.6]
+
+print(concept_coverage({"Array":0.5, "Loop":0.8, "Function":0.4}))
