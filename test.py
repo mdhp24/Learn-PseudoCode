@@ -5139,11 +5139,25 @@
 # print(intervention_decision("Struggling", 0.5))
 
 
-def generate_report(name, mastery, status):
+# def generate_report(name, mastery, status):
+#     return {
+#         "student": name,
+#         "mastery_level": mastery,
+#         "performance_status": status
+#     }
+
+# print(generate_report("Mahasiswa A", 0.58, "Struggling"))
+
+# Sistem ekstrak fitur dari log pembelajaran
+def extract_features(log):
     return {
-        "student": name,
-        "mastery_level": mastery,
-        "performance_status": status
+        "avg_time": sum(l["time"] for l in log) / len(log),
+        "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
+        "avg_attempts": sum(l["attempts"] for l in log) / len(log)
     }
 
-print(generate_report("Mahasiswa A", 0.58, "Struggling"))
+logs = [
+    {"time":120, "accuracy":0.6, "attempts":3},
+    {"time":200, "accuracy":0.4, "attempts":4}
+]
+print(extract_features(logs))
