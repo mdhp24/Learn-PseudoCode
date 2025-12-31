@@ -5172,3 +5172,9 @@ def infer_performance(features):
     return "Normal"
 
 print(infer_performance(extract_features(logs)))
+def cognitive_load(time_spent, attempts):
+    return round((time_spent / 60) + (attempts * 0.5), 2)
+
+print(cognitive_load(180, 4))
+
+
