@@ -5200,3 +5200,10 @@ def feedback(status, concept):
     return "Lanjutkan latihan berikutnya"
 
 print(feedback("Struggling", "Array"))
+
+def session_outcome(before, after):
+    if after > before:
+        return "Intervensi efektif"
+    return "Perlu penyesuaian"
+
+print(session_outcome(0.55, 0.7))
