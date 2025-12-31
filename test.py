@@ -5190,3 +5190,13 @@ def concept_coverage(concepts):
     return [c for c, score in concepts.items() if score < 0.6]
 
 print(concept_coverage({"Array":0.5, "Loop":0.8, "Function":0.4}))
+
+
+def feedback(status, concept):
+    if status == "Struggling":
+        return f"Perhatikan kembali konsep dasar {concept}"
+    if status == "Gaming the System":
+        return "Coba kerjakan dengan lebih teliti"
+    return "Lanjutkan latihan berikutnya"
+
+print(feedback("Struggling", "Array"))
