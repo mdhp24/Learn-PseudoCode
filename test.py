@@ -5177,4 +5177,11 @@ def cognitive_load(time_spent, attempts):
 
 print(cognitive_load(180, 4))
 
+def intervention_type(status, load):
+    if status == "Struggling" and load > 5:
+        return "Concept Reinforcement"
+    if status == "Gaming the System":
+        return "Motivational Feedback"
+    return "No Intervention"
 
+print(intervention_type("Struggling", 6))
