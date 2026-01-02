@@ -5216,3 +5216,13 @@ def consistency(scores):
     return "Konsisten" if variance < 0.2 else "Tidak konsisten"
 
 print(consistency([0.7, 0.75, 0.72]))
+
+def time_pattern(times):
+    avg = sum(times) / len(times)
+    if avg < 40:
+        return "Terlalu cepat (potensi gaming)"
+    if avg > 180:
+        return "Terlalu lama (potensi struggling)"
+    return "Normal"
+
+print(time_pattern([20, 25, 30]))
