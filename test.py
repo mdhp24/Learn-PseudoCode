@@ -5255,3 +5255,8 @@ def content_depth(status):
     }.get(status)
 
 print(content_depth("Gaming the System"))
+
+def cooldown(last_intervention, current_time):
+    return (current_time - last_intervention) > 300
+
+print(cooldown(1000, 1400))
