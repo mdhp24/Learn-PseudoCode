@@ -5226,3 +5226,12 @@ def time_pattern(times):
     return "Normal"
 
 print(time_pattern([20, 25, 30]))
+
+
+def adaptive_threshold(class_avg):
+    return {
+        "low": class_avg * 0.8,
+        "high": class_avg * 1.2
+    }
+
+print(adaptive_threshold(70))
