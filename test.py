@@ -5260,3 +5260,12 @@ def cooldown(last_intervention, current_time):
     return (current_time - last_intervention) > 300
 
 print(cooldown(1000, 1400))
+
+def effectiveness(before, after):
+    improvement = after - before
+    return {
+        "improvement": round(improvement, 2),
+        "effective": improvement > 0.1
+    }
+
+print(effectiveness(0.55, 0.7))
