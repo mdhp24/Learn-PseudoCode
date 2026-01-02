@@ -5245,3 +5245,13 @@ def confidence_score(features):
     return score / 2
 
 print(confidence_score({"error_rate":0.7, "avg_time":160}))
+
+def content_depth(status):
+    return {
+        "Struggling": "Basic Concept",
+        "Gaming the System": "Concept Reminder",
+        "Normal": "Worked Example",
+        "Ideal": "Challenge Problem"
+    }.get(status)
+
+print(content_depth("Gaming the System"))
