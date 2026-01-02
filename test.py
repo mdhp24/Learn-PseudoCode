@@ -5235,3 +5235,13 @@ def adaptive_threshold(class_avg):
     }
 
 print(adaptive_threshold(70))
+
+def confidence_score(features):
+    score = 0
+    if features["error_rate"] > 0.6:
+        score += 1
+    if features["avg_time"] > 150 or features["avg_time"] < 40:
+        score += 1
+    return score / 2
+
+print(confidence_score({"error_rate":0.7, "avg_time":160}))
