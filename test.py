@@ -5149,61 +5149,70 @@
 # print(generate_report("Mahasiswa A", 0.58, "Struggling"))
 
 # Sistem ekstrak fitur dari log pembelajaran
-def extract_features(log):
-    return {
-        "avg_time": sum(l["time"] for l in log) / len(log),
-        "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
-        "avg_attempts": sum(l["attempts"] for l in log) / len(log)
-    }
+# def extract_features(log):
+#     return {
+#         "avg_time": sum(l["time"] for l in log) / len(log),
+#         "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
+#         "avg_attempts": sum(l["attempts"] for l in log) / len(log)
+#     }
 
-logs = [
-    {"time":120, "accuracy":0.6, "attempts":3},
-    {"time":200, "accuracy":0.4, "attempts":4}
-]
-print(extract_features(logs))
+# logs = [
+#     {"time":120, "accuracy":0.6, "attempts":3},
+#     {"time":200, "accuracy":0.4, "attempts":4}
+# ]
+# print(extract_features(logs))
 
-def infer_performance(features):
-    if features["error_rate"] > 0.6 and features["avg_time"] > 150:
-        return "Struggling"
-    if features["error_rate"] > 0.6 and features["avg_time"] < 40:
-        return "Gaming the System"
-    if features["error_rate"] < 0.3:
-        return "Ideal"
-    return "Normal"
+# def infer_performance(features):
+#     if features["error_rate"] > 0.6 and features["avg_time"] > 150:
+#         return "Struggling"
+#     if features["error_rate"] > 0.6 and features["avg_time"] < 40:
+#         return "Gaming the System"
+#     if features["error_rate"] < 0.3:
+#         return "Ideal"
+#     return "Normal"
 
-print(infer_performance(extract_features(logs)))
-def cognitive_load(time_spent, attempts):
-    return round((time_spent / 60) + (attempts * 0.5), 2)
+# print(infer_performance(extract_features(logs)))
+# def cognitive_load(time_spent, attempts):
+#     return round((time_spent / 60) + (attempts * 0.5), 2)
 
-print(cognitive_load(180, 4))
+# print(cognitive_load(180, 4))
 
-def intervention_type(status, load):
-    if status == "Struggling" and load > 5:
-        return "Concept Reinforcement"
-    if status == "Gaming the System":
-        return "Motivational Feedback"
-    return "No Intervention"
+# def intervention_type(status, load):
+#     if status == "Struggling" and load > 5:
+#         return "Concept Reinforcement"
+#     if status == "Gaming the System":
+#         return "Motivational Feedback"
+#     return "No Intervention"
 
-print(intervention_type("Struggling", 6))
+# print(intervention_type("Struggling", 6))
 
-def concept_coverage(concepts):
-    return [c for c, score in concepts.items() if score < 0.6]
+# def concept_coverage(concepts):
+#     return [c for c, score in concepts.items() if score < 0.6]
 
-print(concept_coverage({"Array":0.5, "Loop":0.8, "Function":0.4}))
+# print(concept_coverage({"Array":0.5, "Loop":0.8, "Function":0.4}))
 
 
-def feedback(status, concept):
-    if status == "Struggling":
-        return f"Perhatikan kembali konsep dasar {concept}"
-    if status == "Gaming the System":
-        return "Coba kerjakan dengan lebih teliti"
-    return "Lanjutkan latihan berikutnya"
+# def feedback(status, concept):
+#     if status == "Struggling":
+#         return f"Perhatikan kembali konsep dasar {concept}"
+#     if status == "Gaming the System":
+#         return "Coba kerjakan dengan lebih teliti"
+#     return "Lanjutkan latihan berikutnya"
 
-print(feedback("Struggling", "Array"))
+# print(feedback("Struggling", "Array"))
 
-def session_outcome(before, after):
-    if after > before:
-        return "Intervensi efektif"
-    return "Perlu penyesuaian"
+# def session_outcome(before, after):
+#     if after > before:
+#         return "Intervensi efektif"
+#     return "Perlu penyesuaian"
 
-print(session_outcome(0.55, 0.7))
+# print(session_outcome(0.55, 0.7))
+
+# Sistem cek konsistensi skor pembelajaran
+def consistency(scores):
+    if len(scores) < 3:
+        return "Data tidak cukup"
+    variance = max(scores) - min(scores)
+    return "Konsisten" if variance < 0.2 else "Tidak konsisten"
+
+print(consistency([0.7, 0.75, 0.72]))
