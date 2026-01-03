@@ -5279,8 +5279,17 @@
 
 # print(voting(["A","B","A","C","A","B"]))
 
+# Sistem validasi username
+# def valid_username(username):
+#     return username.isalnum() and 5 <= len(username) <= 12
 
-def valid_username(username):
-    return username.isalnum() and 5 <= len(username) <= 12
+# print(valid_username("user123"))
 
-print(valid_username("user123"))
+# Sistem hitung median dari daftar angka
+def median(data):
+    data.sort()
+    n = len(data)
+    mid = n // 2
+    return data[mid] if n % 2 != 0 else (data[mid-1] + data[mid]) / 2
+
+print(median([7, 3, 5, 1]))
