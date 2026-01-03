@@ -5286,10 +5286,19 @@
 # print(valid_username("user123"))
 
 # Sistem hitung median dari daftar angka
-def median(data):
-    data.sort()
-    n = len(data)
-    mid = n // 2
-    return data[mid] if n % 2 != 0 else (data[mid-1] + data[mid]) / 2
+# def median(data):
+#     data.sort()
+#     n = len(data)
+#     mid = n // 2
+#     return data[mid] if n % 2 != 0 else (data[mid-1] + data[mid]) / 2
 
-print(median([7, 3, 5, 1]))
+# print(median([7, 3, 5, 1]))
+
+# Sistem transfer saldo antar akun
+def transfer(saldo_pengirim, saldo_penerima, jumlah):
+    if saldo_pengirim >= jumlah:
+        saldo_pengirim -= jumlah
+        saldo_penerima += jumlah
+    return saldo_pengirim, saldo_penerima
+
+print(transfer(100000, 50000, 30000))
