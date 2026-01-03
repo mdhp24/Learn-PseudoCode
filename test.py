@@ -5271,10 +5271,16 @@
 # print(effectiveness(0.55, 0.7))
 
 # Sistem voting sederhana
-def voting(data):
-    hasil = {}
-    for nama in data:
-        hasil[nama] = hasil.get(nama, 0) + 1
-    return max(hasil, key=hasil.get)
+# def voting(data):
+#     hasil = {}
+#     for nama in data:
+#         hasil[nama] = hasil.get(nama, 0) + 1
+#     return max(hasil, key=hasil.get)
 
-print(voting(["A","B","A","C","A","B"]))
+# print(voting(["A","B","A","C","A","B"]))
+
+
+def valid_username(username):
+    return username.isalnum() and 5 <= len(username) <= 12
+
+print(valid_username("user123"))
