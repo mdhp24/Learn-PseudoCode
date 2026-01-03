@@ -5310,10 +5310,20 @@
 # print(cari_posisi("programming", "g"))
 
 # Sistem konversi detik ke format jam:menit:detik
-def konversi_waktu(detik):
-    jam = detik // 3600
-    menit = (detik % 3600) // 60
-    detik = detik % 60
-    return f"{jam}:{menit}:{detik}"
+# def konversi_waktu(detik):
+#     jam = detik // 3600
+#     menit = (detik % 3600) // 60
+#     detik = detik % 60
+#     return f"{jam}:{menit}:{detik}"
 
-print(konversi_waktu(3661))
+# print(konversi_waktu(3661))
+
+# Sistem hitung skor jawaban ujian
+def hitung_skor(jawaban, kunci):
+    skor = 0
+    for j, k in zip(jawaban, kunci):
+        if j == k:
+            skor += 1
+    return skor
+
+print(hitung_skor(["A","B","C","D"], ["A","C","C","D"]))
