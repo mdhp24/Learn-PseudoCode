@@ -5209,63 +5209,72 @@
 # print(session_outcome(0.55, 0.7))
 
 # Sistem cek konsistensi skor pembelajaran
-def consistency(scores):
-    if len(scores) < 3:
-        return "Data tidak cukup"
-    variance = max(scores) - min(scores)
-    return "Konsisten" if variance < 0.2 else "Tidak konsisten"
+# def consistency(scores):
+#     if len(scores) < 3:
+#         return "Data tidak cukup"
+#     variance = max(scores) - min(scores)
+#     return "Konsisten" if variance < 0.2 else "Tidak konsisten"
 
-print(consistency([0.7, 0.75, 0.72]))
+# print(consistency([0.7, 0.75, 0.72]))
 
-def time_pattern(times):
-    avg = sum(times) / len(times)
-    if avg < 40:
-        return "Terlalu cepat (potensi gaming)"
-    if avg > 180:
-        return "Terlalu lama (potensi struggling)"
-    return "Normal"
+# def time_pattern(times):
+#     avg = sum(times) / len(times)
+#     if avg < 40:
+#         return "Terlalu cepat (potensi gaming)"
+#     if avg > 180:
+#         return "Terlalu lama (potensi struggling)"
+#     return "Normal"
 
-print(time_pattern([20, 25, 30]))
+# print(time_pattern([20, 25, 30]))
 
 
-def adaptive_threshold(class_avg):
-    return {
-        "low": class_avg * 0.8,
-        "high": class_avg * 1.2
-    }
+# def adaptive_threshold(class_avg):
+#     return {
+#         "low": class_avg * 0.8,
+#         "high": class_avg * 1.2
+#     }
 
-print(adaptive_threshold(70))
+# print(adaptive_threshold(70))
 
-def confidence_score(features):
-    score = 0
-    if features["error_rate"] > 0.6:
-        score += 1
-    if features["avg_time"] > 150 or features["avg_time"] < 40:
-        score += 1
-    return score / 2
+# def confidence_score(features):
+#     score = 0
+#     if features["error_rate"] > 0.6:
+#         score += 1
+#     if features["avg_time"] > 150 or features["avg_time"] < 40:
+#         score += 1
+#     return score / 2
 
-print(confidence_score({"error_rate":0.7, "avg_time":160}))
+# print(confidence_score({"error_rate":0.7, "avg_time":160}))
 
-def content_depth(status):
-    return {
-        "Struggling": "Basic Concept",
-        "Gaming the System": "Concept Reminder",
-        "Normal": "Worked Example",
-        "Ideal": "Challenge Problem"
-    }.get(status)
+# def content_depth(status):
+#     return {
+#         "Struggling": "Basic Concept",
+#         "Gaming the System": "Concept Reminder",
+#         "Normal": "Worked Example",
+#         "Ideal": "Challenge Problem"
+#     }.get(status)
 
-print(content_depth("Gaming the System"))
+# print(content_depth("Gaming the System"))
 
-def cooldown(last_intervention, current_time):
-    return (current_time - last_intervention) > 300
+# def cooldown(last_intervention, current_time):
+#     return (current_time - last_intervention) > 300
 
-print(cooldown(1000, 1400))
+# print(cooldown(1000, 1400))
 
-def effectiveness(before, after):
-    improvement = after - before
-    return {
-        "improvement": round(improvement, 2),
-        "effective": improvement > 0.1
-    }
+# def effectiveness(before, after):
+#     improvement = after - before
+#     return {
+#         "improvement": round(improvement, 2),
+#         "effective": improvement > 0.1
+#     }
 
-print(effectiveness(0.55, 0.7))
+# print(effectiveness(0.55, 0.7))
+
+# Sistem voting sederhana
+def voting(data):
+    hasil = {}
+    for nama in data:
+        hasil[nama] = hasil.get(nama, 0) + 1
+    return max(hasil, key=hasil.get)
+
+print(voting(["A","B","A","C","A","B"]))
