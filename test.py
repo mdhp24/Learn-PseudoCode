@@ -5304,7 +5304,16 @@
 # print(transfer(100000, 50000, 30000))
 
 # Sistem cari posisi semua kemunculan huruf dalam teks
-def cari_posisi(teks, huruf):
-    return [i for i, c in enumerate(teks) if c == huruf]
+# def cari_posisi(teks, huruf):
+#     return [i for i, c in enumerate(teks) if c == huruf]
 
-print(cari_posisi("programming", "g"))
+# print(cari_posisi("programming", "g"))
+
+# Sistem konversi detik ke format jam:menit:detik
+def konversi_waktu(detik):
+    jam = detik // 3600
+    menit = (detik % 3600) // 60
+    detik = detik % 60
+    return f"{jam}:{menit}:{detik}"
+
+print(konversi_waktu(3661))
