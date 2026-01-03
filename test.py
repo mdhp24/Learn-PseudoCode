@@ -5295,10 +5295,16 @@
 # print(median([7, 3, 5, 1]))
 
 # Sistem transfer saldo antar akun
-def transfer(saldo_pengirim, saldo_penerima, jumlah):
-    if saldo_pengirim >= jumlah:
-        saldo_pengirim -= jumlah
-        saldo_penerima += jumlah
-    return saldo_pengirim, saldo_penerima
+# def transfer(saldo_pengirim, saldo_penerima, jumlah):
+#     if saldo_pengirim >= jumlah:
+#         saldo_pengirim -= jumlah
+#         saldo_penerima += jumlah
+#     return saldo_pengirim, saldo_penerima
 
-print(transfer(100000, 50000, 30000))
+# print(transfer(100000, 50000, 30000))
+
+# Sistem cari posisi semua kemunculan huruf dalam teks
+def cari_posisi(teks, huruf):
+    return [i for i, c in enumerate(teks) if c == huruf]
+
+print(cari_posisi("programming", "g"))
