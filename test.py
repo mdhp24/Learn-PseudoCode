@@ -5330,12 +5330,27 @@
 
 
 # Sistem validasi bukti transfer pembayaran di pras_phone.id
-def validasi_transfer(nama_pengirim, jumlah_transfer):
-    nama_akun = "Dicky"
-    saldo_akun = 7000000
-    if nama_pengirim != nama_akun:
-        return "Nama pengirim tidak sesuai"
-    if jumlah_transfer > saldo_akun:
-        return "Saldo tidak cukup"
-    return "Transfer valid"
-print(validasi_transfer("Dicky", 5000000))
+# def validasi_transfer(nama_pengirim, jumlah_transfer):
+#     nama_akun = "Dicky"
+#     saldo_akun = 7000000
+#     if nama_pengirim != nama_akun:
+#         return "Nama pengirim tidak sesuai"
+#     if jumlah_transfer > saldo_akun:
+#         return "Saldo tidak cukup"
+#     return "Transfer valid"
+# print(validasi_transfer("Dicky", 5000000))
+
+
+# sistem 
+def extract_features(log):
+    return {
+        "avg_time": sum(l["time"] for l in log) / len(log),
+        "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
+        "avg_attempts": sum(l["attempts"] for l in log) / len(log)
+    }
+
+logs = [
+    {"time":120, "accuracy":0.6, "attempts":3},
+    {"time":200, "accuracy":0.4, "attempts":4}
+]
+print(extract_features(logs))
