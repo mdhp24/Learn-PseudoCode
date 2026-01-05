@@ -5376,7 +5376,13 @@
 # print(cognitive_load(180, 4))
 
 
-def ada_duplikat(data):
-    return len(data) != len(set(data))
+# def ada_duplikat(data):
+#     return len(data) != len(set(data))
 
-print(ada_duplikat([1,2,3,4,2]))
+# print(ada_duplikat([1,2,3,4,2]))
+
+
+def total_jam(data):
+    return sum(jam for jam in data if jam > 0)
+
+print(total_jam([2, 3, -1, 4]))
