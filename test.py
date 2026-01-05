@@ -5342,35 +5342,41 @@
 
 
 # sistem 
-def extract_features(log):
-    return {
-        "avg_time": sum(l["time"] for l in log) / len(log),
-        "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
-        "avg_attempts": sum(l["attempts"] for l in log) / len(log)
-    }
+# def extract_features(log):
+#     return {
+#         "avg_time": sum(l["time"] for l in log) / len(log),
+#         "error_rate": 1 - (sum(l["accuracy"] for l in log) / len(log)),
+#         "avg_attempts": sum(l["attempts"] for l in log) / len(log)
+#     }
 
-logs = [
-    {"time":120, "accuracy":0.6, "attempts":3},
-    {"time":200, "accuracy":0.4, "attempts":4}
-]
-print(extract_features(logs))
-def infer_performance(features):
-    if features["error_rate"] > 0.6 and features["avg_time"] > 150:
-        return "Struggling"
-    if features["error_rate"] > 0.6 and features["avg_time"] < 40:
-        return "Gaming the System"
-    if features["error_rate"] < 0.3:
-        return "Ideal"
-    return "Normal"
+# logs = [
+#     {"time":120, "accuracy":0.6, "attempts":3},
+#     {"time":200, "accuracy":0.4, "attempts":4}
+# ]
+# print(extract_features(logs))
+# def infer_performance(features):
+#     if features["error_rate"] > 0.6 and features["avg_time"] > 150:
+#         return "Struggling"
+#     if features["error_rate"] > 0.6 and features["avg_time"] < 40:
+#         return "Gaming the System"
+#     if features["error_rate"] < 0.3:
+#         return "Ideal"
+#     return "Normal"
 
-print(infer_performance(extract_features(logs)))
+# print(infer_performance(extract_features(logs)))
 
-def cognitive_load(time_spent, attempts):
-    return round((time_spent / 60) + (attempts * 0.5), 2)
+# def cognitive_load(time_spent, attempts):
+#     return round((time_spent / 60) + (attempts * 0.5), 2)
 
-print(cognitive_load(180, 4))
+# print(cognitive_load(180, 4))
 
-def cognitive_load(time_spent, attempts):
-    return round((time_spent / 60) + (attempts * 0.5), 2)
+# def cognitive_load(time_spent, attempts):
+#     return round((time_spent / 60) + (attempts * 0.5), 2)
 
-print(cognitive_load(180, 4))
+# print(cognitive_load(180, 4))
+
+
+def ada_duplikat(data):
+    return len(data) != len(set(data))
+
+print(ada_duplikat([1,2,3,4,2]))
