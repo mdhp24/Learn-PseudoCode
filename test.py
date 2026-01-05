@@ -5354,3 +5354,13 @@ logs = [
     {"time":200, "accuracy":0.4, "attempts":4}
 ]
 print(extract_features(logs))
+def infer_performance(features):
+    if features["error_rate"] > 0.6 and features["avg_time"] > 150:
+        return "Struggling"
+    if features["error_rate"] > 0.6 and features["avg_time"] < 40:
+        return "Gaming the System"
+    if features["error_rate"] < 0.3:
+        return "Ideal"
+    return "Normal"
+
+print(infer_performance(extract_features(logs)))
