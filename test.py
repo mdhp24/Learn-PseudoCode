@@ -5319,11 +5319,23 @@
 # print(konversi_waktu(3661))
 
 # Sistem hitung skor jawaban ujian
-def hitung_skor(jawaban, kunci):
-    skor = 0
-    for j, k in zip(jawaban, kunci):
-        if j == k:
-            skor += 1
-    return skor
+# def hitung_skor(jawaban, kunci):
+#     skor = 0
+#     for j, k in zip(jawaban, kunci):
+#         if j == k:
+#             skor += 1
+#     return skor
 
-print(hitung_skor(["A","B","C","D"], ["A","C","C","D"]))
+# print(hitung_skor(["A","B","C","D"], ["A","C","C","D"]))
+
+
+# Sistem validasi bukti transfer pembayaran di pras_phone.id
+def validasi_transfer(nama_pengirim, jumlah_transfer):
+    nama_akun = "Dicky"
+    saldo_akun = 7000000
+    if nama_pengirim != nama_akun:
+        return "Nama pengirim tidak sesuai"
+    if jumlah_transfer > saldo_akun:
+        return "Saldo tidak cukup"
+    return "Transfer valid"
+print(validasi_transfer("Dicky", 5000000))
