@@ -5408,7 +5408,13 @@
 # print(hitung_prima([2,3,4,5,6,7]))
 
 # Sistem urutkan dictionary berdasarkan nilai
-def urut_dict(data):
-    return dict(sorted(data.items(), key=lambda x: x[1]))
+# def urut_dict(data):
+#     return dict(sorted(data.items(), key=lambda x: x[1]))
 
-print(urut_dict({"A":3, "B":1, "C":2}))
+# print(urut_dict({"A":3, "B":1, "C":2}))
+
+# Sistem hitung total hari dari tahun, bulan, dan hari
+def total_hari(tahun, bulan, hari):
+    return tahun * 365 + bulan * 30 + hari
+
+print(total_hari(2025, 1, 15))
