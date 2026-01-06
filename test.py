@@ -5382,7 +5382,13 @@
 # print(ada_duplikat([1,2,3,4,2]))
 
 
-def total_jam(data):
-    return sum(jam for jam in data if jam > 0)
+# def total_jam(data):
+#     return sum(jam for jam in data if jam > 0)
 
-print(total_jam([2, 3, -1, 4]))
+# print(total_jam([2, 3, -1, 4]))
+
+# Sistem cek irisan antara dua daftar
+def ada_irisan(a, b):
+    return bool(set(a) & set(b))
+
+print(ada_irisan([1,2,3], [4,5,3]))
