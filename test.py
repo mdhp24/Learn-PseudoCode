@@ -5414,7 +5414,14 @@
 # print(urut_dict({"A":3, "B":1, "C":2}))
 
 # Sistem hitung total hari dari tahun, bulan, dan hari
-def total_hari(tahun, bulan, hari):
-    return tahun * 365 + bulan * 30 + hari
+# def total_hari(tahun, bulan, hari):
+#     return tahun * 365 + bulan * 30 + hari
 
-print(total_hari(2025, 1, 15))
+# print(total_hari(2025, 1, 15))
+
+# Sistem cari kata terpanjang dalam teks
+def kata_terpanjang(teks):
+    kata = teks.split()
+    return max(kata, key=len)
+
+print(kata_terpanjang("belajar algoritma dengan python"))
