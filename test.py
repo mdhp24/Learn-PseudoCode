@@ -5427,8 +5427,14 @@
 # print(kata_terpanjang("belajar algoritma dengan python"))
 
 # Sistem cek stok barang di pras_phone.id
-def cek_stok(stok, jual):
-    stok -= jual
-    return "Restock" if stok < 5 else "Aman"
+# def cek_stok(stok, jual):
+#     stok -= jual
+#     return "Restock" if stok < 5 else "Aman"
 
-print(cek_stok(10, 7))
+# print(cek_stok(10, 7))
+
+# Sistem hitung nilai akhir siswa
+def nilai_akhir(tugas, uts, uas):
+    return round((tugas*0.3) + (uts*0.3) + (uas*0.4), 2)
+
+print(nilai_akhir(80, 75, 90))
