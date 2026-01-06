@@ -5420,8 +5420,15 @@
 # print(total_hari(2025, 1, 15))
 
 # Sistem cari kata terpanjang dalam teks
-def kata_terpanjang(teks):
-    kata = teks.split()
-    return max(kata, key=len)
+# def kata_terpanjang(teks):
+#     kata = teks.split()
+#     return max(kata, key=len)
 
-print(kata_terpanjang("belajar algoritma dengan python"))
+# print(kata_terpanjang("belajar algoritma dengan python"))
+
+# Sistem cek stok barang di pras_phone.id
+def cek_stok(stok, jual):
+    stok -= jual
+    return "Restock" if stok < 5 else "Aman"
+
+print(cek_stok(10, 7))
