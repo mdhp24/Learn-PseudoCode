@@ -5388,7 +5388,21 @@
 # print(total_jam([2, 3, -1, 4]))
 
 # Sistem cek irisan antara dua daftar
-def ada_irisan(a, b):
-    return bool(set(a) & set(b))
+# def ada_irisan(a, b):
+#     return bool(set(a) & set(b))
 
-print(ada_irisan([1,2,3], [4,5,3]))
+# print(ada_irisan([1,2,3], [4,5,3]))
+
+# Sistem hitung jumlah bilangan prima dalam daftar
+def is_prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def hitung_prima(data):
+    return sum(1 for x in data if is_prima(x))
+
+print(hitung_prima([2,3,4,5,6,7]))
