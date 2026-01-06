@@ -5394,15 +5394,21 @@
 # print(ada_irisan([1,2,3], [4,5,3]))
 
 # Sistem hitung jumlah bilangan prima dalam daftar
-def is_prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def is_prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-def hitung_prima(data):
-    return sum(1 for x in data if is_prima(x))
+# def hitung_prima(data):
+#     return sum(1 for x in data if is_prima(x))
 
-print(hitung_prima([2,3,4,5,6,7]))
+# print(hitung_prima([2,3,4,5,6,7]))
+
+# Sistem urutkan dictionary berdasarkan nilai
+def urut_dict(data):
+    return dict(sorted(data.items(), key=lambda x: x[1]))
+
+print(urut_dict({"A":3, "B":1, "C":2}))
