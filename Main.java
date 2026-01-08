@@ -1604,26 +1604,46 @@ public class Main {
         // User u = new User("admin", "12345");
         // System.out.println(u.login("12345") ? "Login sukses" : "Login gagal");
 
-           Mobil m = new Mobil();
-        m.jalan();
-        m.klakson();
+        //    Mobil m = new Mobil();
+        // m.jalan();
+        // m.klakson();
+
+        Pegawai p1 = new PegawaiTetap();
+        Pegawai p2 = new PegawaiHarian();
+        System.out.println(p1.hitungGaji());
+        System.out.println(p2.hitungGaji());
     }
 }
 
 
-class Kendaraan {
-    int kecepatan;
-
-    void jalan() {
-        System.out.println("Kendaraan berjalan");
-    }
+abstract class Pegawai {
+    abstract int hitungGaji();
 }
 
-class Mobil extends Kendaraan {
-    void klakson() {
-        System.out.println("Mobil klakson");
-    }
+class PegawaiTetap extends Pegawai {
+    int gaji = 5000000;
+    int hitungGaji() { return gaji; }
 }
+
+class PegawaiHarian extends Pegawai {
+    int jam = 100;
+    int upah = 30000;
+    int hitungGaji() { return jam * upah; }
+}
+
+// class Kendaraan {
+//     int kecepatan;
+
+//     void jalan() {
+//         System.out.println("Kendaraan berjalan");
+//     }
+// }
+
+// class Mobil extends Kendaraan {
+//     void klakson() {
+//         System.out.println("Mobil klakson");
+//     }
+// }
 // class User {
 
 //     private String username;
