@@ -5446,8 +5446,18 @@
 # print(rata_rata([80, 75, 90, 85]))
 
 # Sistem cek palindrome
-def palindrom(teks):
-    teks = teks.replace(" ", "").lower()
-    return teks == teks[::-1]
+# def palindrom(teks):
+#     teks = teks.replace(" ", "").lower()
+#     return teks == teks[::-1]
 
-print(palindrom("Kasur ini rusak"))
+# print(palindrom("Kasur ini rusak"))
+
+# Sistem klasifikasi performa siswa berdasarkan nilai
+def performa(nilai):
+    if nilai < 60:
+        return "Low Performance"
+    elif nilai < 85:
+        return "Normal"
+    return "High Performance"
+
+print(performa(88))
