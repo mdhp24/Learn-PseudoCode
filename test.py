@@ -5434,7 +5434,13 @@
 # print(cek_stok(10, 7))
 
 # Sistem hitung nilai akhir siswa
-def nilai_akhir(tugas, uts, uas):
-    return round((tugas*0.3) + (uts*0.3) + (uas*0.4), 2)
+# def nilai_akhir(tugas, uts, uas):
+#     return round((tugas*0.3) + (uts*0.3) + (uas*0.4), 2)
 
-print(nilai_akhir(80, 75, 90))
+# print(nilai_akhir(80, 75, 90))
+
+# Sistem hitung rata-rata nilai
+def rata_rata(nilai):
+    return sum(nilai) / len(nilai)
+
+print(rata_rata([80, 75, 90, 85]))
