@@ -1601,25 +1601,43 @@ public class Main {
         // Mahasiswa m = new Mahasiswa("Andi", 78);
         // System.out.println(m.nama + " mendapat predikat " + m.getPredikat());
 
-        User u = new User("admin", "12345");
-        System.out.println(u.login("12345") ? "Login sukses" : "Login gagal");
+        // User u = new User("admin", "12345");
+        // System.out.println(u.login("12345") ? "Login sukses" : "Login gagal");
+
+           Mobil m = new Mobil();
+        m.jalan();
+        m.klakson();
     }
 }
 
-class User {
-    
-    private String username;
-    private String password;
 
-    User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+class Kendaraan {
+    int kecepatan;
 
-    boolean login(String input) {
-        return password.equals(input);
+    void jalan() {
+        System.out.println("Kendaraan berjalan");
     }
 }
+
+class Mobil extends Kendaraan {
+    void klakson() {
+        System.out.println("Mobil klakson");
+    }
+}
+// class User {
+
+//     private String username;
+//     private String password;
+
+//     User(String username, String password) {
+//         this.username = username;
+//         this.password = password;
+//     }
+
+//     boolean login(String input) {
+//         return password.equals(input);
+//     }
+// }
 
 // class Mahasiswa {
 //     String nama;
