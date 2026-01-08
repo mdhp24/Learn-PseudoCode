@@ -5440,7 +5440,14 @@
 # print(nilai_akhir(80, 75, 90))
 
 # Sistem hitung rata-rata nilai
-def rata_rata(nilai):
-    return sum(nilai) / len(nilai)
+# def rata_rata(nilai):
+#     return sum(nilai) / len(nilai)
 
-print(rata_rata([80, 75, 90, 85]))
+# print(rata_rata([80, 75, 90, 85]))
+
+# Sistem cek palindrome
+def palindrom(teks):
+    teks = teks.replace(" ", "").lower()
+    return teks == teks[::-1]
+
+print(palindrom("Kasur ini rusak"))
