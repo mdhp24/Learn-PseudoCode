@@ -1598,31 +1598,48 @@ public class Main {
         // Guardian guardian = new RealityGuardian("Dimensi Omega");
         // guardian.protect();
 
-        Mahasiswa m = new Mahasiswa("Andi", 78);
-        System.out.println(m.nama + " mendapat predikat " + m.getPredikat());
+        // Mahasiswa m = new Mahasiswa("Andi", 78);
+        // System.out.println(m.nama + " mendapat predikat " + m.getPredikat());
 
+        User u = new User("admin", "12345");
+        System.out.println(u.login("12345") ? "Login sukses" : "Login gagal");
     }
 }
 
-class Mahasiswa {
-    String nama;
-    double nilai;
+class User {
+    
+    private String username;
+    private String password;
 
-    Mahasiswa(String nama, double nilai) {
-        this.nama = nama;
-        this.nilai = nilai;
+    User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    String getPredikat() {
-        if (nilai >= 85)
-            return "A";
-        if (nilai >= 70)
-            return "B";
-        if (nilai >= 60)
-            return "C";
-        return "D";
+    boolean login(String input) {
+        return password.equals(input);
     }
 }
+
+// class Mahasiswa {
+//     String nama;
+//     double nilai;
+
+//     Mahasiswa(String nama, double nilai) {
+//         this.nama = nama;
+//         this.nilai = nilai;
+//     }
+
+//     String getPredikat() {
+//         if (nilai >= 85)
+//             return "A";
+//         if (nilai >= 70)
+//             return "B";
+//         if (nilai >= 60)
+//             return "C";
+//         return "D";
+//     }
+// }
 // interface Guardian {
 // void protect();
 // }
