@@ -1595,28 +1595,50 @@ public class Main {
         // ConsciousEntity entity = new ConsciousEntity("Zyncron", 1);
         // entity.evolve();
 
-        Guardian guardian = new RealityGuardian("Dimensi Omega");
-        guardian.protect();
+        // Guardian guardian = new RealityGuardian("Dimensi Omega");
+        // guardian.protect();
+
+        Mahasiswa m = new Mahasiswa("Andi", 78);
+        System.out.println(m.nama + " mendapat predikat " + m.getPredikat());
 
     }
 }
 
-interface Guardian {
-    void protect();
-}
+class Mahasiswa {
+    String nama;
+    double nilai;
 
-class RealityGuardian implements Guardian {
-    private String dimension;
-
-    public RealityGuardian(String dimension) {
-        this.dimension = dimension;
+    Mahasiswa(String nama, double nilai) {
+        this.nama = nama;
+        this.nilai = nilai;
     }
 
-    @Override
-    public void protect() {
-        System.out.println("Menstabilkan dimensi " + dimension);
+    String getPredikat() {
+        if (nilai >= 85)
+            return "A";
+        if (nilai >= 70)
+            return "B";
+        if (nilai >= 60)
+            return "C";
+        return "D";
     }
 }
+// interface Guardian {
+// void protect();
+// }
+
+// class RealityGuardian implements Guardian {
+// private String dimension;
+
+// public RealityGuardian(String dimension) {
+// this.dimension = dimension;
+// }
+
+// @Override
+// public void protect() {
+// System.out.println("Menstabilkan dimensi " + dimension);
+// }
+// }
 
 // class ConsciousEntity {
 // private String name;
