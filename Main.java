@@ -1608,28 +1608,50 @@ public class Main {
         // m.jalan();
         // m.klakson();
 
-        Pegawai p1 = new PegawaiTetap();
-        Pegawai p2 = new PegawaiHarian();
-        System.out.println(p1.hitungGaji());
-        System.out.println(p2.hitungGaji());
+        // Pegawai p1 = new PegawaiTetap();
+        // Pegawai p2 = new PegawaiHarian();
+        // System.out.println(p1.hitungGaji());
+        // System.out.println(p2.hitungGaji());
+
+        Buku b = new Buku("Algoritma Dasar");
+        b.pinjam();
+        b.pinjam();
+    }
+}
+
+class Buku {
+    private String judul;
+    private boolean tersedia = true;
+
+    Buku(String judul) {
+        this.judul = judul;
+    }
+
+    void pinjam() {
+        if (tersedia) {
+            tersedia = false;
+            System.out.println(judul + " berhasil dipinjam");
+        } else {
+            System.out.println(judul + " sedang tidak tersedia");
+        }
     }
 }
 
 
-abstract class Pegawai {
-    abstract int hitungGaji();
-}
+// abstract class Pegawai {
+//     abstract int hitungGaji();
+// }
 
-class PegawaiTetap extends Pegawai {
-    int gaji = 5000000;
-    int hitungGaji() { return gaji; }
-}
+// class PegawaiTetap extends Pegawai {
+//     int gaji = 5000000;
+//     int hitungGaji() { return gaji; }
+// }
 
-class PegawaiHarian extends Pegawai {
-    int jam = 100;
-    int upah = 30000;
-    int hitungGaji() { return jam * upah; }
-}
+// class PegawaiHarian extends Pegawai {
+//     int jam = 100;
+//     int upah = 30000;
+//     int hitungGaji() { return jam * upah; }
+// }
 
 // class Kendaraan {
 //     int kecepatan;
