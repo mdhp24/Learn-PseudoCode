@@ -5453,11 +5453,17 @@
 # print(palindrom("Kasur ini rusak"))
 
 # Sistem klasifikasi performa siswa berdasarkan nilai
-def performa(nilai):
-    if nilai < 60:
-        return "Low Performance"
-    elif nilai < 85:
-        return "Normal"
-    return "High Performance"
+# def performa(nilai):
+#     if nilai < 60:
+#         return "Low Performance"
+#     elif nilai < 85:
+#         return "Normal"
+#     return "High Performance"
 
-print(performa(88))
+# print(performa(88))
+
+# Sistem hitung jumlah kata unik dalam teks
+def kata_unik(teks):
+    return len(set(teks.lower().split()))
+
+print(kata_unik("belajar python belajar logika"))
