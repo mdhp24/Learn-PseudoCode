@@ -1619,25 +1619,46 @@ public class Main {
 
         // System.out.println(Diskon.hitung(300000));
 
-        AkunPremium ap = new AkunPremium();
-        ap.bonus();
-        ap.info();
+        // AkunPremium ap = new AkunPremium();
+        // ap.bonus();
+        // ap.info();
+
+        Notifikasi n1 = new Email();
+        Notifikasi n2 = new SMS();
+        n1.kirim();
+        n2.kirim();
     }
 }
 
-class Akun {
-    double saldo = 100000;
+abstract class Notifikasi {
+    abstract void kirim();
+}
 
-    void info() {
-        System.out.println("Saldo: " + saldo);
+class Email extends Notifikasi {
+    void kirim() {
+        System.out.println("Notifikasi Email dikirim");
     }
 }
 
-class AkunPremium extends Akun {
-    void bonus() {
-        saldo += 50000;
+class SMS extends Notifikasi {
+    void kirim() {
+        System.out.println("Notifikasi SMS dikirim");
     }
 }
+
+// class Akun {
+// double saldo = 100000;
+
+// void info() {
+// System.out.println("Saldo: " + saldo);
+// }
+// }
+
+// class AkunPremium extends Akun {
+// void bonus() {
+// saldo += 50000;
+// }
+// }
 
 // class Diskon {
 // static double hitung(double total) {
