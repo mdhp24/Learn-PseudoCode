@@ -1604,7 +1604,7 @@ public class Main {
         // User u = new User("admin", "12345");
         // System.out.println(u.login("12345") ? "Login sukses" : "Login gagal");
 
-        //    Mobil m = new Mobil();
+        // Mobil m = new Mobil();
         // m.jalan();
         // m.klakson();
 
@@ -1617,98 +1617,115 @@ public class Main {
         // b.pinjam();
         // b.pinjam();
 
-        System.out.println(Diskon.hitung(300000));
+        // System.out.println(Diskon.hitung(300000));
+
+        AkunPremium ap = new AkunPremium();
+        ap.bonus();
+        ap.info();
     }
 }
 
-class Diskon {
-    static double hitung(double total) {
-        if (total >= 500000) return total * 0.8;
-        if (total >= 250000) return total * 0.9;
-        return total;
+class Akun {
+    double saldo = 100000;
+
+    void info() {
+        System.out.println("Saldo: " + saldo);
     }
 }
 
-// class Buku {
-//     private String judul;
-//     private boolean tersedia = true;
+class AkunPremium extends Akun {
+    void bonus() {
+        saldo += 50000;
+    }
+}
 
-//     Buku(String judul) {
-//         this.judul = judul;
-//     }
-
-//     void pinjam() {
-//         if (tersedia) {
-//             tersedia = false;
-//             System.out.println(judul + " berhasil dipinjam");
-//         } else {
-//             System.out.println(judul + " sedang tidak tersedia");
-//         }
-//     }
+// class Diskon {
+// static double hitung(double total) {
+// if (total >= 500000) return total * 0.8;
+// if (total >= 250000) return total * 0.9;
+// return total;
+// }
 // }
 
+// class Buku {
+// private String judul;
+// private boolean tersedia = true;
+
+// Buku(String judul) {
+// this.judul = judul;
+// }
+
+// void pinjam() {
+// if (tersedia) {
+// tersedia = false;
+// System.out.println(judul + " berhasil dipinjam");
+// } else {
+// System.out.println(judul + " sedang tidak tersedia");
+// }
+// }
+// }
 
 // abstract class Pegawai {
-//     abstract int hitungGaji();
+// abstract int hitungGaji();
 // }
 
 // class PegawaiTetap extends Pegawai {
-//     int gaji = 5000000;
-//     int hitungGaji() { return gaji; }
+// int gaji = 5000000;
+// int hitungGaji() { return gaji; }
 // }
 
 // class PegawaiHarian extends Pegawai {
-//     int jam = 100;
-//     int upah = 30000;
-//     int hitungGaji() { return jam * upah; }
+// int jam = 100;
+// int upah = 30000;
+// int hitungGaji() { return jam * upah; }
 // }
 
 // class Kendaraan {
-//     int kecepatan;
+// int kecepatan;
 
-//     void jalan() {
-//         System.out.println("Kendaraan berjalan");
-//     }
+// void jalan() {
+// System.out.println("Kendaraan berjalan");
+// }
 // }
 
 // class Mobil extends Kendaraan {
-//     void klakson() {
-//         System.out.println("Mobil klakson");
-//     }
+// void klakson() {
+// System.out.println("Mobil klakson");
+// }
 // }
 // class User {
 
-//     private String username;
-//     private String password;
+// private String username;
+// private String password;
 
-//     User(String username, String password) {
-//         this.username = username;
-//         this.password = password;
-//     }
+// User(String username, String password) {
+// this.username = username;
+// this.password = password;
+// }
 
-//     boolean login(String input) {
-//         return password.equals(input);
-//     }
+// boolean login(String input) {
+// return password.equals(input);
+// }
 // }
 
 // class Mahasiswa {
-//     String nama;
-//     double nilai;
+// String nama;
+// double nilai;
 
-//     Mahasiswa(String nama, double nilai) {
-//         this.nama = nama;
-//         this.nilai = nilai;
-//     }
+// Mahasiswa(String nama, double nilai) {
+// this.nama = nama;
+// this.nilai = nilai;
+// }
 
-//     String getPredikat() {
-//         if (nilai >= 85)
-//             return "A";
-//         if (nilai >= 70)
-//             return "B";
-//         if (nilai >= 60)
-//             return "C";
-//         return "D";
-//     }
+// String getPredikat() {
+// if (nilai >= 85)
+// return "A";
+// if (nilai >= 70)
+// return "B";
+// if (nilai >= 60)
+// return "C";
+// return "D";
+// }
 // }
 // interface Guardian {
 // void protect();
