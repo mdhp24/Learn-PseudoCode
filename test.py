@@ -5469,9 +5469,15 @@
 # print(kata_unik("belajar python belajar logika"))
 
 # Sistem tarik saldo dari akun
-def tarik(saldo, jumlah):
-    if saldo >= jumlah:
-        saldo -= jumlah
-    return saldo
+# def tarik(saldo, jumlah):
+#     if saldo >= jumlah:
+#         saldo -= jumlah
+#     return saldo
 
-print(tarik(200000, 50000))
+# print(tarik(200000, 50000))
+
+# Sistem cari nilai minimum dan maksimum dalam daftar
+def min_max(data):
+    return min(data), max(data)
+
+print(min_max([10, 5, 30, 20]))
