@@ -5463,7 +5463,15 @@
 # print(performa(88))
 
 # Sistem hitung jumlah kata unik dalam teks
-def kata_unik(teks):
-    return len(set(teks.lower().split()))
+# def kata_unik(teks):
+#     return len(set(teks.lower().split()))
 
-print(kata_unik("belajar python belajar logika"))
+# print(kata_unik("belajar python belajar logika"))
+
+# Sistem tarik saldo dari akun
+def tarik(saldo, jumlah):
+    if saldo >= jumlah:
+        saldo -= jumlah
+    return saldo
+
+print(tarik(200000, 50000))
