@@ -1613,29 +1613,39 @@ public class Main {
         // System.out.println(p1.hitungGaji());
         // System.out.println(p2.hitungGaji());
 
-        Buku b = new Buku("Algoritma Dasar");
-        b.pinjam();
-        b.pinjam();
+        // Buku b = new Buku("Algoritma Dasar");
+        // b.pinjam();
+        // b.pinjam();
+
+        System.out.println(Diskon.hitung(300000));
     }
 }
 
-class Buku {
-    private String judul;
-    private boolean tersedia = true;
-
-    Buku(String judul) {
-        this.judul = judul;
-    }
-
-    void pinjam() {
-        if (tersedia) {
-            tersedia = false;
-            System.out.println(judul + " berhasil dipinjam");
-        } else {
-            System.out.println(judul + " sedang tidak tersedia");
-        }
+class Diskon {
+    static double hitung(double total) {
+        if (total >= 500000) return total * 0.8;
+        if (total >= 250000) return total * 0.9;
+        return total;
     }
 }
+
+// class Buku {
+//     private String judul;
+//     private boolean tersedia = true;
+
+//     Buku(String judul) {
+//         this.judul = judul;
+//     }
+
+//     void pinjam() {
+//         if (tersedia) {
+//             tersedia = false;
+//             System.out.println(judul + " berhasil dipinjam");
+//         } else {
+//             System.out.println(judul + " sedang tidak tersedia");
+//         }
+//     }
+// }
 
 
 // abstract class Pegawai {
