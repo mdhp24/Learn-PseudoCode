@@ -5477,7 +5477,9 @@
 # print(tarik(200000, 50000))
 
 # Sistem cari nilai minimum dan maksimum dalam daftar
-def min_max(data):
-    return min(data), max(data)
+# def min_max(data):
+#     return min(data), max(data)
 
-print(min_max([10, 5, 30, 20]))
+# print(min_max([10, 5, 30, 20]))
+
+

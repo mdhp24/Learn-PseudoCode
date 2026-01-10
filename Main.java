@@ -1623,28 +1623,55 @@ public class Main {
         // ap.bonus();
         // ap.info();
 
-        Notifikasi n1 = new Email();
-        Notifikasi n2 = new SMS();
-        n1.kirim();
-        n2.kirim();
+        // Notifikasi n1 = new Email();
+        // Notifikasi n2 = new SMS();
+        // n1.kirim();
+        // n2.kirim();
+
+        Mahasiswa m = new Mahasiswa("Dicky", 89);
+        m.info();
     }
 }
 
-abstract class Notifikasi {
-    abstract void kirim();
-}
+class Mahasiswa {
+    private String nama;
+    private int nilai;
 
-class Email extends Notifikasi {
-    void kirim() {
-        System.out.println("Notifikasi Email dikirim");
+    Mahasiswa(String nama, int nilai) {
+        this.nama = nama;
+        this.nilai = nilai;
+    }
+
+    String predikat() {
+        if (nilai >= 85)
+            return "A";
+        if (nilai >= 70)
+            return "B";
+        if (nilai >= 60)
+            return "C";
+        return "D";
+    }
+
+    void info() {
+        System.out.println(nama + " mendapat nilai " + predikat());
     }
 }
 
-class SMS extends Notifikasi {
-    void kirim() {
-        System.out.println("Notifikasi SMS dikirim");
-    }
-}
+// abstract class Notifikasi {
+// abstract void kirim();
+// }
+
+// class Email extends Notifikasi {
+// void kirim() {
+// System.out.println("Notifikasi Email dikirim");
+// }
+// }
+
+// class SMS extends Notifikasi {
+// void kirim() {
+// System.out.println("Notifikasi SMS dikirim");
+// }
+// }
 
 // class Akun {
 // double saldo = 100000;
