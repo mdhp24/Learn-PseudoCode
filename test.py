@@ -5482,4 +5482,12 @@
 
 # print(min_max([10, 5, 30, 20]))
 
+# Sistem klasifikasi berdasarkan waktu penyelesaian
+def kategori_waktu(detik):
+    if detik > 300:
+        return "Struggling"
+    elif detik < 60:
+        return "Gaming the System"
+    return "Normal"
 
+print(kategori_waktu(420))
