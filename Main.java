@@ -1638,40 +1638,65 @@ public class Main {
         // a.daftar("Budi");
         // a.panggil();
 
-        Chatbot bot = new Chatbot();
-        bot.setStrategi(new ResponStruggling());
-        bot.jalankan();
+        // Chatbot bot = new Chatbot();
+        // bot.setStrategi(new ResponStruggling());
+        // bot.jalankan();
+
+        Soal soal = SoalFactory.buatSoal("sulit");
+        soal.tampil();
+    }
+}
+
+abstract class Soal {
+    abstract void tampil();
+}
+
+class SoalMudah extends Soal {
+    void tampil() {
+        System.out.println("Soal mudah ditampilkan");
+    }
+}
+
+class SoalSulit extends Soal {
+    void tampil() {
+        System.out.println("Soal sulit ditampilkan");
+    }
+}
+
+class SoalFactory {
+    static Soal buatSoal(String level) {
+        return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
     }
 }
 
 
-interface ResponStrategi {
-    void respon();
-}
+// interface ResponStrategi {
+//     void respon();
+// }
 
-class ResponStruggling implements ResponStrategi {
-    public void respon() {
-        System.out.println("Menampilkan materi dasar...");
-    }
-}
+// class ResponStruggling implements ResponStrategi {
+//     public void respon() {
+//         System.out.println("Menampilkan materi dasar...");
+//     }
+// }
 
-class ResponIdeal implements ResponStrategi {
-    public void respon() {
-        System.out.println("Memberikan tantangan lanjutan...");
-    }
-}
+// class ResponIdeal implements ResponStrategi {
+//     public void respon() {
+//         System.out.println("Memberikan tantangan lanjutan...");
+//     }
+// }
 
-class Chatbot {
-    ResponStrategi strategi;
+// class Chatbot {
+//     ResponStrategi strategi;
 
-    void setStrategi(ResponStrategi strategi) {
-        this.strategi = strategi;
-    }
+//     void setStrategi(ResponStrategi strategi) {
+//         this.strategi = strategi;
+//     }
 
-    void jalankan() {
-        strategi.respon();
-    }
-}
+//     void jalankan() {
+//         strategi.respon();
+//     }
+// }
 
 
 // class Antrian {
