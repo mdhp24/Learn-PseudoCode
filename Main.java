@@ -1633,25 +1633,59 @@ public class Main {
         // Mahasiswa m = new Mahasiswa("Dicky", 89);
         // m.info();
 
-        Antrian a = new Antrian();
-        a.daftar("Andi");
-        a.daftar("Budi");
-        a.panggil();
+        // Antrian a = new Antrian();
+        // a.daftar("Andi");
+        // a.daftar("Budi");
+        // a.panggil();
+
+        Chatbot bot = new Chatbot();
+        bot.setStrategi(new ResponStruggling());
+        bot.jalankan();
     }
 }
 
-class Antrian {
-    Queue<String> mahasiswa = new LinkedList<>();
 
-    void daftar(String nama) {
-        mahasiswa.add(nama);
-        System.out.println(nama + " masuk antrian");
-    }
+interface ResponStrategi {
+    void respon();
+}
 
-    void panggil() {
-        System.out.println("Dipanggil: " + mahasiswa.poll());
+class ResponStruggling implements ResponStrategi {
+    public void respon() {
+        System.out.println("Menampilkan materi dasar...");
     }
 }
+
+class ResponIdeal implements ResponStrategi {
+    public void respon() {
+        System.out.println("Memberikan tantangan lanjutan...");
+    }
+}
+
+class Chatbot {
+    ResponStrategi strategi;
+
+    void setStrategi(ResponStrategi strategi) {
+        this.strategi = strategi;
+    }
+
+    void jalankan() {
+        strategi.respon();
+    }
+}
+
+
+// class Antrian {
+//     Queue<String> mahasiswa = new LinkedList<>();
+
+//     void daftar(String nama) {
+//         mahasiswa.add(nama);
+//         System.out.println(nama + " masuk antrian");
+//     }
+
+//     void panggil() {
+//         System.out.println("Dipanggil: " + mahasiswa.poll());
+//     }
+// }
 
 
 // class Mahasiswa {
