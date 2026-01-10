@@ -1,5 +1,7 @@
 
 // PSEUDOCODE
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -1628,34 +1630,53 @@ public class Main {
         // n1.kirim();
         // n2.kirim();
 
-        Mahasiswa m = new Mahasiswa("Dicky", 89);
-        m.info();
+        // Mahasiswa m = new Mahasiswa("Dicky", 89);
+        // m.info();
+
+        Antrian a = new Antrian();
+        a.daftar("Andi");
+        a.daftar("Budi");
+        a.panggil();
     }
 }
 
-class Mahasiswa {
-    private String nama;
-    private int nilai;
+class Antrian {
+    Queue<String> mahasiswa = new LinkedList<>();
 
-    Mahasiswa(String nama, int nilai) {
-        this.nama = nama;
-        this.nilai = nilai;
+    void daftar(String nama) {
+        mahasiswa.add(nama);
+        System.out.println(nama + " masuk antrian");
     }
 
-    String predikat() {
-        if (nilai >= 85)
-            return "A";
-        if (nilai >= 70)
-            return "B";
-        if (nilai >= 60)
-            return "C";
-        return "D";
-    }
-
-    void info() {
-        System.out.println(nama + " mendapat nilai " + predikat());
+    void panggil() {
+        System.out.println("Dipanggil: " + mahasiswa.poll());
     }
 }
+
+
+// class Mahasiswa {
+//     private String nama;
+//     private int nilai;
+
+//     Mahasiswa(String nama, int nilai) {
+//         this.nama = nama;
+//         this.nilai = nilai;
+//     }
+
+//     String predikat() {
+//         if (nilai >= 85)
+//             return "A";
+//         if (nilai >= 70)
+//             return "B";
+//         if (nilai >= 60)
+//             return "C";
+//         return "D";
+//     }
+
+//     void info() {
+//         System.out.println(nama + " mendapat nilai " + predikat());
+//     }
+// }
 
 // abstract class Notifikasi {
 // abstract void kirim();
