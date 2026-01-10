@@ -5493,7 +5493,13 @@
 # print(kategori_waktu(420))
 
 # Sistem hitung akurasi jawaban ujian
-def akurasi(benar, total):
-    return round((benar / total) * 100, 2)
+# def akurasi(benar, total):
+#     return round((benar / total) * 100, 2)
 
-print(akurasi(7, 10))
+# print(akurasi(7, 10))
+
+# Sistem deteksi pola jawaban mencurigakan
+def pola_jawaban(jawaban):
+    return "Mencurigakan" if len(set(jawaban)) == 1 else "Normal"
+
+print(pola_jawaban(["A", "A", "A", "A"]))
