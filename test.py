@@ -5504,12 +5504,18 @@
 
 # print(pola_jawaban(["A", "A", "A", "A"]))
 
+# Sistem klasifikasi performa berdasarkan percobaan dan waktu
+# def classify_performance(attempts, time_spent):
+#     if attempts > 5 and time_spent > 300:
+#         return "Struggling"
+#     elif attempts < 2 and time_spent < 60:
+#         return "Gaming the System"
+#     return "Normal"
 
-def classify_performance(attempts, time_spent):
-    if attempts > 5 and time_spent > 300:
-        return "Struggling"
-    elif attempts < 2 and time_spent < 60:
-        return "Gaming the System"
-    return "Normal"
+# print(classify_performance(7, 420))
 
-print(classify_performance(7, 420))
+# Sistem hitung rata-rata waktu penyelesaian tugas
+def avg_time(times):
+    return sum(times) / len(times)
+
+print(avg_time([120, 150, 300]))
