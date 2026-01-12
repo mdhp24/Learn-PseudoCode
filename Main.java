@@ -1642,99 +1642,118 @@ public class Main {
         // bot.setStrategi(new ResponStruggling());
         // bot.jalankan();
 
-        Soal soal = SoalFactory.buatSoal("sulit");
-        soal.tampil();
+        // Soal soal = SoalFactory.buatSoal("sulit");
+        // soal.tampil();
+
+        Buku b = new Buku("Algoritma Dasar");
+        b.pinjam();
+        b.pinjam();
     }
 }
 
-abstract class Soal {
-    abstract void tampil();
-}
+class Buku {
+    private String judul;
+    private boolean tersedia = true;
 
-class SoalMudah extends Soal {
-    void tampil() {
-        System.out.println("Soal mudah ditampilkan");
+    Buku(String judul) {
+        this.judul = judul;
+    }
+
+    void pinjam() {
+        if (tersedia) {
+            tersedia = false;
+            System.out.println(judul + " berhasil dipinjam");
+        } else {
+            System.out.println(judul + " sedang tidak tersedia");
+        }
     }
 }
 
-class SoalSulit extends Soal {
-    void tampil() {
-        System.out.println("Soal sulit ditampilkan");
-    }
-}
+// abstract class Soal {
+// abstract void tampil();
+// }
 
-class SoalFactory {
-    static Soal buatSoal(String level) {
-        return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
-    }
-}
+// class SoalMudah extends Soal {
+// void tampil() {
+// System.out.println("Soal mudah ditampilkan");
+// }
+// }
 
+// class SoalSulit extends Soal {
+// void tampil() {
+// System.out.println("Soal sulit ditampilkan");
+// }
+// }
+
+// class SoalFactory {
+// static Soal buatSoal(String level) {
+// return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
+// }
+// }
 
 // interface ResponStrategi {
-//     void respon();
+// void respon();
 // }
 
 // class ResponStruggling implements ResponStrategi {
-//     public void respon() {
-//         System.out.println("Menampilkan materi dasar...");
-//     }
+// public void respon() {
+// System.out.println("Menampilkan materi dasar...");
+// }
 // }
 
 // class ResponIdeal implements ResponStrategi {
-//     public void respon() {
-//         System.out.println("Memberikan tantangan lanjutan...");
-//     }
+// public void respon() {
+// System.out.println("Memberikan tantangan lanjutan...");
+// }
 // }
 
 // class Chatbot {
-//     ResponStrategi strategi;
+// ResponStrategi strategi;
 
-//     void setStrategi(ResponStrategi strategi) {
-//         this.strategi = strategi;
-//     }
-
-//     void jalankan() {
-//         strategi.respon();
-//     }
+// void setStrategi(ResponStrategi strategi) {
+// this.strategi = strategi;
 // }
 
+// void jalankan() {
+// strategi.respon();
+// }
+// }
 
 // class Antrian {
-//     Queue<String> mahasiswa = new LinkedList<>();
+// Queue<String> mahasiswa = new LinkedList<>();
 
-//     void daftar(String nama) {
-//         mahasiswa.add(nama);
-//         System.out.println(nama + " masuk antrian");
-//     }
-
-//     void panggil() {
-//         System.out.println("Dipanggil: " + mahasiswa.poll());
-//     }
+// void daftar(String nama) {
+// mahasiswa.add(nama);
+// System.out.println(nama + " masuk antrian");
 // }
 
+// void panggil() {
+// System.out.println("Dipanggil: " + mahasiswa.poll());
+// }
+// }
 
 // class Mahasiswa {
-//     private String nama;
-//     private int nilai;
+// private String nama;
+// private int nilai;
 
-//     Mahasiswa(String nama, int nilai) {
-//         this.nama = nama;
-//         this.nilai = nilai;
-//     }
+// Mahasiswa(String nama, int nilai) {
+// this.nama = nama;
+// this.nilai = nilai;
+// }
 
-//     String predikat() {
-//         if (nilai >= 85)
-//             return "A";
-//         if (nilai >= 70)
-//             return "B";
-//         if (nilai >= 60)
-//             return "C";
-//         return "D";
-//     }
+// String predikat() {
+// if (nilai >= 85)
+// return "A";
+// if (nilai >= 70)
+// return "B";
+// if (nilai >= 60)
+// return "C";
+// return "D";
+// }
 
-//     void info() {
-//         System.out.println(nama + " mendapat nilai " + predikat());
-//     }
+// void info() {
+// System.out.println(nama + " mendapat nilai " + predikat());
+// }
 // }
 
 // abstract class Notifikasi {
