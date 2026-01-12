@@ -1649,39 +1649,64 @@ public class Main {
         // b.pinjam();
         // b.pinjam();
 
-        Chatbot bot = new Chatbot();
-        bot.setStrategi(new ResponStruggling());
-        bot.jalankan();
+        // Chatbot bot = new Chatbot();
+        // bot.setStrategi(new ResponStruggling());
+        // bot.jalankan();
+
+        Soal soal = SoalFactory.buatSoal("sulit");
+        soal.tampil();
     }
 }
 
-interface ResponStrategi {
-    void respon();
+abstract class Soal {
+    abstract void tampil();
 }
 
-class ResponStruggling implements ResponStrategi {
-    public void respon() {
-        System.out.println("Menampilkan materi dasar...");
+class SoalMudah extends Soal {
+    void tampil() {
+        System.out.println("Soal mudah ditampilkan");
     }
 }
 
-class ResponIdeal implements ResponStrategi {
-    public void respon() {
-        System.out.println("Memberikan tantangan lanjutan...");
+class SoalSulit extends Soal {
+    void tampil() {
+        System.out.println("Soal sulit ditampilkan");
     }
 }
 
-class Chatbot {
-    ResponStrategi strategi;
-
-    void setStrategi(ResponStrategi strategi) {
-        this.strategi = strategi;
-    }
-
-    void jalankan() {
-        strategi.respon();
+class SoalFactory {
+    static Soal buatSoal(String level) {
+        return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
     }
 }
+
+// interface ResponStrategi {
+//     void respon();
+// }
+
+// class ResponStruggling implements ResponStrategi {
+//     public void respon() {
+//         System.out.println("Menampilkan materi dasar...");
+//     }
+// }
+
+// class ResponIdeal implements ResponStrategi {
+//     public void respon() {
+//         System.out.println("Memberikan tantangan lanjutan...");
+//     }
+// }
+
+// class Chatbot {
+//     ResponStrategi strategi;
+
+//     void setStrategi(ResponStrategi strategi) {
+//         this.strategi = strategi;
+//     }
+
+//     void jalankan() {
+//         strategi.respon();
+//     }
+// }
 
 // class Buku {
 // private String judul;
