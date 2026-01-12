@@ -5499,7 +5499,17 @@
 # print(akurasi(7, 10))
 
 # Sistem deteksi pola jawaban mencurigakan
-def pola_jawaban(jawaban):
-    return "Mencurigakan" if len(set(jawaban)) == 1 else "Normal"
+# def pola_jawaban(jawaban):
+#     return "Mencurigakan" if len(set(jawaban)) == 1 else "Normal"
 
-print(pola_jawaban(["A", "A", "A", "A"]))
+# print(pola_jawaban(["A", "A", "A", "A"]))
+
+
+def classify_performance(attempts, time_spent):
+    if attempts > 5 and time_spent > 300:
+        return "Struggling"
+    elif attempts < 2 and time_spent < 60:
+        return "Gaming the System"
+    return "Normal"
+
+print(classify_performance(7, 420))
