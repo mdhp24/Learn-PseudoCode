@@ -5515,7 +5515,18 @@
 # print(classify_performance(7, 420))
 
 # Sistem hitung rata-rata waktu penyelesaian tugas
-def avg_time(times):
-    return sum(times) / len(times)
+# def avg_time(times):
+#     return sum(times) / len(times)
 
-print(avg_time([120, 150, 300]))
+# print(avg_time([120, 150, 300]))
+
+# Sistem chatbot respons berdasarkan status siswa
+def chatbot_response(status):
+    responses = {
+        "Struggling": "Tampilkan konsep dasar",
+        "Gaming": "Batasi bantuan",
+        "Normal": "Lanjutkan pembelajaran"
+    }
+    return responses.get(status)
+
+print(chatbot_response("Struggling"))
