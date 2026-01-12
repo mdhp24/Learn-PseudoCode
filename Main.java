@@ -1653,32 +1653,61 @@ public class Main {
         // bot.setStrategi(new ResponStruggling());
         // bot.jalankan();
 
-        Soal soal = SoalFactory.buatSoal("sulit");
-        soal.tampil();
+        // Soal soal = SoalFactory.buatSoal("sulit");
+        // soal.tampil();
+
+        LearningActivity activity = new LearningActivity();
+        activity.setObserver(new ChatbotObserver());
+        activity.detectDifficulty(true);
     }
 }
 
-abstract class Soal {
-    abstract void tampil();
+interface Observer {
+    void update(String status);
 }
 
-class SoalMudah extends Soal {
-    void tampil() {
-        System.out.println("Soal mudah ditampilkan");
+class ChatbotObserver implements Observer {
+    public void update(String status) {
+        System.out.println("Chatbot notifikasi: " + status);
     }
 }
 
-class SoalSulit extends Soal {
-    void tampil() {
-        System.out.println("Soal sulit ditampilkan");
+class LearningActivity {
+    private Observer observer;
+
+    void setObserver(Observer observer) {
+        this.observer = observer;
+    }
+
+    void detectDifficulty(boolean struggle) {
+        if (struggle) {
+            observer.update("Mahasiswa mengalami kesulitan");
+        }
     }
 }
 
-class SoalFactory {
-    static Soal buatSoal(String level) {
-        return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
-    }
-}
+
+// abstract class Soal {
+//     abstract void tampil();
+// }
+
+// class SoalMudah extends Soal {
+//     void tampil() {
+//         System.out.println("Soal mudah ditampilkan");
+//     }
+// }
+
+// class SoalSulit extends Soal {
+//     void tampil() {
+//         System.out.println("Soal sulit ditampilkan");
+//     }
+// }
+
+// class SoalFactory {
+//     static Soal buatSoal(String level) {
+//         return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
+//     }
+// }
 
 // interface ResponStrategi {
 //     void respon();
