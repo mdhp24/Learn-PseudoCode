@@ -1645,29 +1645,61 @@ public class Main {
         // Soal soal = SoalFactory.buatSoal("sulit");
         // soal.tampil();
 
-        Buku b = new Buku("Algoritma Dasar");
-        b.pinjam();
-        b.pinjam();
+        // Buku b = new Buku("Algoritma Dasar");
+        // b.pinjam();
+        // b.pinjam();
+
+        Chatbot bot = new Chatbot();
+        bot.setStrategi(new ResponStruggling());
+        bot.jalankan();
     }
 }
 
-class Buku {
-    private String judul;
-    private boolean tersedia = true;
+interface ResponStrategi {
+    void respon();
+}
 
-    Buku(String judul) {
-        this.judul = judul;
-    }
-
-    void pinjam() {
-        if (tersedia) {
-            tersedia = false;
-            System.out.println(judul + " berhasil dipinjam");
-        } else {
-            System.out.println(judul + " sedang tidak tersedia");
-        }
+class ResponStruggling implements ResponStrategi {
+    public void respon() {
+        System.out.println("Menampilkan materi dasar...");
     }
 }
+
+class ResponIdeal implements ResponStrategi {
+    public void respon() {
+        System.out.println("Memberikan tantangan lanjutan...");
+    }
+}
+
+class Chatbot {
+    ResponStrategi strategi;
+
+    void setStrategi(ResponStrategi strategi) {
+        this.strategi = strategi;
+    }
+
+    void jalankan() {
+        strategi.respon();
+    }
+}
+
+// class Buku {
+// private String judul;
+// private boolean tersedia = true;
+
+// Buku(String judul) {
+// this.judul = judul;
+// }
+
+// void pinjam() {
+// if (tersedia) {
+// tersedia = false;
+// System.out.println(judul + " berhasil dipinjam");
+// } else {
+// System.out.println(judul + " sedang tidak tersedia");
+// }
+// }
+// }
 
 // abstract class Soal {
 // abstract void tampil();
