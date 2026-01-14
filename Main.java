@@ -1660,39 +1660,66 @@ public class Main {
         // activity.setObserver(new ChatbotObserver());
         // activity.detectDifficulty(true);
 
-        Chatbot bot = new Chatbot();
-        bot.setStrategy(new ConceptExplanation());
-        bot.respond();
+        // Chatbot bot = new Chatbot();
+        // bot.setStrategy(new ConceptExplanation());
+        // bot.respond();
+
+        Performance p = PerformanceFactory.create("Gaming");
+        p.info();
     }
 }
 
-interface ResponseStrategy {
-    void respond();
+abstract class Performance {
+    abstract void info();
 }
 
-class ConceptExplanation implements ResponseStrategy {
-    public void respond() {
-        System.out.println("Menampilkan konsep dasar materi.");
+class Gaming extends Performance {
+    void info() {
+        System.out.println("Gaming the System detected.");
     }
 }
 
-class ChallengeQuestion implements ResponseStrategy {
-    public void respond() {
-        System.out.println("Memberikan soal tantangan lanjutan.");
+class Ideal extends Performance {
+    void info() {
+        System.out.println("Ideal learner.");
     }
 }
 
-class Chatbot {
-    private ResponseStrategy strategy;
-
-    void setStrategy(ResponseStrategy strategy) {
-        this.strategy = strategy;
-    }
-
-    void respond() {
-        strategy.respond();
+class PerformanceFactory {
+    static Performance create(String type) {
+        if (type.equals("Gaming")) return new Gaming();
+        return new Ideal();
     }
 }
+
+
+// interface ResponseStrategy {
+//     void respond();
+// }
+
+// class ConceptExplanation implements ResponseStrategy {
+//     public void respond() {
+//         System.out.println("Menampilkan konsep dasar materi.");
+//     }
+// }
+
+// class ChallengeQuestion implements ResponseStrategy {
+//     public void respond() {
+//         System.out.println("Memberikan soal tantangan lanjutan.");
+//     }
+// }
+
+// class Chatbot {
+//     private ResponseStrategy strategy;
+
+//     void setStrategy(ResponseStrategy strategy) {
+//         this.strategy = strategy;
+//     }
+
+//     void respond() {
+//         strategy.respond();
+//     }
+// }
 
 // interface Observer {
 // void update(String status);
