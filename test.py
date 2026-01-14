@@ -5521,12 +5521,26 @@
 # print(avg_time([120, 150, 300]))
 
 # Sistem chatbot respons berdasarkan status siswa
-def chatbot_response(status):
-    responses = {
-        "Struggling": "Tampilkan konsep dasar",
-        "Gaming": "Batasi bantuan",
-        "Normal": "Lanjutkan pembelajaran"
-    }
-    return responses.get(status)
+# def chatbot_response(status):
+#     responses = {
+#         "Struggling": "Tampilkan konsep dasar",
+#         "Gaming": "Batasi bantuan",
+#         "Normal": "Lanjutkan pembelajaran"
+#     }
+#     return responses.get(status)
 
-print(chatbot_response("Struggling"))
+# print(chatbot_response("Struggling"))
+
+# Sistem klasifikasi performa berdasarkan percobaan dan waktu
+def performance_engine(attempts, time_spent):
+    rules = [
+        (attempts > 5 and time_spent > 300, "Struggling"),
+        (attempts < 2 and time_spent < 60, "Gaming"),
+    ]
+
+    for condition, result in rules:
+        if condition:
+            return result
+    return "Normal"
+
+print(performance_engine(6, 450))
