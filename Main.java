@@ -1656,85 +1656,116 @@ public class Main {
         // Soal soal = SoalFactory.buatSoal("sulit");
         // soal.tampil();
 
-        LearningActivity activity = new LearningActivity();
-        activity.setObserver(new ChatbotObserver());
-        activity.detectDifficulty(true);
+        // LearningActivity activity = new LearningActivity();
+        // activity.setObserver(new ChatbotObserver());
+        // activity.detectDifficulty(true);
+
+        Chatbot bot = new Chatbot();
+        bot.setStrategy(new ConceptExplanation());
+        bot.respond();
     }
 }
 
-interface Observer {
-    void update(String status);
+interface ResponseStrategy {
+    void respond();
 }
 
-class ChatbotObserver implements Observer {
-    public void update(String status) {
-        System.out.println("Chatbot notifikasi: " + status);
+class ConceptExplanation implements ResponseStrategy {
+    public void respond() {
+        System.out.println("Menampilkan konsep dasar materi.");
     }
 }
 
-class LearningActivity {
-    private Observer observer;
-
-    void setObserver(Observer observer) {
-        this.observer = observer;
-    }
-
-    void detectDifficulty(boolean struggle) {
-        if (struggle) {
-            observer.update("Mahasiswa mengalami kesulitan");
-        }
+class ChallengeQuestion implements ResponseStrategy {
+    public void respond() {
+        System.out.println("Memberikan soal tantangan lanjutan.");
     }
 }
 
+class Chatbot {
+    private ResponseStrategy strategy;
+
+    void setStrategy(ResponseStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    void respond() {
+        strategy.respond();
+    }
+}
+
+// interface Observer {
+// void update(String status);
+// }
+
+// class ChatbotObserver implements Observer {
+// public void update(String status) {
+// System.out.println("Chatbot notifikasi: " + status);
+// }
+// }
+
+// class LearningActivity {
+// private Observer observer;
+
+// void setObserver(Observer observer) {
+// this.observer = observer;
+// }
+
+// void detectDifficulty(boolean struggle) {
+// if (struggle) {
+// observer.update("Mahasiswa mengalami kesulitan");
+// }
+// }
+// }
 
 // abstract class Soal {
-//     abstract void tampil();
+// abstract void tampil();
 // }
 
 // class SoalMudah extends Soal {
-//     void tampil() {
-//         System.out.println("Soal mudah ditampilkan");
-//     }
+// void tampil() {
+// System.out.println("Soal mudah ditampilkan");
+// }
 // }
 
 // class SoalSulit extends Soal {
-//     void tampil() {
-//         System.out.println("Soal sulit ditampilkan");
-//     }
+// void tampil() {
+// System.out.println("Soal sulit ditampilkan");
+// }
 // }
 
 // class SoalFactory {
-//     static Soal buatSoal(String level) {
-//         return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
-//     }
+// static Soal buatSoal(String level) {
+// return level.equals("sulit") ? new SoalSulit() : new SoalMudah();
+// }
 // }
 
 // interface ResponStrategi {
-//     void respon();
+// void respon();
 // }
 
 // class ResponStruggling implements ResponStrategi {
-//     public void respon() {
-//         System.out.println("Menampilkan materi dasar...");
-//     }
+// public void respon() {
+// System.out.println("Menampilkan materi dasar...");
+// }
 // }
 
 // class ResponIdeal implements ResponStrategi {
-//     public void respon() {
-//         System.out.println("Memberikan tantangan lanjutan...");
-//     }
+// public void respon() {
+// System.out.println("Memberikan tantangan lanjutan...");
+// }
 // }
 
 // class Chatbot {
-//     ResponStrategi strategi;
+// ResponStrategi strategi;
 
-//     void setStrategi(ResponStrategi strategi) {
-//         this.strategi = strategi;
-//     }
+// void setStrategi(ResponStrategi strategi) {
+// this.strategi = strategi;
+// }
 
-//     void jalankan() {
-//         strategi.respon();
-//     }
+// void jalankan() {
+// strategi.respon();
+// }
 // }
 
 // class Buku {
