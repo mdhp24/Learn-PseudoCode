@@ -1664,61 +1664,109 @@ public class Main {
         // bot.setStrategy(new ConceptExplanation());
         // bot.respond();
 
-        Performance p = PerformanceFactory.create("Gaming");
-        p.info();
+        // Performance p = PerformanceFactory.create("Gaming");
+        // p.info();
+
+        StudentProfile profile = new StudentProfile.Builder()
+                .setName("Mahasiswa A")
+                .setAttempts(6)
+                .setTimeSpent(420)
+                .build();
+
+        profile.display();
     }
 }
 
-abstract class Performance {
-    abstract void info();
-}
+class StudentProfile {
+    private String name;
+    private int attempts;
+    private int timeSpent;
 
-class Gaming extends Performance {
-    void info() {
-        System.out.println("Gaming the System detected.");
+    private StudentProfile(Builder builder) {
+        this.name = builder.name;
+        this.attempts = builder.attempts;
+        this.timeSpent = builder.timeSpent;
+    }
+
+    static class Builder {
+        private String name;
+        private int attempts;
+        private int timeSpent;
+
+        Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        Builder setAttempts(int attempts) {
+            this.attempts = attempts;
+            return this;
+        }
+
+        Builder setTimeSpent(int timeSpent) {
+            this.timeSpent = timeSpent;
+            return this;
+        }
+
+        StudentProfile build() {
+            return new StudentProfile(this);
+        }
+    }
+
+    void display() {
+        System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
     }
 }
 
-class Ideal extends Performance {
-    void info() {
-        System.out.println("Ideal learner.");
-    }
-}
+// abstract class Performance {
+// abstract void info();
+// }
 
-class PerformanceFactory {
-    static Performance create(String type) {
-        if (type.equals("Gaming")) return new Gaming();
-        return new Ideal();
-    }
-}
+// class Gaming extends Performance {
+// void info() {
+// System.out.println("Gaming the System detected.");
+// }
+// }
 
+// class Ideal extends Performance {
+// void info() {
+// System.out.println("Ideal learner.");
+// }
+// }
+
+// class PerformanceFactory {
+// static Performance create(String type) {
+// if (type.equals("Gaming")) return new Gaming();
+// return new Ideal();
+// }
+// }
 
 // interface ResponseStrategy {
-//     void respond();
+// void respond();
 // }
 
 // class ConceptExplanation implements ResponseStrategy {
-//     public void respond() {
-//         System.out.println("Menampilkan konsep dasar materi.");
-//     }
+// public void respond() {
+// System.out.println("Menampilkan konsep dasar materi.");
+// }
 // }
 
 // class ChallengeQuestion implements ResponseStrategy {
-//     public void respond() {
-//         System.out.println("Memberikan soal tantangan lanjutan.");
-//     }
+// public void respond() {
+// System.out.println("Memberikan soal tantangan lanjutan.");
+// }
 // }
 
 // class Chatbot {
-//     private ResponseStrategy strategy;
+// private ResponseStrategy strategy;
 
-//     void setStrategy(ResponseStrategy strategy) {
-//         this.strategy = strategy;
-//     }
+// void setStrategy(ResponseStrategy strategy) {
+// this.strategy = strategy;
+// }
 
-//     void respond() {
-//         strategy.respond();
-//     }
+// void respond() {
+// strategy.respond();
+// }
 // }
 
 // interface Observer {
