@@ -5532,15 +5532,32 @@
 # print(chatbot_response("Struggling"))
 
 # Sistem klasifikasi performa berdasarkan percobaan dan waktu
-def performance_engine(attempts, time_spent):
-    rules = [
-        (attempts > 5 and time_spent > 300, "Struggling"),
-        (attempts < 2 and time_spent < 60, "Gaming"),
-    ]
+# def performance_engine(attempts, time_spent):
+#     rules = [
+#         (attempts > 5 and time_spent > 300, "Struggling"),
+#         (attempts < 2 and time_spent < 60, "Gaming"),
+#     ]
 
-    for condition, result in rules:
-        if condition:
-            return result
-    return "Normal"
+#     for condition, result in rules:
+#         if condition:
+#             return result
+#     return "Normal"
 
-print(performance_engine(6, 450))
+# print(performance_engine(6, 450))
+
+
+#   
+class StudentProgress:
+    def __init__(self):
+        self.records = []
+
+    def add_record(self, score):
+        self.records.append(score)
+
+    def trend(self):
+        return "Improving" if self.records[-1] > self.records[0] else "Declining"
+
+progress = StudentProgress()
+progress.add_record(60)
+progress.add_record(80)
+print(progress.trend())
