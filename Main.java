@@ -1667,56 +1667,88 @@ public class Main {
         // Performance p = PerformanceFactory.create("Gaming");
         // p.info();
 
-        StudentProfile profile = new StudentProfile.Builder()
-                .setName("Mahasiswa A")
-                .setAttempts(6)
-                .setTimeSpent(420)
-                .build();
+        // StudentProfile profile = new StudentProfile.Builder()
+        //         .setName("Mahasiswa A")
+        //         .setAttempts(6)
+        //         .setTimeSpent(420)
+        //         .build();
 
-        profile.display();
+        // profile.display();
+
+        Analyzer a1 = new AttemptAnalyzer();
+        Analyzer a2 = new TimeAnalyzer();
+
+        a1.setNext(a2);
+        a1.analyze(6, 400);
     }
 }
 
-class StudentProfile {
-    private String name;
-    private int attempts;
-    private int timeSpent;
+abstract class Analyzer {
+    protected Analyzer next;
 
-    private StudentProfile(Builder builder) {
-        this.name = builder.name;
-        this.attempts = builder.attempts;
-        this.timeSpent = builder.timeSpent;
+    void setNext(Analyzer next) {
+        this.next = next;
     }
 
-    static class Builder {
-        private String name;
-        private int attempts;
-        private int timeSpent;
+    abstract void analyze(int attempts, int time);
+}
 
-        Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        Builder setAttempts(int attempts) {
-            this.attempts = attempts;
-            return this;
-        }
-
-        Builder setTimeSpent(int timeSpent) {
-            this.timeSpent = timeSpent;
-            return this;
-        }
-
-        StudentProfile build() {
-            return new StudentProfile(this);
-        }
-    }
-
-    void display() {
-        System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
+class AttemptAnalyzer extends Analyzer {
+    void analyze(int attempts, int time) {
+        if (attempts > 5)
+            System.out.println("Banyak percobaan terdeteksi");
+        else if (next != null)
+            next.analyze(attempts, time);
     }
 }
+
+class TimeAnalyzer extends Analyzer {
+    void analyze(int attempts, int time) {
+        if (time > 300)
+            System.out.println("Waktu pengerjaan terlalu lama");
+    }
+}
+
+// class StudentProfile {
+//     private String name;
+//     private int attempts;
+//     private int timeSpent;
+
+//     private StudentProfile(Builder builder) {
+//         this.name = builder.name;
+//         this.attempts = builder.attempts;
+//         this.timeSpent = builder.timeSpent;
+//     }
+
+//     static class Builder {
+//         private String name;
+//         private int attempts;
+//         private int timeSpent;
+
+//         Builder setName(String name) {
+//             this.name = name;
+//             return this;
+//         }
+
+//         Builder setAttempts(int attempts) {
+//             this.attempts = attempts;
+//             return this;
+//         }
+
+//         Builder setTimeSpent(int timeSpent) {
+//             this.timeSpent = timeSpent;
+//             return this;
+//         }
+
+//         StudentProfile build() {
+//             return new StudentProfile(this);
+//         }
+//     }
+
+//     void display() {
+//         System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
+//     }
+// }
 
 // abstract class Performance {
 // abstract void info();
