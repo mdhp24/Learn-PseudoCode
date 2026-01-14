@@ -5547,17 +5547,29 @@
 
 
 #   
-class StudentProgress:
-    def __init__(self):
-        self.records = []
+# class StudentProgress:
+#     def __init__(self):
+#         self.records = []
 
-    def add_record(self, score):
-        self.records.append(score)
+#     def add_record(self, score):
+#         self.records.append(score)
 
-    def trend(self):
-        return "Improving" if self.records[-1] > self.records[0] else "Declining"
+#     def trend(self):
+#         return "Improving" if self.records[-1] > self.records[0] else "Declining"
 
-progress = StudentProgress()
-progress.add_record(60)
-progress.add_record(80)
-print(progress.trend())
+# progress = StudentProgress()
+# progress.add_record(60)
+# progress.add_record(80)
+# print(progress.trend())
+
+#v Sistem berikan feedback adaptif berdasarkan performa siswa
+def adaptive_feedback(performance):
+    feedback = {
+        "Struggling": "Tampilkan definisi dan contoh",
+        "Gaming": "Kurangi bantuan",
+        "Normal": "Lanjutkan latihan",
+        "Ideal": "Berikan soal HOTS"
+    }
+    return feedback.get(performance)
+
+print(adaptive_feedback("Ideal"))
