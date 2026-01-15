@@ -1681,38 +1681,70 @@ public class Main {
         // a1.setNext(a2);
         // a1.analyze(6, 400);
 
-        StudentFSM fsm = new StudentFSM();
-        fsm.transition(6, 450);
-        fsm.displayState();
+        // StudentFSM fsm = new StudentFSM();
+        // fsm.transition(6, 450);
+        // fsm.displayState();
+
+        LearningEvaluation eval = new PseudocodeEvaluation();
+        eval.evaluate();
     }
 }
 
-enum PerformanceState {
-    STRUGGLING, GAMING, NORMAL, IDEAL
+
+abstract class LearningEvaluation {
+
+    final void evaluate() {
+        collectData();
+        analyze();
+        respond();
+    }
+
+    abstract void collectData();
+    abstract void analyze();
+    abstract void respond();
 }
 
-class StudentFSM {
-    private PerformanceState state;
+class PseudocodeEvaluation extends LearningEvaluation {
 
-    StudentFSM() {
-        state = PerformanceState.NORMAL;
+    void collectData() {
+        System.out.println("Mengumpulkan data attempt & waktu");
     }
 
-    void transition(int attempts, int time) {
-        if (attempts > 5 && time > 300)
-            state = PerformanceState.STRUGGLING;
-        else if (attempts < 2 && time < 60)
-            state = PerformanceState.GAMING;
-        else if (attempts <= 2 && time < 120)
-            state = PerformanceState.IDEAL;
-        else
-            state = PerformanceState.NORMAL;
+    void analyze() {
+        System.out.println("Menganalisis tingkat kesulitan");
     }
 
-    void displayState() {
-        System.out.println("Current State: " + state);
+    void respond() {
+        System.out.println("Chatbot menampilkan konsep Array");
     }
 }
+
+// enum PerformanceState {
+//     STRUGGLING, GAMING, NORMAL, IDEAL
+// }
+
+// class StudentFSM {
+//     private PerformanceState state;
+
+//     StudentFSM() {
+//         state = PerformanceState.NORMAL;
+//     }
+
+//     void transition(int attempts, int time) {
+//         if (attempts > 5 && time > 300)
+//             state = PerformanceState.STRUGGLING;
+//         else if (attempts < 2 && time < 60)
+//             state = PerformanceState.GAMING;
+//         else if (attempts <= 2 && time < 120)
+//             state = PerformanceState.IDEAL;
+//         else
+//             state = PerformanceState.NORMAL;
+//     }
+
+//     void displayState() {
+//         System.out.println("Current State: " + state);
+//     }
+// }
 
 // abstract class Analyzer {
 //     protected Analyzer next;
