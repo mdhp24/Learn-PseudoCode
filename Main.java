@@ -1675,39 +1675,70 @@ public class Main {
 
         // profile.display();
 
-        Analyzer a1 = new AttemptAnalyzer();
-        Analyzer a2 = new TimeAnalyzer();
+        // Analyzer a1 = new AttemptAnalyzer();
+        // Analyzer a2 = new TimeAnalyzer();
 
-        a1.setNext(a2);
-        a1.analyze(6, 400);
+        // a1.setNext(a2);
+        // a1.analyze(6, 400);
+
+        StudentFSM fsm = new StudentFSM();
+        fsm.transition(6, 450);
+        fsm.displayState();
     }
 }
 
-abstract class Analyzer {
-    protected Analyzer next;
-
-    void setNext(Analyzer next) {
-        this.next = next;
-    }
-
-    abstract void analyze(int attempts, int time);
+enum PerformanceState {
+    STRUGGLING, GAMING, NORMAL, IDEAL
 }
 
-class AttemptAnalyzer extends Analyzer {
-    void analyze(int attempts, int time) {
-        if (attempts > 5)
-            System.out.println("Banyak percobaan terdeteksi");
-        else if (next != null)
-            next.analyze(attempts, time);
+class StudentFSM {
+    private PerformanceState state;
+
+    StudentFSM() {
+        state = PerformanceState.NORMAL;
+    }
+
+    void transition(int attempts, int time) {
+        if (attempts > 5 && time > 300)
+            state = PerformanceState.STRUGGLING;
+        else if (attempts < 2 && time < 60)
+            state = PerformanceState.GAMING;
+        else if (attempts <= 2 && time < 120)
+            state = PerformanceState.IDEAL;
+        else
+            state = PerformanceState.NORMAL;
+    }
+
+    void displayState() {
+        System.out.println("Current State: " + state);
     }
 }
 
-class TimeAnalyzer extends Analyzer {
-    void analyze(int attempts, int time) {
-        if (time > 300)
-            System.out.println("Waktu pengerjaan terlalu lama");
-    }
-}
+// abstract class Analyzer {
+//     protected Analyzer next;
+
+//     void setNext(Analyzer next) {
+//         this.next = next;
+//     }
+
+//     abstract void analyze(int attempts, int time);
+// }
+
+// class AttemptAnalyzer extends Analyzer {
+//     void analyze(int attempts, int time) {
+//         if (attempts > 5)
+//             System.out.println("Banyak percobaan terdeteksi");
+//         else if (next != null)
+//             next.analyze(attempts, time);
+//     }
+// }
+
+// class TimeAnalyzer extends Analyzer {
+//     void analyze(int attempts, int time) {
+//         if (time > 300)
+//             System.out.println("Waktu pengerjaan terlalu lama");
+//     }
+// }
 
 // class StudentProfile {
 //     private String name;
