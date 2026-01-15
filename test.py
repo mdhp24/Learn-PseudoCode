@@ -5575,6 +5575,15 @@
 # print(adaptive_feedback("Ideal"))
 
 # Sistem hitung total waktu belajar dari daftar sesi
-def total_waktu(sessions):
-    return sum(sessions)
-print(total_waktu([60, 45, 30]))
+# def total_waktu(sessions):
+#     return sum(sessions)
+# print(total_waktu([60, 45, 30]))
+
+
+# Sistem konversi detik ke format jam menit detik
+def konversi_detik(detik):
+    jam = detik // 3600
+    menit = (detik % 3600) // 60
+    detik = detik % 60
+    return f"{jam} jam {menit} menit {detik} detik"
+print(konversi_detik(3665))
