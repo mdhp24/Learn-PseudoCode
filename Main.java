@@ -1668,10 +1668,10 @@ public class Main {
         // p.info();
 
         // StudentProfile profile = new StudentProfile.Builder()
-        //         .setName("Mahasiswa A")
-        //         .setAttempts(6)
-        //         .setTimeSpent(420)
-        //         .build();
+        // .setName("Mahasiswa A")
+        // .setAttempts(6)
+        // .setTimeSpent(420)
+        // .build();
 
         // profile.display();
 
@@ -1688,156 +1688,177 @@ public class Main {
         // LearningEvaluation eval = new PseudocodeEvaluation();
         // eval.evaluate();
 
-        ChatbotResponse bot =
-            new ConceptDecorator(new BasicResponse());
-
-        System.out.println(bot.getResponse());
+        ChatbotInvoker bot = new ChatbotInvoker();
+        bot.setCommand(new ShowConcept());
+        bot.run();
     }
 }
 
-interface ChatbotResponse {
-    String getResponse();
+interface Command {
+    void execute();
 }
 
-class BasicResponse implements ChatbotResponse {
-    public String getResponse() {
-        return "Respon dasar chatbot";
+class ShowConcept implements Command {
+    public void execute() {
+        System.out.println("Menampilkan konsep dasar");
     }
 }
 
-class ConceptDecorator implements ChatbotResponse {
-    private ChatbotResponse response;
+class ChatbotInvoker {
+    private Command command;
 
-    ConceptDecorator(ChatbotResponse response) {
-        this.response = response;
+    void setCommand(Command command) {
+        this.command = command;
     }
 
-    public String getResponse() {
-        return response.getResponse() + " + Penjelasan konsep";
+    void run() {
+        command.execute();
     }
 }
 
+// interface ChatbotResponse {
+// String getResponse();
+// }
+
+// class BasicResponse implements ChatbotResponse {
+// public String getResponse() {
+// return "Respon dasar chatbot";
+// }
+// }
+
+// class ConceptDecorator implements ChatbotResponse {
+// private ChatbotResponse response;
+
+// ConceptDecorator(ChatbotResponse response) {
+// this.response = response;
+// }
+
+// public String getResponse() {
+// return response.getResponse() + " + Penjelasan konsep";
+// }
+// }
 
 // abstract class LearningEvaluation {
 
-//     final void evaluate() {
-//         collectData();
-//         analyze();
-//         respond();
-//     }
+// final void evaluate() {
+// collectData();
+// analyze();
+// respond();
+// }
 
-//     abstract void collectData();
-//     abstract void analyze();
-//     abstract void respond();
+// abstract void collectData();
+// abstract void analyze();
+// abstract void respond();
 // }
 
 // class PseudocodeEvaluation extends LearningEvaluation {
 
-//     void collectData() {
-//         System.out.println("Mengumpulkan data attempt & waktu");
-//     }
+// void collectData() {
+// System.out.println("Mengumpulkan data attempt & waktu");
+// }
 
-//     void analyze() {
-//         System.out.println("Menganalisis tingkat kesulitan");
-//     }
+// void analyze() {
+// System.out.println("Menganalisis tingkat kesulitan");
+// }
 
-//     void respond() {
-//         System.out.println("Chatbot menampilkan konsep Array");
-//     }
+// void respond() {
+// System.out.println("Chatbot menampilkan konsep Array");
+// }
 // }
 
 // enum PerformanceState {
-//     STRUGGLING, GAMING, NORMAL, IDEAL
+// STRUGGLING, GAMING, NORMAL, IDEAL
 // }
 
 // class StudentFSM {
-//     private PerformanceState state;
+// private PerformanceState state;
 
-//     StudentFSM() {
-//         state = PerformanceState.NORMAL;
-//     }
+// StudentFSM() {
+// state = PerformanceState.NORMAL;
+// }
 
-//     void transition(int attempts, int time) {
-//         if (attempts > 5 && time > 300)
-//             state = PerformanceState.STRUGGLING;
-//         else if (attempts < 2 && time < 60)
-//             state = PerformanceState.GAMING;
-//         else if (attempts <= 2 && time < 120)
-//             state = PerformanceState.IDEAL;
-//         else
-//             state = PerformanceState.NORMAL;
-//     }
+// void transition(int attempts, int time) {
+// if (attempts > 5 && time > 300)
+// state = PerformanceState.STRUGGLING;
+// else if (attempts < 2 && time < 60)
+// state = PerformanceState.GAMING;
+// else if (attempts <= 2 && time < 120)
+// state = PerformanceState.IDEAL;
+// else
+// state = PerformanceState.NORMAL;
+// }
 
-//     void displayState() {
-//         System.out.println("Current State: " + state);
-//     }
+// void displayState() {
+// System.out.println("Current State: " + state);
+// }
 // }
 
 // abstract class Analyzer {
-//     protected Analyzer next;
+// protected Analyzer next;
 
-//     void setNext(Analyzer next) {
-//         this.next = next;
-//     }
+// void setNext(Analyzer next) {
+// this.next = next;
+// }
 
-//     abstract void analyze(int attempts, int time);
+// abstract void analyze(int attempts, int time);
 // }
 
 // class AttemptAnalyzer extends Analyzer {
-//     void analyze(int attempts, int time) {
-//         if (attempts > 5)
-//             System.out.println("Banyak percobaan terdeteksi");
-//         else if (next != null)
-//             next.analyze(attempts, time);
-//     }
+// void analyze(int attempts, int time) {
+// if (attempts > 5)
+// System.out.println("Banyak percobaan terdeteksi");
+// else if (next != null)
+// next.analyze(attempts, time);
+// }
 // }
 
 // class TimeAnalyzer extends Analyzer {
-//     void analyze(int attempts, int time) {
-//         if (time > 300)
-//             System.out.println("Waktu pengerjaan terlalu lama");
-//     }
+// void analyze(int attempts, int time) {
+// if (time > 300)
+// System.out.println("Waktu pengerjaan terlalu lama");
+// }
 // }
 
 // class StudentProfile {
-//     private String name;
-//     private int attempts;
-//     private int timeSpent;
+// private String name;
+// private int attempts;
+// private int timeSpent;
 
-//     private StudentProfile(Builder builder) {
-//         this.name = builder.name;
-//         this.attempts = builder.attempts;
-//         this.timeSpent = builder.timeSpent;
-//     }
+// private StudentProfile(Builder builder) {
+// this.name = builder.name;
+// this.attempts = builder.attempts;
+// this.timeSpent = builder.timeSpent;
+// }
 
-//     static class Builder {
-//         private String name;
-//         private int attempts;
-//         private int timeSpent;
+// static class Builder {
+// private String name;
+// private int attempts;
+// private int timeSpent;
 
-//         Builder setName(String name) {
-//             this.name = name;
-//             return this;
-//         }
+// Builder setName(String name) {
+// this.name = name;
+// return this;
+// }
 
-//         Builder setAttempts(int attempts) {
-//             this.attempts = attempts;
-//             return this;
-//         }
+// Builder setAttempts(int attempts) {
+// this.attempts = attempts;
+// return this;
+// }
 
-//         Builder setTimeSpent(int timeSpent) {
-//             this.timeSpent = timeSpent;
-//             return this;
-//         }
+// Builder setTimeSpent(int timeSpent) {
+// this.timeSpent = timeSpent;
+// return this;
+// }
 
-//         StudentProfile build() {
-//             return new StudentProfile(this);
-//         }
-//     }
+// StudentProfile build() {
+// return new StudentProfile(this);
+// }
+// }
 
-//     void display() {
-//         System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
-//     }
+// void display() {
+// System.out.println(name + " | Attempts: " + attempts + " | Time: " +
+// timeSpent);
+// }
 // }
 
 // abstract class Performance {
