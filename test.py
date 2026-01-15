@@ -5563,13 +5563,18 @@
 # print(progress.trend())
 
 #v Sistem berikan feedback adaptif berdasarkan performa siswa
-def adaptive_feedback(performance):
-    feedback = {
-        "Struggling": "Tampilkan definisi dan contoh",
-        "Gaming": "Kurangi bantuan",
-        "Normal": "Lanjutkan latihan",
-        "Ideal": "Berikan soal HOTS"
-    }
-    return feedback.get(performance)
+# def adaptive_feedback(performance):
+#     feedback = {
+#         "Struggling": "Tampilkan definisi dan contoh",
+#         "Gaming": "Kurangi bantuan",
+#         "Normal": "Lanjutkan latihan",
+#         "Ideal": "Berikan soal HOTS"
+#     }
+#     return feedback.get(performance)
 
-print(adaptive_feedback("Ideal"))
+# print(adaptive_feedback("Ideal"))
+
+# Sistem hitung total waktu belajar dari daftar sesi
+def total_waktu(sessions):
+    return sum(sessions)
+print(total_waktu([60, 45, 30]))
