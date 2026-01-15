@@ -1685,39 +1685,66 @@ public class Main {
         // fsm.transition(6, 450);
         // fsm.displayState();
 
-        LearningEvaluation eval = new PseudocodeEvaluation();
-        eval.evaluate();
+        // LearningEvaluation eval = new PseudocodeEvaluation();
+        // eval.evaluate();
+
+        ChatbotResponse bot =
+            new ConceptDecorator(new BasicResponse());
+
+        System.out.println(bot.getResponse());
+    }
+}
+
+interface ChatbotResponse {
+    String getResponse();
+}
+
+class BasicResponse implements ChatbotResponse {
+    public String getResponse() {
+        return "Respon dasar chatbot";
+    }
+}
+
+class ConceptDecorator implements ChatbotResponse {
+    private ChatbotResponse response;
+
+    ConceptDecorator(ChatbotResponse response) {
+        this.response = response;
+    }
+
+    public String getResponse() {
+        return response.getResponse() + " + Penjelasan konsep";
     }
 }
 
 
-abstract class LearningEvaluation {
+// abstract class LearningEvaluation {
 
-    final void evaluate() {
-        collectData();
-        analyze();
-        respond();
-    }
+//     final void evaluate() {
+//         collectData();
+//         analyze();
+//         respond();
+//     }
 
-    abstract void collectData();
-    abstract void analyze();
-    abstract void respond();
-}
+//     abstract void collectData();
+//     abstract void analyze();
+//     abstract void respond();
+// }
 
-class PseudocodeEvaluation extends LearningEvaluation {
+// class PseudocodeEvaluation extends LearningEvaluation {
 
-    void collectData() {
-        System.out.println("Mengumpulkan data attempt & waktu");
-    }
+//     void collectData() {
+//         System.out.println("Mengumpulkan data attempt & waktu");
+//     }
 
-    void analyze() {
-        System.out.println("Menganalisis tingkat kesulitan");
-    }
+//     void analyze() {
+//         System.out.println("Menganalisis tingkat kesulitan");
+//     }
 
-    void respond() {
-        System.out.println("Chatbot menampilkan konsep Array");
-    }
-}
+//     void respond() {
+//         System.out.println("Chatbot menampilkan konsep Array");
+//     }
+// }
 
 // enum PerformanceState {
 //     STRUGGLING, GAMING, NORMAL, IDEAL
