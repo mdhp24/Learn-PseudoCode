@@ -1701,131 +1701,163 @@ public class Main {
         // Performance p = PerformanceFactory.create("Gaming");
         // p.info();
 
-        StudentProfile profile = new StudentProfile.Builder()
-                .setName("Mahasiswa A")
-                .setAttempts(6)
-                .setTimeSpent(420)
-                .build();
+        // StudentProfile profile = new StudentProfile.Builder()
+        // .setName("Mahasiswa A")
+        // .setAttempts(6)
+        // .setTimeSpent(420)
+        // .build();
 
-        profile.display();
+        // profile.display();
+
+        Analyzer a1 = new AttemptAnalyzer();
+        Analyzer a2 = new TimeAnalyzer();
+
+        a1.setNext(a2);
+        a1.analyze(6, 400);
     }
 }
 
+abstract class Analyzer {
+    protected Analyzer next;
 
-class StudentProfile {
-    private String name;
-    private int attempts;
-    private int timeSpent;
-
-    private StudentProfile(Builder builder) {
-        this.name = builder.name;
-        this.attempts = builder.attempts;
-        this.timeSpent = builder.timeSpent;
+    void setNext(Analyzer next) {
+        this.next = next;
     }
 
-    static class Builder {
-        private String name;
-        private int attempts;
-        private int timeSpent;
+    abstract void analyze(int attempts, int time);
+}
 
-        Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        Builder setAttempts(int attempts) {
-            this.attempts = attempts;
-            return this;
-        }
-
-        Builder setTimeSpent(int timeSpent) {
-            this.timeSpent = timeSpent;
-            return this;
-        }
-
-        StudentProfile build() {
-            return new StudentProfile(this);
-        }
-    }
-
-    void display() {
-        System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
+class AttemptAnalyzer extends Analyzer {
+    void analyze(int attempts, int time) {
+        if (attempts > 5)
+            System.out.println("Banyak percobaan terdeteksi");
+        else if (next != null)
+            next.analyze(attempts, time);
     }
 }
+
+class TimeAnalyzer extends Analyzer {
+    void analyze(int attempts, int time) {
+        if (time > 300)
+            System.out.println("Waktu pengerjaan terlalu lama");
+    }
+}
+
+// class StudentProfile {
+// private String name;
+// private int attempts;
+// private int timeSpent;
+
+// private StudentProfile(Builder builder) {
+// this.name = builder.name;
+// this.attempts = builder.attempts;
+// this.timeSpent = builder.timeSpent;
+// }
+
+// static class Builder {
+// private String name;
+// private int attempts;
+// private int timeSpent;
+
+// Builder setName(String name) {
+// this.name = name;
+// return this;
+// }
+
+// Builder setAttempts(int attempts) {
+// this.attempts = attempts;
+// return this;
+// }
+
+// Builder setTimeSpent(int timeSpent) {
+// this.timeSpent = timeSpent;
+// return this;
+// }
+
+// StudentProfile build() {
+// return new StudentProfile(this);
+// }
+// }
+
+// void display() {
+// System.out.println(name + " | Attempts: " + attempts + " | Time: " +
+// timeSpent);
+// }
+// }
 
 // abstract class Performance {
-//     abstract void info();
+// abstract void info();
 // }
 
 // class Gaming extends Performance {
-//     void info() {
-//         System.out.println("Gaming the System detected.");
-//     }
+// void info() {
+// System.out.println("Gaming the System detected.");
+// }
 // }
 
 // class Ideal extends Performance {
-//     void info() {
-//         System.out.println("Ideal learner.");
-//     }
+// void info() {
+// System.out.println("Ideal learner.");
+// }
 // }
 
 // class PerformanceFactory {
-//     static Performance create(String type) {
-//         if (type.equals("Gaming")) return new Gaming();
-//         return new Ideal();
-//     }
+// static Performance create(String type) {
+// if (type.equals("Gaming")) return new Gaming();
+// return new Ideal();
+// }
 // }
 
 // class StudentModel {
-//     private String name;
-//     private int masteryLevel;
-//     private int frustrationLevel;
+// private String name;
+// private int masteryLevel;
+// private int frustrationLevel;
 
-//     StudentModel(String name) {
-//         this.name = name;
-//         this.masteryLevel = 0;
-//         this.frustrationLevel = 0;
-//     }
+// StudentModel(String name) {
+// this.name = name;
+// this.masteryLevel = 0;
+// this.frustrationLevel = 0;
+// }
 
-//     void updatePerformance(boolean correct, int timeSpent) {
-//         if (correct && timeSpent < 120)
-//             masteryLevel++;
-//         else
-//             frustrationLevel++;
-//     }
+// void updatePerformance(boolean correct, int timeSpent) {
+// if (correct && timeSpent < 120)
+// masteryLevel++;
+// else
+// frustrationLevel++;
+// }
 
-//     String getStatus() {
-//         if (frustrationLevel > masteryLevel)
-//             return "Struggling";
-//         return "Progressing";
-//     }
+// String getStatus() {
+// if (frustrationLevel > masteryLevel)
+// return "Struggling";
+// return "Progressing";
+// }
 
-//     void showProfile() {
-//         System.out.println(name + " | Mastery: " + masteryLevel +
-//                 " | Frustration: " + frustrationLevel);
-//     }
+// void showProfile() {
+// System.out.println(name + " | Mastery: " + masteryLevel +
+// " | Frustration: " + frustrationLevel);
+// }
 // }
 
 // interface Command {
-//     void execute();
+// void execute();
 // }
 
 // class ShowConcept implements Command {
-//     public void execute() {
-//         System.out.println("Menampilkan konsep dasar");
-//     }
+// public void execute() {
+// System.out.println("Menampilkan konsep dasar");
+// }
 // }
 
 // class ChatbotInvoker {
-//     private Command command;
+// private Command command;
 
-//     void setCommand(Command command) {
-//         this.command = command;
-//     }
+// void setCommand(Command command) {
+// this.command = command;
+// }
 
-//     void run() {
-//         command.execute();
-//     }
+// void run() {
+// command.execute();
+// }
 // }
 
 // interface ChatbotResponse {
