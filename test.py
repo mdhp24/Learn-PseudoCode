@@ -5615,8 +5615,18 @@
 
 # print(performance_engine(6, 450))
 
-# Sistem hitung skor kesulitan berdasarkan percobaan dan waktu
-def difficulty_score(attempts, time_spent):
-    return (attempts * 0.6) + (time_spent / 100)
+# # Sistem hitung skor kesulitan berdasarkan percobaan dan waktu
+# def difficulty_score(attempts, time_spent):
+#     return (attempts * 0.6) + (time_spent / 100)
 
-print(difficulty_score(6, 420))
+# print(difficulty_score(6, 420))
+
+# Sistem update probabilitas pengetahuan siswa
+def update_knowledge(p_know, correct):
+    if correct:
+        return min(1, p_know + 0.1)
+    return max(0, p_know - 0.05)
+
+p = 0.4
+p = update_knowledge(p, True)
+print(p)
