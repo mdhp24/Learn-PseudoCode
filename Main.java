@@ -1688,33 +1688,69 @@ public class Main {
         // LearningEvaluation eval = new PseudocodeEvaluation();
         // eval.evaluate();
 
-        ChatbotInvoker bot = new ChatbotInvoker();
-        bot.setCommand(new ShowConcept());
-        bot.run();
+        // ChatbotInvoker bot = new ChatbotInvoker();
+        // bot.setCommand(new ShowConcept());
+        // bot.run();
+
+        StudentModel student = new StudentModel("Mahasiswa B");
+        student.updatePerformance(false, 300);
+        student.updatePerformance(true, 90);
+        student.showProfile();
+        System.out.println(student.getStatus());
     }
 }
 
-interface Command {
-    void execute();
-}
+class StudentModel {
+    private String name;
+    private int masteryLevel;
+    private int frustrationLevel;
 
-class ShowConcept implements Command {
-    public void execute() {
-        System.out.println("Menampilkan konsep dasar");
+    StudentModel(String name) {
+        this.name = name;
+        this.masteryLevel = 0;
+        this.frustrationLevel = 0;
+    }
+
+    void updatePerformance(boolean correct, int timeSpent) {
+        if (correct && timeSpent < 120)
+            masteryLevel++;
+        else
+            frustrationLevel++;
+    }
+
+    String getStatus() {
+        if (frustrationLevel > masteryLevel)
+            return "Struggling";
+        return "Progressing";
+    }
+
+    void showProfile() {
+        System.out.println(name + " | Mastery: " + masteryLevel +
+                " | Frustration: " + frustrationLevel);
     }
 }
 
-class ChatbotInvoker {
-    private Command command;
+// interface Command {
+//     void execute();
+// }
 
-    void setCommand(Command command) {
-        this.command = command;
-    }
+// class ShowConcept implements Command {
+//     public void execute() {
+//         System.out.println("Menampilkan konsep dasar");
+//     }
+// }
 
-    void run() {
-        command.execute();
-    }
-}
+// class ChatbotInvoker {
+//     private Command command;
+
+//     void setCommand(Command command) {
+//         this.command = command;
+//     }
+
+//     void run() {
+//         command.execute();
+//     }
+// }
 
 // interface ChatbotResponse {
 // String getResponse();
