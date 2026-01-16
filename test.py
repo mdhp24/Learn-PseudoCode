@@ -5591,11 +5591,32 @@
 
 
 # Sistem cek bilangan prima
-def prima(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
-print(prima(17))
+# def prima(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
+# print(prima(17))
+
+
+# Sistem klasifikasi performa berdasarkan percobaan dan waktu
+# def performance_engine(attempts, time_spent):
+#     rules = [
+#         (attempts > 5 and time_spent > 300, "Struggling"),
+#         (attempts < 2 and time_spent < 60, "Gaming"),
+#     ]
+
+#     for condition, result in rules:
+#         if condition:
+#             return result
+#     return "Normal"
+
+# print(performance_engine(6, 450))
+
+# Sistem hitung skor kesulitan berdasarkan percobaan dan waktu
+def difficulty_score(attempts, time_spent):
+    return (attempts * 0.6) + (time_spent / 100)
+
+print(difficulty_score(6, 420))
