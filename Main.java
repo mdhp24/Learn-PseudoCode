@@ -1698,33 +1698,83 @@ public class Main {
         // student.showProfile();
         // System.out.println(student.getStatus());
 
-        Performance p = PerformanceFactory.create("Gaming");
-        p.info();
+        // Performance p = PerformanceFactory.create("Gaming");
+        // p.info();
+
+        StudentProfile profile = new StudentProfile.Builder()
+                .setName("Mahasiswa A")
+                .setAttempts(6)
+                .setTimeSpent(420)
+                .build();
+
+        profile.display();
     }
 }
 
-abstract class Performance {
-    abstract void info();
-}
 
-class Gaming extends Performance {
-    void info() {
-        System.out.println("Gaming the System detected.");
+class StudentProfile {
+    private String name;
+    private int attempts;
+    private int timeSpent;
+
+    private StudentProfile(Builder builder) {
+        this.name = builder.name;
+        this.attempts = builder.attempts;
+        this.timeSpent = builder.timeSpent;
+    }
+
+    static class Builder {
+        private String name;
+        private int attempts;
+        private int timeSpent;
+
+        Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        Builder setAttempts(int attempts) {
+            this.attempts = attempts;
+            return this;
+        }
+
+        Builder setTimeSpent(int timeSpent) {
+            this.timeSpent = timeSpent;
+            return this;
+        }
+
+        StudentProfile build() {
+            return new StudentProfile(this);
+        }
+    }
+
+    void display() {
+        System.out.println(name + " | Attempts: " + attempts + " | Time: " + timeSpent);
     }
 }
 
-class Ideal extends Performance {
-    void info() {
-        System.out.println("Ideal learner.");
-    }
-}
+// abstract class Performance {
+//     abstract void info();
+// }
 
-class PerformanceFactory {
-    static Performance create(String type) {
-        if (type.equals("Gaming")) return new Gaming();
-        return new Ideal();
-    }
-}
+// class Gaming extends Performance {
+//     void info() {
+//         System.out.println("Gaming the System detected.");
+//     }
+// }
+
+// class Ideal extends Performance {
+//     void info() {
+//         System.out.println("Ideal learner.");
+//     }
+// }
+
+// class PerformanceFactory {
+//     static Performance create(String type) {
+//         if (type.equals("Gaming")) return new Gaming();
+//         return new Ideal();
+//     }
+// }
 
 // class StudentModel {
 //     private String name;
