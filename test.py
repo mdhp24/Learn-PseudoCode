@@ -5622,11 +5622,21 @@
 # print(difficulty_score(6, 420))
 
 # Sistem update probabilitas pengetahuan siswa
-def update_knowledge(p_know, correct):
-    if correct:
-        return min(1, p_know + 0.1)
-    return max(0, p_know - 0.05)
+# def update_knowledge(p_know, correct):
+#     if correct:
+#         return min(1, p_know + 0.1)
+#     return max(0, p_know - 0.05)
 
-p = 0.4
-p = update_knowledge(p, True)
-print(p)
+# p = 0.4
+# p = update_knowledge(p, True)
+# print(p)
+
+# Sistem pilih konten berdasarkan skor siswa
+def select_content(score):
+    if score > 10:
+        return "Concept Explanation"
+    elif score < 4:
+        return "Advanced Challenge"
+    return "Standard Practice"
+
+print(select_content(12))
