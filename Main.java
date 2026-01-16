@@ -1692,43 +1692,69 @@ public class Main {
         // bot.setCommand(new ShowConcept());
         // bot.run();
 
-        StudentModel student = new StudentModel("Mahasiswa B");
-        student.updatePerformance(false, 300);
-        student.updatePerformance(true, 90);
-        student.showProfile();
-        System.out.println(student.getStatus());
+        // StudentModel student = new StudentModel("Mahasiswa B");
+        // student.updatePerformance(false, 300);
+        // student.updatePerformance(true, 90);
+        // student.showProfile();
+        // System.out.println(student.getStatus());
+
+        Performance p = PerformanceFactory.create("Gaming");
+        p.info();
     }
 }
 
-class StudentModel {
-    private String name;
-    private int masteryLevel;
-    private int frustrationLevel;
+abstract class Performance {
+    abstract void info();
+}
 
-    StudentModel(String name) {
-        this.name = name;
-        this.masteryLevel = 0;
-        this.frustrationLevel = 0;
-    }
-
-    void updatePerformance(boolean correct, int timeSpent) {
-        if (correct && timeSpent < 120)
-            masteryLevel++;
-        else
-            frustrationLevel++;
-    }
-
-    String getStatus() {
-        if (frustrationLevel > masteryLevel)
-            return "Struggling";
-        return "Progressing";
-    }
-
-    void showProfile() {
-        System.out.println(name + " | Mastery: " + masteryLevel +
-                " | Frustration: " + frustrationLevel);
+class Gaming extends Performance {
+    void info() {
+        System.out.println("Gaming the System detected.");
     }
 }
+
+class Ideal extends Performance {
+    void info() {
+        System.out.println("Ideal learner.");
+    }
+}
+
+class PerformanceFactory {
+    static Performance create(String type) {
+        if (type.equals("Gaming")) return new Gaming();
+        return new Ideal();
+    }
+}
+
+// class StudentModel {
+//     private String name;
+//     private int masteryLevel;
+//     private int frustrationLevel;
+
+//     StudentModel(String name) {
+//         this.name = name;
+//         this.masteryLevel = 0;
+//         this.frustrationLevel = 0;
+//     }
+
+//     void updatePerformance(boolean correct, int timeSpent) {
+//         if (correct && timeSpent < 120)
+//             masteryLevel++;
+//         else
+//             frustrationLevel++;
+//     }
+
+//     String getStatus() {
+//         if (frustrationLevel > masteryLevel)
+//             return "Struggling";
+//         return "Progressing";
+//     }
+
+//     void showProfile() {
+//         System.out.println(name + " | Mastery: " + masteryLevel +
+//                 " | Frustration: " + frustrationLevel);
+//     }
+// }
 
 // interface Command {
 //     void execute();
