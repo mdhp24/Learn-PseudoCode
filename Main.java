@@ -1715,33 +1715,60 @@ public class Main {
         // a1.setNext(a2);
         // a1.analyze(6, 400);
 
-        ChatbotInvoker bot = new ChatbotInvoker();
-        bot.setCommand(new ShowConcept());
-        bot.run();
+        // ChatbotInvoker bot = new ChatbotInvoker();
+        // bot.setCommand(new ShowConcept());
+        // bot.run();
+
+                ChatbotResponse bot =
+            new ConceptDecorator(new BasicResponse());
+
+        System.out.println(bot.getResponse());
     }
 }
 
-interface Command {
-    void execute();
+interface ChatbotResponse {
+    String getResponse();
 }
 
-class ShowConcept implements Command {
-    public void execute() {
-        System.out.println("Menampilkan konsep dasar");
+class BasicResponse implements ChatbotResponse {
+    public String getResponse() {
+        return "Respon dasar chatbot";
     }
 }
 
-class ChatbotInvoker {
-    private Command command;
+class ConceptDecorator implements ChatbotResponse {
+    private ChatbotResponse response;
 
-    void setCommand(Command command) {
-        this.command = command;
+    ConceptDecorator(ChatbotResponse response) {
+        this.response = response;
     }
 
-    void run() {
-        command.execute();
+    public String getResponse() {
+        return response.getResponse() + " + Penjelasan konsep";
     }
 }
+
+// interface Command {
+//     void execute();
+// }
+
+// class ShowConcept implements Command {
+//     public void execute() {
+//         System.out.println("Menampilkan konsep dasar");
+//     }
+// }
+
+// class ChatbotInvoker {
+//     private Command command;
+
+//     void setCommand(Command command) {
+//         this.command = command;
+//     }
+
+//     void run() {
+//         command.execute();
+//     }
+// }
 
 // abstract class Analyzer {
 // protected Analyzer next;
