@@ -1719,55 +1719,88 @@ public class Main {
         // bot.setCommand(new ShowConcept());
         // bot.run();
 
-                ChatbotResponse bot =
-            new ConceptDecorator(new BasicResponse());
+        // ChatbotResponse bot =
+        // new ConceptDecorator(new BasicResponse());
 
-        System.out.println(bot.getResponse());
+        // System.out.println(bot.getResponse());
+
+        LearningEvaluation eval = new PseudocodeEvaluation();
+        eval.evaluate();
     }
 }
 
-interface ChatbotResponse {
-    String getResponse();
+abstract class LearningEvaluation {
+
+    final void evaluate() {
+        collectData();
+        analyze();
+        respond();
+    }
+
+    abstract void collectData();
+
+    abstract void analyze();
+
+    abstract void respond();
 }
 
-class BasicResponse implements ChatbotResponse {
-    public String getResponse() {
-        return "Respon dasar chatbot";
+class PseudocodeEvaluation extends LearningEvaluation {
+
+    void collectData() {
+        System.out.println("Mengumpulkan data attempt & waktu");
+    }
+
+    void analyze() {
+        System.out.println("Menganalisis tingkat kesulitan");
+    }
+
+    void respond() {
+        System.out.println("Chatbot menampilkan konsep Array");
     }
 }
 
-class ConceptDecorator implements ChatbotResponse {
-    private ChatbotResponse response;
+// interface ChatbotResponse {
+// String getResponse();
+// }
 
-    ConceptDecorator(ChatbotResponse response) {
-        this.response = response;
-    }
+// class BasicResponse implements ChatbotResponse {
+// public String getResponse() {
+// return "Respon dasar chatbot";
+// }
+// }
 
-    public String getResponse() {
-        return response.getResponse() + " + Penjelasan konsep";
-    }
-}
+// class ConceptDecorator implements ChatbotResponse {
+// private ChatbotResponse response;
+
+// ConceptDecorator(ChatbotResponse response) {
+// this.response = response;
+// }
+
+// public String getResponse() {
+// return response.getResponse() + " + Penjelasan konsep";
+// }
+// }
 
 // interface Command {
-//     void execute();
+// void execute();
 // }
 
 // class ShowConcept implements Command {
-//     public void execute() {
-//         System.out.println("Menampilkan konsep dasar");
-//     }
+// public void execute() {
+// System.out.println("Menampilkan konsep dasar");
+// }
 // }
 
 // class ChatbotInvoker {
-//     private Command command;
+// private Command command;
 
-//     void setCommand(Command command) {
-//         this.command = command;
-//     }
+// void setCommand(Command command) {
+// this.command = command;
+// }
 
-//     void run() {
-//         command.execute();
-//     }
+// void run() {
+// command.execute();
+// }
 // }
 
 // abstract class Analyzer {
