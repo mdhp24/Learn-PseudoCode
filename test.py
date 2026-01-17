@@ -5632,11 +5632,21 @@
 # print(p)
 
 # Sistem pilih konten berdasarkan skor siswa
-def select_content(score):
-    if score > 10:
-        return "Concept Explanation"
-    elif score < 4:
-        return "Advanced Challenge"
-    return "Standard Practice"
+# def select_content(score):
+#     if score > 10:
+#         return "Concept Explanation"
+#     elif score < 4:
+#         return "Advanced Challenge"
+#     return "Standard Practice"
 
-print(select_content(12))
+# print(select_content(12))
+
+# Sistem berikan feedback adaptif berdasarkan engagement dan performa siswa
+def feedback_engine(engagement, performance):
+    if engagement < 40:
+        return "Motivational message"
+    if performance == "Struggling":
+        return "Concept explanation"
+    return "Standard feedback"
+
+print(feedback_engine(35, "Struggling"))
