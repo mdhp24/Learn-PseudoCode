@@ -1709,39 +1709,65 @@ public class Main {
 
         // profile.display();
 
-        Analyzer a1 = new AttemptAnalyzer();
-        Analyzer a2 = new TimeAnalyzer();
+        // Analyzer a1 = new AttemptAnalyzer();
+        // Analyzer a2 = new TimeAnalyzer();
 
-        a1.setNext(a2);
-        a1.analyze(6, 400);
+        // a1.setNext(a2);
+        // a1.analyze(6, 400);
+
+        ChatbotInvoker bot = new ChatbotInvoker();
+        bot.setCommand(new ShowConcept());
+        bot.run();
     }
 }
 
-abstract class Analyzer {
-    protected Analyzer next;
-
-    void setNext(Analyzer next) {
-        this.next = next;
-    }
-
-    abstract void analyze(int attempts, int time);
+interface Command {
+    void execute();
 }
 
-class AttemptAnalyzer extends Analyzer {
-    void analyze(int attempts, int time) {
-        if (attempts > 5)
-            System.out.println("Banyak percobaan terdeteksi");
-        else if (next != null)
-            next.analyze(attempts, time);
+class ShowConcept implements Command {
+    public void execute() {
+        System.out.println("Menampilkan konsep dasar");
     }
 }
 
-class TimeAnalyzer extends Analyzer {
-    void analyze(int attempts, int time) {
-        if (time > 300)
-            System.out.println("Waktu pengerjaan terlalu lama");
+class ChatbotInvoker {
+    private Command command;
+
+    void setCommand(Command command) {
+        this.command = command;
+    }
+
+    void run() {
+        command.execute();
     }
 }
+
+// abstract class Analyzer {
+// protected Analyzer next;
+
+// void setNext(Analyzer next) {
+// this.next = next;
+// }
+
+// abstract void analyze(int attempts, int time);
+// }
+
+// class AttemptAnalyzer extends Analyzer {
+// void analyze(int attempts, int time) {
+// if (attempts > 5)
+// System.out.println("Banyak percobaan terdeteksi");
+// else if (next != null)
+// next.analyze(attempts, time);
+// }
+// }
+
+// class TimeAnalyzer extends Analyzer {
+// void analyze(int attempts, int time) {
+// if (time > 300)
+// System.out.println("Waktu pengerjaan terlalu lama");
+// }
+// }
 
 // class StudentProfile {
 // private String name;
