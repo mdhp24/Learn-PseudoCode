@@ -1724,40 +1724,72 @@ public class Main {
 
         // System.out.println(bot.getResponse());
 
-        LearningEvaluation eval = new PseudocodeEvaluation();
-        eval.evaluate();
+        // LearningEvaluation eval = new PseudocodeEvaluation();
+        // eval.evaluate();
+
+                StudentFSM fsm = new StudentFSM();
+        fsm.transition(6, 450);
+        fsm.displayState();
     }
 }
 
-abstract class LearningEvaluation {
 
-    final void evaluate() {
-        collectData();
-        analyze();
-        respond();
-    }
-
-    abstract void collectData();
-
-    abstract void analyze();
-
-    abstract void respond();
+enum PerformanceState {
+    STRUGGLING, GAMING, NORMAL, IDEAL
 }
 
-class PseudocodeEvaluation extends LearningEvaluation {
+class StudentFSM {
+    private PerformanceState state;
 
-    void collectData() {
-        System.out.println("Mengumpulkan data attempt & waktu");
+    StudentFSM() {
+        state = PerformanceState.NORMAL;
     }
 
-    void analyze() {
-        System.out.println("Menganalisis tingkat kesulitan");
+    void transition(int attempts, int time) {
+        if (attempts > 5 && time > 300)
+            state = PerformanceState.STRUGGLING;
+        else if (attempts < 2 && time < 60)
+            state = PerformanceState.GAMING;
+        else if (attempts <= 2 && time < 120)
+            state = PerformanceState.IDEAL;
+        else
+            state = PerformanceState.NORMAL;
     }
 
-    void respond() {
-        System.out.println("Chatbot menampilkan konsep Array");
+    void displayState() {
+        System.out.println("Current State: " + state);
     }
 }
+
+// abstract class LearningEvaluation {
+
+//     final void evaluate() {
+//         collectData();
+//         analyze();
+//         respond();
+//     }
+
+//     abstract void collectData();
+
+//     abstract void analyze();
+
+//     abstract void respond();
+// }
+
+// class PseudocodeEvaluation extends LearningEvaluation {
+
+//     void collectData() {
+//         System.out.println("Mengumpulkan data attempt & waktu");
+//     }
+
+//     void analyze() {
+//         System.out.println("Menganalisis tingkat kesulitan");
+//     }
+
+//     void respond() {
+//         System.out.println("Chatbot menampilkan konsep Array");
+//     }
+// }
 
 // interface ChatbotResponse {
 // String getResponse();
