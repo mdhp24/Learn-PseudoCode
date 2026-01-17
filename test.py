@@ -5652,11 +5652,19 @@
 # print(feedback_engine(35, "Struggling"))
 
 # Sistem berikan feedback adaptif berdasarkan engagement dan performa siswa
-def feedback_engine(engagement, performance):
-    if engagement < 40:
-        return "Motivational message"
-    if performance == "Struggling":
-        return "Concept explanation"
-    return "Standard feedback"
+# def feedback_engine(engagement, performance):
+#     if engagement < 40:
+#         return "Motivational message"
+#     if performance == "Struggling":
+#         return "Concept explanation"
+#     return "Standard feedback"
 
-print(feedback_engine(35, "Struggling"))
+# print(feedback_engine(35, "Struggling"))
+
+# Sistem analisis tren performa siswa
+def performance_trend(scores):
+    if len(scores) < 3:
+        return "Insufficient data"
+    return "Improving" if scores[-1] > scores[0] else "Declining"
+
+print(performance_trend([60, 70, 85]))
