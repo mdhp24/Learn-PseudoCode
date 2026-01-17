@@ -5642,6 +5642,16 @@
 # print(select_content(12))
 
 # Sistem berikan feedback adaptif berdasarkan engagement dan performa siswa
+# def feedback_engine(engagement, performance):
+#     if engagement < 40:
+#         return "Motivational message"
+#     if performance == "Struggling":
+#         return "Concept explanation"
+#     return "Standard feedback"
+
+# print(feedback_engine(35, "Struggling"))
+
+# Sistem berikan feedback adaptif berdasarkan engagement dan performa siswa
 def feedback_engine(engagement, performance):
     if engagement < 40:
         return "Motivational message"
