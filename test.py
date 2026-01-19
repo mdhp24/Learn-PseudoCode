@@ -5662,9 +5662,23 @@
 # print(feedback_engine(35, "Struggling"))
 
 # Sistem analisis tren performa siswa
-def performance_trend(scores):
-    if len(scores) < 3:
-        return "Insufficient data"
-    return "Improving" if scores[-1] > scores[0] else "Declining"
+# def performance_trend(scores):
+#     if len(scores) < 3:
+#         return "Insufficient data"
+#     return "Improving" if scores[-1] > scores[0] else "Declining"
 
-print(performance_trend([60, 70, 85]))
+# print(performance_trend([60, 70, 85]))
+
+
+# Sistem klasifikasi performa berdasarkan percobaan dan waktu
+def classify_performance(attempts, time_spent):
+    if attempts > 5 and time_spent > 300:
+        return "Struggling"
+    elif attempts < 2 and time_spent < 60:
+        return "Gaming the System"
+    elif attempts <= 2 and time_spent < 120:
+        return "Ideal"
+    else:
+        return "Normal"
+
+print(classify_performance(6, 420))
