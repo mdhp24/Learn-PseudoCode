@@ -5714,19 +5714,30 @@
 # print(knowledge)
 
 # Sistem analisis tren performa siswa
-class LearningProgress:
-    def __init__(self):
-        self.scores = []
+# class LearningProgress:
+#     def __init__(self):
+#         self.scores = []
 
-    def add_score(self, score):
-        self.scores.append(score)
+#     def add_score(self, score):
+#         self.scores.append(score)
 
-    def trend(self):
-        if len(self.scores) < 2:
-            return "Not enough data"
-        return "Improving" if self.scores[-1] > self.scores[0] else "Declining"
+#     def trend(self):
+#         if len(self.scores) < 2:
+#             return "Not enough data"
+#         return "Improving" if self.scores[-1] > self.scores[0] else "Declining"
 
-progress = LearningProgress()
-progress.add_score(60)
-progress.add_score(80)
-print(progress.trend())
+# progress = LearningProgress()
+# progress.add_score(60)
+# progress.add_score(80)
+# print(progress.trend())
+
+# Sistem pilih konten berdasarkan skor kesulitan siswa
+def select_content(difficulty_score):
+    if difficulty_score > 20:
+        return "Concept Explanation"
+    elif difficulty_score < 8:
+        return "Advanced Challenge"
+    else:
+        return "Standard Practice"
+
+print(select_content(24))
