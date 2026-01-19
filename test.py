@@ -5671,14 +5671,20 @@
 
 
 # Sistem klasifikasi performa berdasarkan percobaan dan waktu
-def classify_performance(attempts, time_spent):
-    if attempts > 5 and time_spent > 300:
-        return "Struggling"
-    elif attempts < 2 and time_spent < 60:
-        return "Gaming the System"
-    elif attempts <= 2 and time_spent < 120:
-        return "Ideal"
-    else:
-        return "Normal"
+# def classify_performance(attempts, time_spent):
+#     if attempts > 5 and time_spent > 300:
+#         return "Struggling"
+#     elif attempts < 2 and time_spent < 60:
+#         return "Gaming the System"
+#     elif attempts <= 2 and time_spent < 120:
+#         return "Ideal"
+#     else:
+#         return "Normal"
 
-print(classify_performance(6, 420))
+# print(classify_performance(6, 420))
+
+# Sistem hitung skor kesulitan berdasarkan percobaan, hint, dan waktu
+def difficulty_score(attempts, hints, time_spent):
+    return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
+
+print(difficulty_score(5, 2, 360))
