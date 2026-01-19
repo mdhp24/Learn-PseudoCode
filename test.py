@@ -5690,13 +5690,25 @@
 # print(difficulty_score(5, 2, 360))
 
 # Sistem chatbot respons berdasarkan performa siswa
-def chatbot_response(performance):
-    responses = {
-        "Struggling": "Menampilkan konsep dasar materi",
-        "Gaming the System": "Bantuan dibatasi",
-        "Normal": "Lanjutkan latihan",
-        "Ideal": "Berikan soal lanjutan"
-    }
-    return responses.get(performance)
+# def chatbot_response(performance):
+#     responses = {
+#         "Struggling": "Menampilkan konsep dasar materi",
+#         "Gaming the System": "Bantuan dibatasi",
+#         "Normal": "Lanjutkan latihan",
+#         "Ideal": "Berikan soal lanjutan"
+#     }
+#     return responses.get(performance)
 
-print(chatbot_response("Struggling"))
+# print(chatbot_response("Struggling"))
+
+# Sistem update probabilitas pengetahuan siswa
+def update_knowledge(level, correct):
+    if correct:
+        level += 0.1
+    else:
+        level -= 0.05
+    return max(0, min(1, level))
+
+knowledge = 0.4
+knowledge = update_knowledge(knowledge, True)
+print(knowledge)
