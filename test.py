@@ -5702,13 +5702,31 @@
 # print(chatbot_response("Struggling"))
 
 # Sistem update probabilitas pengetahuan siswa
-def update_knowledge(level, correct):
-    if correct:
-        level += 0.1
-    else:
-        level -= 0.05
-    return max(0, min(1, level))
+# def update_knowledge(level, correct):
+#     if correct:
+#         level += 0.1
+#     else:
+#         level -= 0.05
+#     return max(0, min(1, level))
 
-knowledge = 0.4
-knowledge = update_knowledge(knowledge, True)
-print(knowledge)
+# knowledge = 0.4
+# knowledge = update_knowledge(knowledge, True)
+# print(knowledge)
+
+# Sistem analisis tren performa siswa
+class LearningProgress:
+    def __init__(self):
+        self.scores = []
+
+    def add_score(self, score):
+        self.scores.append(score)
+
+    def trend(self):
+        if len(self.scores) < 2:
+            return "Not enough data"
+        return "Improving" if self.scores[-1] > self.scores[0] else "Declining"
+
+progress = LearningProgress()
+progress.add_score(60)
+progress.add_score(80)
+print(progress.trend())
