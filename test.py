@@ -5749,11 +5749,22 @@
 # print(difficulty_score(5, 2, 360))
 
 # Sistem intervensi chatbot berdasarkan momentum dan beban kognitif
-def chatbot_intervention(momentum, load):
-    if momentum == "Low Momentum" and load == "High Load":
-        return "Show Concept Explanation"
-    elif momentum == "High Momentum":
-        return "Give Challenge"
-    return "No Intervention"
+# def chatbot_intervention(momentum, load):
+#     if momentum == "Low Momentum" and load == "High Load":
+#         return "Show Concept Explanation"
+#     elif momentum == "High Momentum":
+#         return "Give Challenge"
+#     return "No Intervention"
 
-print(chatbot_intervention("Low Momentum", "High Load"))
+# print(chatbot_intervention("Low Momentum", "High Load"))
+
+# Sistem analisis momentum pembelajaran siswa
+def learning_momentum(previous_score, current_score):
+    delta = current_score - previous_score
+    if delta > 10:
+        return "High Momentum"
+    elif delta < 0:
+        return "Low Momentum"
+    return "Stable"
+
+print(learning_momentum(65, 82))
