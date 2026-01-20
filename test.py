@@ -5759,12 +5759,19 @@
 # print(chatbot_intervention("Low Momentum", "High Load"))
 
 # Sistem analisis momentum pembelajaran siswa
-def learning_momentum(previous_score, current_score):
-    delta = current_score - previous_score
-    if delta > 10:
-        return "High Momentum"
-    elif delta < 0:
-        return "Low Momentum"
-    return "Stable"
+# def learning_momentum(previous_score, current_score):
+#     delta = current_score - previous_score
+#     if delta > 10:
+#         return "High Momentum"
+#     elif delta < 0:
+#         return "Low Momentum"
+#     return "Stable"
 
-print(learning_momentum(65, 82))
+# print(learning_momentum(65, 82))
+
+# Sistem hitung beban kognitif berdasarkan percobaan dan waktu
+def cognitive_load(attempts, time_spent):
+    load = (attempts * 1.5) + (time_spent / 120)
+    return "High Load" if load > 8 else "Normal Load"
+
+print(cognitive_load(6, 480))
