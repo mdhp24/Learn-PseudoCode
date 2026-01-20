@@ -5777,9 +5777,17 @@
 # print(cognitive_load(6, 480))
 
 # Sistem batasi jumlah hint yang ditampilkan
-def hint_limiter(hint_used):
-    if hint_used >= 3:
-        return "Hint Locked"
-    return "Hint Available"
+# def hint_limiter(hint_used):
+#     if hint_used >= 3:
+#         return "Hint Locked"
+#     return "Hint Available"
 
-print(hint_limiter(4))
+# print(hint_limiter(4))
+
+# Sistem hitung stabilitas sesi pembelajaran berdasarkan waktu penyelesaian
+def session_stability(times):
+    if len(times) < 2:
+        return 0
+    return round(100 - abs(times[-1] - times[0]) / 2, 2)
+
+print(session_stability([300, 280, 290]))
