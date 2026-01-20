@@ -5744,6 +5744,16 @@
 
 
 # Sistem hitung skor kesulitan berdasarkan percobaan, hint, dan waktu
-def difficulty_score(attempts, hints, time_spent):
-    return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
-print(difficulty_score(5, 2, 360))
+# def difficulty_score(attempts, hints, time_spent):
+#     return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
+# print(difficulty_score(5, 2, 360))
+
+# Sistem intervensi chatbot berdasarkan momentum dan beban kognitif
+def chatbot_intervention(momentum, load):
+    if momentum == "Low Momentum" and load == "High Load":
+        return "Show Concept Explanation"
+    elif momentum == "High Momentum":
+        return "Give Challenge"
+    return "No Intervention"
+
+print(chatbot_intervention("Low Momentum", "High Load"))
