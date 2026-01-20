@@ -5770,8 +5770,16 @@
 # print(learning_momentum(65, 82))
 
 # Sistem hitung beban kognitif berdasarkan percobaan dan waktu
-def cognitive_load(attempts, time_spent):
-    load = (attempts * 1.5) + (time_spent / 120)
-    return "High Load" if load > 8 else "Normal Load"
+# def cognitive_load(attempts, time_spent):
+#     load = (attempts * 1.5) + (time_spent / 120)
+#     return "High Load" if load > 8 else "Normal Load"
 
-print(cognitive_load(6, 480))
+# print(cognitive_load(6, 480))
+
+# Sistem batasi jumlah hint yang ditampilkan
+def hint_limiter(hint_used):
+    if hint_used >= 3:
+        return "Hint Locked"
+    return "Hint Available"
+
+print(hint_limiter(4))
