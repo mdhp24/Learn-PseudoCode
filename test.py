@@ -5732,12 +5732,18 @@
 # print(progress.trend())
 
 # Sistem pilih konten berdasarkan skor kesulitan siswa
-def select_content(difficulty_score):
-    if difficulty_score > 20:
-        return "Concept Explanation"
-    elif difficulty_score < 8:
-        return "Advanced Challenge"
-    else:
-        return "Standard Practice"
+# def select_content(difficulty_score):
+#     if difficulty_score > 20:
+#         return "Concept Explanation"
+#     elif difficulty_score < 8:
+#         return "Advanced Challenge"
+#     else:
+#         return "Standard Practice"
 
-print(select_content(24))
+# print(select_content(24))
+
+
+# Sistem hitung skor kesulitan berdasarkan percobaan, hint, dan waktu
+def difficulty_score(attempts, hints, time_spent):
+    return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
+print(difficulty_score(5, 2, 360))
