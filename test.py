@@ -5812,6 +5812,14 @@
 # print(learning_momentum(65, 82))
 
 # Sistem deteksi early quit berdasarkan percobaan dan waktu
+# def detect_early_quit(attempts, time_spent):
+#     if attempts <= 1 and time_spent < 30:
+#         return "Early Quit Detected"
+#     return "Continue Learning"
+
+# print(detect_early_quit(1, 20))
+
+# Sistem deteksi early quit berdasarkan percobaan dan waktu
 def detect_early_quit(attempts, time_spent):
     if attempts <= 1 and time_spent < 30:
         return "Early Quit Detected"
