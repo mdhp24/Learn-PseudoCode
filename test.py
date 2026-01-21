@@ -5844,6 +5844,17 @@
 # print(hint_limiter(4))
 
 # Sistem analisis momentum pembelajaran siswa
+# def learning_momentum(previous_score, current_score):
+#     delta = current_score - previous_score
+#     if delta > 10:
+#         return "High Momentum"
+#     elif delta < 0:
+#         return "Low Momentum"
+#     return "Stable"
+
+# print(learning_momentum(65, 82))
+
+# Sistem analisis momentum pembelajaran siswa
 def learning_momentum(previous_score, current_score):
     delta = current_score - previous_score
     if delta > 10:
