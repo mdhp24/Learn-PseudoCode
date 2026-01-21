@@ -5793,9 +5793,20 @@
 # print(session_stability([300, 280, 290]))
 
 # Sistem deteksi early quit berdasarkan percobaan dan waktu
-def detect_early_quit(attempts, time_spent):
-    if attempts <= 1 and time_spent < 30:
-        return "Early Quit Detected"
-    return "Continue Learning"
+# def detect_early_quit(attempts, time_spent):
+#     if attempts <= 1 and time_spent < 30:
+#         return "Early Quit Detected"
+#     return "Continue Learning"
 
-print(detect_early_quit(1, 20))
+# print(detect_early_quit(1, 20))
+
+
+# Sistem analisis momentum pembelajaran siswa
+def learning_momentum(previous_score, current_score):
+    delta = current_score - previous_score
+    if delta > 10:
+        return "High Momentum"
+    elif delta < 0:
+        return "Low Momentum"
+    return "Stable"
+print(learning_momentum(65, 82))
