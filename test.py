@@ -5820,9 +5820,17 @@
 # print(detect_early_quit(1, 20))
 
 # Sistem deteksi early quit berdasarkan percobaan dan waktu
-def detect_early_quit(attempts, time_spent):
-    if attempts <= 1 and time_spent < 30:
-        return "Early Quit Detected"
-    return "Continue Learning"
+# def detect_early_quit(attempts, time_spent):
+#     if attempts <= 1 and time_spent < 30:
+#         return "Early Quit Detected"
+#     return "Continue Learning"
 
-print(detect_early_quit(1, 20))
+# print(detect_early_quit(1, 20))
+
+# Sistem hitung stabilitas sesi pembelajaran berdasarkan waktu penyelesaian
+def session_stability(times):
+    if len(times) < 2:
+        return 0
+    return round(100 - abs(times[-1] - times[0]) / 2, 2)
+
+print(session_stability([300, 280, 290]))
