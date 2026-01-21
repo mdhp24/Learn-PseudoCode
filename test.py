@@ -5836,9 +5836,20 @@
 # print(session_stability([300, 280, 290]))
 
 # Sistem batasi jumlah hint yang ditampilkan
-def hint_limiter(hint_used):
-    if hint_used >= 3:
-        return "Hint Locked"
-    return "Hint Available"
+# def hint_limiter(hint_used):
+#     if hint_used >= 3:
+#         return "Hint Locked"
+#     return "Hint Available"
 
-print(hint_limiter(4))
+# print(hint_limiter(4))
+
+# Sistem analisis momentum pembelajaran siswa
+def learning_momentum(previous_score, current_score):
+    delta = current_score - previous_score
+    if delta > 10:
+        return "High Momentum"
+    elif delta < 0:
+        return "Low Momentum"
+    return "Stable"
+
+print(learning_momentum(65, 82))
