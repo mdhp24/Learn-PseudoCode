@@ -5898,12 +5898,20 @@
 # print(detect_performance_drop([80, 75, 70, 65]))
 
 # Sistem berikan hint berdasarkan status siswa
-def hint_system(status):
-    hints = {
-        "Struggling": "Tampilkan konsep dasar materi",
-        "Gaming the System": "Batasi bantuan",
-        "Normal": "Lanjutkan latihan",
-        "Ideal": "Berikan soal lanjutan"
-    }
-    return hints.get(status)
-print(hint_system("Struggling"))
+# def hint_system(status):
+#     hints = {
+#         "Struggling": "Tampilkan konsep dasar materi",
+#         "Gaming the System": "Batasi bantuan",
+#         "Normal": "Lanjutkan latihan",
+#         "Ideal": "Berikan soal lanjutan"
+#     }
+#     return hints.get(status)
+# print(hint_system("Struggling"))
+
+
+# Sistem deteksi penurunan performa siswa
+def detect_performance_drop(history):
+    if len(history) < 3:
+        return False
+    return history[-1] < history[-2] < history[-3]
+print(detect_performance_drop([80, 75, 70, 65]))
