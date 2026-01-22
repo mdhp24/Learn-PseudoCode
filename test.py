@@ -5883,9 +5883,16 @@
 
 
 # Sistem batasi jumlah hint yang ditampilkan
-def hint_limiter(hint_used):
-    if hint_used >= 3:
-        return "Hint Locked"
-    return "Hint Available"
-print(hint_limiter(4))
+# def hint_limiter(hint_used):
+#     if hint_used >= 3:
+#         return "Hint Locked"
+#     return "Hint Available"
+# print(hint_limiter(4))
 
+
+# Sistem deteksi penurunan performa siswa
+def detect_performance_drop(history):
+    if len(history) < 3:
+        return False
+    return history[-1] < history[-2] < history[-3]
+print(detect_performance_drop([80, 75, 70, 65]))
