@@ -5938,8 +5938,18 @@
 
 
 # sistem ai 
-def struggling(scores):
-    if len(scores) < 3:
-        return False
-    return scores[-1] < scores[-2] < scores[-3]
-print(struggling([80, 75, 70, 65]))
+# def struggling(scores):
+#     if len(scores) < 3:
+#         return False
+#     return scores[-1] < scores[-2] < scores[-3]
+# print(struggling([80, 75, 70, 65]))
+
+# Sistem rekomendasi tingkat kesulitan berdasarkan confidence dan velocity siswa
+def recommend_difficulty(confidence, velocity):
+    if confidence > 80 and velocity > 8:
+        return "Increase Difficulty"
+    elif confidence < 50:
+        return "Decrease Difficulty"
+    return "Maintain Level"
+
+print(recommend_difficulty(45, 3))
