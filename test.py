@@ -5955,11 +5955,21 @@
 # print(recommend_difficulty(45, 3))
 
 # Sistem deteksi kelelahan belajar berdasarkan waktu sesi
-def learning_fatigue(session_times):
-    if len(session_times) < 3:
-        return "Unknown"
-    if session_times[-1] > session_times[-2] > session_times[-3]:
-        return "Fatigue Detected"
-    return "No Fatigue"
+# def learning_fatigue(session_times):
+#     if len(session_times) < 3:
+#         return "Unknown"
+#     if session_times[-1] > session_times[-2] > session_times[-3]:
+#         return "Fatigue Detected"
+#     return "No Fatigue"
 
-print(learning_fatigue([180, 240, 360]))
+# print(learning_fatigue([180, 240, 360]))
+
+# Sistem klasifikasi familiarity konsep berdasarkan streak jawaban benar dan rata-rata waktu
+def concept_familiarity(correct_streak, avg_time):
+    if correct_streak >= 3 and avg_time < 60:
+        return "High Familiarity"
+    elif correct_streak >= 1:
+        return "Medium Familiarity"
+    return "Low Familiarity"
+
+print(concept_familiarity(3, 50))
