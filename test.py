@@ -5918,12 +5918,20 @@
 
 
 # Sistem berikan hint berdasarkan status siswa
-def hint_system(status):
-    hints = {
-        "Struggling": "Tampilkan konsep dasar materi",
-        "Gaming the System": "Batasi bantuan",
-        "Normal": "Lanjutkan latihan",
-        "Ideal": "Berikan soal lanjutan"
-    }
-    return hints.get(status)
-print(hint_system("Struggling"))
+# def hint_system(status):
+#     hints = {
+#         "Struggling": "Tampilkan konsep dasar materi",
+#         "Gaming the System": "Batasi bantuan",
+#         "Normal": "Lanjutkan latihan",
+#         "Ideal": "Berikan soal lanjutan"
+#     }
+#     return hints.get(status)
+# print(hint_system("Struggling"))
+
+# Sistem kebijakan chatbot berdasarkan deteksi gaming dan familiarity siswa
+def chatbot_silence_policy(gaming_detected, familiarity):
+    if gaming_detected and familiarity == "High Familiarity":
+        return "No Help (Silence Mode)"
+    return "Help Allowed"
+
+print(chatbot_silence_policy(True, "High Familiarity"))
