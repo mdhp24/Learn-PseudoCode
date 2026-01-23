@@ -5929,9 +5929,17 @@
 # print(hint_system("Struggling"))
 
 # Sistem kebijakan chatbot berdasarkan deteksi gaming dan familiarity siswa
-def chatbot_silence_policy(gaming_detected, familiarity):
-    if gaming_detected and familiarity == "High Familiarity":
-        return "No Help (Silence Mode)"
-    return "Help Allowed"
+# def chatbot_silence_policy(gaming_detected, familiarity):
+#     if gaming_detected and familiarity == "High Familiarity":
+#         return "No Help (Silence Mode)"
+#     return "Help Allowed"
 
-print(chatbot_silence_policy(True, "High Familiarity"))
+# print(chatbot_silence_policy(True, "High Familiarity"))
+
+
+# sistem ai 
+def struggling(scores):
+    if len(scores) < 3:
+        return False
+    return scores[-1] < scores[-2] < scores[-3]
+print(struggling([80, 75, 70, 65]))
