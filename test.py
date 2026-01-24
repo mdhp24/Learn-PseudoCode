@@ -5982,10 +5982,21 @@
 # print(answer_confidence(80, 2))
 
 # Sistem analisis ketidakseimbangan usaha dan hasil belajar
-def effort_outcome_imbalance(time_spent, attempts, score):
-    effort = time_spent + (attempts * 60)
-    if effort > 600 and score < 60:
-        return "High Effort – Low Outcome"
-    return "Balanced"
+# def effort_outcome_imbalance(time_spent, attempts, score):
+#     effort = time_spent + (attempts * 60)
+#     if effort > 600 and score < 60:
+#         return "High Effort – Low Outcome"
+#     return "Balanced"
 
-print(effort_outcome_imbalance(500, 4, 55))
+# print(effort_outcome_imbalance(500, 4, 55))
+
+# Sistem analisis keraguan dalam menjawab berdasarkan waktu tindakan pertama dan waktu submit
+def response_hesitation(first_action_time, submit_time):
+    hesitation = submit_time - first_action_time
+    if hesitation > 120:
+        return "High Hesitation"
+    elif hesitation > 60:
+        return "Medium Hesitation"
+    return "Low Hesitation"
+
+print(response_hesitation(30, 180))
