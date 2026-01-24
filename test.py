@@ -6041,11 +6041,20 @@
 # print(knowledge_transfer(70, 78))
 
 # Sistem chatbot tindakan berdasarkan keraguan, trial-and-error, dan plateau
-def chatbot_action(hesitation, trial_error, plateau):
-    if hesitation == "High Hesitation" and trial_error == "Trial-and-Error Detected":
-        return "Show Concept Explanation"
-    elif plateau == "Plateau Detected":
-        return "Change Learning Strategy"
-    return "Continue Monitoring"
+# def chatbot_action(hesitation, trial_error, plateau):
+#     if hesitation == "High Hesitation" and trial_error == "Trial-and-Error Detected":
+#         return "Show Concept Explanation"
+#     elif plateau == "Plateau Detected":
+#         return "Change Learning Strategy"
+#     return "Continue Monitoring"
 
-print(chatbot_action("High Hesitation", "Trial-and-Error Detected", "Progressing"))
+# print(chatbot_action("High Hesitation", "Trial-and-Error Detected", "Progressing"))
+
+
+# Sistem analisis transfer pengetahuan antar topik
+def knowledge_transfer(prev_topic_score, new_topic_score):
+    if new_topic_score >= prev_topic_score:
+        return "Positive Transfer"
+    return "Negative Transfer"
+print(knowledge_transfer(70, 78))
+
