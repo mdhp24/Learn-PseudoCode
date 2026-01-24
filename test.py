@@ -6011,23 +6011,31 @@
 
 
 # Sistem chatbot respons berdasarkan status siswa dan materi
-def chatbot_response(status, materi):
-    konsep = {
-        "Array": [
-            "Array adalah struktur data yang menyimpan elemen-elemen dengan tipe yang sama",
-            "Index dimulai dari 0"
-        ],
-        "Loop": [
-            "Loop digunakan untuk mengulang blok kode",
-            "Ada beberapa jenis loop seperti for dan while"
-        ],
-        "Function": [
-            "Function adalah blok kode yang dapat dipanggil berulang kali",
-            "Fungsi dapat memiliki parameter dan mengembalikan nilai"
-        ]
-    }
-    if status in ["Struggling", "Gaming the System"]:
-        return konsep.get(materi)
-    return "Silakan lanjutkan pengerjaan soal"
-print(chatbot_response("Struggling", "Array"))
+# def chatbot_response(status, materi):
+#     konsep = {
+#         "Array": [
+#             "Array adalah struktur data yang menyimpan elemen-elemen dengan tipe yang sama",
+#             "Index dimulai dari 0"
+#         ],
+#         "Loop": [
+#             "Loop digunakan untuk mengulang blok kode",
+#             "Ada beberapa jenis loop seperti for dan while"
+#         ],
+#         "Function": [
+#             "Function adalah blok kode yang dapat dipanggil berulang kali",
+#             "Fungsi dapat memiliki parameter dan mengembalikan nilai"
+#         ]
+#     }
+#     if status in ["Struggling", "Gaming the System"]:
+#         return konsep.get(materi)
+#     return "Silakan lanjutkan pengerjaan soal"
+# print(chatbot_response("Struggling", "Array"))
 
+
+# Sistem analisis transfer pengetahuan antar topik
+def knowledge_transfer(prev_topic_score, new_topic_score):
+    if new_topic_score >= prev_topic_score:
+        return "Positive Transfer"
+    return "Negative Transfer"
+
+print(knowledge_transfer(70, 78))
