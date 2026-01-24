@@ -6002,9 +6002,32 @@
 # print(response_hesitation(30, 180))
 
 # Sistem deteksi pola trial-and-error berdasarkan perubahan jawaban dan hasil akhir
-def trial_error_pattern(answer_changes, correct):
-    if answer_changes >= 4 and not correct:
-        return "Trial-and-Error Detected"
-    return "Normal Behavior"
+# def trial_error_pattern(answer_changes, correct):
+#     if answer_changes >= 4 and not correct:
+#         return "Trial-and-Error Detected"
+#     return "Normal Behavior"
 
-print(trial_error_pattern(5, False))
+# print(trial_error_pattern(5, False))
+
+
+# Sistem chatbot respons berdasarkan status siswa dan materi
+def chatbot_response(status, materi):
+    konsep = {
+        "Array": [
+            "Array adalah struktur data yang menyimpan elemen-elemen dengan tipe yang sama",
+            "Index dimulai dari 0"
+        ],
+        "Loop": [
+            "Loop digunakan untuk mengulang blok kode",
+            "Ada beberapa jenis loop seperti for dan while"
+        ],
+        "Function": [
+            "Function adalah blok kode yang dapat dipanggil berulang kali",
+            "Fungsi dapat memiliki parameter dan mengembalikan nilai"
+        ]
+    }
+    if status in ["Struggling", "Gaming the System"]:
+        return konsep.get(materi)
+    return "Silakan lanjutkan pengerjaan soal"
+print(chatbot_response("Struggling", "Array"))
+
