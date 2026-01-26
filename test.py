@@ -6109,9 +6109,18 @@
 # print(productive_struggle(4, 20))
 
 # Sistem deteksi plateau dalam pembelajaran siswa
-def concept_dependency(basic_score, advanced_score):
-    if basic_score < 60 and advanced_score < 60:
-        return "Dependency Failure"
-    return "Dependency OK"
+# def concept_dependency(basic_score, advanced_score):
+#     if basic_score < 60 and advanced_score < 60:
+#         return "Dependency Failure"
+#     return "Dependency OK"
 
-print(concept_dependency(50, 55))
+# print(concept_dependency(50, 55))
+
+# Sistem deteksi perhatian siswa berdasarkan interval klik
+def attention_drift(click_intervals):
+    avg = sum(click_intervals) / len(click_intervals)
+    if avg > 50:
+        return "Attention Drift"
+    return "Focused"
+
+print(attention_drift([20, 60, 80]))
