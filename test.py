@@ -6117,10 +6117,20 @@
 # print(concept_dependency(50, 55))
 
 # Sistem deteksi perhatian siswa berdasarkan interval klik
-def attention_drift(click_intervals):
-    avg = sum(click_intervals) / len(click_intervals)
-    if avg > 50:
-        return "Attention Drift"
-    return "Focused"
+# def attention_drift(click_intervals):
+#     avg = sum(click_intervals) / len(click_intervals)
+#     if avg > 50:
+#         return "Attention Drift"
+#     return "Focused"
 
-print(attention_drift([20, 60, 80]))
+# print(attention_drift([20, 60, 80]))
+
+
+# Sistem klasifikasi perjuangan siswa berdasarkan kesalahan dan peningkatan skor
+def productive_struggle(errors, improvement):
+    if errors >= 3 and improvement >= 15:
+        return "Productive Struggle"
+    elif errors >= 3:
+        return "Unproductive Struggle"
+    return "No Struggle"
+print(productive_struggle(4, 20))
