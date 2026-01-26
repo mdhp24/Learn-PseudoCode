@@ -6069,11 +6069,21 @@
 # print(chatbot_action("High Hesitation", "Trial-and-Error Detected", "Progressing"))
 
 # Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan perhatian siswa
+# def intervention_scheduler(struggle_type, attention):
+#     if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
+#         return "Immediate Intervention"
+#     elif struggle_type == "Productive Struggle":
+#         return "Delay Intervention"
+#     return "No Intervention"
+
+# print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
+
+
+# Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan perhatian siswa
 def intervention_scheduler(struggle_type, attention):
     if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
         return "Immediate Intervention"
     elif struggle_type == "Productive Struggle":
         return "Delay Intervention"
     return "No Intervention"
-
 print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
