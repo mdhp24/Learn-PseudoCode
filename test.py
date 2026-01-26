@@ -6099,11 +6099,19 @@
 # print(detect_plateau([70, 71, 70, 69, 70]))
 
 # Sistem klasifikasi perjuangan siswa berdasarkan kesalahan dan peningkatan skor
-def productive_struggle(errors, improvement):
-    if errors >= 3 and improvement >= 15:
-        return "Productive Struggle"
-    elif errors >= 3:
-        return "Unproductive Struggle"
-    return "No Struggle"
+# def productive_struggle(errors, improvement):
+#     if errors >= 3 and improvement >= 15:
+#         return "Productive Struggle"
+#     elif errors >= 3:
+#         return "Unproductive Struggle"
+#     return "No Struggle"
 
-print(productive_struggle(4, 20))
+# print(productive_struggle(4, 20))
+
+# Sistem deteksi plateau dalam pembelajaran siswa
+def concept_dependency(basic_score, advanced_score):
+    if basic_score < 60 and advanced_score < 60:
+        return "Dependency Failure"
+    return "Dependency OK"
+
+print(concept_dependency(50, 55))
