@@ -6060,10 +6060,20 @@
 
 
 # Sistem chatbot tindakan berdasarkan keraguan, trial-and-error, dan plateau
-def chatbot_action(hesitation, trial_error, plateau):
-    if hesitation == "High Hesitation" and trial_error == "Trial-and-Error Detected":
-        return "Show Concept Explanation"
-    elif plateau == "Plateau Detected":
-        return "Change Learning Strategy"
-    return "Continue Monitoring"
-print(chatbot_action("High Hesitation", "Trial-and-Error Detected", "Progressing"))
+# def chatbot_action(hesitation, trial_error, plateau):
+#     if hesitation == "High Hesitation" and trial_error == "Trial-and-Error Detected":
+#         return "Show Concept Explanation"
+#     elif plateau == "Plateau Detected":
+#         return "Change Learning Strategy"
+#     return "Continue Monitoring"
+# print(chatbot_action("High Hesitation", "Trial-and-Error Detected", "Progressing"))
+
+# Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan perhatian siswa
+def intervention_scheduler(struggle_type, attention):
+    if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
+        return "Immediate Intervention"
+    elif struggle_type == "Productive Struggle":
+        return "Delay Intervention"
+    return "No Intervention"
+
+print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
