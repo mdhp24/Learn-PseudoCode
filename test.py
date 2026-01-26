@@ -6080,10 +6080,20 @@
 
 
 # Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan perhatian siswa
-def intervention_scheduler(struggle_type, attention):
-    if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
-        return "Immediate Intervention"
-    elif struggle_type == "Productive Struggle":
-        return "Delay Intervention"
-    return "No Intervention"
-print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
+# def intervention_scheduler(struggle_type, attention):
+#     if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
+#         return "Immediate Intervention"
+#     elif struggle_type == "Productive Struggle":
+#         return "Delay Intervention"
+#     return "No Intervention"
+# print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
+
+
+# Sistem deteksi plateau dalam pembelajaran siswa
+def detect_plateau(scores):
+    if len(scores) < 4:
+        return "Insufficient Data"
+    if all(abs(scores[i] - scores[i-1]) < 2 for i in range(-1, -4, -1)):
+        return "Plateau Detected"
+    return "Progressing"
+print(detect_plateau([70, 71, 70, 69, 70]))
