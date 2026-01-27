@@ -6127,10 +6127,19 @@
 
 
 # Sistem klasifikasi perjuangan siswa berdasarkan kesalahan dan peningkatan skor
-def productive_struggle(errors, improvement):
-    if errors >= 3 and improvement >= 15:
-        return "Productive Struggle"
-    elif errors >= 3:
-        return "Unproductive Struggle"
-    return "No Struggle"
-print(productive_struggle(4, 20))
+# def productive_struggle(errors, improvement):
+#     if errors >= 3 and improvement >= 15:
+#         return "Productive Struggle"
+#     elif errors >= 3:
+#         return "Unproductive Struggle"
+#     return "No Struggle"
+# print(productive_struggle(4, 20))
+
+# Sistem deteksi plateau dalam pembelajaran siswa
+def detect_plateau(scores):
+    if len(scores) < 4:
+        return "Insufficient Data"
+    if all(abs(scores[i] - scores[i-1]) < 2 for i in range(-1, -4, -1)):
+        return "Plateau Detected"
+    return "Progressing"
+print(detect_plateau([70, 71, 70, 69, 70]))
