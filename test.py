@@ -6136,10 +6136,19 @@
 # print(productive_struggle(4, 20))
 
 # Sistem deteksi plateau dalam pembelajaran siswa
-def detect_plateau(scores):
-    if len(scores) < 4:
-        return "Insufficient Data"
-    if all(abs(scores[i] - scores[i-1]) < 2 for i in range(-1, -4, -1)):
-        return "Plateau Detected"
-    return "Progressing"
-print(detect_plateau([70, 71, 70, 69, 70]))
+# def detect_plateau(scores):
+#     if len(scores) < 4:
+#         return "Insufficient Data"
+#     if all(abs(scores[i] - scores[i-1]) < 2 for i in range(-1, -4, -1)):
+#         return "Plateau Detected"
+#     return "Progressing"
+# print(detect_plateau([70, 71, 70, 69, 70]))
+
+# Sistem deteksi perhatian siswa berdasarkan interval klik
+def attention_drift(click_intervals):
+    avg = sum(click_intervals) / len(click_intervals)
+    if avg > 50:
+        return "Attention Drift"
+    return "Focused"
+print(attention_drift([20, 60, 80]))
+
