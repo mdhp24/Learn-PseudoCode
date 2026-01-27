@@ -6161,10 +6161,20 @@
 # print(concept_dependency(50, 55))
 
 # Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan perhatian siswa
-def intervention_scheduler(struggle_type, attention):
-    if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
-        return "Immediate Intervention"
-    elif struggle_type == "Productive Struggle":
-        return "Delay Intervention"
-    return "No Intervention"
-print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
+# def intervention_scheduler(struggle_type, attention):
+#     if struggle_type == "Unproductive Struggle" and attention == "Attention Drift":
+#         return "Immediate Intervention"
+#     elif struggle_type == "Productive Struggle":
+#         return "Delay Intervention"
+#     return "No Intervention"
+# print(intervention_scheduler("Unproductive Struggle", "Attention Drift"))
+
+
+# Sistem rekomendasi tingkat kesulitan berdasarkan confidence dan velocity siswa
+def recommend_difficulty(confidence, velocity):
+    if confidence > 80 and velocity > 8:
+        return "Increase Difficulty"
+    elif confidence < 50:
+        return "Decrease Difficulty"
+    return "Maintain Level"
+print(recommend_difficulty(45, 3))
