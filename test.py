@@ -6171,10 +6171,20 @@
 
 
 # Sistem rekomendasi tingkat kesulitan berdasarkan confidence dan velocity siswa
-def recommend_difficulty(confidence, velocity):
-    if confidence > 80 and velocity > 8:
-        return "Increase Difficulty"
-    elif confidence < 50:
-        return "Decrease Difficulty"
-    return "Maintain Level"
-print(recommend_difficulty(45, 3))
+# def recommend_difficulty(confidence, velocity):
+#     if confidence > 80 and velocity > 8:
+#         return "Increase Difficulty"
+#     elif confidence < 50:
+#         return "Decrease Difficulty"
+#     return "Maintain Level"
+# print(recommend_difficulty(45, 3))
+
+
+# Sistem deteksi kelelahan belajar berdasarkan waktu sesi
+def learning_fatigue(session_times):
+    if len(session_times) < 3:
+        return "Unknown"
+    if session_times[-1] > session_times[-2] > session_times[-3]:
+        return "Fatigue Detected"
+    return "No Fatigue"
+print(learning_fatigue([180, 240, 360]))
