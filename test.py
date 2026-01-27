@@ -6145,10 +6145,18 @@
 # print(detect_plateau([70, 71, 70, 69, 70]))
 
 # Sistem deteksi perhatian siswa berdasarkan interval klik
-def attention_drift(click_intervals):
-    avg = sum(click_intervals) / len(click_intervals)
-    if avg > 50:
-        return "Attention Drift"
-    return "Focused"
-print(attention_drift([20, 60, 80]))
+# def attention_drift(click_intervals):
+#     avg = sum(click_intervals) / len(click_intervals)
+#     if avg > 50:
+#         return "Attention Drift"
+#     return "Focused"
+# print(attention_drift([20, 60, 80]))
+
+
+# Sistem deteksi ketergantungan konsep berdasarkan skor dasar dan lanjutan
+def concept_dependency(basic_score, advanced_score):
+    if basic_score < 60 and advanced_score < 60:
+        return "Dependency Failure"
+    return "Dependency OK"
+print(concept_dependency(50, 55))
 
