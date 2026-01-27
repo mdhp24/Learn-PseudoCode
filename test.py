@@ -6191,10 +6191,16 @@
 
 
 # Sistem klasifikasi familiarity konsep berdasarkan streak jawaban benar dan rata-rata waktu
-def concept_familiarity(correct_streak, avg_time):
-    if correct_streak >= 3 and avg_time < 60:
-        return "High Familiarity"
-    elif correct_streak >= 1:
-        return "Medium Familiarity"
-    return "Low Familiarity"
-print(concept_familiarity(3, 50))
+# def concept_familiarity(correct_streak, avg_time):
+#     if correct_streak >= 3 and avg_time < 60:
+#         return "High Familiarity"
+#     elif correct_streak >= 1:
+#         return "Medium Familiarity"
+#     return "Low Familiarity"
+# print(concept_familiarity(3, 50))
+
+# Sistem hitung confidence jawaban berdasarkan waktu per jawaban dan revisi
+def answer_confidence(time_per_answer, revisions):
+    confidence = 100 - (time_per_answer * 0.5) - (revisions * 10)
+    return max(0, round(confidence, 2))
+print(answer_confidence(80, 2))
