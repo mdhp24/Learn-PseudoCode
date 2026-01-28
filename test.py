@@ -6216,11 +6216,19 @@
 
 
 # Sistem analisis keraguan dalam menjawab berdasarkan waktu tindakan pertama dan waktu submit
-def response_hesitation(first_action_time, submit_time):
-    hesitation = submit_time - first_action_time
-    if hesitation > 120:
-        return "High Hesitation"
-    elif hesitation > 60:
-        return "Medium Hesitation"
-    return "Low Hesitation"
-print(response_hesitation(30, 180))
+# def response_hesitation(first_action_time, submit_time):
+#     hesitation = submit_time - first_action_time
+#     if hesitation > 120:
+#         return "High Hesitation"
+#     elif hesitation > 60:
+#         return "Medium Hesitation"
+#     return "Low Hesitation"
+# print(response_hesitation(30, 180))
+
+
+# Sistem deteksi pola trial-and-error berdasarkan perubahan jawaban dan hasil akhir
+def trial_error_pattern(answer_changes, correct):
+    if answer_changes >= 4 and not correct:
+        return "Trial-and-Error Detected"
+    return "Normal Behavior"
+print(trial_error_pattern(5, False))
