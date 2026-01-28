@@ -6200,7 +6200,16 @@
 # print(concept_familiarity(3, 50))
 
 # Sistem hitung confidence jawaban berdasarkan waktu per jawaban dan revisi
-def answer_confidence(time_per_answer, revisions):
-    confidence = 100 - (time_per_answer * 0.5) - (revisions * 10)
-    return max(0, round(confidence, 2))
-print(answer_confidence(80, 2))
+# def answer_confidence(time_per_answer, revisions):
+#     confidence = 100 - (time_per_answer * 0.5) - (revisions * 10)
+#     return max(0, round(confidence, 2))
+# print(answer_confidence(80, 2))
+
+
+# Sistem analisis ketidakseimbangan usaha dan hasil belajar
+def effort_outcome_imbalance(time_spent, attempts, score):
+    effort = time_spent + (attempts * 60)
+    if effort > 600 and score < 60:
+        return "High Effort – Low Outcome"
+    return "Balanced"
+print(effort_outcome_imbalance(500, 4, 55))
