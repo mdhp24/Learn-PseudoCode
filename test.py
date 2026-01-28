@@ -6235,8 +6235,17 @@
 
 
 # Sistem kebijakan chatbot berdasarkan deteksi gaming dan familiarity siswa
-def chatbot_silence_policy(gaming_detected, familiarity):
-    if gaming_detected and familiarity == "High Familiarity":
-        return "No Help (Silence Mode)"
-    return "Help Allowed"
-print(chatbot_silence_policy(True, "High Familiarity"))
+# def chatbot_silence_policy(gaming_detected, familiarity):
+#     if gaming_detected and familiarity == "High Familiarity":
+#         return "No Help (Silence Mode)"
+#     return "Help Allowed"
+# print(chatbot_silence_policy(True, "High Familiarity"))
+
+# Sistem rekomendasi tingkat kesulitan berdasarkan confidence dan velocity siswa
+def recommend_difficulty(confidence, velocity):
+    if confidence > 80 and velocity > 8:
+        return "Increase Difficulty"
+    elif confidence < 50:
+        return "Decrease Difficulty"
+    return "Maintain Level"
+print(recommend_difficulty(45, 3))
