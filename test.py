@@ -6227,8 +6227,16 @@
 
 
 # Sistem deteksi pola trial-and-error berdasarkan perubahan jawaban dan hasil akhir
-def trial_error_pattern(answer_changes, correct):
-    if answer_changes >= 4 and not correct:
-        return "Trial-and-Error Detected"
-    return "Normal Behavior"
-print(trial_error_pattern(5, False))
+# def trial_error_pattern(answer_changes, correct):
+#     if answer_changes >= 4 and not correct:
+#         return "Trial-and-Error Detected"
+#     return "Normal Behavior"
+# print(trial_error_pattern(5, False))
+
+
+# Sistem kebijakan chatbot berdasarkan deteksi gaming dan familiarity siswa
+def chatbot_silence_policy(gaming_detected, familiarity):
+    if gaming_detected and familiarity == "High Familiarity":
+        return "No Help (Silence Mode)"
+    return "Help Allowed"
+print(chatbot_silence_policy(True, "High Familiarity"))
