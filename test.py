@@ -6322,10 +6322,18 @@
 # print(hint_dependency(4, True))
 
 # Sistem hitung volatilitas waktu penyelesaian berdasarkan daftar waktu percobaan
-def attempt_volatility(attempt_times):
-    if len(attempt_times) < 2:
-        return 0
-    diffs = [abs(attempt_times[i] - attempt_times[i-1]) for i in range(1, len(attempt_times))]
-    return round(sum(diffs) / len(diffs), 2)
+# def attempt_volatility(attempt_times):
+#     if len(attempt_times) < 2:
+#         return 0
+#     diffs = [abs(attempt_times[i] - attempt_times[i-1]) for i in range(1, len(attempt_times))]
+#     return round(sum(diffs) / len(diffs), 2)
 
-print(attempt_volatility([30, 90, 40, 120]))
+# print(attempt_volatility([30, 90, 40, 120]))
+
+# Sistem hitung konsistensi pembelajaran berdasarkan skor sesi
+def learning_consistency(scores):
+    avg = sum(scores) / len(scores)
+    variance = sum((s - avg) ** 2 for s in scores) / len(scores)
+    return round(100 - variance, 2)
+
+print(learning_consistency([70, 72, 71, 73]))
