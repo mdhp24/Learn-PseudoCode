@@ -6291,11 +6291,22 @@
 # print(motivation_decay([85, 78, 65]))
 
 # Sistem klasifikasi strategi menjawab berdasarkan perubahan jawaban dan waktu
-def answer_strategy(changes, time):
-    if changes > 4 and time < 60:
-        return "Guessing"
-    elif changes > 2:
-        return "Trial-and-Error"
-    return "Deliberate"
+# def answer_strategy(changes, time):
+#     if changes > 4 and time < 60:
+#         return "Guessing"
+#     elif changes > 2:
+#         return "Trial-and-Error"
+#     return "Deliberate"
 
-print(answer_strategy(5, 40))
+# print(answer_strategy(5, 40))
+
+# Sistem analisis kurva lupa berdasarkan skor awal dan skor terbaru
+def forgetting_curve(initial, recent):
+    drop = initial - recent
+    if drop > 20:
+        return "Severe Forgetting"
+    elif drop > 10:
+        return "Moderate Forgetting"
+    return "Stable"
+
+print(forgetting_curve(85, 60))
