@@ -6312,11 +6312,20 @@
 # print(forgetting_curve(85, 60))
 
 # Sistem deteksi ketergantungan hint berdasarkan jumlah hint yang digunakan dan hasil akhir
-def hint_dependency(hints_used, correct):
-    if hints_used >= 3 and correct:
-        return "Hint Dependent"
-    elif hints_used >= 3:
-        return "Hint Abused"
-    return "Independent"
+# def hint_dependency(hints_used, correct):
+#     if hints_used >= 3 and correct:
+#         return "Hint Dependent"
+#     elif hints_used >= 3:
+#         return "Hint Abused"
+#     return "Independent"
 
-print(hint_dependency(4, True))
+# print(hint_dependency(4, True))
+
+# Sistem hitung volatilitas waktu penyelesaian berdasarkan daftar waktu percobaan
+def attempt_volatility(attempt_times):
+    if len(attempt_times) < 2:
+        return 0
+    diffs = [abs(attempt_times[i] - attempt_times[i-1]) for i in range(1, len(attempt_times))]
+    return round(sum(diffs) / len(diffs), 2)
+
+print(attempt_volatility([30, 90, 40, 120]))
