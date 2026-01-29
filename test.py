@@ -6331,9 +6331,19 @@
 # print(attempt_volatility([30, 90, 40, 120]))
 
 # Sistem hitung konsistensi pembelajaran berdasarkan skor sesi
-def learning_consistency(scores):
-    avg = sum(scores) / len(scores)
-    variance = sum((s - avg) ** 2 for s in scores) / len(scores)
-    return round(100 - variance, 2)
+# def learning_consistency(scores):
+#     avg = sum(scores) / len(scores)
+#     variance = sum((s - avg) ** 2 for s in scores) / len(scores)
+#     return round(100 - variance, 2)
 
-print(learning_consistency([70, 72, 71, 73]))
+# print(learning_consistency([70, 72, 71, 73]))
+
+
+# Sistem deteksi penurunan motivasi siswa berdasarkan skor sesi
+def motivation_decay(session_scores):
+    if len(session_scores) < 3:
+        return "Unknown"
+    if session_scores[-1] < session_scores[-2] < session_scores[-3]:
+        return "Motivation Decay"
+    return "Motivation Stable"
+print(motivation_decay([85, 78, 65]))
