@@ -6271,11 +6271,21 @@
 # print(concept_familiarity(3, 50))
 
 # sistem 
-def intervention_priority(fatigue, decay, dependency):
-    if fatigue and decay == "Motivation Decay":
-        return "Critical"
-    elif dependency != "Independent":
-        return "High"
-    return "Normal"
+# def intervention_priority(fatigue, decay, dependency):
+#     if fatigue and decay == "Motivation Decay":
+#         return "Critical"
+#     elif dependency != "Independent":
+#         return "High"
+#     return "Normal"
 
-print(intervention_priority(True, "Motivation Decay", "Hint Dependent"))
+# print(intervention_priority(True, "Motivation Decay", "Hint Dependent"))
+
+# Sistem deteksi penurunan motivasi siswa berdasarkan skor sesi
+def motivation_decay(session_scores):
+    if len(session_scores) < 3:
+        return "Unknown"
+    if session_scores[-1] < session_scores[-2] < session_scores[-3]:
+        return "Motivation Decay"
+    return "Motivation Stable"
+
+print(motivation_decay([85, 78, 65]))
