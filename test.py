@@ -6301,12 +6301,22 @@
 # print(answer_strategy(5, 40))
 
 # Sistem analisis kurva lupa berdasarkan skor awal dan skor terbaru
-def forgetting_curve(initial, recent):
-    drop = initial - recent
-    if drop > 20:
-        return "Severe Forgetting"
-    elif drop > 10:
-        return "Moderate Forgetting"
-    return "Stable"
+# def forgetting_curve(initial, recent):
+#     drop = initial - recent
+#     if drop > 20:
+#         return "Severe Forgetting"
+#     elif drop > 10:
+#         return "Moderate Forgetting"
+#     return "Stable"
 
-print(forgetting_curve(85, 60))
+# print(forgetting_curve(85, 60))
+
+# Sistem deteksi ketergantungan hint berdasarkan jumlah hint yang digunakan dan hasil akhir
+def hint_dependency(hints_used, correct):
+    if hints_used >= 3 and correct:
+        return "Hint Dependent"
+    elif hints_used >= 3:
+        return "Hint Abused"
+    return "Independent"
+
+print(hint_dependency(4, True))
