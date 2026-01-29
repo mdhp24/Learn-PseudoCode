@@ -6262,10 +6262,20 @@
 
 
 # Sistem klasifikasi familiarity konsep berdasarkan streak jawaban benar dan rata-rata waktu
-def concept_familiarity(correct_streak, avg_time):
-    if correct_streak >= 3 and avg_time < 60:
-        return "High Familiarity"
-    elif correct_streak >= 1:
-        return "Medium Familiarity"
-    return "Low Familiarity"
-print(concept_familiarity(3, 50))
+# def concept_familiarity(correct_streak, avg_time):
+#     if correct_streak >= 3 and avg_time < 60:
+#         return "High Familiarity"
+#     elif correct_streak >= 1:
+#         return "Medium Familiarity"
+#     return "Low Familiarity"
+# print(concept_familiarity(3, 50))
+
+# sistem 
+def intervention_priority(fatigue, decay, dependency):
+    if fatigue and decay == "Motivation Decay":
+        return "Critical"
+    elif dependency != "Independent":
+        return "High"
+    return "Normal"
+
+print(intervention_priority(True, "Motivation Decay", "Hint Dependent"))
