@@ -6360,9 +6360,20 @@
 # print(cognitive_load(600, 4))
 
 # Sistem klasifikasi strategi menjawab berdasarkan perubahan jawaban dan waktu
-def rapid_guessing(answer_time, correct):
-    if answer_time < 10 and not correct:
-        return "Rapid Guessing"
-    return "Normal Answering"
+# def rapid_guessing(answer_time, correct):
+#     if answer_time < 10 and not correct:
+#         return "Rapid Guessing"
+#     return "Normal Answering"
 
-print(rapid_guessing(7, False))
+# print(rapid_guessing(7, False))
+
+# Sistem analisis kurva lupa berdasarkan skor awal dan skor terbaru
+def skill_mastery(correct_rate, consistency):
+    score = (correct_rate * 0.7) + (consistency * 0.3)
+    if score >= 85:
+        return "Mastery"
+    elif score >= 65:
+        return "Developing"
+    return "Basic"
+
+print(skill_mastery(80, 70))
