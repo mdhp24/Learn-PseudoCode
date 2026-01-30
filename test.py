@@ -6340,10 +6340,21 @@
 
 
 # Sistem deteksi penurunan motivasi siswa berdasarkan skor sesi
-def motivation_decay(session_scores):
-    if len(session_scores) < 3:
-        return "Unknown"
-    if session_scores[-1] < session_scores[-2] < session_scores[-3]:
-        return "Motivation Decay"
-    return "Motivation Stable"
-print(motivation_decay([85, 78, 65]))
+# def motivation_decay(session_scores):
+#     if len(session_scores) < 3:
+#         return "Unknown"
+#     if session_scores[-1] < session_scores[-2] < session_scores[-3]:
+#         return "Motivation Decay"
+#     return "Motivation Stable"
+# print(motivation_decay([85, 78, 65]))
+
+# sistem 
+def cognitive_load(time_spent, errors):
+    load = (time_spent / 60) + (errors * 2)
+    if load > 15:
+        return "High Cognitive Load"
+    elif load > 8:
+        return "Medium Cognitive Load"
+    return "Low Cognitive Load"
+
+print(cognitive_load(600, 4))
