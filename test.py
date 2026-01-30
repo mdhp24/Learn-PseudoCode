@@ -6387,11 +6387,19 @@
 # print(behavioral_shift("Guessing", "Deliberate"))
 
 # Sistem klasifikasi regulasi diri berdasarkan jeda dan percobaan ulang
-def self_regulation(pauses, retries):
-    if pauses >= 2 and retries <= 2:
-        return "High Self-Regulation"
-    elif retries > 4:
-        return "Low Self-Regulation"
-    return "Moderate Self-Regulation"
+# def self_regulation(pauses, retries):
+#     if pauses >= 2 and retries <= 2:
+#         return "High Self-Regulation"
+#     elif retries > 4:
+#         return "Low Self-Regulation"
+#     return "Moderate Self-Regulation"
 
-print(self_regulation(3, 1))
+# print(self_regulation(3, 1))
+
+# Sistem trigger reinforcement berdasarkan lupa dan mastery
+def reinforcement_trigger(forgetting, mastery):
+    if forgetting == "Severe Forgetting" or mastery == "Basic":
+        return "Reinforce Concept"
+    return "No Reinforcement"
+
+print(reinforcement_trigger("Severe Forgetting", "Developing"))
