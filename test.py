@@ -6379,9 +6379,19 @@
 # print(skill_mastery(80, 70))
 
 # Sistem deteksi ketergantungan hint berdasarkan jumlah hint yang digunakan dan hasil akhir
-def behavioral_shift(previous, current):
-    if previous != current:
-        return "Behavior Shift Detected"
-    return "Stable Behavior"
+# def behavioral_shift(previous, current):
+#     if previous != current:
+#         return "Behavior Shift Detected"
+#     return "Stable Behavior"
 
-print(behavioral_shift("Guessing", "Deliberate"))
+# print(behavioral_shift("Guessing", "Deliberate"))
+
+# Sistem klasifikasi regulasi diri berdasarkan jeda dan percobaan ulang
+def self_regulation(pauses, retries):
+    if pauses >= 2 and retries <= 2:
+        return "High Self-Regulation"
+    elif retries > 4:
+        return "Low Self-Regulation"
+    return "Moderate Self-Regulation"
+
+print(self_regulation(3, 1))
