@@ -6368,12 +6368,20 @@
 # print(rapid_guessing(7, False))
 
 # Sistem analisis kurva lupa berdasarkan skor awal dan skor terbaru
-def skill_mastery(correct_rate, consistency):
-    score = (correct_rate * 0.7) + (consistency * 0.3)
-    if score >= 85:
-        return "Mastery"
-    elif score >= 65:
-        return "Developing"
-    return "Basic"
+# def skill_mastery(correct_rate, consistency):
+#     score = (correct_rate * 0.7) + (consistency * 0.3)
+#     if score >= 85:
+#         return "Mastery"
+#     elif score >= 65:
+#         return "Developing"
+#     return "Basic"
 
-print(skill_mastery(80, 70))
+# print(skill_mastery(80, 70))
+
+# Sistem deteksi ketergantungan hint berdasarkan jumlah hint yang digunakan dan hasil akhir
+def behavioral_shift(previous, current):
+    if previous != current:
+        return "Behavior Shift Detected"
+    return "Stable Behavior"
+
+print(behavioral_shift("Guessing", "Deliberate"))
