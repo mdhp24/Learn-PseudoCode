@@ -6397,9 +6397,19 @@
 # print(self_regulation(3, 1))
 
 # Sistem trigger reinforcement berdasarkan lupa dan mastery
-def reinforcement_trigger(forgetting, mastery):
-    if forgetting == "Severe Forgetting" or mastery == "Basic":
-        return "Reinforce Concept"
-    return "No Reinforcement"
+# def reinforcement_trigger(forgetting, mastery):
+#     if forgetting == "Severe Forgetting" or mastery == "Basic":
+#         return "Reinforce Concept"
+#     return "No Reinforcement"
 
-print(reinforcement_trigger("Severe Forgetting", "Developing"))
+# print(reinforcement_trigger("Severe Forgetting", "Developing"))
+
+# Sistem chatbot respons berdasarkan beban kognitif, strategi menjawab, dan regulasi diri
+def chatbot_response(load, guessing, regulation):
+    if load == "High Cognitive Load" and guessing == "Rapid Guessing":
+        return "Show Concept Overview"
+    elif regulation == "High Self-Regulation":
+        return "Encouragement Message"
+    return "Silent Monitoring"
+
+print(chatbot_response("High Cognitive Load", "Rapid Guessing", "Low Self-Regulation"))
