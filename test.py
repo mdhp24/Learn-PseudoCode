@@ -6349,12 +6349,20 @@
 # print(motivation_decay([85, 78, 65]))
 
 # sistem 
-def cognitive_load(time_spent, errors):
-    load = (time_spent / 60) + (errors * 2)
-    if load > 15:
-        return "High Cognitive Load"
-    elif load > 8:
-        return "Medium Cognitive Load"
-    return "Low Cognitive Load"
+# def cognitive_load(time_spent, errors):
+#     load = (time_spent / 60) + (errors * 2)
+#     if load > 15:
+#         return "High Cognitive Load"
+#     elif load > 8:
+#         return "Medium Cognitive Load"
+#     return "Low Cognitive Load"
 
-print(cognitive_load(600, 4))
+# print(cognitive_load(600, 4))
+
+# Sistem klasifikasi strategi menjawab berdasarkan perubahan jawaban dan waktu
+def rapid_guessing(answer_time, correct):
+    if answer_time < 10 and not correct:
+        return "Rapid Guessing"
+    return "Normal Answering"
+
+print(rapid_guessing(7, False))
