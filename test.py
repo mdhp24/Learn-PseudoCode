@@ -6456,11 +6456,21 @@
 # print(metacognition(2, 2))
 
 # Sistem kalibrasi tingkat kesulitan berdasarkan mastery dan kelelahan
-def difficulty_calibration(mastery, fatigue):
-    if mastery == "Basic" and fatigue == "Cognitive Fatigue":
-        return "Decrease Difficulty"
-    elif mastery == "Mastery":
-        return "Increase Difficulty"
-    return "Maintain Difficulty"
+# def difficulty_calibration(mastery, fatigue):
+#     if mastery == "Basic" and fatigue == "Cognitive Fatigue":
+#         return "Decrease Difficulty"
+#     elif mastery == "Mastery":
+#         return "Increase Difficulty"
+#     return "Maintain Difficulty"
 
-print(difficulty_calibration("Basic", "Cognitive Fatigue"))
+# print(difficulty_calibration("Basic", "Cognitive Fatigue"))
+
+# Sistem rute jalur pembelajaran berdasarkan momentum dan persistensi
+def learning_path_route(momentum, persistence):
+    if momentum == "Negative Momentum" and persistence == "Low Persistence":
+        return "Remedial Path"
+    elif momentum == "Positive Momentum":
+        return "Acceleration Path"
+    return "Standard Path"
+
+print(learning_path_route("Negative Momentum", "Low Persistence"))
