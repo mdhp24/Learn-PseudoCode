@@ -6434,12 +6434,23 @@
 # print(cognitive_fatigue(1200, 4))
 
 # Sistem analisis keterlibatan siswa berdasarkan waktu aktif dan waktu diam
-def engagement_persistence(active_time, idle_time):
-    ratio = active_time / (active_time + idle_time)
-    if ratio >= 0.8:
-        return "High Persistence"
-    elif ratio >= 0.5:
-        return "Moderate Persistence"
-    return "Low Persistence"
+# def engagement_persistence(active_time, idle_time):
+#     ratio = active_time / (active_time + idle_time)
+#     if ratio >= 0.8:
+#         return "High Persistence"
+#     elif ratio >= 0.5:
+#         return "Moderate Persistence"
+#     return "Low Persistence"
 
-print(engagement_persistence(400, 100))
+# print(engagement_persistence(400, 100))
+
+# Sistem klasifikasi metakognisi berdasarkan jeda dan koreksi diri
+def metacognition(pauses, self_corrections):
+    score = pauses + (self_corrections * 2)
+    if score >= 6:
+        return "High Meta-Cognition"
+    elif score >= 3:
+        return "Moderate Meta-Cognition"
+    return "Low Meta-Cognition"
+
+print(metacognition(2, 2))
