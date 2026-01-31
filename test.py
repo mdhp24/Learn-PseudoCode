@@ -6415,12 +6415,20 @@
 # print(chatbot_response("High Cognitive Load", "Rapid Guessing", "Low Self-Regulation"))
 
 # Sistem analisis momentum pembelajaran siswa
-def learning_momentum(previous_score, current_score):
-    delta = current_score - previous_score
-    if delta >= 10:
-        return "Positive Momentum"
-    elif delta <= -10:
-        return "Negative Momentum"
-    return "Stable Momentum"
+# def learning_momentum(previous_score, current_score):
+#     delta = current_score - previous_score
+#     if delta >= 10:
+#         return "Positive Momentum"
+#     elif delta <= -10:
+#         return "Negative Momentum"
+#     return "Stable Momentum"
 
-print(learning_momentum(65, 80))
+# print(learning_momentum(65, 80))
+
+# Sistem deteksi kelelahan kognitif berdasarkan waktu yang dihabiskan dan kesalahan beruntun
+def cognitive_fatigue(time_spent, consecutive_errors):
+    if time_spent > 900 and consecutive_errors >= 3:
+        return "Cognitive Fatigue"
+    return "No Fatigue"
+
+print(cognitive_fatigue(1200, 4))
