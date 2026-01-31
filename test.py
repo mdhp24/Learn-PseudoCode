@@ -6466,11 +6466,23 @@
 # print(difficulty_calibration("Basic", "Cognitive Fatigue"))
 
 # Sistem rute jalur pembelajaran berdasarkan momentum dan persistensi
-def learning_path_route(momentum, persistence):
-    if momentum == "Negative Momentum" and persistence == "Low Persistence":
-        return "Remedial Path"
-    elif momentum == "Positive Momentum":
-        return "Acceleration Path"
-    return "Standard Path"
+# def learning_path_route(momentum, persistence):
+#     if momentum == "Negative Momentum" and persistence == "Low Persistence":
+#         return "Remedial Path"
+#     elif momentum == "Positive Momentum":
+#         return "Acceleration Path"
+#     return "Standard Path"
 
-print(learning_path_route("Negative Momentum", "Low Persistence"))
+# print(learning_path_route("Negative Momentum", "Low Persistence"))
+
+# Sistem kebijakan chatbot berdasarkan kelelahan, metakognisi, dan jalur pembelajaran
+def chatbot_policy(fatigue, metacog, path):
+    if fatigue == "Cognitive Fatigue":
+        return "Concept Review Only"
+    elif metacog == "High Meta-Cognition":
+        return "Socratic Prompt"
+    elif path == "Acceleration Path":
+        return "Challenge Question"
+    return "Monitor"
+
+print(chatbot_policy("Cognitive Fatigue", "Low Meta-Cognition", "Remedial Path"))
