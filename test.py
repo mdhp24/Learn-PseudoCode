@@ -6445,12 +6445,22 @@
 # print(engagement_persistence(400, 100))
 
 # Sistem klasifikasi metakognisi berdasarkan jeda dan koreksi diri
-def metacognition(pauses, self_corrections):
-    score = pauses + (self_corrections * 2)
-    if score >= 6:
-        return "High Meta-Cognition"
-    elif score >= 3:
-        return "Moderate Meta-Cognition"
-    return "Low Meta-Cognition"
+# def metacognition(pauses, self_corrections):
+#     score = pauses + (self_corrections * 2)
+#     if score >= 6:
+#         return "High Meta-Cognition"
+#     elif score >= 3:
+#         return "Moderate Meta-Cognition"
+#     return "Low Meta-Cognition"
 
-print(metacognition(2, 2))
+# print(metacognition(2, 2))
+
+# Sistem kalibrasi tingkat kesulitan berdasarkan mastery dan kelelahan
+def difficulty_calibration(mastery, fatigue):
+    if mastery == "Basic" and fatigue == "Cognitive Fatigue":
+        return "Decrease Difficulty"
+    elif mastery == "Mastery":
+        return "Increase Difficulty"
+    return "Maintain Difficulty"
+
+print(difficulty_calibration("Basic", "Cognitive Fatigue"))
