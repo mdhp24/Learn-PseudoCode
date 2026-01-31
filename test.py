@@ -6426,9 +6426,20 @@
 # print(learning_momentum(65, 80))
 
 # Sistem deteksi kelelahan kognitif berdasarkan waktu yang dihabiskan dan kesalahan beruntun
-def cognitive_fatigue(time_spent, consecutive_errors):
-    if time_spent > 900 and consecutive_errors >= 3:
-        return "Cognitive Fatigue"
-    return "No Fatigue"
+# def cognitive_fatigue(time_spent, consecutive_errors):
+#     if time_spent > 900 and consecutive_errors >= 3:
+#         return "Cognitive Fatigue"
+#     return "No Fatigue"
 
-print(cognitive_fatigue(1200, 4))
+# print(cognitive_fatigue(1200, 4))
+
+# Sistem analisis keterlibatan siswa berdasarkan waktu aktif dan waktu diam
+def engagement_persistence(active_time, idle_time):
+    ratio = active_time / (active_time + idle_time)
+    if ratio >= 0.8:
+        return "High Persistence"
+    elif ratio >= 0.5:
+        return "Moderate Persistence"
+    return "Low Persistence"
+
+print(engagement_persistence(400, 100))
