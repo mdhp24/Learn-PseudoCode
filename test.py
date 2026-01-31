@@ -6405,11 +6405,22 @@
 # print(reinforcement_trigger("Severe Forgetting", "Developing"))
 
 # Sistem chatbot respons berdasarkan beban kognitif, strategi menjawab, dan regulasi diri
-def chatbot_response(load, guessing, regulation):
-    if load == "High Cognitive Load" and guessing == "Rapid Guessing":
-        return "Show Concept Overview"
-    elif regulation == "High Self-Regulation":
-        return "Encouragement Message"
-    return "Silent Monitoring"
+# def chatbot_response(load, guessing, regulation):
+#     if load == "High Cognitive Load" and guessing == "Rapid Guessing":
+#         return "Show Concept Overview"
+#     elif regulation == "High Self-Regulation":
+#         return "Encouragement Message"
+#     return "Silent Monitoring"
 
-print(chatbot_response("High Cognitive Load", "Rapid Guessing", "Low Self-Regulation"))
+# print(chatbot_response("High Cognitive Load", "Rapid Guessing", "Low Self-Regulation"))
+
+# Sistem analisis momentum pembelajaran siswa
+def learning_momentum(previous_score, current_score):
+    delta = current_score - previous_score
+    if delta >= 10:
+        return "Positive Momentum"
+    elif delta <= -10:
+        return "Negative Momentum"
+    return "Stable Momentum"
+
+print(learning_momentum(65, 80))
