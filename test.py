@@ -6506,11 +6506,22 @@
 # print(intervention_timing("Unproductive Struggle", "Moderate Dependency"))
 
 # Sistem klasifikasi perjuangan siswa berdasarkan waktu dan peningkatan skor
-def productive_struggle(time_spent, improvement):
-    if time_spent > 300 and improvement:
-        return "Productive Struggle"
-    elif time_spent > 300 and not improvement:
-        return "Unproductive Struggle"
-    return "Efficient Learning"
+# def productive_struggle(time_spent, improvement):
+#     if time_spent > 300 and improvement:
+#         return "Productive Struggle"
+#     elif time_spent > 300 and not improvement:
+#         return "Unproductive Struggle"
+#     return "Efficient Learning"
 
-print(productive_struggle(500, False))
+# print(productive_struggle(500, False))
+
+# Sistem deteksi ketergantungan konsep berdasarkan penggunaan hint dan jumlah soal
+def dependency(hints_used, total_questions):
+    ratio = hints_used / total_questions
+    if ratio > 0.6:
+        return "High Dependency"
+    elif ratio > 0.3:
+        return "Moderate Dependency"
+    return "Low Dependency"
+
+print(dependency(7, 10))
