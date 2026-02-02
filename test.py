@@ -6498,9 +6498,19 @@
 # print(adaptive_feedback("Immediate Intervention", "Misconception Pattern"))
 
 # Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan ketergantungan konsep
-def intervention_timing(struggle, dependency):
-    if struggle == "Unproductive Struggle" or dependency == "High Dependency":
-        return "Immediate Intervention"
-    return "Delayed Intervention"
+# def intervention_timing(struggle, dependency):
+#     if struggle == "Unproductive Struggle" or dependency == "High Dependency":
+#         return "Immediate Intervention"
+#     return "Delayed Intervention"
 
-print(intervention_timing("Unproductive Struggle", "Moderate Dependency"))
+# print(intervention_timing("Unproductive Struggle", "Moderate Dependency"))
+
+# Sistem klasifikasi perjuangan siswa berdasarkan waktu dan peningkatan skor
+def productive_struggle(time_spent, improvement):
+    if time_spent > 300 and improvement:
+        return "Productive Struggle"
+    elif time_spent > 300 and not improvement:
+        return "Unproductive Struggle"
+    return "Efficient Learning"
+
+print(productive_struggle(500, False))
