@@ -6476,13 +6476,23 @@
 # print(learning_path_route("Negative Momentum", "Low Persistence"))
 
 # Sistem kebijakan chatbot berdasarkan kelelahan, metakognisi, dan jalur pembelajaran
-def chatbot_policy(fatigue, metacog, path):
-    if fatigue == "Cognitive Fatigue":
-        return "Concept Review Only"
-    elif metacog == "High Meta-Cognition":
-        return "Socratic Prompt"
-    elif path == "Acceleration Path":
-        return "Challenge Question"
-    return "Monitor"
+# def chatbot_policy(fatigue, metacog, path):
+#     if fatigue == "Cognitive Fatigue":
+#         return "Concept Review Only"
+#     elif metacog == "High Meta-Cognition":
+#         return "Socratic Prompt"
+#     elif path == "Acceleration Path":
+#         return "Challenge Question"
+#     return "Monitor"
 
-print(chatbot_policy("Cognitive Fatigue", "Low Meta-Cognition", "Remedial Path"))
+# print(chatbot_policy("Cognitive Fatigue", "Low Meta-Cognition", "Remedial Path"))
+
+# Sistem berikan feedback adaptif berdasarkan intervensi dan pola siswa
+def adaptive_feedback(timing, pattern):
+    if timing == "Immediate Intervention" and pattern == "Misconception Pattern":
+        return "Concept Explanation"
+    elif pattern == "Guessing Pattern":
+        return "Reflection Prompt"
+    return "Minimal Feedback"
+
+print(adaptive_feedback("Immediate Intervention", "Misconception Pattern"))
