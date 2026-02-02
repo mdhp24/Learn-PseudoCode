@@ -6527,12 +6527,22 @@
 # print(dependency(7, 10))
 
 # Sistem analisis recovery skor berdasarkan kegagalan dan keberhasilan
-def recovery_score(failures_before, successes_after):
-    score = successes_after - failures_before
-    if score >= 2:
-        return "Strong Recovery"
-    elif score >= 0:
-        return "Moderate Recovery"
-    return "Weak Recovery"
+# def recovery_score(failures_before, successes_after):
+#     score = successes_after - failures_before
+#     if score >= 2:
+#         return "Strong Recovery"
+#     elif score >= 0:
+#         return "Moderate Recovery"
+#     return "Weak Recovery"
 
-print(recovery_score(2, 4))
+# print(recovery_score(2, 4))
+
+# Sistem deteksi pola kesalahan siswa berdasarkan jenis kesalahan
+def error_pattern(errors):
+    if errors.count("same") >= 3:
+        return "Misconception Pattern"
+    elif errors.count("random") >= 3:
+        return "Guessing Pattern"
+    return "Mixed Pattern"
+
+print(error_pattern(["same", "same", "same", "random"]))
