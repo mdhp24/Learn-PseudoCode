@@ -6516,12 +6516,23 @@
 # print(productive_struggle(500, False))
 
 # Sistem deteksi ketergantungan konsep berdasarkan penggunaan hint dan jumlah soal
-def dependency(hints_used, total_questions):
-    ratio = hints_used / total_questions
-    if ratio > 0.6:
-        return "High Dependency"
-    elif ratio > 0.3:
-        return "Moderate Dependency"
-    return "Low Dependency"
+# def dependency(hints_used, total_questions):
+#     ratio = hints_used / total_questions
+#     if ratio > 0.6:
+#         return "High Dependency"
+#     elif ratio > 0.3:
+#         return "Moderate Dependency"
+#     return "Low Dependency"
 
-print(dependency(7, 10))
+# print(dependency(7, 10))
+
+# Sistem analisis recovery skor berdasarkan kegagalan dan keberhasilan
+def recovery_score(failures_before, successes_after):
+    score = successes_after - failures_before
+    if score >= 2:
+        return "Strong Recovery"
+    elif score >= 0:
+        return "Moderate Recovery"
+    return "Weak Recovery"
+
+print(recovery_score(2, 4))
