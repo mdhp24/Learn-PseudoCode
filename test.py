@@ -6488,11 +6488,19 @@
 # print(chatbot_policy("Cognitive Fatigue", "Low Meta-Cognition", "Remedial Path"))
 
 # Sistem berikan feedback adaptif berdasarkan intervensi dan pola siswa
-def adaptive_feedback(timing, pattern):
-    if timing == "Immediate Intervention" and pattern == "Misconception Pattern":
-        return "Concept Explanation"
-    elif pattern == "Guessing Pattern":
-        return "Reflection Prompt"
-    return "Minimal Feedback"
+# def adaptive_feedback(timing, pattern):
+#     if timing == "Immediate Intervention" and pattern == "Misconception Pattern":
+#         return "Concept Explanation"
+#     elif pattern == "Guessing Pattern":
+#         return "Reflection Prompt"
+#     return "Minimal Feedback"
 
-print(adaptive_feedback("Immediate Intervention", "Misconception Pattern"))
+# print(adaptive_feedback("Immediate Intervention", "Misconception Pattern"))
+
+# Sistem penjadwalan intervensi berdasarkan jenis perjuangan dan ketergantungan konsep
+def intervention_timing(struggle, dependency):
+    if struggle == "Unproductive Struggle" or dependency == "High Dependency":
+        return "Immediate Intervention"
+    return "Delayed Intervention"
+
+print(intervention_timing("Unproductive Struggle", "Moderate Dependency"))
