@@ -6591,12 +6591,23 @@
 
 
 # Sistem klasifikasi performa siswa berdasarkan percobaan dan waktu
-def classify_performance(attempts, time_spent):
-    if attempts >= 5 and time_spent > 300:
-        return "Struggling"
-    elif attempts >= 5:
-        return "Gaming the System"
-    elif attempts <= 2 and time_spent < 180:
-        return "Ideal"
-    return "Normal"
-print(classify_performance(6, 400))
+# def classify_performance(attempts, time_spent):
+#     if attempts >= 5 and time_spent > 300:
+#         return "Struggling"
+#     elif attempts >= 5:
+#         return "Gaming the System"
+#     elif attempts <= 2 and time_spent < 180:
+#         return "Ideal"
+#     return "Normal"
+# print(classify_performance(6, 400))
+
+
+# Sistem hitung stabilitas pengetahuan berdasarkan riwayat jawaban benar
+def knowledge_stability(correct_history):
+    stability = sum(correct_history) / len(correct_history)
+    if stability >= 0.85:
+        return "Stable Knowledge"
+    elif stability >= 0.6:
+        return "Unstable Knowledge"
+    return "Fragile Knowledge"
+print(knowledge_stability([1, 1, 0, 1, 1]))
