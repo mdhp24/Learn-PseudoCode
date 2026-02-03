@@ -6603,11 +6603,21 @@
 
 
 # Sistem hitung stabilitas pengetahuan berdasarkan riwayat jawaban benar
-def knowledge_stability(correct_history):
-    stability = sum(correct_history) / len(correct_history)
-    if stability >= 0.85:
-        return "Stable Knowledge"
-    elif stability >= 0.6:
-        return "Unstable Knowledge"
-    return "Fragile Knowledge"
-print(knowledge_stability([1, 1, 0, 1, 1]))
+# def knowledge_stability(correct_history):
+#     stability = sum(correct_history) / len(correct_history)
+#     if stability >= 0.85:
+#         return "Stable Knowledge"
+#     elif stability >= 0.6:
+#         return "Unstable Knowledge"
+#     return "Fragile Knowledge"
+# print(knowledge_stability([1, 1, 0, 1, 1]))
+
+
+# Sistem deteksi pola kesalahan siswa berdasarkan jenis kesalahan
+def error_pattern(errors):
+    if errors.count("same") >= 3:
+        return "Misconception Pattern"
+    elif errors.count("random") >= 3:
+        return "Guessing Pattern"
+    return "Mixed Pattern"
+print(error_pattern(["same", "same", "same", "random"]))
