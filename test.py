@@ -6573,6 +6573,18 @@
 
 
 # Sistem hitung skor kesulitan berdasarkan percobaan, hint, dan waktu
-def difficulty_score(attempts, hints, time_spent):
-    return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
-print(difficulty_score(5, 2, 360))
+# def difficulty_score(attempts, hints, time_spent):
+#     return round((attempts * 2) + (hints * 3) + (time_spent / 60), 2)
+# print(difficulty_score(5, 2, 360))
+
+
+# Sistem chatbot respons berdasarkan performa siswa
+def chatbot_response(performance):
+    responses = {
+        "Struggling": "Tampilkan konsep dasar materi",
+        "Gaming the System": "Batasi bantuan",
+        "Normal": "Lanjutkan latihan",
+        "Ideal": "Berikan soal lanjutan"
+    }
+    return responses.get(performance)
+print(chatbot_response("Struggling"))
