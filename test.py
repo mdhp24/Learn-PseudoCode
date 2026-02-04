@@ -6678,13 +6678,22 @@
 # print(learning_style(120, 300))
 
 # Sistem berikan konten adaptif berdasarkan kategori siswa
-def adaptive_content(category):
-    if category == "Struggling":
-        return "Show Concept Explanation"
-    elif category == "Gaming the System":
-        return "Show Reflection Question"
-    elif category == "Ideal":
-        return "Show Challenge Problem"
-    return "Minimal Guidance"
+# def adaptive_content(category):
+#     if category == "Struggling":
+#         return "Show Concept Explanation"
+#     elif category == "Gaming the System":
+#         return "Show Reflection Question"
+#     elif category == "Ideal":
+#         return "Show Challenge Problem"
+#     return "Minimal Guidance"
 
-print(adaptive_content("Struggling"))
+# print(adaptive_content("Struggling"))
+
+# Sistem log status pembelajaran siswa
+def log_learning_state(name, state):
+    return {
+        "student": name,
+        "learning_state": state
+    }
+
+print(log_learning_state("Mahasiswa A", "High Cognitive Load"))
