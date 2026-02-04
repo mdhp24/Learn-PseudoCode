@@ -6634,12 +6634,19 @@
 # print(recovery_score(2, 4))
 
 # Sistem hitung beban kognitif berdasarkan waktu dan percobaan
-def cognitive_load(time_spent, retries):
-    load = (time_spent / 60) + retries
-    if load > 10:
-        return "High Cognitive Load"
-    elif load > 5:
-        return "Medium Cognitive Load"
-    return "Low Cognitive Load"
+# def cognitive_load(time_spent, retries):
+#     load = (time_spent / 60) + retries
+#     if load > 10:
+#         return "High Cognitive Load"
+#     elif load > 5:
+#         return "Medium Cognitive Load"
+#     return "Low Cognitive Load"
 
-print(cognitive_load(480, 4))
+# print(cognitive_load(480, 4))
+
+# Sistem hitung probabilitas penguasaan materi berdasarkan jawaban benar dan total soal
+def mastery_probability(correct, total):
+    probability = correct / total
+    return round(probability * 100, 2)
+
+print(mastery_probability(7, 10), "%")
