@@ -6624,11 +6624,22 @@
 
 
 # Sistem analisis recovery skor berdasarkan kegagalan dan keberhasilan
-def recovery_score(failures_before, successes_after):
-    score = successes_after - failures_before
-    if score >= 2:
-        return "Strong Recovery"
-    elif score >= 0:
-        return "Moderate Recovery"
-    return "Weak Recovery"
-print(recovery_score(2, 4))
+# def recovery_score(failures_before, successes_after):
+#     score = successes_after - failures_before
+#     if score >= 2:
+#         return "Strong Recovery"
+#     elif score >= 0:
+#         return "Moderate Recovery"
+#     return "Weak Recovery"
+# print(recovery_score(2, 4))
+
+# Sistem hitung beban kognitif berdasarkan waktu dan percobaan
+def cognitive_load(time_spent, retries):
+    load = (time_spent / 60) + retries
+    if load > 10:
+        return "High Cognitive Load"
+    elif load > 5:
+        return "Medium Cognitive Load"
+    return "Low Cognitive Load"
+
+print(cognitive_load(480, 4))
