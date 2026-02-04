@@ -6662,9 +6662,17 @@
 # print(learning_momentum([60, 65, 70, 80]))
 
 # Sistem deteksi penyalahgunaan hint berdasarkan jumlah hint dan jawaban benar
-def hint_abuse(hints_used, correct_answers):
-    if hints_used > correct_answers:
-        return "Gaming the System"
-    return "Normal Usage"
+# def hint_abuse(hints_used, correct_answers):
+#     if hints_used > correct_answers:
+#         return "Gaming the System"
+#     return "Normal Usage"
 
-print(hint_abuse(5, 2))
+# print(hint_abuse(5, 2))
+
+# Sistem klasifikasi gaya belajar berdasarkan waktu membaca dan praktik
+def learning_style(time_reading, time_practice):
+    if time_practice > time_reading:
+        return "Practice-Oriented Learner"
+    return "Theory-Oriented Learner"
+
+print(learning_style(120, 300))
