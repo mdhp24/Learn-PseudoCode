@@ -6652,11 +6652,19 @@
 # print(mastery_probability(7, 10), "%")
 
 # Sistem analisis momentum pembelajaran siswa
-def learning_momentum(scores):
-    if scores[-1] > scores[0]:
-        return "Positive Momentum"
-    elif scores[-1] < scores[0]:
-        return "Negative Momentum"
-    return "Stable Momentum"
+# def learning_momentum(scores):
+#     if scores[-1] > scores[0]:
+#         return "Positive Momentum"
+#     elif scores[-1] < scores[0]:
+#         return "Negative Momentum"
+#     return "Stable Momentum"
 
-print(learning_momentum([60, 65, 70, 80]))
+# print(learning_momentum([60, 65, 70, 80]))
+
+# Sistem deteksi penyalahgunaan hint berdasarkan jumlah hint dan jawaban benar
+def hint_abuse(hints_used, correct_answers):
+    if hints_used > correct_answers:
+        return "Gaming the System"
+    return "Normal Usage"
+
+print(hint_abuse(5, 2))
