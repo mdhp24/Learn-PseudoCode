@@ -6645,8 +6645,18 @@
 # print(cognitive_load(480, 4))
 
 # Sistem hitung probabilitas penguasaan materi berdasarkan jawaban benar dan total soal
-def mastery_probability(correct, total):
-    probability = correct / total
-    return round(probability * 100, 2)
+# def mastery_probability(correct, total):
+#     probability = correct / total
+#     return round(probability * 100, 2)
 
-print(mastery_probability(7, 10), "%")
+# print(mastery_probability(7, 10), "%")
+
+# Sistem analisis momentum pembelajaran siswa
+def learning_momentum(scores):
+    if scores[-1] > scores[0]:
+        return "Positive Momentum"
+    elif scores[-1] < scores[0]:
+        return "Negative Momentum"
+    return "Stable Momentum"
+
+print(learning_momentum([60, 65, 70, 80]))
