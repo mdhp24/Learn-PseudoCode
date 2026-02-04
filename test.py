@@ -6670,9 +6670,21 @@
 # print(hint_abuse(5, 2))
 
 # Sistem klasifikasi gaya belajar berdasarkan waktu membaca dan praktik
-def learning_style(time_reading, time_practice):
-    if time_practice > time_reading:
-        return "Practice-Oriented Learner"
-    return "Theory-Oriented Learner"
+# def learning_style(time_reading, time_practice):
+#     if time_practice > time_reading:
+#         return "Practice-Oriented Learner"
+#     return "Theory-Oriented Learner"
 
-print(learning_style(120, 300))
+# print(learning_style(120, 300))
+
+# Sistem berikan konten adaptif berdasarkan kategori siswa
+def adaptive_content(category):
+    if category == "Struggling":
+        return "Show Concept Explanation"
+    elif category == "Gaming the System":
+        return "Show Reflection Question"
+    elif category == "Ideal":
+        return "Show Challenge Problem"
+    return "Minimal Guidance"
+
+print(adaptive_content("Struggling"))
