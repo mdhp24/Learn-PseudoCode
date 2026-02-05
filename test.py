@@ -6740,7 +6740,16 @@
 # print(adjust_difficulty(0.35))
 
 # Sistem deteksi pola perjuangan siswa berdasarkan hasil percobaan
-def struggle_pattern(attempts):
-    return attempts.count("fail") >= 3
+# def struggle_pattern(attempts):
+#     return attempts.count("fail") >= 3
 
-print(struggle_pattern(["fail", "fail", "success", "fail"]))
+# print(struggle_pattern(["fail", "fail", "success", "fail"]))
+
+# Sistem hitung kurva lupa berdasarkan hari sejak belajar terakhir
+import math
+
+def forgetting_curve(days):
+    retention = math.exp(-0.3 * days)
+    return round(retention * 100, 2)
+
+print(forgetting_curve(5), "%")
