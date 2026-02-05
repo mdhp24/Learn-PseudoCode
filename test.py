@@ -6746,10 +6746,17 @@
 # print(struggle_pattern(["fail", "fail", "success", "fail"]))
 
 # Sistem hitung kurva lupa berdasarkan hari sejak belajar terakhir
-import math
+# import math
 
-def forgetting_curve(days):
-    retention = math.exp(-0.3 * days)
-    return round(retention * 100, 2)
+# def forgetting_curve(days):
+#     retention = math.exp(-0.3 * days)
+#     return round(retention * 100, 2)
 
-print(forgetting_curve(5), "%")
+# print(forgetting_curve(5), "%")
+
+# Sistem hitung skor keterlibatan berdasarkan klik, waktu aktif, dan interaksi
+def engagement_score(clicks, time_active, interactions):
+    score = (clicks * 0.2) + (time_active / 60) + (interactions * 0.5)
+    return round(score, 2)
+
+print(engagement_score(30, 900, 5))
