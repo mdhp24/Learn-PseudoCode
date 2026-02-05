@@ -6690,10 +6690,20 @@
 # print(adaptive_content("Struggling"))
 
 # Sistem log status pembelajaran siswa
-def log_learning_state(name, state):
-    return {
-        "student": name,
-        "learning_state": state
-    }
+# def log_learning_state(name, state):
+#     return {
+#         "student": name,
+#         "learning_state": state
+#     }
 
-print(log_learning_state("Mahasiswa A", "High Cognitive Load"))
+# print(log_learning_state("Mahasiswa A", "High Cognitive Load"))
+
+# Sistem analisis risiko performa berdasarkan skor dan keterlibatan
+def performance_risk(score, engagement):
+    if score < 60 and engagement < 5:
+        return "High Risk"
+    elif score < 75:
+        return "Medium Risk"
+    return "Low Risk"
+
+print(performance_risk(55, 3))
