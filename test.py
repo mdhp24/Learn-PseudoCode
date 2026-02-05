@@ -6730,11 +6730,17 @@
 # print(response_delay(150))
 
 # Sistem penyesuaian tingkat kesulitan berdasarkan akurasi siswa
-def adjust_difficulty(accuracy):
-    if accuracy < 0.4:
-        return "Easy"
-    elif accuracy < 0.7:
-        return "Medium"
-    return "Hard"
+# def adjust_difficulty(accuracy):
+#     if accuracy < 0.4:
+#         return "Easy"
+#     elif accuracy < 0.7:
+#         return "Medium"
+#     return "Hard"
 
-print(adjust_difficulty(0.35))
+# print(adjust_difficulty(0.35))
+
+# Sistem deteksi pola perjuangan siswa berdasarkan hasil percobaan
+def struggle_pattern(attempts):
+    return attempts.count("fail") >= 3
+
+print(struggle_pattern(["fail", "fail", "success", "fail"]))
