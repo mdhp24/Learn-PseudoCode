@@ -6709,12 +6709,22 @@
 # print(performance_risk(55, 3))
 
 # Sistem rute jalur pembelajaran berdasarkan status siswa
-def learning_path(state):
-    paths = {
-        "Confused": "Review Basics",
-        "Thinking": "Guided Practice",
-        "Fluent": "Advanced Challenge"
-    }
-    return paths.get(state, "Standard Path")
+# def learning_path(state):
+#     paths = {
+#         "Confused": "Review Basics",
+#         "Thinking": "Guided Practice",
+#         "Fluent": "Advanced Challenge"
+#     }
+#     return paths.get(state, "Standard Path")
 
-print(learning_path("Confused"))
+# print(learning_path("Confused"))
+
+# Sistem deteksi kecepatan respons chatbot berdasarkan waktu respon
+def response_delay(seconds):
+    if seconds > 120:
+        return "Confused"
+    elif seconds > 60:
+        return "Thinking"
+    return "Fluent"
+
+print(response_delay(150))
