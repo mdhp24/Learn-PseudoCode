@@ -6699,11 +6699,22 @@
 # print(log_learning_state("Mahasiswa A", "High Cognitive Load"))
 
 # Sistem analisis risiko performa berdasarkan skor dan keterlibatan
-def performance_risk(score, engagement):
-    if score < 60 and engagement < 5:
-        return "High Risk"
-    elif score < 75:
-        return "Medium Risk"
-    return "Low Risk"
+# def performance_risk(score, engagement):
+#     if score < 60 and engagement < 5:
+#         return "High Risk"
+#     elif score < 75:
+#         return "Medium Risk"
+#     return "Low Risk"
 
-print(performance_risk(55, 3))
+# print(performance_risk(55, 3))
+
+# Sistem rute jalur pembelajaran berdasarkan status siswa
+def learning_path(state):
+    paths = {
+        "Confused": "Review Basics",
+        "Thinking": "Guided Practice",
+        "Fluent": "Advanced Challenge"
+    }
+    return paths.get(state, "Standard Path")
+
+print(learning_path("Confused"))
