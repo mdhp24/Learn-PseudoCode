@@ -6720,11 +6720,21 @@
 # print(learning_path("Confused"))
 
 # Sistem deteksi kecepatan respons chatbot berdasarkan waktu respon
-def response_delay(seconds):
-    if seconds > 120:
-        return "Confused"
-    elif seconds > 60:
-        return "Thinking"
-    return "Fluent"
+# def response_delay(seconds):
+#     if seconds > 120:
+#         return "Confused"
+#     elif seconds > 60:
+#         return "Thinking"
+#     return "Fluent"
 
-print(response_delay(150))
+# print(response_delay(150))
+
+# Sistem penyesuaian tingkat kesulitan berdasarkan akurasi siswa
+def adjust_difficulty(accuracy):
+    if accuracy < 0.4:
+        return "Easy"
+    elif accuracy < 0.7:
+        return "Medium"
+    return "Hard"
+
+print(adjust_difficulty(0.35))
