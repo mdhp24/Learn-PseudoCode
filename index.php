@@ -17,17 +17,31 @@
 // $student = new Student("Dicky", 70);
 // echo $student->getPerformance();
 
-class Performance {
-    public function category(): string {
-        return "General";
+// class Performance {
+//     public function category(): string {
+//         return "General";
+//     }
+// }
+
+// class LowPerformance extends Performance {
+//     public function category(): string {
+//         return "Struggling";
+//     }
+// }
+
+// $perf = new LowPerformance();
+// echo $perf->category();
+
+
+interface Rule {
+    public function evaluate(array $data): string;
+}
+
+class StruggleRule implements Rule {
+    public function evaluate(array $data): string {
+        return $data['attempts'] > 3 ? "Struggling" : "Normal";
     }
 }
 
-class LowPerformance extends Performance {
-    public function category(): string {
-        return "Struggling";
-    }
-}
-
-$perf = new LowPerformance();
-echo $perf->category();
+$rule = new StruggleRule();
+echo $rule->evaluate(['attempts' => 5]);
