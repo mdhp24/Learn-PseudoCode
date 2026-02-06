@@ -1,18 +1,33 @@
 <?php
 
-class Student {
-    private string $name;
-    private int $score;
+// class Student {
+//     private string $name;
+//     private int $score;
 
-    public function __construct(string $name, int $score) {
-        $this->name = $name;
-        $this->score = $score;
-    }
+//     public function __construct(string $name, int $score) {
+//         $this->name = $name;
+//         $this->score = $score;
+//     }
 
-    public function getPerformance(): string {
-        return $this->score >= 75 ? "High Performance" : "Low Performance";
+//     public function getPerformance(): string {
+//         return $this->score >= 75 ? "High Performance" : "Low Performance";
+//     }
+// }
+
+// $student = new Student("Dicky", 70);
+// echo $student->getPerformance();
+
+class Performance {
+    public function category(): string {
+        return "General";
     }
 }
 
-$student = new Student("Dicky", 70);
-echo $student->getPerformance();
+class LowPerformance extends Performance {
+    public function category(): string {
+        return "Struggling";
+    }
+}
+
+$perf = new LowPerformance();
+echo $perf->category();
