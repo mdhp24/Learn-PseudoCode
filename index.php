@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 // class Student {
 //     private string $name;
@@ -33,15 +33,29 @@
 // echo $perf->category();
 
 
-interface Rule {
-    public function evaluate(array $data): string;
-}
+// interface Rule {
+//     public function evaluate(array $data): string;
+// }
 
-class StruggleRule implements Rule {
-    public function evaluate(array $data): string {
-        return $data['attempts'] > 3 ? "Struggling" : "Normal";
+// class StruggleRule implements Rule {
+//     public function evaluate(array $data): string {
+//         return $data['attempts'] > 3 ? "Struggling" : "Normal";
+//     }
+// }
+
+// $rule = new StruggleRule();
+// echo $rule->evaluate(['attempts' => 5]); -->
+
+
+trait Logger {
+    public function log(string $message): void {
+        echo "[LOG] " . $message . PHP_EOL;
     }
 }
 
-$rule = new StruggleRule();
-echo $rule->evaluate(['attempts' => 5]);
+class Chatbot {
+    use Logger;
+}
+
+$bot = new Chatbot();
+$bot->log("User is struggling on Array topic");
