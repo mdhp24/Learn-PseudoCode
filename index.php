@@ -61,10 +61,26 @@
 // $bot->log("User is struggling on Array topic");
 
 
-$scores = [60, 70, 80, 50, 90];
+// $scores = [60, 70, 80, 50, 90];
 
-$average = array_sum($scores) / count($scores);
+// $average = array_sum($scores) / count($scores);
 
-$status = $average < 70 ? "Low Performance" : "High Performance";
+// $status = $average < 70 ? "Low Performance" : "High Performance";
 
-echo "Average: $average - Status: $status";
+// echo "Average: $average - Status: $status";
+
+
+// <?php
+
+function calculateAccuracy(int $correct, int $total): float {
+    if ($total === 0) {
+        throw new Exception("Total questions cannot be zero");
+    }
+    return $correct / $total;
+}
+
+try {
+    echo calculateAccuracy(5, 0);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
