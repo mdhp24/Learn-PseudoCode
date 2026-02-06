@@ -72,15 +72,30 @@
 
 // <?php
 
-function calculateAccuracy(int $correct, int $total): float {
-    if ($total === 0) {
-        throw new Exception("Total questions cannot be zero");
+// function calculateAccuracy(int $correct, int $total): float {
+//     if ($total === 0) {
+//         throw new Exception("Total questions cannot be zero");
+//     }
+//     return $correct / $total;
+// }
+
+// try {
+//     echo calculateAccuracy(5, 0);
+// } catch (Exception $e) {
+//     echo $e->getMessage();
+// // }
+
+
+// <?php
+
+function detectLearningState(int $attempts, int $timeSpent): string {
+    if ($attempts > 3 && $timeSpent > 300) {
+        return "Struggling";
     }
-    return $correct / $total;
+    if ($attempts > 5 && $timeSpent < 60) {
+        return "Gaming The System";
+    }
+    return "Normal";
 }
 
-try {
-    echo calculateAccuracy(5, 0);
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+echo detectLearningState(6, 40);
