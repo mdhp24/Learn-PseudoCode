@@ -122,28 +122,41 @@
 
 // <?php
 
-interface PerformanceStrategy {
-    public function evaluate(array $data): string;
+// interface PerformanceStrategy {
+//     public function evaluate(array $data): string;
+// }
+
+// class IdealStrategy implements PerformanceStrategy {
+//     public function evaluate(array $data): string {
+//         return $data['accuracy'] > 85 ? "Ideal" : "Normal";
+//     }
+// }
+
+// $strategy = new IdealStrategy();
+// echo $strategy->evaluate(['accuracy' => 90]);
+
+
+// class StrategyFactory {
+//     public static function make(string $type): PerformanceStrategy {
+//         return match ($type) {
+//             'ideal' => new IdealStrategy(),
+//             default => throw new Exception("Unknown strategy")
+//         };
+//     }
+// }
+
+// $strategy = StrategyFactory::make('ideal');
+// echo $strategy->evaluate(['accuracy' => 88]);
+
+// <?php
+
+class StudentDTO {
+    public function __construct(
+        public string $name,
+        public int $attempts,
+        public int $timeSpent
+    ) {}
 }
 
-class IdealStrategy implements PerformanceStrategy {
-    public function evaluate(array $data): string {
-        return $data['accuracy'] > 85 ? "Ideal" : "Normal";
-    }
-}
-
-$strategy = new IdealStrategy();
-echo $strategy->evaluate(['accuracy' => 90]);
-
-
-class StrategyFactory {
-    public static function make(string $type): PerformanceStrategy {
-        return match ($type) {
-            'ideal' => new IdealStrategy(),
-            default => throw new Exception("Unknown strategy")
-        };
-    }
-}
-
-$strategy = StrategyFactory::make('ideal');
-echo $strategy->evaluate(['accuracy' => 88]);
+$dto = new StudentDTO("Dicky", 4, 350);
+print_r($dto);
