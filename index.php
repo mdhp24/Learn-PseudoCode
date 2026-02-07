@@ -164,12 +164,29 @@
 
 // <?php
 
-$students = [
-    ['name' => 'A', 'score' => 60],
-    ['name' => 'B', 'score' => 85],
-    ['name' => 'C', 'score' => 72],
-];
+// $students = [
+//     ['name' => 'A', 'score' => 60],
+//     ['name' => 'B', 'score' => 85],
+//     ['name' => 'C', 'score' => 72],
+// ];
 
-$highPerformers = array_filter($students, fn($s) => $s['score'] >= 75);
+// $highPerformers = array_filter($students, fn($s) => $s['score'] >= 75);
 
-print_r($highPerformers);
+// print_r($highPerformers);
+
+
+// <?php
+
+class LearningException extends Exception {}
+
+function validateAttempts(int $attempts): void {
+    if ($attempts > 10) {
+        throw new LearningException("Suspicious activity detected");
+    }
+}
+
+try {
+    validateAttempts(12);
+} catch (LearningException $e) {
+    echo $e->getMessage();
+}
