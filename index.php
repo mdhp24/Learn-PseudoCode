@@ -101,20 +101,36 @@
 // echo detectLearningState(6, 40);
 
 
-class Score {
-    private int $value;
+// class Score {
+//     private int $value;
 
-    public function __construct(int $value) {
-        if ($value < 0 || $value > 100) {
-            throw new InvalidArgumentException("Invalid score");
-        }
-        $this->value = $value;
-    }
+//     public function __construct(int $value) {
+//         if ($value < 0 || $value > 100) {
+//             throw new InvalidArgumentException("Invalid score");
+//         }
+//         $this->value = $value;
+//     }
 
-    public function isPassed(): bool {
-        return $this->value >= 75;
+//     public function isPassed(): bool {
+//         return $this->value >= 75;
+//     }
+// }
+
+// $score = new Score(82);
+// echo $score->isPassed() ? "Passed" : "Failed";
+
+
+// <?php
+
+interface PerformanceStrategy {
+    public function evaluate(array $data): string;
+}
+
+class IdealStrategy implements PerformanceStrategy {
+    public function evaluate(array $data): string {
+        return $data['accuracy'] > 85 ? "Ideal" : "Normal";
     }
 }
 
-$score = new Score(82);
-echo $score->isPassed() ? "Passed" : "Failed";
+$strategy = new IdealStrategy();
+echo $strategy->evaluate(['accuracy' => 90]);
