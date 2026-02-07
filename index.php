@@ -134,3 +134,16 @@ class IdealStrategy implements PerformanceStrategy {
 
 $strategy = new IdealStrategy();
 echo $strategy->evaluate(['accuracy' => 90]);
+
+
+class StrategyFactory {
+    public static function make(string $type): PerformanceStrategy {
+        return match ($type) {
+            'ideal' => new IdealStrategy(),
+            default => throw new Exception("Unknown strategy")
+        };
+    }
+}
+
+$strategy = StrategyFactory::make('ideal');
+echo $strategy->evaluate(['accuracy' => 88]);
