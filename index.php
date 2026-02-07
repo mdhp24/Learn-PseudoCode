@@ -150,13 +150,26 @@
 
 // <?php
 
-class StudentDTO {
-    public function __construct(
-        public string $name,
-        public int $attempts,
-        public int $timeSpent
-    ) {}
-}
+// class StudentDTO {
+//     public function __construct(
+//         public string $name,
+//         public int $attempts,
+//         public int $timeSpent
+//     ) {}
+// }
 
-$dto = new StudentDTO("Dicky", 4, 350);
-print_r($dto);
+// $dto = new StudentDTO("Dicky", 4, 350);
+// print_r($dto);
+
+
+// <?php
+
+$students = [
+    ['name' => 'A', 'score' => 60],
+    ['name' => 'B', 'score' => 85],
+    ['name' => 'C', 'score' => 72],
+];
+
+$highPerformers = array_filter($students, fn($s) => $s['score'] >= 75);
+
+print_r($highPerformers);
