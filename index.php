@@ -177,16 +177,32 @@
 
 // <?php
 
-class LearningException extends Exception {}
+// class LearningException extends Exception {}
 
-function validateAttempts(int $attempts): void {
-    if ($attempts > 10) {
-        throw new LearningException("Suspicious activity detected");
+// function validateAttempts(int $attempts): void {
+//     if ($attempts > 10) {
+//         throw new LearningException("Suspicious activity detected");
+//     }
+// }
+
+// try {
+//     validateAttempts(12);
+// } catch (LearningException $e) {
+//     echo $e->getMessage();
+// }
+
+
+// <?php
+
+class AdaptiveEngine {
+    public function decide(int $attempts, int $timeSpent): string {
+        return match (true) {
+            $attempts > 5 && $timeSpent > 300 => "Struggling",
+            $attempts > 5 && $timeSpent < 60  => "Gaming The System",
+            default => "Normal"
+        };
     }
 }
 
-try {
-    validateAttempts(12);
-} catch (LearningException $e) {
-    echo $e->getMessage();
-}
+$engine = new AdaptiveEngine();
+echo $engine->decide(6, 45);
