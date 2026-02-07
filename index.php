@@ -88,14 +88,33 @@
 
 // <?php
 
-function detectLearningState(int $attempts, int $timeSpent): string {
-    if ($attempts > 3 && $timeSpent > 300) {
-        return "Struggling";
+// function detectLearningState(int $attempts, int $timeSpent): string {
+//     if ($attempts > 3 && $timeSpent > 300) {
+//         return "Struggling";
+//     }
+//     if ($attempts > 5 && $timeSpent < 60) {
+//         return "Gaming The System";
+//     }
+//     return "Normal";
+// }
+
+// echo detectLearningState(6, 40);
+
+
+class Score {
+    private int $value;
+
+    public function __construct(int $value) {
+        if ($value < 0 || $value > 100) {
+            throw new InvalidArgumentException("Invalid score");
+        }
+        $this->value = $value;
     }
-    if ($attempts > 5 && $timeSpent < 60) {
-        return "Gaming The System";
+
+    public function isPassed(): bool {
+        return $this->value >= 75;
     }
-    return "Normal";
 }
 
-echo detectLearningState(6, 40);
+$score = new Score(82);
+echo $score->isPassed() ? "Passed" : "Failed";
