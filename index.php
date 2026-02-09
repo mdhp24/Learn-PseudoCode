@@ -275,3 +275,27 @@ function levelFromScore(int $score): PerformanceLevel {
 }
 
 echo levelFromScore(88)->value;
+
+
+class RulePipeline {
+    private array $rules = [];
+
+    public function add(callable $rule): self {
+        $this->rules[] = $rule;
+        return $this;
+    }
+
+    public function run(array $data): string {
+        foreach ($this->rules as $rule) {
+            $result = $rule($data);
+            if ($result !== null) return $result;
+        }
+        return "Normal";
+    }
+}
+
+$pipeline = (new RulePipeline())
+    ->add(fn($d) => $d['attempts'] > 5 ? "Struggling" : null)
+    ->add(fn($d) => $d['time'] < 60 ? "Gaming" : null);
+
+echo $pipeline->run(['attempts' => 6, 'time' => 40]);
