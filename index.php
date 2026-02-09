@@ -299,3 +299,18 @@ $pipeline = (new RulePipeline())
     ->add(fn($d) => $d['time'] < 60 ? "Gaming" : null);
 
 echo $pipeline->run(['attempts' => 6, 'time' => 40]);
+
+
+class RequestValidator {
+    public static function validate(array $data): void {
+        if (!isset($data['attempts'], $data['time'])) {
+            throw new Exception("Invalid request data");
+        }
+    }
+}
+
+try {
+    RequestValidator::validate(['attempts' => 3]);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
