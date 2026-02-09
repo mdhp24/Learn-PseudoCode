@@ -210,13 +210,35 @@
 
 // <?php
 
-class PerformanceService {
-    public function classify(int $score): string {
-        if ($score >= 85) return "Ideal";
-        if ($score >= 70) return "Normal";
-        return "Struggling";
+// class PerformanceService {
+//     public function classify(int $score): string {
+//         if ($score >= 85) return "Ideal";
+//         if ($score >= 70) return "Normal";
+//         return "Struggling";
+//     }
+// }
+
+// $service = new PerformanceService();
+// echo $service->classify(68);
+
+
+// <?php
+
+class StudentRepository {
+    private array $students = [
+        ['id' => 1, 'name' => 'A', 'score' => 60],
+        ['id' => 2, 'name' => 'B', 'score' => 85],
+    ];
+
+    public function findById(int $id): array {
+        foreach ($this->students as $student) {
+            if ($student['id'] === $id) {
+                return $student;
+            }
+        }
+        throw new Exception("Student not found");
     }
 }
 
-$service = new PerformanceService();
-echo $service->classify(68);
+$repo = new StudentRepository();
+print_r($repo->findById(2));
