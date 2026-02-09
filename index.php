@@ -194,15 +194,29 @@
 
 // <?php
 
-class AdaptiveEngine {
-    public function decide(int $attempts, int $timeSpent): string {
-        return match (true) {
-            $attempts > 5 && $timeSpent > 300 => "Struggling",
-            $attempts > 5 && $timeSpent < 60  => "Gaming The System",
-            default => "Normal"
-        };
+// class AdaptiveEngine {
+//     public function decide(int $attempts, int $timeSpent): string {
+//         return match (true) {
+//             $attempts > 5 && $timeSpent > 300 => "Struggling",
+//             $attempts > 5 && $timeSpent < 60  => "Gaming The System",
+//             default => "Normal"
+//         };
+//     }
+// }
+
+// $engine = new AdaptiveEngine();
+// echo $engine->decide(6, 45);
+
+
+// <?php
+
+class PerformanceService {
+    public function classify(int $score): string {
+        if ($score >= 85) return "Ideal";
+        if ($score >= 70) return "Normal";
+        return "Struggling";
     }
 }
 
-$engine = new AdaptiveEngine();
-echo $engine->decide(6, 45);
+$service = new PerformanceService();
+echo $service->classify(68);
