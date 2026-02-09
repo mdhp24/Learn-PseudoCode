@@ -258,3 +258,20 @@ class ChatbotEngine {
 
 $engine = new ChatbotEngine(new PerformanceService());
 echo $engine->respond(90);
+
+
+enum PerformanceLevel: string {
+    case STRUGGLING = 'Struggling';
+    case NORMAL = 'Normal';
+    case IDEAL = 'Ideal';
+}
+
+function levelFromScore(int $score): PerformanceLevel {
+    return match (true) {
+        $score < 70 => PerformanceLevel::STRUGGLING,
+        $score < 85 => PerformanceLevel::NORMAL,
+        default => PerformanceLevel::IDEAL
+    };
+}
+
+echo levelFromScore(88)->value;
