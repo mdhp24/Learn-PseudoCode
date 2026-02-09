@@ -314,3 +314,24 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
+
+
+class AdaptiveDecisionEngine {
+    public function decide(array $data): string {
+        RequestValidator::validate($data);
+
+        return match (true) {
+            $data['attempts'] > 5 && $data['time'] > 300 => "Struggling",
+            $data['attempts'] > 5 && $data['time'] < 60  => "Gaming The System",
+            $data['score'] >= 85                        => "Ideal",
+            default                                     => "Normal"
+        };
+    }
+}
+
+$engine = new AdaptiveDecisionEngine();
+echo $engine->decide([
+    'attempts' => 6,
+    'time' => 45,
+    'score' => 78
+]);
