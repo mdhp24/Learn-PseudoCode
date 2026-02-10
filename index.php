@@ -387,8 +387,6 @@ $manager->addRule(new StrugglingRule());
 echo $manager->evaluate(new LearningDataDTO(6, 200, 60));
 
 
-<?php
-
 interface FeedbackStrategy {
     public function generate(): string;
 }
@@ -413,3 +411,16 @@ function feedbackByLevel(string $level): FeedbackStrategy {
 }
 
 echo feedbackByLevel("Struggling")->generate();
+
+
+class ActivityLogger {
+    public static function log(string $message): void {
+        file_put_contents(
+            'activity.log',
+            date('Y-m-d H:i:s') . " - $message\n",
+            FILE_APPEND
+        );
+    }
+}
+
+ActivityLogger::log("Student failed algorithm quiz");
