@@ -246,92 +246,103 @@ echo $service->classify(68);
 
 // <?php
 
-class ChatbotEngine {
+// class ChatbotEngine {
+//     public function __construct(
+//         public PerformanceService $service
+//     ) {}
+
+//     public function respond(int $score): string {
+//         return $this->service->classify($score);
+//     }
+// }
+
+// $engine = new ChatbotEngine(new PerformanceService());
+// echo $engine->respond(90);
+
+
+// enum PerformanceLevel: string {
+//     case STRUGGLING = 'Struggling';
+//     case NORMAL = 'Normal';
+//     case IDEAL = 'Ideal';
+// }
+
+// function levelFromScore(int $score): PerformanceLevel {
+//     return match (true) {
+//         $score < 70 => PerformanceLevel::STRUGGLING,
+//         $score < 85 => PerformanceLevel::NORMAL,
+//         default => PerformanceLevel::IDEAL
+//     };
+// }
+
+// echo levelFromScore(88)->value;
+
+
+// class RulePipeline {
+//     private array $rules = [];
+
+//     public function add(callable $rule): self {
+//         $this->rules[] = $rule;
+//         return $this;
+//     }
+
+//     public function run(array $data): string {
+//         foreach ($this->rules as $rule) {
+//             $result = $rule($data);
+//             if ($result !== null) return $result;
+//         }
+//         return "Normal";
+//     }
+// }
+
+// $pipeline = (new RulePipeline())
+//     ->add(fn($d) => $d['attempts'] > 5 ? "Struggling" : null)
+//     ->add(fn($d) => $d['time'] < 60 ? "Gaming" : null);
+
+// echo $pipeline->run(['attempts' => 6, 'time' => 40]);
+
+
+// class RequestValidator {
+//     public static function validate(array $data): void {
+//         if (!isset($data['attempts'], $data['time'])) {
+//             throw new Exception("Invalid request data");
+//         }
+//     }
+// }
+
+// try {
+//     RequestValidator::validate(['attempts' => 3]);
+// } catch (Exception $e) {
+//     echo $e->getMessage();
+// }
+
+
+// class AdaptiveDecisionEngine {
+//     public function decide(array $data): string {
+//         RequestValidator::validate($data);
+
+//         return match (true) {
+//             $data['attempts'] > 5 && $data['time'] > 300 => "Struggling",
+//             $data['attempts'] > 5 && $data['time'] < 60  => "Gaming The System",
+//             $data['score'] >= 85                        => "Ideal",
+//             default                                     => "Normal"
+//         };
+//     }
+// }
+
+// $engine = new AdaptiveDecisionEngine();
+// echo $engine->decide([
+//     'attempts' => 6,
+//     'time' => 45,
+//     'score' => 78
+// ]);
+
+class LearningDataDTO {
     public function __construct(
-        public PerformanceService $service
+        public int $attempts,
+        public int $timeSpent,
+        public int $score
     ) {}
-
-    public function respond(int $score): string {
-        return $this->service->classify($score);
-    }
 }
 
-$engine = new ChatbotEngine(new PerformanceService());
-echo $engine->respond(90);
-
-
-enum PerformanceLevel: string {
-    case STRUGGLING = 'Struggling';
-    case NORMAL = 'Normal';
-    case IDEAL = 'Ideal';
-}
-
-function levelFromScore(int $score): PerformanceLevel {
-    return match (true) {
-        $score < 70 => PerformanceLevel::STRUGGLING,
-        $score < 85 => PerformanceLevel::NORMAL,
-        default => PerformanceLevel::IDEAL
-    };
-}
-
-echo levelFromScore(88)->value;
-
-
-class RulePipeline {
-    private array $rules = [];
-
-    public function add(callable $rule): self {
-        $this->rules[] = $rule;
-        return $this;
-    }
-
-    public function run(array $data): string {
-        foreach ($this->rules as $rule) {
-            $result = $rule($data);
-            if ($result !== null) return $result;
-        }
-        return "Normal";
-    }
-}
-
-$pipeline = (new RulePipeline())
-    ->add(fn($d) => $d['attempts'] > 5 ? "Struggling" : null)
-    ->add(fn($d) => $d['time'] < 60 ? "Gaming" : null);
-
-echo $pipeline->run(['attempts' => 6, 'time' => 40]);
-
-
-class RequestValidator {
-    public static function validate(array $data): void {
-        if (!isset($data['attempts'], $data['time'])) {
-            throw new Exception("Invalid request data");
-        }
-    }
-}
-
-try {
-    RequestValidator::validate(['attempts' => 3]);
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
-
-
-class AdaptiveDecisionEngine {
-    public function decide(array $data): string {
-        RequestValidator::validate($data);
-
-        return match (true) {
-            $data['attempts'] > 5 && $data['time'] > 300 => "Struggling",
-            $data['attempts'] > 5 && $data['time'] < 60  => "Gaming The System",
-            $data['score'] >= 85                        => "Ideal",
-            default                                     => "Normal"
-        };
-    }
-}
-
-$engine = new AdaptiveDecisionEngine();
-echo $engine->decide([
-    'attempts' => 6,
-    'time' => 45,
-    'score' => 78
-]);
+$data = new LearningDataDTO(4, 120, 80);
+var_dump($data);
