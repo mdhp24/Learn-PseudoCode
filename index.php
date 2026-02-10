@@ -385,3 +385,31 @@ $manager = new RuleManager();
 $manager->addRule(new StrugglingRule());
 
 echo $manager->evaluate(new LearningDataDTO(6, 200, 60));
+
+
+<?php
+
+interface FeedbackStrategy {
+    public function generate(): string;
+}
+
+class BeginnerFeedback implements FeedbackStrategy {
+    public function generate(): string {
+        return "Pelajari ulang konsep dasar sebelum lanjut.";
+    }
+}
+
+class AdvancedFeedback implements FeedbackStrategy {
+    public function generate(): string {
+        return "Kamu siap ke materi lanjutan.";
+    }
+}
+
+function feedbackByLevel(string $level): FeedbackStrategy {
+    return match ($level) {
+        "Struggling" => new BeginnerFeedback(),
+        default => new AdvancedFeedback()
+    };
+}
+
+echo feedbackByLevel("Struggling")->generate();
