@@ -346,3 +346,19 @@ class LearningDataDTO {
 
 $data = new LearningDataDTO(4, 120, 80);
 var_dump($data);
+
+
+interface Rule {
+    public function check(LearningDataDTO $data): ?string;
+}
+
+class StrugglingRule implements Rule {
+    public function check(LearningDataDTO $data): ?string {
+        return ($data->attempts > 5 && $data->score < 70)
+            ? "Struggling"
+            : null;
+    }
+}
+
+$rule = new StrugglingRule();
+echo $rule->check(new LearningDataDTO(6, 200, 60));
