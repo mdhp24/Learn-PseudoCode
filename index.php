@@ -362,3 +362,26 @@ class StrugglingRule implements Rule {
 
 $rule = new StrugglingRule();
 echo $rule->check(new LearningDataDTO(6, 200, 60));
+
+
+class RuleManager {
+    private array $rules = [];
+
+    public function addRule(Rule $rule): void {
+        $this->rules[] = $rule;
+    }
+
+    public function evaluate(LearningDataDTO $data): string {
+        foreach ($this->rules as $rule) {
+            if ($result = $rule->check($data)) {
+                return $result;
+            }
+        }
+        return "Normal";
+    }
+}
+
+$manager = new RuleManager();
+$manager->addRule(new StrugglingRule());
+
+echo $manager->evaluate(new LearningDataDTO(6, 200, 60));
