@@ -424,3 +424,16 @@ class ActivityLogger {
 }
 
 ActivityLogger::log("Student failed algorithm quiz");
+
+
+$students = [
+    new LearningDataDTO(3, 100, 90),
+    new LearningDataDTO(7, 400, 60),
+    new LearningDataDTO(5, 150, 75),
+];
+
+$averageScore = array_sum(
+    array_map(fn($s) => $s->score, $students)
+) / count($students);
+
+echo "Average score: $averageScore";
