@@ -437,3 +437,21 @@ $averageScore = array_sum(
 ) / count($students);
 
 echo "Average score: $averageScore";
+
+
+class RecommendationEngine {
+    public function recommend(LearningDataDTO $data): string {
+        if ($data->score < 70) {
+            return "Materi Remedial + Contoh Visual";
+        }
+
+        if ($data->timeSpent < 60) {
+            return "Latihan Lebih Banyak";
+        }
+
+        return "Lanjut ke Materi Berikutnya";
+    }
+}
+
+$engine = new RecommendationEngine();
+echo $engine->recommend(new LearningDataDTO(3, 45, 75));
