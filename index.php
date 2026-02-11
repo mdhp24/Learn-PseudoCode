@@ -541,3 +541,18 @@ class ApiResponse {
 }
 
 echo ApiResponse::success(['recommendation' => 'Remedial']);
+
+
+class ChatbotController {
+
+    public function __construct(
+        private AdaptiveService $service
+    ) {}
+
+    public function handle(array $student): string {
+        return $this->service->analyze($student);
+    }
+}
+
+$controller = new ChatbotController(new AdaptiveService());
+echo $controller->handle(['score' => 85]);
