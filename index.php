@@ -496,3 +496,17 @@ class StudentRepository implements StudentRepositoryInterface {
 
 $repo = new StudentRepository();
 print_r($repo->findById(1));
+
+class AdaptiveService {
+
+    public function analyze(array $student): string {
+        if ($student['score'] < 70) {
+            return "Remedial Algorithm Material";
+        }
+
+        return "Next Level Material";
+    }
+}
+
+$service = new AdaptiveService();
+echo $service->analyze(['score' => 65]);
