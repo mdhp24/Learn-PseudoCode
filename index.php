@@ -510,3 +510,15 @@ class AdaptiveService {
 
 $service = new AdaptiveService();
 echo $service->analyze(['score' => 65]);
+
+class Middleware {
+
+    public static function handle(callable $next) {
+        echo "Logging activity...\n";
+        return $next();
+    }
+}
+
+Middleware::handle(function() {
+    return "Processing adaptive chatbot response.";
+});
