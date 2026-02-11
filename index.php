@@ -336,122 +336,143 @@ echo $service->classify(68);
 //     'score' => 78
 // ]);
 
-class LearningDataDTO {
-    public function __construct(
-        public int $attempts,
-        public int $timeSpent,
-        public int $score
-    ) {}
-}
+// class LearningDataDTO {
+//     public function __construct(
+//         public int $attempts,
+//         public int $timeSpent,
+//         public int $score
+//     ) {}
+// }
 
-$data = new LearningDataDTO(4, 120, 80);
-var_dump($data);
-
-
-interface Rule {
-    public function check(LearningDataDTO $data): ?string;
-}
-
-class StrugglingRule implements Rule {
-    public function check(LearningDataDTO $data): ?string {
-        return ($data->attempts > 5 && $data->score < 70)
-            ? "Struggling"
-            : null;
-    }
-}
-
-$rule = new StrugglingRule();
-echo $rule->check(new LearningDataDTO(6, 200, 60));
+// $data = new LearningDataDTO(4, 120, 80);
+// var_dump($data);
 
 
-class RuleManager {
-    private array $rules = [];
+// interface Rule {
+//     public function check(LearningDataDTO $data): ?string;
+// }
 
-    public function addRule(Rule $rule): void {
-        $this->rules[] = $rule;
-    }
+// class StrugglingRule implements Rule {
+//     public function check(LearningDataDTO $data): ?string {
+//         return ($data->attempts > 5 && $data->score < 70)
+//             ? "Struggling"
+//             : null;
+//     }
+// }
 
-    public function evaluate(LearningDataDTO $data): string {
-        foreach ($this->rules as $rule) {
-            if ($result = $rule->check($data)) {
-                return $result;
-            }
+// $rule = new StrugglingRule();
+// echo $rule->check(new LearningDataDTO(6, 200, 60));
+
+
+// class RuleManager {
+//     private array $rules = [];
+
+//     public function addRule(Rule $rule): void {
+//         $this->rules[] = $rule;
+//     }
+
+//     public function evaluate(LearningDataDTO $data): string {
+//         foreach ($this->rules as $rule) {
+//             if ($result = $rule->check($data)) {
+//                 return $result;
+//             }
+//         }
+//         return "Normal";
+//     }
+// }
+
+// $manager = new RuleManager();
+// $manager->addRule(new StrugglingRule());
+
+// echo $manager->evaluate(new LearningDataDTO(6, 200, 60));
+
+
+// interface FeedbackStrategy {
+//     public function generate(): string;
+// }
+
+// class BeginnerFeedback implements FeedbackStrategy {
+//     public function generate(): string {
+//         return "Pelajari ulang konsep dasar sebelum lanjut.";
+//     }
+// }
+
+// class AdvancedFeedback implements FeedbackStrategy {
+//     public function generate(): string {
+//         return "Kamu siap ke materi lanjutan.";
+//     }
+// }
+
+// function feedbackByLevel(string $level): FeedbackStrategy {
+//     return match ($level) {
+//         "Struggling" => new BeginnerFeedback(),
+//         default => new AdvancedFeedback()
+//     };
+// }
+
+// echo feedbackByLevel("Struggling")->generate();
+
+
+// class ActivityLogger {
+//     public static function log(string $message): void {
+//         file_put_contents(
+//             'activity.log',
+//             date('Y-m-d H:i:s') . " - $message\n",
+//             FILE_APPEND
+//         );
+//     }
+// }
+
+// ActivityLogger::log("Student failed algorithm quiz");
+
+
+// $students = [
+//     new LearningDataDTO(3, 100, 90),
+//     new LearningDataDTO(7, 400, 60),
+//     new LearningDataDTO(5, 150, 75),
+// ];
+
+// $averageScore = array_sum(
+//     array_map(fn($s) => $s->score, $students)
+// ) / count($students);
+
+// echo "Average score: $averageScore";
+
+
+// class RecommendationEngine {
+//     public function recommend(LearningDataDTO $data): string {
+//         if ($data->score < 70) {
+//             return "Materi Remedial + Contoh Visual";
+//         }
+
+//         if ($data->timeSpent < 60) {
+//             return "Latihan Lebih Banyak";
+//         }
+
+//         return "Lanjut ke Materi Berikutnya";
+//     }
+// }
+
+// $engine = new RecommendationEngine();
+// echo $engine->recommend(new LearningDataDTO(3, 45, 75));
+
+
+class InvalidLearningDataException extends Exception {}
+
+class LearningValidator {
+    public static function validate(int $score, int $attempts): void {
+        if ($score < 0 || $score > 100) {
+            throw new InvalidLearningDataException("Score must be 0–100.");
         }
-        return "Normal";
-    }
-}
 
-$manager = new RuleManager();
-$manager->addRule(new StrugglingRule());
-
-echo $manager->evaluate(new LearningDataDTO(6, 200, 60));
-
-
-interface FeedbackStrategy {
-    public function generate(): string;
-}
-
-class BeginnerFeedback implements FeedbackStrategy {
-    public function generate(): string {
-        return "Pelajari ulang konsep dasar sebelum lanjut.";
-    }
-}
-
-class AdvancedFeedback implements FeedbackStrategy {
-    public function generate(): string {
-        return "Kamu siap ke materi lanjutan.";
-    }
-}
-
-function feedbackByLevel(string $level): FeedbackStrategy {
-    return match ($level) {
-        "Struggling" => new BeginnerFeedback(),
-        default => new AdvancedFeedback()
-    };
-}
-
-echo feedbackByLevel("Struggling")->generate();
-
-
-class ActivityLogger {
-    public static function log(string $message): void {
-        file_put_contents(
-            'activity.log',
-            date('Y-m-d H:i:s') . " - $message\n",
-            FILE_APPEND
-        );
-    }
-}
-
-ActivityLogger::log("Student failed algorithm quiz");
-
-
-$students = [
-    new LearningDataDTO(3, 100, 90),
-    new LearningDataDTO(7, 400, 60),
-    new LearningDataDTO(5, 150, 75),
-];
-
-$averageScore = array_sum(
-    array_map(fn($s) => $s->score, $students)
-) / count($students);
-
-echo "Average score: $averageScore";
-
-
-class RecommendationEngine {
-    public function recommend(LearningDataDTO $data): string {
-        if ($data->score < 70) {
-            return "Materi Remedial + Contoh Visual";
+        if ($attempts < 0) {
+            throw new InvalidLearningDataException("Attempts cannot be negative.");
         }
-
-        if ($data->timeSpent < 60) {
-            return "Latihan Lebih Banyak";
-        }
-
-        return "Lanjut ke Materi Berikutnya";
     }
 }
 
-$engine = new RecommendationEngine();
-echo $engine->recommend(new LearningDataDTO(3, 45, 75));
+try {
+    LearningValidator::validate(120, 3);
+} catch (InvalidLearningDataException $e) {
+    echo $e->getMessage();
+}
