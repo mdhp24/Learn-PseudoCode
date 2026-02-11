@@ -476,3 +476,23 @@ try {
 } catch (InvalidLearningDataException $e) {
     echo $e->getMessage();
 }
+
+
+interface StudentRepositoryInterface {
+    public function findById(int $id): array;
+}
+
+class StudentRepository implements StudentRepositoryInterface {
+
+    private array $students = [
+        1 => ['name' => 'Dicky', 'score' => 80],
+        2 => ['name' => 'Budi', 'score' => 60],
+    ];
+
+    public function findById(int $id): array {
+        return $this->students[$id] ?? [];
+    }
+}
+
+$repo = new StudentRepository();
+print_r($repo->findById(1));
