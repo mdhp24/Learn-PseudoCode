@@ -522,3 +522,22 @@ class Middleware {
 Middleware::handle(function() {
     return "Processing adaptive chatbot response.";
 });
+
+class ApiResponse {
+
+    public static function success($data): string {
+        return json_encode([
+            'status' => 'success',
+            'data' => $data
+        ]);
+    }
+
+    public static function error(string $message): string {
+        return json_encode([
+            'status' => 'error',
+            'message' => $message
+        ]);
+    }
+}
+
+echo ApiResponse::success(['recommendation' => 'Remedial']);
