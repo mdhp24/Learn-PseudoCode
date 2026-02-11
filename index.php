@@ -556,3 +556,20 @@ class ChatbotController {
 
 $controller = new ChatbotController(new AdaptiveService());
 echo $controller->handle(['score' => 85]);
+
+
+
+class AnalyticsEngine {
+
+    public function calculatePerformance(int $score, int $timeSpent): float {
+        $scoreWeight = 0.7;
+        $timeWeight  = 0.3;
+
+        $normalizedTime = min($timeSpent / 300, 1); // max 300 sec
+
+        return ($score * $scoreWeight) + ($normalizedTime * 100 * $timeWeight);
+    }
+}
+
+$engine = new AnalyticsEngine();
+echo $engine->calculatePerformance(80, 200);
