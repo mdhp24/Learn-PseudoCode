@@ -724,3 +724,22 @@ class Database {
 
 $db = Database::connect();
 echo "Database connected.";
+
+
+session_start();
+
+class SessionTracker {
+
+    public static function trackAttempt(int $score) {
+        $_SESSION['attempts'][] = $score;
+    }
+
+    public static function averageScore(): float {
+        return array_sum($_SESSION['attempts']) / count($_SESSION['attempts']);
+    }
+}
+
+SessionTracker::trackAttempt(60);
+SessionTracker::trackAttempt(70);
+
+echo SessionTracker::averageScore();
