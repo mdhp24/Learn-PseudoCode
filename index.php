@@ -599,3 +599,37 @@ class HighPerformance extends PerformanceCategory {
 
 $student = new LowPerformance(40);
 echo $student->getCategory();
+
+
+
+interface ResponseStrategy {
+    public function execute(): string;
+}
+
+class ArrayDefinitionStrategy implements ResponseStrategy {
+    public function execute(): string {
+        return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel.";
+    }
+}
+
+class AlgorithmHintStrategy implements ResponseStrategy {
+    public function execute(): string {
+        return "Coba perhatikan kembali indeks array dimulai dari 0.";
+    }
+}
+
+class ChatbotContext {
+    private ResponseStrategy $strategy;
+
+    public function setStrategy(ResponseStrategy $strategy) {
+        $this->strategy = $strategy;
+    }
+
+    public function respond(): string {
+        return $this->strategy->execute();
+    }
+}
+
+$chatbot = new ChatbotContext();
+$chatbot->setStrategy(new ArrayDefinitionStrategy());
+echo $chatbot->respond();
