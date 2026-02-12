@@ -633,3 +633,17 @@ class ChatbotContext {
 $chatbot = new ChatbotContext();
 $chatbot->setStrategy(new ArrayDefinitionStrategy());
 echo $chatbot->respond();
+
+
+class PerformanceFactory {
+
+    public static function create(int $score): PerformanceCategory {
+        if ($score < 70) {
+            return new LowPerformance($score);
+        }
+        return new HighPerformance($score);
+    }
+}
+
+$category = PerformanceFactory::create(95);
+echo $category->getCategory();
