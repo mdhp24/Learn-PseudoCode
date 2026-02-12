@@ -647,3 +647,34 @@ class PerformanceFactory {
 
 $category = PerformanceFactory::create(95);
 echo $category->getCategory();
+
+
+interface Observer {
+    public function update(string $category): void;
+}
+
+class NotificationObserver implements Observer {
+    public function update(string $category): void {
+        if ($category === "Struggling") {
+            echo "Trigger chatbot bantuan materi dasar.";
+        }
+    }
+}
+
+class PerformanceSubject {
+    private array $observers = [];
+
+    public function attach(Observer $observer) {
+        $this->observers[] = $observer;
+    }
+
+    public function notify(string $category) {
+        foreach ($this->observers as $observer) {
+            $observer->update($category);
+        }
+    }
+}
+
+$subject = new PerformanceSubject();
+$subject->attach(new NotificationObserver());
+$subject->notify("Struggling");
