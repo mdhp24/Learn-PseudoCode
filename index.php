@@ -678,3 +678,29 @@ class PerformanceSubject {
 $subject = new PerformanceSubject();
 $subject->attach(new NotificationObserver());
 $subject->notify("Struggling");
+
+
+class EventDispatcher {
+
+    private array $listeners = [];
+
+    public function listen(string $event, callable $callback) {
+        $this->listeners[$event][] = $callback;
+    }
+
+    public function dispatch(string $event, $payload = null) {
+        if (!empty($this->listeners[$event])) {
+            foreach ($this->listeners[$event] as $listener) {
+                $listener($payload);
+            }
+        }
+    }
+}
+
+$dispatcher = new EventDispatcher();
+
+$dispatcher->listen("student.struggling", function($data) {
+    echo "Mahasiswa {$data['name']} mengalami kesulitan.";
+});
+
+$dispatcher->dispatch("student.struggling", ['name' => 'Dicky']);
