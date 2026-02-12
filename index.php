@@ -457,119 +457,145 @@ echo $service->classify(68);
 // echo $engine->recommend(new LearningDataDTO(3, 45, 75));
 
 
-class InvalidLearningDataException extends Exception {}
+// class InvalidLearningDataException extends Exception {}
 
-class LearningValidator {
-    public static function validate(int $score, int $attempts): void {
-        if ($score < 0 || $score > 100) {
-            throw new InvalidLearningDataException("Score must be 0–100.");
-        }
+// class LearningValidator {
+//     public static function validate(int $score, int $attempts): void {
+//         if ($score < 0 || $score > 100) {
+//             throw new InvalidLearningDataException("Score must be 0–100.");
+//         }
 
-        if ($attempts < 0) {
-            throw new InvalidLearningDataException("Attempts cannot be negative.");
-        }
+//         if ($attempts < 0) {
+//             throw new InvalidLearningDataException("Attempts cannot be negative.");
+//         }
+//     }
+// }
+
+// try {
+//     LearningValidator::validate(120, 3);
+// } catch (InvalidLearningDataException $e) {
+//     echo $e->getMessage();
+// }
+
+
+// interface StudentRepositoryInterface {
+//     public function findById(int $id): array;
+// }
+
+// class StudentRepository implements StudentRepositoryInterface {
+
+//     private array $students = [
+//         1 => ['name' => 'Dicky', 'score' => 80],
+//         2 => ['name' => 'Budi', 'score' => 60],
+//     ];
+
+//     public function findById(int $id): array {
+//         return $this->students[$id] ?? [];
+//     }
+// }
+
+// $repo = new StudentRepository();
+// print_r($repo->findById(1));
+
+// class AdaptiveService {
+
+//     public function analyze(array $student): string {
+//         if ($student['score'] < 70) {
+//             return "Remedial Algorithm Material";
+//         }
+
+//         return "Next Level Material";
+//     }
+// }
+
+// $service = new AdaptiveService();
+// echo $service->analyze(['score' => 65]);
+
+// class Middleware {
+
+//     public static function handle(callable $next) {
+//         echo "Logging activity...\n";
+//         return $next();
+//     }
+// }
+
+// Middleware::handle(function() {
+//     return "Processing adaptive chatbot response.";
+// });
+
+// class ApiResponse {
+
+//     public static function success($data): string {
+//         return json_encode([
+//             'status' => 'success',
+//             'data' => $data
+//         ]);
+//     }
+
+//     public static function error(string $message): string {
+//         return json_encode([
+//             'status' => 'error',
+//             'message' => $message
+//         ]);
+//     }
+// }
+
+// echo ApiResponse::success(['recommendation' => 'Remedial']);
+
+
+// class ChatbotController {
+
+//     public function __construct(
+//         private AdaptiveService $service
+//     ) {}
+
+//     public function handle(array $student): string {
+//         return $this->service->analyze($student);
+//     }
+// }
+
+// $controller = new ChatbotController(new AdaptiveService());
+// echo $controller->handle(['score' => 85]);
+
+
+
+// class AnalyticsEngine {
+
+//     public function calculatePerformance(int $score, int $timeSpent): float {
+//         $scoreWeight = 0.7;
+//         $timeWeight  = 0.3;
+
+//         $normalizedTime = min($timeSpent / 300, 1); // max 300 sec
+
+//         return ($score * $scoreWeight) + ($normalizedTime * 100 * $timeWeight);
+//     }
+// }
+
+// $engine = new AnalyticsEngine();
+// echo $engine->calculatePerformance(80, 200);
+
+
+abstract class PerformanceCategory {
+    protected int $score;
+
+    public function __construct(int $score) {
+        $this->score = $score;
+    }
+
+    abstract public function getCategory(): string;
+}
+
+class LowPerformance extends PerformanceCategory {
+    public function getCategory(): string {
+        return $this->score < 50 ? "Struggling" : "Gaming the System";
     }
 }
 
-try {
-    LearningValidator::validate(120, 3);
-} catch (InvalidLearningDataException $e) {
-    echo $e->getMessage();
-}
-
-
-interface StudentRepositoryInterface {
-    public function findById(int $id): array;
-}
-
-class StudentRepository implements StudentRepositoryInterface {
-
-    private array $students = [
-        1 => ['name' => 'Dicky', 'score' => 80],
-        2 => ['name' => 'Budi', 'score' => 60],
-    ];
-
-    public function findById(int $id): array {
-        return $this->students[$id] ?? [];
+class HighPerformance extends PerformanceCategory {
+    public function getCategory(): string {
+        return $this->score > 90 ? "Ideal" : "Normal";
     }
 }
 
-$repo = new StudentRepository();
-print_r($repo->findById(1));
-
-class AdaptiveService {
-
-    public function analyze(array $student): string {
-        if ($student['score'] < 70) {
-            return "Remedial Algorithm Material";
-        }
-
-        return "Next Level Material";
-    }
-}
-
-$service = new AdaptiveService();
-echo $service->analyze(['score' => 65]);
-
-class Middleware {
-
-    public static function handle(callable $next) {
-        echo "Logging activity...\n";
-        return $next();
-    }
-}
-
-Middleware::handle(function() {
-    return "Processing adaptive chatbot response.";
-});
-
-class ApiResponse {
-
-    public static function success($data): string {
-        return json_encode([
-            'status' => 'success',
-            'data' => $data
-        ]);
-    }
-
-    public static function error(string $message): string {
-        return json_encode([
-            'status' => 'error',
-            'message' => $message
-        ]);
-    }
-}
-
-echo ApiResponse::success(['recommendation' => 'Remedial']);
-
-
-class ChatbotController {
-
-    public function __construct(
-        private AdaptiveService $service
-    ) {}
-
-    public function handle(array $student): string {
-        return $this->service->analyze($student);
-    }
-}
-
-$controller = new ChatbotController(new AdaptiveService());
-echo $controller->handle(['score' => 85]);
-
-
-
-class AnalyticsEngine {
-
-    public function calculatePerformance(int $score, int $timeSpent): float {
-        $scoreWeight = 0.7;
-        $timeWeight  = 0.3;
-
-        $normalizedTime = min($timeSpent / 300, 1); // max 300 sec
-
-        return ($score * $scoreWeight) + ($normalizedTime * 100 * $timeWeight);
-    }
-}
-
-$engine = new AnalyticsEngine();
-echo $engine->calculatePerformance(80, 200);
+$student = new LowPerformance(40);
+echo $student->getCategory();
