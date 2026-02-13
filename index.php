@@ -575,171 +575,190 @@ echo $service->classify(68);
 // echo $engine->calculatePerformance(80, 200);
 
 
-abstract class PerformanceCategory {
-    protected int $score;
+// abstract class PerformanceCategory {
+//     protected int $score;
 
-    public function __construct(int $score) {
-        $this->score = $score;
+//     public function __construct(int $score) {
+//         $this->score = $score;
+//     }
+
+//     abstract public function getCategory(): string;
+// }
+
+// class LowPerformance extends PerformanceCategory {
+//     public function getCategory(): string {
+//         return $this->score < 50 ? "Struggling" : "Gaming the System";
+//     }
+// }
+
+// class HighPerformance extends PerformanceCategory {
+//     public function getCategory(): string {
+//         return $this->score > 90 ? "Ideal" : "Normal";
+//     }
+// }
+
+// $student = new LowPerformance(40);
+// echo $student->getCategory();
+
+
+
+// interface ResponseStrategy {
+//     public function execute(): string;
+// }
+
+// class ArrayDefinitionStrategy implements ResponseStrategy {
+//     public function execute(): string {
+//         return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel.";
+//     }
+// }
+
+// class AlgorithmHintStrategy implements ResponseStrategy {
+//     public function execute(): string {
+//         return "Coba perhatikan kembali indeks array dimulai dari 0.";
+//     }
+// }
+
+// class ChatbotContext {
+//     private ResponseStrategy $strategy;
+
+//     public function setStrategy(ResponseStrategy $strategy) {
+//         $this->strategy = $strategy;
+//     }
+
+//     public function respond(): string {
+//         return $this->strategy->execute();
+//     }
+// }
+
+// $chatbot = new ChatbotContext();
+// $chatbot->setStrategy(new ArrayDefinitionStrategy());
+// echo $chatbot->respond();
+
+
+// class PerformanceFactory {
+
+//     public static function create(int $score): PerformanceCategory {
+//         if ($score < 70) {
+//             return new LowPerformance($score);
+//         }
+//         return new HighPerformance($score);
+//     }
+// }
+
+// $category = PerformanceFactory::create(95);
+// echo $category->getCategory();
+
+
+// interface Observer {
+//     public function update(string $category): void;
+// }
+
+// class NotificationObserver implements Observer {
+//     public function update(string $category): void {
+//         if ($category === "Struggling") {
+//             echo "Trigger chatbot bantuan materi dasar.";
+//         }
+//     }
+// }
+
+// class PerformanceSubject {
+//     private array $observers = [];
+
+//     public function attach(Observer $observer) {
+//         $this->observers[] = $observer;
+//     }
+
+//     public function notify(string $category) {
+//         foreach ($this->observers as $observer) {
+//             $observer->update($category);
+//         }
+//     }
+// }
+
+// $subject = new PerformanceSubject();
+// $subject->attach(new NotificationObserver());
+// $subject->notify("Struggling");
+
+
+// class EventDispatcher {
+
+//     private array $listeners = [];
+
+//     public function listen(string $event, callable $callback) {
+//         $this->listeners[$event][] = $callback;
+//     }
+
+//     public function dispatch(string $event, $payload = null) {
+//         if (!empty($this->listeners[$event])) {
+//             foreach ($this->listeners[$event] as $listener) {
+//                 $listener($payload);
+//             }
+//         }
+//     }
+// }
+
+// $dispatcher = new EventDispatcher();
+
+// $dispatcher->listen("student.struggling", function($data) {
+//     echo "Mahasiswa {$data['name']} mengalami kesulitan.";
+// });
+
+// $dispatcher->dispatch("student.struggling", ['name' => 'Dicky']);
+
+// class Database {
+
+//     private static ?PDO $instance = null;
+
+//     public static function connect(): PDO {
+//         if (self::$instance === null) {
+//             self::$instance = new PDO(
+//                 "mysql:host=localhost;dbname=pseudolearn",
+//                 "root",
+//                 ""
+//             );
+//             self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//         }
+//         return self::$instance;
+//     }
+// }
+
+// $db = Database::connect();
+// echo "Database connected.";
+
+
+// session_start();
+
+// class SessionTracker {
+
+//     public static function trackAttempt(int $score) {
+//         $_SESSION['attempts'][] = $score;
+//     }
+
+//     public static function averageScore(): float {
+//         return array_sum($_SESSION['attempts']) / count($_SESSION['attempts']);
+//     }
+// }
+
+// SessionTracker::trackAttempt(60);
+// SessionTracker::trackAttempt(70);
+
+// echo SessionTracker::averageScore();
+
+
+
+trait Timestampable {
+    public function currentTimestamp(): string {
+        return date('Y-m-d H:i:s');
     }
-
-    abstract public function getCategory(): string;
 }
 
-class LowPerformance extends PerformanceCategory {
-    public function getCategory(): string {
-        return $this->score < 50 ? "Struggling" : "Gaming the System";
+class LearningLog {
+    use Timestampable;
+
+    public function create(string $message): string {
+        return $this->currentTimestamp() . " - " . $message;
     }
 }
 
-class HighPerformance extends PerformanceCategory {
-    public function getCategory(): string {
-        return $this->score > 90 ? "Ideal" : "Normal";
-    }
-}
-
-$student = new LowPerformance(40);
-echo $student->getCategory();
-
-
-
-interface ResponseStrategy {
-    public function execute(): string;
-}
-
-class ArrayDefinitionStrategy implements ResponseStrategy {
-    public function execute(): string {
-        return "Array adalah struktur data yang menyimpan banyak nilai dalam satu variabel.";
-    }
-}
-
-class AlgorithmHintStrategy implements ResponseStrategy {
-    public function execute(): string {
-        return "Coba perhatikan kembali indeks array dimulai dari 0.";
-    }
-}
-
-class ChatbotContext {
-    private ResponseStrategy $strategy;
-
-    public function setStrategy(ResponseStrategy $strategy) {
-        $this->strategy = $strategy;
-    }
-
-    public function respond(): string {
-        return $this->strategy->execute();
-    }
-}
-
-$chatbot = new ChatbotContext();
-$chatbot->setStrategy(new ArrayDefinitionStrategy());
-echo $chatbot->respond();
-
-
-class PerformanceFactory {
-
-    public static function create(int $score): PerformanceCategory {
-        if ($score < 70) {
-            return new LowPerformance($score);
-        }
-        return new HighPerformance($score);
-    }
-}
-
-$category = PerformanceFactory::create(95);
-echo $category->getCategory();
-
-
-interface Observer {
-    public function update(string $category): void;
-}
-
-class NotificationObserver implements Observer {
-    public function update(string $category): void {
-        if ($category === "Struggling") {
-            echo "Trigger chatbot bantuan materi dasar.";
-        }
-    }
-}
-
-class PerformanceSubject {
-    private array $observers = [];
-
-    public function attach(Observer $observer) {
-        $this->observers[] = $observer;
-    }
-
-    public function notify(string $category) {
-        foreach ($this->observers as $observer) {
-            $observer->update($category);
-        }
-    }
-}
-
-$subject = new PerformanceSubject();
-$subject->attach(new NotificationObserver());
-$subject->notify("Struggling");
-
-
-class EventDispatcher {
-
-    private array $listeners = [];
-
-    public function listen(string $event, callable $callback) {
-        $this->listeners[$event][] = $callback;
-    }
-
-    public function dispatch(string $event, $payload = null) {
-        if (!empty($this->listeners[$event])) {
-            foreach ($this->listeners[$event] as $listener) {
-                $listener($payload);
-            }
-        }
-    }
-}
-
-$dispatcher = new EventDispatcher();
-
-$dispatcher->listen("student.struggling", function($data) {
-    echo "Mahasiswa {$data['name']} mengalami kesulitan.";
-});
-
-$dispatcher->dispatch("student.struggling", ['name' => 'Dicky']);
-
-class Database {
-
-    private static ?PDO $instance = null;
-
-    public static function connect(): PDO {
-        if (self::$instance === null) {
-            self::$instance = new PDO(
-                "mysql:host=localhost;dbname=pseudolearn",
-                "root",
-                ""
-            );
-            self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        return self::$instance;
-    }
-}
-
-$db = Database::connect();
-echo "Database connected.";
-
-
-session_start();
-
-class SessionTracker {
-
-    public static function trackAttempt(int $score) {
-        $_SESSION['attempts'][] = $score;
-    }
-
-    public static function averageScore(): float {
-        return array_sum($_SESSION['attempts']) / count($_SESSION['attempts']);
-    }
-}
-
-SessionTracker::trackAttempt(60);
-SessionTracker::trackAttempt(70);
-
-echo SessionTracker::averageScore();
+$log = new LearningLog();
+echo $log->create("Student completed quiz.");
