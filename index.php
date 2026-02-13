@@ -764,30 +764,45 @@ echo $service->classify(68);
 // echo $log->create("Student completed quiz.");
 
 
-class RecommendationBuilder {
-    private array $data = [];
+// class RecommendationBuilder {
+//     private array $data = [];
 
-    public function setScore(int $score): self {
-        $this->data['score'] = $score;
-        return $this;
-    }
+//     public function setScore(int $score): self {
+//         $this->data['score'] = $score;
+//         return $this;
+//     }
 
-    public function setAttempts(int $attempts): self {
-        $this->data['attempts'] = $attempts;
-        return $this;
-    }
+//     public function setAttempts(int $attempts): self {
+//         $this->data['attempts'] = $attempts;
+//         return $this;
+//     }
 
-    public function build(): string {
-        if ($this->data['score'] < 70) {
-            return "Remedial Package";
-        }
-        return "Advanced Package";
+//     public function build(): string {
+//         if ($this->data['score'] < 70) {
+//             return "Remedial Package";
+//         }
+//         return "Advanced Package";
+//     }
+// }
+
+// $result = (new RecommendationBuilder())
+//     ->setScore(65)
+//     ->setAttempts(5)
+//     ->build();
+
+// echo $result;
+
+
+class Config {
+
+    private static array $settings = [
+        'pass_score' => 75,
+        'max_attempts' => 5
+    ];
+
+    public static function get(string $key) {
+        return self::$settings[$key] ?? null;
     }
 }
 
-$result = (new RecommendationBuilder())
-    ->setScore(65)
-    ->setAttempts(5)
-    ->build();
-
-echo $result;
+echo Config::get('pass_score');
