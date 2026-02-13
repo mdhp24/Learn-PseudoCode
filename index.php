@@ -808,19 +808,49 @@ echo $service->classify(68);
 // echo Config::get('pass_score');
 
 
-class RateLimiter {
+// class RateLimiter {
 
-    private array $attempts = [];
+//     private array $attempts = [];
 
-    public function hit(string $user): bool {
-        $this->attempts[$user] = ($this->attempts[$user] ?? 0) + 1;
+//     public function hit(string $user): bool {
+//         $this->attempts[$user] = ($this->attempts[$user] ?? 0) + 1;
 
-        if ($this->attempts[$user] > 5) {
-            return false; // Block user
-        }
-        return true;
+//         if ($this->attempts[$user] > 5) {
+//             return false; // Block user
+//         }
+//         return true;
+//     }
+// }
+
+// $limiter = new RateLimiter();
+// echo $limiter->hit("student_1") ? "Allowed" : "Blocked";
+
+
+class QueryBuilder {
+
+    private string $table;
+    private array $conditions = [];
+
+    public function table(string $table): self {
+        $this->table = $table;
+        return $this;
+    }
+
+    public function where(string $column, string $operator, $value): self {
+        $this->conditions[] = "$column $operator '$value'";
+        return $this;
+    }
+
+    public function toSql(): string {
+        $where = implode(" AND ", $this->conditions);
+        return "SELECT * FROM {$this->table} WHERE $where";
     }
 }
 
-$limiter = new RateLimiter();
-echo $limiter->hit("student_1") ? "Allowed" : "Blocked";
+$sql = (new QueryBuilder())
+    ->table('students')
+    ->where('score', '>', 70)
+    ->where('attempts', '<', 5)
+    ->toSql();
+
+echo $sql;
