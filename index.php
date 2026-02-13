@@ -793,16 +793,34 @@ echo $service->classify(68);
 // echo $result;
 
 
-class Config {
+// class Config {
 
-    private static array $settings = [
-        'pass_score' => 75,
-        'max_attempts' => 5
-    ];
+//     private static array $settings = [
+//         'pass_score' => 75,
+//         'max_attempts' => 5
+//     ];
 
-    public static function get(string $key) {
-        return self::$settings[$key] ?? null;
+//     public static function get(string $key) {
+//         return self::$settings[$key] ?? null;
+//     }
+// }
+
+// echo Config::get('pass_score');
+
+
+class RateLimiter {
+
+    private array $attempts = [];
+
+    public function hit(string $user): bool {
+        $this->attempts[$user] = ($this->attempts[$user] ?? 0) + 1;
+
+        if ($this->attempts[$user] > 5) {
+            return false; // Block user
+        }
+        return true;
     }
 }
 
-echo Config::get('pass_score');
+$limiter = new RateLimiter();
+echo $limiter->hit("student_1") ? "Allowed" : "Blocked";
