@@ -826,31 +826,65 @@ echo $service->classify(68);
 // echo $limiter->hit("student_1") ? "Allowed" : "Blocked";
 
 
-class QueryBuilder {
+// class QueryBuilder {
 
-    private string $table;
-    private array $conditions = [];
+//     private string $table;
+//     private array $conditions = [];
 
-    public function table(string $table): self {
-        $this->table = $table;
-        return $this;
-    }
+//     public function table(string $table): self {
+//         $this->table = $table;
+//         return $this;
+//     }
 
-    public function where(string $column, string $operator, $value): self {
-        $this->conditions[] = "$column $operator '$value'";
-        return $this;
-    }
+//     public function where(string $column, string $operator, $value): self {
+//         $this->conditions[] = "$column $operator '$value'";
+//         return $this;
+//     }
 
-    public function toSql(): string {
-        $where = implode(" AND ", $this->conditions);
-        return "SELECT * FROM {$this->table} WHERE $where";
+//     public function toSql(): string {
+//         $where = implode(" AND ", $this->conditions);
+//         return "SELECT * FROM {$this->table} WHERE $where";
+//     }
+// }
+
+// $sql = (new QueryBuilder())
+//     ->table('students')
+//     ->where('score', '>', 70)
+//     ->where('attempts', '<', 5)
+//     ->toSql();
+
+// echo $sql;
+
+
+
+interface StudentState {
+    public function handle(): string;
+}
+
+class StrugglingState implements StudentState {
+    public function handle(): string {
+        return "Provide basic learning material.";
     }
 }
 
-$sql = (new QueryBuilder())
-    ->table('students')
-    ->where('score', '>', 70)
-    ->where('attempts', '<', 5)
-    ->toSql();
+class IdealState implements StudentState {
+    public function handle(): string {
+        return "Unlock advanced challenges.";
+    }
+}
 
-echo $sql;
+class StudentContext {
+    private StudentState $state;
+
+    public function setState(StudentState $state) {
+        $this->state = $state;
+    }
+
+    public function process(): string {
+        return $this->state->handle();
+    }
+}
+
+$context = new StudentContext();
+$context->setState(new StrugglingState());
+echo $context->process();
