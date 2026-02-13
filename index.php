@@ -746,19 +746,48 @@ echo $service->classify(68);
 
 
 
-trait Timestampable {
-    public function currentTimestamp(): string {
-        return date('Y-m-d H:i:s');
+// trait Timestampable {
+//     public function currentTimestamp(): string {
+//         return date('Y-m-d H:i:s');
+//     }
+// }
+
+// class LearningLog {
+//     use Timestampable;
+
+//     public function create(string $message): string {
+//         return $this->currentTimestamp() . " - " . $message;
+//     }
+// }
+
+// $log = new LearningLog();
+// echo $log->create("Student completed quiz.");
+
+
+class RecommendationBuilder {
+    private array $data = [];
+
+    public function setScore(int $score): self {
+        $this->data['score'] = $score;
+        return $this;
+    }
+
+    public function setAttempts(int $attempts): self {
+        $this->data['attempts'] = $attempts;
+        return $this;
+    }
+
+    public function build(): string {
+        if ($this->data['score'] < 70) {
+            return "Remedial Package";
+        }
+        return "Advanced Package";
     }
 }
 
-class LearningLog {
-    use Timestampable;
+$result = (new RecommendationBuilder())
+    ->setScore(65)
+    ->setAttempts(5)
+    ->build();
 
-    public function create(string $message): string {
-        return $this->currentTimestamp() . " - " . $message;
-    }
-}
-
-$log = new LearningLog();
-echo $log->create("Student completed quiz.");
+echo $result;
