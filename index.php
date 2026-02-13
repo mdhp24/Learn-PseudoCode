@@ -857,34 +857,50 @@ echo $service->classify(68);
 
 
 
-interface StudentState {
-    public function handle(): string;
-}
+// interface StudentState {
+//     public function handle(): string;
+// }
 
-class StrugglingState implements StudentState {
-    public function handle(): string {
-        return "Provide basic learning material.";
+// class StrugglingState implements StudentState {
+//     public function handle(): string {
+//         return "Provide basic learning material.";
+//     }
+// }
+
+// class IdealState implements StudentState {
+//     public function handle(): string {
+//         return "Unlock advanced challenges.";
+//     }
+// }
+
+// class StudentContext {
+//     private StudentState $state;
+
+//     public function setState(StudentState $state) {
+//         $this->state = $state;
+//     }
+
+//     public function process(): string {
+//         return $this->state->handle();
+//     }
+// }
+
+// $context = new StudentContext();
+// $context->setState(new StrugglingState());
+// echo $context->process();
+
+
+class PerformanceEngine {
+
+    public function evaluate(int $score, int $timeSpent, int $attempts): string {
+
+        $weighted = ($score * 0.6) + (min($timeSpent, 300)/300 * 100 * 0.2) + ((5 - $attempts) * 20 * 0.2);
+
+        if ($weighted >= 85) return "Ideal";
+        if ($weighted >= 70) return "Normal";
+        return "Struggling";
     }
 }
 
-class IdealState implements StudentState {
-    public function handle(): string {
-        return "Unlock advanced challenges.";
-    }
-}
-
-class StudentContext {
-    private StudentState $state;
-
-    public function setState(StudentState $state) {
-        $this->state = $state;
-    }
-
-    public function process(): string {
-        return $this->state->handle();
-    }
-}
-
-$context = new StudentContext();
-$context->setState(new StrugglingState());
-echo $context->process();
+$engine = new PerformanceEngine();
+echo $engine->evaluate(80, 200, 3);
