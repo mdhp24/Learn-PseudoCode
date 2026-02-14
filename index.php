@@ -890,17 +890,39 @@ echo $service->classify(68);
 // echo $context->process();
 
 
-class PerformanceEngine {
+// class PerformanceEngine {
 
-    public function evaluate(int $score, int $timeSpent, int $attempts): string {
+//     public function evaluate(int $score, int $timeSpent, int $attempts): string {
 
-        $weighted = ($score * 0.6) + (min($timeSpent, 300)/300 * 100 * 0.2) + ((5 - $attempts) * 20 * 0.2);
+//         $weighted = ($score * 0.6) + (min($timeSpent, 300)/300 * 100 * 0.2) + ((5 - $attempts) * 20 * 0.2);
 
-        if ($weighted >= 85) return "Ideal";
-        if ($weighted >= 70) return "Normal";
-        return "Struggling";
+//         if ($weighted >= 85) return "Ideal";
+//         if ($weighted >= 70) return "Normal";
+//         return "Struggling";
+//     }
+// }
+
+// $engine = new PerformanceEngine();
+// echo $engine->evaluate(80, 200, 3);
+
+interface ScoreAnalyzer {
+    public function analyzeScore(int $score): string;
+}
+
+interface TimeAnalyzer {
+    public function analyzeTime(int $time): string;
+}
+
+class LearningAnalyzer implements ScoreAnalyzer, TimeAnalyzer {
+
+    public function analyzeScore(int $score): string {
+        return $score >= 75 ? "Pass" : "Fail";
+    }
+
+    public function analyzeTime(int $time): string {
+        return $time < 60 ? "Too Fast" : "Normal";
     }
 }
 
-$engine = new PerformanceEngine();
-echo $engine->evaluate(80, 200, 3);
+$analyzer = new LearningAnalyzer();
+echo $analyzer->analyzeScore(80);
