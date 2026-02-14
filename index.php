@@ -962,18 +962,38 @@ echo $service->classify(68);
 
 // echo $engine->process(['score' => 65]);
 
-class SubmitScoreCommand {
-    public function __construct(
-        public int $studentId,
-        public int $score
-    ) {}
-}
+// class SubmitScoreCommand {
+//     public function __construct(
+//         public int $studentId,
+//         public int $score
+//     ) {}
+// }
 
-class SubmitScoreHandler {
-    public function handle(SubmitScoreCommand $command): string {
-        return "Score {$command->score} saved for student {$command->studentId}";
+// class SubmitScoreHandler {
+//     public function handle(SubmitScoreCommand $command): string {
+//         return "Score {$command->score} saved for student {$command->studentId}";
+//     }
+// }
+
+// $handler = new SubmitScoreHandler();
+// echo $handler->handle(new SubmitScoreCommand(1, 85));
+
+
+final class Score {
+
+    private int $value;
+
+    public function __construct(int $value) {
+        if ($value < 0 || $value > 100) {
+            throw new InvalidArgumentException("Invalid score.");
+        }
+        $this->value = $value;
+    }
+
+    public function value(): int {
+        return $this->value;
     }
 }
 
-$handler = new SubmitScoreHandler();
-echo $handler->handle(new SubmitScoreCommand(1, 85));
+$score = new Score(88);
+echo $score->value();
