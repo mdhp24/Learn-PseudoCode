@@ -905,24 +905,59 @@ echo $service->classify(68);
 // $engine = new PerformanceEngine();
 // echo $engine->evaluate(80, 200, 3);
 
-interface ScoreAnalyzer {
-    public function analyzeScore(int $score): string;
+// interface ScoreAnalyzer {
+//     public function analyzeScore(int $score): string;
+// }
+
+// interface TimeAnalyzer {
+//     public function analyzeTime(int $time): string;
+// }
+
+// class LearningAnalyzer implements ScoreAnalyzer, TimeAnalyzer {
+
+//     public function analyzeScore(int $score): string {
+//         return $score >= 75 ? "Pass" : "Fail";
+//     }
+
+//     public function analyzeTime(int $time): string {
+//         return $time < 60 ? "Too Fast" : "Normal";
+//     }
+// }
+
+// $analyzer = new LearningAnalyzer();
+// echo $analyzer->analyzeScore(80);
+
+
+
+interface AdaptiveRule {
+    public function apply(array $data): ?string;
 }
 
-interface TimeAnalyzer {
-    public function analyzeTime(int $time): string;
+class LowScoreRule implements AdaptiveRule {
+    public function apply(array $data): ?string {
+        return $data['score'] < 70 ? "Remedial" : null;
+    }
 }
 
-class LearningAnalyzer implements ScoreAnalyzer, TimeAnalyzer {
+class AdaptiveEngine {
 
-    public function analyzeScore(int $score): string {
-        return $score >= 75 ? "Pass" : "Fail";
+    private array $rules = [];
+
+    public function addRule(AdaptiveRule $rule): void {
+        $this->rules[] = $rule;
     }
 
-    public function analyzeTime(int $time): string {
-        return $time < 60 ? "Too Fast" : "Normal";
+    public function process(array $data): string {
+        foreach ($this->rules as $rule) {
+            if ($result = $rule->apply($data)) {
+                return $result;
+            }
+        }
+        return "Next Level";
     }
 }
 
-$analyzer = new LearningAnalyzer();
-echo $analyzer->analyzeScore(80);
+$engine = new AdaptiveEngine();
+$engine->addRule(new LowScoreRule());
+
+echo $engine->process(['score' => 65]);
