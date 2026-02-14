@@ -999,30 +999,40 @@ echo $service->classify(68);
 // echo $score->value();
 
 
-class StudentStrugglingEvent {
-    public function __construct(public int $studentId) {}
+// class StudentStrugglingEvent {
+//     public function __construct(public int $studentId) {}
+// }
+
+// class EventBus {
+
+//     private array $listeners = [];
+
+//     public function subscribe(string $event, callable $listener) {
+//         $this->listeners[$event][] = $listener;
+//     }
+
+//     public function publish(object $event) {
+//         $class = get_class($event);
+//         foreach ($this->listeners[$class] ?? [] as $listener) {
+//             $listener($event);
+//         }
+//     }
+// }
+
+// $bus = new EventBus();
+
+// $bus->subscribe(StudentStrugglingEvent::class, function($event) {
+//     echo "Trigger chatbot support for student {$event->studentId}";
+// });
+
+// $bus->publish(new StudentStrugglingEvent(2));
+
+class StudentPolicy {
+
+    public function canAccessAdvanced(int $score): bool {
+        return $score >= 85;
+    }
 }
 
-class EventBus {
-
-    private array $listeners = [];
-
-    public function subscribe(string $event, callable $listener) {
-        $this->listeners[$event][] = $listener;
-    }
-
-    public function publish(object $event) {
-        $class = get_class($event);
-        foreach ($this->listeners[$class] ?? [] as $listener) {
-            $listener($event);
-        }
-    }
-}
-
-$bus = new EventBus();
-
-$bus->subscribe(StudentStrugglingEvent::class, function($event) {
-    echo "Trigger chatbot support for student {$event->studentId}";
-});
-
-$bus->publish(new StudentStrugglingEvent(2));
+$policy = new StudentPolicy();
+echo $policy->canAccessAdvanced(90) ? "Access Granted" : "Denied";
