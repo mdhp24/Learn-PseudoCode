@@ -1027,12 +1027,33 @@ echo $service->classify(68);
 
 // $bus->publish(new StudentStrugglingEvent(2));
 
-class StudentPolicy {
+// class StudentPolicy {
 
-    public function canAccessAdvanced(int $score): bool {
-        return $score >= 85;
+//     public function canAccessAdvanced(int $score): bool {
+//         return $score >= 85;
+//     }
+// }
+
+// $policy = new StudentPolicy();
+// echo $policy->canAccessAdvanced(90) ? "Access Granted" : "Denied";
+
+
+class AdaptiveDomainService {
+
+    public function evaluate(int $score, int $time, int $attempts): string {
+
+        $performanceIndex = 
+            ($score * 0.6) +
+            (min($time, 300)/300 * 100 * 0.2) +
+            ((5 - $attempts) * 20 * 0.2);
+
+        return match (true) {
+            $performanceIndex >= 85 => "Ideal",
+            $performanceIndex >= 70 => "Normal",
+            default => "Struggling"
+        };
     }
 }
 
-$policy = new StudentPolicy();
-echo $policy->canAccessAdvanced(90) ? "Access Granted" : "Denied";
+$service = new AdaptiveDomainService();
+echo $service->evaluate(78, 200, 4);
