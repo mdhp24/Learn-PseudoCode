@@ -979,21 +979,50 @@ echo $service->classify(68);
 // echo $handler->handle(new SubmitScoreCommand(1, 85));
 
 
-final class Score {
+// final class Score {
 
-    private int $value;
+//     private int $value;
 
-    public function __construct(int $value) {
-        if ($value < 0 || $value > 100) {
-            throw new InvalidArgumentException("Invalid score.");
-        }
-        $this->value = $value;
+//     public function __construct(int $value) {
+//         if ($value < 0 || $value > 100) {
+//             throw new InvalidArgumentException("Invalid score.");
+//         }
+//         $this->value = $value;
+//     }
+
+//     public function value(): int {
+//         return $this->value;
+//     }
+// }
+
+// $score = new Score(88);
+// echo $score->value();
+
+
+class StudentStrugglingEvent {
+    public function __construct(public int $studentId) {}
+}
+
+class EventBus {
+
+    private array $listeners = [];
+
+    public function subscribe(string $event, callable $listener) {
+        $this->listeners[$event][] = $listener;
     }
 
-    public function value(): int {
-        return $this->value;
+    public function publish(object $event) {
+        $class = get_class($event);
+        foreach ($this->listeners[$class] ?? [] as $listener) {
+            $listener($event);
+        }
     }
 }
 
-$score = new Score(88);
-echo $score->value();
+$bus = new EventBus();
+
+$bus->subscribe(StudentStrugglingEvent::class, function($event) {
+    echo "Trigger chatbot support for student {$event->studentId}";
+});
+
+$bus->publish(new StudentStrugglingEvent(2));
