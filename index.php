@@ -929,35 +929,51 @@ echo $service->classify(68);
 
 
 
-interface AdaptiveRule {
-    public function apply(array $data): ?string;
+// interface AdaptiveRule {
+//     public function apply(array $data): ?string;
+// }
+
+// class LowScoreRule implements AdaptiveRule {
+//     public function apply(array $data): ?string {
+//         return $data['score'] < 70 ? "Remedial" : null;
+//     }
+// }
+
+// class AdaptiveEngine {
+
+//     private array $rules = [];
+
+//     public function addRule(AdaptiveRule $rule): void {
+//         $this->rules[] = $rule;
+//     }
+
+//     public function process(array $data): string {
+//         foreach ($this->rules as $rule) {
+//             if ($result = $rule->apply($data)) {
+//                 return $result;
+//             }
+//         }
+//         return "Next Level";
+//     }
+// }
+
+// $engine = new AdaptiveEngine();
+// $engine->addRule(new LowScoreRule());
+
+// echo $engine->process(['score' => 65]);
+
+class SubmitScoreCommand {
+    public function __construct(
+        public int $studentId,
+        public int $score
+    ) {}
 }
 
-class LowScoreRule implements AdaptiveRule {
-    public function apply(array $data): ?string {
-        return $data['score'] < 70 ? "Remedial" : null;
+class SubmitScoreHandler {
+    public function handle(SubmitScoreCommand $command): string {
+        return "Score {$command->score} saved for student {$command->studentId}";
     }
 }
 
-class AdaptiveEngine {
-
-    private array $rules = [];
-
-    public function addRule(AdaptiveRule $rule): void {
-        $this->rules[] = $rule;
-    }
-
-    public function process(array $data): string {
-        foreach ($this->rules as $rule) {
-            if ($result = $rule->apply($data)) {
-                return $result;
-            }
-        }
-        return "Next Level";
-    }
-}
-
-$engine = new AdaptiveEngine();
-$engine->addRule(new LowScoreRule());
-
-echo $engine->process(['score' => 65]);
+$handler = new SubmitScoreHandler();
+echo $handler->handle(new SubmitScoreCommand(1, 85));
