@@ -1092,3 +1092,21 @@ interface StudentRepository {
     public function save(Student $student): void;
     public function find(int $id): ?Student;
 }
+
+class InMemoryStudentRepository implements StudentRepository {
+
+    private array $storage = [];
+
+    public function save(Student $student): void {
+        $this->storage[$student->id()] = $student;
+    }
+
+    public function find(int $id): ?Student {
+        return $this->storage[$id] ?? null;
+    }
+}
+
+$repo = new InMemoryStudentRepository();
+$repo->save(new Student(1, 80, 2));
+
+echo $repo->find(1)->performanceLevel();
