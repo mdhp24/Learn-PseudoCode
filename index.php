@@ -1038,22 +1038,52 @@ echo $service->classify(68);
 // echo $policy->canAccessAdvanced(90) ? "Access Granted" : "Denied";
 
 
-class AdaptiveDomainService {
+// class AdaptiveDomainService {
 
-    public function evaluate(int $score, int $time, int $attempts): string {
+//     public function evaluate(int $score, int $time, int $attempts): string {
 
-        $performanceIndex = 
-            ($score * 0.6) +
-            (min($time, 300)/300 * 100 * 0.2) +
-            ((5 - $attempts) * 20 * 0.2);
+//         $performanceIndex = 
+//             ($score * 0.6) +
+//             (min($time, 300)/300 * 100 * 0.2) +
+//             ((5 - $attempts) * 20 * 0.2);
 
-        return match (true) {
-            $performanceIndex >= 85 => "Ideal",
-            $performanceIndex >= 70 => "Normal",
-            default => "Struggling"
-        };
+//         return match (true) {
+//             $performanceIndex >= 85 => "Ideal",
+//             $performanceIndex >= 70 => "Normal",
+//             default => "Struggling"
+//         };
+//     }
+// }
+
+// $service = new AdaptiveDomainService();
+// echo $service->evaluate(78, 200, 4);
+
+class Student {
+
+    private int $id;
+    private int $score;
+    private int $attempts;
+
+    public function __construct(int $id, int $score, int $attempts) {
+        $this->id = $id;
+        $this->score = $score;
+        $this->attempts = $attempts;
+    }
+
+    public function improveScore(int $points): void {
+        $this->score = min(100, $this->score + $points);
+    }
+
+    public function performanceLevel(): string {
+        return $this->score >= 85 ? "Ideal" :
+               ($this->score >= 70 ? "Normal" : "Struggling");
+    }
+
+    public function id(): int {
+        return $this->id;
     }
 }
 
-$service = new AdaptiveDomainService();
-echo $service->evaluate(78, 200, 4);
+$student = new Student(1, 75, 3);
+$student->improveScore(10);
+echo $student->performanceLevel();
