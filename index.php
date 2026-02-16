@@ -1087,3 +1087,8 @@ class Student {
 $student = new Student(1, 75, 3);
 $student->improveScore(10);
 echo $student->performanceLevel();
+
+interface StudentRepository {
+    public function save(Student $student): void;
+    public function find(int $id): ?Student;
+}
