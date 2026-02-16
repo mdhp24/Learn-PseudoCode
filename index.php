@@ -1130,3 +1130,24 @@ class EvaluateStudentUseCase {
 
 $useCase = new EvaluateStudentUseCase($repo);
 echo $useCase->execute(1);
+
+
+class UnitOfWork {
+
+    private array $entities = [];
+
+    public function register(Student $student): void {
+        $this->entities[] = $student;
+    }
+
+    public function commit(): void {
+        foreach ($this->entities as $entity) {
+            echo "Persisting student ID: " . $entity->id() . "\n";
+        }
+        $this->entities = [];
+    }
+}
+
+$uow = new UnitOfWork();
+$uow->register(new Student(2, 60, 5));
+$uow->commit();
