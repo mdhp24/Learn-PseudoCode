@@ -1165,3 +1165,31 @@ class StrugglingSpecification implements Specification {
 
 $spec = new StrugglingSpecification();
 echo $spec->isSatisfiedBy(new Student(3, 50, 4)) ? "Yes" : "No";
+
+
+class StudentImprovedEvent {
+    public function __construct(public int $studentId) {}
+}
+
+class StudentAggregate extends Student {
+
+    private array $events = [];
+
+    public function improveScore(int $points): void {
+        parent::improveScore($points);
+        $this->events[] = new StudentImprovedEvent($this->id());
+    }
+
+    public function pullEvents(): array {
+        $events = $this->events;
+        $this->events = [];
+        return $events;
+    }
+}
+
+$aggregate = new StudentAggregate(5, 70, 3);
+$aggregate->improveScore(20);
+
+foreach ($aggregate->pullEvents() as $event) {
+    echo "Event triggered for student {$event->studentId}";
+}
