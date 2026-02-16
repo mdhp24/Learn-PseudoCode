@@ -1151,3 +1151,17 @@ class UnitOfWork {
 $uow = new UnitOfWork();
 $uow->register(new Student(2, 60, 5));
 $uow->commit();
+
+
+interface Specification {
+    public function isSatisfiedBy(Student $student): bool;
+}
+
+class StrugglingSpecification implements Specification {
+    public function isSatisfiedBy(Student $student): bool {
+        return $student->performanceLevel() === "Struggling";
+    }
+}
+
+$spec = new StrugglingSpecification();
+echo $spec->isSatisfiedBy(new Student(3, 50, 4)) ? "Yes" : "No";
