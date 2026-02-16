@@ -1110,3 +1110,23 @@ $repo = new InMemoryStudentRepository();
 $repo->save(new Student(1, 80, 2));
 
 echo $repo->find(1)->performanceLevel();
+
+class EvaluateStudentUseCase {
+
+    public function __construct(
+        private StudentRepository $repository
+    ) {}
+
+    public function execute(int $studentId): string {
+        $student = $this->repository->find($studentId);
+
+        if (!$student) {
+            throw new Exception("Student not found");
+        }
+
+        return $student->performanceLevel();
+    }
+}
+
+$useCase = new EvaluateStudentUseCase($repo);
+echo $useCase->execute(1);
