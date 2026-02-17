@@ -1344,3 +1344,28 @@ $result = $pipeline->process(
 );
 
 echo $result; // (60+10)*2
+
+
+class StudentProjection {
+
+    private array $readModel = [];
+
+    public function apply(object $event): void {
+
+        if ($event instanceof ScoreSubmittedEvent) {
+            $this->readModel[$event->studentId] = $event->score;
+        }
+    }
+
+    public function getScore(int $studentId): ?int {
+        return $this->readModel[$studentId] ?? null;
+    }
+}
+
+$projection = new StudentProjection();
+
+foreach ($store->all() as $event) {
+    $projection->apply($event);
+}
+
+echo $projection->getScore(1);
