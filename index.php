@@ -1220,3 +1220,21 @@ $container->bind(StudentRepository::class, function () {
 });
 
 $repo = $container->resolve(StudentRepository::class);
+
+
+abstract class ServiceProvider {
+    abstract public function register(Container $container): void;
+}
+
+class StudentServiceProvider extends ServiceProvider {
+
+    public function register(Container $container): void {
+        $container->bind(
+            StudentRepository::class,
+            fn() => new InMemoryStudentRepository()
+        );
+    }
+}
+
+$provider = new StudentServiceProvider();
+$provider->register($container);
