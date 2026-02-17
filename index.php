@@ -1317,3 +1317,30 @@ $queue->push(fn() => print("Sending notification...\n"));
 $queue->push(fn() => print("Updating analytics...\n"));
 
 $queue->run();
+
+class Pipeline {
+
+    public function process($data, array $pipes) {
+
+        $pipeline = array_reduce(
+            array_reverse($pipes),
+            fn($next, $pipe) =>
+                fn($data) => $pipe($data, $next),
+            fn($data) => $data
+        );
+
+        return $pipeline($data);
+    }
+}
+
+$pipeline = new Pipeline();
+
+$result = $pipeline->process(
+    60,
+    [
+        fn($score, $next) => $next($score + 10),
+        fn($score, $next) => $next($score * 2),
+    ]
+);
+
+echo $result; // (60+10)*2
