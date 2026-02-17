@@ -1271,3 +1271,26 @@ $bus->register(
 );
 
 echo $bus->dispatch(new UpgradeStudentCommand(10));
+
+
+class EventStore {
+
+    private array $events = [];
+
+    public function append(object $event): void {
+        $this->events[] = $event;
+    }
+
+    public function all(): array {
+        return $this->events;
+    }
+}
+
+class ScoreSubmittedEvent {
+    public function __construct(public int $studentId, public int $score) {}
+}
+
+$store = new EventStore();
+$store->append(new ScoreSubmittedEvent(1, 90));
+
+print_r($store->all());
