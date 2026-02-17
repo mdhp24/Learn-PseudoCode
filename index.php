@@ -1193,3 +1193,30 @@ $aggregate->improveScore(20);
 foreach ($aggregate->pullEvents() as $event) {
     echo "Event triggered for student {$event->studentId}";
 }
+
+
+
+class Container {
+
+    private array $bindings = [];
+
+    public function bind(string $abstract, callable $factory): void {
+        $this->bindings[$abstract] = $factory;
+    }
+
+    public function resolve(string $abstract) {
+        if (!isset($this->bindings[$abstract])) {
+            throw new Exception("Class not bound.");
+        }
+
+        return $this->bindings[$abstract]($this);
+    }
+}
+
+$container = new Container();
+
+$container->bind(StudentRepository::class, function () {
+    return new InMemoryStudentRepository();
+});
+
+$repo = $container->resolve(StudentRepository::class);
