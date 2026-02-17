@@ -1238,3 +1238,36 @@ class StudentServiceProvider extends ServiceProvider {
 
 $provider = new StudentServiceProvider();
 $provider->register($container);
+
+
+class CommandBus {
+
+    private array $handlers = [];
+
+    public function register(string $command, callable $handler): void {
+        $this->handlers[$command] = $handler;
+    }
+
+    public function dispatch(object $command) {
+        $class = get_class($command);
+
+        if (!isset($this->handlers[$class])) {
+            throw new Exception("No handler registered.");
+        }
+
+        return $this->handlers[$class]($command);
+    }
+}
+
+class UpgradeStudentCommand {
+    public function __construct(public int $studentId) {}
+}
+
+$bus = new CommandBus();
+
+$bus->register(
+    UpgradeStudentCommand::class,
+    fn($cmd) => "Student {$cmd->studentId} upgraded."
+);
+
+echo $bus->dispatch(new UpgradeStudentCommand(10));
