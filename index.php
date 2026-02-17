@@ -1294,3 +1294,26 @@ $store = new EventStore();
 $store->append(new ScoreSubmittedEvent(1, 90));
 
 print_r($store->all());
+
+
+class JobQueue {
+
+    private array $jobs = [];
+
+    public function push(callable $job): void {
+        $this->jobs[] = $job;
+    }
+
+    public function run(): void {
+        while ($job = array_shift($this->jobs)) {
+            $job();
+        }
+    }
+}
+
+$queue = new JobQueue();
+
+$queue->push(fn() => print("Sending notification...\n"));
+$queue->push(fn() => print("Updating analytics...\n"));
+
+$queue->run();
