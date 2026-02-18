@@ -1482,38 +1482,59 @@ echo $service->classify(68);
 // $loader->boot();
 
 
-class TokenBucket {
+// class TokenBucket {
 
-    private int $tokens;
-    private int $capacity;
+//     private int $tokens;
+//     private int $capacity;
 
-    public function __construct(int $capacity) {
-        $this->capacity = $capacity;
-        $this->tokens = $capacity;
+//     public function __construct(int $capacity) {
+//         $this->capacity = $capacity;
+//         $this->tokens = $capacity;
+//     }
+
+//     public function consume(): bool {
+//         if ($this->tokens <= 0) {
+//             return false;
+//         }
+
+//         $this->tokens--;
+//         return true;
+//     }
+// }
+
+// $bucket = new TokenBucket(5);
+// echo $bucket->consume() ? "Allowed" : "Blocked";
+
+// class StudentResource {
+
+//     public static function make(Student $student): array {
+//         return [
+//             'id' => $student->id(),
+//             'performance' => $student->performanceLevel()
+//         ];
+//     }
+// }
+
+// $student = new Student(1, 88, 2);
+// print_r(StudentResource::make($student));
+
+
+
+class PasswordService {
+
+    public function hash(string $password): string {
+        return password_hash($password, PASSWORD_BCRYPT);
     }
 
-    public function consume(): bool {
-        if ($this->tokens <= 0) {
-            return false;
-        }
-
-        $this->tokens--;
-        return true;
+    public function verify(string $password, string $hash): bool {
+        return password_verify($password, $hash);
     }
 }
 
-$bucket = new TokenBucket(5);
-echo $bucket->consume() ? "Allowed" : "Blocked";
+$service = new PasswordService();
 
-class StudentResource {
+$hash = $service->hash("secret123");
 
-    public static function make(Student $student): array {
-        return [
-            'id' => $student->id(),
-            'performance' => $student->performanceLevel()
-        ];
-    }
-}
-
-$student = new Student(1, 88, 2);
-print_r(StudentResource::make($student));
+echo $service->verify("secret123", $hash) 
+     ? "Password Match" 
+     : "Invalid Password";
