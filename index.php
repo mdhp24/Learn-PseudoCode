@@ -1372,37 +1372,68 @@ echo $service->classify(68);
 
 
 
-class JwtService {
+// class JwtService {
 
-    private string $secret = "super_secret_key";
+//     private string $secret = "super_secret_key";
 
-    public function generate(array $payload): string {
+//     public function generate(array $payload): string {
 
-        $header = base64_encode(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
-        $body   = base64_encode(json_encode($payload));
+//         $header = base64_encode(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
+//         $body   = base64_encode(json_encode($payload));
 
-        $signature = hash_hmac(
-            'sha256',
-            "$header.$body",
-            $this->secret,
-            true
-        );
+//         $signature = hash_hmac(
+//             'sha256',
+//             "$header.$body",
+//             $this->secret,
+//             true
+//         );
 
-        return "$header.$body." . base64_encode($signature);
+//         return "$header.$body." . base64_encode($signature);
+//     }
+
+//     public function validate(string $token): bool {
+
+//         [$header, $body, $signature] = explode('.', $token);
+
+//         $expected = base64_encode(
+//             hash_hmac('sha256', "$header.$body", $this->secret, true)
+//         );
+
+//         return hash_equals($expected, $signature);
+//     }
+// }
+
+// $jwt = new JwtService();
+// $token = $jwt->generate(['user_id' => 1]);
+// echo $jwt->validate($token) ? "Valid Token" : "Invalid Token";
+
+
+
+// <?php
+
+class Cache {
+
+    private array $store = [];
+
+    public function put(string $key, $value, int $ttl): void {
+        $this->store[$key] = [
+            'value' => $value,
+            'expires_at' => time() + $ttl
+        ];
     }
 
-    public function validate(string $token): bool {
+    public function get(string $key) {
+        if (!isset($this->store[$key])) return null;
 
-        [$header, $body, $signature] = explode('.', $token);
+        if ($this->store[$key]['expires_at'] < time()) {
+            unset($this->store[$key]);
+            return null;
+        }
 
-        $expected = base64_encode(
-            hash_hmac('sha256', "$header.$body", $this->secret, true)
-        );
-
-        return hash_equals($expected, $signature);
+        return $this->store[$key]['value'];
     }
 }
 
-$jwt = new JwtService();
-$token = $jwt->generate(['user_id' => 1]);
-echo $jwt->validate($token) ? "Valid Token" : "Invalid Token";
+$cache = new Cache();
+$cache->put("student_1_score", 90, 10);
+echo $cache->get("student_1_score");
