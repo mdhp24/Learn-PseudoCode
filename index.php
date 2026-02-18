@@ -1056,316 +1056,353 @@ echo $service->classify(68);
 // }
 
 // $service = new AdaptiveDomainService();
-// echo $service->evaluate(78, 200, 4);
+// echo $serviceaefa->evaluate(78, 200, 4);
 
-class Student {
+// class Student {
 
-    private int $id;
-    private int $score;
-    private int $attempts;
+//     private int $id;
+//     private int $score;
+//     private int $attempts;
 
-    public function __construct(int $id, int $score, int $attempts) {
-        $this->id = $id;
-        $this->score = $score;
-        $this->attempts = $attempts;
-    }
+//     public function __construct(int $id, int $score, int $attempts) {
+//         $this->id = $id;
+//         $this->score = $score;
+//         $this->attempts = $attempts;
+//     }
 
-    public function improveScore(int $points): void {
-        $this->score = min(100, $this->score + $points);
-    }
+//     public function improveScore(int $points): void {
+//         $this->score = min(100, $this->score + $points);
+//     }
 
-    public function performanceLevel(): string {
-        return $this->score >= 85 ? "Ideal" :
-               ($this->score >= 70 ? "Normal" : "Struggling");
-    }
+//     public function performanceLevel(): string {
+//         return $this->score >= 85 ? "Ideal" :
+//                ($this->score >= 70 ? "Normal" : "Struggling");
+//     }
 
-    public function id(): int {
-        return $this->id;
-    }
-}
+//     public function id(): int {
+//         return $this->id;
+//     }
+// }
 
-$student = new Student(1, 75, 3);
-$student->improveScore(10);
-echo $student->performanceLevel();
+// $student = new Student(1, 75, 3);
+// $student->improveScore(10);
+// echo $student->performanceLevel();
 
-interface StudentRepository {
-    public function save(Student $student): void;
-    public function find(int $id): ?Student;
-}
+// interface StudentRepository {
+//     public function save(Student $student): void;
+//     public function find(int $id): ?Student;
+// }
 
-class InMemoryStudentRepository implements StudentRepository {
+// class InMemoryStudentRepository implements StudentRepository {
 
-    private array $storage = [];
+//     private array $storage = [];
 
-    public function save(Student $student): void {
-        $this->storage[$student->id()] = $student;
-    }
+//     public function save(Student $student): void {
+//         $this->storage[$student->id()] = $student;
+//     }
 
-    public function find(int $id): ?Student {
-        return $this->storage[$id] ?? null;
-    }
-}
+//     public function find(int $id): ?Student {
+//         return $this->storage[$id] ?? null;
+//     }
+// }
 
-$repo = new InMemoryStudentRepository();
-$repo->save(new Student(1, 80, 2));
+// $repo = new InMemoryStudentRepository();
+// $repo->save(new Student(1, 80, 2));
 
-echo $repo->find(1)->performanceLevel();
+// echo $repo->find(1)->performanceLevel();
 
-class EvaluateStudentUseCase {
+// class EvaluateStudentUseCase {
 
-    public function __construct(
-        private StudentRepository $repository
-    ) {}
+//     public function __construct(
+//         private StudentRepository $repository
+//     ) {}
 
-    public function execute(int $studentId): string {
-        $student = $this->repository->find($studentId);
+//     public function execute(int $studentId): string {
+//         $student = $this->repository->find($studentId);
 
-        if (!$student) {
-            throw new Exception("Student not found");
-        }
+//         if (!$student) {
+//             throw new Exception("Student not found");
+//         }
 
-        return $student->performanceLevel();
-    }
-}
+//         return $student->performanceLevel();
+//     }
+// }
 
-$useCase = new EvaluateStudentUseCase($repo);
-echo $useCase->execute(1);
-
-
-class UnitOfWork {
-
-    private array $entities = [];
-
-    public function register(Student $student): void {
-        $this->entities[] = $student;
-    }
-
-    public function commit(): void {
-        foreach ($this->entities as $entity) {
-            echo "Persisting student ID: " . $entity->id() . "\n";
-        }
-        $this->entities = [];
-    }
-}
-
-$uow = new UnitOfWork();
-$uow->register(new Student(2, 60, 5));
-$uow->commit();
+// $useCase = new EvaluateStudentUseCase($repo);
+// echo $useCase->execute(1);
 
 
-interface Specification {
-    public function isSatisfiedBy(Student $student): bool;
-}
+// class UnitOfWork {
 
-class StrugglingSpecification implements Specification {
-    public function isSatisfiedBy(Student $student): bool {
-        return $student->performanceLevel() === "Struggling";
-    }
-}
+//     private array $entities = [];
 
-$spec = new StrugglingSpecification();
-echo $spec->isSatisfiedBy(new Student(3, 50, 4)) ? "Yes" : "No";
+//     public function register(Student $student): void {
+//         $this->entities[] = $student;
+//     }
 
+//     public function commit(): void {
+//         foreach ($this->entities as $entity) {
+//             echo "Persisting student ID: " . $entity->id() . "\n";
+//         }
+//         $this->entities = [];
+//     }
+// }
 
-class StudentImprovedEvent {
-    public function __construct(public int $studentId) {}
-}
-
-class StudentAggregate extends Student {
-
-    private array $events = [];
-
-    public function improveScore(int $points): void {
-        parent::improveScore($points);
-        $this->events[] = new StudentImprovedEvent($this->id());
-    }
-
-    public function pullEvents(): array {
-        $events = $this->events;
-        $this->events = [];
-        return $events;
-    }
-}
-
-$aggregate = new StudentAggregate(5, 70, 3);
-$aggregate->improveScore(20);
-
-foreach ($aggregate->pullEvents() as $event) {
-    echo "Event triggered for student {$event->studentId}";
-}
+// $uow = new UnitOfWork();
+// $uow->register(new Student(2, 60, 5));
+// $uow->commit();
 
 
+// interface Specification {
+//     public function isSatisfiedBy(Student $student): bool;
+// }
 
-class Container {
+// class StrugglingSpecification implements Specification {
+//     public function isSatisfiedBy(Student $student): bool {
+//         return $student->performanceLevel() === "Struggling";
+//     }
+// }
 
-    private array $bindings = [];
-
-    public function bind(string $abstract, callable $factory): void {
-        $this->bindings[$abstract] = $factory;
-    }
-
-    public function resolve(string $abstract) {
-        if (!isset($this->bindings[$abstract])) {
-            throw new Exception("Class not bound.");
-        }
-
-        return $this->bindings[$abstract]($this);
-    }
-}
-
-$container = new Container();
-
-$container->bind(StudentRepository::class, function () {
-    return new InMemoryStudentRepository();
-});
-
-$repo = $container->resolve(StudentRepository::class);
+// $spec = new StrugglingSpecification();
+// echo $spec->isSatisfiedBy(new Student(3, 50, 4)) ? "Yes" : "No";
 
 
-abstract class ServiceProvider {
-    abstract public function register(Container $container): void;
-}
+// class StudentImprovedEvent {
+//     public function __construct(public int $studentId) {}
+// }
 
-class StudentServiceProvider extends ServiceProvider {
+// class StudentAggregate extends Student {
 
-    public function register(Container $container): void {
-        $container->bind(
-            StudentRepository::class,
-            fn() => new InMemoryStudentRepository()
+//     private array $events = [];
+
+//     public function improveScore(int $points): void {
+//         parent::improveScore($points);
+//         $this->events[] = new StudentImprovedEvent($this->id());
+//     }
+
+//     public function pullEvents(): array {
+//         $events = $this->events;
+//         $this->events = [];
+//         return $events;
+//     }
+// }
+
+// $aggregate = new StudentAggregate(5, 70, 3);
+// $aggregate->improveScore(20);
+
+// foreach ($aggregate->pullEvents() as $event) {
+//     echo "Event triggered for student {$event->studentId}";
+// }
+
+
+
+// class Container {
+
+//     private array $bindings = [];
+
+//     public function bind(string $abstract, callable $factory): void {
+//         $this->bindings[$abstract] = $factory;
+//     }
+
+//     public function resolve(string $abstract) {
+//         if (!isset($this->bindings[$abstract])) {
+//             throw new Exception("Class not bound.");
+//         }
+
+//         return $this->bindings[$abstract]($this);
+//     }
+// }
+
+// $container = new Container();
+
+// $container->bind(StudentRepository::class, function () {
+//     return new InMemoryStudentRepository();
+// });
+
+// $repo = $container->resolve(StudentRepository::class);
+
+
+// abstract class ServiceProvider {
+//     abstract public function register(Container $container): void;
+// }
+
+// class StudentServiceProvider extends ServiceProvider {
+
+//     public function register(Container $container): void {
+//         $container->bind(
+//             StudentRepository::class,
+//             fn() => new InMemoryStudentRepository()
+//         );
+//     }
+// }
+
+// $provider = new StudentServiceProvider();
+// $provider->register($container);
+
+
+// class CommandBus {
+
+//     private array $handlers = [];
+
+//     public function register(string $command, callable $handler): void {
+//         $this->handlers[$command] = $handler;
+//     }
+
+//     public function dispatch(object $command) {
+//         $class = get_class($command);
+
+//         if (!isset($this->handlers[$class])) {
+//             throw new Exception("No handler registered.");
+//         }
+
+//         return $this->handlers[$class]($command);
+//     }
+// }
+
+// class UpgradeStudentCommand {
+//     public function __construct(public int $studentId) {}
+// }
+
+// $bus = new CommandBus();
+
+// $bus->register(
+//     UpgradeStudentCommand::class,
+//     fn($cmd) => "Student {$cmd->studentId} upgraded."
+// );
+
+// echo $bus->dispatch(new UpgradeStudentCommand(10));
+
+
+// class EventStore {
+
+//     private array $events = [];
+
+//     public function append(object $event): void {
+//         $this->events[] = $event;
+//     }
+
+//     public function all(): array {
+//         return $this->events;
+//     }
+// }
+
+// class ScoreSubmittedEvent {
+//     public function __construct(public int $studentId, public int $score) {}
+// }
+
+// $store = new EventStore();
+// $store->append(new ScoreSubmittedEvent(1, 90));
+
+// print_r($store->all());
+
+
+// class JobQueue {
+
+//     private array $jobs = [];
+
+//     public function push(callable $job): void {
+//         $this->jobs[] = $job;
+//     }
+
+//     public function run(): void {
+//         while ($job = array_shift($this->jobs)) {
+//             $job();
+//         }
+//     }
+// }
+
+// $queue = new JobQueue();
+
+// $queue->push(fn() => print("Sending notification...\n"));
+// $queue->push(fn() => print("Updating analytics...\n"));
+
+// $queue->run();
+
+// class Pipeline {
+
+//     public function process($data, array $pipes) {
+
+//         $pipeline = array_reduce(
+//             array_reverse($pipes),
+//             fn($next, $pipe) =>
+//                 fn($data) => $pipe($data, $next),
+//             fn($data) => $data
+//         );
+
+//         return $pipeline($data);
+//     }
+// }
+
+// $pipeline = new Pipeline();
+
+// $result = $pipeline->process(
+//     60,
+//     [
+//         fn($score, $next) => $next($score + 10),
+//         fn($score, $next) => $next($score * 2),
+//     ]
+// );
+
+// echo $result; // (60+10)*2
+
+
+// class StudentProjection {
+
+//     private array $readModel = [];
+
+//     public function apply(object $event): void {
+
+//         if ($event instanceof ScoreSubmittedEvent) {
+//             $this->readModel[$event->studentId] = $event->score;
+//         }
+//     }
+
+//     public function getScore(int $studentId): ?int {
+//         return $this->readModel[$studentId] ?? null;
+//     }
+// }
+
+// $projection = new StudentProjection();
+
+// foreach ($store->all() as $event) {
+//     $projection->apply($event);
+// }
+
+// echo $projection->getScore(1);
+
+
+
+class JwtService {
+
+    private string $secret = "super_secret_key";
+
+    public function generate(array $payload): string {
+
+        $header = base64_encode(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
+        $body   = base64_encode(json_encode($payload));
+
+        $signature = hash_hmac(
+            'sha256',
+            "$header.$body",
+            $this->secret,
+            true
         );
-    }
-}
 
-$provider = new StudentServiceProvider();
-$provider->register($container);
-
-
-class CommandBus {
-
-    private array $handlers = [];
-
-    public function register(string $command, callable $handler): void {
-        $this->handlers[$command] = $handler;
+        return "$header.$body." . base64_encode($signature);
     }
 
-    public function dispatch(object $command) {
-        $class = get_class($command);
+    public function validate(string $token): bool {
 
-        if (!isset($this->handlers[$class])) {
-            throw new Exception("No handler registered.");
-        }
+        [$header, $body, $signature] = explode('.', $token);
 
-        return $this->handlers[$class]($command);
-    }
-}
-
-class UpgradeStudentCommand {
-    public function __construct(public int $studentId) {}
-}
-
-$bus = new CommandBus();
-
-$bus->register(
-    UpgradeStudentCommand::class,
-    fn($cmd) => "Student {$cmd->studentId} upgraded."
-);
-
-echo $bus->dispatch(new UpgradeStudentCommand(10));
-
-
-class EventStore {
-
-    private array $events = [];
-
-    public function append(object $event): void {
-        $this->events[] = $event;
-    }
-
-    public function all(): array {
-        return $this->events;
-    }
-}
-
-class ScoreSubmittedEvent {
-    public function __construct(public int $studentId, public int $score) {}
-}
-
-$store = new EventStore();
-$store->append(new ScoreSubmittedEvent(1, 90));
-
-print_r($store->all());
-
-
-class JobQueue {
-
-    private array $jobs = [];
-
-    public function push(callable $job): void {
-        $this->jobs[] = $job;
-    }
-
-    public function run(): void {
-        while ($job = array_shift($this->jobs)) {
-            $job();
-        }
-    }
-}
-
-$queue = new JobQueue();
-
-$queue->push(fn() => print("Sending notification...\n"));
-$queue->push(fn() => print("Updating analytics...\n"));
-
-$queue->run();
-
-class Pipeline {
-
-    public function process($data, array $pipes) {
-
-        $pipeline = array_reduce(
-            array_reverse($pipes),
-            fn($next, $pipe) =>
-                fn($data) => $pipe($data, $next),
-            fn($data) => $data
+        $expected = base64_encode(
+            hash_hmac('sha256', "$header.$body", $this->secret, true)
         );
 
-        return $pipeline($data);
+        return hash_equals($expected, $signature);
     }
 }
 
-$pipeline = new Pipeline();
-
-$result = $pipeline->process(
-    60,
-    [
-        fn($score, $next) => $next($score + 10),
-        fn($score, $next) => $next($score * 2),
-    ]
-);
-
-echo $result; // (60+10)*2
-
-
-class StudentProjection {
-
-    private array $readModel = [];
-
-    public function apply(object $event): void {
-
-        if ($event instanceof ScoreSubmittedEvent) {
-            $this->readModel[$event->studentId] = $event->score;
-        }
-    }
-
-    public function getScore(int $studentId): ?int {
-        return $this->readModel[$studentId] ?? null;
-    }
-}
-
-$projection = new StudentProjection();
-
-foreach ($store->all() as $event) {
-    $projection->apply($event);
-}
-
-echo $projection->getScore(1);
+$jwt = new JwtService();
+$token = $jwt->generate(['user_id' => 1]);
+echo $jwt->validate($token) ? "Valid Token" : "Invalid Token";
