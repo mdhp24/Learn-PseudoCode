@@ -1504,3 +1504,16 @@ class TokenBucket {
 
 $bucket = new TokenBucket(5);
 echo $bucket->consume() ? "Allowed" : "Blocked";
+
+class StudentResource {
+
+    public static function make(Student $student): array {
+        return [
+            'id' => $student->id(),
+            'performance' => $student->performanceLevel()
+        ];
+    }
+}
+
+$student = new Student(1, 88, 2);
+print_r(StudentResource::make($student));
