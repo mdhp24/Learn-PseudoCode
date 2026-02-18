@@ -1452,31 +1452,55 @@ echo $service->classify(68);
 // echo $resolver->resolve();
 
 
-interface Module {
-    public function boot(): void;
-}
+// interface Module {
+//     public function boot(): void;
+// }
 
-class StudentModule implements Module {
-    public function boot(): void {
-        echo "Student Module Booted\n";
+// class StudentModule implements Module {
+//     public function boot(): void {
+//         echo "Student Module Booted\n";
+//     }
+// }
+
+// class ModuleLoader {
+
+//     private array $modules = [];
+
+//     public function register(Module $module): void {
+//         $this->modules[] = $module;
+//     }
+
+//     public function boot(): void {
+//         foreach ($this->modules as $module) {
+//             $module->boot();
+//         }
+//     }
+// }
+
+// $loader = new ModuleLoader();
+// $loader->register(new StudentModule());
+// $loader->boot();
+
+
+class TokenBucket {
+
+    private int $tokens;
+    private int $capacity;
+
+    public function __construct(int $capacity) {
+        $this->capacity = $capacity;
+        $this->tokens = $capacity;
     }
-}
 
-class ModuleLoader {
-
-    private array $modules = [];
-
-    public function register(Module $module): void {
-        $this->modules[] = $module;
-    }
-
-    public function boot(): void {
-        foreach ($this->modules as $module) {
-            $module->boot();
+    public function consume(): bool {
+        if ($this->tokens <= 0) {
+            return false;
         }
+
+        $this->tokens--;
+        return true;
     }
 }
 
-$loader = new ModuleLoader();
-$loader->register(new StudentModule());
-$loader->boot();
+$bucket = new TokenBucket(5);
+echo $bucket->consume() ? "Allowed" : "Blocked";
