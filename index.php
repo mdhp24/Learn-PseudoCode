@@ -1439,14 +1439,44 @@ echo $service->classify(68);
 // echo $cache->get("student_1_score");
 
 
-class TenantResolver {
+// class TenantResolver {
 
-    public function resolve(): string {
-        $host = $_SERVER['HTTP_HOST'] ?? 'default.local';
+//     public function resolve(): string {
+//         $host = $_SERVER['HTTP_HOST'] ?? 'default.local';
 
-        return explode('.', $host)[0];
+//         return explode('.', $host)[0];
+//     }
+// }
+
+// $resolver = new TenantResolver();
+// echo $resolver->resolve();
+
+
+interface Module {
+    public function boot(): void;
+}
+
+class StudentModule implements Module {
+    public function boot(): void {
+        echo "Student Module Booted\n";
     }
 }
 
-$resolver = new TenantResolver();
-echo $resolver->resolve();
+class ModuleLoader {
+
+    private array $modules = [];
+
+    public function register(Module $module): void {
+        $this->modules[] = $module;
+    }
+
+    public function boot(): void {
+        foreach ($this->modules as $module) {
+            $module->boot();
+        }
+    }
+}
+
+$loader = new ModuleLoader();
+$loader->register(new StudentModule());
+$loader->boot();
