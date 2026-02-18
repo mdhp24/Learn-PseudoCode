@@ -1411,29 +1411,42 @@ echo $service->classify(68);
 
 // <?php
 
-class Cache {
+// class Cache {
 
-    private array $store = [];
+//     private array $store = [];
 
-    public function put(string $key, $value, int $ttl): void {
-        $this->store[$key] = [
-            'value' => $value,
-            'expires_at' => time() + $ttl
-        ];
-    }
+//     public function put(string $key, $value, int $ttl): void {
+//         $this->store[$key] = [
+//             'value' => $value,
+//             'expires_at' => time() + $ttl
+//         ];
+//     }
 
-    public function get(string $key) {
-        if (!isset($this->store[$key])) return null;
+//     public function get(string $key) {
+//         if (!isset($this->store[$key])) return null;
 
-        if ($this->store[$key]['expires_at'] < time()) {
-            unset($this->store[$key]);
-            return null;
-        }
+//         if ($this->store[$key]['expires_at'] < time()) {
+//             unset($this->store[$key]);
+//             return null;
+//         }
 
-        return $this->store[$key]['value'];
+//         return $this->store[$key]['value'];
+//     }
+// }
+
+// $cache = new Cache();
+// $cache->put("student_1_score", 90, 10);
+// echo $cache->get("student_1_score");
+
+
+class TenantResolver {
+
+    public function resolve(): string {
+        $host = $_SERVER['HTTP_HOST'] ?? 'default.local';
+
+        return explode('.', $host)[0];
     }
 }
 
-$cache = new Cache();
-$cache->put("student_1_score", 90, 10);
-echo $cache->get("student_1_score");
+$resolver = new TenantResolver();
+echo $resolver->resolve();
