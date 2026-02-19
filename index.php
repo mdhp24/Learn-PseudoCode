@@ -1656,3 +1656,29 @@ class IdempotencyService {
 $idempotency = new IdempotencyService();
 
 echo $idempotency->handle("txn_123", fn() => "Transaction Processed");
+
+class LockManager {
+
+    private array $locks = [];
+
+    public function acquire(string $key): bool {
+
+        if (isset($this->locks[$key])) {
+            return false;
+        }
+
+        $this->locks[$key] = true;
+        return true;
+    }
+
+    public function release(string $key): void {
+        unset($this->locks[$key]);
+    }
+}
+
+$lock = new LockManager();
+
+if ($lock->acquire("student_1")) {
+    echo "Lock Acquired\n";
+    $lock->release("student_1");
+}
