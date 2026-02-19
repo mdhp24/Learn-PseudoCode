@@ -1520,21 +1520,45 @@ echo $service->classify(68);
 
 
 
-class PasswordService {
+// class PasswordService {
 
-    public function hash(string $password): string {
-        return password_hash($password, PASSWORD_BCRYPT);
+//     public function hash(string $password): string {
+//         return password_hash($password, PASSWORD_BCRYPT);
+//     }
+
+//     public function verify(string $password, string $hash): bool {
+//         return password_verify($password, $hash);
+//     }
+// }
+
+// $service = new PasswordService();
+
+// $hash = $service->hash("secret123");
+
+// echo $service->verify("secret123", $hash) 
+//     // ? "Password Match" 
+//      : "Invalid Password";
+
+
+class ApiGateway {
+
+    private array $routes = [];
+
+    public function register(string $path, callable $handler): void {
+        $this->routes[$path] = $handler;
     }
 
-    public function verify(string $password, string $hash): bool {
-        return password_verify($password, $hash);
+    public function handle(string $path) {
+        if (!isset($this->routes[$path])) {
+            return "404 Not Found";
+        }
+
+        return $this->routes[$path]();
     }
 }
 
-$service = new PasswordService();
+$gateway = new ApiGateway();
 
-$hash = $service->hash("secret123");
+$gateway->register('/students', fn() => "Student Service Response");
 
-echo $service->verify("secret123", $hash) 
-     ? "Password Match" 
-     : "Invalid Password";
+echo $gateway->handle('/students');
