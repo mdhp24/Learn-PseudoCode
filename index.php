@@ -1540,28 +1540,28 @@ echo $service->classify(68);
 //      : "Invalid Password";
 
 
-// class ApiGateway {
+class ApiGateway {
 
-//     private array $routes = [];
+    private array $routes = [];
 
-//     public function register(string $path, callable $handler): void {
-//         $this->routes[$path] = $handler;
-//     }
+    public function register(string $path, callable $handler): void {
+        $this->routes[$path] = $handler;
+    }
 
-//     public function handle(string $path) {
-//         if (!isset($this->routes[$path])) {
-//             return "404 Not Found";
-//         }
+    public function handle(string $path) {
+        if (!isset($this->routes[$path])) {
+            return "404 Not Found";
+        }
 
-//         return $this->routes[$path]();
-//     }
-// }
+        return $this->routes[$path]();
+    }
+}
 
-// $gateway = new ApiGateway();
+$gateway = new ApiGateway();
 
-// $gateway->register('/students', fn() => "Student Service Response");
+$gateway->register('/students', fn() => "Student Service Response");
 
-// echo $gateway->handle('/students');
+echo $gateway->handle('/students');
 
 
 class MiddlewarePipeline {
@@ -1591,3 +1591,31 @@ $response = $pipeline->handle(
 );
 
 echo $response;
+
+class CircuitBreaker {
+
+    private int $failures = 0;
+    private int $threshold;
+
+    public function __construct(int $threshold = 3) {
+        $this->threshold = $threshold;
+    }
+
+    public function call(callable $service) {
+
+        if ($this->failures >= $this->threshold) {
+            return "Service Unavailable (Open Circuit)";
+        }
+
+        try {
+            return $service();
+        } catch (Exception $e) {
+            $this->failures++;
+            return "Failure Recorded";
+        }
+    }
+}
+
+$breaker = new CircuitBreaker();
+
+echo $breaker->call(fn() => "External API OK");
