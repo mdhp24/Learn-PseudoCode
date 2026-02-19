@@ -1619,3 +1619,20 @@ class CircuitBreaker {
 $breaker = new CircuitBreaker();
 
 echo $breaker->call(fn() => "External API OK");
+
+
+
+function retry(callable $task, int $attempts = 3) {
+
+    for ($i = 1; $i <= $attempts; $i++) {
+        try {
+            return $task();
+        } catch (Exception $e) {
+            if ($i === $attempts) {
+                throw $e;
+            }
+        }
+    }
+}
+
+echo retry(fn() => "Success");
