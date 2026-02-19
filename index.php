@@ -1636,3 +1636,23 @@ function retry(callable $task, int $attempts = 3) {
 }
 
 echo retry(fn() => "Success");
+
+class IdempotencyService {
+
+    private array $processed = [];
+
+    public function handle(string $key, callable $action) {
+
+        if (isset($this->processed[$key])) {
+            return "Duplicate Request Ignored";
+        }
+
+        $this->processed[$key] = true;
+
+        return $action();
+    }
+}
+
+$idempotency = new IdempotencyService();
+
+echo $idempotency->handle("txn_123", fn() => "Transaction Processed");
