@@ -1682,3 +1682,25 @@ if ($lock->acquire("student_1")) {
     echo "Lock Acquired\n";
     $lock->release("student_1");
 }
+
+class AuditTrail {
+
+    private array $logs = [];
+
+    public function record(string $action, string $user): void {
+        $this->logs[] = [
+            'action' => $action,
+            'user' => $user,
+            'time' => date('Y-m-d H:i:s')
+        ];
+    }
+
+    public function all(): array {
+        return $this->logs;
+    }
+}
+
+$audit = new AuditTrail();
+$audit->record("Upgrade Student", "admin");
+
+print_r($audit->all());
