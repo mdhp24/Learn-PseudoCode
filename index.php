@@ -1791,17 +1791,56 @@ echo $service->classify(68);
 
 // <?php
 
-function retry(callable $task, int $attempts = 3) {
+// function retry(callable $task, int $attempts = 3) {
 
-    for ($i = 1; $i <= $attempts; $i++) {
-        try {
-            return $task();
-        } catch (Exception $e) {
-            if ($i === $attempts) {
-                throw $e;
-            }
-        }
+//     for ($i = 1; $i <= $attempts; $i++) {
+//         try {
+//             return $task();
+//         } catch (Exception $e) {
+//             if ($i === $attempts) {
+//                 throw $e;
+//             }
+//         }
+//     }
+// }
+
+// echo retry(fn() => "Success");
+
+
+// <?php
+
+// function retry(callable $task, int $attempts = 3) {
+
+//     for ($i = 1; $i <= $attempts; $i++) {
+//         try {
+//             return $task();
+//         } catch (Exception $e) {
+//             if ($i === $attempts) {
+//                 throw $e;
+//             }
+//         }
+//     }
+// }
+
+// echo retry(fn() => "Success");
+
+// <?php
+
+class Metrics {
+
+    private array $counters = [];
+
+    public function increment(string $key): void {
+        $this->counters[$key] = ($this->counters[$key] ?? 0) + 1;
+    }
+
+    public function all(): array {
+        return $this->counters;
     }
 }
 
-echo retry(fn() => "Success");
+$metrics = new Metrics();
+$metrics->increment("student_upgrade_calls");
+$metrics->increment("student_upgrade_calls");
+
+print_r($metrics->all());
