@@ -1706,25 +1706,55 @@ echo $service->classify(68);
 // print_r($audit->all());
 
 
-class ApiGateway {
+// class ApiGateway {
 
-    private array $routes = [];
+//     private array $routes = [];
 
-    public function register(string $path, callable $handler): void {
-        $this->routes[$path] = $handler;
-    }
+//     public function register(string $path, callable $handler): void {
+//         $this->routes[$path] = $handler;
+//     }
 
-    public function handle(string $path) {
-        if (!isset($this->routes[$path])) {
-            return "404 Not Found";
-        }
+//     public function handle(string $path) {
+//         if (!isset($this->routes[$path])) {
+//             return "404 Not Found";
+//         }
 
-        return $this->routes[$path]();
+//         return $this->routes[$path]();
+//     }
+// }
+
+// $gateway = new ApiGateway();
+
+// $gateway->register('/students', fn() => "Student Service Response");
+
+// echo $gateway->handle('/students');
+
+// <?php
+
+class MiddlewarePipeline {
+
+    public function handle($request, array $middlewares, callable $core) {
+
+        $pipeline = array_reduce(
+            array_reverse($middlewares),
+            fn($next, $middleware) =>
+                fn($req) => $middleware($req, $next),
+            $core
+        );
+
+        return $pipeline($request);
     }
 }
 
-$gateway = new ApiGateway();
+$pipeline = new MiddlewarePipeline();
 
-$gateway->register('/students', fn() => "Student Service Response");
+$response = $pipeline->handle(
+    "REQUEST",
+    [
+        fn($req, $next) => $next($req . " | Auth OK"),
+        fn($req, $next) => $next($req . " | Logged"),
+    ],
+    fn($req) => $req . " | Controller"
+);
 
-echo $gateway->handle('/students');
+echo $response;
