@@ -1761,30 +1761,47 @@ echo $service->classify(68);
 
 // <?php
 
-class CircuitBreaker {
+// class CircuitBreaker {
 
-    private int $failures = 0;
-    private int $threshold;
+//     private int $failures = 0;
+//     private int $threshold;
 
-    public function __construct(int $threshold = 3) {
-        $this->threshold = $threshold;
-    }
+//     public function __construct(int $threshold = 3) {
+//         $this->threshold = $threshold;
+//     }
 
-    public function call(callable $service) {
+//     public function call(callable $service) {
 
-        if ($this->failures >= $this->threshold) {
-            return "Service Unavailable (Open Circuit)";
-        }
+//         if ($this->failures >= $this->threshold) {
+//             return "Service Unavailable (Open Circuit)";
+//         }
 
+//         try {
+//             return $service();
+//         } catch (Exception $e) {
+//             $this->failures++;
+//             return "Failure Recorded";
+//         }
+//     }
+// }
+
+// $breaker = new CircuitBreaker();
+
+// echo $breaker->call(fn() => "External API OK");
+
+// <?php
+
+function retry(callable $task, int $attempts = 3) {
+
+    for ($i = 1; $i <= $attempts; $i++) {
         try {
-            return $service();
+            return $task();
         } catch (Exception $e) {
-            $this->failures++;
-            return "Failure Recorded";
+            if ($i === $attempts) {
+                throw $e;
+            }
         }
     }
 }
 
-$breaker = new CircuitBreaker();
-
-echo $breaker->call(fn() => "External API OK");
+echo retry(fn() => "Success");
