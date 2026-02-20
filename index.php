@@ -1731,30 +1731,60 @@ echo $service->classify(68);
 
 // <?php
 
-class MiddlewarePipeline {
+// class MiddlewarePipeline {
 
-    public function handle($request, array $middlewares, callable $core) {
+//     public function handle($request, array $middlewares, callable $core) {
 
-        $pipeline = array_reduce(
-            array_reverse($middlewares),
-            fn($next, $middleware) =>
-                fn($req) => $middleware($req, $next),
-            $core
-        );
+//         $pipeline = array_reduce(
+//             array_reverse($middlewares),
+//             fn($next, $middleware) =>
+//                 fn($req) => $middleware($req, $next),
+//             $core
+//         );
 
-        return $pipeline($request);
+//         return $pipeline($request);
+//     }
+// }
+
+// $pipeline = new MiddlewarePipeline();
+
+// $response = $pipeline->handle(
+//     "REQUEST",
+//     [
+//         fn($req, $next) => $next($req . " | Auth OK"),
+//         fn($req, $next) => $next($req . " | Logged"),
+//     ],
+//     fn($req) => $req . " | Controller"
+// );
+
+// echo $response;
+
+// <?php
+
+class CircuitBreaker {
+
+    private int $failures = 0;
+    private int $threshold;
+
+    public function __construct(int $threshold = 3) {
+        $this->threshold = $threshold;
+    }
+
+    public function call(callable $service) {
+
+        if ($this->failures >= $this->threshold) {
+            return "Service Unavailable (Open Circuit)";
+        }
+
+        try {
+            return $service();
+        } catch (Exception $e) {
+            $this->failures++;
+            return "Failure Recorded";
+        }
     }
 }
 
-$pipeline = new MiddlewarePipeline();
+$breaker = new CircuitBreaker();
 
-$response = $pipeline->handle(
-    "REQUEST",
-    [
-        fn($req, $next) => $next($req . " | Auth OK"),
-        fn($req, $next) => $next($req . " | Logged"),
-    ],
-    fn($req) => $req . " | Controller"
-);
-
-echo $response;
+echo $breaker->call(fn() => "External API OK");
