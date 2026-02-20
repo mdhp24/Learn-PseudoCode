@@ -1540,6 +1540,172 @@ echo $service->classify(68);
 //      : "Invalid Password";
 
 
+// class ApiGateway {
+
+//     private array $routes = [];
+
+//     public function register(string $path, callable $handler): void {
+//         $this->routes[$path] = $handler;
+//     }
+
+//     public function handle(string $path) {
+//         if (!isset($this->routes[$path])) {
+//             return "404 Not Found";
+//         }
+
+//         return $this->routes[$path]();
+//     }
+// }
+
+// $gateway = new ApiGateway();
+
+// $gateway->register('/students', fn() => "Student Service Response");
+
+// echo $gateway->handle('/students');
+
+
+// class MiddlewarePipeline {
+
+//     public function handle($request, array $middlewares, callable $core) {
+
+//         $pipeline = array_reduce(
+//             array_reverse($middlewares),
+//             fn($next, $middleware) =>
+//                 fn($req) => $middleware($req, $next),
+//             $core
+//         );
+
+//         return $pipeline($request);
+//     }
+// }
+
+// $pipeline = new MiddlewarePipeline();
+
+// $response = $pipeline->handle(
+//     "REQUEST",
+//     [
+//         fn($req, $next) => $next($req . " | Auth OK"),
+//         fn($req, $next) => $next($req . " | Logged"),
+//     ],
+//     fn($req) => $req . " | Controller"
+// );
+
+// echo $response;
+
+// class CircuitBreaker {
+
+//     private int $failures = 0;
+//     private int $threshold;
+
+//     public function __construct(int $threshold = 3) {
+//         $this->threshold = $threshold;
+//     }
+
+//     public function call(callable $service) {
+
+//         if ($this->failures >= $this->threshold) {
+//             return "Service Unavailable (Open Circuit)";
+//         }
+
+//         try {
+//             return $service();
+//         } catch (Exception $e) {
+//             $this->failures++;
+//             return "Failure Recorded";
+//         }
+//     }
+// }
+
+// $breaker = new CircuitBreaker();
+
+// echo $breaker->call(fn() => "External API OK");
+
+
+
+// function retry(callable $task, int $attempts = 3) {
+
+//     for ($i = 1; $i <= $attempts; $i++) {
+//         try {
+//             return $task();
+//         } catch (Exception $e) {
+//             if ($i === $attempts) {
+//                 throw $e;
+//             }
+//         }
+//     }
+// }
+
+// echo retry(fn() => "Success");
+
+// class IdempotencyService {
+
+//     private array $processed = [];
+
+//     public function handle(string $key, callable $action) {
+
+//         if (isset($this->processed[$key])) {
+//             return "Duplicate Request Ignored";
+//         }
+
+//         $this->processed[$key] = true;
+
+//         return $action();
+//     }
+// }
+
+// $idempotency = new IdempotencyService();
+
+// echo $idempotency->handle("txn_123", fn() => "Transaction Processed");
+
+// class LockManager {
+
+//     private array $locks = [];
+
+//     public function acquire(string $key): bool {
+
+//         if (isset($this->locks[$key])) {
+//             return false;
+//         }
+
+//         $this->locks[$key] = true;
+//         return true;
+//     }
+
+//     public function release(string $key): void {
+//         unset($this->locks[$key]);
+//     }
+// }
+
+// $lock = new LockManager();
+
+// if ($lock->acquire("student_1")) {
+//     echo "Lock Acquired\n";
+//     $lock->release("student_1");
+// }
+
+// class AuditTrail {
+
+//     private array $logs = [];
+
+//     public function record(string $action, string $user): void {
+//         $this->logs[] = [
+//             'action' => $action,
+//             'user' => $user,
+//             'time' => date('Y-m-d H:i:s')
+//         ];
+//     }
+
+//     public function all(): array {
+//         return $this->logs;
+//     }
+// }
+
+// $audit = new AuditTrail();
+// $audit->record("Upgrade Student", "admin");
+
+// print_r($audit->all());
+
+
 class ApiGateway {
 
     private array $routes = [];
@@ -1562,145 +1728,3 @@ $gateway = new ApiGateway();
 $gateway->register('/students', fn() => "Student Service Response");
 
 echo $gateway->handle('/students');
-
-
-class MiddlewarePipeline {
-
-    public function handle($request, array $middlewares, callable $core) {
-
-        $pipeline = array_reduce(
-            array_reverse($middlewares),
-            fn($next, $middleware) =>
-                fn($req) => $middleware($req, $next),
-            $core
-        );
-
-        return $pipeline($request);
-    }
-}
-
-$pipeline = new MiddlewarePipeline();
-
-$response = $pipeline->handle(
-    "REQUEST",
-    [
-        fn($req, $next) => $next($req . " | Auth OK"),
-        fn($req, $next) => $next($req . " | Logged"),
-    ],
-    fn($req) => $req . " | Controller"
-);
-
-echo $response;
-
-class CircuitBreaker {
-
-    private int $failures = 0;
-    private int $threshold;
-
-    public function __construct(int $threshold = 3) {
-        $this->threshold = $threshold;
-    }
-
-    public function call(callable $service) {
-
-        if ($this->failures >= $this->threshold) {
-            return "Service Unavailable (Open Circuit)";
-        }
-
-        try {
-            return $service();
-        } catch (Exception $e) {
-            $this->failures++;
-            return "Failure Recorded";
-        }
-    }
-}
-
-$breaker = new CircuitBreaker();
-
-echo $breaker->call(fn() => "External API OK");
-
-
-
-function retry(callable $task, int $attempts = 3) {
-
-    for ($i = 1; $i <= $attempts; $i++) {
-        try {
-            return $task();
-        } catch (Exception $e) {
-            if ($i === $attempts) {
-                throw $e;
-            }
-        }
-    }
-}
-
-echo retry(fn() => "Success");
-
-class IdempotencyService {
-
-    private array $processed = [];
-
-    public function handle(string $key, callable $action) {
-
-        if (isset($this->processed[$key])) {
-            return "Duplicate Request Ignored";
-        }
-
-        $this->processed[$key] = true;
-
-        return $action();
-    }
-}
-
-$idempotency = new IdempotencyService();
-
-echo $idempotency->handle("txn_123", fn() => "Transaction Processed");
-
-class LockManager {
-
-    private array $locks = [];
-
-    public function acquire(string $key): bool {
-
-        if (isset($this->locks[$key])) {
-            return false;
-        }
-
-        $this->locks[$key] = true;
-        return true;
-    }
-
-    public function release(string $key): void {
-        unset($this->locks[$key]);
-    }
-}
-
-$lock = new LockManager();
-
-if ($lock->acquire("student_1")) {
-    echo "Lock Acquired\n";
-    $lock->release("student_1");
-}
-
-class AuditTrail {
-
-    private array $logs = [];
-
-    public function record(string $action, string $user): void {
-        $this->logs[] = [
-            'action' => $action,
-            'user' => $user,
-            'time' => date('Y-m-d H:i:s')
-        ];
-    }
-
-    public function all(): array {
-        return $this->logs;
-    }
-}
-
-$audit = new AuditTrail();
-$audit->record("Upgrade Student", "admin");
-
-print_r($audit->all());
