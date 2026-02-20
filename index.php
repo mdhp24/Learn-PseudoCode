@@ -1826,21 +1826,35 @@ echo $service->classify(68);
 
 // <?php
 
-class Metrics {
+// class Metrics {
 
-    private array $counters = [];
+//     private array $counters = [];
 
-    public function increment(string $key): void {
-        $this->counters[$key] = ($this->counters[$key] ?? 0) + 1;
-    }
+//     public function increment(string $key): void {
+//         $this->counters[$key] = ($this->counters[$key] ?? 0) + 1;
+//     }
 
-    public function all(): array {
-        return $this->counters;
+//     public function all(): array {
+//         return $this->counters;
+//     }
+// }
+
+// $metrics = new Metrics();
+// $metrics->increment("student_upgrade_calls");
+// $metrics->increment("student_upgrade_calls");
+
+// print_r($metrics->all());
+
+
+// <?php
+
+class TraceContext {
+
+    public static function generate(): string {
+        return bin2hex(random_bytes(8));
     }
 }
 
-$metrics = new Metrics();
-$metrics->increment("student_upgrade_calls");
-$metrics->increment("student_upgrade_calls");
+$requestId = TraceContext::generate();
 
-print_r($metrics->all());
+echo "Processing request: $requestId\n";
