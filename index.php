@@ -1848,13 +1848,43 @@ echo $service->classify(68);
 
 // <?php
 
-class TraceContext {
+// class TraceContext {
 
-    public static function generate(): string {
-        return bin2hex(random_bytes(8));
+//     public static function generate(): string {
+//         return bin2hex(random_bytes(8));
+//     }
+// }
+
+// $requestId = TraceContext::generate();
+
+// echo "Processing request: $requestId\n";
+
+// <?php
+
+// class TraceContext {
+
+//     public static function generate(): string {
+//         return bin2hex(random_bytes(8));
+//     }
+// }
+
+// $requestId = TraceContext::generate();
+
+// echo "Processing request: $requestId\n";
+
+// <?php
+
+class HealthCheck {
+
+    public function check(): array {
+        return [
+            'status' => 'UP',
+            'database' => 'connected',
+            'cache' => 'connected',
+            'timestamp' => time()
+        ];
     }
 }
 
-$requestId = TraceContext::generate();
-
-echo "Processing request: $requestId\n";
+$health = new HealthCheck();
+print_r($health->check());
