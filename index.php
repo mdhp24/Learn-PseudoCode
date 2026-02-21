@@ -1928,3 +1928,18 @@ function createUser(array $data): string {
     
     return json_encode(['status' => 'success', 'message' => 'User berhasil dibuat', 'data' => $newUser]);
 }
+
+
+function updateUser(int $id, array $data): string {
+    if (empty($data['name']) && empty($data['email'])) {
+        return json_encode(['status' => 'error', 'message' => 'Tidak ada data untuk diupdate']);
+    }
+    
+    $updatedUser = [
+        'id' => $id,
+        'name' => $data['name'] ?? 'Unknown',
+        'email' => $data['email'] ?? 'unknown@mail.com'
+    ];
+    
+    return json_encode(['status' => 'success', 'message' => 'User berhasil diupdate', 'data' => $updatedUser]);
+}
