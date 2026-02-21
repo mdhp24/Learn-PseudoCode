@@ -1950,3 +1950,20 @@ function deleteUser(int $id): string {
     }
     return json_encode(['status' => 'success', 'message' => "User dengan ID $id berhasil dihapus"]);
 }
+
+
+function searchUsers(string $keyword): string {
+    $users = [
+        ['id' => 1, 'name' => 'Andi Pratama', 'email' => 'andi@mail.com'],
+        ['id' => 2, 'name' => 'Budi Santoso', 'email' => 'budi@mail.com'],
+        ['id' => 3, 'name' => 'Citra Dewi', 'email' => 'citra@mail.com'],
+        ['id' => 4, 'name' => 'Andi Wijaya', 'email' => 'andi.w@mail.com']
+    ];
+    
+    $results = array_filter($users, function($user) use ($keyword) {
+        return stripos($user['name'], $keyword) !== false || 
+               stripos($user['email'], $keyword) !== false;
+    });
+    
+    return json_encode(['status' => 'success', 'count' => count($results), 'data' => array_values($results)]);
+}
