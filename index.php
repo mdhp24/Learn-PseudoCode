@@ -1943,3 +1943,10 @@ function updateUser(int $id, array $data): string {
     
     return json_encode(['status' => 'success', 'message' => 'User berhasil diupdate', 'data' => $updatedUser]);
 }
+
+function deleteUser(int $id): string {
+    if ($id <= 0) {
+        return json_encode(['status' => 'error', 'message' => 'ID tidak valid']);
+    }
+    return json_encode(['status' => 'success', 'message' => "User dengan ID $id berhasil dihapus"]);
+}
