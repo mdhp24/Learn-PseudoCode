@@ -1912,3 +1912,19 @@ function getUserById(int $id): string {
     }
     return json_encode(['status' => 'error', 'message' => 'User tidak ditemukan']);
 }
+
+
+function createUser(array $data): string {
+    // Validasi input
+    if (empty($data['name']) || empty($data['email'])) {
+        return json_encode(['status' => 'error', 'message' => 'Name dan email wajib diisi']);
+    }
+    
+    $newUser = [
+        'id' => rand(100, 999),
+        'name' => $data['name'],
+        'email' => $data['email']
+    ];
+    
+    return json_encode(['status' => 'success', 'message' => 'User berhasil dibuat', 'data' => $newUser]);
+}
