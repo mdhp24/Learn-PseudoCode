@@ -1890,11 +1890,25 @@ echo $service->classify(68);
 // // print_r($health->check());s;.xa?
 
 
-function getAllUsers() {
+// function getAllUsers() {
+//     $users = [
+//         ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
+//         ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
+//         ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
+//     ];
+//     return json_encode(['status' => 'success', 'data' => $users]);
+// }
+
+
+function getUserById(int $id): string {
     $users = [
-        ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
-        ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
-        ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
+        1 => ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
+        2 => ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
+        3 => ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
     ];
-    return json_encode(['status' => 'success', 'data' => $users]);
+    
+    if (isset($users[$id])) {
+        return json_encode(['status' => 'success', 'data' => $users[$id]]);
+    }
+    return json_encode(['status' => 'error', 'message' => 'User tidak ditemukan']);
 }
