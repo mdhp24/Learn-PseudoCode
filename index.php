@@ -1967,3 +1967,19 @@ function searchUsers(string $keyword): string {
     
     return json_encode(['status' => 'success', 'count' => count($results), 'data' => array_values($results)]);
 }
+
+
+function authenticatedEndpoint(string $token): string {
+    $validToken = 'secret123';
+    
+    if ($token !== $validToken) {
+        http_response_code(401);
+        return json_encode(['status' => 'error', 'message' => 'Unauthorized - Token tidak valid']);
+    }
+    
+    return json_encode([
+        'status' => 'success', 
+        'message' => 'Authenticated!',
+        'data' => ['secret' => 'Data rahasia hanya untuk user terautentikasi']
+    ]);
+}
