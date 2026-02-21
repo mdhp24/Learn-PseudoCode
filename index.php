@@ -1874,17 +1874,27 @@ echo $service->classify(68);
 
 // <?php
 
-class HealthCheck {
+// class HealthCheck {
 
-    public function check(): array {
-        return [
-            'status' => 'UP',
-            'database' => 'connected',
-            'cache' => 'connected',
-            'timestamp' => time()
-        ];
-    }
+//     public function check(): array {
+//         return [
+//             'status' => 'UP',
+//             'database' => 'connected',
+//             'cache' => 'connected',
+//             'timestamp' => time()
+//         ];
+//     }
+// }
+
+// $health = new HealthCheck();
+// // print_r($health->check());s;.xa?
+
+
+function getAllUsers() {
+    $users = [
+        ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
+        ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
+        ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
+    ];
+    return json_encode(['status' => 'success', 'data' => $users]);
 }
-
-$health = new HealthCheck();
-print_r($health->check());
