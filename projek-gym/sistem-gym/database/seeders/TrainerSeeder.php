@@ -23,6 +23,7 @@ class TrainerSeeder extends Seeder
                 'certification'  => 'NSCA-CPT, ACE Certified',
                 'experience_years' => 8,
                 'hourly_rate'    => 150000,
+                'photo'          => 'images/trainers/arif-rahman.svg',
             ],
             [
                 'user'           => ['name' => 'Coach Linda Kusuma', 'email' => 'linda.trainer@gym.com'],
@@ -32,6 +33,7 @@ class TrainerSeeder extends Seeder
                 'certification'  => 'RYT-500, Pilates Method Alliance',
                 'experience_years' => 6,
                 'hourly_rate'    => 120000,
+                'photo'          => 'images/trainers/linda-kusuma.svg',
             ],
             [
                 'user'           => ['name' => 'Coach Dimas Prayoga', 'email' => 'dimas.trainer@gym.com'],
@@ -41,6 +43,7 @@ class TrainerSeeder extends Seeder
                 'certification'  => 'ACE Group Fitness, HIIT Specialist',
                 'experience_years' => 5,
                 'hourly_rate'    => 130000,
+                'photo'          => 'images/trainers/dimas-prayoga.svg',
             ],
             [
                 'user'           => ['name' => 'Coach Nia Ramadhani', 'email' => 'nia.trainer@gym.com'],
@@ -80,6 +83,7 @@ class TrainerSeeder extends Seeder
                 'bio'              => $data['bio'],
                 'certification'    => $data['certification'],
                 'experience_years' => $data['experience_years'],
+                'photo'            => $data['photo'] ?? null,
                 'hourly_rate'      => $data['hourly_rate'],
                 'status'           => 'active',
                 'created_at'       => now(),

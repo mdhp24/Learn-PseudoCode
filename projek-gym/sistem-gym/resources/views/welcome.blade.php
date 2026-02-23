@@ -214,9 +214,15 @@
                 <div class="card-hover bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden">
                     <div class="h-2 bg-gradient-to-r from-primary-500 to-danger-500"></div>
                     <div class="p-6 text-center">
-                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary-500 to-danger-500 flex items-center justify-center text-white font-heading font-bold text-3xl mb-4">
-                            {{ strtoupper(substr($trainer->user->name ?? 'T', 0, 1)) }}
-                        </div>
+                        @if($trainer->photo && file_exists(public_path($trainer->photo)))
+                            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-lg ring-2 ring-primary-500/30">
+                                <img src="{{ asset($trainer->photo) }}" alt="{{ $trainer->user->name ?? 'Trainer' }}" class="w-full h-full object-cover">
+                            </div>
+                        @else
+                            <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary-500 to-danger-500 flex items-center justify-center text-white font-heading font-bold text-3xl mb-4 shadow-lg">
+                                {{ strtoupper(substr($trainer->user->name ?? 'T', 0, 1)) }}
+                            </div>
+                        @endif
                         <h3 class="font-heading font-bold text-xl text-white">{{ $trainer->user->name ?? 'Trainer' }}</h3>
                         <p class="text-primary-400 text-sm font-medium mb-3">{{ $trainer->specialization }}</p>
                         <p class="text-dark-400 text-sm mb-4">{{ $trainer->certification }}</p>
