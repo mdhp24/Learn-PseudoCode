@@ -118,18 +118,6 @@
                     <i class="fas fa-sign-in-alt mr-2"></i> Masuk
                 </button>
             </form>
-
-            {{-- Demo Accounts Info --}}
-            <div class="mt-6 p-4 bg-dark-900/50 rounded-xl border border-dark-700">
-                <p class="text-xs text-dark-400 mb-2 font-semibold">
-                    <i class="fas fa-info-circle mr-1 text-primary-400"></i> Akun Demo:
-                </p>
-                <div class="space-y-1.5 text-xs text-dark-500">
-                    <p><span class="text-dark-400 font-medium">Admin:</span> admin@gym.com / admin123</p>
-                    <p><span class="text-dark-400 font-medium">Staff:</span> staff@gym.com / staff123</p>
-                    <p><span class="text-dark-400 font-medium">Trainer:</span> arif.trainer@gym.com / trainer123</p>
-                </div>
-            </div>
         </div>
 
         {{-- Footer --}}
