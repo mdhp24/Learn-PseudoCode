@@ -1900,86 +1900,89 @@ echo $service->classify(68);
 // }
 
 
-function getUserById(int $id): string {
-    $users = [
-        1 => ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
-        2 => ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
-        3 => ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
-    ];
+// function getUserById(int $id): string {
+//     $users = [
+//         1 => ['id' => 1, 'name' => 'Andi', 'email' => 'andi@mail.com'],
+//         2 => ['id' => 2, 'name' => 'Budi', 'email' => 'budi@mail.com'],
+//         3 => ['id' => 3, 'name' => 'Citra', 'email' => 'citra@mail.com']
+//     ];
     
-    if (isset($users[$id])) {
-        return json_encode(['status' => 'success', 'data' => $users[$id]]);
-    }
-    return json_encode(['status' => 'error', 'message' => 'User tidak ditemukan']);
-}
+//     if (isset($users[$id])) {
+//         return json_encode(['status' => 'success', 'data' => $users[$id]]);
+//     }
+//     return json_encode(['status' => 'error', 'message' => 'User tidak ditemukan']);
+// }
 
 
-function createUser(array $data): string {
-    // Validasi input
-    if (empty($data['name']) || empty($data['email'])) {
-        return json_encode(['status' => 'error', 'message' => 'Name dan email wajib diisi']);
-    }
+// function createUser(array $data): string {
+//     // Validasi input
+//     if (empty($data['name']) || empty($data['email'])) {
+//         return json_encode(['status' => 'error', 'message' => 'Name dan email wajib diisi']);
+//     }
     
-    $newUser = [
-        'id' => rand(100, 999),
-        'name' => $data['name'],
-        'email' => $data['email']
-    ];
+//     $newUser = [
+//         'id' => rand(100, 999),
+//         'name' => $data['name'],
+//         'email' => $data['email']
+//     ];
     
-    return json_encode(['status' => 'success', 'message' => 'User berhasil dibuat', 'data' => $newUser]);
-}
+//     return json_encode(['status' => 'success', 'message' => 'User berhasil dibuat', 'data' => $newUser]);
+// }
 
 
-function updateUser(int $id, array $data): string {
-    if (empty($data['name']) && empty($data['email'])) {
-        return json_encode(['status' => 'error', 'message' => 'Tidak ada data untuk diupdate']);
-    }
+// function updateUser(int $id, array $data): string {
+//     if (empty($data['name']) && empty($data['email'])) {
+//         return json_encode(['status' => 'error', 'message' => 'Tidak ada data untuk diupdate']);
+//     }
     
-    $updatedUser = [
-        'id' => $id,
-        'name' => $data['name'] ?? 'Unknown',
-        'email' => $data['email'] ?? 'unknown@mail.com'
-    ];
+//     $updatedUser = [
+//         'id' => $id,
+//         'name' => $data['name'] ?? 'Unknown',
+//         'email' => $data['email'] ?? 'unknown@mail.com'
+//     ];
     
-    return json_encode(['status' => 'success', 'message' => 'User berhasil diupdate', 'data' => $updatedUser]);
-}
+//     return json_encode(['status' => 'success', 'message' => 'User berhasil diupdate', 'data' => $updatedUser]);
+// }
 
-function deleteUser(int $id): string {
-    if ($id <= 0) {
-        return json_encode(['status' => 'error', 'message' => 'ID tidak valid']);
-    }
-    return json_encode(['status' => 'success', 'message' => "User dengan ID $id berhasil dihapus"]);
-}
-
-
-function searchUsers(string $keyword): string {
-    $users = [
-        ['id' => 1, 'name' => 'Andi Pratama', 'email' => 'andi@mail.com'],
-        ['id' => 2, 'name' => 'Budi Santoso', 'email' => 'budi@mail.com'],
-        ['id' => 3, 'name' => 'Citra Dewi', 'email' => 'citra@mail.com'],
-        ['id' => 4, 'name' => 'Andi Wijaya', 'email' => 'andi.w@mail.com']
-    ];
-    
-    $results = array_filter($users, function($user) use ($keyword) {
-        return stripos($user['name'], $keyword) !== false || 
-               stripos($user['email'], $keyword) !== false;
-    });
-    
-    return json_encode(['status' => 'success', 'count' => count($results), 'data' => array_values($results)]);
-}
+// function deleteUser(int $id): string {
+//     if ($id <= 0) {
+//         return json_encode(['status' => 'error', 'message' => 'ID tidak valid']);
+//     }
+//     return json_encode(['status' => 'success', 'message' => "User dengan ID $id berhasil dihapus"]);
+// }
 
 
-function authenticatedEndpoint(string $token): string {
-    $validToken = 'secret123';
+// function searchUsers(string $keyword): string {
+//     $users = [
+//         ['id' => 1, 'name' => 'Andi Pratama', 'email' => 'andi@mail.com'],
+//         ['id' => 2, 'name' => 'Budi Santoso', 'email' => 'budi@mail.com'],
+//         ['id' => 3, 'name' => 'Citra Dewi', 'email' => 'citra@mail.com'],
+//         ['id' => 4, 'name' => 'Andi Wijaya', 'email' => 'andi.w@mail.com']
+//     ];
     
-    if ($token !== $validToken) {
-        http_response_code(401);
-        return json_encode(['status' => 'error', 'message' => 'Unauthorized - Token tidak valid']);
-    }
+//     $results = array_filter($users, function($user) use ($keyword) {
+//         return stripos($user['name'], $keyword) !== false || 
+//                stripos($user['email'], $keyword) !== false;
+//     });
     
-    return json_encode([
-        'status' => 'success', 
-        'message' => 'Authenticated!',
-        'data' => ['secret' => 'Data rahasia hanya untuk user terautentikasi']
-    ]);
-}
+//     return json_encode(['status' => 'success', 'count' => count($results), 'data' => array_values($results)]);
+// }
+
+
+// function authenticatedEndpoint(string $token): string {
+//     $validToken = 'secret123';
+    
+//     if ($token !== $validToken) {
+//         http_response_code(401);
+//         return json_encode(['status' => 'error', 'message' => 'Unauthorized - Token tidak valid']);
+//     }
+    
+//     return json_encode([
+//         'status' => 'success', 
+//         'message' => 'Authenticated!',
+//         'data' => ['secret' => 'Data rahasia hanya untuk user terautentikasi']
+//     ]);
+// }
+
+
+
