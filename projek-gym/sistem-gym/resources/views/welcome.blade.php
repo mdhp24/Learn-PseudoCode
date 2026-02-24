@@ -233,7 +233,7 @@
     </section>
 
     {{-- ===== CTA ===== --}}
-    <section class="py-20 bg-gradient-to-r from-primary-600 via-primary-500 to-danger-500 relative overflow-hidden">
+    <section class="py-15 bg-gradient-to-r from-orange-500 via-orange-600 to-blue-900 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl"></div>
