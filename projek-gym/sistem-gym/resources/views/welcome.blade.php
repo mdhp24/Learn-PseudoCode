@@ -75,7 +75,7 @@
                 <div>
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-500/10 border border-primary-500/30 rounded-full mb-6">
                         <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-                        <span class="text-primary-400 text-sm font-medium">Open 06:00 - 22:00 WIB</span>
+                        <span class="text-primary-400 text-sm font-medium">Open 24 Hours</span>
                     </div>
                     <h1 class="font-heading font-black text-5xl lg:text-7xl leading-tight mb-6">
                         <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP GYM</span><br>
@@ -270,9 +270,7 @@
                 <div>
                     <h4 class="font-heading font-bold text-white mb-4">Jam Operasional</h4>
                     <ul class="space-y-2 text-sm text-dark-400">
-                        <li><i class="fas fa-clock text-primary-500 w-5"></i> Senin - Jumat: 06:00 - 22:00</li>
-                        <li><i class="fas fa-clock text-primary-500 w-5"></i> Sabtu: 07:00 - 21:00</li>
-                        <li><i class="fas fa-clock text-primary-500 w-5"></i> Minggu: 08:00 - 20:00</li>
+                        <li><i class="fas fa-clock text-primary-500 w-5"></i> Setiap Hari 24 Jam</li>
                     </ul>
                 </div>
                 <div>
