@@ -276,7 +276,7 @@
                 <div>
                     <h4 class="font-heading font-bold text-white mb-4">Kontak</h4>
                     <ul class="space-y-2 text-sm text-dark-400">
-                        <li><i class="fas fa-map-marker-alt text-primary-500 w-5"></i> Jl. Fitness No. 123, Jakarta</li>
+                        <li><i class="fas fa-map-marker-alt text-primary-500 w-5"></i> Jl. Malang Kota No. 11, Malang</li>
                         <li><i class="fas fa-phone text-primary-500 w-5"></i> +62 812-3456-7890</li>
                         <li><i class="fas fa-envelope text-primary-500 w-5"></i> info@mdhpgym.com</li>
                     </ul>
