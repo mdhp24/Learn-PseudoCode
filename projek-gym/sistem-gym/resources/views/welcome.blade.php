@@ -130,7 +130,7 @@
     <section id="packages" class="py-20 bg-dark-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1 bg-primary-500/10 text-primary-400 text-sm font-semibold rounded-full mb-4">PAKET MEMBERSHIP</span>
+                <span class="inline-block px-10 py-3 bg-primary-500/10 text-primary-400 text-sm font-semibold rounded-full mb-4">PAKET MEMBERSHIP</span>
                 <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">Pilih Paketmu</h2>
                 <p class="text-dark-400 text-lg max-w-2xl mx-auto">Berbagai pilihan paket membership yang sesuai dengan kebutuhan dan budget kamu</p>
             </div>
