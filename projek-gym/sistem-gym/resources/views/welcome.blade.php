@@ -206,7 +206,7 @@
     <section id="trainers" class="py-20 bg-dark-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1 bg-gold-400/10 text-gold-400 text-sm font-semibold rounded-full mb-4">TRAINER KAMI</span>
+                <span class="inline-block px-10 py-3 bg-gold-400/10 text-gold-400 text-sm font-semibold rounded-full mb-4">TRAINER KAMI</span>
                 <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">Trainer Berpengalaman</h2>
                 <p class="text-dark-400 text-lg max-w-2xl mx-auto">Bimbingan profesional untuk pencapaian fitness terbaikmu</p>
             </div>
