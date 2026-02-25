@@ -265,7 +265,7 @@
                             <p class="text-xs text-primary-400">Your Fitness Partner</p>
                         </div>
                     </div>
-                    <p class="text-dark-400 text-sm leading-relaxed">Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu.</p>
+                    <p class="text-dark-400 text-sm leading-relaxed">Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu. Kesehatan itu mahal.</p>
                 </div>
                 <div>
                     <h4 class="font-heading font-bold text-white mb-4">Jam Operasional</h4>
