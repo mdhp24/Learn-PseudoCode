@@ -88,14 +88,23 @@
                     <label for="password" class="block text-sm font-medium text-dark-300 mb-2">
                         <i class="fas fa-lock mr-2 text-primary-400"></i> Password
                     </label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        id="password" 
-                        required
-                        class="w-full px-4 py-3 bg-dark-900 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition outline-none"
-                        placeholder="••••••••"
-                    >
+                    <div class="relative">
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            required
+                            class="w-full px-4 py-3 pr-12 bg-dark-900 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition outline-none"
+                            placeholder="••••••••"
+                        >
+                        <button 
+                            type="button"
+                            id="togglePassword"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-dark-400 hover:text-primary-400 transition-colors focus:outline-none"
+                        >
+                            <i id="passwordIcon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 {{-- Remember Me --}}
@@ -127,6 +136,28 @@
             </p>
         </div>
     </div>
+
+    <script>
+        // Toggle Password Visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        togglePassword.addEventListener('click', function() {
+            // Toggle password type
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Toggle icon
+            if (type === 'password') {
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            } else {
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
 
 </body>
 </html>
