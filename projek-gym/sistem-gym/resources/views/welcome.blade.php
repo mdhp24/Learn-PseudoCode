@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Home</a>
+                    <a href="#home" class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Beranda</a>
                     <a href="#packages" class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Paket</a>
                     <a href="#classes" class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Kelas</a>
                     <a href="#trainers" class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Trainer</a>
