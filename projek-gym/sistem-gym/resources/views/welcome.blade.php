@@ -176,7 +176,7 @@
     <section id="classes" class="py-20 bg-dark-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1 bg-danger-500/10 text-danger-400 text-sm font-semibold rounded-full mb-4">KELAS KAMI</span>
+                <span class="inline-block px-10 py-3 bg-danger-500/10 text-danger-400 text-sm font-semibold rounded-full mb-4">KELAS KAMI</span>
                 <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">Kelas Fitness Terbaik</h2>
                 <p class="text-dark-400 text-lg max-w-2xl mx-auto">Dipandu oleh trainer bersertifikat untuk hasil maksimal</p>
             </div>
