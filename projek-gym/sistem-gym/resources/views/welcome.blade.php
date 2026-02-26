@@ -12,7 +12,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         [x-cloak] { display: none !important; }
-        .hero-gradient { background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #132346 0%, #1f2937 50%, #111827 100%); }
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15); }
         .glow { box-shadow: 0 0 40px rgba(249, 115, 22, 0.3); }
