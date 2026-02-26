@@ -163,7 +163,7 @@
                         </a>
                     @else
                         <a href="{{ route('login') }}" class="block w-full py-3 text-center rounded-xl font-semibold text-sm transition {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary-500/30' : 'bg-dark-700 text-dark-200 hover:bg-dark-600' }}">
-                            Pilih Paket
+                             Pilih Paket Ekslusif  
                         </a>
                     @endauth
                 </div>
