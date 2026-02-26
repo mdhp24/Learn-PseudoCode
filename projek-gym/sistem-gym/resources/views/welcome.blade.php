@@ -132,7 +132,7 @@
             <div class="text-center mb-16">
                 <span class="inline-block px-10 py-3 bg-primary-500/10 text-primary-400 text-sm font-semibold rounded-full mb-4">PAKET MEMBERSHIP</span>
                 <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">Pilih Paketmu</h2>
-                <p class="text-dark-400 text-lg max-w-2xl mx-auto">Berbagai pilihan paket membership yang sesuai dengan kebutuhan dan budget kamu</p>
+                <p class="text-dark-400 text-lg max-w-2xl mx-auto">Berbagai pilihan paket membership yang sesuai dengan kebutuhan anda</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($packages as $package)
@@ -163,7 +163,7 @@
                         </a>
                     @else
                         <a href="{{ route('login') }}" class="block w-full py-3 text-center rounded-xl font-semibold text-sm transition {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary-500/30' : 'bg-dark-700 text-dark-200 hover:bg-dark-600' }}">
-                             Pilih Paket Ekslusif  
+                             Pilih Paket Sekarang
                         </a>
                     @endauth
                 </div>
