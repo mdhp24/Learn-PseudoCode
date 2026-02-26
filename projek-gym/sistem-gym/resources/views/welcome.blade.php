@@ -100,7 +100,7 @@
                         <div class="w-px h-12 bg-dark-700"></div>
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">15+</p>
-                            <p class="text-dark-500 text-sm">Trainer Pro</p>
+                            <p class="text-dark-500 text-sm">Trainer Profesional</p>
                         </div>
                         <div class="w-px h-12 bg-dark-700"></div>
                         <div class="text-center">
