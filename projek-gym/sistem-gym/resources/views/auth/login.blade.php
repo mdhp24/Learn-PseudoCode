@@ -13,6 +13,40 @@
         .glow-effect { box-shadow: 0 0 40px rgba(249, 115, 22, 0.2); }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        /* Glowing Card Effect */
+        .card-glow {
+            position: relative;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(17, 24, 39, 0.95));
+            box-shadow: 
+                0 0 60px rgba(249, 115, 22, 0.3),
+                0 0 100px rgba(239, 68, 68, 0.2),
+                0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            padding: 2px;
+            background: linear-gradient(135deg, #f97316, #ef4444, #f97316);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.8;
+        }
+        
+        .card-glow::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            filter: blur(20px);
+            opacity: 0.4;
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
@@ -43,7 +77,7 @@
         </div>
 
         {{-- Login Card --}}
-        <div class="bg-dark-800/80 backdrop-blur-xl border border-dark-700 rounded-3xl p-8 shadow-2xl">
+        <div class="card-glow backdrop-blur-xl rounded-3xl p-8">
             
             {{-- Success Message --}}
             @if(session('success'))
