@@ -9,7 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%); }
+        /* Animated Background Gradient */
+        .hero-gradient { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #450a0a 50%, #1e1b4b 75%, #0f172a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         .glow-effect { box-shadow: 0 0 40px rgba(249, 115, 22, 0.2); }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .float-animation { animation: float 4s ease-in-out infinite; }
@@ -59,10 +71,14 @@
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
     
     {{-- Background Effects --}}
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-purple-600 rounded-full blur-3xl opacity-30"></div>
     </div>
+    
+    {{-- Decorative Pattern --}}
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, rgba(249, 115, 22, 0.4) 1px, transparent 0); background-size: 40px 40px;"></div>
 
     {{-- Back to Home --}}
     <a href="{{ route('home') }}" class="absolute top-6 left-6 text-dark-400 hover:text-primary-400 transition z-10">
