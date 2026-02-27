@@ -85,7 +85,7 @@
 
         {{-- Login Card --}}
         <div class="card-glow backdrop-blur-xl rounded-3xl p-8">
-            <div class="card-content"></div>
+            <div class="card-content">
             {{-- Success Message --}}
             @if(session('success'))
             <div class="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm">
@@ -173,7 +173,7 @@
 
         {{-- Footer --}}
         <div class="text-center mt-6">
-            <p class="text-dark-500 text-xs">
+            <p class="text-dark-400 text-xs">
                 &copy; {{ date('Y') }} MDHP GYM. All rights reserved.
             </p>
         </div>
