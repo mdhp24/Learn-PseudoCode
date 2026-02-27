@@ -35,6 +35,7 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             opacity: 0.8;
+            pointer-events: none;
         }
         
         .card-glow::after {
@@ -46,6 +47,12 @@
             filter: blur(20px);
             opacity: 0.4;
             z-index: -1;
+            pointer-events: none;
+        }
+        
+        .card-content {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -78,7 +85,7 @@
 
         {{-- Login Card --}}
         <div class="card-glow backdrop-blur-xl rounded-3xl p-8">
-            
+            <div class="card-content"></div>
             {{-- Success Message --}}
             @if(session('success'))
             <div class="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm">
@@ -161,6 +168,7 @@
                     <i class="fas fa-sign-in-alt mr-2"></i> Masuk
                 </button>
             </form>
+            </div>
         </div>
 
         {{-- Footer --}}
