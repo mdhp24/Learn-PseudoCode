@@ -153,13 +153,13 @@
                 <p class="text-dark-400 text-xl max-w-3xl mx-auto leading-relaxed">Investasi terbaik untuk kesehatan dan kebugaran tubuhmu dengan berbagai pilihan paket membership yang fleksibel</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
                 @php
                     $packageIcons = ['fa-bolt', 'fa-fire', 'fa-star', 'fa-crown'];
                     $packageGradients = ['from-blue-500/10 to-cyan-500/10', 'from-orange-500/10 to-red-500/10', 'from-purple-500/10 to-pink-500/10', 'from-gold-500/10 to-primary-500/10'];
                 @endphp
                 @foreach($packages as $index => $package)
-                <div class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 relative group overflow-hidden">
+                <div class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 {{ $package->duration_days >= 180 ? 'pt-12' : 'pt-8' }} relative group overflow-hidden h-full flex flex-col">
                     {{-- Decorative Corner --}}
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full"></div>
                     
@@ -196,7 +196,7 @@
                     </div>
 
                     {{-- Pricing --}}
-                    <div class="mb-8">
+                    <div class="mb-6">
                         <div class="flex items-end gap-2 mb-1">
                             <span class="font-heading font-black text-4xl text-white price-glow">Rp {{ number_format($package->price / 1000, 0, ',', '.') }}K</span>
                         </div>
@@ -208,29 +208,31 @@
                     </div>
 
                     {{-- Benefits --}}
-                    <div class="mb-8">
+                    <div class="mb-6 flex-grow">
                         <div class="space-y-3">
                             @foreach(explode(',', $package->benefits ?? 'Akses Gym,Locker Gratis,Free Konsultasi') as $benefit)
-                            <div class="flex items-center gap-3 text-dark-200 text-sm">
-                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-danger-500 flex items-center justify-center">
+                            <div class="flex items-start gap-3 text-dark-200 text-sm">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-danger-500 flex items-center justify-center mt-0.5">
                                     <i class="fas fa-check text-white text-xs"></i>
                                 </div>
-                                <span>{{ trim($benefit) }}</span>
+                                <span class="leading-relaxed">{{ trim($benefit) }}</span>
                             </div>
                             @endforeach
                         </div>
                     </div>
 
                     {{-- CTA Button --}}
-                    @auth
-                        <a href="{{ route('members.create') }}" class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
-                            <i class="fas fa-rocket mr-2"></i> Pilih Paket Ini
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}" class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
-                            <i class="fas fa-arrow-right mr-2"></i> Daftar Sekarang
-                        </a>
-                    @endauth
+                    <div class="mt-auto">
+                        @auth
+                            <a href="{{ route('members.create') }}" class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
+                                <i class="fas fa-rocket mr-2"></i> Pilih Paket Ini
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}" class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
+                                <i class="fas fa-arrow-right mr-2"></i> Daftar Sekarang
+                            </a>
+                        @endauth
+                    </div>
                 </div>
                 @endforeach
             </div>
