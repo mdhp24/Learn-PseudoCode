@@ -18,6 +18,8 @@
         .glow { box-shadow: 0 0 40px rgba(249, 115, 22, 0.3); }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .float-animation { animation: float 3s ease-in-out infinite; }
+        @keyframes shine { 0%, 100% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.3); } 50% { box-shadow: 0 0 80px rgba(249, 115, 22, 0.7), 0 0 120px rgba(249, 115, 22, 0.4); } }
+        .shine-animation { animation: shine 2s ease-in-out infinite; }
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -111,7 +113,7 @@
                 </div>
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
-                        <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary-500/20 to-danger-500/20 glow flex items-center justify-center">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary-500/20 to-danger-500/20 shine-animation flex items-center justify-center">
                             <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM" class="w-64 h-64 object-contain drop-shadow-2xl">
                         </div>
                         <div class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
