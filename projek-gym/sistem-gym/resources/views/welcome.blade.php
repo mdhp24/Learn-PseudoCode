@@ -165,14 +165,14 @@
                     
                     {{-- Best Value Badge --}}
                     @if($package->duration_days >= 360)
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 z-10">
                             <div class="px-5 py-2 bg-gradient-to-r from-gold-400 via-primary-500 to-danger-500 text-white text-xs font-black rounded-full shadow-2xl flex items-center gap-2 animate-pulse">
                                 <i class="fas fa-gem"></i>
                                 <span>BEST VALUE</span>
                             </div>
                         </div>
                     @elseif($package->duration_days >= 180)
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 z-10">
                             <div class="px-5 py-2 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold rounded-full shadow-lg">
                                 <i class="fas fa-fire"></i> POPULER
                             </div>
