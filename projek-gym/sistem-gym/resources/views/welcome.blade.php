@@ -18,7 +18,7 @@
         .glow { box-shadow: 0 0 40px rgba(249, 115, 22, 0.3); }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .float-animation { animation: float 3s ease-in-out infinite; }
-        @keyframes shine { 0%, 100% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.3); } 50% { box-shadow: 0 0 80px rgba(249, 115, 22, 0.7), 0 0 120px rgba(249, 115, 22, 0.4); } }
+        @keyframes shine { 0%, 100% { filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.5)); } 50% { filter: drop-shadow(0 0 60px rgba(249, 115, 22, 0.9)) drop-shadow(0 0 90px rgba(249, 115, 22, 0.6)); } }
         .shine-animation { animation: shine 2s ease-in-out infinite; }
         html { scroll-behavior: smooth; }
     </style>
@@ -113,16 +113,14 @@
                 </div>
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
-                        <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary-500/20 to-danger-500/20 shine-animation flex items-center justify-center">
-                            <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM" class="w-64 h-64 object-contain drop-shadow-2xl">
-                        </div>
+                        <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM" class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
                         <div class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-primary-400 font-bold text-lg"><i class="fas fa-dumbbell mr-1"></i> 100+ Alat</p>
                         </div>
                         <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-danger-400 font-bold text-lg"><i class="fas fa-heart-pulse mr-1"></i> Full AC</p>
                         </div>
-                    </div>
+                    </img>
                 </div>
             </div>
         </div>
