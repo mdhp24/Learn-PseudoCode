@@ -159,31 +159,27 @@
                     $packageGradients = ['from-blue-500/10 to-cyan-500/10', 'from-orange-500/10 to-red-500/10', 'from-purple-500/10 to-pink-500/10', 'from-gold-500/10 to-primary-500/10'];
                 @endphp
                 @foreach($packages as $index => $package)
-                <div class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 {{ $package->duration_days >= 180 ? 'pt-12' : 'pt-8' }} relative group overflow-hidden h-full flex flex-col">
+                <div class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 relative group overflow-hidden h-full flex flex-col">
                     {{-- Decorative Corner --}}
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full"></div>
                     
-                    {{-- Best Value Badge --}}
-                    @if($package->duration_days >= 360)
-                        <div class="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-                            <div class="px-5 py-2 bg-gradient-to-r from-gold-400 via-primary-500 to-danger-500 text-white text-xs font-black rounded-full shadow-2xl flex items-center gap-2 animate-pulse">
-                                <i class="fas fa-gem"></i>
-                                <span>BEST VALUE</span>
-                            </div>
-                        </div>
-                    @elseif($package->duration_days >= 180)
-                        <div class="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-                            <div class="px-5 py-2 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold rounded-full shadow-lg">
-                                <i class="fas fa-fire"></i> POPULER
-                            </div>
-                        </div>
-                    @endif
-
-                    {{-- Icon Badge --}}
-                    <div class="mb-6">
+                    {{-- Icon Badge & Label --}}
+                    <div class="mb-6 flex items-center gap-4">
                         <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-danger-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <i class="fas {{ $packageIcons[$index % 4] }} text-white text-2xl"></i>
                         </div>
+                        
+                        {{-- Best Value / Popular Badge --}}
+                        @if($package->duration_days >= 360)
+                            <div class="px-4 py-1.5 bg-gradient-to-r from-gold-400 via-primary-500 to-danger-500 text-white text-xs font-black rounded-full shadow-2xl flex items-center gap-2 animate-pulse">
+                                <i class="fas fa-gem"></i>
+                                <span>BEST VALUE</span>
+                            </div>
+                        @elseif($package->duration_days >= 180)
+                            <div class="px-4 py-1.5 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold rounded-full shadow-lg">
+                                <i class="fas fa-fire"></i> POPULER
+                            </div>
+                        @endif
                     </div>
 
                     {{-- Package Name --}}
