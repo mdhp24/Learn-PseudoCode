@@ -143,7 +143,7 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-20">
-                <div class="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-500/20 to-danger-500/20 border border-primary-500/30 text-primary-400 text-sm font-bold rounded-full mb-6 pulse-ring">
+                <div class="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-500/20 to-danger-500/20 border border-primary-500/30 text-primary-400 text-sm font-bold rounded-full mb-6">
                     <i class="fas fa-crown text-gold-400"></i>
                     <span>PAKET MEMBERSHIP EKSKLUSIF</span>
                 </div>
