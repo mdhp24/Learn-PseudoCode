@@ -121,9 +121,9 @@
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM" class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
-                        {{-- <div class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
-                            <p class="text-primary-400 font-bold text-lg"><i class="fas fa-dumbbell mr-1"></i> 100+ Alat</p>
-                        </div> --}}
+                        <div class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
+                            <p class="text-primary-400 font-bold text-lg"><i class="fas fa-dumbbell mr-1"></i> 50+ Alat</p>
+                        </div>
                         <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-danger-400 font-bold text-lg"><i class="fas fa-heart-pulse mr-1"></i> Full AC</p>
                         </div>
