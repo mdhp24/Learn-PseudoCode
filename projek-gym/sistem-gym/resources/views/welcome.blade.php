@@ -124,9 +124,12 @@
                         <div class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-primary-400 font-bold text-lg"><i class="fas fa-dumbbell mr-1"></i> 50+ Alat</p>
                         </div>
-                        {{-- <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
+                        <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-danger-400 font-bold text-lg"><i class="fas fa-heart-pulse mr-1"></i> Full AC</p>
-                        </div> --}}
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl" style="transform: translate(-50%, 50%)">
+                            <p class="text-dark-400 font-bold text-lg"><i class="fas fa-shield-alt mr-1"></i> 24/7 Keamanan</p>
+                        </div>
                     </img>
                 </div>
             </div>
