@@ -127,8 +127,8 @@
                         <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
                             <p class="text-danger-400 font-bold text-lg"><i class="fas fa-heart-pulse mr-1"></i> Full AC</p>
                         </div>
-                        <div class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl" style="transform: translate(-50%, 50%)">
-                            <p class="text-dark-400 font-bold text-lg"><i class="fas fa-shield-alt mr-1"></i> 24/7 Keamanan</p>
+                        <div class="absolute -bottom-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
+                            <p class="text-success-400 font-bold text-lg"><i class="fas fa-shield-alt mr-1"></i> 24/7 Keamanan</p>
                         </div>
                     </img>
                 </div>
