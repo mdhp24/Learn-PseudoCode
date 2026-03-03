@@ -402,11 +402,26 @@
     </section>
 
     {{-- ===== CLASSES ===== --}}
-    <section id="classes" class="py-20 bg-dark-950 relative overflow-hidden">
-        <!-- Background Decoration -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
+    <section id="classes" class="py-20 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
+        <!-- Multi-Layer Background Decoration -->
+        <div class="absolute inset-0">
+            <!-- Animated Gradient Orbs -->
+            <div class="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-danger-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-blue-600 rounded-full blur-3xl opacity-10" style="animation: float 6s ease-in-out infinite;"></div>
+            <div class="absolute bottom-20 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10" style="animation: float 8s ease-in-out infinite reverse;"></div>
+            <div class="absolute bottom-10 right-1/3 w-72 h-72 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+            
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
+            
+            <!-- Diagonal Lines -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-0 left-0 w-full h-full" style="background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 115, 22, 0.03) 35px, rgba(249, 115, 22, 0.03) 70px);"></div>
+            </div>
+            
+            <!-- Light Spots -->
+            <div class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-danger-400/10 to-transparent rounded-full blur-2xl"></div>
         </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -447,56 +462,85 @@
                     $popularClasses = ['HIIT', 'Zumba', 'CrossFit']; // Kelas populer
                 @endphp
                 @foreach ($classes as $i => $class)
-                    <div class="group relative bg-gradient-to-br from-dark-800 to-dark-900 border border-dark-700 rounded-2xl p-6 transition-all duration-500 hover:border-transparent overflow-hidden">
-                        <!-- Hover Gradient Border Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl"></div>
-                        <div class="absolute inset-[1px] bg-dark-800 rounded-2xl"></div>
+                    <div class="group relative bg-gradient-to-br from-dark-800/90 via-dark-850 to-dark-900/90 backdrop-blur-sm border border-dark-700/50 rounded-3xl p-7 transition-all duration-700 hover:border-transparent overflow-hidden hover:shadow-2xl hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/20 hover:-translate-y-2 cursor-pointer">
+                        <!-- Animated Background Gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-3xl"></div>
+                        
+                        <!-- Glowing Border Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10"></div>
+                        <div class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl"></div>
+                        
+                        <!-- Decorative Corner Accent -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-10 rounded-bl-full -z-0"></div>
+                        <div class="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr {{ $classColors[$i % count($classColors)] }} opacity-5 rounded-tr-full -z-0"></div>
                         
                         <!-- Content -->
                         <div class="relative z-10">
                             <!-- Popular Badge -->
                             @if(in_array($class->name, $popularClasses))
-                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                                    <i class="fas fa-star mr-1"></i>Populer
+                                <div class="absolute -top-3 -right-3 bg-gradient-to-r from-primary-500 via-primary-600 to-danger-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xl animate-pulse">
+                                    <i class="fas fa-star mr-1 text-yellow-300"></i>Populer
                                 </div>
                             @endif
                             
-                            <!-- Icon with Glow -->
-                            <div class="relative w-16 h-16 mb-4">
-                                <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-2xl blur-md opacity-50 group-hover:opacity-100 group-hover:blur-lg transition-all duration-500"></div>
-                                <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                                    <i class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                            <!-- Icon with Enhanced Glow -->
+                            <div class="relative w-20 h-20 mb-5 group-hover:mb-6 transition-all duration-500">
+                                <!-- Outer Glow -->
+                                <div class="absolute -inset-2 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-xl opacity-0 group-hover:opacity-70 group-hover:blur-2xl transition-all duration-700 group-hover:animate-pulse"></div>
+                                
+                                <!-- Middle Glow -->
+                                <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500"></div>
+                                
+                                <!-- Icon Container -->
+                                <div class="relative w-20 h-20 rounded-3xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 group-hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/50">
+                                    <i class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-3xl group-hover:scale-125 transition-transform duration-500"></i>
                                 </div>
                             </div>
                             
-                            <!-- Class Name -->
-                            <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }} group-hover:bg-clip-text transition-all duration-300">
-                                {{ $class->name }}
-                            </h3>
+                            <!-- Class Name with Gradient -->
+                            <div class="mb-3">
+                                <h3 class="font-heading font-black text-2xl text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }} group-hover:bg-clip-text transition-all duration-500 leading-tight">
+                                    {{ $class->name }}
+                                </h3>
+                                <div class="h-1 w-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} rounded-full group-hover:w-16 transition-all duration-500"></div>
+                            </div>
                             
                             <!-- Description -->
-                            <p class="text-dark-400 text-sm leading-relaxed mb-4 group-hover:text-dark-300 transition-colors">
-                                {{ Str::limit($class->description, 80) }}
+                            <p class="text-dark-400 text-sm leading-relaxed mb-5 group-hover:text-dark-300 transition-colors duration-300 min-h-[3rem]">
+                                {{ Str::limit($class->description, 75) }}
                             </p>
                             
-                            <!-- Info Tags -->
-                            <div class="flex items-center gap-3 text-xs">
-                                <span class="flex items-center gap-1.5 px-3 py-1.5 bg-dark-700/50 rounded-lg text-dark-400 group-hover:bg-dark-700 group-hover:text-dark-300 transition-all">
-                                    <i class="fas fa-clock"></i>
-                                    <span class="font-medium">{{ $class->duration_minutes }} min</span>
-                                </span>
-                                <span class="flex items-center gap-1.5 px-3 py-1.5 bg-dark-700/50 rounded-lg text-dark-400 group-hover:bg-dark-700 group-hover:text-dark-300 transition-all">
-                                    <i class="fas fa-signal"></i>
-                                    <span class="font-medium">{{ $class->difficulty }}</span>
-                                </span>
+                            <!-- Divider Line -->
+                            <div class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-4 group-hover:via-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30 transition-colors duration-500"></div>
+                            
+                            <!-- Info Tags with Icons -->
+                            <div class="flex items-center gap-2.5 text-xs mb-4">
+                                <div class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
+                                    <i class="fas fa-clock text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
+                                    <span class="font-semibold">{{ $class->duration_minutes }} min</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
+                                    <i class="fas fa-signal text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
+                                    <span class="font-semibold">{{ $class->difficulty }}</span>
+                                </div>
                             </div>
                             
-                            <!-- Hover Arrow -->
-                            <div class="mt-4 flex items-center text-primary-400 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                                <span class="text-sm font-semibold">Lihat Detail</span>
-                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            <!-- CTA Button with Shine Effect -->
+                            <div class="relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} opacity-100"></div>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                                <div class="relative px-4 py-2.5 text-center">
+                                    <span class="text-white font-bold text-sm flex items-center justify-center gap-2">
+                                        <span>Gabung Kelas</span>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                                    </span>
+                                </div>
                             </div>
                         </div>
+                        
+                        <!-- Floating Particles Effect -->
+                        <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm"></div>
+                        <div class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm"></div>
                     </div>
                 @endforeach
             </div>
