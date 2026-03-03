@@ -226,27 +226,30 @@
                     <div class="relative">
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
+                        
+                        <!-- Top Left Badge -->
                         <div
-                            class="absolute -top-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
-                            <p class="text-primary-400 font-bold text-lg"><i class="fas fa-dumbbell mr-1"></i> 50+ Alat
-                            </p>
+                            class="absolute -top-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-users mr-1.5"></i>
+                                Komunitas Aktif</p>
                         </div>
+                        
+                        <!-- Top Right Badge -->
                         <div
-                            class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
-                            <p class="text-danger-400 font-bold text-lg"><i class="fas fa-heart-pulse mr-1"></i> Full AC
-                            </p>
+                            class="absolute -top-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-dumbbell mr-1.5"></i> 50+ Alat</p>
                         </div>
+                        
+                        <!-- Bottom Left Badge -->
                         <div
-                            class="absolute -bottom-4 -right-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
-                            <p class="text-success-400 font-bold text-lg"><i class="fas fa-shield-alt mr-1"></i> 24/7
-                                Keamanan</p>
+                            class="absolute -bottom-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i> Full AC</p>
                         </div>
-                        <div class="div">
-                            <div
-                                class="absolute -top-4 -left-4 bg-dark-800 border border-dark-700 rounded-2xl px-4 py-3 shadow-xl">
-                                <p class="text-primary-400 font-bold text-lg"><i class="fas fa-users mr-1"></i>
-                                    Komunitas Aktif</p>
-                            </div>
+                        
+                        <!-- Bottom Right Badge -->
+                        <div
+                            class="absolute -bottom-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-success-400 font-semibold text-sm"><i class="fas fa-shield-alt mr-1.5"></i> 24/7 Keamanan</p>
                         </div>
                         </img>
                     </div>
