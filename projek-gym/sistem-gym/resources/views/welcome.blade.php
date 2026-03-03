@@ -115,7 +115,7 @@
 
         @keyframes border-flow {
             0% {
-                transform: translateX(-10%);
+                transform: translateX(-100%);
             }
             100% {
                 transform: translateX(100%);
@@ -147,6 +147,62 @@
             100% {
                 transform: translateY(-100px) translateX(50px) rotate(360deg);
                 opacity: 0;
+            }
+        }
+
+        @keyframes gym-float {
+            0% {
+                transform: translateY(20px) rotate(-10deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(20px) rotate(-10deg);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes dumbbell-lift {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-30px) rotate(-15deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(-40px) rotate(0deg) scale(1.15);
+            }
+            75% {
+                transform: translateY(-30px) rotate(15deg) scale(1.1);
+            }
+        }
+
+        @keyframes barbell-rotate {
+            0% {
+                transform: rotate(0deg) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes pulse-gym {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.8;
             }
         }
 
@@ -640,11 +696,47 @@
             <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent" style="animation: border-flow 3s linear infinite reverse;"></div>
         </div>
         
-        <!-- Floating Particles -->
-        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full" style="animation: float-particles 6s ease-in-out infinite;"></div>
-        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full" style="animation: float-particles 8s ease-in-out infinite 1s;"></div>
-        <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full" style="animation: float-particles 7s ease-in-out infinite 2s;"></div>
-        <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full" style="animation: float-particles 9s ease-in-out infinite 1.5s;"></div>
+        <!-- Animated Gym Icons -->
+        <!-- Floating Dumbbells -->
+        <div class="absolute top-20 left-10 text-white/30 text-4xl" style="animation: gym-float 4s ease-in-out infinite;">
+            <i class="fas fa-dumbbell"></i>
+        </div>
+        <div class="absolute top-32 right-16 text-yellow-200/40 text-5xl" style="animation: dumbbell-lift 3s ease-in-out infinite;">
+            <i class="fas fa-dumbbell"></i>
+        </div>
+        <div class="absolute bottom-24 left-20 text-white/25 text-3xl" style="animation: gym-float 5s ease-in-out infinite 1s;">
+            <i class="fas fa-dumbbell"></i>
+        </div>
+        
+        <!-- Rotating Barbells -->
+        <div class="absolute top-1/3 left-1/4 text-white/20 text-6xl" style="animation: barbell-rotate 8s linear infinite;">
+            <i class="fas fa-grip-lines"></i>
+        </div>
+        <div class="absolute bottom-1/4 right-1/4 text-yellow-100/25 text-5xl" style="animation: barbell-rotate 10s linear infinite reverse;">
+            <i class="fas fa-grip-lines"></i>
+        </div>
+        
+        <!-- Pulsing Gym Symbols -->
+        <div class="absolute top-1/2 left-12 text-white/30 text-4xl" style="animation: pulse-gym 2s ease-in-out infinite;">
+            <i class="fas fa-heart-pulse"></i>
+        </div>
+        <div class="absolute top-1/4 right-20 text-yellow-200/35 text-4xl" style="animation: pulse-gym 2.5s ease-in-out infinite 0.5s;">
+            <i class="fas fa-fire-flame-curved"></i>
+        </div>
+        <div class="absolute bottom-1/3 right-12 text-white/25 text-3xl" style="animation: pulse-gym 3s ease-in-out infinite 1s;">
+            <i class="fas fa-trophy"></i>
+        </div>
+        
+        <!-- Additional Fitness Icons -->
+        <div class="absolute top-2/3 left-1/3 text-white/20 text-4xl" style="animation: gym-float 6s ease-in-out infinite 2s;">
+            <i class="fas fa-weight-hanging"></i>
+        </div>
+        <div class="absolute bottom-20 right-1/3 text-yellow-100/30 text-3xl" style="animation: dumbbell-lift 4s ease-in-out infinite 1.5s;">
+            <i class="fas fa-medal"></i>
+        </div>
+        <div class="absolute top-40 left-1/2 text-white/25 text-5xl" style="animation: barbell-rotate 12s linear infinite;">
+            <i class="fas fa-bullseye"></i>
+        </div>
         
         <!-- Corner Glow Effects -->
         <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite;"></div>
