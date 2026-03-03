@@ -115,7 +115,7 @@
 
         @keyframes border-flow {
             0% {
-                transform: translateX(-100%);
+                transform: translateX(-10%);
             }
             100% {
                 transform: translateX(100%);
