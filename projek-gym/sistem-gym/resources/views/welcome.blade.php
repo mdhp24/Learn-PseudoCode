@@ -113,6 +113,47 @@
             animation: pulse-ring 2s ease-in-out infinite;
         }
 
+        @keyframes border-flow {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes border-glow {
+            0%, 100% {
+                opacity: 0.5;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 237, 74, 0.8);
+            }
+        }
+
+        @keyframes float-particles {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .border-animate {
+            animation: border-glow 3s ease-in-out infinite;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -586,7 +627,31 @@
     </section>
 
     {{-- ===== CTA ===== --}}
-    <section class="py-15 bg-gradient-to-r from-orange-500 via-orange-600 to-blue-900 relative overflow-hidden">
+    <section class="py-15 bg-orange-500 relative overflow-hidden">
+        <!-- Animated Top Border -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate"></div>
+        <div class="absolute top-0 left-0 right-0 h-1 overflow-hidden">
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent" style="animation: border-flow 3s linear infinite;"></div>
+        </div>
+        
+        <!-- Animated Bottom Border -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent" style="animation: border-flow 3s linear infinite reverse;"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full" style="animation: float-particles 6s ease-in-out infinite;"></div>
+        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full" style="animation: float-particles 8s ease-in-out infinite 1s;"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full" style="animation: float-particles 7s ease-in-out infinite 2s;"></div>
+        <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full" style="animation: float-particles 9s ease-in-out infinite 1.5s;"></div>
+        
+        <!-- Corner Glow Effects -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite;"></div>
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 1s;"></div>
+        <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 2s;"></div>
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 3s;"></div>
+        
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl"></div>
