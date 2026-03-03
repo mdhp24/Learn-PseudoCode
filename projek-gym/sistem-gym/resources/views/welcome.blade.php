@@ -402,16 +402,26 @@
     </section>
 
     {{-- ===== CLASSES ===== --}}
-    <section id="classes" class="py-20 bg-dark-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="classes" class="py-20 bg-dark-950 relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <span
-                    class="inline-block px-10 py-3 bg-danger-500/10 text-danger-400 text-sm font-semibold rounded-full mb-4">KELAS
-                    KAMI</span>
-                <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">Kelas Fitness Terbaik</h2>
+                <div class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-danger-500/10 to-primary-500/10 border border-danger-500/20 rounded-full mb-4">
+                    <span class="w-2 h-2 bg-danger-500 rounded-full animate-pulse"></span>
+                    <span class="text-danger-400 text-sm font-bold tracking-wider">KELAS KAMI</span>
+                </div>
+                <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">
+                    Kelas Fitness <span class="bg-gradient-to-r from-danger-400 to-primary-400 bg-clip-text text-transparent">Terbaik</span>
+                </h2>
                 <p class="text-dark-400 text-lg max-w-2xl mx-auto">Dipandu oleh trainer bersertifikat untuk hasil
                     maksimal</p>
             </div>
+            
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @php
                     $classIcons = [
@@ -434,19 +444,58 @@
                         'from-cyan-500 to-blue-500',
                         'from-orange-500 to-red-600',
                     ];
+                    $popularClasses = ['HIIT', 'Zumba', 'CrossFit']; // Kelas populer
                 @endphp
                 @foreach ($classes as $i => $class)
-                    <div class="card-hover bg-dark-800 border border-dark-700 rounded-2xl p-6 group">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-xl"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">{{ $class->name }}</h3>
-                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
-                            {{ Str::limit($class->description, 80) }}</p>
-                        <div class="flex items-center gap-4 text-xs text-dark-500">
-                            <span><i class="fas fa-clock mr-1"></i> {{ $class->duration_minutes }} menit</span>
-                            <span><i class="fas fa-signal mr-1"></i> {{ $class->difficulty }}</span>
+                    <div class="group relative bg-gradient-to-br from-dark-800 to-dark-900 border border-dark-700 rounded-2xl p-6 transition-all duration-500 hover:border-transparent overflow-hidden">
+                        <!-- Hover Gradient Border Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl"></div>
+                        <div class="absolute inset-[1px] bg-dark-800 rounded-2xl"></div>
+                        
+                        <!-- Content -->
+                        <div class="relative z-10">
+                            <!-- Popular Badge -->
+                            @if(in_array($class->name, $popularClasses))
+                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    <i class="fas fa-star mr-1"></i>Populer
+                                </div>
+                            @endif
+                            
+                            <!-- Icon with Glow -->
+                            <div class="relative w-16 h-16 mb-4">
+                                <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-2xl blur-md opacity-50 group-hover:opacity-100 group-hover:blur-lg transition-all duration-500"></div>
+                                <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                    <i class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Class Name -->
+                            <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }} group-hover:bg-clip-text transition-all duration-300">
+                                {{ $class->name }}
+                            </h3>
+                            
+                            <!-- Description -->
+                            <p class="text-dark-400 text-sm leading-relaxed mb-4 group-hover:text-dark-300 transition-colors">
+                                {{ Str::limit($class->description, 80) }}
+                            </p>
+                            
+                            <!-- Info Tags -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="flex items-center gap-1.5 px-3 py-1.5 bg-dark-700/50 rounded-lg text-dark-400 group-hover:bg-dark-700 group-hover:text-dark-300 transition-all">
+                                    <i class="fas fa-clock"></i>
+                                    <span class="font-medium">{{ $class->duration_minutes }} min</span>
+                                </span>
+                                <span class="flex items-center gap-1.5 px-3 py-1.5 bg-dark-700/50 rounded-lg text-dark-400 group-hover:bg-dark-700 group-hover:text-dark-300 transition-all">
+                                    <i class="fas fa-signal"></i>
+                                    <span class="font-medium">{{ $class->difficulty }}</span>
+                                </span>
+                            </div>
+                            
+                            <!-- Hover Arrow -->
+                            <div class="mt-4 flex items-center text-primary-400 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="text-sm font-semibold">Lihat Detail</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
                         </div>
                     </div>
                 @endforeach
