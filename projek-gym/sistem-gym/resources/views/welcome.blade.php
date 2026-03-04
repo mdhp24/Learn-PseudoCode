@@ -675,41 +675,175 @@
     </section>
 
     {{-- ===== FOOTER ===== --}}
-    <footer class="bg-dark-950 border-t border-dark-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
-                            class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-500">
+    <footer class="relative bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 border-t border-primary-500/20">
+        {{-- Decorative Background Elements --}}
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            {{-- Main Footer Content --}}
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                {{-- Brand Section --}}
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6 group">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-primary-500/30 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all duration-300"></div>
+                            <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
+                                class="relative w-12 h-12 rounded-full object-cover ring-2 ring-primary-500 group-hover:ring-primary-400 transition-all duration-300">
+                        </div>
                         <div>
-                            <h3 class="font-heading font-bold text-white">MDHP GYM</h3>
-                            <p class="text-xs text-primary-400">Your Fitness Partner</p>
+                            <h3 class="font-heading font-bold text-xl text-white">MDHP GYM</h3>
+                            <p class="text-xs text-primary-400 font-medium">Your Fitness Partner</p>
                         </div>
                     </div>
-                    <p class="text-dark-400 text-sm leading-relaxed">Tempat fitness terbaik untuk transformasi tubuh
-                        dan kesehatanmu. Kesehatan itu mahal.</p>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-6">
+                        Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu. 
+                        <span class="text-primary-400 font-semibold">Kesehatan itu mahal.</span>
+                    </p>
+                    
+                    {{-- Social Media Links --}}
+                    <div class="flex gap-3">
+                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                            <i class="fab fa-facebook-f text-dark-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                            <i class="fab fa-instagram text-dark-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                            <i class="fab fa-youtube text-dark-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                            <i class="fab fa-tiktok text-dark-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-heading font-bold text-white mb-4">Jam Operasional</h4>
-                    <ul class="space-y-2 text-sm text-dark-400">
-                        <li><i class="fas fa-clock text-primary-500 w-5"></i> Setiap Hari 24 Jam</li>
+
+                {{-- Quick Links --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#tentang" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Tentang Kami
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#paket" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Paket Membership
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#kelas" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Kelas & Trainer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#fasilitas" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Fasilitas
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-heading font-bold text-white mb-4">Kontak</h4>
-                    <ul class="space-y-2 text-sm text-dark-400">
-                        <li><i class="fas fa-map-marker-alt text-primary-500 w-5"></i> Jl. Malang Kota No. 11, Malang
+
+                {{-- Operating Hours --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Jam Operasional
+                    </h4>
+                    <div class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-5 hover:border-primary-500/50 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center animate-pulse">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg">24 Jam</p>
+                                <p class="text-dark-400 text-xs">Setiap Hari</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-400 text-xs font-medium">
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Buka sepanjang waktu untuk Anda
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Contact Info --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Hubungi Kami
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="group">
+                            <div class="flex items-start gap-3 text-sm">
+                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                        Jl. Malang Kota No. 11, Malang
+                                    </p>
+                                </div>
+                            </div>
                         </li>
-                        <li><i class="fas fa-phone text-primary-500 w-5"></i> +62 812-3456-7890</li>
-                        <li><i class="fas fa-envelope text-primary-500 w-5"></i> info@mdhpgym.com</li>
+                        <li class="group">
+                            <a href="tel:+6281234567890" class="flex items-start gap-3 text-sm">
+                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i class="fas fa-phone text-primary-500 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                        +62 812-3456-7890
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="group">
+                            <a href="mailto:info@mdhpgym.com" class="flex items-start gap-3 text-sm">
+                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i class="fas fa-envelope text-primary-500 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                        info@mdhpgym.com
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-dark-800 mt-8 pt-8 text-center">
-                <p class="text-dark-500 text-sm">&copy; {{ date('Y') }} MDHP GYM. All rights reserved.</p>
+
+            {{-- Bottom Bar --}}
+            <div class="border-t border-dark-800/50 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-dark-500 text-sm">
+                        &copy; {{ date('Y') }} <span class="text-primary-400 font-semibold">MDHP GYM</span>. 
+                        All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-6 text-xs text-dark-500">
+                        <a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
+                        <span class="w-1 h-1 bg-dark-700 rounded-full"></span>
+                        <a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a>
+                        <span class="w-1 h-1 bg-dark-700 rounded-full"></span>
+                        <a href="#" class="hover:text-primary-400 transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        {{-- Decorative Top Border --}}
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent"></div>
     </footer>
 
 </body>
