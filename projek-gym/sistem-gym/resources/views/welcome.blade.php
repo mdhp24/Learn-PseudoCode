@@ -567,7 +567,7 @@
                             </div>
                             
                             <!-- CTA Button with Shine Effect -->
-                            <div class="relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                            <a href="{{ route('login') }}" class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} opacity-100"></div>
                                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                                 <div class="relative px-4 py-2.5 text-center">
@@ -576,7 +576,7 @@
                                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                                     </span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         
                         <!-- Floating Particles Effect -->
