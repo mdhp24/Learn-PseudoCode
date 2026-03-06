@@ -117,16 +117,20 @@
             0% {
                 transform: translateX(-10%);
             }
+
             100% {
                 transform: translateX(100%);
             }
         }
 
         @keyframes border-glow {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.5;
                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             }
+
             50% {
                 opacity: 1;
                 box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 237, 74, 0.8);
@@ -138,12 +142,15 @@
                 transform: translateY(0) translateX(0) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-100px) translateX(50px) rotate(360deg);
                 opacity: 0;
@@ -267,30 +274,33 @@
                     <div class="relative">
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
-                        
+
                         <!-- Top Left Badge -->
                         <div
                             class="absolute -top-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-users mr-1.5"></i>
                                 Komunitas Aktif</p>
                         </div>
-                        
+
                         <!-- Top Right Badge -->
                         <div
                             class="absolute -top-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
-                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-dumbbell mr-1.5"></i> 50+ Alat</p>
+                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-dumbbell mr-1.5"></i> 50+
+                                Alat</p>
                         </div>
-                        
+
                         <!-- Bottom Left Badge -->
                         <div
                             class="absolute -bottom-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
-                            <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i> Full AC</p>
+                            <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i>
+                                Full AC</p>
                         </div>
-                        
+
                         <!-- Bottom Right Badge -->
                         <div
                             class="absolute -bottom-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
-                            <p class="text-success-400 font-semibold text-sm"><i class="fas fa-shield-alt mr-1.5"></i> 24/7 Keamanan</p>
+                            <p class="text-success-400 font-semibold text-sm"><i class="fas fa-shield-alt mr-1.5"></i>
+                                24/7 Keamanan</p>
                         </div>
                         </img>
                     </div>
@@ -443,41 +453,58 @@
     </section>
 
     {{-- ===== CLASSES ===== --}}
-    <section id="classes" class="py-20 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
+    <section id="classes"
+        class="py-20 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
         <!-- Multi-Layer Background Decoration -->
         <div class="absolute inset-0">
             <!-- Animated Gradient Orbs -->
-            <div class="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-danger-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-            <div class="absolute top-40 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-blue-600 rounded-full blur-3xl opacity-10" style="animation: float 6s ease-in-out infinite;"></div>
-            <div class="absolute bottom-20 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10" style="animation: float 8s ease-in-out infinite reverse;"></div>
-            <div class="absolute bottom-10 right-1/3 w-72 h-72 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-            
+            <div
+                class="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-danger-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+            <div class="absolute top-40 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-blue-600 rounded-full blur-3xl opacity-10"
+                style="animation: float 6s ease-in-out infinite;"></div>
+            <div class="absolute bottom-20 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10"
+                style="animation: float 8s ease-in-out infinite reverse;"></div>
+            <div
+                class="absolute bottom-10 right-1/3 w-72 h-72 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+
             <!-- Grid Pattern Overlay -->
-            <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
-            
+            <div class="absolute inset-0 opacity-5"
+                style="background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px); background-size: 50px 50px;">
+            </div>
+
             <!-- Diagonal Lines -->
             <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-0 left-0 w-full h-full" style="background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 115, 22, 0.03) 35px, rgba(249, 115, 22, 0.03) 70px);"></div>
+                <div class="absolute top-0 left-0 w-full h-full"
+                    style="background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 115, 22, 0.03) 35px, rgba(249, 115, 22, 0.03) 70px);">
+                </div>
             </div>
-            
+
             <!-- Light Spots -->
-            <div class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-danger-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div
+                class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl">
+            </div>
+            <div
+                class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-danger-400/10 to-transparent rounded-full blur-2xl">
+            </div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-danger-500/10 to-primary-500/10 border border-danger-500/20 rounded-full mb-4">
+                <div
+                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-danger-500/10 to-primary-500/10 border border-danger-500/20 rounded-full mb-4">
                     <span class="w-2 h-2 bg-danger-500 rounded-full animate-pulse"></span>
                     <span class="text-danger-400 text-sm font-bold tracking-wider">KELAS KAMI</span>
                 </div>
                 <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-4">
-                    Kelas Fitness <span class="bg-gradient-to-r from-danger-400 to-primary-400 bg-clip-text text-transparent">Terbaik</span>
+                    Kelas Fitness <span
+                        class="bg-gradient-to-r from-danger-400 to-primary-400 bg-clip-text text-transparent">Terbaik</span>
                 </h2>
                 <p class="text-dark-400 text-lg max-w-2xl mx-auto">Dipandu oleh trainer bersertifikat untuk hasil
                     maksimal</p>
             </div>
-            
+
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @php
                     $classIcons = [
@@ -503,85 +530,123 @@
                     $popularClasses = ['HIIT', 'Zumba', 'CrossFit']; // Kelas populer
                 @endphp
                 @foreach ($classes as $i => $class)
-                    <div class="group relative bg-gradient-to-br from-dark-800/90 via-dark-850 to-dark-900/90 backdrop-blur-sm border border-dark-700/50 rounded-3xl p-7 transition-all duration-700 hover:border-transparent overflow-hidden hover:shadow-2xl hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/20 hover:-translate-y-2 cursor-pointer">
+                    <div
+                        class="group relative bg-gradient-to-br from-dark-800/90 via-dark-850 to-dark-900/90 backdrop-blur-sm border border-dark-700/50 rounded-3xl p-7 transition-all duration-700 hover:border-transparent overflow-hidden hover:shadow-2xl hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/20 hover:-translate-y-2 cursor-pointer">
                         <!-- Animated Background Gradient -->
-                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-3xl"></div>
-                        
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-3xl">
+                        </div>
+
                         <!-- Glowing Border Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10"></div>
-                        <div class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl"></div>
-                        
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10">
+                        </div>
+                        <div
+                            class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl">
+                        </div>
+
                         <!-- Decorative Corner Accent -->
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-10 rounded-bl-full -z-0"></div>
-                        <div class="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr {{ $classColors[$i % count($classColors)] }} opacity-5 rounded-tr-full -z-0"></div>
-                        
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} opacity-10 rounded-bl-full -z-0">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr {{ $classColors[$i % count($classColors)] }} opacity-5 rounded-tr-full -z-0">
+                        </div>
+
                         <!-- Content -->
                         <div class="relative z-10">
                             <!-- Popular Badge -->
-                            @if(in_array($class->name, $popularClasses))
-                                <div class="absolute -top-3 -right-3 bg-gradient-to-r from-primary-500 via-primary-600 to-danger-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xl animate-pulse">
+                            @if (in_array($class->name, $popularClasses))
+                                <div
+                                    class="absolute -top-3 -right-3 bg-gradient-to-r from-primary-500 via-primary-600 to-danger-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xl animate-pulse">
                                     <i class="fas fa-star mr-1 text-yellow-300"></i>Populer
                                 </div>
                             @endif
-                            
+
                             <!-- Icon with Enhanced Glow -->
                             <div class="relative w-20 h-20 mb-5 group-hover:mb-6 transition-all duration-500">
                                 <!-- Outer Glow -->
-                                <div class="absolute -inset-2 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-xl opacity-0 group-hover:opacity-70 group-hover:blur-2xl transition-all duration-700 group-hover:animate-pulse"></div>
-                                
+                                <div
+                                    class="absolute -inset-2 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-xl opacity-0 group-hover:opacity-70 group-hover:blur-2xl transition-all duration-700 group-hover:animate-pulse">
+                                </div>
+
                                 <!-- Middle Glow -->
-                                <div class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500"></div>
-                                
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                                </div>
+
                                 <!-- Icon Container -->
-                                <div class="relative w-20 h-20 rounded-3xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 group-hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/50">
-                                    <i class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-3xl group-hover:scale-125 transition-transform duration-500"></i>
+                                <div
+                                    class="relative w-20 h-20 rounded-3xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 group-hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/50">
+                                    <i
+                                        class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-3xl group-hover:scale-125 transition-transform duration-500"></i>
                                 </div>
                             </div>
-                            
+
                             <!-- Class Name with Gradient -->
                             <div class="mb-3">
-                                <h3 class="font-heading font-black text-2xl text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }} group-hover:bg-clip-text transition-all duration-500 leading-tight">
+                                <h3
+                                    class="font-heading font-black text-2xl text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }} group-hover:bg-clip-text transition-all duration-500 leading-tight">
                                     {{ $class->name }}
                                 </h3>
-                                <div class="h-1 w-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} rounded-full group-hover:w-16 transition-all duration-500"></div>
+                                <div
+                                    class="h-1 w-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} rounded-full group-hover:w-16 transition-all duration-500">
+                                </div>
                             </div>
-                            
+
                             <!-- Description -->
-                            <p class="text-dark-400 text-sm leading-relaxed mb-5 group-hover:text-dark-300 transition-colors duration-300 min-h-[3rem]">
+                            <p
+                                class="text-dark-400 text-sm leading-relaxed mb-5 group-hover:text-dark-300 transition-colors duration-300 min-h-[3rem]">
                                 {{ Str::limit($class->description, 75) }}
                             </p>
-                            
+
                             <!-- Divider Line -->
-                            <div class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-4 group-hover:via-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30 transition-colors duration-500"></div>
-                            
+                            <div
+                                class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-4 group-hover:via-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30 transition-colors duration-500">
+                            </div>
+
                             <!-- Info Tags with Icons -->
                             <div class="flex items-center gap-2.5 text-xs mb-4">
-                                <div class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
-                                    <i class="fas fa-clock text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
+                                <div
+                                    class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
+                                    <i
+                                        class="fas fa-clock text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
                                     <span class="font-semibold">{{ $class->duration_minutes }} min</span>
                                 </div>
-                                <div class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
-                                    <i class="fas fa-signal text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
+                                <div
+                                    class="flex items-center gap-2 px-3.5 py-2 bg-dark-700/40 backdrop-blur-sm rounded-xl text-dark-400 group-hover:bg-gradient-to-r group-hover:{{ $classColors[$i % count($classColors)] }}/20 group-hover:text-white group-hover:shadow-lg transition-all duration-500 border border-dark-600/30 group-hover:border-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/30">
+                                    <i
+                                        class="fas fa-signal text-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}"></i>
                                     <span class="font-semibold">{{ $class->difficulty }}</span>
                                 </div>
                             </div>
-                            
+
                             <!-- CTA Button with Shine Effect -->
-                            <a href="{{ route('login') }}" class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} opacity-100"></div>
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                            <a href="{{ route('login') }}"
+                                class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r {{ $classColors[$i % count($classColors)] }} opacity-100">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                                </div>
                                 <div class="relative px-4 py-2.5 text-center">
                                     <span class="text-white font-bold text-sm flex items-center justify-center gap-2">
                                         <span>Gabung Kelas</span>
-                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        <i
+                                            class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                                     </span>
                                 </div>
                             </a>
                         </div>
-                        
+
                         <!-- Floating Particles Effect -->
-                        <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm"></div>
-                        <div class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm"></div>
+                        <div
+                            class="absolute top-1/4 right-1/4 w-2 h-2 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm">
+                        </div>
+                        <div
+                            class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-{{ explode(' ', $classColors[$i % count($classColors)])[0] }} rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm">
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -589,40 +654,59 @@
     </section>
 
     {{-- ===== TRAINERS ===== --}}
-    <section id="trainers" class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
+    <section id="trainers"
+        class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
         {{-- Multi-Layer Background Decoration --}}
         <div class="absolute inset-0">
             <!-- Animated Gradient Orbs -->
-            <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-gold-500 via-primary-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-            <div class="absolute top-1/3 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full blur-3xl opacity-10" style="animation: float 6s ease-in-out infinite;"></div>
-            <div class="absolute bottom-20 left-1/3 w-96 h-96 bg-gradient-to-br from-danger-500 to-pink-500 rounded-full blur-3xl opacity-10" style="animation: float 8s ease-in-out infinite reverse;"></div>
-            <div class="absolute bottom-32 right-1/4 w-72 h-72 bg-gradient-to-br from-gold-400 to-primary-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-            
+            <div
+                class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-gold-500 via-primary-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+            <div class="absolute top-1/3 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full blur-3xl opacity-10"
+                style="animation: float 6s ease-in-out infinite;"></div>
+            <div class="absolute bottom-20 left-1/3 w-96 h-96 bg-gradient-to-br from-danger-500 to-pink-500 rounded-full blur-3xl opacity-10"
+                style="animation: float 8s ease-in-out infinite reverse;"></div>
+            <div
+                class="absolute bottom-32 right-1/4 w-72 h-72 bg-gradient-to-br from-gold-400 to-primary-500 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+
             <!-- Grid Pattern Overlay -->
-            <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(234, 179, 8, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 179, 8, 0.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
-            
+            <div class="absolute inset-0 opacity-5"
+                style="background-image: linear-gradient(rgba(234, 179, 8, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 179, 8, 0.05) 1px, transparent 1px); background-size: 50px 50px;">
+            </div>
+
             <!-- Diagonal Lines -->
             <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-0 left-0 w-full h-full" style="background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(234, 179, 8, 0.03) 35px, rgba(234, 179, 8, 0.03) 70px);"></div>
+                <div class="absolute top-0 left-0 w-full h-full"
+                    style="background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(234, 179, 8, 0.03) 35px, rgba(234, 179, 8, 0.03) 70px);">
+                </div>
             </div>
-            
+
             <!-- Light Spots -->
-            <div class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-gold-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div
+                class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-gold-400/10 to-transparent rounded-full blur-2xl">
+            </div>
+            <div
+                class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl">
+            </div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-20">
-                <div class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-gold-500/10 to-primary-500/10 border border-gold-500/20 rounded-full mb-4">
+                <div
+                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-gold-500/10 to-primary-500/10 border border-gold-500/20 rounded-full mb-4">
                     <i class="fas fa-crown text-gold-400 animate-pulse"></i>
                     <span class="text-gold-400 text-sm font-bold tracking-wider">TRAINER KAMI</span>
                 </div>
                 <h2 class="font-heading font-black text-5xl lg:text-6xl text-white mb-6">
-                    <span class="bg-gradient-to-r from-gold-400 via-primary-400 to-gold-400 bg-clip-text text-transparent">Trainer Profesional</span>
+                    <span
+                        class="bg-gradient-to-r from-gold-400 via-primary-400 to-gold-400 bg-clip-text text-transparent">Trainer
+                        Profesional</span>
                 </h2>
-                <p class="text-dark-400 text-xl max-w-3xl mx-auto leading-relaxed">Bimbingan dari para ahli bersertifikat untuk membantu Anda mencapai target fitness dengan maksimal</p>
+                <p class="text-dark-400 text-xl max-w-3xl mx-auto leading-relaxed">Bimbingan dari para ahli
+                    bersertifikat untuk membantu Anda mencapai target fitness dengan maksimal</p>
             </div>
-            
+
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 @php
                     $trainerGradients = [
@@ -651,103 +735,144 @@
                     ];
                 @endphp
                 @foreach ($trainers as $index => $trainer)
-                    <div class="group relative bg-gradient-to-br {{ $trainerGradients[$index % 6] }} backdrop-blur-sm border border-dark-700/50 rounded-3xl overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-2xl hover:-translate-y-3 cursor-pointer">
+                    <div
+                        class="group relative bg-gradient-to-br {{ $trainerGradients[$index % 6] }} backdrop-blur-sm border border-dark-700/50 rounded-3xl overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-2xl hover:-translate-y-3 cursor-pointer">
                         {{-- Animated Gradient Border on Hover --}}
-                        <div class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10"></div>
-                        <div class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl"></div>
-                        
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10">
+                        </div>
+                        <div
+                            class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl">
+                        </div>
+
                         {{-- Top Gradient Bar --}}
-                        <div class="relative h-2 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} group-hover:h-3 transition-all duration-300"></div>
-                        
+                        <div
+                            class="relative h-2 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} group-hover:h-3 transition-all duration-300">
+                        </div>
+
                         {{-- Card Content --}}
                         <div class="relative p-8">
                             {{-- Decorative Corner --}}
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br {{ $trainerGradients[$index % 6] }} opacity-20 rounded-bl-full"></div>
-                            
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br {{ $trainerGradients[$index % 6] }} opacity-20 rounded-bl-full">
+                            </div>
+
                             {{-- Certified Badge --}}
-                            @if($trainer->certification)
-                                <div class="absolute top-6 right-6 bg-gradient-to-r {{ $iconBgColors[$index % 6] }} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
+                            @if ($trainer->certification)
+                                <div
+                                    class="absolute top-6 right-6 bg-gradient-to-r {{ $iconBgColors[$index % 6] }} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
                                     <i class="fas fa-certificate"></i>
                                     <span>Certified</span>
                                 </div>
                             @endif
-                            
+
                             {{-- Profile Image with Enhanced Styling --}}
                             <div class="relative w-32 h-32 mx-auto mb-6 group-hover:mb-7 transition-all duration-500">
                                 {{-- Outer Glow Effect --}}
-                                <div class="absolute -inset-3 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-all duration-700 animate-pulse"></div>
-                                
+                                <div
+                                    class="absolute -inset-3 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-all duration-700 animate-pulse">
+                                </div>
+
                                 {{-- Middle Ring --}}
-                                <div class="absolute -inset-2 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500"></div>
-                                
+                                <div
+                                    class="absolute -inset-2 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                                </div>
+
                                 {{-- Image Container --}}
-                                <div class="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4 ring-dark-700 group-hover:ring-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                                    <div class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-20"></div>
+                                <div
+                                    class="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4 ring-dark-700 group-hover:ring-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-20">
+                                    </div>
                                     <img src="{{ asset('images/logo_gym.png') }}"
-                                        alt="{{ $trainer->user->name ?? 'Trainer' }}" 
+                                        alt="{{ $trainer->user->name ?? 'Trainer' }}"
                                         class="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-700">
                                 </div>
-                                
+
                                 {{-- Status Indicator --}}
-                                <div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-dark-800 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300"></div>
+                                <div
+                                    class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-dark-800 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                </div>
                             </div>
-                            
+
                             {{-- Trainer Info --}}
                             <div class="text-center mb-5">
-                                <h3 class="font-heading font-black text-2xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $trainerBorderColors[$index % 6] }} group-hover:bg-clip-text transition-all duration-500">
+                                <h3
+                                    class="font-heading font-black text-2xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $trainerBorderColors[$index % 6] }} group-hover:bg-clip-text transition-all duration-500">
                                     {{ $trainer->user->name ?? 'Trainer' }}
                                 </h3>
-                                <div class="h-1 w-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} rounded-full mx-auto group-hover:w-20 transition-all duration-500 mb-3"></div>
-                                
-                                {{-- Specialization Badge --}}
-                                <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r {{ $trainerGradients[$index % 6] }} border border-dark-600/30 rounded-full mb-3 group-hover:border-transparent group-hover:shadow-lg transition-all duration-300">
-                                    <i class="fas fa-dumbbell text-primary-400 text-sm"></i>
-                                    <span class="text-primary-400 text-sm font-bold">{{ $trainer->specialization }}</span>
+                                <div
+                                    class="h-1 w-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} rounded-full mx-auto group-hover:w-20 transition-all duration-500 mb-3">
                                 </div>
-                                
+
+                                {{-- Specialization Badge --}}
+                                <div
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r {{ $trainerGradients[$index % 6] }} border border-dark-600/30 rounded-full mb-3 group-hover:border-transparent group-hover:shadow-lg transition-all duration-300">
+                                    <i class="fas fa-dumbbell text-primary-400 text-sm"></i>
+                                    <span
+                                        class="text-primary-400 text-sm font-bold">{{ $trainer->specialization }}</span>
+                                </div>
+
                                 {{-- Certification --}}
-                                <p class="text-dark-400 text-sm leading-relaxed mb-4 group-hover:text-dark-300 transition-colors duration-300 px-4">
+                                <p
+                                    class="text-dark-400 text-sm leading-relaxed mb-4 group-hover:text-dark-300 transition-colors duration-300 px-4">
                                     {{ $trainer->certification }}
                                 </p>
                             </div>
-                            
+
                             {{-- Divider Line --}}
-                            <div class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-5 group-hover:via-gold-500/30 transition-colors duration-500"></div>
-                            
+                            <div
+                                class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-5 group-hover:via-gold-500/30 transition-colors duration-500">
+                            </div>
+
                             {{-- Stats Grid --}}
                             <div class="grid grid-cols-2 gap-4 mb-5">
                                 {{-- Experience --}}
-                                <div class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
+                                <div
+                                    class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
                                     <div class="flex items-center justify-center gap-2 mb-1">
                                         <i class="fas fa-star text-gold-400 text-lg"></i>
-                                        <span class="font-heading font-black text-2xl text-white">{{ $trainer->experience_years ?? 3 }}</span>
+                                        <span
+                                            class="font-heading font-black text-2xl text-white">{{ $trainer->experience_years ?? 3 }}</span>
                                     </div>
-                                    <p class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">Tahun Experience</p>
+                                    <p
+                                        class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">
+                                        Tahun Experience</p>
                                 </div>
-                                
+
                                 {{-- Hourly Rate --}}
-                                <div class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
+                                <div
+                                    class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
                                     <div class="flex items-center justify-center gap-1 mb-1">
                                         <i class="fas fa-money-bill-wave text-green-400 text-sm"></i>
-                                        <span class="font-heading font-black text-lg text-white">{{ number_format($trainer->hourly_rate / 1000, 0) }}K</span>
+                                        <span
+                                            class="font-heading font-black text-lg text-white">{{ number_format($trainer->hourly_rate / 1000, 0) }}K</span>
                                     </div>
-                                    <p class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">Per Jam</p>
+                                    <p
+                                        class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">
+                                        Per Jam</p>
                                 </div>
                             </div>
-                            
+
                             {{-- CTA Button with Shine Effect --}}
-                            <a href="{{ route('login') }}" class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} opacity-100"></div>
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                            <a href="{{ route('login') }}"
+                                class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} opacity-100">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                                </div>
                                 <div class="relative px-6 py-3 text-center">
                                     <span class="text-white font-bold text-sm flex items-center justify-center gap-2">
                                         <i class="fas fa-user-plus"></i>
                                         <span>Booking Trainer</span>
-                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        <i
+                                            class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                                     </span>
                                 </div>
                             </a>
-                            
+
                             {{-- Alternative Info Display (when not hovering) --}}
                             <div class="group-hover:hidden flex items-center justify-center gap-4 text-sm">
                                 <div class="flex items-center gap-2 text-dark-500">
@@ -761,28 +886,35 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         {{-- Floating Particles Effect --}}
-                        <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-gold-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm"></div>
-                        <div class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-primary-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm"></div>
+                        <div
+                            class="absolute top-1/4 right-1/4 w-2 h-2 bg-gold-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm">
+                        </div>
+                        <div
+                            class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-primary-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm">
+                        </div>
                     </div>
                 @endforeach
             </div>
-            
+
             {{-- Additional Info Section --}}
             <div class="mt-16 text-center">
                 <div class="inline-flex flex-wrap items-center justify-center gap-8 text-sm text-dark-400">
-                    <div class="flex items-center gap-3 group cursor-pointer">
-                        <div class="w-12 h-12 bg-gradient-to-br from-gold-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <a href="{{ route('login') }}" class="flex items-center gap-3 group cursor-pointer">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-gold-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-user-graduate text-white text-lg"></i>
                         </div>
+
                         <div class="text-left">
                             <p class="text-white font-bold">Bersertifikat</p>
                             <p class="text-xs text-dark-500">Trainer Profesional</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="flex items-center gap-3 group cursor-pointer">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-comments text-white text-lg"></i>
                         </div>
                         <div class="text-left">
@@ -791,7 +923,8 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-3 group cursor-pointer">
-                        <div class="w-12 h-12 bg-gradient-to-br from-danger-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-danger-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-chart-line text-white text-lg"></i>
                         </div>
                         <div class="text-left">
@@ -800,7 +933,8 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-3 group cursor-pointer">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-trophy text-white text-lg"></i>
                         </div>
                         <div class="text-left">
@@ -816,29 +950,43 @@
     {{-- ===== CTA ===== --}}
     <section class="py-15 bg-orange-500 relative overflow-hidden">
         <!-- Animated Top Border -->
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate"></div>
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate">
+        </div>
         <div class="absolute top-0 left-0 right-0 h-1 overflow-hidden">
-            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent" style="animation: border-flow 3s linear infinite;"></div>
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent"
+                style="animation: border-flow 3s linear infinite;"></div>
         </div>
-        
+
         <!-- Animated Bottom Border -->
-        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
-            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent" style="animation: border-flow 3s linear infinite reverse;"></div>
+        <div
+            class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate">
         </div>
-        
+        <div class="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent"
+                style="animation: border-flow 3s linear infinite reverse;"></div>
+        </div>
+
         <!-- Floating Particles -->
-        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full" style="animation: float-particles 6s ease-in-out infinite;"></div>
-        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full" style="animation: float-particles 8s ease-in-out infinite 1s;"></div>
-        <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full" style="animation: float-particles 7s ease-in-out infinite 2s;"></div>
-        <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full" style="animation: float-particles 9s ease-in-out infinite 1.5s;"></div>
-        
+        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full"
+            style="animation: float-particles 6s ease-in-out infinite;"></div>
+        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full"
+            style="animation: float-particles 8s ease-in-out infinite 1s;"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full"
+            style="animation: float-particles 7s ease-in-out infinite 2s;"></div>
+        <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full"
+            style="animation: float-particles 9s ease-in-out infinite 1.5s;"></div>
+
         <!-- Corner Glow Effects -->
-        <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite;"></div>
-        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 1s;"></div>
-        <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 2s;"></div>
-        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl" style="animation: border-glow 4s ease-in-out infinite 3s;"></div>
-        
+        <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl"
+            style="animation: border-glow 4s ease-in-out infinite;"></div>
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl"
+            style="animation: border-glow 4s ease-in-out infinite 1s;"></div>
+        <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl"
+            style="animation: border-glow 4s ease-in-out infinite 2s;"></div>
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl"
+            style="animation: border-glow 4s ease-in-out infinite 3s;"></div>
+
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl"></div>
@@ -876,7 +1024,9 @@
                 <div class="md:col-span-1">
                     <div class="flex items-center gap-3 mb-6 group">
                         <div class="relative">
-                            <div class="absolute inset-0 bg-primary-500/30 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all duration-300"></div>
+                            <div
+                                class="absolute inset-0 bg-primary-500/30 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all duration-300">
+                            </div>
                             <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
                                 class="relative w-12 h-12 rounded-full object-cover ring-2 ring-primary-500 group-hover:ring-primary-400 transition-all duration-300">
                         </div>
@@ -886,22 +1036,26 @@
                         </div>
                     </div>
                     <p class="text-dark-400 text-sm leading-relaxed mb-6">
-                        Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu. 
+                        Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu.
                         <span class="text-primary-400 font-semibold">Kesehatan itu mahal.</span>
                     </p>
-                    
+
                     {{-- Social Media Links --}}
                     <div class="flex gap-3">
-                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                        <a href="#"
+                            class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-facebook-f text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                        <a href="#"
+                            class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-instagram text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                        <a href="#"
+                            class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-youtube text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
+                        <a href="#"
+                            class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-tiktok text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
                     </div>
@@ -915,26 +1069,34 @@
                     </h4>
                     <ul class="space-y-3">
                         <li>
-                            <a href="#home" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
-                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                            <a href="#home"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
                                 Tentang Kami
                             </a>
                         </li>
                         <li>
-                            <a href="#packages" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
-                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                            <a href="#packages"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
                                 Paket Membership
                             </a>
                         </li>
                         <li>
-                            <a href="#classes" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
-                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                            <a href="#classes"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
                                 Kelas & Trainer
                             </a>
                         </li>
                         <li>
-                            <a href="#trainers" class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
-                                <i class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                            <a href="#trainers"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
                                 Personal Trainer
                             </a>
                         </li>
@@ -947,9 +1109,11 @@
                         <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
                         Jam Operasional
                     </h4>
-                    <div class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-5 hover:border-primary-500/50 transition-all duration-300">
+                    <div
+                        class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-5 hover:border-primary-500/50 transition-all duration-300">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center animate-pulse">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center animate-pulse">
                                 <i class="fas fa-clock text-white text-xl"></i>
                             </div>
                             <div>
@@ -973,8 +1137,10 @@
                     <ul class="space-y-4">
                         <li class="group">
                             <div class="flex items-start gap-3 text-sm">
-                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
-                                    <i class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
+                                <div
+                                    class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i
+                                        class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
                                 <div>
                                     <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
@@ -985,8 +1151,10 @@
                         </li>
                         <li class="group">
                             <a href="tel:+6281234567890" class="flex items-start gap-3 text-sm">
-                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
-                                    <i class="fas fa-phone text-primary-500 group-hover:text-white transition-colors"></i>
+                                <div
+                                    class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i
+                                        class="fas fa-phone text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
                                 <div>
                                     <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
@@ -997,8 +1165,10 @@
                         </li>
                         <li class="group">
                             <a href="mailto:info@mdhpgym.com" class="flex items-start gap-3 text-sm">
-                                <div class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
-                                    <i class="fas fa-envelope text-primary-500 group-hover:text-white transition-colors"></i>
+                                <div
+                                    class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i
+                                        class="fas fa-envelope text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
                                 <div>
                                     <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
@@ -1015,7 +1185,7 @@
             <div class="border-t border-dark-800/50 pt-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p class="text-dark-500 text-sm">
-                        &copy; {{ date('Y') }} <span class="text-primary-400 font-semibold">MDHP GYM</span>. 
+                        &copy; {{ date('Y') }} <span class="text-primary-400 font-semibold">MDHP GYM</span>.
                         All rights reserved.
                     </p>
                     <div class="flex items-center gap-6 text-xs text-dark-500">
@@ -1030,7 +1200,9 @@
         </div>
 
         {{-- Decorative Top Border --}}
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent"></div>
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent">
+        </div>
     </footer>
 
 </body>
