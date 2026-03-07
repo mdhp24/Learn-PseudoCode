@@ -92,6 +92,23 @@
         .gym-icon-rotate { animation: rotate 20s linear infinite; }
         .gym-icon-swing { animation: swing 3s ease-in-out infinite; }
         .gym-icon-pulse { animation: pulse-glow 4s ease-in-out infinite; }
+        
+        /* Back Button Hover Effect */
+        .back-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+        
+        .back-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-btn:hover i {
+            transform: translateX(-3px);
+        }
     </style>
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
@@ -121,8 +138,13 @@
     {{-- </div> --}} 
 
     {{-- Back to Home --}}
-    <a href="{{ route('home') }}" class="absolute top-6 left-6 text-dark-400 hover:text-primary-400 transition z-10">
-        <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+    <a href="{{ route('home') }}" class="back-btn absolute top-6 left-6 z-20 group">
+        <div class="flex items-center gap-2 px-4 py-2.5 bg-dark-800/80 backdrop-blur-md border border-dark-600/50 rounded-xl hover:bg-gradient-to-r hover:from-primary-500/20 hover:to-danger-500/20 hover:border-primary-500/50 transition-all duration-300 shadow-lg hover:shadow-primary-500/20">
+            <div class="bg-primary-500/20 p-2 rounded-lg group-hover:bg-primary-500/30 transition-all">
+                <i class="fas fa-arrow-left text-primary-400 text-sm"></i>
+            </div>
+            <span class="text-dark-300 group-hover:text-white font-medium text-sm">Kembali ke Home</span>
+        </div>
     </a>
 
     {{-- Login Container --}}
