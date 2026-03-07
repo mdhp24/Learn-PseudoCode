@@ -70,16 +70,6 @@
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
     
-    {{-- Background Effects --}}
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-purple-600 rounded-full blur-3xl opacity-30"></div>
-    </div>
-    
-    {{-- Decorative Pattern --}}
-    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, rgba(249, 115, 22, 0.4) 1px, transparent 0); background-size: 40px 40px;"></div>
-
     {{-- Back to Home --}}
     <a href="{{ route('home') }}" class="absolute top-6 left-6 text-dark-400 hover:text-primary-400 transition z-10">
         <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
