@@ -112,30 +112,7 @@
     </style>
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
-    
-    {{-- Gym Elements Decoration
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        {{-- Dumbbell Icons --}}
-        {{-- <i class="fas fa-dumbbell gym-icon gym-icon-rotate text-8xl top-20 left-[10%]"></i>
-        <i class="fas fa-dumbbell gym-icon gym-icon-swing text-6xl top-[70%] left-[5%]"></i>
-        <i class="fas fa-dumbbell gym-icon gym-icon-pulse text-7xl bottom-[15%] right-[8%]"></i>
-        
-        {{-- Heartbeat Icons --}}
-        {{-- <i class="fas fa-heartbeat gym-icon gym-icon-pulse text-6xl top-[15%] right-[15%]"></i>
-        <i class="fas fa-heartbeat gym-icon gym-icon-swing text-5xl bottom-[25%] left-[12%]"></i>
-         --}}
-        {{-- Fire Icons --}}
-        {{-- <i class="fas fa-fire gym-icon gym-icon-pulse text-6xl top-[45%] right-[10%]" style="color: rgba(239, 68, 68, 0.15);"></i>
-        <i class="fas fa-fire gym-icon gym-icon-swing text-5xl top-[60%] left-[8%]" style="color: rgba(239, 68, 68, 0.15);"></i>
-         --}}
-        {{-- Medal/Trophy Icons --}}
-        {{-- <i class="fas fa-medal gym-icon gym-icon-rotate text-6xl top-[35%] left-[15%]" style="color: rgba(249, 115, 22, 0.12);"></i>
-        <i class="fas fa-trophy gym-icon gym-icon-pulse text-5xl bottom-[40%] right-[12%]" style="color: rgba(249, 115, 22, 0.12);"></i>
-         --}}
-        {{-- Running/Fitness Icons --}}
-        {{-- <i class="fas fa-running gym-icon gym-icon-swing text-6xl top-[25%] left-[20%]" style="color: rgba(249, 115, 22, 0.1);"></i>
-        <i class="fas fa-walking gym-icon gym-icon-pulse text-5xl bottom-[35%] left-[18%]" style="color: rgba(249, 115, 22, 0.1);"></i>
-    {{-- </div> --}} 
+
 
     {{-- Back to Home --}}
     <a href="{{ route('home') }}" class="back-btn absolute top-6 left-6 z-20 group">
