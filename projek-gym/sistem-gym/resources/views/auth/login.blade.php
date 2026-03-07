@@ -66,10 +66,60 @@
             position: relative;
             z-index: 1;
         }
+        
+        /* Gym Elements Animation */
+        @keyframes rotate { 
+            from { transform: rotate(0deg); } 
+            to { transform: rotate(360deg); } 
+        }
+        
+        @keyframes swing {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+        
+        .gym-icon {
+            position: absolute;
+            color: rgba(249, 115, 22, 0.15);
+            pointer-events: none;
+        }
+        
+        .gym-icon-rotate { animation: rotate 20s linear infinite; }
+        .gym-icon-swing { animation: swing 3s ease-in-out infinite; }
+        .gym-icon-pulse { animation: pulse-glow 4s ease-in-out infinite; }
     </style>
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
     
+    {{-- Gym Elements Decoration --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        {{-- Dumbbell Icons --}}
+        <i class="fas fa-dumbbell gym-icon gym-icon-rotate text-8xl top-20 left-[10%]"></i>
+        <i class="fas fa-dumbbell gym-icon gym-icon-swing text-6xl top-[70%] left-[5%]"></i>
+        <i class="fas fa-dumbbell gym-icon gym-icon-pulse text-7xl bottom-[15%] right-[8%]"></i>
+        
+        {{-- Heartbeat Icons --}}
+        <i class="fas fa-heartbeat gym-icon gym-icon-pulse text-6xl top-[15%] right-[15%]"></i>
+        <i class="fas fa-heartbeat gym-icon gym-icon-swing text-5xl bottom-[25%] left-[12%]"></i>
+        
+        {{-- Fire Icons --}}
+        <i class="fas fa-fire gym-icon gym-icon-pulse text-6xl top-[45%] right-[10%]" style="color: rgba(239, 68, 68, 0.15);"></i>
+        <i class="fas fa-fire gym-icon gym-icon-swing text-5xl top-[60%] left-[8%]" style="color: rgba(239, 68, 68, 0.15);"></i>
+        
+        {{-- Medal/Trophy Icons --}}
+        <i class="fas fa-medal gym-icon gym-icon-rotate text-6xl top-[35%] left-[15%]" style="color: rgba(249, 115, 22, 0.12);"></i>
+        <i class="fas fa-trophy gym-icon gym-icon-pulse text-5xl bottom-[40%] right-[12%]" style="color: rgba(249, 115, 22, 0.12);"></i>
+        
+        {{-- Running/Fitness Icons --}}
+        <i class="fas fa-running gym-icon gym-icon-swing text-6xl top-[25%] left-[20%]" style="color: rgba(249, 115, 22, 0.1);"></i>
+        <i class="fas fa-walking gym-icon gym-icon-pulse text-5xl bottom-[35%] left-[18%]" style="color: rgba(249, 115, 22, 0.1);"></i>
+    </div>
+
     {{-- Back to Home --}}
     <a href="{{ route('home') }}" class="absolute top-6 left-6 text-dark-400 hover:text-primary-400 transition z-10">
         <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
@@ -77,6 +127,27 @@
 
     {{-- Login Container --}}
     <div class="relative z-10 w-full max-w-md mx-auto px-4">
+        
+        {{-- Gym Motivation Banner --}}
+        <div class="mb-6 bg-gradient-to-r from-primary-500/20 to-danger-500/20 backdrop-blur-sm border border-primary-500/30 rounded-2xl p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary-500/20 p-3 rounded-xl">
+                        <i class="fas fa-dumbbell text-primary-400 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-sm">Transform Your Body</h3>
+                        <p class="text-dark-400 text-xs">Start your fitness journey today</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="flex items-center gap-1 text-primary-400">
+                        <i class="fas fa-fire text-xl"></i>
+                        <span class="font-bold text-lg">24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         {{-- Logo & Title --}}
         <div class="text-center mb-8">
@@ -174,6 +245,22 @@
                     <i class="fas fa-sign-in-alt mr-2"></i> Masuk
                 </button>
             </form>
+            </div>
+        </div>
+        
+        {{-- Gym Features --}}
+        <div class="mt-6 grid grid-cols-3 gap-3">
+            <div class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-3 text-center">
+                <i class="fas fa-users text-primary-400 text-xl mb-1"></i>
+                <p class="text-dark-300 text-xs font-medium">Expert Trainers</p>
+            </div>
+            <div class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-3 text-center">
+                <i class="fas fa-clock text-primary-400 text-xl mb-1"></i>
+                <p class="text-dark-300 text-xs font-medium">24/7 Access</p>
+            </div>
+            <div class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-3 text-center">
+                <i class="fas fa-weight text-primary-400 text-xl mb-1"></i>
+                <p class="text-dark-300 text-xs font-medium">Modern Equipment</p>
             </div>
         </div>
 
