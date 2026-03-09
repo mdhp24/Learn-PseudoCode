@@ -250,7 +250,7 @@
                         </a>
                         <a href="#classes"
                             class="px-8 py-4 border-2 border-dark-600 text-white font-bold rounded-2xl text-lg hover:border-primary-500 hover:text-primary-400 transition-all">
-                            <i class="fas fa-play-circle mr-2"></i> Lihat Kelas
+                            <i class="fas fa-calendar-days mr-2"></i> Lihat Kelas
                         </a>
                     </div>
                     <div class="flex items-center gap-8 mt-10">
