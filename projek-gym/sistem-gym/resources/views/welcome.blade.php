@@ -776,7 +776,7 @@
 
                                 {{-- Image Container --}}
                                 <div
-                                    class="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4 ring-dark-700 group-hover:ring-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                                    class="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4 ring-dark-700 group-hover:ring-0 transition-all duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-20">
                                     </div>
