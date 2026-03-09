@@ -878,7 +878,7 @@
                                 <div class="w-1 h-4 bg-dark-700 rounded-full"></div>
                                 <div class="flex items-center gap-2 text-dark-500">
                                     <i class="fas fa-fire text-primary-400"></i>
-                                    <span class="font-semibold">Proffetional</span>
+                                    <span class="font-semibold">Professional</span>
                                 </div>
                             </div>
                         </div>
