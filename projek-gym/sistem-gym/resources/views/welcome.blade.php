@@ -432,10 +432,6 @@
             <div class="mt-16 text-center">
                 <div class="inline-flex flex-wrap items-center justify-center gap-8 text-sm text-dark-400">
                     <div class="flex items-center gap-2">
-                        <i class="fas fa-shield-check text-primary-500 text-lg"></i>
-                        <span>Garansi Uang Kembali</span>
-                    </div>
-                    <div class="flex items-center gap-2">
                         <i class="fas fa-clock text-primary-500 text-lg"></i>
                         <span>Akses 24/7</span>
                     </div>
