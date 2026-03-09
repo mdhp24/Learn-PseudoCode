@@ -573,7 +573,7 @@
 
                                 <!-- Icon Container -->
                                 <div
-                                    class="relative w-20 h-20 rounded-3xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 group-hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/50">
+                                    class="relative w-20 h-20 rounded-3xl bg-gradient-to-br {{ $classColors[$i % count($classColors)] }} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-700 group-hover:shadow-{{ explode(' ', $classColors[$i % count($classColors)])[0] }}/50">
                                     <i
                                         class="fas {{ $classIcons[$class->name] ?? 'fa-dumbbell' }} text-white text-3xl group-hover:scale-125 transition-transform duration-500"></i>
                                 </div>
