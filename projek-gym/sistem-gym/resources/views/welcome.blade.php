@@ -173,14 +173,14 @@
     <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3">
+                <a href="#home" class="flex items-center gap-3 group cursor-pointer">
                     <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
-                        class="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500">
+                        class="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500 group-hover:ring-primary-400 transition-all duration-300">
                     <div>
-                        <h1 class="font-heading font-bold text-xl text-white">MDHP GYM</h1>
-                        <p class="text-xs text-primary-400 font-medium tracking-wide">GYM & FITNESS</p>
+                        <h1 class="font-heading font-bold text-xl text-white group-hover:text-primary-400 transition-colors duration-300">MDHP GYM</h1>
+                        <p class="text-xs text-primary-400 font-medium tracking-wide group-hover:text-primary-300 transition-colors duration-300">GYM & FITNESS</p>
                     </div>
-                </div>
+                </a>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#home"
                         class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Beranda</a>
