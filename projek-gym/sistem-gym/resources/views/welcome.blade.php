@@ -1191,7 +1191,7 @@
                         All rights reserved.
                     </p>
                     <div class="flex items-center gap-6 text-xs text-dark-500">
-                        <a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
+                        <a href="#home" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
                         <span class="w-1 h-1 bg-dark-700 rounded-full"></span>
                         <a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a>
                         <span class="w-1 h-1 bg-dark-700 rounded-full"></span>
