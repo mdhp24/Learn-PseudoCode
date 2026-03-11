@@ -168,11 +168,13 @@
 
         /* Logo Hover Effect */
         .logo-hover {
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
         .logo-hover:hover {
-            transform: scale(1.15) rotate(5deg);
+            transform: scale(1.15);
+            /* hanya zoom */
             box-shadow: 0 0 60px rgba(249, 115, 22, 0.6),
                 0 0 100px rgba(239, 68, 68, 0.4);
         }
