@@ -226,11 +226,15 @@
                 <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
                     class="w-28 h-28 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect logo-hover">
             </div>
-            <h1 class="font-heading font-black text-4xl mb-2">
+            <h1 class="font-heading font-black text-4xl mb-3">
                 <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP
                     GYM</span>
             </h1>
-            <p class="text-dark-400 text-sm">Masuk ke akun Anda</p>
+            <div class="flex items-center justify-center gap-2 text-dark-300">
+                <div class="h-px w-8 bg-gradient-to-r from-transparent to-primary-500/50"></div>
+                <p class="text-sm font-medium tracking-wide">Login</p>
+                <div class="h-px w-8 bg-gradient-to-l from-transparent to-primary-500/50"></div>
+            </div>
         </div>
 
         {{-- Login Card --}}
