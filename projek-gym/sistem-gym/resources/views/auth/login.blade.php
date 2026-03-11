@@ -109,6 +109,18 @@
         .back-btn:hover i {
             transform: translateX(-3px);
         }
+        
+        /* Logo Hover Effect */
+        .logo-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .logo-hover:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 60px rgba(249, 115, 22, 0.6),
+                        0 0 100px rgba(239, 68, 68, 0.4);
+        }
     </style>
 </head>
 <body class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
@@ -151,7 +163,7 @@
         {{-- Logo & Title --}}
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
-                <img src="{{ asset('images/logo_gym.png') }}" alt="Logo" class="w-28 h-28 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect">
+                <img src="{{ asset('images/logo_gym.png') }}" alt="Logo" class="w-28 h-28 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect logo-hover">
             </div>
             <h1 class="font-heading font-black text-4xl mb-2">
                 <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP GYM</span>
