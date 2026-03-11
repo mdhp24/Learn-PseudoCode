@@ -151,7 +151,7 @@
         {{-- Logo & Title --}}
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
-                <img src="{{ asset('images/logo_gym.png') }}" alt="Logo" class="w-20 h-20 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect">
+                <img src="{{ asset('images/logo_gym.png') }}" alt="Logo" class="w-28 h-28 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect">
             </div>
             <h1 class="font-heading font-black text-4xl mb-2">
                 <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP GYM</span>
