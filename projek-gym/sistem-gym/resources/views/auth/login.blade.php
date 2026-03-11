@@ -150,7 +150,7 @@
         
         {{-- Logo & Title --}}
         <div class="text-center mb-8">
-            <div class="flex justify-center mb-4 float-animation">
+            <div class="flex justify-center mb-4">
                 <img src="{{ asset('images/logo_gym.png') }}" alt="Logo" class="w-20 h-20 rounded-full object-cover ring-4 ring-primary-500/50 glow-effect">
             </div>
             <h1 class="font-heading font-black text-4xl mb-2">
