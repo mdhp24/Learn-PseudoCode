@@ -290,6 +290,9 @@
                                 <i id="passwordIcon" class="fas fa-eye"></i>
                             </button>
                         </div>
+                        @error('password')
+                            <p class="text-danger-400 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     {{-- Remember Me --}}
