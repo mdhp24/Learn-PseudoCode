@@ -274,6 +274,7 @@
                         @error('email')
                             <p class="text-danger-400 text-xs mt-1">{{ $message }}</p>
                         @enderror
+                        <input type="email" name="email" autocomplete="email">
                     </div>
 
                     {{-- Password --}}
