@@ -270,6 +270,12 @@
                             <i class="fas fa-spinner fa-spin mr-2"></i> Memproses...
                         </span>
                     </button>
+                    <script>
+                        document.querySelector("form").addEventListener("submit", function() {
+                            document.getElementById("loginText").classList.add("hidden");
+                            document.getElementById("loadingText").classList.remove("hidden");
+                        });
+                    </script>
 
                     {{-- Email --}}
                     <div>
