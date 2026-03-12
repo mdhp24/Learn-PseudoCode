@@ -271,6 +271,9 @@
                             autofocus
                             class="w-full px-4 py-3 pr-12 bg-dark-900 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition outline-none"
                             placeholder="nama@email.com">
+                        @error('email')
+                            <p class="text-danger-400 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     {{-- Password --}}
