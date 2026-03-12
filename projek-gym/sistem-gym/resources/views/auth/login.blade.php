@@ -294,6 +294,7 @@
                         @error('password')
                             <p class="text-danger-400 text-xs mt-1">{{ $message }}</p>
                         @enderror
+                        <input type="password" name="password" autocomplete="current-password">
                     </div>
 
                     {{-- Remember Me --}}
