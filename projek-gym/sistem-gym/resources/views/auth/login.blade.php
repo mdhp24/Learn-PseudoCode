@@ -177,6 +177,11 @@
             /* hanya zoom */
             box-shadow: 0 0 60px rgba(249, 115, 22, 0.6),
                 0 0 100px rgba(239, 68, 68, 0.4);
+
+        }
+
+        input:focus {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -264,7 +269,7 @@
                 {{-- Login Form --}}
                 <form action="{{ route('login') }}" method="POST" class="space-y-5">
                     @csrf
-                    {{-- <button type="submit" id="loginBtn"
+                    <button type="submit" id="loginBtn"
                         class="w-full py-3.5 bg-gradient-to-r from-primary-500 to-danger-500 text-white font-bold rounded-xl">
                         <span id="loginText">
                             <i class="fas fa-sign-in-alt mr-2"></i> Masuk
@@ -278,7 +283,7 @@
                             document.getElementById("loginText").classList.add("hidden");
                             document.getElementById("loadingText").classList.remove("hidden");
                         });
-                    </script> --}}
+                    </script>
 
                     {{-- Email --}}
                     <div>
