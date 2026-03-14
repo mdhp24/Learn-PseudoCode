@@ -180,8 +180,12 @@
 
         }
 
-        input:focus {
+        /* input:focus {
             transform: scale(1.02);
+        } */
+
+        input {
+            transition: all 0.2s ease;
         }
     </style>
 </head>
