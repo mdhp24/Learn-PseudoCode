@@ -257,11 +257,14 @@
                         @endforeach
                     </div>
                 @endif
+                <i class="fas fa-dumbbell gym-icon gym-icon-rotate text-7xl top-20 left-20"></i>
+                <i class="fas fa-weight-hanging gym-icon gym-icon-swing text-6xl bottom-32 right-16"></i>
+                <i class="fas fa-fire gym-icon gym-icon-pulse text-8xl top-40 right-32"></i>
 
                 {{-- Login Form --}}
                 <form action="{{ route('login') }}" method="POST" class="space-y-5">
                     @csrf
-                    <button type="submit" id="loginBtn"
+                    {{-- <button type="submit" id="loginBtn"
                         class="w-full py-3.5 bg-gradient-to-r from-primary-500 to-danger-500 text-white font-bold rounded-xl">
                         <span id="loginText">
                             <i class="fas fa-sign-in-alt mr-2"></i> Masuk
@@ -275,7 +278,7 @@
                             document.getElementById("loginText").classList.add("hidden");
                             document.getElementById("loadingText").classList.remove("hidden");
                         });
-                    </script>
+                    </script> --}}
 
                     {{-- Email --}}
                     <div>
