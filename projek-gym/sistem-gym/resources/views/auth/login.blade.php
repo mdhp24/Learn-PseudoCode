@@ -277,13 +277,14 @@
                         <span id="loadingText" class="hidden">
                             <i class="fas fa-spinner fa-spin mr-2"></i> Memproses...
                         </span>
+                        <script>
+                            document.querySelector("form").addEventListener("submit", function() {
+                                document.getElementById("loginText").classList.add("hidden");
+                                document.getElementById("loadingText").classList.remove("hidden");
+                            });
+                        </script>
                     </button>
-                    <script>
-                        document.querySelector("form").addEventListener("submit", function() {
-                            document.getElementById("loginText").classList.add("hidden");
-                            document.getElementById("loadingText").classList.remove("hidden");
-                        });
-                    </script>
+
 
                     {{-- Email --}}
                     <div>
