@@ -286,7 +286,19 @@
                                 document.getElementById("loginText").classList.add("hidden");
                                 document.getElementById("loadingText").classList.remove("hidden");
                             });
+                            passwordInput.addEventListener("keyup", function(event) {
+                                const warning = document.getElementById("capsWarning");
+
+                                if (event.getModifierState("CapsLock")) {
+                                    warning.classList.remove("hidden");
+                                } else {
+                                    warning.classList.add("hidden");
+                                }
+                            });
                         </script>
+                        <p id="capsWarning" class="text-yellow-400 text-xs mt-1 hidden">
+                            Caps Lock sedang aktif
+                        </p>
                     </button>
 
 
