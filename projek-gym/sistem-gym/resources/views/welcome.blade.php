@@ -177,8 +177,12 @@
                     <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
                         class="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500 group-hover:ring-primary-400 transition-all duration-300">
                     <div>
-                        <h1 class="font-heading font-bold text-xl text-white group-hover:text-primary-400 transition-colors duration-300">MDHP GYM</h1>
-                        <p class="text-xs text-primary-400 font-medium tracking-wide group-hover:text-primary-300 transition-colors duration-300">GYM & FITNESS</p>
+                        <h1
+                            class="font-heading font-bold text-xl text-white group-hover:text-primary-400 transition-colors duration-300">
+                            MDHP GYM</h1>
+                        <p
+                            class="text-xs text-primary-400 font-medium tracking-wide group-hover:text-primary-300 transition-colors duration-300">
+                            GYM & FITNESS</p>
                     </div>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
@@ -909,40 +913,40 @@
                         </div>
                     </a>
                     <a href="{{ route('login') }}" class="flex items-center gap-3 group cursor-pointer">
-                    <div class="flex items-center gap-3 group cursor-pointer">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-primary-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-comments text-white text-lg"></i>
+                        <div class="flex items-center gap-3 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-comments text-white text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-white font-bold">Konsultasi</p>
+                                <p class="text-xs text-dark-500">Program Personal</p>
+                            </div>
                         </div>
-                        <div class="text-left">
-                            <p class="text-white font-bold">Konsultasi</p>
-                            <p class="text-xs text-dark-500">Program Personal</p>
-                        </div>
-                    </div>
                     </a>
                     <a href="{{ route('login') }}" class="flex items-center gap-3 group cursor-pointer">
-                    <div class="flex items-center gap-3 group cursor-pointer">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-danger-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-chart-line text-white text-lg"></i>
+                        <div class="flex items-center gap-3 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-danger-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-chart-line text-white text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-white font-bold">Progress</p>
+                                <p class="text-xs text-dark-500">Tracking Rutin</p>
+                            </div>
                         </div>
-                        <div class="text-left">
-                            <p class="text-white font-bold">Progress</p>
-                            <p class="text-xs text-dark-500">Tracking Rutin</p>
-                        </div>
-                    </div>
                     </a>
                     <a href="{{ route('login') }}" class="flex items-center gap-3 group cursor-pointer">
-                    <div class="flex items-center gap-3 group cursor-pointer">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-trophy text-white text-lg"></i>
+                        <div class="flex items-center gap-3 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-trophy text-white text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-white font-bold">Prestasi</p>
+                                <p class="text-xs text-dark-500">Hasil Terbukti</p>
+                            </div>
                         </div>
-                        <div class="text-left">
-                            <p class="text-white font-bold">Prestasi</p>
-                            <p class="text-xs text-dark-500">Hasil Terbukti</p>
-                        </div>
-                    </div>
                     </a>
                 </div>
             </div>
@@ -1144,10 +1148,13 @@
                                     <i
                                         class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
-                                <div>
-                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-primary-500"></i>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Malang+Kota+No.+11+Malang"
+                                        target="_blank"
+                                        class="text-dark-400 group-hover:text-primary-400 transition-colors">
                                         Jl. Malang Kota No. 11, Malang
-                                    </p>
+                                    </a>
                                 </div>
                             </div>
                         </li>
@@ -1187,7 +1194,9 @@
             <div class="border-t border-dark-800/50 pt-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p class="text-dark-500 text-sm">
-                        &copy; {{ date('Y') }} <a href="#home" class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">MDHP GYM</a>.
+                        &copy; {{ date('Y') }} <a href="#home"
+                            class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">MDHP
+                            GYM</a>.
                         All rights reserved.
                     </p>
                     <div class="flex items-center gap-6 text-xs text-dark-500">
