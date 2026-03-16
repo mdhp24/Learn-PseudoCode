@@ -1056,7 +1056,7 @@
                             class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-youtube text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://www.tiktok.com/@mdhp_gym"
                             class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-tiktok text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
