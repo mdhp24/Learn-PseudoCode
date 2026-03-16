@@ -331,6 +331,9 @@
                         @error('password')
                             <p class="text-danger-400 text-xs mt-1">{{ $message }}</p>
                         @enderror
+                        <p id="capsWarning" class="text-yellow-400 text-xs mt-1 hidden">
+                            Caps Lock sedang aktif
+                        </p>
                         {{-- <input type="password" name="password" autocomplete="current-password"> --}}
                     </div>
 
