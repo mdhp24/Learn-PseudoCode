@@ -1044,7 +1044,7 @@
 
                     {{-- Social Media Links --}}
                     <div class="flex gap-3">
-                        <a href="#"
+                        <a href="https://www.facebook.com/mdhp_gym"
                             class="group relative w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/50">
                             <i class="fab fa-facebook-f text-dark-400 group-hover:text-white transition-colors"></i>
                         </a>
