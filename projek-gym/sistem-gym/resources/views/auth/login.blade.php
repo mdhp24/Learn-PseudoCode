@@ -273,7 +273,7 @@
                 {{-- Login Form --}}
                 <form action="{{ route('login') }}" method="POST" class="space-y-5">
                     @csrf
-                    <button type="submit" id="loginBtn"
+                    {{-- <button type="submit" id="loginBtn"
                         class="w-full py-3.5 bg-gradient-to-r from-primary-500 to-danger-500 text-white font-bold rounded-xl">
                         <span id="loginText">
                             <i class="fas fa-sign-in-alt mr-2"></i> Masuk
@@ -296,10 +296,7 @@
                                 }
                             });
                         </script>
-                        <p id="capsWarning" class="text-yellow-400 text-xs mt-1 hidden">
-                            Caps Lock sedang aktif
-                        </p>
-                    </button>
+                    </button> --}}
 
 
                     {{-- Email --}}
