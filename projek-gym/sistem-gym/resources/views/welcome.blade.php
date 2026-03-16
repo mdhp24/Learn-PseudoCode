@@ -1142,21 +1142,22 @@
                     </h4>
                     <ul class="space-y-4">
                         <li class="group">
-                            <div class="flex items-start gap-3 text-sm">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Malang+Kota+No.+11+Malang"
+                                target="_blank" class="flex items-center gap-3 group">
+
                                 <div
                                     class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
                                     <i
                                         class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
+
                                 <div class="flex items-center gap-2">
-                                    <i class="fas fa-map-marker-alt text-primary-500"></i>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Malang+Kota+No.+11+Malang"
-                                        target="_blank"
-                                        class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
                                         Jl. Malang Kota No. 11, Malang
-                                    </a>
+                                    </p>
                                 </div>
-                            </div>
+
+                            </a>
                         </li>
                         <li class="group">
                             <a href="tel:+6281234567890" class="flex items-start gap-3 text-sm">
