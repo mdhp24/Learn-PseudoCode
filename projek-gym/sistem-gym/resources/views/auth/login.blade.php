@@ -71,6 +71,39 @@
                 <!-- Footer -->
                 <p class="text-center text-xs text-slate-500 mt-6">© {{ date('Y') }} MDHP GYM</p>
 
+                <script>
+                    const form = document.getElementById('loginForm');
+                    const submitBtn = document.getElementById('submitBtn');
+                    const btnText = document.getElementById('btnText');
+                    const btnLoading = document.getElementById('btnLoading');
+                    const password = document.getElementById('password');
+                    const togglePassword = document.getElementById('togglePassword');
+                    const capsWarning = document.getElementById('capsWarning');
+
+                    // Submit handling
+                    form.addEventListener('submit', function() {
+                        submitBtn.disabled = true;
+                        btnText.classList.add('hidden');
+                        btnLoading.classList.remove('hidden');
+                    });
+
+                    // Toggle password
+                    togglePassword.addEventListener('click', function() {
+                        const type = password.type === 'password' ? 'text' : 'password';
+                        password.type = type;
+                    });
+
+                    // CapsLock detection
+                    password.addEventListener('keyup', function(e) {
+                        if (e.getModifierState('CapsLock')) {
+                            capsWarning.classList.remove('hidden');
+                        } else {
+                            capsWarning.classList.add('hidden');
+                        }
+                    });
+                </script>
+
+        </div>
 
 </body>
 
