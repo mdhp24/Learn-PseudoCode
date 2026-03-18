@@ -196,3 +196,79 @@ html {
 .border-animate {
     animation: border-glow 3s ease-in-out infinite;
 }
+
+/* Border glow delay variants */
+.glow-anim {
+    animation: border-glow 4s ease-in-out infinite;
+}
+.glow-anim-d1 {
+    animation: border-glow 4s ease-in-out infinite 1s;
+}
+.glow-anim-d2 {
+    animation: border-glow 4s ease-in-out infinite 2s;
+}
+.glow-anim-d3 {
+    animation: border-glow 4s ease-in-out infinite 3s;
+}
+
+/* ── Keyframes: Float Particles ── */
+@keyframes float-particles {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+.particles-6 {
+    animation: float-particles 6s ease-in-out infinite;
+}
+.particles-8-d1 {
+    animation: float-particles 8s ease-in-out infinite 1s;
+}
+.particles-7-d2 {
+    animation: float-particles 7s ease-in-out infinite 2s;
+}
+.particles-9-d1-5 {
+    animation: float-particles 9s ease-in-out infinite 1.5s;
+}
+
+/* ── Grid / Diagonal Background Patterns ── */
+.grid-bg-orange {
+    background-image:
+        linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+.diagonal-bg-orange {
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(249, 115, 22, 0.03) 35px,
+        rgba(249, 115, 22, 0.03) 70px
+    );
+}
+.grid-bg-gold {
+    background-image:
+        linear-gradient(rgba(234, 179, 8, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(234, 179, 8, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+.diagonal-bg-gold {
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(234, 179, 8, 0.03) 35px,
+        rgba(234, 179, 8, 0.03) 70px
+    );
+}
