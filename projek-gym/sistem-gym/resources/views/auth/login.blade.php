@@ -63,6 +63,12 @@
 
                         <button type="button" id="togglePassword"
                             class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
 </body>
 
 </html>
