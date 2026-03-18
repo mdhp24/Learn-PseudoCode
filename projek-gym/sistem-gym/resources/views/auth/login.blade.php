@@ -68,7 +68,10 @@
                         </button>
                     </div>
                 </div>
-                
+                <!-- Footer -->
+                <p class="text-center text-xs text-slate-500 mt-6">© {{ date('Y') }} MDHP GYM</p>
+
+
 </body>
 
 </html>
