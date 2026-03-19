@@ -55,6 +55,21 @@
                 </button>
             </div>
         </div>
+        {{-- Mobile Menu --}}
+        <div x-show="mobileMenu" x-cloak x-transition
+            class="md:hidden bg-dark-900 border-t border-dark-700 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-dark-300 hover:text-primary-400">Beranda</a>
+            <a href="#packages" class="block text-dark-300 hover:text-primary-400">Paket</a>
+            <a href="#classes" class="block text-dark-300 hover:text-primary-400">Kelas</a>
+            <a href="#trainers" class="block text-dark-300 hover:text-primary-400">Trainer</a>
+            @auth
+                <a href="{{ route('dashboard') }}"
+                    class="block px-4 py-2 bg-primary-500 text-white rounded-lg text-center">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}"
+                    class="block px-4 py-2 bg-primary-500 text-white rounded-lg text-center">Login</a>
+            @endauth
+        </div>
     </nav>
 </body>
 
