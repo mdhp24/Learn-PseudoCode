@@ -72,7 +72,7 @@
         </div>
     </nav>
 
-        {{-- ===== HERO SECTION ===== --}}
+    {{-- ===== HERO SECTION ===== --}}
     <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
@@ -126,13 +126,19 @@
                     <div class="relative">
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
- 
+
+                        <!-- Top Left Badge -->
+                        <div
+                            class="absolute -top-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-users mr-1.5"></i>
+                                Komunitas Aktif</p>
+                        </div>
 
                     </div>
                 </div>
             </div>
     </section>
- 
+
 </body>
 
 </html>
