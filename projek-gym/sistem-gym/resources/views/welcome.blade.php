@@ -134,6 +134,26 @@
                                 Komunitas Aktif</p>
                         </div>
 
+                        <!-- Top Right Badge -->
+                        <div
+                            class="absolute -top-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-dumbbell mr-1.5"></i> 50+
+                                Alat</p>
+                        </div>
+
+                        <!-- Bottom Left Badge -->
+                        <div
+                            class="absolute -bottom-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i>
+                                Full AC</p>
+                        </div>
+
+                        <!-- Bottom Right Badge -->
+                        <div
+                            class="absolute -bottom-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
+                            <p class="text-success-400 font-semibold text-sm"><i class="fas fa-shield-alt mr-1.5"></i>
+                                24/7 Keamanan</p>
+                        </div>
                     </div>
                 </div>
             </div>
