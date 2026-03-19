@@ -71,6 +71,68 @@
             @endauth
         </div>
     </nav>
+
+        {{-- ===== HERO SECTION ===== --}}
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-500/10 border border-primary-500/30 rounded-full mb-6">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+                        <span class="text-primary-400 text-sm font-medium">Open 24 Hours</span>
+                    </div>
+                    <h1 class="font-heading font-black text-5xl lg:text-7xl leading-tight mb-6">
+                        <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP
+                            GYM</span><br>
+                        <span class="text-white text-4xl lg:text-5xl">Your Fitness Partner</span>
+                    </h1>
+                    <p class="text-dark-400 text-lg mb-8 max-w-lg leading-relaxed">
+                        Transformasi tubuhmu dimulai di sini. Bergabunglah dengan ribuan member yang telah merasakan
+                        perubahan nyata bersama MDHP GYM.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#packages"
+                            class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-2xl text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1">
+                            <i class="fas fa-fire mr-2"></i> Daftar Sekarang
+                        </a>
+                        <a href="#classes"
+                            class="px-8 py-4 border-2 border-dark-600 text-white font-bold rounded-2xl text-lg hover:border-primary-500 hover:text-primary-400 transition-all">
+                            <i class="fas fa-calendar-days mr-2"></i> Lihat Kelas
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-8 mt-10">
+                        <div class="text-center">
+                            <p class="font-heading font-black text-3xl text-primary-400">100+</p>
+                            <p class="text-dark-500 text-sm">Member Aktif</p>
+                        </div>
+                        <div class="w-px h-12 bg-dark-700"></div>
+                        <div class="text-center">
+                            <p class="font-heading font-black text-3xl text-primary-400">15+</p>
+                            <p class="text-dark-500 text-sm">Trainer Profesional</p>
+                        </div>
+                        <div class="w-px h-12 bg-dark-700"></div>
+                        <div class="text-center">
+                            <p class="font-heading font-black text-3xl text-primary-400">8+</p>
+                            <p class="text-dark-500 text-sm">Jenis Kelas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
+                            class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
+ 
+
+                    </div>
+                </div>
+            </div>
+    </section>
+ 
 </body>
 
 </html>
