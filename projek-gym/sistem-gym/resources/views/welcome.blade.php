@@ -290,6 +290,10 @@
                     <i class="fas fa-users text-primary-500 text-lg"></i>
                     <span>Trainer Profesional</span>
                 </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-dumbbell text-primary-500 text-lg"></i>
+                    <span>50+ Alat Modern</span>
+                </div>
             </div>
         </div>
     </section>
