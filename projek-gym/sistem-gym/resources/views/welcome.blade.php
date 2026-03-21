@@ -286,6 +286,10 @@
                         <span>Akses 24/7</span>
                     </div>
                 </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-primary-500 text-lg"></i>
+                    <span>Trainer Profesional</span>
+                </div>
             </div>
         </div>
     </section>
