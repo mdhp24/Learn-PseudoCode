@@ -158,6 +158,134 @@
                 </div>
             </div>
     </section>
+    {{-- ===== MEMBERSHIP PACKAGES ===== --}}
+    <section id="packages"
+        class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
+        {{-- Background Decorations --}}
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <div
+                    class="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-500/20 to-danger-500/20 border border-primary-500/30 text-primary-400 text-sm font-bold rounded-full mb-6">
+                    <i class="fas fa-crown text-gold-400"></i>
+                    <span>PAKET MEMBERSHIP EKSKLUSIF</span>
+                </div>
+                <h2 class="font-heading font-black text-5xl lg:text-6xl text-white mb-6">
+                    Pilih <span
+                        class="bg-gradient-to-r from-primary-400 via-danger-400 to-primary-400 bg-clip-text text-transparent">Paketmu</span>
+                </h2>
+                <p class="text-dark-400 text-xl max-w-3xl mx-auto leading-relaxed">Investasi terbaik untuk kesehatan
+                    dan kebugaran tubuhmu dengan berbagai pilihan paket membership yang fleksibel</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+                @php
+                    $packageIcons = ['fa-bolt', 'fa-fire', 'fa-star', 'fa-crown'];
+                    $packageGradients = [
+                        'from-blue-500/10 to-cyan-500/10',
+                        'from-orange-500/10 to-red-500/10',
+                        'from-purple-500/10 to-pink-500/10',
+                        'from-gold-500/10 to-primary-500/10',
+                    ];
+                @endphp
+                @foreach ($packages as $index => $package)
+                    <div
+                        class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 relative group overflow-hidden h-full flex flex-col">
+                        {{-- Decorative Corner --}}
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full">
+                        </div>
+
+                        {{-- Icon Badge & Label --}}
+                        <div class="mb-6 flex items-center gap-4">
+                            <div
+                                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-danger-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas {{ $packageIcons[$index % 4] }} text-white text-2xl"></i>
+                            </div>
+
+                            {{-- Best Value / Popular Badge --}}
+                            @if ($package->duration_days >= 360)
+                                <div
+                                    class="px-4 py-1.5 bg-gradient-to-r from-gold-400 via-primary-500 to-danger-500 text-white text-xs font-black rounded-full shadow-2xl flex items-center gap-2 animate-pulse">
+                                    <i class="fas fa-gem"></i>
+                                    <span>BEST VALUE</span>
+                                </div>
+                            @elseif($package->duration_days >= 180)
+                                <div
+                                    class="px-4 py-1.5 bg-gradient-to-r from-primary-500 to-danger-500 text-white text-xs font-bold rounded-full shadow-lg">
+                                    <i class="fas fa-fire"></i> POPULER
+                                </div>
+                            @endif
+                        </div>
+
+                        {{-- Package Name --}}
+                        <div class="mb-6">
+                            <h3 class="font-heading font-black text-2xl text-white mb-2">{{ $package->name }}</h3>
+                            <div class="flex items-center gap-2 text-primary-400 text-sm font-semibold">
+                                <i class="fas fa-calendar-days"></i>
+                                <span>{{ $package->duration_days }} hari akses penuh</span>
+                            </div>
+                        </div>
+
+                        {{-- Pricing --}}
+                        <div class="mb-6">
+                            <div class="flex items-end gap-2 mb-1">
+                                <span class="font-heading font-black text-4xl text-white price-glow">Rp
+                                    {{ number_format($package->price / 1000, 0, ',', '.') }}K</span>
+                            </div>
+                            @if ($package->duration_days > 1)
+                                <p class="text-dark-500 text-sm">
+                                    {{ $package->duration_days >= 30 ? round($package->duration_days / 30) . ' bulan' : $package->duration_days . ' hari' }}
+                                    membership
+                                </p>
+                            @endif
+                        </div>
+
+                        {{-- Benefits --}}
+                        <div class="mb-6 flex-grow">
+                            <div class="space-y-3">
+                                @foreach (explode(',', $package->benefits ?? 'Akses Gym,Locker Gratis,Free Konsultasi') as $benefit)
+                                    <div class="flex items-start gap-3 text-dark-200 text-sm">
+                                        <div
+                                            class="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-danger-500 flex items-center justify-center mt-0.5">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="leading-relaxed">{{ trim($benefit) }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- CTA Button --}}
+                        <div class="mt-auto">
+                            @auth
+                                <a href="{{ route('members.create') }}"
+                                    class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
+                                    <i class="fas fa-rocket mr-2"></i> Pilih Paket Ini
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="block w-full py-4 text-center rounded-2xl font-bold text-base transition-all duration-300 {{ $package->duration_days >= 180 ? 'bg-gradient-to-r from-primary-500 to-danger-500 text-white hover:shadow-2xl hover:shadow-primary-500/50 hover:scale-105' : 'bg-dark-700 text-white hover:bg-gradient-to-r hover:from-dark-600 hover:to-dark-700 hover:shadow-xl' }} transform">
+                                    <i class="fas fa-arrow-right mr-2"></i> Daftar Sekarang
+                                </a>
+                            @endauth
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Additional Info --}}
+            <div class="mt-16 text-center">
+                <div class="inline-flex flex-wrap items-center justify-center gap-8 text-sm text-dark-400">
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 
