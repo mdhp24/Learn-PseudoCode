@@ -496,6 +496,227 @@
         </div>
     </section>
 
+    {{-- ===== TRAINERS ===== --}}
+    <section id="trainers"
+        class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
+        {{-- Multi-Layer Background Decoration --}}
+        <div class="absolute inset-0">
+            <!-- Animated Gradient Orbs -->
+            <div
+                class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-gold-500 via-primary-500 to-orange-600 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+            <div
+                class="absolute top-1/3 right-20 w-80 h-80 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full blur-3xl opacity-10 float-6">
+            </div>
+            <div
+                class="absolute bottom-20 left-1/3 w-96 h-96 bg-gradient-to-br from-danger-500 to-pink-500 rounded-full blur-3xl opacity-10 float-8-reverse">
+            </div>
+            <div
+                class="absolute bottom-32 right-1/4 w-72 h-72 bg-gradient-to-br from-gold-400 to-primary-500 rounded-full blur-3xl opacity-10 animate-pulse">
+            </div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 opacity-5 grid-bg-gold"></div>
+
+            <!-- Diagonal Lines -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-0 left-0 w-full h-full diagonal-bg-gold"></div>
+            </div>
+
+            <!-- Light Spots -->
+            <div
+                class="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-radial from-gold-400/10 to-transparent rounded-full blur-2xl">
+            </div>
+            <div
+                class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-radial from-primary-400/10 to-transparent rounded-full blur-2xl">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <div
+                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-gold-500/10 to-primary-500/10 border border-gold-500/20 rounded-full mb-4">
+                    <i class="fas fa-crown text-gold-400 animate-pulse"></i>
+                    <span class="text-gold-400 text-sm font-bold tracking-wider">TRAINER KAMI</span>
+                </div>
+                <h2 class="font-heading font-black text-5xl lg:text-6xl text-white mb-6">
+                    <span
+                        class="bg-gradient-to-r from-gold-400 via-primary-400 to-gold-400 bg-clip-text text-transparent">Trainer
+                        Profesional</span>
+                </h2>
+                <p class="text-dark-400 text-xl max-w-3xl mx-auto leading-relaxed">Bimbingan dari para ahli
+                    bersertifikat untuk membantu Anda mencapai target fitness dengan maksimal</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                @php
+                    $trainerGradients = [
+                        'from-blue-500/10 to-cyan-500/10',
+                        'from-purple-500/10 to-pink-500/10',
+                        'from-orange-500/10 to-red-500/10',
+                        'from-green-500/10 to-teal-500/10',
+                        'from-gold-500/10 to-primary-500/10',
+                        'from-indigo-500/10 to-purple-500/10',
+                    ];
+                    $trainerBorderColors = [
+                        'from-blue-500 to-cyan-500',
+                        'from-purple-500 to-pink-500',
+                        'from-orange-500 to-red-500',
+                        'from-green-500 to-teal-500',
+                        'from-gold-500 to-primary-500',
+                        'from-indigo-500 to-purple-500',
+                    ];
+                    $iconBgColors = [
+                        'from-blue-500 to-cyan-600',
+                        'from-purple-500 to-pink-600',
+                        'from-orange-500 to-red-600',
+                        'from-green-500 to-teal-600',
+                        'from-gold-500 to-primary-600',
+                        'from-indigo-500 to-purple-600',
+                    ];
+                @endphp
+                @foreach ($trainers as $index => $trainer)
+                    <div
+                        class="group relative bg-gradient-to-br {{ $trainerGradients[$index % 6] }} backdrop-blur-sm border border-dark-700/50 rounded-3xl overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-2xl hover:-translate-y-3 cursor-pointer">
+                        {{-- Animated Gradient Border on Hover --}}
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl -z-10">
+                        </div>
+                        <div
+                            class="absolute inset-px bg-gradient-to-br from-dark-800 via-dark-850 to-dark-900 rounded-3xl">
+                        </div>
+
+                        {{-- Top Gradient Bar --}}
+                        <div
+                            class="relative h-2 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} group-hover:h-3 transition-all duration-300">
+                        </div>
+
+                        {{-- Card Content --}}
+                        <div class="relative p-8">
+                            {{-- Decorative Corner --}}
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br {{ $trainerGradients[$index % 6] }} opacity-20 rounded-bl-full">
+                            </div>
+
+                            {{-- Certified Badge --}}
+                            @if ($trainer->certification)
+                                <div
+                                    class="absolute top-6 right-6 bg-gradient-to-r {{ $iconBgColors[$index % 6] }} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Certified</span>
+                                </div>
+                            @endif
+
+                            {{-- Profile Image with Enhanced Styling --}}
+                            <div class="relative w-32 h-32 mx-auto mb-6 group-hover:mb-7 transition-all duration-500">
+                                {{-- Outer Glow Effect --}}
+                                <div
+                                    class="absolute -inset-3 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-all duration-700 animate-pulse">
+                                </div>
+
+                                {{-- Middle Ring --}}
+                                <div
+                                    class="absolute -inset-2 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} rounded-full blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                                </div>
+
+                                {{-- Image Container --}}
+                                <div
+                                    class="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4 ring-dark-700 group-hover:ring-0 transition-all duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-br {{ $trainerBorderColors[$index % 6] }} opacity-20">
+                                    </div>
+                                    <img src="{{ asset('images/logo_gym.png') }}"
+                                        alt="{{ $trainer->user->name ?? 'Trainer' }}"
+                                        class="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-700">
+                                </div>
+
+                                {{-- Status Indicator --}}
+                                <div
+                                    class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-dark-800 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                </div>
+                            </div>
+
+                            {{-- Trainer Info --}}
+                            <div class="text-center mb-5">
+                                <h3
+                                    class="font-heading font-black text-2xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:{{ $trainerBorderColors[$index % 6] }} group-hover:bg-clip-text transition-all duration-500">
+                                    {{ $trainer->user->name ?? 'Trainer' }}
+                                </h3>
+                                <div
+                                    class="h-1 w-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} rounded-full mx-auto group-hover:w-20 transition-all duration-500 mb-3">
+                                </div>
+
+                                {{-- Specialization Badge --}}
+                                <div
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r {{ $trainerGradients[$index % 6] }} border border-dark-600/30 rounded-full mb-3 group-hover:border-transparent group-hover:shadow-lg transition-all duration-300">
+                                    <i class="fas fa-dumbbell text-primary-400 text-sm"></i>
+                                    <span
+                                        class="text-primary-400 text-sm font-bold">{{ $trainer->specialization }}</span>
+                                </div>
+
+                                {{-- Certification --}}
+                                <p
+                                    class="text-dark-400 text-sm leading-relaxed mb-4 group-hover:text-dark-300 transition-colors duration-300 px-4">
+                                    {{ $trainer->certification }}
+                                </p>
+                            </div>
+
+                            {{-- Divider Line --}}
+                            <div
+                                class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent mb-5 group-hover:via-gold-500/30 transition-colors duration-500">
+                            </div>
+
+                            {{-- Stats Grid --}}
+                            <div class="grid grid-cols-2 gap-4 mb-5">
+                                {{-- Experience --}}
+                                <div
+                                    class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
+                                    <div class="flex items-center justify-center gap-2 mb-1">
+                                        <i class="fas fa-star text-gold-400 text-lg"></i>
+                                        <span
+                                            class="font-heading font-black text-2xl text-white">{{ $trainer->experience_years ?? 3 }}</span>
+                                    </div>
+                                    <p
+                                        class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">
+                                        Tahun Experience</p>
+                                </div>
+
+                                {{-- Hourly Rate --}}
+                                <div
+                                    class="bg-dark-700/40 backdrop-blur-sm rounded-xl p-4 border border-dark-600/30 group-hover:bg-gradient-to-br group-hover:{{ $trainerGradients[$index % 6] }} group-hover:border-transparent group-hover:shadow-lg transition-all duration-500">
+                                    <div class="flex items-center justify-center gap-1 mb-1">
+                                        <i class="fas fa-money-bill-wave text-green-400 text-sm"></i>
+                                        <span
+                                            class="font-heading font-black text-lg text-white">{{ number_format($trainer->hourly_rate / 1000, 0) }}K</span>
+                                    </div>
+                                    <p
+                                        class="text-dark-400 text-xs font-medium text-center group-hover:text-dark-300 transition-colors">
+                                        Per Jam</p>
+                                </div>
+                            </div>
+
+                            {{-- CTA Button with Shine Effect --}}
+                            <a href="{{ route('login') }}"
+                                class="block relative overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r {{ $trainerBorderColors[$index % 6] }} opacity-100">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                                </div>
+                                <div class="relative px-6 py-3 text-center">
+                                    <span class="text-white font-bold text-sm flex items-center justify-center gap-2">
+                                        <i class="fas fa-user-plus"></i>
+                                        <span>Booking Trainer</span>
+                                        <i
+                                            class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+    </section>
+
+
 </body>
 
 </html>
