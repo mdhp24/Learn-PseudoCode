@@ -713,7 +713,33 @@
                                     </span>
                                 </div>
                             </a>
+                            {{-- Alternative Info Display (when not hovering) --}}
+                            <div class="group-hover:hidden flex items-center justify-center gap-4 text-sm">
+                                <div class="flex items-center gap-2 text-dark-500">
+                                    <i class="fas fa-medal text-gold-400"></i>
+                                    <span class="font-semibold">{{ $trainer->experience_years ?? 3 }}+ Tahun</span>
+                                </div>
+                                <div class="w-1 h-4 bg-dark-700 rounded-full"></div>
+                                <div class="flex items-center gap-2 text-dark-500">
+                                    <i class="fas fa-fire text-primary-400"></i>
+                                    <span class="font-semibold">Professional</span>
+                                </div>
+                            </div>
                         </div>
+
+                        {{-- Floating Particles Effect --}}
+                        <div
+                            class="absolute top-1/4 right-1/4 w-2 h-2 bg-gold-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-sm">
+                        </div>
+                        <div
+                            class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-primary-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-sm">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+
+        </div>
     </section>
 
 
