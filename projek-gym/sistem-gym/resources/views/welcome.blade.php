@@ -775,7 +775,18 @@
                             </div>
                         </div>
                     </a>
-
+                    <a href="{{ route('login') }}" class="flex items-center gap-3 group cursor-pointer">
+                        <div class="flex items-center gap-3 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-trophy text-white text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-white font-bold">Prestasi</p>
+                                <p class="text-xs text-dark-500">Hasil Terbukti</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
