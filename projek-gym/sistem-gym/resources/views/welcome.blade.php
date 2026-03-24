@@ -843,6 +843,9 @@
                     class="inline-block px-10 py-4 bg-dark-900 text-white font-bold rounded-2xl text-lg hover:bg-dark-800 transition transform hover:-translate-y-1 shadow-2xl">
                     <i class="fas fa-user-plus mr-2"></i> Daftar Member Baru
                 </a>
+            @else
+                <a href="{{ route('login') }}"
+                    class="inline-block px-10 py-4 bg-dark-900 text-white font-bold rounded-2xl text-lg hover:bg-dark-800 transition transform hover:-translate-y-1 shadow-2xl"></a>
     </body>
 
     </html>
