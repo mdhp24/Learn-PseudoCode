@@ -839,6 +839,10 @@
             <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">Mulai perjalanan fitnessmu hari ini. Daftar
                 sekarang dan dapatkan diskon special untuk member baru!</p>
             @auth
+                <a href="{{ route('members.create') }}"
+                    class="inline-block px-10 py-4 bg-dark-900 text-white font-bold rounded-2xl text-lg hover:bg-dark-800 transition transform hover:-translate-y-1 shadow-2xl">
+                    <i class="fas fa-user-plus mr-2"></i> Daftar Member Baru
+                </a>
     </body>
 
     </html>
