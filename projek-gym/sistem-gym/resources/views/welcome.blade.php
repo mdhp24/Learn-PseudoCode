@@ -816,7 +816,29 @@
         <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full particles-8-d1"></div>
         <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full particles-7-d2"></div>
         <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full particles-9-d1-5"></div>
+        <!-- Corner Glow Effects -->
+        <div
+            class="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl glow-anim">
+        </div>
+        <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl glow-anim-d1">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl glow-anim-d2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-radial from-white/30 to-transparent rounded-full blur-2xl glow-anim-d3">
+        </div>
 
-</body>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mb-6">Siap Untuk Berubah?</h2>
+            <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">Mulai perjalanan fitnessmu hari ini. Daftar
+                sekarang dan dapatkan diskon special untuk member baru!</p>
+            @auth
+    </body>
 
-</html>
+    </html>
