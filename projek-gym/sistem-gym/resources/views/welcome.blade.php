@@ -811,7 +811,11 @@
             <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent border-flow-rev">
             </div>
         </div>
-
+        <!-- Floating Particles -->
+        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full particles-6"></div>
+        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-200 rounded-full particles-8-d1"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full particles-7-d2"></div>
+        <div class="absolute top-2/3 right-1/4 w-2 h-2 bg-yellow-100 rounded-full particles-9-d1-5"></div>
 
 </body>
 
