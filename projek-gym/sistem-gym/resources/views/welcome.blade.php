@@ -792,6 +792,26 @@
         </div>
     </section>
 
+    {{-- ===== CTA ===== --}}
+    <section class="py-15 bg-orange-500 relative overflow-hidden">
+        <!-- Animated Top Border -->
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate">
+        </div>
+        <div class="absolute top-0 left-0 right-0 h-1 overflow-hidden">
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent border-flow-fwd">
+            </div>
+        </div>
+
+        <!-- Animated Bottom Border -->
+        <div
+            class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent border-animate">
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
+            <div class="h-full w-1/3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent border-flow-rev">
+            </div>
+        </div>
+
 
 </body>
 
