@@ -851,6 +851,37 @@
             @endauth
         </div>
     </section>
+    {{-- ===== FOOTER ===== --}}
+    <footer class="relative bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 border-t border-primary-500/20">
+        {{-- Decorative Background Elements --}}
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            {{-- Main Footer Content --}}
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                {{-- Brand Section --}}
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6 group">
+                        <div class="relative">
+                            <div
+                                class="absolute inset-0 bg-primary-500/30 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all duration-300">
+                            </div>
+                            <img src="{{ asset('images/logo_gym.png') }}" alt="Logo"
+                                class="relative w-12 h-12 rounded-full object-cover ring-2 ring-primary-500 group-hover:ring-primary-400 transition-all duration-300">
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white">MDHP GYM</h3>
+                            <p class="text-xs text-primary-400 font-medium">Your Fitness Partner</p>
+                        </div>
+                    </div>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-6">
+                        Tempat fitness terbaik untuk transformasi tubuh dan kesehatanmu.
+                        <span class="text-primary-400 font-semibold">Kesehatan itu mahal.</span>
+                    </p>
+                    
 </body>
 
 </html>
