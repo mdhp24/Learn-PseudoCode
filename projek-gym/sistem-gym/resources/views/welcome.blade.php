@@ -932,7 +932,16 @@
                                 Kelas & Trainer
                             </a>
                         </li>
-                        <li></li>
+                        <li> <a href="#trainers"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Personal Trainer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </li>
 
 </body>
 
