@@ -901,6 +901,22 @@
                         </a>
                     </div>
                 </div>
+                {{-- Quick Links --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#home"
+                                class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Tentang Kami
+                            </a>
+                        </li>
+                        <li></li>
 
 </body>
 
