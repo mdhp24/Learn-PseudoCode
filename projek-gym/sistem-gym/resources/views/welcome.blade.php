@@ -917,7 +917,7 @@
                             </a>
                         </li>
                         <li>
-                                                        <a href="#packages"
+                            <a href="#packages"
                                 class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
                                 <i
                                     class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
@@ -928,6 +928,11 @@
                             <a href="#classes"
                                 class="text-dark-400 hover:text-primary-400 text-sm flex items-center gap-2 group transition-all duration-300">
                                 <i
+                                    class="fas fa-chevron-right text-xs text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Kelas & Trainer
+                            </a>
+                        </li>
+                        <li></li>
 
 </body>
 
