@@ -942,6 +942,30 @@
                     </ul>
                 </div>
                 </li>
+                {{-- Operating Hours --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Jam Operasional
+                    </h4>
+                    <div
+                        class="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-xl p-5 hover:border-primary-500/50 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center animate-pulse">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg">24 Jam</p>
+                                <p class="text-dark-400 text-xs">Setiap Hari</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-400 text-xs font-medium">
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Buka sepanjang waktu untuk Anda
+                        </p>
+                    </div>
+                </div>
 
 </body>
 
