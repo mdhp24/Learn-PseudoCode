@@ -966,6 +966,12 @@
                         </p>
                     </div>
                 </div>
+                {{-- Contact Info --}}
+                <div class="md:col-span-1">
+                    <h4 class="font-heading font-bold text-white mb-6 text-lg flex items-center gap-2">
+                        <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
+                        Hubungi Kami
+                    </h4>
 
 </body>
 
