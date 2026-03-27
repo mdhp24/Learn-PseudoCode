@@ -995,6 +995,13 @@
                                     <i
                                         class="fas fa-phone text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
+                                <div>
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                        +62 812-3456-7890
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
 
 </body>
 
