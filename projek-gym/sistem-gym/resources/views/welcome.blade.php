@@ -972,6 +972,15 @@
                         <span class="w-1 h-6 bg-primary-500 rounded-full"></span>
                         Hubungi Kami
                     </h4>
+                    <ul class="space-y-4">
+                        <li class="group">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Malang+Kota+No.+11+Malang"
+                                target="_blank" class="flex items-center gap-3 group">
+                                <div
+                                    class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i
+                                        class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
+                                </div>
 
 </body>
 
