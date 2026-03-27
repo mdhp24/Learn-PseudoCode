@@ -981,6 +981,13 @@
                                     <i
                                         class="fas fa-map-marker-alt text-primary-500 group-hover:text-white transition-colors"></i>
                                 </div>
+                                <div class="flex items-center gap-2">
+                                    <p class="text-dark-400 group-hover:text-primary-400 transition-colors">
+                                        Jl. Malang Kota No. 11, Malang
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
 
 </body>
 
