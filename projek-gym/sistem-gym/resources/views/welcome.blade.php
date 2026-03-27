@@ -988,6 +988,13 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="group">
+                            <a href="tel:+6281234567890" class="flex items-start gap-3 text-sm">
+                                <div
+                                    class="w-9 h-9 bg-dark-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-all duration-300">
+                                    <i
+                                        class="fas fa-phone text-primary-500 group-hover:text-white transition-colors"></i>
+                                </div>
 
 </body>
 
