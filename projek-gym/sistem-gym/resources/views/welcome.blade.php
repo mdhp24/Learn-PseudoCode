@@ -1019,6 +1019,15 @@
                     </ul>
                 </div>
             </div>
+            {{-- Bottom Bar --}}
+            <div class="border-t border-dark-800/50 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-dark-500 text-sm">
+                        &copy; {{ date('Y') }} <a href="#home"
+                            class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">MDHP
+                            GYM</a>.
+                        All rights reserved.
+                    </p>
 
 </body>
 
