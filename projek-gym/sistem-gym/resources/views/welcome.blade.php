@@ -1039,6 +1039,14 @@
             </div>
         </div>
         {{-- Decorative Top Border --}}
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent">
+        </div>
+    </footer>
+
+</body>
+
+</html>
 
 </body>
 
