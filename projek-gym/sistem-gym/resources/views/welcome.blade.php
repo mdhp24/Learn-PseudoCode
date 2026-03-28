@@ -1034,6 +1034,10 @@
                         <a href="#home" class="hover:text-primary-400 transition-colors">Terms of Service</a>
                         <span class="w-1 h-1 bg-dark-700 rounded-full"></span>
                         <a href="#home" class="hover:text-primary-400 transition-colors">Cookie Policy</a>
+                                </div>
+                </div>
+            </div>
+        </div>
 
 </body>
 
