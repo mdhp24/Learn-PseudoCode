@@ -19,9 +19,11 @@
 </head>
 
 {{-- Body: background gradient gelap, full-height, konten terpusat secara vertikal & horizontal --}}
+
 <body
     class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 min-h-screen flex items-center justify-center font-sans">
-
+    
+    {{-- Wrapper: membatasi lebar maksimum form agar tetap proporsional di semua layar --}}
     <div class="w-full max-w-md px-4">
 
         <!-- Card -->
