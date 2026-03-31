@@ -22,7 +22,7 @@
 
 <body
     class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 min-h-screen flex items-center justify-center font-sans">
-    
+
     {{-- Wrapper: membatasi lebar maksimum form agar tetap proporsional di semua layar --}}
     <div class="w-full max-w-md px-4">
 
@@ -40,7 +40,9 @@
                 <p class="text-slate-400 text-sm">Masuk ke akun Anda</p>
             </div>
 
-            <!-- Alerts -->
+            {{-- ===== ALERT / NOTIFIKASI ===== --}}
+
+            {{-- Pesan sukses (contoh: setelah logout atau registrasi berhasil) --}}
             @if (session('success'))
                 <div class="mb-4 text-green-400 text-sm">{{ session('success') }}</div>
             @endif
