@@ -33,6 +33,7 @@
             <!-- Header -->
             {{-- Menampilkan logo gym, nama aplikasi, dan subjudul --}}
             <div class="text-center mb-6">
+                {{-- Logo gym: ditampilkan sebagai avatar bulat dengan ring oranye --}}
                 <img src="{{ asset('images/logo_gym.png') }}"
                     class="w-24 h-24 mx-auto rounded-full ring-4 ring-orange-500/40 mb-4" />
                 <h1 class="text-3xl font-bold text-white">MDHP GYM</h1>
