@@ -31,6 +31,7 @@
         <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 shadow-xl">
 
             <!-- Header -->
+            {{-- Menampilkan logo gym, nama aplikasi, dan subjudul --}}
             <div class="text-center mb-6">
                 <img src="{{ asset('images/logo_gym.png') }}"
                     class="w-24 h-24 mx-auto rounded-full ring-4 ring-orange-500/40 mb-4" />
