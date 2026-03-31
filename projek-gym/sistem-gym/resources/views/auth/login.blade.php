@@ -62,9 +62,9 @@
             --}}
             <!-- Form -->
             <form method="POST" action="{{ route('login') }}" id="loginForm" class="space-y-5" autocomplete="on">
-                @csrf
+                @csrf {{-- Token CSRF: wajib ada untuk melindungi dari serangan Cross-Site Request Forgery --}}
 
-                <!-- Email -->
+                {{-- ----- Field: Email ----- --}}
                 <div>
                     <label class="text-sm text-slate-300">Email</label>
                     <input type="email" name="email" value="{{ old('email') }}" required autofocus
