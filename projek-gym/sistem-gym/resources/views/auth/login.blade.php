@@ -27,6 +27,7 @@
     <div class="w-full max-w-md px-4">
 
         <!-- Card -->
+        {{-- Card: kontainer utama form login dengan efek glassmorphism --}}
         <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 shadow-xl">
 
             <!-- Header -->
