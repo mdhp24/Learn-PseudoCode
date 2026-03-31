@@ -47,6 +47,7 @@
                 <div class="mb-4 text-green-400 text-sm">{{ session('success') }}</div>
             @endif
 
+              {{-- Pesan error validasi: menampilkan error pertama dari stack --}}
             @if ($errors->any())
                 <div class="mb-4 text-red-400 text-sm">
                     {{ $errors->first() }}
