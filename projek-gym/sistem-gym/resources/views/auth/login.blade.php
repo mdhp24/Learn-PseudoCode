@@ -47,13 +47,19 @@
                 <div class="mb-4 text-green-400 text-sm">{{ session('success') }}</div>
             @endif
 
-              {{-- Pesan error validasi: menampilkan error pertama dari stack --}}
+            {{-- Pesan error validasi: menampilkan error pertama dari stack --}}
             @if ($errors->any())
                 <div class="mb-4 text-red-400 text-sm">
                     {{ $errors->first() }}
                 </div>
             @endif
 
+            {{-- ===== FORM LOGIN ===== --}}
+            {{--
+                - method POST  : sesuai standar autentikasi Laravel
+                - action       : diarahkan ke route bernama 'login'
+                - autocomplete : diaktifkan agar browser dapat mengisi otomatis
+            --}}
             <!-- Form -->
             <form method="POST" action="{{ route('login') }}" id="loginForm" class="space-y-5" autocomplete="on">
                 @csrf
