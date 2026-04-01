@@ -86,6 +86,7 @@
                             <i class="fas fa-eye"></i>
                         </button>
                     </div>
+                    {{-- Peringatan Caps Lock: muncul secara dinamis saat Caps Lock aktif --}}
                     <p id="capsWarning" class="text-yellow-400 text-xs mt-1 hidden">Caps Lock aktif</p>
                 </div>
 
