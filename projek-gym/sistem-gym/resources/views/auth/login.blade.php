@@ -72,7 +72,7 @@
                         class="w-full mt-1 px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl text-white focus:ring-2 focus:ring-orange-500 outline-none">
                 </div>
 
-                 {{-- ----- Field: Password ----- --}}
+                {{-- ----- Field: Password ----- --}}
                 <div>
                     <label class="text-sm text-slate-300">Password</label>
                     <div class="relative mt-1">
@@ -80,6 +80,7 @@
                         <input type="password" name="password" id="password" required autocomplete="current-password"
                             class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl text-white focus:ring-2 focus:ring-orange-500 outline-none">
 
+                        {{-- Tombol toggle show/hide password: ikon dikendalikan oleh JS --}}
                         <button type="button" id="togglePassword"
                             class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                             <i class="fas fa-eye"></i>
