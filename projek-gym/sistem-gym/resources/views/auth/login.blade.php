@@ -97,7 +97,12 @@
                     <span class="text-sm text-slate-400">Ingat saya</span>
                 </div>
 
-                <!-- Submit -->
+                 {{-- ----- Tombol Submit ----- --}}
+                {{--
+                    Memiliki dua state yang bergantian:
+                    1. #btnText    : teks normal "Masuk"
+                    2. #btnLoading : indikator loading (spinner) saat form sedang disubmit
+                --}}
                 <button type="submit" id="submitBtn"
                     class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:opacity-90 transition">
                     <span id="btnText">Masuk</span>
