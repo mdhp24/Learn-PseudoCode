@@ -90,7 +90,8 @@
                     <p id="capsWarning" class="text-yellow-400 text-xs mt-1 hidden">Caps Lock aktif</p>
                 </div>
 
-                <!-- Remember -->
+                {{-- ----- Checkbox: Remember Me ----- --}}
+                {{-- Mengaktifkan sesi persisten (remember token) di Laravel --}}
                 <div class="flex items-center">
                     <input type="checkbox" name="remember" class="mr-2">
                     <span class="text-sm text-slate-400">Ingat saya</span>
