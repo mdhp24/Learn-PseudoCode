@@ -113,7 +113,7 @@
             </form>
         </div>
 
-        <!-- Footer -->
+        {{-- Footer: informasi hak cipta dengan tahun dinamis --}}
         <p class="text-center text-xs text-slate-500 mt-6">© {{ date('Y') }} MDHP GYM</p>
 
     </div>
