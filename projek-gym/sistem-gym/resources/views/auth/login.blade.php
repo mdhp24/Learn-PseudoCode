@@ -129,6 +129,8 @@
          *  3. Deteksi Caps Lock saat mengetik password
          * ================================================================
          */
+
+         // Referensi elemen DOM yang digunakan di seluruh script
         const form = document.getElementById('loginForm');
         const submitBtn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
@@ -138,6 +140,12 @@
         const capsWarning = document.getElementById('capsWarning');
 
         // Submit handling
+         /**
+         * FITUR 1: Loading State saat Submit
+         * ------------------------------------
+         * - Menonaktifkan tombol submit untuk mencegah pengiriman ganda.
+         * - Menyembunyikan teks "Masuk" dan menampilkan spinner loading.
+         */
         form.addEventListener('submit', function() {
             submitBtn.disabled = true;
             btnText.classList.add('hidden');
