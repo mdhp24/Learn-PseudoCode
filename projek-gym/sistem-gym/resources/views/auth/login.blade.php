@@ -165,11 +165,18 @@
         });
 
         // CapsLock detection
+        /**
+         * FITUR 3: Deteksi Caps Lock
+         * ----------------------------
+         * Mendengarkan event 'keyup' pada input password.
+         * Menampilkan peringatan kuning jika Caps Lock sedang aktif,
+         * dan menyembunyikannya kembali saat Caps Lock dinonaktifkan.
+         */
         password.addEventListener('keyup', function(e) {
             if (e.getModifierState('CapsLock')) {
-                capsWarning.classList.remove('hidden');
+                capsWarning.classList.remove('hidden'); // Tampilkan peringatan
             } else {
-                capsWarning.classList.add('hidden');
+                capsWarning.classList.add('hidden'); // Sembunyikan peringatan
             }
         });
     </script>
