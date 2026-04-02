@@ -153,6 +153,12 @@
         });
 
         // Toggle password
+        /**
+         * FITUR 2: Toggle Visibilitas Password (Show / Hide)
+         * ----------------------------------------------------
+         * Setiap klik pada tombol mata akan mengubah type input
+         * antara 'password' (tersembunyi) dan 'text' (terlihat).
+         */
         togglePassword.addEventListener('click', function() {
             const type = password.type === 'password' ? 'text' : 'password';
             password.type = type;
