@@ -97,7 +97,7 @@
                     <span class="text-sm text-slate-400">Ingat saya</span>
                 </div>
 
-                 {{-- ----- Tombol Submit ----- --}}
+                {{-- ----- Tombol Submit ----- --}}
                 {{--
                     Memiliki dua state yang bergantian:
                     1. #btnText    : teks normal "Masuk"
@@ -119,6 +119,16 @@
     </div>
 
     <script>
+        /**
+         * ================================================================
+         * LOGIN PAGE — CLIENT-SIDE SCRIPT
+         * ================================================================
+         * Menangani tiga fitur interaktif:
+         *  1. Loading state saat form disubmit (mencegah double-submit)
+         *  2. Toggle visibilitas password (show / hide)
+         *  3. Deteksi Caps Lock saat mengetik password
+         * ================================================================
+         */
         const form = document.getElementById('loginForm');
         const submitBtn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
