@@ -1,5 +1,22 @@
 <?php
 
+
+/**
+ * ============================================================
+ * Route Definitions - Gym Management System
+ * ============================================================
+ *
+ * File ini mendefinisikan seluruh route aplikasi, mencakup:
+ * - Halaman publik (landing page)
+ * - Autentikasi (login & logout)
+ * - Route terproteksi yang memerlukan autentikasi
+ *
+ * Semua route terproteksi dikelompokkan dalam middleware 'auth'
+ * untuk memastikan hanya pengguna yang telah login yang dapat mengakses.
+ * ============================================================
+ */
+
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BodyMetricController;
 use App\Http\Controllers\ClassBookingController;
