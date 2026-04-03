@@ -51,6 +51,15 @@ Route::get('/', function () {
 // ============================
 // Authentication
 // ============================
+/**
+ * Route autentikasi untuk proses login dan logout pengguna.
+ *
+ * - GET  /login  → Menampilkan halaman form login
+ * - POST /login  → Memproses kredensial dan melakukan autentikasi
+ * - POST /logout → Mengakhiri sesi pengguna yang sedang login
+ *
+ * @access  Public (login), Auth required (logout)
+ */
 Route::get('/login',  [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
