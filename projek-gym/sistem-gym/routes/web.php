@@ -57,8 +57,7 @@ Route::get('/', function () {
  * - GET  /login  → Menampilkan halaman form login
  * - POST /login  → Memproses kredensial dan melakukan autentikasi
  * - POST /logout → Mengakhiri sesi pengguna yang sedang login
- *
- * @access  Public (login), Auth required (logout)
+ *  Semua route ini menggunakan AuthController untuk menangani logika autentikasi.
  */
 Route::get('/login',  [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -67,6 +66,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ============================
 // Protected Routes (Auth Required)
 // ============================
+/**
+ * Kelompok route yang hanya dapat diakses oleh pengguna
+ * yang telah terautentikasi (middleware: auth).
+ * Mencakup semua fitur manajemen gym.
+ */
 Route::middleware('auth')->group(function () {
 
     // Dashboard
