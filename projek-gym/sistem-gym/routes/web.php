@@ -33,6 +33,14 @@ use Illuminate\Support\Facades\Route;
 // ============================
 // Landing Page (Public)
 // ============================
+/**
+ * Halaman utama / landing page yang dapat diakses publik tanpa login.
+ * Menampilkan informasi paket membership aktif, kelas gym aktif,
+ * dan daftar trainer yang sedang aktif beserta data user-nya.
+ *
+ * @route   GET /
+ * @name    home
+ */
 Route::get('/', function () {
     $packages = \App\Models\MembershipPackage::where('is_active', true)->get();
     $classes  = \App\Models\GymClass::where('is_active', true)->get();
