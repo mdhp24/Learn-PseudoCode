@@ -73,7 +73,16 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
  */
 Route::middleware('auth')->group(function () {
 
+        // ----------------------------
     // Dashboard
+    // ----------------------------
+    /**
+     * Halaman dashboard utama setelah login.
+     * Menampilkan ringkasan data dan statistik gym secara keseluruhan.
+     *
+     * @route   GET /dashboard
+     * @name    dashboard
+     */
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Members
