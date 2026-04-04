@@ -163,7 +163,23 @@ Route::middleware('auth')->group(function () {
      */
     Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
 
+    // ----------------------------
     // Gym Classes
+    // ----------------------------
+    /**
+     * Manajemen kelas gym (jenis kelas, deskripsi, dll).
+     * Menyediakan operasi CRUD lengkap melalui resource route:
+     *
+     * - GET    /classes          → Daftar semua kelas (index)
+     * - GET    /classes/create   → Form tambah kelas baru (create)
+     * - POST   /classes          → Simpan kelas baru (store)
+     * - GET    /classes/{id}     → Detail kelas (show)
+     * - GET    /classes/{id}/edit → Form edit kelas (edit)
+     * - PUT    /classes/{id}     → Update kelas (update)
+     * - DELETE /classes/{id}     → Hapus kelas (destroy)
+     *
+     * @resource classes
+     */
     Route::resource('classes', ClassController::class);
 
     // Class Schedules
