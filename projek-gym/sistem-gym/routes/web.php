@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 // ============================
 // Landing Page (Public)
 // ============================
+
 /**
  * Halaman utama / landing page yang dapat diakses publik tanpa login.
  * Menampilkan informasi paket membership aktif, kelas gym aktif,
@@ -131,7 +132,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/packages/{package}/toggle-active', [MembershipPackageController::class, 'toggleActive'])
         ->name('packages.toggle-active');
 
+        // ----------------------------
     // Attendance
+    // ----------------------------
+    /**
+     * Manajemen absensi / kehadiran member gym.
+     *
+     * - GET   /attendances              → Daftar semua data kehadiran (index)
+     * - POST  /attendances/check-in     → Proses check-in member yang datang
+     * - PATCH /attendances/{id}/check-out → Proses check-out member yang pulang
+     *
+     * @name    attendances.index
+     * @name    attendances.checkin
+     * @name    attendances.checkout
+     */
     Route::get('/attendances', [AttendanceController::class, 'index'])->name('attendances.index');
     Route::post('/attendances/check-in', [AttendanceController::class, 'checkIn'])->name('attendances.checkin');
     Route::patch('/attendances/{attendance}/check-out', [AttendanceController::class, 'checkOut'])->name('attendances.checkout');
@@ -178,4 +192,3 @@ Route::middleware('auth')->group(function () {
     Route::resource('trainers', TrainerController::class);
     Route::get('/trainers/{trainer}/schedule', [TrainerController::class, 'schedule'])->name('trainers.schedule');
 });
-
