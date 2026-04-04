@@ -150,7 +150,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/attendances/check-in', [AttendanceController::class, 'checkIn'])->name('attendances.checkin');
     Route::patch('/attendances/{attendance}/check-out', [AttendanceController::class, 'checkOut'])->name('attendances.checkout');
 
+        // ----------------------------
     // Payments
+    // ----------------------------
+    /**
+     * Manajemen data pembayaran member.
+     * Saat ini hanya menyediakan tampilan daftar riwayat pembayaran.
+     *
+     * - GET /payments → Daftar semua transaksi pembayaran (index)
+     *
+     * @name    payments.index
+     */
     Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
 
     // Gym Classes
