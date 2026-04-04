@@ -85,7 +85,23 @@ Route::middleware('auth')->group(function () {
      */
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+        // ----------------------------
     // Members
+    // ----------------------------
+    /**
+     * Manajemen data anggota (member) gym.
+     * Menyediakan operasi CRUD lengkap melalui resource route:
+     *
+     * - GET    /members          → Daftar semua member (index)
+     * - GET    /members/create   → Form tambah member baru (create)
+     * - POST   /members          → Simpan member baru (store)
+     * - GET    /members/{id}     → Detail member (show)
+     * - GET    /members/{id}/edit → Form edit member (edit)
+     * - PUT    /members/{id}     → Update data member (update)
+     * - DELETE /members/{id}     → Hapus member (destroy)
+     *
+     * @resource members
+     */
     Route::resource('members', MemberController::class);
 
     // Membership Packages
