@@ -104,7 +104,29 @@ Route::middleware('auth')->group(function () {
      */
     Route::resource('members', MemberController::class);
 
+        // ----------------------------
     // Membership Packages
+    // ----------------------------
+    /**
+     * Manajemen paket keanggotaan (membership packages).
+     * Menyediakan operasi CRUD lengkap, serta route tambahan
+     * untuk mengaktifkan / menonaktifkan paket secara toggle.
+     *
+     * Resource route standar:
+     * - GET    /packages          → Daftar semua paket (index)
+     * - GET    /packages/create   → Form tambah paket (create)
+     * - POST   /packages          → Simpan paket baru (store)
+     * - GET    /packages/{id}     → Detail paket (show)
+     * - GET    /packages/{id}/edit → Form edit paket (edit)
+     * - PUT    /packages/{id}     → Update paket (update)
+     * - DELETE /packages/{id}     → Hapus paket (destroy)
+     *
+     * Route tambahan:
+     * - PATCH  /packages/{id}/toggle-active → Toggle status aktif paket
+     *
+     * @resource packages
+     * @name    packages.toggle-active
+     */
     Route::resource('packages', MembershipPackageController::class);
     Route::patch('/packages/{package}/toggle-active', [MembershipPackageController::class, 'toggleActive'])
         ->name('packages.toggle-active');
