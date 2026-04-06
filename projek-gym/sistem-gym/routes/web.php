@@ -272,7 +272,36 @@ Route::middleware('auth')->group(function () {
     Route::resource('body-metrics', BodyMetricController::class);
     Route::get('/members/{member}/body-metrics/history', [BodyMetricController::class, 'history'])->name('body-metrics.history');
 
+    // ----------------------------
     // Equipment
+    // ----------------------------
+    /**
+     * Manajemen peralatan / alat gym beserta status dan riwayat maintenance-nya.
+     * Menyediakan CRUD standar serta route khusus untuk:
+     * - Melihat daftar peralatan yang memerlukan maintenance
+     * - Mencatat hasil maintenance yang telah dilakukan
+     * - Mengubah status kondisi peralatan
+     * - Melihat statistik keseluruhan peralatan
+     *
+     * Resource route standar:
+     * - GET    /equipment          → Daftar semua peralatan (index)
+     * - GET    /equipment/create   → Form tambah peralatan (create)
+     * - POST   /equipment          → Simpan peralatan baru (store)
+     * - GET    /equipment/{id}     → Detail peralatan (show)
+     * - GET    /equipment/{id}/edit → Form edit peralatan (edit)
+     * - PUT    /equipment/{id}     → Update peralatan (update)
+     * - DELETE /equipment/{id}     → Hapus peralatan (destroy)
+     *
+     * Route tambahan:
+     * - GET  /equipment-maintenance                        → Daftar peralatan butuh maintenance
+     * - POST /equipment/{id}/record-maintenance            → Catat maintenance pada peralatan
+     * - PATCH /equipment/{id}/update-status               → Update status peralatan
+     * - GET  /equipment-stats                              → Statistik kondisi & penggunaan alat
+     *
+     * @resource equipment
+     * @name    equipment.maintenance, equipment.record-maintenance
+     * @name    equipment.update-status, equipment.stats
+     */
     Route::resource('equipment', EquipmentController::class);
     Route::get('/equipment-maintenance', [EquipmentController::class, 'maintenance'])->name('equipment.maintenance');
     Route::post('/equipment/{equipment}/record-maintenance', [EquipmentController::class, 'recordMaintenance'])
