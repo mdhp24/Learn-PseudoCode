@@ -310,7 +310,29 @@ Route::middleware('auth')->group(function () {
         ->name('equipment.update-status');
     Route::get('/equipment-stats', [EquipmentController::class, 'stats'])->name('equipment.stats');
 
+        // ----------------------------
     // Trainers
+    // ----------------------------
+    /**
+     * Manajemen data trainer gym.
+     * Menyediakan CRUD standar serta route tambahan untuk melihat
+     * jadwal mengajar dari masing-masing trainer.
+     *
+     * Resource route standar:
+     * - GET    /trainers          → Daftar semua trainer (index)
+     * - GET    /trainers/create   → Form tambah trainer (create)
+     * - POST   /trainers          → Simpan trainer baru (store)
+     * - GET    /trainers/{id}     → Detail trainer (show)
+     * - GET    /trainers/{id}/edit → Form edit trainer (edit)
+     * - PUT    /trainers/{id}     → Update data trainer (update)
+     * - DELETE /trainers/{id}     → Hapus trainer (destroy)
+     *
+     * Route tambahan:
+     * - GET /trainers/{id}/schedule → Jadwal mengajar trainer tertentu
+     *
+     * @resource trainers
+     * @name    trainers.schedule
+     */
     Route::resource('trainers', TrainerController::class);
     Route::get('/trainers/{trainer}/schedule', [TrainerController::class, 'schedule'])->name('trainers.schedule');
 });
