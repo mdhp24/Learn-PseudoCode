@@ -213,7 +213,32 @@ Route::middleware('auth')->group(function () {
     Route::patch('/classes/schedules/{schedule}/cancel', [ClassController::class, 'cancelSchedule'])->name('classes.schedules.cancel');
     Route::patch('/classes/schedules/{schedule}/complete', [ClassController::class, 'completeSchedule'])->name('classes.schedules.complete');
 
+        // ----------------------------
     // Class Bookings
+    // ----------------------------
+    /**
+     * Manajemen pemesanan (booking) kelas oleh member.
+     * Resource route tidak menyertakan 'edit' dan 'update' karena
+     * booking dikelola melalui aksi status (cancel, attended, no-show).
+     *
+     * Resource route (tanpa edit & update):
+     * - GET    /bookings          → Daftar semua booking (index)
+     * - GET    /bookings/create   → Form buat booking baru (create)
+     * - POST   /bookings          → Simpan booking baru (store)
+     * - GET    /bookings/{id}     → Detail booking (show)
+     * - DELETE /bookings/{id}     → Hapus booking (destroy)
+     *
+     * Route tambahan:
+     * - GET    /my-bookings                    → Daftar booking milik member yang login
+     * - PATCH  /bookings/{id}/cancel           → Batalkan booking
+     * - PATCH  /bookings/{id}/attended         → Tandai member hadir di kelas
+     * - PATCH  /bookings/{id}/no-show          → Tandai member tidak hadir (no-show)
+     * - GET    /api/schedules/available        → API: Ambil jadwal yang masih tersedia
+     *
+     * @resource bookings (except edit, update)
+     * @name    bookings.my, bookings.cancel, bookings.attended, bookings.no-show
+     * @name    api.schedules.available
+     */
     Route::resource('bookings', ClassBookingController::class)->except(['edit', 'update']);
     Route::get('/my-bookings', [ClassBookingController::class, 'myBookings'])->name('bookings.my');
     Route::patch('/bookings/{booking}/cancel', [ClassBookingController::class, 'cancel'])->name('bookings.cancel');
