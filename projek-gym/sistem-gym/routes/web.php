@@ -182,7 +182,27 @@ Route::middleware('auth')->group(function () {
      */
     Route::resource('classes', ClassController::class);
 
+        // ----------------------------
     // Class Schedules
+    // ----------------------------
+    /**
+     * Manajemen jadwal kelas gym.
+     * Setiap kelas dapat memiliki banyak jadwal (schedule) yang dapat dikelola
+     * secara terpisah. Tersedia juga aksi untuk membatalkan (cancel)
+     * dan menandai jadwal sebagai selesai (complete).
+     *
+     * - GET    /classes/schedules/index          → Daftar semua jadwal kelas
+     * - GET    /classes/schedules/create         → Form tambah jadwal baru
+     * - POST   /classes/schedules                → Simpan jadwal baru
+     * - GET    /classes/schedules/{id}           → Detail jadwal
+     * - GET    /classes/schedules/{id}/edit      → Form edit jadwal
+     * - PUT    /classes/schedules/{id}           → Update jadwal
+     * - DELETE /classes/schedules/{id}           → Hapus jadwal
+     * - PATCH  /classes/schedules/{id}/cancel    → Batalkan jadwal kelas
+     * - PATCH  /classes/schedules/{id}/complete  → Tandai jadwal sebagai selesai
+     *
+     * @name    classes.schedules.*
+     */
     Route::get('/classes/schedules/index', [ClassController::class, 'schedules'])->name('classes.schedules.index');
     Route::get('/classes/schedules/create', [ClassController::class, 'createSchedule'])->name('classes.schedules.create');
     Route::post('/classes/schedules', [ClassController::class, 'storeSchedule'])->name('classes.schedules.store');
