@@ -246,7 +246,29 @@ Route::middleware('auth')->group(function () {
     Route::patch('/bookings/{booking}/no-show', [ClassBookingController::class, 'markNoShow'])->name('bookings.no-show');
     Route::get('/api/schedules/available', [ClassBookingController::class, 'availableSchedules'])->name('api.schedules.available');
 
+    // ----------------------------
     // Body Metrics
+    // ----------------------------
+    /**
+     * Manajemen data metrik tubuh member (berat badan, tinggi, IMT, dll).
+     * Menyediakan CRUD standar serta route khusus untuk melihat
+     * riwayat metrik tubuh berdasarkan member tertentu.
+     *
+     * Resource route standar:
+     * - GET    /body-metrics          → Daftar semua data metrik (index)
+     * - GET    /body-metrics/create   → Form input metrik baru (create)
+     * - POST   /body-metrics          → Simpan data metrik (store)
+     * - GET    /body-metrics/{id}     → Detail metrik (show)
+     * - GET    /body-metrics/{id}/edit → Form edit metrik (edit)
+     * - PUT    /body-metrics/{id}     → Update data metrik (update)
+     * - DELETE /body-metrics/{id}     → Hapus data metrik (destroy)
+     *
+     * Route tambahan:
+     * - GET /members/{member}/body-metrics/history → Riwayat metrik per member
+     *
+     * @resource body-metrics
+     * @name    body-metrics.history
+     */
     Route::resource('body-metrics', BodyMetricController::class);
     Route::get('/members/{member}/body-metrics/history', [BodyMetricController::class, 'history'])->name('body-metrics.history');
 
