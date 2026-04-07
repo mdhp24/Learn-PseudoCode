@@ -73,7 +73,11 @@ class DashboardController extends Controller
             ->with(['member.user', 'package'])
             ->get();
 
-        // Absensi hari ini (terbaru)
+        // -----------------------------------------------
+        // Daftar Absensi Hari Ini
+        // -----------------------------------------------
+        // Mengambil 10 data kehadiran terbaru hari ini,
+        // diurutkan berdasarkan waktu check-in terbaru
         $todayAttendanceList = Attendance::whereDate('date', $today)
             ->with('member.user')
             ->orderBy('check_in', 'desc')
