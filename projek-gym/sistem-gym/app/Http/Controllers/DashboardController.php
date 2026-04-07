@@ -40,8 +40,14 @@ class DashboardController extends Controller
         // -----------------------------------------------
         // Menghitung total seluruh member yang terdaftar
         $totalMembers      = Member::count();
+
+        // Menghitung member dengan status aktif saja
         $activeMembers     = Member::where('status', 'active')->count();
+
+        // Menghitung jumlah kehadiran (absensi) pada hari ini
         $todayAttendances  = Attendance::whereDate('date', $today)->count();
+
+        // Menghitung total pendapatan dari pembayaran lunas (paid) pada bulan berjalan
         $monthlyRevenue    = Payment::where('status', 'paid')
             ->whereBetween('payment_date', [
                 $today->copy()->startOfMonth(),
@@ -49,7 +55,10 @@ class DashboardController extends Controller
             ])
             ->sum('total');
 
-        // Member baru bulan ini
+        // -----------------------------------------------
+        // Member Baru Bulan Ini
+        // -----------------------------------------------
+        // Menghitung jumlah member yang bergabung pada bulan dan tahun berjalan
         $newMembersThisMonth = Member::whereMonth('joined_date', $today->month)
             ->whereYear('joined_date', $today->year)
             ->count();
