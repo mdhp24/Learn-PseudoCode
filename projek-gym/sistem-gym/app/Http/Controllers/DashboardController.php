@@ -11,6 +11,14 @@ use App\Models\Equipment;
 use Carbon\Carbon;
 // use Illuminate\Http\Request;
 
+/**
+ * DashboardController
+ *
+ * Controller yang bertanggung jawab menampilkan halaman dashboard utama.
+ * Mengumpulkan dan menyajikan berbagai data statistik gym secara ringkas,
+ * mencakup: data member, kehadiran, pendapatan, booking kelas,
+ * kondisi peralatan, serta data grafik untuk visualisasi tren.
+ */
 class DashboardController extends Controller
 {
     public function index()
