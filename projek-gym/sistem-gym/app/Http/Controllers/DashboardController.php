@@ -21,6 +21,15 @@ use Carbon\Carbon;
  */
 class DashboardController extends Controller
 {
+
+    /**
+     * Menampilkan halaman dashboard utama.
+     *
+     * Mengambil dan mengolah berbagai data dari database untuk ditampilkan
+     * sebagai ringkasan operasional gym hari ini maupun periode tertentu.
+     *
+     * @return \Illuminate\View\View  View 'dashboard' dengan data statistik lengkap
+     */
     public function index()
     {
         $today = Carbon::today();
@@ -30,16 +39,16 @@ class DashboardController extends Controller
         $activeMembers     = Member::where('status', 'active')->count();
         $todayAttendances  = Attendance::whereDate('date', $today)->count();
         $monthlyRevenue    = Payment::where('status', 'paid')
-                                ->whereBetween('payment_date', [
-                                    $today->copy()->startOfMonth(),
-                                    $today->copy()->endOfMonth()
-                                ])
-                                ->sum('total');
+            ->whereBetween('payment_date', [
+                $today->copy()->startOfMonth(),
+                $today->copy()->endOfMonth()
+            ])
+            ->sum('total');
 
         // Member baru bulan ini
         $newMembersThisMonth = Member::whereMonth('joined_date', $today->month)
-                                     ->whereYear('joined_date', $today->year)
-                                     ->count();
+            ->whereYear('joined_date', $today->year)
+            ->count();
 
         // Membership yang akan expired dalam 7 hari
         $expiringMemberships = MemberMembership::where('status', 'active')
@@ -69,10 +78,10 @@ class DashboardController extends Controller
             ->get();
 
         // Peralatan perlu maintenance
-        $maintenanceNeeded = Equipment::where(function($query) use ($today) {
-                $query->where('next_maintenance', '<=', $today)
-                      ->orWhere('condition', '!=', 'Baik');
-            })
+        $maintenanceNeeded = Equipment::where(function ($query) use ($today) {
+            $query->where('next_maintenance', '<=', $today)
+                ->orWhere('condition', '!=', 'Baik');
+        })
             ->take(5)
             ->get();
 
@@ -102,10 +111,18 @@ class DashboardController extends Controller
         }
 
         return view('dashboard', compact(
-            'totalMembers', 'activeMembers', 'todayAttendances', 'monthlyRevenue',
-            'newMembersThisMonth', 'expiringMemberships', 'todayAttendanceList',
-            'todayBookings', 'recentPayments', 'maintenanceNeeded',
-            'revenueChart', 'attendanceChart'
+            'totalMembers',
+            'activeMembers',
+            'todayAttendances',
+            'monthlyRevenue',
+            'newMembersThisMonth',
+            'expiringMemberships',
+            'todayAttendanceList',
+            'todayBookings',
+            'recentPayments',
+            'maintenanceNeeded',
+            'revenueChart',
+            'attendanceChart'
         ));
     }
 }
