@@ -63,7 +63,11 @@ class DashboardController extends Controller
             ->whereYear('joined_date', $today->year)
             ->count();
 
-        // Membership yang akan expired dalam 7 hari
+         // -----------------------------------------------
+        // Membership Hampir Kadaluarsa
+        // -----------------------------------------------
+        // Mengambil membership aktif yang akan berakhir dalam rentang 7 hari ke depan
+        // Beserta relasi data member, user, dan paket membership-nya
         $expiringMemberships = MemberMembership::where('status', 'active')
             ->whereBetween('end_date', [$today, $today->copy()->addDays(7)])
             ->with(['member.user', 'package'])
