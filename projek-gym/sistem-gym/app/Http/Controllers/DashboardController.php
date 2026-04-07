@@ -32,9 +32,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        // Tanggal hari ini sebagai acuan filter data
         $today = Carbon::today();
 
-        // Statistik utama
+        // -----------------------------------------------
+        // Statistik Utama (Kartu Ringkasan)
+        // -----------------------------------------------
+        // Menghitung total seluruh member yang terdaftar
         $totalMembers      = Member::count();
         $activeMembers     = Member::where('status', 'active')->count();
         $todayAttendances  = Attendance::whereDate('date', $today)->count();
