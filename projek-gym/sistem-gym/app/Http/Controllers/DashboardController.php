@@ -85,7 +85,11 @@ class DashboardController extends Controller
             ->take(10)
             ->get();
 
-        // Booking kelas hari ini
+        // -----------------------------------------------
+        // Booking Kelas Hari Ini
+        // -----------------------------------------------
+        // Mengambil semua booking kelas pada hari ini dengan status 'booked'
+        // Beserta relasi data member, jadwal kelas, nama kelas, dan trainer-nya
         $todayBookings = ClassBooking::whereDate('booking_date', $today)
             ->where('status', 'booked')
             ->with(['member.user', 'schedule.gymClass', 'schedule.trainer.user'])
