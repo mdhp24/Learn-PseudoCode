@@ -133,12 +133,17 @@ class DashboardController extends Controller
                 ->whereYear('payment_date', $month->year)
                 ->sum('total');
             $revenueChart[] = [
-                'month'   => $month->translatedFormat('M Y'),
-                'revenue' => (float) $revenue,
+                'month'   => $month->translatedFormat('M Y'), // Contoh: "Jan 2025"
+                'revenue' => (float) $revenue,  // Cast ke float untuk konsistensi tipe data
             ];
         }
 
-        // Data chart - Absensi 7 hari terakhir
+        // -----------------------------------------------
+        // Data Chart: Absensi 7 Hari Terakhir
+        // -----------------------------------------------
+        // Mengiterasi 7 hari ke belakang dari hari ini,
+        // menghitung jumlah kehadiran per hari untuk ditampilkan pada grafik.
+        // Format tanggal menggunakan locale (misal: 'Sen, 01 Jan')
         $attendanceChart = [];
         for ($i = 6; $i >= 0; $i--) {
             $date = $today->copy()->subDays($i);
