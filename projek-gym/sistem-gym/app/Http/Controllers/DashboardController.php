@@ -119,7 +119,12 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
 
-        // Data chart - Pendapatan 6 bulan terakhir
+        // -----------------------------------------------
+        // Data Chart: Pendapatan 6 Bulan Terakhir
+        // -----------------------------------------------
+        // Mengiterasi 6 bulan ke belakang dari bulan saat ini,
+        // menghitung total pendapatan per bulan untuk ditampilkan pada grafik.
+        // Format bulan menggunakan locale yang sudah di-set (misal: 'Jan 2025')
         $revenueChart = [];
         for ($i = 5; $i >= 0; $i--) {
             $month = $today->copy()->subMonths($i);
