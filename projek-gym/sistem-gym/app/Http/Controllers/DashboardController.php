@@ -63,7 +63,7 @@ class DashboardController extends Controller
             ->whereYear('joined_date', $today->year)
             ->count();
 
-         // -----------------------------------------------
+        // -----------------------------------------------
         // Membership Hampir Kadaluarsa
         // -----------------------------------------------
         // Mengambil membership aktif yang akan berakhir dalam rentang 7 hari ke depan
@@ -95,7 +95,11 @@ class DashboardController extends Controller
             ->with(['member.user', 'schedule.gymClass', 'schedule.trainer.user'])
             ->get();
 
-        // Pembayaran terbaru
+        // -----------------------------------------------
+        // Pembayaran Terbaru
+        // -----------------------------------------------
+        // Mengambil 5 transaksi pembayaran lunas (paid) yang paling baru
+        // diurutkan berdasarkan tanggal pembayaran terkini
         $recentPayments = Payment::where('status', 'paid')
             ->with('member.user')
             ->latest('payment_date')
