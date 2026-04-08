@@ -106,7 +106,12 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
 
-        // Peralatan perlu maintenance
+        // -----------------------------------------------
+        // Peralatan yang Perlu Maintenance
+        // -----------------------------------------------
+        // Mengambil hingga 5 peralatan yang memenuhi salah satu kondisi berikut:
+        // 1. Tanggal next_maintenance sudah lewat atau sama dengan hari ini
+        // 2. Kondisi peralatan tidak dalam keadaan 'Baik'
         $maintenanceNeeded = Equipment::where(function ($query) use ($today) {
             $query->where('next_maintenance', '<=', $today)
                 ->orWhere('condition', '!=', 'Baik');
