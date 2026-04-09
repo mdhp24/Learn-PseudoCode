@@ -165,7 +165,7 @@ class DashboardController extends Controller
             'todayBookings', // Booking kelas aktif hari ini
             'recentPayments', // 5 pembayaran terbaru
             'maintenanceNeeded', // Peralatan perlu maintenance
-            'revenueChart', // Data grafik pendapatan 6 bulan
+            'revenueChart', 
             'attendanceChart' // Data grafik kehadiran 7 hari
         ));
     }
