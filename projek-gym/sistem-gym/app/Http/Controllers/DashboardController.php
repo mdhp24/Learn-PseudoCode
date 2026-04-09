@@ -164,7 +164,7 @@ class DashboardController extends Controller
             'todayAttendanceList',
             'todayBookings',
             'recentPayments',
-            'maintenanceNeeded',
+            'maintenanceNeeded', // Peralatan perlu maintenance
             'revenueChart', // Data grafik pendapatan 6 bulan
             'attendanceChart' // Data grafik kehadiran 7 hari
         ));
