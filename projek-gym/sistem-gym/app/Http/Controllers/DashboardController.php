@@ -164,7 +164,7 @@ class DashboardController extends Controller
             'todayAttendanceList', // Daftar absensi hari ini (maks. 10)
             'todayBookings', // Booking kelas aktif hari ini
             'recentPayments', // 5 pembayaran terbaru
-            'maintenanceNeeded', // Peralatan perlu maintenance
+            'maintenanceNeeded',
             'revenueChart', 
             'attendanceChart' // Data grafik kehadiran 7 hari
         ));
