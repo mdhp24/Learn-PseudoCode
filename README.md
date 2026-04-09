@@ -17,13 +17,3 @@ Belajar logika pemrograman dengan cara yang sederhana & mudah dipahami!
 - 💡 Melatih kemampuan problem solving dengan algoritma sederhana.  
 
 ---
-
-## 📂 Struktur Folder  
-```bash
-Learn-Pseudocode/
-│── 📁 basic         # Dasar-dasar pseudocode
-│── 📁 conditional   # Percabangan (if, else, switch)
-│── 📁 loop          # Perulangan (for, while, repeat-until)
-│── 📁 array         # Contoh penggunaan array
-│── 📁 algorithm     # Algoritma populer (sorting, searching, dll)
-│── README.md        # Dokumentasi utama
