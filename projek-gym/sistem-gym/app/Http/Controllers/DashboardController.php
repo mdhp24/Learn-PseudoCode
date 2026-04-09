@@ -149,7 +149,7 @@ class DashboardController extends Controller
             $date = $today->copy()->subDays($i);
             $count = Attendance::whereDate('date', $date)->count();
             $attendanceChart[] = [
-                'date'  => $date->translatedFormat('D, d M'),
+                'date'  => $date->translatedFormat('D, d M'), // Contoh: "Sen, 06 Jan"
                 'count' => $count,
             ];
         }
@@ -166,7 +166,7 @@ class DashboardController extends Controller
             'recentPayments',
             'maintenanceNeeded',
             'revenueChart',
-            'attendanceChart'
+            'attendanceChart' // Data grafik kehadiran 7 hari
         ));
     }
 }
