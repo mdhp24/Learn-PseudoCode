@@ -153,7 +153,10 @@ class DashboardController extends Controller
                 'count' => $count,
             ];
         }
-
+        
+        // -----------------------------------------------
+        // Kirim Semua Data ke View Dashboard
+        // -----------------------------------------------
         return view('dashboard', compact(
             'totalMembers', // Total seluruh member
             'activeMembers', // Member dengan status aktif
