@@ -156,7 +156,7 @@ class DashboardController extends Controller
 
         return view('dashboard', compact(
             'totalMembers',
-            'activeMembers',
+            'activeMembers', // Member dengan status aktif
             'todayAttendances', // Jumlah kehadiran hari ini
             'monthlyRevenue', // Total pendapatan bulan berjalan
             'newMembersThisMonth', // Member baru bulan ini
