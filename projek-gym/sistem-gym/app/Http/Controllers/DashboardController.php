@@ -158,9 +158,9 @@ class DashboardController extends Controller
             'totalMembers',
             'activeMembers',
             'todayAttendances',
-            'monthlyRevenue',
-            'newMembersThisMonth',
-            'expiringMemberships',
+            'monthlyRevenue', 
+            'newMembersThisMonth', // Member baru bulan ini
+            'expiringMemberships', // Membership hampir kadaluarsa (7 hari)
             'todayAttendanceList', // Daftar absensi hari ini (maks. 10)
             'todayBookings', // Booking kelas aktif hari ini
             'recentPayments', // 5 pembayaran terbaru
