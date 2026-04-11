@@ -32,6 +32,12 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
+
+{{-- ============================================================
+     BODY
+     x-data="{ mobileMenu: false }" → inisialisasi state Alpine.js
+     untuk mengontrol buka/tutup menu mobile di navbar.
+     ============================================================ --}}
 <body class="bg-dark-950 text-white font-sans" x-data="{ mobileMenu: false }">
 
     {{-- ===== NAVBAR ===== --}}
