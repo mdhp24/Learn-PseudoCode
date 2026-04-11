@@ -6,12 +6,13 @@
      font dari Google Fonts, ikon Font Awesome, dan Alpine.js
      untuk interaktivitas ringan (mobile menu toggle).
      ============================================================ --}}
+
 <head>
-     {{-- Encoding & Viewport --}}
+    {{-- Encoding & Viewport --}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDHP GYM</title>
-        
+
     {{-- Favicon --}}
     <link rel="icon" type="image/png" href="{{ asset('images/logo_gym.png') }}">
 
@@ -20,14 +21,14 @@
 
     {{-- Google Fonts: Inter (body text) & Poppins (heading) --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-     {{-- Font Awesome 6: Library ikon yang digunakan di seluruh halaman --}}
+
+    {{-- Font Awesome 6: Library ikon yang digunakan di seluruh halaman --}}
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-        {{-- Alpine.js: Framework JS ringan untuk interaktivitas (mobile menu) --}}
+
+    {{-- Alpine.js: Framework JS ringan untuk interaktivitas (mobile menu) --}}
     {{-- defer = dimuat setelah HTML selesai di-parse --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -38,9 +39,19 @@
      x-data="{ mobileMenu: false }" → inisialisasi state Alpine.js
      untuk mengontrol buka/tutup menu mobile di navbar.
      ============================================================ --}}
+
 <body class="bg-dark-950 text-white font-sans" x-data="{ mobileMenu: false }">
 
     {{-- ===== NAVBAR ===== --}}
+    {{-- ============================================================
+         Navigasi utama yang fixed di atas (z-50) dengan efek
+         glassmorphism (backdrop-blur). Berisi:
+         - Logo & nama gym (link ke section #home)
+         - Menu navigasi desktop (tersembunyi di mobile)
+         - Tombol Login/Dashboard (kondisional berdasarkan auth)
+         - Tombol hamburger untuk mobile menu
+         - Mobile dropdown menu (dikontrol Alpine.js)
+         ============================================================ --}}
     <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
