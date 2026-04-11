@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{{-- ============================================================
+     HEAD SECTION
+     Berisi konfigurasi meta, judul halaman, asset CSS/JS,
+     font dari Google Fonts, ikon Font Awesome, dan Alpine.js
+     untuk interaktivitas ringan (mobile menu toggle).
+     ============================================================ --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
