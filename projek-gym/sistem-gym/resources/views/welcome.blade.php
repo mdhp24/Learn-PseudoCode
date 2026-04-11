@@ -7,12 +7,21 @@
      untuk interaktivitas ringan (mobile menu toggle).
      ============================================================ --}}
 <head>
+     {{-- Encoding & Viewport --}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDHP GYM</title>
+        
+    {{-- Favicon --}}
     <link rel="icon" type="image/png" href="{{ asset('images/logo_gym.png') }}">
+
+    {{-- Vite Asset Bundler: Kompilasi CSS Tailwind & JS utama --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- Google Fonts: Inter (body text) & Poppins (heading) --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+     {{-- Font Awesome 6: Library ikon yang digunakan di seluruh halaman --}}
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
