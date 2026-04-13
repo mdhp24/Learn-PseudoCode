@@ -98,7 +98,10 @@
                 </button>
             </div>
         </div>
-        {{-- Mobile Menu --}}
+        {{-- Mobile Dropdown Menu
+             x-show     = tampil/sembunyi berdasarkan state mobileMenu
+             x-cloak    = cegah flash konten sebelum Alpine.js siap
+             x-transition = animasi fade saat buka/tutup --}}
         <div x-show="mobileMenu" x-cloak x-transition
             class="md:hidden bg-dark-900 border-t border-dark-700 px-6 py-4 space-y-3">
             <a href="#home" class="block text-dark-300 hover:text-primary-400">Beranda</a>
