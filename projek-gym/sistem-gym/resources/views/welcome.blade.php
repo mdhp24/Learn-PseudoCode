@@ -80,7 +80,9 @@
                         class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Kelas</a>
                     <a href="#trainers"
                         class="text-sm font-medium text-dark-300 hover:text-primary-400 transition">Trainer</a>
-                    @auth
+                    
+                    {{-- Tombol CTA: Tampilkan "Dashboard" jika sudah login, "Login" jika belum --}}
+                        @auth
                         <a href="{{ route('dashboard') }}"
                             class="px-6 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full text-sm hover:shadow-lg hover:shadow-primary-500/30 transition-all">Dashboard</a>
                     @else
