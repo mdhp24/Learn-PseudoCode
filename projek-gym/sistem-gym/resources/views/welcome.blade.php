@@ -108,6 +108,8 @@
             <a href="#packages" class="block text-dark-300 hover:text-primary-400">Paket</a>
             <a href="#classes" class="block text-dark-300 hover:text-primary-400">Kelas</a>
             <a href="#trainers" class="block text-dark-300 hover:text-primary-400">Trainer</a>
+
+            {{-- CTA Mobile: Kondisional berdasarkan status autentikasi --}}
             @auth
                 <a href="{{ route('dashboard') }}"
                     class="block px-4 py-2 bg-primary-500 text-white rounded-lg text-center">Dashboard</a>
@@ -119,6 +121,16 @@
     </nav>
 
     {{-- ===== HERO SECTION ===== --}}
+    {{-- ============================================================
+         Section pertama yang terlihat saat halaman dibuka (full screen).
+         Berisi:
+         - Dekorasi background (blur orbs animasi)
+         - Headline utama dengan gradient text
+         - Deskripsi singkat gym
+         - Tombol CTA: "Daftar Sekarang" & "Lihat Kelas"
+         - Statistik singkat: Member Aktif, Trainer, Jenis Kelas
+         - Logo gym dengan badge-badge fitur (desktop only)
+         ============================================================ --}}
     <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
