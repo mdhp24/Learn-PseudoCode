@@ -191,6 +191,8 @@
                             <p class="font-heading font-black text-3xl text-primary-400">15+</p>
                             <p class="text-dark-500 text-sm">Trainer Profesional</p>
                         </div>
+
+                         {{-- Stat: Jenis Kelas Tersedia --}}
                         <div class="w-px h-12 bg-dark-700"></div>
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">8+</p>
@@ -198,8 +200,12 @@
                         </div>
                     </div>
                 </div>
+
+                 {{-- Kolom Kanan: Logo dengan floating badge (desktop only) --}}
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
+
+                        {{-- Logo Utama dengan efek animasi shine --}}
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
 
