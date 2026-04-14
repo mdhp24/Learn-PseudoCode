@@ -154,10 +154,13 @@
                             GYM</span><br>
                         <span class="text-white text-4xl lg:text-5xl">Your Fitness Partner</span>
                     </h1>
+                               {{-- Deskripsi Singkat --}}
                     <p class="text-dark-400 text-lg mb-8 max-w-lg leading-relaxed">
                         Transformasi tubuhmu dimulai di sini. Bergabunglah dengan ribuan member yang telah merasakan
                         perubahan nyata bersama MDHP GYM.
                     </p>
+
+                     {{-- Tombol CTA: Daftar & Lihat Kelas --}}
                     <div class="flex flex-wrap gap-4">
                         <a href="#packages"
                             class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-2xl text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1">
