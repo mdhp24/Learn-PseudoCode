@@ -140,37 +140,43 @@
         {{-- Dekorasi Background: Blur orbs berwarna untuk efek atmosfer --}}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    {{-- Kolom Kiri: Konten teks utama --}}
+                {{-- Kolom Kiri: Konten teks utama --}}
                 <div>
-                     {{-- Badge Status "Open 24 Hours" --}}
+                    {{-- Badge Status "Open 24 Hours" --}}
                     <div
                         class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-500/10 border border-primary-500/30 rounded-full mb-6">
                         <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
                         <span class="text-primary-400 text-sm font-medium">Open 24 Hours</span>
                     </div>
-                          {{-- Headline Utama dengan Gradient Text --}}
+                    {{-- Headline Utama dengan Gradient Text --}}
                     <h1 class="font-heading font-black text-5xl lg:text-7xl leading-tight mb-6">
                         <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP
                             GYM</span><br>
                         <span class="text-white text-4xl lg:text-5xl">Your Fitness Partner</span>
                     </h1>
-                               {{-- Deskripsi Singkat --}}
+                    {{-- Deskripsi Singkat --}}
                     <p class="text-dark-400 text-lg mb-8 max-w-lg leading-relaxed">
                         Transformasi tubuhmu dimulai di sini. Bergabunglah dengan ribuan member yang telah merasakan
                         perubahan nyata bersama MDHP GYM.
                     </p>
 
-                     {{-- Tombol CTA: Daftar & Lihat Kelas --}}
+                    {{-- Tombol CTA: Daftar & Lihat Kelas --}}
                     <div class="flex flex-wrap gap-4">
+
+                        {{-- CTA Primer: Mengarah ke section packages --}}
                         <a href="#packages"
                             class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-2xl text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1">
                             <i class="fas fa-fire mr-2"></i> Daftar Sekarang
                         </a>
+
+                        {{-- CTA Sekunder: Mengarah ke section classes --}}
                         <a href="#classes"
                             class="px-8 py-4 border-2 border-dark-600 text-white font-bold rounded-2xl text-lg hover:border-primary-500 hover:text-primary-400 transition-all">
                             <i class="fas fa-calendar-days mr-2"></i> Lihat Kelas
                         </a>
                     </div>
+
+                    {{-- Statistik Singkat Gym --}}
                     <div class="flex items-center gap-8 mt-10">
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">100+</p>
