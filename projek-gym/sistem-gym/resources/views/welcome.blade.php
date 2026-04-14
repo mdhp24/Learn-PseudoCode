@@ -178,10 +178,14 @@
 
                     {{-- Statistik Singkat Gym --}}
                     <div class="flex items-center gap-8 mt-10">
+
+                        {{-- Stat: Total Member Aktif --}}
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">100+</p>
                             <p class="text-dark-500 text-sm">Member Aktif</p>
                         </div>
+
+                        {{-- Stat: Jumlah Trainer --}}
                         <div class="w-px h-12 bg-dark-700"></div>
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">15+</p>
