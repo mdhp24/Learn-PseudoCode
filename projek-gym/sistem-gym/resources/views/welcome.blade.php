@@ -136,9 +136,13 @@
             <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
         </div>
+
+        {{-- Dekorasi Background: Blur orbs berwarna untuk efek atmosfer --}}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    {{-- Kolom Kiri: Konten teks utama --}}
                 <div>
+                     {{-- Badge Status "Open 24 Hours" --}}
                     <div
                         class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-500/10 border border-primary-500/30 rounded-full mb-6">
                         <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
