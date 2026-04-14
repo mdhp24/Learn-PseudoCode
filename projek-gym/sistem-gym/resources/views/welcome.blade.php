@@ -148,6 +148,7 @@
                         <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
                         <span class="text-primary-400 text-sm font-medium">Open 24 Hours</span>
                     </div>
+                          {{-- Headline Utama dengan Gradient Text --}}
                     <h1 class="font-heading font-black text-5xl lg:text-7xl leading-tight mb-6">
                         <span class="bg-gradient-to-r from-primary-400 to-danger-400 bg-clip-text text-transparent">MDHP
                             GYM</span><br>
