@@ -253,14 +253,16 @@
          ============================================================ --}}
     <section id="packages"
         class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
-        {{-- Background Decorations --}}
+                {{-- Dekorasi Background: Blur orbs transparan --}}
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-1/4 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
             <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                      {{-- Section Header --}}
             <div class="text-center mb-20">
+                      {{-- Label Badge --}}
                 <div
                     class="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-500/20 to-danger-500/20 border border-primary-500/30 text-primary-400 text-sm font-bold rounded-full mb-6">
                     <i class="fas fa-crown text-gold-400"></i>
