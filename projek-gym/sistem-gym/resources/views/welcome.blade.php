@@ -192,7 +192,7 @@
                             <p class="text-dark-500 text-sm">Trainer Profesional</p>
                         </div>
 
-                         {{-- Stat: Jenis Kelas Tersedia --}}
+                        {{-- Stat: Jenis Kelas Tersedia --}}
                         <div class="w-px h-12 bg-dark-700"></div>
                         <div class="text-center">
                             <p class="font-heading font-black text-3xl text-primary-400">8+</p>
@@ -201,11 +201,11 @@
                     </div>
                 </div>
 
-                 {{-- Kolom Kanan: Logo dengan floating badge (desktop only) --}}
+                {{-- Kolom Kanan: Logo dengan floating badge (desktop only) --}}
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
 
-                                  {{-- Logo Utama dengan efek animasi shine --}}
+                        {{-- Logo Utama dengan efek animasi shine --}}
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
 
@@ -223,7 +223,7 @@
                                 Alat</p>
                         </div>
 
-                         {{-- Badge Pojok Kiri Bawah: Fasilitas AC --}}
+                        {{-- Badge Pojok Kiri Bawah: Fasilitas AC --}}
                         <div
                             class="absolute -bottom-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i>
@@ -240,7 +240,7 @@
                 </div>
             </div>
     </section>
-        {{-- ===== MEMBERSHIP PACKAGES ===== --}}
+    {{-- ===== MEMBERSHIP PACKAGES ===== --}}
     {{-- ============================================================
          Section daftar paket keanggotaan yang diambil dari database.
          Fitur utama:
@@ -253,16 +253,16 @@
          ============================================================ --}}
     <section id="packages"
         class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
-                {{-- Dekorasi Background: Blur orbs transparan --}}
+        {{-- Dekorasi Background: Blur orbs transparan --}}
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-1/4 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
             <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-danger-500 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                      {{-- Section Header --}}
+            {{-- Section Header --}}
             <div class="text-center mb-20">
-                      {{-- Label Badge --}}
+                {{-- Label Badge --}}
                 <div
                     class="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-500/20 to-danger-500/20 border border-primary-500/30 text-primary-400 text-sm font-bold rounded-full mb-6">
                     <i class="fas fa-crown text-gold-400"></i>
@@ -276,7 +276,10 @@
                     dan kebugaran tubuhmu dengan berbagai pilihan paket membership yang fleksibel</p>
             </div>
 
+            {{-- Grid Kartu Paket --}}
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+                {{-- PHP Variables: Array ikon & gradien untuk tiap kartu paket
+                     Diakses dengan modulo ($index % 4) agar berulang jika paket > 4 --}}
                 @php
                     $packageIcons = ['fa-bolt', 'fa-fire', 'fa-star', 'fa-crown'];
                     $packageGradients = [
