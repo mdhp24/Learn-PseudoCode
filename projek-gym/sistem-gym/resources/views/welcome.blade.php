@@ -240,7 +240,17 @@
                 </div>
             </div>
     </section>
-    {{-- ===== MEMBERSHIP PACKAGES ===== --}}
+        {{-- ===== MEMBERSHIP PACKAGES ===== --}}
+    {{-- ============================================================
+         Section daftar paket keanggotaan yang diambil dari database.
+         Fitur utama:
+         - Grid 4 kolom responsif (1 kolom mobile → 4 kolom desktop)
+         - Badge "BEST VALUE" untuk paket >= 360 hari
+         - Badge "POPULER" untuk paket >= 180 hari
+         - Harga diformat dalam ribuan (contoh: Rp 150K)
+         - Benefit ditampilkan dari kolom 'benefits' yang dipisah koma
+         - Tombol CTA berbeda berdasarkan status login
+         ============================================================ --}}
     <section id="packages"
         class="py-24 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden">
         {{-- Background Decorations --}}
