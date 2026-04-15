@@ -205,18 +205,18 @@
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
 
-                        {{-- Logo Utama dengan efek animasi shine --}}
+                                  {{-- Logo Utama dengan efek animasi shine --}}
                         <img src="{{ asset('images/logo_gym.png') }}" alt="MDHP GYM"
                             class="w-80 h-80 object-contain drop-shadow-2xl shine-animation">
 
-                        <!-- Top Left Badge -->
+                        {{-- Badge Pojok Kiri Atas: Komunitas Aktif --}}
                         <div
                             class="absolute -top-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-users mr-1.5"></i>
                                 Komunitas Aktif</p>
                         </div>
 
-                        <!-- Top Right Badge -->
+                        {{-- Badge Pojok Kanan Atas: Jumlah Alat --}}
                         <div
                             class="absolute -top-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-primary-400 font-semibold text-sm"><i class="fas fa-dumbbell mr-1.5"></i> 50+
