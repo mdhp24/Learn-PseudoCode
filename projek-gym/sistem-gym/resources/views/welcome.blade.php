@@ -223,14 +223,14 @@
                                 Alat</p>
                         </div>
 
-                        <!-- Bottom Left Badge -->
+                         {{-- Badge Pojok Kiri Bawah: Fasilitas AC --}}
                         <div
                             class="absolute -bottom-6 -left-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-danger-400 font-semibold text-sm"><i class="fas fa-heart-pulse mr-1.5"></i>
                                 Full AC</p>
                         </div>
 
-                        <!-- Bottom Right Badge -->
+                        {{-- Badge Pojok Kanan Bawah: Keamanan 24/7 --}}
                         <div
                             class="absolute -bottom-6 -right-8 bg-dark-800/95 backdrop-blur-sm border border-dark-700 rounded-xl px-3 py-2 shadow-xl">
                             <p class="text-success-400 font-semibold text-sm"><i class="fas fa-shield-alt mr-1.5"></i>
