@@ -388,7 +388,7 @@
                 @endforeach
             </div>
 
-            {{-- Additional Info --}}
+                       {{-- Info Tambahan: Keunggulan Gym (Ikon + Teks Singkat) --}}
             <div class="mt-16 text-center">
                 <div class="inline-flex flex-wrap items-center justify-center gap-8 text-sm text-dark-400">
                     <div class="flex items-center gap-2">
