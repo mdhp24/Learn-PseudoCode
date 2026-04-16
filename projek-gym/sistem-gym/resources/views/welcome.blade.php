@@ -294,19 +294,22 @@
                 @foreach ($packages as $index => $package)
                     <div
                         class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 relative group overflow-hidden h-full flex flex-col">
-                         {{-- Dekorasi Sudut Kartu --}}
+                        {{-- Dekorasi Sudut Kartu --}}
                         <div
                             class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full">
                         </div>
 
-                         {{-- Header Kartu: Ikon + Badge Status Paket --}}
+                        {{-- Header Kartu: Ikon + Badge Status Paket --}}
                         <div class="mb-6 flex items-center gap-4">
+                            {{-- Ikon Paket --}}
                             <div
                                 class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-danger-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                 <i class="fas {{ $packageIcons[$index % 4] }} text-white text-2xl"></i>
                             </div>
 
-                            {{-- Best Value / Popular Badge --}}
+                            {{-- Badge Kondisional:
+                                 >= 360 hari → "BEST VALUE" (animated pulse + gradient emas)
+                                 >= 180 hari → "POPULER" (gradient merah-oranye) --}}
                             @if ($package->duration_days >= 360)
                                 <div
                                     class="px-4 py-1.5 bg-gradient-to-r from-gold-400 via-primary-500 to-danger-500 text-white text-xs font-black rounded-full shadow-2xl flex items-center gap-2 animate-pulse">
