@@ -349,7 +349,9 @@
                             @endif
                         </div>
 
-                        {{-- Benefits --}}
+                        {{-- Daftar Benefit Paket
+                             Diambil dari kolom 'benefits' yang dipisah koma (CSV)
+                             Fallback default: 'Akses Gym,Locker Gratis,Free Konsultasi' --}}
                         <div class="mb-6 flex-grow">
                             <div class="space-y-3">
                                 @foreach (explode(',', $package->benefits ?? 'Akses Gym,Locker Gratis,Free Konsultasi') as $benefit)
