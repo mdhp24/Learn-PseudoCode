@@ -324,7 +324,7 @@
                             @endif
                         </div>
 
-                        {{-- Package Name --}}
+                        {{-- Nama & Durasi Paket --}}
                         <div class="mb-6">
                             <h3 class="font-heading font-black text-2xl text-white mb-2">{{ $package->name }}</h3>
                             <div class="flex items-center gap-2 text-primary-400 text-sm font-semibold">
@@ -333,7 +333,9 @@
                             </div>
                         </div>
 
-                        {{-- Pricing --}}
+                        {{-- Harga Paket
+                             Format: Rp XXXk (dibagi 1000, tanpa desimal)
+                             Keterangan durasi: tampil dalam bulan jika >= 30 hari --}}
                         <div class="mb-6">
                             <div class="flex items-end gap-2 mb-1">
                                 <span class="font-heading font-black text-4xl text-white price-glow">Rp
