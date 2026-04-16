@@ -289,15 +289,17 @@
                         'from-gold-500/10 to-primary-500/10',
                     ];
                 @endphp
+
+                {{-- Loop Kartu Paket dari Database --}}
                 @foreach ($packages as $index => $package)
                     <div
                         class="package-card bg-gradient-to-br {{ $packageGradients[$index % 4] }} backdrop-blur-sm border {{ $package->duration_days >= 180 ? 'border-primary-500/50' : 'border-dark-700/50' }} rounded-3xl p-8 relative group overflow-hidden h-full flex flex-col">
-                        {{-- Decorative Corner --}}
+                         {{-- Dekorasi Sudut Kartu --}}
                         <div
                             class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full">
                         </div>
 
-                        {{-- Icon Badge & Label --}}
+                         {{-- Header Kartu: Ikon + Badge Status Paket --}}
                         <div class="mb-6 flex items-center gap-4">
                             <div
                                 class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-danger-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
