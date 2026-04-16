@@ -356,6 +356,7 @@
                             <div class="space-y-3">
                                 @foreach (explode(',', $package->benefits ?? 'Akses Gym,Locker Gratis,Free Konsultasi') as $benefit)
                                     <div class="flex items-start gap-3 text-dark-200 text-sm">
+                                        {{-- Ikon centang benefit --}}
                                         <div
                                             class="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-danger-500 flex items-center justify-center mt-0.5">
                                             <i class="fas fa-check text-white text-xs"></i>
@@ -366,7 +367,10 @@
                             </div>
                         </div>
 
-                        {{-- CTA Button --}}
+                        {{-- Tombol CTA
+                             Jika sudah login → ke halaman create member
+                             Jika belum login → ke halaman login
+                             Style tombol berbeda untuk paket premium (>= 180 hari) --}}
                         <div class="mt-auto">
                             @auth
                                 <a href="{{ route('members.create') }}"
